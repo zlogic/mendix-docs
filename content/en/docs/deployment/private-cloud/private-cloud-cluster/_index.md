@@ -914,6 +914,32 @@ Alternatively, for Standalone clusters, pod labels can be specified in the `Mend
 The Mendix Operator uses some labels for internal use. To avoid conflicts with these internal pod labels, please avoid using labels starting with the `privatecloud.mendix.com/` prefix.
 {{% /alert %}}
 
+### Delaying app shutdown {#termination-delay}
+
+In some situations, shutting down a replica immediately could cause isses.
+For example, the [Azure Gateway Ingress Controller](https://azure.github.io/application-gateway-kubernetes-ingress/how-tos/minimize-downtime-during-deployments/) needs up to 90 seconds to remove a pod from its routing table.
+Stopping an app pod immediately would still send traffic to the pod for a few minutes, causing random 502 errors to appear in the client web browser.
+
+You can add (or adjust) the timeout by adding a `runtimeTerminationDelaySeconds` value to the `OperatorConfiguration` CR:
+
+```yaml
+apiVersion: privatecloud.mendix.com/v1alpha1
+kind: OperatorConfiguration
+# ...
+# omitted lines for brevity
+# ...
+spec:
+  runtimeTerminationDelaySeconds: 90
+```
+
+Setting `runtimeTerminationDelaySeconds` to `90` will keep the app running for 90 seconds after a pod receives a shutdown signal.
+
+In most cases, this option is only needed when an app is partially scaled down (for example, by a [Horizontal pod autoscaler](#horizontal-autoscaling)), and is still running.
+
+{{% alert color="warning" %}}
+Some container runtimes or network configurations will prevent a terminating pod from receiving traffic or opening new connections. The Mendix Runtime can still use its existing database connections from the connection pool and keep processing any running microflows and requests, but uploading files or calling external REST services might fail.
+{{% /alert %}}
+
 ### GKE Autopilot Workarounds {#gke-autopilot-workarounds}
 
 In GKE Autopilot, one of the key features is its ability to automatically adjust resource settings based on the observed resource utilization of the containers. GKE Autopilot verifies the resource allocations and limits for all containers, and makes adjustments to deployments when the resources are not as per its requirements.
