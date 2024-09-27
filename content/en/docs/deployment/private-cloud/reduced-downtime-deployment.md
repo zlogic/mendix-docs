@@ -122,7 +122,7 @@ kind: PodDisruptionBudget
 metadata:
   name: <mendixapp-cr-name> # This should be updated to match the MenedixApp CR name
 spec:
-  minAvailable: 1
+  maxUnavailable: 1 # Ensure that at most 1 replica is stopped by Kubernetes
   selector:
     matchLabels:
       privatecloud.mendix.com/app: <mendixapp-cr-name> # This should be updated to match the MenedixApp CR name
