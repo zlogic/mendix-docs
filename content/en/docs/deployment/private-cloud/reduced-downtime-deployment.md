@@ -9,7 +9,7 @@ weight: 35
 
 Kubernetes allows to update an app without downtime by [performing a rolling update](https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/). Instead of stopping an app and then starting it with an updated version or configuration, Kubernetes can replace pods (replicas) one by one with an updated version. Existing pods will handle requests until the newer version is fully started.
 
-Any changes in the [domain model](/refguide/domain-model/) need a database (schema) update, which can only be done safely if no data is written to the database.
+Any changes in the [domain model](/refguide/domain-model/) need a database (schema) update; while Mendix is updating the schema, it's not possible to modify any persistent entities.
 
 The Private Cloud Operator uses a [recreate](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#recreate-deployment) strategy by default: stop the current version (configuration) of an app, then start the new version.
 
@@ -18,7 +18,8 @@ Alternatively, the Private Cloud Operator can a `PreferRolling` strategy:
 * the Operator will _try_ to perform a rolling update whenever possible;
 * if the Operator detects that a database (schema) update is needed, it will switch to a Recreate strategy to perform a full restart.
 
-Any time a new version of the app has model changes, deploying it will still cause downtime.  
+If the new version of the app has model changes, deploying it will require a schema update.
+In this case, the Private Cloud Operator will automatically stop all replicas of the app, causing downtime.
 
 This feature works with Mendix for Private Cloud version 2.20 (and later).
 
@@ -33,13 +34,13 @@ Then, the Operator will let the app know it's safe to update the database schema
 
 As a `Rolling` strategy can run multiple versions of the app at the same time, requests from the browser need to be routed to a matching app version (an app that has the same microflow or nanoflow parameters).
 The operator uses Kubernetes Service labels to perform an atomic switch, and instantly switch all clients to the updated version.
-This will be done automatically once the number of updated replicas reaches a certain threshold (default: 50% of all replicas).
+This will be done automatically once the number of updated replicas reaches a certain threshold (default: 50% of all replicas, specified in the [switchoverThreshold](#prefer-rolling-in-standalone) parameter).
 
 ## How to enable reduced deployment downtime
 
 To enable the `PreferRolling` deployment strategy:
 
-* The app needs to have 2 or more replicas.
+* The app needs to have 2 or more replicas specified in the `MendixApp` CR or Developer Portal.
 * For Connected environments, the _Low downtime Deployment Strategy_ option needs to be enabled in the Cloud Portal.
 * For Standalone environments, `deploymentStrategy` needs to be set to `PreferRolling` in the `MendixApp` CR.
 
@@ -50,7 +51,7 @@ For example, these changes can be done without downtime:
 * Changing app constants, MxAdmin password or debugger settings
 * Changing environment variables, Runtime or Java options
 * Changing Runtime Metrics settings
-* Updating the Mendix Operator version
+* Upgrading the Mendix Operator version
 * Rebuilding the same MDA version to get the latest CVE updates
 * Changes in microflows or Java actions that don't affect the model
 * Updating Java dependencies
@@ -69,7 +70,7 @@ These changes will be deployed with downtime, because the model needs to be upda
 
 <!-- TODO: document how to navigate and enable this in Portunus -->
 
-#### Use PreferRolling strategy in Standalone environments
+#### Use PreferRolling strategy in Standalone environments {#prefer-rolling-in-standalone}
 
 To enable reduced downtime deployments, add the `deploymetStrategy` section to your `MendixApp` CR
 
