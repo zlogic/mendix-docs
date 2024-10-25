@@ -251,8 +251,6 @@ The **Documentation** pane displays the documentation for the currently selected
 1. In the [View menu](/refguide/view-menu/) of Studio Pro, select **Documentation**.
 2. Click the element for which you want to view the documentation.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/conversational-ui/doc-pane.png" >}}
-
 ## Troubleshooting
 
 This section lists possible solutions to known issues.
