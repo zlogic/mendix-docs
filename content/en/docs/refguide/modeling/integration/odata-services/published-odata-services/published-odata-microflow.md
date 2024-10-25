@@ -65,19 +65,13 @@ You can also select **Can be empty**. If this checkbox is cleared, calls to the 
 Boolean and list parameters can never be empty.
 {{% /alert %}}
 
-## 4 Customising outgoing HTTP response
+## 4 Customizing the Outgoing HTTP Response
 
-It is possible to manipulate response which would be produced as a result of OData Action call.
-In order to do that published microflow must take a parameter of [System.HttpResponse](/refguide/http-request-and-response-entities/) type.
+It is possible to manipulate the response, which is produced as a result of an OData Action call. To do this, the published microflow must have a parameter with a [System.HttpResponse](/refguide/http-request-and-response-entities/) type.
 
-If no changes were made to HttpResponse object then actual response won't be changed as well.
-
-If only headers of the HttpResponse were changed (for instance a new header was added to the response) then those headers would be merged with default headers, replacing values of the same name.
-
-If status code OR content of the HttpResponse were changed then actual response would be produced exclusively from HttpResponse parameter, including status code, headers and response body.
-
-Note. Reason phrase field is ignored.
-
-It is not possible to change values for `Transfer-Encoding` and `Date` headers
-
-When StatusCode is set to `204` then empty response body is always produced.
+* If no changes were made to HttpResponse object, the actual response will not change.
+* If only headers of the HttpResponse were changed (for instance, a new header was added to the response), those headers are merged with default headers, which replaces values of the same name.
+* If the status code or content of the HttpResponse is changed, the actual response is produced exclusively from the HttpResponse parameter, including status code, headers, and response body. 
+* The ReasonPhrase field is ignored.
+* It is not possible to change values for `Transfer-Encoding` and `Date` headers.
+* When the status code is set to `204`, an empty response body is always produced.
