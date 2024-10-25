@@ -41,7 +41,7 @@ In most use cases, more information needs to be stored than just the original in
 
 If additional conventional filtering is needed during similarity searches, such additional data can be stored in the knowledge base as well. [Metadata](/appstore/modules/genai/commons/#metadata-entity) objects are key-value pairs that are inserted along with the chunks and contain this additional information. The filtering is applied on an exact string-match basis for the key-value pair. Records are only retrieved if they match all records of the metadata in the collection provided as part of the search step.
 
-{{% alert color="info" %}}The example described in the remainder of this document does not include the more advanced use case of metadata filtering nor does it cover the construction of complex input strings. If you want to see how this can work in practice, please take a look at the *RAG with Semantic Search on Historical Data* example in the [GenAI Showcase app](https://marketplace.mendix.com/link/component/220475). {{% /alert %}}
+{{% alert color="info" %}}The example described in the remainder of this document does not include the more advanced use case of metadata filtering nor does it cover the construction of complex input strings. If you want to see how this can work in practice, take a look at the *RAG with Semantic Search on Historical Data* example in the [GenAI Showcase app](https://marketplace.mendix.com/link/component/220475). {{% /alert %}}
 
 ## High-level Flow {#rag-high-level}
 
