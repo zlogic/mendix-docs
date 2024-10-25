@@ -1,8 +1,11 @@
 ---
 title: "Expose Data to BI Tools Using OData"
-url: /howto/integration/exposing-data-to-bi-tools-using-odata/
+url: /refguide/exposing-data-to-bi-tools-using-odata/
 weight: 13
 description: "Describes how to create a published OData service with resources, add the OData server to Tableau and Excel, combine resources in Tableau, and create custom queries."
+aliases:
+    - /howto/integration/exposing-data-to-bi-tools-using-odata/
+#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
