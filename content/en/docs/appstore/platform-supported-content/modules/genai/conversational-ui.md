@@ -8,7 +8,7 @@ description: "Describes the Conversational UI marketplace module that assists de
 
 ## Introduction {#introduction}
 
-With the [Conversational UI module](https://marketplace.mendix.com/link/component/227931), you can create a GenAI-based chat user interface. It contains the needed data model, pages, snippets, and building blocks. You can integrate with any LLM and knowledge base to create your full-screen, sidebar, or modal chat. It integrates with the Atlas framework and is the basis for the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926). It is also included in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) and the [Suppor Assistant Starter App](https://marketplace.mendix.com/link/component/231035).
+With the [Conversational UI module](https://marketplace.mendix.com/link/component/227931), you can create a GenAI-based chat user interface. It contains the needed data model, pages, snippets, and building blocks. You can integrate with any LLM and knowledge base to create your full-screen, sidebar, or modal chat. It integrates with the Atlas framework and is the basis for the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926). It is also included in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) and the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035).
 
 Mendix has produced a [Conversational AI Design Checklist](/howto/front-end/conversation-checklist/) which suggests some best practices for introducing conversational AI into your app.
 
@@ -69,10 +69,9 @@ To use Conversational UI in your app, you must perform the following tasks in St
 6. In the project theme settings, include the ConversationalUI module in the right order . Add it after Atlas_Core so the styling does not get overwritten (see [Ordering UI Resource Modules](/howto/front-end/customize-styling-new/#ordering-ui-resource-modules) for more information).
 7. Optionally, [customize styling](#customize-styling) by overwriting variables and adding custom scss. Custom styling modules need to be loaded after ConversationalUI when ordering UI resources.
 
-
 The main entities are shown for reference in the diagram below. For technical documentation, follow the steps in the [Technical reference](#technical-reference) section.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/conversational-ui/domain-model.png" alt="" width="50%">}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/conversational-ui/domain-model.png" >}}
 
 ### Configuring the Roles {#module-roles}
 
@@ -169,6 +168,7 @@ Add the action microflow to an existing `ProviderConfig` by using the **Set Chat
 #### Creating a Custom Action Microflow
 
 A typical action microflow is responsible for the following:
+
 * Convert the `ChatContext` with user input to a `Request` structure for the chat completions operation.
 * Retrieve the connection details (i.e. credentials, configuration, etc.) for the operation.
 * Execute the chat completions operation for the LLM of choice.
@@ -177,13 +177,14 @@ A typical action microflow is responsible for the following:
 If you want to create your custom action microflow, keep the following considerations in mind:
 
 * Only one input parameter of [ChatContext](#chat-context) or a specialization is accepted.
-* The return type needs to be a `Success` boolean.
+* The return type needs to be a `Success` Boolean.
 * Use the [chat context](#chatcontext-operations) and [request operations](#request-operations) to facilitate the interaction between the chat context and the model.
 * The custom action microflow can only be triggered if it is set as an action microflow for the `ProviderConfig` using one of the operations mentioned before.
 
 ##### ChatContext operations {#chatcontext-operations}
 
 The following operations can be found in the toolbox for changing the [ChatContext](#chat-context) in a (custom) action microflow:
+
 * `Set ConversationID` sets the ConversationID on the `ChatContext`. Storing the ConversationID is needed for a chat with history within Retrieve and Generate with [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/).
 * `Set Topic` sets the `Topic` of the `ChatContext`. This attribute can be used in the **History** sidebar while making historical chats visible to users.
 
@@ -219,6 +220,7 @@ The following variables have a default value defined in the Conversational UI mo
 You can find the default values of these variables in the `_chat-variables.scss` file that is shipped with this module.
 
 #### Creating Custom SCSS {#customize-styling-classes}
+
 You can use the following classes in your custom stylesheets to overwrite the default styling of Conversational UI and modify the behavior of the chat elements in your app. 
 
 | Class name | Target element |
@@ -251,6 +253,8 @@ The **Documentation** pane displays the documentation for the currently selected
 1. In the [View menu](/refguide/view-menu/) of Studio Pro, select **Documentation**.
 2. Click the element for which you want to view the documentation.
 
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/conversational-ui/doc-pane.png" >}}
+
 ## Troubleshooting
 
 This section lists possible solutions to known issues.
@@ -259,10 +263,10 @@ This section lists possible solutions to known issues.
 
 The export of usage data for the token monitor does not work correctly.
 
-#### Cause
+#### Cause 
 
-The [Data Wigets](https://marketplace.mendix.com/link/component/116540) module that you have installed is in an older version which does not support exporting data to *.xlsx* format from the Datagrid 2 widget.
+The [Data Widgets](https://marketplace.mendix.com/link/component/116540) module that you have installed is in an older version which does not support exporting data to *.xlsx* format from the Data grid 2 widget.
 
-#### Solution
+#### Solution 
 
-Update the [Data Wigets](https://marketplace.mendix.com/link/component/116540) module to version 2.22.0 or above.
+Update the [Data Widgets](https://marketplace.mendix.com/link/component/116540) module to version 2.22.0 or above.
