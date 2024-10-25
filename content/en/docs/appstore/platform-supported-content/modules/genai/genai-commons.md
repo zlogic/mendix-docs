@@ -201,7 +201,7 @@ A piece of information (InputText) and the corresponding embeddings vector retri
 
 #### `KnowledgeBaseChunk` {#knowledgebasechunk-entity}
 
-This entity represents a discrete piece of knowledge that can be used in embed and store operations. It is a specialization of [Chunk](#chunk-entity) and it is the relevant entity if you need to both generate embedding vectors and want to store them in a knowledge base.
+This entity represents a discrete piece of knowledge that can be used for embedding and storage operations. As a specialization of [Chunk](#chunk-entity), it is the appropriate entity to use when both generating embedding vectors and storing them in a knowledge base.
 
 | Attribute | Description |
 | --- | --- |
@@ -217,7 +217,7 @@ An optional collection of metadata. This is a wrapper entity for one or more [Me
 
 #### `Metadata` {#metadata-entity}
 
-This entity represents additional information that is to be stored with the [KnowledgeBaseChunk](#knowledgebasechunk-entity) in the knowledge base. At the insertion stage, you can link as many metadata objects to a KnowledgeBaseChunk as needed. Metadata objects are key-value pairs that are used for custom filtering during the search step (retrieve). This retrieval works on an exact string-match basis for the key-value pair. Records are only retrieved if they match with all of the metadata records in the collection provided as part of the search step.
+This entity represents additional information to be stored with the [KnowledgeBaseChunk](#knowledgebasechunk-entity) in the knowledge base. At the insertion stage, you can link multiple metadata objects to a KnowledgeBaseChunk as needed. These metadata objects consist of key-value pairs used for custom filtering during retrieval. Retrieval operates on an exact string-match basis for each key-value pair, returning records only if they match all metadata records specified in the search criteria.
 
 | Attribute | Description |
 | --- | --- |
