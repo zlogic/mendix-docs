@@ -169,7 +169,10 @@ You can configure custom settings that are only used when you run your app local
 {{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/certificates-tab.png" class="no-border" >}}
 
 {{% alert color="info" %}}
-To test SSL-based connections from the Database Connection wizard, you must add a CA certificate to the system via the Certificate Manager. To do this, open Certmgr.msc, then select **Trusted Root Certification Authorities** and import the CA certificate file.
+To test SSL-based connections from the Database Connection wizard, use the Certificate Manager to add a CA certificate. To do this, follow these steps:
+1. Open the Start menu and search `Manage computer certificates`
+2. Open **Trusted Root Certification Authorities** > **Certificates** 
+3. Import the CA certificate file
 {{% /alert %}}
 
 2. If the PostgreSQL server requires Mendix to authenticate using a client certificate, add the client certificate details to the App Settings by clicking **Configuration** > **Edit** > **Custom**. See the [Running Locally](/howto/integration/use-a-client-certificate/) section of *Use a Client Certificate* for further instructions of how to add the certificate details.
