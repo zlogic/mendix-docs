@@ -80,7 +80,7 @@ If no action is taken, resources in AWS will stay around indefinitely. Make sure
 
 ## Managing a PostgreSQL Database with Microsoft Azure {#azure-database}
 
-A PostgreSQL database in Microsoft has the required `pgvector` extension (called *vector*) already installed. In the steps below is described how you can allow it to be used. If you then connect to it using the [PgVector Knowledge Base](https://marketplace.mendix.com/link/component/225063) module, this extension will be activated and the database functions as a vector database for the purpose of knowledge bases automatically.
+A PostgreSQL database in Microsoft includes the required `pgvector` extension (called *vector*) already installed. The steps below describe how to enable its use. When you connect using the [PgVector Knowledge Base](https://marketplace.mendix.com/link/component/225063) module, this extension activates automatically allowing the database to function as a vector database for knowledge bases.
 
 ### Creating a PostgreSQL Database with Microsoft Azure {#azure-database-create}
 
