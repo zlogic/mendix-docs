@@ -47,6 +47,10 @@ As the administrator, you can perform the following actions:
 * In the **Taxonomy Management** tab, you can configure the supported Studio Pro versions and sub-categories that your users can select when creating Marketplace content. You can also view and edit the available licenses.
 * In the **Content Import** tab, you can view the contents available in your Private Marketplace. You can also download and import the modules in bulk.
 
+## Deployment {#deployment}
+
+In the **Deployment** section, administrators can manage existing clusters and register new ones.
+
 ## Users
 
 In the **User Management** section, administrators can manage user accounts and user groups.
@@ -65,3 +69,7 @@ As the administrator, you can perform the following actions:
     * Delete a user account
 
 In the **Group Management** tab, you can create and edit user groups. These groups typically reflect your organization's structure. You can also use the **Automation Settings** option to automatically assign users to groups based on their profile attributes.
+
+## Platform
+
+In the **Deployment** section, administrators can view and manage statistics, activity logs, webhooks, and licenses..
