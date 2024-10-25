@@ -169,9 +169,9 @@ Add the action microflow to an existing `ProviderConfig` by using the **Set Chat
 #### Creating a Custom Action Microflow
 
 A typical action microflow is responsible for the following:
-* Convert the `ChatContext` with user input to a `Request` structure for the chat completion operation.
+* Convert the `ChatContext` with user input to a `Request` structure for the chat completions operation.
 * Retrieve the connection details (i.e. credentials, configuration, etc.) for the operation.
-* Execute the chat completion operation for the LLM of choice.
+* Execute the chat completions operation for the LLM of choice.
 * Update the `ChatContext` structure based on the response so that the user can see the result in the UI.
 
 If you want to create your custom action microflow, keep the following considerations in mind:
