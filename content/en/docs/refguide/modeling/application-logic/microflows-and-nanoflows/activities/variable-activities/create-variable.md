@@ -18,7 +18,7 @@ For example, you can create a *$Discount* variable and assign a value of *0.5* t
 
 A variable will be in scope for the entire flow and can be used by all activities following the create variable activity in the flow.
 
-Variables created inside a loop are not accessible outside the loop.
+Variables created inside a loop are not accessible outside the loop. In this case the variable will persist within the loop but the value will be reset to the initial value for each iteration.
 
 ## Properties
 
@@ -50,8 +50,6 @@ Defines the initial value of the variable. The value is entered using an [expres
 ### Variable Name
 
 Variable name defines the name of the resulting variable. The variable can be used by all activities following this activity in the flow. Each variable you create must have a different name.
-
-You can create a variable within a loop in which case the variable will persist within the loop but the value will be reset to the initial value. Variables created inside loops are not available once the loop is terminated.
 
 ## Common Section {#common}
 
