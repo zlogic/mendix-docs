@@ -21,3 +21,79 @@ OQL queries do not take security into account out-of-the-box. This means that yo
 {{% /alert %}}
 
 Try your OQL example online with the [OQL Playground](https://service.mendixcloud.com/p/OQL) demo app. 
+
+## Reserved Words {#reserved-oql-words}
+
+Words with a specific purpose in OQL are reserved. If you use reserved words for entity, variable or attribute names in an OQL query, they must be wrapped in double quotes `" "`. For example, in the OQL query `SELECT AVG(TotalPrice) FROM Sales."Order" WHERE IsPaid = 1`, `Order` needs to be wrapped in quotes because it is a reserved word, as it can be used for `ORDER BY`.
+
+Here is a list of all OQL reserved words:
+
+* `ALL`
+* `AND`
+* `AS`
+* `ASC`
+* `AVG`
+* `BOOLEAN`
+* `BY`
+* `CASE`
+* `CAST`
+* `COALESCE`
+* `COUNT`
+* `DATEDIFF`
+* `DATEPART`
+* `DATETIME`
+* `DAY`
+* `DAYOFYEAR`
+* `DECIMAL`
+* `DESC`
+* `DISTINCT`
+* `ELSE`
+* `END`
+* `EXISTS`
+* `FALSE`
+* `FLOAT`
+* `FROM`
+* `FULL`
+* `GROUP`
+* `HAVING`
+* `HOUR`
+* `IN`
+* `INNER`
+* `INTEGER`
+* `IS`
+* `JOIN`
+* `LEFT`
+* `LENGTH`
+* `LIKE`
+* `LIMIT`
+* `LONG`
+* `MAX`
+* `MILLISECOND`
+* `MIN`
+* `MINUTE`
+* `MONTH`
+* `NEXTVALUE`
+* `NOT`
+* `NULL`
+* `OFFSET`
+* `ON`
+* `OR`
+* `ORDER`
+* `OUTER`
+* `QUARTER`
+* `RANGEBEGIN`
+* `RANGEEND`
+* `RIGHT`
+* `ROUND`
+* `SECOND`
+* `SELECT`
+* `STRING`
+* `SUM`
+* `THEN`
+* `TRUE`
+* `UNION`
+* `WEEK`
+* `WEEKDAY`
+* `WHEN`
+* `WHERE`
+* `YEAR`
