@@ -238,7 +238,7 @@ You can use an alias to replace the entity name:
 
 ```sql
 SELECT Cust/LastName
-FROM Sales.Customer Cust
+FROM Sales.Customer AS Cust
 ```
 
 #### Select from Multiple Entities
