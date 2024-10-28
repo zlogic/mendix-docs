@@ -40,7 +40,7 @@ Micrometer can send metrics to multiple registries. To configure micrometer for 
 
 The details of each settings are listed below.
 
-* `type` *(mandatory)* – the type of registry to use. Currently supported types are [`prometheus`](https://prometheus.io/docs/introduction/overview/), [`jmx`](https://www.oracle.com/java/technologies/javase/javamanagement.html), [`influx`](https://www.influxdata.com/), [`statsd`](https://www.datadoghq.com/dg/monitor/ts/statsd/) and [`opentelemetry`](https://opentelemetry.io/docs/). Depending on the type of the registry the `settings` may vary.
+* `type` *(mandatory)* – the type of registry to use. Currently supported types are [`prometheus`](https://prometheus.io/docs/introduction/overview/), [`jmx`](https://www.oracle.com/java/technologies/javase/javamanagement.html), [`influx`](https://www.influxdata.com/), [`statsd`](https://www.datadoghq.com/dg/monitor/ts/statsd/), and [`opentelemetry`](https://opentelemetry.io/docs/). Depending on the type of the registry the `settings` may vary.
 * `settings` *(conditional mandatory)* – settings for the registry. Each registry has different settings depending upon the **type** specified. Follow the links below to see the settings for each type:
     * [Prometheus](#prometheus)
     * [jmx](#jmx)
@@ -69,8 +69,8 @@ The following settings can be used, depending on the type of metrics being gener
 | `step`                    | *Duration*     | No | all             | The step size (reporting frequency) to use                                                   | 1m                                 | `1ms`, `2s`, `3m`, `4h`, `5d` or [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) -> `P3Y6M4DT12H30M5S` |
 | `filters`                 | *Json*         | No | all             | Custom setting from Mendix to filter metrics                                                 | -                                  | [See below](#filters)
 | `aggregationTemporality`  | *String*       | No | opentelemetry   | Determines how the additive quantities are expressed, in relation to time                    | `cumulative`                       | `cumulative` or `delta`
-| `headers`                 | *String*       | No | opentelemetry   | additional headers to send with exported metrics, this can be used for authorization headers | -                                  | "header1=value1,header2=value2"
-| `resourceAttributes`      | *String*       | No | opentelemetry   | list of attributes which can be used for including information about the environment         | -                                  | "attribute1=value1,attribute2=value2"
+| `headers`                 | *String*       | No | opentelemetry   | Additional headers to send with exported metrics, this can be used for authorization headers | -                                  | "header1=value1,header2=value2"
+| `resourceAttributes`      | *String*       | No | opentelemetry   | List of attributes which can be used for including information about the environment         | -                                  | "attribute1=value1,attribute2=value2"
 
 #### Prometheus{#prometheus}
 
@@ -220,6 +220,10 @@ Example 2
 ```
 
 #### OpenTelemetry{#opentelemetry}
+
+{{% alert color="info" %}}
+This feature was introduced in Mendix versions 10.17.0.
+{{% /alert %}}
 
 * `url` – the OpenTelemetry metrics endpoint url to which data is reported.
 * `aggregationTemporality` – aggregation temporality determines how the additive quantities are expressed, in relation to time. The supported values are `cumulative` or `delta`. Defaults to `cumulative`.
