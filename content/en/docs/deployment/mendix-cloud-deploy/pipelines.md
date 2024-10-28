@@ -26,7 +26,7 @@ If you need to configure your user settings so that you can run a pipeline for t
 
 ## The Runs Tab{#runs-tab}
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/runs-tab.png" alt="" >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/runs_tab.png" alt="" >}}
 
 For each run, you can view the following information:
 
@@ -74,7 +74,7 @@ If a system-level error occurs, the card in the upper-left corner of the **Resul
  
 ## The Designs Tab{#designs-tab}
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/designs-tab.png" alt="" >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/designs_tab.png" alt="" >}}
 
 On the **Designs** tab, you can see all existing pipeline designs.
 
@@ -126,31 +126,62 @@ Active pipelines cannot be edited; if you want to edit an existing pipeline, mak
 
 #### Pipeline Steps{#pipeline-steps}
 
-To add a step, launch the **Pipeline Steps** dialog box by clicking **Add Step** ({{% icon name="add" %}}).
+To add a step, launch the **Pipeline Steps** dialog box by clicking **Add Step** ({{% icon name="add" %}}). Expand each step to configure it, delete it, or view its outputs. You can expand or collapse any step in your pipeline by clicking the step's name.
 
 Your pipeline can include the following steps:
 
-* Start Pipeline – This is a mandatory step for each pipeline; you cannot delete this step. This step defines the conditions that will automatically trigger the pipeline to run. To configure this step, define the conditions on which the pipeline should start. You can set the pipeline to run in response to the **Teamserver push** trigger, the **Recurring schedule** trigger, or the **Manual** trigger:
-    * Teamserver push (Git) – The pipeline runs when a new push is made to Teamserver (Git) for the specified branch. For details on specifying the branch in the **Branch Expression** field, see [Branch Expression](#branch-expression), below.
-    * Recurring schedule – The pipeline runs on a recurring weekly schedule, on the days and times you specify. This works for both Git and SVN repositories. Times are set in UTC.
-    * Manual – The pipeline runs when you click **Run Manual Pipeline** from either the **Runs** or **Designs** tabs of the Pipelines page. 
-* Checkout – Check out a branch. To configure this step, use the drop-down menu to select the branch to check out. You can select either the main branch or one of your most recently used branches.
-* Build – Build a deployment package based on the latest major, minor, or patch version of the branch you checked out. The highest version is incremented based on the increment settings specified in this step.
-* Maia Best Practice Recommender – Evaluate results of the [Maia Best Practice Recommender](/refguide/best-practice-recommender/) within your pipeline. You can configure this step to fail the pipeline if errors, warnings, deprecations, and/or recommendations are detected.
-* Unit Testing – This step executes the [Unit Testing](/appstore/modules/unit-testing/) module in a running environment. If any unit test fails, the pipeline will be marked as failed, with the run details and output parameters showing the failure count and relevant information. Ensure to add below prerequisites before you add the Unit Testing pipeline step.
+##### Start Pipeline
 
-    * Import the [Unit Testing](https://marketplace.mendix.com/link/component/390) module into your Mendix application from the Marketplace.
-    * The environment for the Unit Testing must be in running state.
+This is a mandatory step for each pipeline; you cannot delete this step. This step defines the conditions that will automatically trigger the pipeline to run. To configure this step, define the conditions on which the pipeline should start. You can set the pipeline to run in response to the **Teamserver push** trigger, the **Recurring schedule** trigger, or the **Manual** trigger:
 
-    Since the endpoint is secured with secret credentials, Mendix releases the pipeline variables, allowing the customer to configure them securely during the unit testing step. This step will call the unit testing API endpoint, similar to how a customer would do it. For more information, see the [Running Unit Tests Through the Remote API](/appstore/modules/unit-testing/#running-unit-tests-through-the-remote-api) section of *Unit Testing*.
-* Publish – Publish the newly built deployment package to a repository.
-* Start Environment – Start a selected environment.
-* Stop Environment – Stop a selected environment.
-* Create Backup – Create and store a backup of an existing environment before deploying a new deployment package.
-* Deploy – Deploy to a selected environment. In this step's configuration, there is a **Use defaults for new constants** toggle that you can use to fetch the default values of new constants and scheduled events from Studio Pro and apply them to the environment. (To adjust an environment-specific configuration, see the [Environments](/developerportal/deploy/environments/) page.)
-* Promote Package – Promote a deployment package from a source environment to a target environment. To configure this step, specify a source environment and a target environment.
+* Teamserver push (Git) – The pipeline runs when a new push is made to Teamserver (Git) for the specified branch. For details on specifying the branch in the **Branch Expression** field, see [Branch Expression](#branch-expression), below.
+* Recurring schedule – The pipeline runs on a recurring weekly schedule, on the days and times you specify. This works for both Git and SVN repositories. Times are set in UTC.
+* Manual – The pipeline runs when you click **Run Manual Pipeline** from either the **Runs** or **Designs** tabs of the Pipelines page. 
 
-Expand each step to configure it, delete it, or view its outputs. You can expand or collapse any step in your pipeline by clicking the step's name.
+##### Checkout
+
+Check out a branch. To configure this step, use the drop-down menu to select the branch to check out. You can select either the main branch or one of your most recently used branches.
+
+##### Build
+
+Build a deployment package based on the latest major, minor, or patch version of the branch you checked out. The highest version is incremented based on the increment settings specified in this step.
+
+##### Maia Best Practice Recommender
+
+Evaluate results of the [Maia Best Practice Recommender](/refguide/best-practice-recommender/) within your pipeline. You can configure this step to fail the pipeline if errors, warnings, deprecations, and/or recommendations are detected.
+
+##### Unit Testing
+
+This step executes the [Unit Testing](/appstore/modules/unit-testing/) module in a running environment. If any unit test fails, the pipeline will be marked as failed, with the run details and output parameters showing the failure count and relevant information. Ensure to add below prerequisites before you add the Unit Testing pipeline step:
+
+* Import the [Unit Testing](https://marketplace.mendix.com/link/component/390) module into your Mendix application from the Marketplace.
+* The environment for the Unit Testing must be in running state.
+
+Since the endpoint is secured with secret credentials, Mendix releases the pipeline variables, allowing the customer to configure them securely during the unit testing step. This step will call the unit testing API endpoint, similar to how a customer would do it. For more information, see the [Running Unit Tests Through the Remote API](/appstore/modules/unit-testing/#running-unit-tests-through-the-remote-api) section of *Unit Testing*.
+
+##### Publish
+
+Publish the newly built deployment package to a repository.
+
+##### Start Environment
+
+Start a selected environment.
+
+##### Stop Environment 
+
+Stop a selected environment.
+
+##### Create Backup 
+
+Create and store a backup of an existing environment before deploying a new deployment package.
+
+##### Deploy 
+
+Deploy to a selected environment. In this step's configuration, there is a **Use defaults for new constants** toggle that you can use to fetch the default values of new constants and scheduled events from Studio Pro and apply them to the environment. (To adjust an environment-specific configuration, see the [Environments](/developerportal/deploy/environments/) page.)
+
+##### Promote Package
+
+Promote a deployment package from a source environment to a target environment. To configure this step, specify a source environment and a target environment.
 
 #### Branch Expression{#branch-expression}
 
@@ -219,11 +250,15 @@ The pipeline design's status (**Active** or **Inactive**) is displayed in the ov
 
 ## The Variables Tab{#variable-tab}
 
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/variables_tab.png" alt="" >}}
+
 The **Variables** tab lets you configure your own variables. These user-defined variables become available in the pipeline steps. It is useful when you want to use the same value in multiple pipelines or avoid storing secret credentials as plain text in your pipeline step.
 
 ### Creating a New Variable
 
 To create  a new variable, click **Create New Variable** from the **Variables** tab and open a dialog box. Enter a name for your variable in the **Name** field. The variable name must begin with a letter or underscore. (`_`) and must be unique from existing variables.
+
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/create_variable.png" alt="" >}}
 
 Click **Save Variable** to save your variable. You can now select it in the unit testing step.
 
@@ -237,7 +272,7 @@ While editing a saved variable, selecting **Mask > No** will allow you to verify
 
 ## The Settings Tab{#settings-tab}
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/settings-tab.png" >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/settings_tab.png" >}}
 
 The **Settings** tab lets you configure user settings. You must add your API key and personal access token (PAT) before you can activate or run your first pipeline. If you still need to configure these user settings, the **Settings** tab is marked with an alert icon ({{% icon name="alert-circle-filled" color="red" %}}).
 
