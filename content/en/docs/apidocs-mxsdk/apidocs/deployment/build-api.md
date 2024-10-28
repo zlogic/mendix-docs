@@ -294,6 +294,10 @@ An object with the following key-value pairs:
 * `Version` (String) : Package version. This will also be the name of the tag on the project team server.
 * `Description` (String) : Description of the package.
 
+{{% alert color="warning" %}}
+For apps using SVN for version control, this call will build the specified revision even if that revision is not on the specified branch.
+{{% /alert %}}
+
 ##### Example
 
 ```http
