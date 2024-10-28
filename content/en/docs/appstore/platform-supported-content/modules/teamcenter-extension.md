@@ -46,11 +46,11 @@ The compatibility among Teamcenter Extension, Teamcenter Connector, and Studio P
 | 3.0.0                        | 2406.3.0                     | 10.12.6, 10.12.7, 10.16.0, and above |
 
 {{% alert color="info" %}}
-If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or below, and want to upgrade to Teamcenter Extension V 3.0.0 and Teamcenter Connector V 2406.3.0, see the [Upgrading Teamcenter Extension V 1.0.0 to V 3.0.0](#upgrade) section.
+Teamcenter Extension is not compatible with Studio Pro versions between 10.8 to 10.11, 10.13.x, 10.14.x, and 10.15.x. If you use one of these Studio Pro versions, a possible workaround is to use Teamcenter Extension in one of the compatible versions of Studio Pro first, create necessary artifacts, and then import them into your version. However, Mendix always recommends using the latest MTS or LTS Studio Pro version.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-Teamcenter Extension is not compatible with Studio Pro versions between 10.8 to 10.11, 10.13.x, 10.14.x, and 10.15.x. If you use one of these Studio Pro versions, a possible workaround is to use Teamcenter Extension in one of the compatible versions of Studio Pro first, create necessary artifacts, and then import them into your version. However, Mendix always recommends using the latest MTS or LTS Studio Pro version.
+If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or below, and want to upgrade to Teamcenter Extension V 3.0.0 and Teamcenter Connector V 2406.3.0, see the [Upgrading Teamcenter Extension V 1.0.0 to V 3.0.0](#upgrade) section.
 {{% /alert %}}
 
 ### Demo App {#demoapp}
