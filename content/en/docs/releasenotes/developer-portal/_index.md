@@ -1055,7 +1055,7 @@ We have made the following improvements to the **Access Management** page in Por
 * You can now assign team members to a user story.
 * We moved the old version of the Stories UI. You can now access it via the **More** button on the **Stories** page.
 * We removed the **Team** read-only overview page and send you straight to the [Manage Team](/developerportal/general/team/#managing) page.
-* We moved the **API Keys** page to the [General Settings](/developerportal/collaborate/general-settings/#general-settings-api-keys) page.
+* We moved the **API Keys** page to the **General Settings** page.
 * We implemented a new responsive search panel.
 * We will remove the **Burndown Chart** and **Release Plan** tabs from the Developer Portal on August 31, 2021.
 
