@@ -47,12 +47,8 @@ Clicking **Set API Key** opens this **Mendix API Key** dialog box:
 
 {{< figure src="/attachments/appstore/partner-solutions/ats/ht/v2/ht-two-connect-stories-to-testcases/mendix-api-key-dialog.png" class="no-border" >}}
 
-1. To integrate with Mendix stories, set **Use Epics ?** to **No**.
-2. To retrieve your Mendix API key, open the app in Mendix Portal and click **API Keys**.
-3. Click **Create API Key**.
-4. Enter a name in the **API key name** field and click **Generate API Key**.
-5. Copy the API key and paste it into the **Mendix API Key** field in ATS.
-6. Click **Save**.
+1. To integrate with Mendix stories, set **Use Epics ?** to **Yes**.
+2. Click **Save**.
 
 ### Integrating with Mendix Epics
 
