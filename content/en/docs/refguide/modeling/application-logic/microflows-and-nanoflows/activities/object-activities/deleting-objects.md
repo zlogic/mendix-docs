@@ -156,10 +156,10 @@ No before or after delete events will be executed in this case.
 1. Searches the device database for all objects that reference the deleted object.
 1. Clears all references to the deleted object from all objects found previously.
 1. Deletes the object from the device database.
-1. Marks the object as deleted in the offline database, which makes it possible to synchronize the deletion with the server.
+1. Marks the object as deleted in the offline database, which makes it possible to synchronize the deletion with the server using [Synchronize unsynchronized objects](/refguide/synchronize/#unsynchronized-objects) or [Synchronize all objects](/refguide/synchronize/#all-objects).
 
 Before and after events for the deleted object will be executed upon synchronization.
 
 #### Deleting a Non-Persistable Object
 
-Deleting a NPE is not supported in a nanoflow in an offline-first app.
+Deleting an NPE is not supported in a nanoflow in an offline-first app.
