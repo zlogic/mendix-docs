@@ -74,6 +74,10 @@ This setting is visible and effective when the React client is enabled. By defau
 
 ### Build
 
+#### Generate Full Debug Info
+
+Enabling this option, causes debug information about local variables in the Java actions included when building the Java actions. This will aid debugging from Eclipse. Otherwise only line numbers and source information will be included.
+
 #### Gradle Directory
 
 A directory where Gradle is located on the computer that you use to deploy the application. The correct directory is usually located automatically.
