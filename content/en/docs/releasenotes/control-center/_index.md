@@ -14,9 +14,15 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2024
 
+### October 24, 2024
+
+#### New Features
+
+* On the [Apps](/control-center/apps/) page, we added a search bar that allows you to find an app using either the app ID or the app name.
+
 ### October 17, 2024
 
-#### Improvents
+#### Improvements
 
 * We have made performance improvements to [Software Composition](/control-center/software-composition/). Software Bills of Materials (SBOMs) generated automatically upon the creation of deployment packages now show up on the **Software Composition** page within minutes.
 
