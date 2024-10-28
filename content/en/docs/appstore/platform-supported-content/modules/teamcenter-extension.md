@@ -133,7 +133,7 @@ This feature is designed specifically for generating microflows and domain model
 To open Teamcenter Extension in Studio Pro, go to **Extensions** > **Teamcenter Extension** > **Teamcenter Extension**. If you use Studio Pro versions 10.7 or lower, Teamcenter Extension is available under **View** > **Teamcenter Extension**.
 
 {{% alert color="info" %}}
-For details on the version dependencies between Studio Pro and Teamcenter Extension, see the [Prerequisites](#prerequisites) section.
+For details on the version dependencies between Studio Pro and Teamcenter Extension, see the [Dependencies](#dependencies) section.
 {{% /alert %}}
 
 The landing page has with three tabs: **Menu**, **History**, and **Settings**.
