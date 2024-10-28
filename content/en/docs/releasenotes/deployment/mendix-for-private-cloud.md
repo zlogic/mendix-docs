@@ -12,6 +12,20 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2024
 
+### October ???, 2024
+
+#### Mendix Operator v2.20.0 {#2.20.0}
+
+* We've added an option to choose a custom deployment strategy, which **in some situations** allows to update an app (or its configuration) without causing downtime. In ddition, we've also documented how to use PodDisruptionBudgets to reduce downtime during cluster upgrades. For more details, see the new [Reduced downtime deployment](/developerportal/deploy/private-cloud-reduced-downtime) page.
+* We have updated components to use Go 1.23 and the latest dependency versions in order to improve security score ratings for container images.
+* We have modified the `mxpc-cli` installation and configuration tool to return an error exit code in non-interactive mode if an error occurrs. If `mxpc-cli` was able to successfully apply changes, a normal exit code (0) will be returned.
+* We fixed a memory leak in the Mendix Gateway Agent.
+* We rephrased a _License server is not configured, runtime will run in trial mode_ log message to indicate this means that PCLM is not used for an environment.
+* We extended the `mxpc-cli version` command to return the version of `mxpc-cli` itself.
+* We changed the StorageInstance finalizers to no longer cause _prefer a domain-qualified finalizer name_ warnings in the Operator logs.
+* We fixed an issue with license checks when using Global Operator with a static license.
+* Upgrading to Mendix Operator v2.20.0 from a previous version will restart environments managed by that version of the Operator.
+
 ### October 17th, 2024
 
 #### Deploy API
