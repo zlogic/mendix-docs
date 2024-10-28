@@ -334,7 +334,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### Fixes
 
-* We fixed an issue where under certain circumstances some attributes were not exposed in the [Feedback API](/apidocs-mxsdk/apidocs/feedback-api/).
+* We fixed an issue where under certain circumstances some attributes were not exposed in the Feedback API.
 
 ### October 26, 2023
 
@@ -844,7 +844,7 @@ We have made the following improvements to the **Access Management** page in Por
 
 #### Fixes
 
-* We introduced improvements in the performance of the [Feedback API](/apidocs-mxsdk/apidocs/feedback-api/).
+* We introduced improvements in the performance of the Feedback API.
 
 #### New Features
 
@@ -946,7 +946,7 @@ We have made the following improvements to the **Access Management** page in Por
 #### Improvements
 
 * The arrival of [Git support](/refguide9/branch-line-manager-dialog/#byo-server-app) means that a new version of the [Platform SDK](/apidocs-mxsdk/mxsdk/) is in order. We made some changes to the Developer Portal to accommodate this new version, which is currently being tested and will be published soon.
-* We introduced a new version of the [Feedback API](/apidocs-mxsdk/apidocs/feedback-api/) that will be used by a new generation of [Feedback widgets](/appstore/modules/mendix-feedback/) coming to the Marketplace soon.
+* We introduced a new version of the Feedback API that will be used by a new generation of [Feedback widgets](/appstore/modules/mendix-feedback/) coming to the Marketplace soon.
 * Until now, you were not able to delete or deactivate an app if it was still deployed to an environment, regardless of whether it was a licensed environment or a sandbox for a Free App. We changed this behavior so that the only check is on whether the environment is licensed. A consequence of this change is that the cloud icon on the app tiles on the [My Apps](/developerportal/#my-apps) page is only displayed if your app is deployed to a licensed node.
 
 ### November 4, 2021
