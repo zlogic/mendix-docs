@@ -1,6 +1,7 @@
 ---
 title: "10.16"
-parent: "metamodel-10"
+url: /releasenotes/sdk/metamodel-10.16/
+weight: 84
 ---
 
 ## 10.16.0
@@ -34,5 +35,3 @@ parent: "metamodel-10"
 
 #### BoundaryEvent (Element)
 * We introduced the `annotation` property. 
-
-This page has been generated automatically.
