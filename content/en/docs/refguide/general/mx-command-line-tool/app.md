@@ -265,20 +265,20 @@ These are the required parameters:
 
 | Option | Shortcut | Result |
 | --- | --- | --- |
-| `--import-translations` | `-i` | Import the translations from the directory specified as the translation directory. This is required if export is not specified. |
-| `--export-translations` | `-e` | Export the translations from the directory specified as the translation directory. This is required if import is not specified. |
-| `--type`  | `-t` | Specify the file type to use. This can be either `xlsx` or `po` |
-| `--source-language-code`| `-s` | Specify the ISO 639 language code to use, e.g. `en_US` as the source language to translate from. This will be used as the text that needs to be translated. |
+| `--import-translations` | `-i` | Imports the translations from the directory specified as the translation directory. This is required if export is not specified. |
+| `--export-translations` | `-e` | Exports the translations from the directory specified as the translation directory. This is required if import is not specified. |
+| `--type`  | `-t` | Specifies the file type to use. This can be either `xlsx` or `po`. |
+| `--source-language-code`| `-s` | Specifies the ISO 639 language code to use (for example,`en_US` as the source language to translate from). This will be used as the text that needs to be translated. |
 
 For `PROJECT`, enter a single *.mpr* file.
-For `TRANSLATION_PATH`, enter a filepath where to import or export the translation files from.
+For `TRANSLATION_PATH`, enter a filepath to import or export the translation files from.
 
 These are the `OPTIONS`:
 
 | Option | Shortcut | Result |
 | --- | --- | --- |
-| `--force-import`  | `-f` | Accept some warnings and errors and try to continue the import process. |
-| `--loose-version-check`  | `-l` | Convert the project to the version of the mx.exe, if it is a different version. |
+| `--force-import`  | `-f` | Accepts some warnings and errors and tries to continue the import process. |
+| `--loose-version-check`  | `-l` | Converts the project to the version of the mx.exe, if it is a different version. |
 
 {{% alert color="info" %}}
 Errors in the *.mpr* are always reported.
@@ -291,8 +291,8 @@ These are example commands:
 | Example | Result |
 | --- | --- |
 | `mx translate --help` | Displays the help text for the translate command. |
-| `mx translate -i -t po -s en_US C:\MxProjects\App-main\App-main.mpr C:\MxProjects\App-main\translations` | Imports .po files from *C:\MxProjects\App-main\translations* in to the app at *C:\MxProjects\App-main\App-main.mpr* with *en_US* as the source language code. |
-| `mx translate -e -t xlsx -s en_US C:\MxProjects\App-main\App-main.mpr C:\MxProjects\App-main\translations` | Exports .xlsx files from the app at *C:\MxProjects\App-main\App-main.mpr* in to the directory at *C:\MxProjects\App-main\translations* with *en_US* as the source language code. |
+| `mx translate -i -t po -s en_US C:\MxProjects\App-main\App-main.mpr C:\MxProjects\App-main\translations` | Imports `.po` files from *C:\MxProjects\App-main\translations* in to the app at *C:\MxProjects\App-main\App-main.mpr* with *en_US* as the source language code. |
+| `mx translate -e -t xlsx -s en_US C:\MxProjects\App-main\App-main.mpr C:\MxProjects\App-main\translations` | Exports `.xlsx` files from the app at *C:\MxProjects\App-main\App-main.mpr* in to the directory at *C:\MxProjects\App-main\translations* with *en_US* as the source language code. |
 
 ### Return Codes
 
@@ -301,5 +301,5 @@ These are the return codes:
 | Return Code | Description |
 | --- | --- |
 | `0` | No issues found. |
-| `100` | Validation errror on the input. |
+| `100` | Validation error on the input. |
 | `300` | Exception, something went wrong. |
