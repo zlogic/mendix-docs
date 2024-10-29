@@ -55,15 +55,21 @@ The prerequisites are the following:
     | [.NET Desktop Runtime 6.0.x](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) <br/> Mendix recommends using version 6.0.6 or above | [.NET Desktop Runtime 8.0.x](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) |
 
 * [Eclipse Temurin JDK 11, 17, or 21 (x64)](https://adoptium.net/temurin/releases/?version=21) (see [JDK Installation](/refguide/jdk-installation/) if you want to install another version of the JDK)
+
 * [Microsoft Visual C++ 2015 and 2019 Redistributable Package](https://aka.ms/vs/16/release/vc_redist.x64.exe)
+
 * [Mendix Native Mobile Builder one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
+
 * [Git for Windows (x64)](https://git-scm.com/download/win) using the versions described below. These are the versions of Git that Studio Pro installs if the Git version installed on the system is below the suggested one.  
   
     | Studio Pro 10.0.0 - 10.1.0 | Studio Pro 10.2.0 - 10.9 | Studio Pro 10.6.10 (MTS), 10.10 and above
     | --- | --- | --- |
     | [2.37.1](https://github.com/git-for-windows/git/releases/tag/v2.37.1.windows.1) | [2.41.0](https://github.com/git-for-windows/git/releases/tag/v2.41.0.windows.3) | [2.43.0](https://github.com/git-for-windows/git/releases/tag/v2.43.0.windows.1)|
     
+    {{% alert color="info" %}}Git does not get installed automatically because it needs Admin rights.{{% /alert %}}
+    
 * [Microsoft Edge WebView2 Evergreen Runtime (x64 or ARM64) (Evergreen Standalone Installer version)](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
+
 * [Gradle 7.6 or above](https://gradle.org/install/#manually) with Gradle extracted to the parent directory of the folder where Studio Pro is installed (usually `C:\Program Files\Mendix`) instead of `C:\Gradle`.
 
 Based on the error message you get from the installer, you can choose to install a single prerequisite, or you can try to manually install them all.
@@ -109,7 +115,9 @@ Mendix offers a Studio Pro installer called the **Portable** installer that does
 
 While the regular installer installs Mendix Studio Pro dependencies in system directories, the portable installer installs Studio Pro in a user-level directory together with all the dependencies. This means that dependencies are not shared between Studio Pro versions, which results in higher disk space usage. In return, you do not require admin rights to install Studio Pro and you can still use all the functionalities.
 
-The portable installer does not include all tools that come installed with Studio Pro or can be leveraged by Studio Pro, such as the MPR tool, mx, MxBuild, mxuit, or the Console Log. The portable installer only includes the tools that are necessary to be able to build with Studio Pro and to run apps locally. 
+For Studio Pro version below 10.14, the portable installer does not include all tools that come installed with Studio Pro or can be leveraged by Studio Pro, such as the MPR tool, mx, MxBuild, mxuit, or the Console Log. The portable installer only includes the tools that are necessary to be able to build with Studio Pro and to run apps locally. 
+
+For Studio Pro 10.14 or above, the portable installer for Windows x64 and arm64 includes mx, mxbuild, mxutil, MprTool and MendixConsoleLog.
 
 Mendix Studio Pro that is installed via the portable installer does not show up in the in the Mendix Version Selector where you can manage Mendix versions. However, you can manually add a Studio Pro version by clicking **Add custom version** in the **Manage Mendix versions** and specifying the path to the executable file of the Studio Pro version:
 
