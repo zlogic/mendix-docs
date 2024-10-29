@@ -8,11 +8,12 @@ weight: 20
 
 Mendix supports different technologies to build mobile applications. Besides responsive web apps, you can build native mobile apps or progress web apps. You can use pages, widgets, nanoflows, JavaScript actions, microflows, and many other familiar elements to build your app.
 
-These different technologies (for example, responsive, native phone) can be configured in a single model using navigation profiles. Mobile profiles can be added and removed separately. If you add a profile, you must also provide a home page for it. For more information on navigation profiles, see [Navigation](/refguide/navigation/).
+These different technologies (for example: responsive, native phone) can be configured in a single model using navigation profiles. Mobile profiles can be added and removed separately. If you add a profile, you must also provide a home page for it. For more information on navigation profiles, see [Navigation](/refguide/navigation/).
 
 ## Progressive Web Apps {#pwa}
 
 Progressive web apps (PWAs) are an evolution of traditional web apps. Overall, PWAs tend to behave more like native mobile apps. One key difference, however, is that PWAs are not distributed via app stores but can be accessed directly in the browser.
+
 Progressive web apps have several advantages over regular web applications:
 
 * They can be installed by adding them to the home page on Android and iOS devices. This makes the app easily accessible for the user, provides more screen space to the app by hiding the browser controls, and stores the offline data separate from the browser making it more secure.
