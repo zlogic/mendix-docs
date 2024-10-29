@@ -20,7 +20,7 @@ Progressive web apps have several advantages over regular web applications:
 * They can make use of more native capabilities, such as push notifications.
 * They can be deployed using mobile device management solutions.
 
-Publishing PWAs is the same as publishing regular web applications with Mendix. Once the application is deployed, users can simply access the PWA by opening the application URL. This makes PWAs a great alternative to quickly provide and update a mobile app.
+Publishing PWAs is the same as publishing regular web applications with Mendix. Once the application is deployed, users can simply access the PWA by opening the application URL. Considering PWA and web apps are equally easy to publish, we recommend you use PWAs to take advantage of their additional capabilities.
 
 For more information, see [Progressive Web App](/refguide/mobile/introduction-to-mobile-technologies/progressive-web-app/).
 
