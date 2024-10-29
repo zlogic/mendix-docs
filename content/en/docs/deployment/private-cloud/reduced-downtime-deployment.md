@@ -68,8 +68,6 @@ These changes will be deployed with downtime, because the model needs to be upda
 * Updating the object model in the app itself, or its Marketplace modules
 * Updating to a newer Mendix version
 
-<!-- TODO: document how to navigate and enable this in Portunus -->
-
 #### Use PreferRolling strategy in Standalone environments {#prefer-rolling-in-standalone}
 
 To enable reduced downtime deployments, add the `deploymetStrategy` section to your `MendixApp` CR
