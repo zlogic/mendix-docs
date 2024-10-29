@@ -76,7 +76,7 @@ This setting is visible and effective when the React client is enabled. By defau
 
 #### Generate Full Debug Info
 
-Enabling this option, causes debug information about local variables in the Java actions included when building the Java actions. This will aid debugging from Eclipse. Otherwise only line numbers and source information will be included.
+Enabling this option includes debug information about local variables in the Java actions when building them, which aids debugging from Eclipse. Without this option, only line numbers and source information will be included.
 
 #### Gradle Directory
 
