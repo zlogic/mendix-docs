@@ -5,7 +5,7 @@ weight: 20
 ---
 
 {{% alert color="info" %}}
-Non-interrupting boundary events were in public beta in Studio Pro 10.15 and released in GA in Studio Pro 10.16.
+Non-interrupting timer boundary events were in public beta in Studio Pro 10.15 and released in GA in Studio Pro 10.16.
 {{% /alert %}}
 
 ## Introduction
