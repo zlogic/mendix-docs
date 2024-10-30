@@ -79,7 +79,6 @@ before_script:
 ##############
   - pyenv versions # list python versions supported by pyenv in case version in next command is removed
   - pyenv global 3.8 # this version needs to be already installed in the travis build
-  - pyenv global 3.6 # add this version to try to fix build errors
   - python -V
 
 script:
