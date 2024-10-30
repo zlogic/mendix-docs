@@ -44,7 +44,7 @@ For development:
 
 For building:
 * Download updates from AWS: `https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe`
-* Download the native template from GitHub
+* Download the native template from GitHub: `https://github.com/mendix/native-template/archive/refs/tags/*.zip`
 * Optional: Upload the project to GitHub
 * Optional: Start AppCenter Pipeline: `https://api.appcenter.ms/v0.1/`
 
