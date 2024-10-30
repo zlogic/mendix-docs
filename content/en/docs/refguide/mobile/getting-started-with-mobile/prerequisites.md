@@ -46,7 +46,7 @@ For building:
 * Download updates from AWS: `https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe`
 * Determine which native template version to download: `https://raw.githubusercontent.com/mendix/native-template/master/mendix_version.json`
 * Download the native template from GitHub: `https://github.com/mendix/native-template/archive/refs/tags/*.zip`
-* Optional: Upload the project to GitHub
+* Optional: Upload the project to GitHub: `https://api.github.com/`
 * Optional: Start AppCenter Pipeline: `https://api.appcenter.ms/v0.1/`
 
 In some situations, it can be beneficial to designate a single machine for building native mobile apps or outsourcing the process to a partner.
