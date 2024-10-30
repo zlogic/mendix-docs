@@ -805,9 +805,9 @@ Mendix recommends using horizontal pod autoscaling to adjust environments to mee
 Vertical pod autoscaling cannot be combined with horizontal pod autoscaling.
 {{% /alert %}}
 
-### Log format
+### Log Format
 
-#### Runtime log format{#runtime-log-format}
+#### Runtime Log Format {#runtime-log-format}
 
 Mendix Operator version 2.11.0 or above allows you to specify the log format used by Mendix apps.
 
@@ -842,7 +842,7 @@ In the `json` format, newline characters will be sent as `\n` (as specified in t
 For example, to correctly display newline characters in Grafana, use the [Escape newlines](https://github.com/grafana/grafana/pull/31352) button.
 {{% /alert %}}
 
-### Log levels {#log-levels}
+### Log Levels {#log-levels}
 
 Mendix Operator version 2.19.0 and above allows you to configure the log levels for your Operator pods. 
 
@@ -886,9 +886,9 @@ spec:
 
 By default, the log level value is set to L1 level for operator pods.
 
-### Pod labels {#pod-labels}
+### Pod Labels {#pod-labels}
 
-#### General pod labels
+#### General Pod Labels
 
 Mendix Operator version 2.13.0 or above allows you to specify default pod labels for app-related pods: task pods (build and storage provisioners) and runtime (app) pods.
 
@@ -914,7 +914,7 @@ Alternatively, for Standalone clusters, pod labels can be specified in the `Mend
 The Mendix Operator uses some labels for internal use. To avoid conflicts with these internal pod labels, please avoid using labels starting with the `privatecloud.mendix.com/` prefix.
 {{% /alert %}}
 
-### Delaying app shutdown {#termination-delay}
+### Delaying App Shutdown {#termination-delay}
 
 In some situations, shutting down a replica immediately could cause isses.
 For example, the [Azure Gateway Ingress Controller](https://azure.github.io/application-gateway-kubernetes-ingress/how-tos/minimize-downtime-during-deployments/) needs up to 90 seconds to remove a pod from its routing table.
