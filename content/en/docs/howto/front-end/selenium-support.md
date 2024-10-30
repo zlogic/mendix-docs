@@ -2,7 +2,7 @@
 title: "Configure Selenium Support"
 url: /howto/front-end/selenium-support/
 weight: 16
-description: "Describes how to use naming conventions and avoid pitfalls using Selenium."
+description: "Describes Selenium best practices, including advice on naming conventions."
 aliases:
     - /howto/integration/selenium-support/
 ---
@@ -14,7 +14,7 @@ Mendix uses CSS classes to identify page content like widgets and pop-up windows
 This how-to teaches you how to do the following:
 
 * Use naming conventions
-* Avoid pitfalls
+* Use best practices 
 
 ## Naming Conventions
 
@@ -26,7 +26,7 @@ Some widgets, like grids or list views, can show multiple items. Every item has 
 
 The easiest way to discover these names is to use a browser's developer tool.
 
-## Pitfalls
+## Best Practices
 
 ### Nested Widgets
 
