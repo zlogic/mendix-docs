@@ -291,7 +291,7 @@ AWS S3 is also supported in the Windows Service Console.
 Internet Explorer is not supported in Studio Pro 10.
 {{% /alert %}}
 
-## Mobile Operating Systems {#mobileos}
+## Mobile {#mobileos}
 
 For native and progressive web apps built with Mendix, the following operating system versions are supported:
 
@@ -308,6 +308,8 @@ Mendix recommends the following minimum hardware requirements for all mobile dev
 * Memory: minimum 2 GB
 
 Depending on your app's complexity, these minimum hardware requirements might not be sufficient and should be adjusted.
+
+Developing native mobile apps with Mendix comes with special requirements explained in [Native App Prerequisites and Troubleshooting](/refguide/mobile/getting-started-with-mobile/prerequisites/).
 
 ## MxBuild {#mxbuild}
 
