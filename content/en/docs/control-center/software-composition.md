@@ -107,7 +107,33 @@ The list shows the following information about the component:
     
     For more information, refer to [SBOM Generation](/refguide/sbom-generation/).
     
+* **Support**
+
+    * **Mendix**
+    * **Partner**
+    * **Community**
+
 * **Version**: This is the component version.
+
+* **Company usage**
+
+    * **Direct**
+    * **Transitive**
+
+* **Support type**
+
+    * **Mendix**
+    * **Partner**
+    * **Community**
+
+* **Licence**
+
+* **Latest version**
+
+* **Marketplace**
+
+    * **Public**
+    * **Private**
 
 * **Apps using component**: This shows the number of apps where the component is used.
 
