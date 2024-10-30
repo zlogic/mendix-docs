@@ -37,7 +37,6 @@ Here is a list of all OQL reserved words:
 * `BY`
 * `CASE`
 * `CAST`
-* `COALESCE`
 * `COUNT`
 * `DATEDIFF`
 * `DATEPART`
@@ -63,7 +62,6 @@ Here is a list of all OQL reserved words:
 * `IS`
 * `JOIN`
 * `LEFT`
-* `LENGTH`
 * `LIKE`
 * `LIMIT`
 * `LONG`
@@ -72,7 +70,6 @@ Here is a list of all OQL reserved words:
 * `MIN`
 * `MINUTE`
 * `MONTH`
-* `NEXTVALUE`
 * `NOT`
 * `NULL`
 * `OFFSET`
@@ -81,10 +78,7 @@ Here is a list of all OQL reserved words:
 * `ORDER`
 * `OUTER`
 * `QUARTER`
-* `RANGEBEGIN`
-* `RANGEEND`
 * `RIGHT`
-* `ROUND`
 * `SECOND`
 * `SELECT`
 * `STRING`

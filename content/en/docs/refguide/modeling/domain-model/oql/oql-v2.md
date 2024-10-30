@@ -12,6 +12,59 @@ OQL v2 syntax is not different from OQL. There is a few differences in handling 
 
 The following changes are included in OQL v2:
 
+### `GROUP BY` association is no longer allowed
+
+In OQL v2, is is no longer possible to use a path over association in a `GROUP BY` query because the outcome of such query was unpredictable in case of one-to-many and many-to-many associations.
+
+This query is not allowed anymore:
+
+```sql
+SELECT COUNT(*)
+FROM Module.Person
+GROUP BY Module.Person/Module.Person_City/Module.City/Name
+```
+
+Instead, you can use the long path in `JOIN` pattern the following way:
+
+```sql
+SELECT COUNT(*)
+FROM Module.Person AS P
+JOIN Module.Person/Module.Person_City/Module.City AS C
+GROUP BY C/Name
+```
+
+### More strict data type validation in OQL functions
+
+! TODO: this will be added when implemented, as there are ambuiguities
+
+### Subquery columns should have a name or an alias
+
+When a column in the `SELECT` clause is a subquery, it is possible for it not to have a name. For example:
+
+```sql
+SELECT
+  Name,
+  (
+    SELECT COUNT(*)
+    FROM Module.Person
+    WHERE Module.Person/City = Module.City/Name
+  )
+FROM Module.City
+```
+
+In OQL v2, such queries are no longer allowed. An alias should always be provided for subqueries that do not result in a named column:
+
+```sql
+SELECT
+  Name,
+  (
+    SELECT COUNT(*)
+    FROM Module.Person
+    WHERE Module.Person/City = Module.City/Name
+  ) AS PersonCount
+FROM Module.City
+```
+
 ### Handling of duplcate columns in `SELECT`: No longer possible to use duplicate column without entity name
 
 It is no longer allowed to select an attribute name when it is not clear which entity the attribute belongs to.
@@ -43,24 +96,22 @@ JOIN (SELECT * FROM Module.City) C
 ON P/Residence = C/Name
 ```
 
-If attribute names are specified explicitly, retrieving duplicate columns with `*` is not allowed, the same as in OQL v1. In this case, use aliases.
-
-The following is **not allowed**:
+Having concrete duplicate attribute names is also now allowed:
 
 ```sql
 SELECT *
-FROM (SELECT Name, Residence FROM Module.Person) P
+FROM (SELECT Name FROM Module.Person) P
 JOIN (SELECT Name FROM Module.City) C
 ON P/Residence = C/Name
 ```
 
-But it is allowed if aliases are used:
+But using duplicate aliases in different joined subqueries leads to an error the same way as in OQL v1. The following is **not allowed**:
 
 ```sql
 SELECT *
-FROM (SELECT Name AS PersonName, Residence FROM Module.Person) P
-JOIN (SELECT Name AS CityName FROM Module.City) C
-ON P/Residence = C/CityName
+FROM (SELECT LastName AS N FROM Module.Person) P
+JOIN (SELECT Name AS N FROM Module.City) C
+ON P/Residence = C/Name
 ```
 
 ### `ORDER BY` without `LIMIT` and `OFFSET` in subquery is no longer allowed
@@ -94,7 +145,7 @@ FROM (
 
 ### `ORDER BY` without `LIMIT` and `OFFSET` in View Entity is not allowed
 
-For view entities, having `ORDER BY` without `LIMIT` and/or `OFFSET` is not allowed even for the top level query. Similarly to the case of subqueries, view entitiy results are not accessed directly, but are often subject of further filtering and ordering. TRherefore, it would not make sense to have `ORDER BY` directly in the view entity definition unless it is used to select a slice of the result by the means of `LIMIT` and/or `OFFSET`.
+For view entities, having `ORDER BY` without `LIMIT` and/or `OFFSET` is not allowed even for the top level query. Similarly to the case of subqueries, view entitiy results are not accessed directly. In Runtime, a View entity is wrapped inside another `SELECT` query as a subquery, which allows further filtering and ordering, which makes it similar to the Subquery case.
 
 ### Changes in result type handling of arithmetic functions
 
@@ -113,7 +164,7 @@ OQL v2 hjas more control over arithmetic operations. For numeric types (Integer,
 - Long
 - Integer
 
-If any side of the operation is of a non-numeric type, no casting is performed, and we let the database handle such operation, the same as OQL v1.
+If any side of the operation is of a non-numeric type, no casting is performed, and we let the database handle such operation, the same as OQL v1. See [Expression syntax](/refguide/oql-expression-syntax/#type-coercion)
 
 ### The result type of `ROUND` is now `Decimal`
 
@@ -134,3 +185,21 @@ JOIN Module.City
 ```
 
 Such query would fail in every supported database engine except MySQL. Now we require to either specify `ON` or to use join over association.
+
+The query above can be rewritten as:
+
+```sql
+SELECT *
+FROM Module.Person, Module.City
+```
+
+### `JOIN` of an entity to its own generalization does not generate unexpected specialization columns anymore
+
+Let's say Entity `Module.Vehicle` has two specializations: `Module.Car` and `Module.Bike`. The query below would generate unexpected duplicate columns for entity `Vehicle`. We fixed that bug.
+
+```sql
+SELECT *
+FROM Module.Car
+JOIN Module.Vehicle
+ON True
+```
