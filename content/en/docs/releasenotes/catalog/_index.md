@@ -14,6 +14,16 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 ## 2024
 
+### October 31, 2024
+
+#### Fixes
+
+* Fixed a bug where clicking on search results would lead to an error.
+
+#### Features
+
+* Added support for Web Services (SOAP) through automatic registration and manual API registration. 
+
 ### October 17, 2024
 
 #### Features
