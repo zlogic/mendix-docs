@@ -29,18 +29,6 @@ Teamcenter Extension offers the following integration options:
 
 Teamcenter Extension is free to download and use. You may, however, require a Teamcenter (Author or Consumer) license to connect to Teamcenter.
 
-### Prerequisites {#prerequisites}
-
-The compatibility between Teamcenter Extension and Studio Pro is as follows:
-
-* Teamcenter Extension V 1.0.0 is compatible with Studio Pro versions between 10.6.5 and 10.7.
-
-* Teamcenter Extension V 2.0.0 is compatible with Studio Pro version 10.12.1 and above.
-  
-* Teamcenter Extension V 3.0.0 is compatible with Studio Pro version 10.12.6 and above.
-
-{{% alert color="info" %}}Teamcenter Extension is not compatible with Studio Pro versions between 10.8 to 10.11. </br></br>If you use one of these Studio Pro versions, a possible workaround is to use Teamcenter Extension in one of the compatible versions of Studio Pro first, create necessary artifacts and then import them into your version. However, Mendix always recommends using the latest MTS or LTS Studio Pro version.{{% /alert %}}
-
 ### Dependencies {#dependencies}
 
 You must have these Marketplace modules installed:
@@ -49,7 +37,7 @@ You must have these Marketplace modules installed:
 
 * [Teamcenter Connector](https://marketplace.mendix.com/link/component/111627): needed for all versions of Teamcenter Extension
 
-  The table below details the compatibility between Teamcenter Extension, Teamcenter Connector, and Studio Pro.
+The compatibility among Teamcenter Extension, Teamcenter Connector, and Studio Pro is as follows:
 
 | Teamcenter Extension Version | Teamcenter Connector Version | Studio Pro Version |
 | ------------- | ------------- | ------------- |
@@ -57,7 +45,13 @@ You must have these Marketplace modules installed:
 | 2.0.0 | 2406.0.0 | 10.12.1 and above |
 | 3.0.0                        | 2406.3.0                     | 10.12.6, 10.12.7, 10.16.0, and above |
 
-{{% alert color="info" %}}If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or below, and want to upgrade to Teamcenter Extension V 3.0.0 and Teamcenter Connector V 2406.3.0, see the [Upgrading Teamcenter Extension V 1.0.0 to V 3.0.0](#upgrade) section.{{% /alert %}}
+{{% alert color="info" %}}
+Teamcenter Extension is not compatible with Studio Pro versions between 10.8 to 10.11, 10.13.x, 10.14.x, and 10.15.x. If you use one of these Studio Pro versions, a possible workaround is to use Teamcenter Extension in one of the compatible versions of Studio Pro first, create necessary artifacts, and then import them into your version. However, Mendix always recommends using the latest MTS or LTS Studio Pro version.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or below, and want to upgrade to Teamcenter Extension V 3.0.0 and Teamcenter Connector V 2406.3.0, see the [Upgrading Teamcenter Extension V 1.0.0 to V 3.0.0](#upgrade) section.
+{{% /alert %}}
 
 ### Demo App {#demoapp}
 
@@ -139,7 +133,7 @@ This feature is designed specifically for generating microflows and domain model
 To open Teamcenter Extension in Studio Pro, go to **Extensions** > **Teamcenter Extension** > **Teamcenter Extension**. If you use Studio Pro versions 10.7 or lower, Teamcenter Extension is available under **View** > **Teamcenter Extension**.
 
 {{% alert color="info" %}}
-For details on the version dependencies between Studio Pro and Teamcenter Extension, see the [Prerequisites](#prerequisites) section.
+For details on the version dependencies between Studio Pro and Teamcenter Extension, see the [Dependencies](#dependencies) section.
 {{% /alert %}}
 
 The landing page has with three tabs: **Menu**, **History**, and **Settings**.

@@ -1,8 +1,10 @@
 ---
 title: "Configure Selenium Support"
-url: /howto/integration/selenium-support/
+url: /howto/front-end/selenium-support/
 weight: 16
-description: "Describes how to use naming conventions and avoid pitfalls using Selenium."
+description: "Describes Selenium best practices, including advice on naming conventions."
+aliases:
+    - /howto/integration/selenium-support/
 ---
 
 ## Introduction
@@ -12,7 +14,7 @@ Mendix uses CSS classes to identify page content like widgets and pop-up windows
 This how-to teaches you how to do the following:
 
 * Use naming conventions
-* Avoid pitfalls
+* Use best practices 
 
 ## Naming Conventions
 
@@ -24,7 +26,7 @@ Some widgets, like grids or list views, can show multiple items. Every item has 
 
 The easiest way to discover these names is to use a browser's developer tool.
 
-## Pitfalls
+## Best Practices
 
 ### Nested Widgets
 
@@ -56,7 +58,6 @@ Note that the fourth row in a grid has an index of `3`.
 
 ## Read More
 
-* [Create Automated Tests with TestNG](/howto/testing/create-automated-tests-with-testng/)
 * [Test Mendix Applications Using Selenium IDE](/howto/testing/testing-mendix-applications-using-selenium-ide/)
 * [Consume a Complex Web Service](/howto/integration/consume-a-complex-web-service/)
 * [Consume a Simple Web Service](/howto/integration/consume-a-simple-web-service/)
