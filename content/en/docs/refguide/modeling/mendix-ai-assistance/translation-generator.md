@@ -30,7 +30,7 @@ Once enabled, you will find the **Generate Translations...** option in **Languag
 It helps you to translate your model to different languages. It gives translations for the languages that you have selected, using parameters in the way that works specifically for the selected languages.
 
 {{% alert color="info" %}}
-Translation Generator only translates the texts that do not have a translation yet, so when their corresponding **Translation** field is empty.
+Translation Generator only translates the texts that do not have a translation yet, so only when their corresponding **Translation** field is empty.
 {{% /alert %}}
 
 After clicking **Generate Translations...**, you will be asked to confirm your choice and be advised to review the generated translations.
