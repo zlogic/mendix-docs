@@ -47,7 +47,7 @@ As the administrator, you can perform the following actions:
 * In the **Taxonomy Management** tab, you can configure the supported Studio Pro versions and sub-categories that your users can select when creating Marketplace content. You can also view and edit the available licenses.
 * In the **Content Import** tab, you can view the contents available in your Private Marketplace. You can also download and import the modules in bulk.
 
-## Deployment {#deployment}
+## Deployment
 
 In the **Deployment** section, administrators can manage existing clusters and register new ones.
 
@@ -80,4 +80,3 @@ As the administrator, you can perform the following actions:
 * In the **Platform Logs** tab, you can view a log of actions performed by users, for example, creating and deleting apps, starting a pipeline, or adding a new user.
 * In the **Webhooks** tab, you can view and manage your [Webhooks](/developerportal/deploy/webhooks/).
 * In the **Licensing** tab, you can check the status of your licences, or upload a new Private Mendix Platform license bundle.
-    
