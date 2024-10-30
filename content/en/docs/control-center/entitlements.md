@@ -36,46 +36,46 @@ For the technical details of each cloud resource pack, see the [Cloud Resource P
 
 The tables below show how many cloud credits each cloud resource pack costs:
 
-| Standard Resource Packs    | Cloud Credits |
+| Standard Resource Packs    | Cloud Tokens |
 | ------------------------------ | ------------- |
-| XS21                           | 1             |
-| S21                            | 2             |
-| M21                            | 4             |
-| L21                            | 8             |
-| XL21                           | 16            |
-| XXL21                          | 32            |
-| XXXL21                         | 64            |
-| XXXXL21                        | 128           |
+| XS21                           | 10            |
+| S21                            | 20            |
+| M21                            | 40            |
+| L21                            | 80            |
+| XL21                           | 160           |
+| XXL21                          | 320           |
+| XXXL21                         | 640           |
+| XXXXL21                        | 1280          |
 
-|Premium Resource Packs                  | Cloud Credits |
+|Premium Resource Packs                  | Cloud Tokens |
 | ------------------------------ | ------------- |
-| S21 Premium                    | 3             |
-| M21 Premium                    | 6             |
-| L21 Premium                    | 12            |
-| XL21 Premium                   | 24            |
-| XXL21 Premium                  | 48            |
-| XXXL21 Premium                 | 96            |
-| XXXXL21 Premium                | 192           |
-| XL21 Premium Plus              | 40            |
-| XXL21 Premium Plus             | 80            |
-| XXXL21 Premium Plus            | 160           |
-| XXXXL21 Premium Plus           | 320           |
+| S21 Premium                    | 30            |
+| M21 Premium                    | 60            |
+| L21 Premium                    | 120           |
+| XL21 Premium                   | 240           |
+| XXL21 Premium                  | 480           |
+| XXXL21 Premium                 | 960           |
+| XXXXL21 Premium                | 1920          |
+| XL21 Premium Plus              | 400           |
+| XXL21 Premium Plus             | 800           |
+| XXXL21 Premium Plus            | 1600          |
+| XXXXL21 Premium Plus           | 3200          |
 
-| Legacy Resource Packs | Cloud Credits |
+| Legacy Resource Packs | Cloud Tokens |
 | ------------------------------ | ------------- |
-| XS20    | 1             |
-| S20     | 2             |
-| M20     | 4             |
-| L20     | 8             |
-| XL20    | 16            |
-| XXL20   | 32            |
-| Strato  | 1.2           |
-| Meso    | 4.67          |
-| Iono    | 6.67          |
-| Magneto | 14.67         |
-| S       | 0.8           |
-| M       | 1.6           |
-| L       | 3.73          |
-| XL      | 7.33          |
-| XXL     | 16.67         |
-| XXXL    | 64            |
+| XS20    | 10            |
+| S20     | 20           |
+| M20     | 40            |
+| L20     | 80            |
+| XL20    | 160           |
+| XXL20   | 320           |
+| Strato  | 12           |
+| Meso    | 47          |
+| Iono    | 67          |
+| Magneto | 147         |
+| S       | 8           |
+| M       | 16           |
+| L       | 37          |
+| XL      | 73          |
+| XXL     | 167         |
+| XXXL    | 640           |
