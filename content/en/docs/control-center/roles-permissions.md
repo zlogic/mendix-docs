@@ -74,14 +74,20 @@ The button Create Project Role on the top of the page will start a multi step pr
 
 **Step 1. Project Role Details**
 
+{{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-1.png" alt="Project Role Step 1" >}}
+
 * Enter a **Name** for the role. The name must not be used by any other role within the company
 * Optionally, add a **Description** to the role for further reference
 
 **Step 2. Project Permissions**
 
+{{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-2.png" alt="Project Role Step 2" >}}
+
 Set the Project Permissions. These permissions determine what the team member is allowed to do within the context of project management
 
 **Step 3. Non-production Environments**
+
+{{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-3.png" alt="Project Role Step 3" >}}
 
 Set the **Environment Permissions** for non-productive environments, such as the test or acceptance environments. These permissions will be applied to the assigned team members on the [Permission](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
 
@@ -89,6 +95,8 @@ Set the **Environment Permissions** for non-productive environments, such as the
 * When granting environment access, you can choose between **Fixed** or **Custom**. Fixed will allow you to set the permissions in this role. They can not be altered on the Permissions page. Custom will allow the Technical Contact, or anyone with Manage Permissions rights to set the permissions per environment.
 
 **Step 4. Production Environments**
+
+{{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-4.png" alt="Project Role Step 4" >}}
 
 Set the Environment Permissions for productive environments. These permissions will be applied to the assigned team members on the [Permission](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
 
@@ -100,6 +108,8 @@ Editing and saving the productive environment permissions can only be done after
 {{% /alert %}}
 
 ### Show details
+
+{{< figure src="/attachments/control-center/roles-permissions/project-role-details.png" alt="Project Role Details" >}}
 
 Clicking the **Show Details** button, opens a popup with detailed information of the role.
 Here you will find the Role ID which can be used in the [Mendix Projects API](/apidocs-mxsdk/apidocs/projects-api/).
