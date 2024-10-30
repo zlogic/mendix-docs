@@ -50,7 +50,7 @@ For building:
 
 In some situations, it can be beneficial to designate a single machine for building native mobile apps or outsourcing the process to a partner.
 
-Building native mobile apps is not supported on the [Private Mendix Platform](https://docs.mendix.com/private-mendix-platform/).
+Building native mobile apps is not supported on the [Private Mendix Platform](/private-mendix-platform/).
 
 ## Getting the Make It Native App {#get-min-app}
 
