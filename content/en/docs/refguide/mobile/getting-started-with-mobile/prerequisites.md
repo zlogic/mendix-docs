@@ -43,10 +43,10 @@ For development:
 * To preview their apps, developers need to be able to connect their mobile device running Make It Native to their Laptop running Studio Pro on ports 8080 and 8083.
 
 For building:
-* Download updates from AWS (`https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe`)
+* Download updates from AWS: `https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe`
 * Download the native template from GitHub
 * Optional: Upload the project to GitHub
-* Optional: Start AppCenter Pipeline
+* Optional: Start AppCenter Pipeline: `https://api.appcenter.ms/v0.1/`
 
 In some situations, it can be beneficial to designate a single machine for building native mobile apps or outsourcing the process to a partner.
 
