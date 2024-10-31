@@ -61,7 +61,7 @@ To access the node permissions, do the following:
 
 ### Permissions
 
-The Technical Contact can enable and disable **Manage Permissions** for the other team members. Any team members with **Manage Permissions** enabled can set the following node permissions: **Transport Rights**, **Access to Backups**, **Receive Alerts**, **API Rights**, and **Access to Monitoring**.
+The Technical Contact can enable and disable **Manage Permissions** for the other team members. Any team members with **Manage Permissions** enabled can set the following node permissions: **Transport Rights**, **Access to Backups**, **API Rights**, and **Access to Monitoring**.
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/node-permissions/node-permission.png" alt="Node permissions dashboard" class="no-border" >}}
 
@@ -84,17 +84,6 @@ For more information about deployment, see [Mendix Cloud](/developerportal/deplo
 Team members with **Access to Backups** permissions can access the backups of the environment. They can view, [create](/developerportal/operate/create-backup/), [download](/developerportal/operate/download-backup/), and [restore](/developerportal/operate/restore-backup/) backups.
 
 For more information, see [Backups](/developerportal/operate/backups/).
-
-#### Receive Alerts
-
-Team members with **Receive Alerts** permissions will receive an email whenever an alert is triggered.
-
-Alerts are triggered by any of the following circumstances:
-
-* The app goes offline unexpectedly
-* The application logs a message with level **Critical**
-* The health check fails
-* An infrastructure problem occurs
 
 #### API Rights
 
