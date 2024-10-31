@@ -11,23 +11,9 @@ You can receive alerts for Mendix application environments in two ways: via emai
 
 ## Email Alerts
 
-There are two ways to set up email alerts for an environment:
+You can select the **Email Alerts** checkbox yourself on the **Alerts** page to set up email alerts for an environment
 
-* The Technical Contact can grant you the **Receive Alerts** permission in **Node Permissions**
-* You can select the **Email Alerts** checkbox yourself on the **Alerts** page
-
-Both options for setting up email alerts are described below.
-
-### Node Permissions  
-
-If you are the Technical Contact for an app, you can grant team members the **Receive Alerts** permission by following these steps:
-
-1. From [Apps](https://sprintr.home.mendix.com), go to the **Environments** page of your app.
-1. Click **Details** ({{% icon name="notes-paper-edit" %}}) for the environment for which you want to set up alerts. You can set alerts permissions separately for each environment.
-1. Switch to the **Permissions** tab.
-1. Select the checkbox below **Receive Alerts** for the user (or users) who should receive alerts. Your changes will save automatically.
-
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/monitoring-application-health/receive-alerts/receive-alerts.png" class="no-border" >}}
+Option for setting up email alerts are described below.
 
 ### Alerts Page
 
