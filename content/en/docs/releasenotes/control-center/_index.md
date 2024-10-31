@@ -14,6 +14,12 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2024
 
+### October 31, 2024
+
+#### Improvements
+
+* Control center has a new menu structure to make it easier to find the pages. **Roles and Permissions** still shows the flat menu, but this will be updated soon.
+
 ### October 24, 2024
 
 #### New Features
