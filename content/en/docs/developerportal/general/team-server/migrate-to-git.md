@@ -96,7 +96,7 @@ During migration only the last revision of the main branch is copied from SVN to
 
 The migration should take a matter of minutes to complete.
 
-After completion of the migration a full backup of your SVN repository will be created and made available to all Scrum Masters. You will receive an email with information how to download the backup, which will remain available for 3 months. A month before this backup expires all Scrum Masters on the app will receive another email.
+After completion of the migration a full backup of your SVN repository will be created and made available to all Scrum Masters. You will receive an email with information how to download the backup, which will remain available for 3 months. Several days before this backup expires all Scrum Masters on the app will receive another email.
 
 {{% alert color="info" %}}
 
