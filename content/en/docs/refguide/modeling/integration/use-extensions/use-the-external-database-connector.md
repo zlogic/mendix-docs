@@ -1,7 +1,7 @@
 ---
 title: "Use the External Database Connector"
 url: /refguide/use-the-external-database-connector/
-weight: 21
+weight: 40
 description: "Overview of the External Database Connector in Studio Pro"
 aliases: 
     - /howto/integration/use-the-external-database-connector/
