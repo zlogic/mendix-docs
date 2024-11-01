@@ -9,7 +9,7 @@ description: "Describes the configuration and usage of the new Consumed REST ser
 
 Use the new Consumed REST Service document to send REST requests from Mendix Studio Pro. With this feature, you can build, test, and create data structures to store your requests. 
 
-This feature is supported for [Mendix Studio Pro 10.6](/releasenotes/studio-pro/10.6/) and above.
+This feature is supported for [Mendix Studio Pro 10.17](/releasenotes/studio-pro/10.17/) and above.
 
 ### Use Cases
 
@@ -31,12 +31,12 @@ You can use this Consumed REST Service document to do the following:
 
 ### Prerequisites 
 
-* [Studio Pro 10.6](/releasenotes/studio-pro/10.6/) and above
+* [Studio Pro 10.17](/releasenotes/studio-pro/10.17/) and above
 * Familiarity with [HTTP request methods](https://www.w3schools.com/tags/ref_httpmethods.asp)
 
 ## Add the Consumed REST Service Document {#installation}
 
-Download [Studio Pro](https://marketplace.mendix.com/link/studiopro/) and add the Consumed REST Service document to your app. To do this, 
+Download [Studio Pro](https://marketplace.mendix.com/link/studiopro/) and add the Consumed REST Service document to your app. To do this, follow these steps:  
 
 1. Right-click the module you want to add the Consumed REST Service document to.
 2. Select **Add other** > **Consumed REST service**. 
@@ -59,17 +59,17 @@ As of Mendix 10.16.0, you can configure a Consumed REST service using the New Ve
 Create a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request to send data to your server by doing the following:
 
 1. In the **General** field, name your request. 
-2. In the **Method & URL** field, use drop-down to select the HTTP method you want to use.
+2. In the **Method & URL** field, use the drop-down to select the HTTP method you want to use.
 3. Add an endpoint and click **Send**.
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/general-section.png" class="no-border" width="500" >}}
 
-4. Click **Configuration & authentication**.
-5. Add a **Base URL** to use the same URL across all requests in this consumed REST Service document.
+4. Click **Base URL** and add a base URL to use the same URL across all requests in this consumed REST Service document.
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/configuration-screen.png" class="no-border" width="500" >}}
 
-6. Select an authentication method. For more information, see [Authentication methods](#authentication).
+5. Click **Authentication**.
+6. Select an authentication method, then click **OK**. For more information, see [Authentication methods](#authentication).
 7. Click **Send**. 
 
 You can visualize your request in the **Response data** tab, then use the response to [create an entity in the domain model](#create-entity). 
