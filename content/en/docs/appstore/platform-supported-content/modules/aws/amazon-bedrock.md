@@ -250,13 +250,13 @@ The input and output for this service are shown in the table below:
 | --- | --- |
 | `GenAICommons.Request`, `AmazonBedrockConnection`| `GenAICommons.Response`|
 
-The request object passed to this operation must include a [KnowledgeBaseTool](#knowledge-base-tool) object, which can be added to the request using the [Request: Add Knowledge Base Tool to Collection](#add-knowledge-base-tool) operation.
+The request object passed to this operation must include a KnowledgeBaseTool object, which can be added to the request using the [Request: Add Knowledge Base Tool to Collection](#add-knowledge-base-tool) operation.
 
 #### Chatting with History {#retrieve-and-generate-with-history}
 
 The `RetrieveAndGenerate` operation only allows a single user message to be part of the request. Unlike the `ChatCompletions` operation, it is not supported to send a history of messages to the model. 
 
-The history can be enabled using the `SessionId` parameter on the [RetrieveAndGenerateRequest_Extension](#retrieve-and-generate-request-extension) entity. By reusing the same `SessionId` value, the model will run in the context of the session. 
+The history can be enabled using the `SessionId` parameter on the RetrieveAndGenerateRequest_Extension entity. By reusing the same `SessionId` value, the model will run in the context of the session. 
 
 #### Image Generation {#image-generation}
 
@@ -322,7 +322,7 @@ The input and output for this service are shown in the table below:
 
 #### Create Amazon Bedrock Connection {#create-amazon-bedrock-connection}
 
-Use this microflow to create a new [Amazon Bedrock Connection](#amazon-bedrock-connection) object.
+Use this microflow to create a new Amazon Bedrock Connection object.
 
 This operation corresponds to the **AmazonBedrockConnection_Create** microflow.
 
@@ -330,7 +330,7 @@ This operation corresponds to the **AmazonBedrockConnection_Create** microflow.
 
 #### Request: Add Knowledge Base Tool to Collection {#add-knowledge-base-tool}
 
-Use this microflow to add a new [KnowledgeBaseTool](#knowledge-base-tool) object to your request. This is useful for adding additional parameters when using the [Retrieve And Generate](#retrieve-and-generate) operation.
+Use this microflow to add a new KnowledgeBaseTool object to your request. This is useful for adding additional parameters when using the [Retrieve And Generate](#retrieve-and-generate) operation.
 
 This operation corresponds to the **RetrieveAndGenerateRequest_Extension_Create** microflow.
 
@@ -340,7 +340,7 @@ This operation corresponds to the **RetrieveAndGenerateRequest_Extension_Create*
 
 #### Request: Add Retrieve And Generate Request Extension {#add-rag-extension}
 
-Use this microflow to add a new [RetrieveAndGenerateRequest_Extension](#retrieve-and-generate-request-extension) object to your request. This is required in order to use the [Retrieve And Generate](#retrieve-and-generate) operation successfully.
+Use this microflow to add a new RetrieveAndGenerateRequest_Extension object to your request. This is required in order to use the [Retrieve And Generate](#retrieve-and-generate) operation successfully.
 
 This operation corresponds to the **Request_AddKnowledgeBaseTool** microflow.
 
@@ -356,7 +356,7 @@ This operation corresponds to the **Request_AddKnowledgeBaseTool** microflow.
 This microflow was introduced in Amazon Bedrock Connector version 3.1.0.
 {{% /alert %}}
 
-Use this microflow to add a new [TitanImageOptions_Extension](#titan-image-options-extension) object to your GenAICommons.ImageOptions object. This will allow you to configure the **NegativeText** attribute.
+Use this microflow to add a new TitanImageOptions_Extension object to your GenAICommons.ImageOptions object. This will allow you to configure the **NegativeText** attribute.
 
 This operation corresponds to the **TitanImageOptions_Extension_Create** microflow.
 
@@ -398,7 +398,7 @@ This operation corresponds to the **ImageOptions_SetRandomness** microflow.
 
 #### Embeddings Options: Add Cohere Embed Extension {#add-cohere-embed-extension}
 
-Use this microflow to add a new [CohereEmbedOptions_Extension](#cohere-embed-options-extension) object to your `EmbeddingsOptions` object. You can use it to include parameters that are unique to Cohere Embed models.
+Use this microflow to add a new CohereEmbedOptions_Extension object to your `EmbeddingsOptions` object. You can use it to include parameters that are unique to Cohere Embed models.
 
 This operation corresponds to the **CohereEmbedOptions_Extension_Create** microflow.
 
@@ -408,7 +408,7 @@ This operation corresponds to the **CohereEmbedOptions_Extension_Create** microf
 
 #### Embeddings Options: Add Titan Embeddings Extension {#add-titan-embeddings-extension}
 
-Use this microflow to add a new [TitanEmbeddingsOptions_Extension](#titan-embeddings-options-extension) object to your `EmbeddingsOptions` object. You can use it to include parameters that are unique to Titan Embeddings models.
+Use this microflow to add a new TitanEmbeddingsOptions_Extension object to your `EmbeddingsOptions` object. You can use it to include parameters that are unique to Titan Embeddings models.
 
 This operation corresponds to the **TitanEmbeddingsOptions_Extension_Create** microflow.
 
@@ -418,7 +418,7 @@ This operation corresponds to the **TitanEmbeddingsOptions_Extension_Create** mi
 
 #### Request: Add Retrieve Request Extension {#add-r-extension}
 
-Use this microflow to add a new [RetrieveRequest_Extension](#retrieve-request-extension) object to your request. This is required in order to use the [Retrieve](#retrieve) activity. It requires `Connection`, and `RetrieveRequest` as input parameters.
+Use this microflow to add a new RetrieveRequest_Extension object to your request. This is required in order to use the [Retrieve](#retrieve) activity. It requires `Connection`, and `RetrieveRequest` as input parameters.
 
 To use this activity, you must set up a knowledge base in your Amazon Bedrock Environment. For more information, see [Knowledge Base](#knowledge-base).
 
@@ -452,7 +452,7 @@ This operation corresponds to the **Request_CreateResponseFieldRequest** microfl
 | --- | --- |
 | `GenAICommons.Request (object)`, `FieldName (string)`| `none` |
 
-If the used model supports that response field, it will be returned as a [ChatCompletionsResponse](#chatcompletions-response) object as part of the response.
+If the used model supports that response field, it will be returned as a ChatCompletionsResponse object as part of the response.
 
 #### Response: Get Requested Response Fields {#get-response-fields}
 
