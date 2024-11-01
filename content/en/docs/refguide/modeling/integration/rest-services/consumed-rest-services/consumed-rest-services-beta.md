@@ -14,7 +14,7 @@ This feature is supported for [Mendix Studio Pro 10.17](/releasenotes/studio-pro
 
 ### Use Cases
 
-You can use this Consumed REST Service document to do the following:
+You can use the Consumed REST Service document to do the following:
 
 * Consume a REST Service
 * Configure `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` requests
@@ -25,7 +25,7 @@ You can use this Consumed REST Service document to do the following:
 
 * `PATCH` methods are only supported for [Mendix Studio Pro 10.7](/releasenotes/studio-pro/10.7/) and above. 
 * `PUT` methods are only supported for [Mendix Studio Pro 10.8](/releasenotes/studio-pro/10.8/) and above. 
-* `DELETE` methods are only supported for [Mendix Studio Pro 10.9](/releasenotes/studio-pro/10.9/) and above.
+* `DELETE` methods are only supported for [Mendix Studio Pro 10.9](/releasenotes/studio-pro/10.9/) and above. 
 
 * To use the request response to create a data structure in your domain model, the response data should be in JSON format. Other formats, such as XML, are currently not supported. 
 * If you are debugging a running Published REST Service in the same app as your Consumed REST Service document, a deadlock could occur when sending the request. Wait until the timeout occurs (default: 300 seconds) for Studio Pro to respond again.
@@ -65,13 +65,16 @@ Create a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request to send data to your
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/general-section.png" class="no-border" width="500" >}}
 
-4. Click **Base URL** and add a base URL to use the same URL across all requests in this consumed REST Service document.
+4. Click **Base URL**.
+5. Add a base URL to use the same URL across all requests in this consumed REST Service document.
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/configuration-screen.png" class="no-border" width="500" >}}
 
-5. Click **Authentication**.
-6. Select an authentication method, then click **OK**. For more information, see [Authentication methods](#authentication).
-7. Click **Send**. 
+    To make the base URL dynamic, see the [Dynamic Base URL](#dynamic-base-url) section below.
+
+6. Click **Authentication**.
+7. Select an authentication method, then click **OK**. For more information, see [Authentication methods](#authentication).
+8. Click **Send**. 
 
 You can visualize your request in the **Response data** tab, then use the response to [create an entity in the domain model](#create-entity). 
 
@@ -80,7 +83,7 @@ You can visualize your request in the **Response data** tab, then use the respon
 You can configure basic authentication to use for all requests in your document. Authentication is not required, but can be added if needed. To add basic authentication, do the following:
 
 1. Click **Authentication**.
-2. Under **Authentication method**, click the drop-down and select **Basic authentication**. 
+2. In the **Authentication method** field, click the drop-down and select **Basic authentication**. 
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/authentication-setup.png" class="no-border" >}}
 
@@ -104,15 +107,15 @@ Parameters are fully supported in the path and query part of the URL, in the hea
 To add a parameter, follow these steps:
 
 1. Open the **Parameters** tab and click **Add parameter**.
-2. Name your parameter and add a test value, then click **OK**.
+2. Name your parameter and add a test value.
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/parameter.png" class="no-border" >}}
 
 3. To test the parameters, click **Send**. 
 
-#### Add a Base URL as a Parameter
+#### Dynamic Base URL {#dynamic-base-url}
 
-You can also add a Base URL as a parameter. TO do this, follow these steps:
+You can add a Base URL as a parameter. To do this, follow these steps:
 
 1. Click **Base URL**.
 2. In the Dynamic field, select **Yes**.
