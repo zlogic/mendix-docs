@@ -135,6 +135,11 @@ You can view details of a backup by clicking **More Options** ({{% icon name="th
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/backups/backup-details.png" alt="Backup Details" max-width=60% class="no-border" >}}
 
+{{% alert color="info" %}}
+The size of backup file does not match the size of the actual database. Backups do not contain a copy of the database but rather contain instructions on how to recreate the database.
+{{% /alert %}}
+
+
 ## Data Location {#data-location}
 
 Application data, including files and backups, is always replicated by default to a secondary region, separate from the primary region, for security and compliance reasons. Each individual backup is immutable; in other words, once it has been written to Mendix’s storage location, it can no longer be modified or overwritten.
