@@ -2,7 +2,7 @@
 title: "Groups"
 url: /control-center/groups/
 description: "Describes the Groups page in the Mendix Control Center."
-weight: 25
+weight: 30
 no_list: true 
 ---
 

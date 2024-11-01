@@ -2,13 +2,13 @@
 title: "Company Settings"
 url: /control-center/company-settings/
 description: "Describes the Company Settings page in the Mendix Control Center."
-weight: 30
+weight: 20
 no_list: list
 ---
 
 ## Introduction
 
-The **Company Settings** page allows you to change company details, company email domains, and security contact. Moreover, you can view and add Mendix Admins of your company.
+The **Company Settings** page in Control Center allows you to change company details, company email domains, and security contact. Moreover, you can view and add Mendix Admins of your company.
 
 ## General Settings
 

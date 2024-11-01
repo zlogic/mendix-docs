@@ -2,7 +2,7 @@
 title: "Deployed Apps"
 url: /control-center/deployed-apps/
 description: "Describes the Deployed Apps page in the Mendix Control Center."
-weight: 55
+weight: 40
 beta: true
 no_list: true
 
@@ -14,7 +14,7 @@ This feature is currently in beta. For more information, see [Beta Releases](/re
 
 ## Introduction
 
-The **Deployed Apps Overview** page provides a comprehensive view of all the apps within your company. On this page, you can find detailed information about each app, including its name, ID, Technical Contact, status, number of environments, and the number of [cloud credits](/control-center/entitlements/#cloud-credits) used, if applicable. Additionally, this page allows you to provision and offboard environments for apps on Mendix Cloud. Moreover, you can email or download the license keys for your apps directly from this page.
+The **Deployed Apps Overview** page in Control Center provides a comprehensive view of all the apps within your company. On this page, you can find detailed information about each app, including its name, ID, Technical Contact, status, number of environments, and the number of [cloud credits](/control-center/entitlements/#cloud-credits) used, if applicable. Additionally, this page allows you to provision and offboard environments for apps on Mendix Cloud. Moreover, you can email or download the license keys for your apps directly from this page.
 
 The **Deployed Apps Overview** page has the following tabs: [Mendix Cloud](#mendix-cloud), [Free Apps](#free-apps), and [Apps with License Keys](#apps-license-keys).
 

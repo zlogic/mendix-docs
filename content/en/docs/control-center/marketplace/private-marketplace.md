@@ -2,7 +2,7 @@
 title: "Private Marketplace"
 url: /control-center/private-marketplace/
 description: "Describes the Private Marketplace page in the Mendix Control Center."
-weight: 70
+weight: 20
 no_list: true
 ---
 
