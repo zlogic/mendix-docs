@@ -15,6 +15,8 @@ Connect to Microsoft SQL, MySQL, PostgreSQL, Oracle, and Snowflake databases wit
 If you are using Studio Pro 10.12, make sure to use the latest version 3.0.0 [External Database Connector](https://marketplace.mendix.com/link/component/219862).
 {{% /alert %}}
 
+This document provides instructions on how to configure and use the External Database Connector. For information on the database wizard and how to connect using the External Database Connection document, see [External Database Connection](/refguide/external-database-connection/). For information on how to create and validate SQL queries, see [Use the External Database Connector](/refguide/use-the-external-database-connector/]).
+
 ### Typical Use Cases
 
 Use this module if you need to connect to databases and select data to use in your app. This connector allows you to directly test connections and queries during configuration in Studio Pro (design time). 

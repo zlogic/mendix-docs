@@ -30,6 +30,8 @@ This how-to teaches you how to do the following:
 * Create and validate SQL Queries
 * Use created queries in the **Query External Database** activity
 
+For information on how to configure the connector, see [External Database Connector](/appstore/modules/external-database-connector/). For information about the database wizard and how to connect using the External Database Connection document, see [External Database Connection](/refguide/external-database-connection/). 
+
 ## Prerequisites
 
 Download the [External Database Connector](https://marketplace.mendix.com/link/component/219862) into your app. Make sure you have the following details for your external connection:  
