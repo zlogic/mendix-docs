@@ -1,6 +1,6 @@
 ---
 title: "Share Data Between Apps"
-url: /howto/integration/share-data/
+url: /refguide/share-data/
 description: "Describes how to publish and register a simple data asset to the Catalog from Studio Pro and create a new app that consumes this asset."
 weight: 10
 aliases:
@@ -11,6 +11,7 @@ aliases:
     - /catalog/#share-data
     - /data-hub/data-hub-catalog/share-data/
     - /catalog/share-data/
+    - /howto/integration/share-data/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
