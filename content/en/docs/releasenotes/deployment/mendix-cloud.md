@@ -20,11 +20,12 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* Cloud permissions are now included in project roles. You can now manage all project roles centrally, on a company level if you have switched to company role.
+* Cloud permissions are now included in project roles.
+* You can now manage all project roles centrally, on a company level, if you have switched to using company-level roles.
 
 #### Improvements
 
-* We have made improvements to [Permissions Tab](/developerportal/deploy/node-permissions/#permissions-tab). The **Recieve alerts** permission has been removed from the permissions tab. The alert subscription can be done using the **Email Alerts** action on the **Alerts** page.
+* We have made improvements to the [permissions tab](/developerportal/deploy/node-permissions/#permissions-tab). The **Receive alerts** permission has also been removed from the permissions tab. You can subscribe to alerts using the **Email Alerts** option on the **Alerts** page.
 
 ### October 17, 2024
 
