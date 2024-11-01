@@ -2,7 +2,7 @@
 title: "Portfolios"
 url: /control-center/portfolios/
 description: "Describes the Portfolios page in the Mendix Control Center."
-weight: 65
+weight: 20
 no_list: true
 ---
 
@@ -10,7 +10,7 @@ no_list: true
 
 The **Portfolios** page offers governance features for [portfolio management](/developerportal/portfolio-management/) in your company. You can have an overview of all portfolios in your company, manage portfolio access, delete portfolios, reject or approve requests for changes of portfolio privacy settings. 
 
-The **Portfolios** page contains three tabs: [All Portfolios](#all-portfolios), [Alerts](#alerts), and [Privacy Requests](#privacy-requests).
+The **Portfolios** page in Control Center contains three tabs: [All Portfolios](#all-portfolios), [Alerts](#alerts), and [Privacy Requests](#privacy-requests).
 
 {{% alert color="info" %}}
 As a Mendix Admin, you cannot directly see the content of a portfolio. You need to have [portfolio access](#access-management) for this. You can give yourself portfolio access if needed.

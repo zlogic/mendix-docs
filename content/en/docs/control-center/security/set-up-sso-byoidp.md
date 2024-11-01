@@ -1,7 +1,7 @@
 ---
 title: "Set Up an SSO (BYOIDP)"
 url: /control-center/security/set-up-sso-byoidp/
-weight: 5
+weight: 30
 description: "Describes how you can use your company IdP to authenticate to Mendix."
 aliases:
     - /developerportal/control-center/set-up-sso-byoidp/
@@ -253,6 +253,7 @@ If the client secret is still active or you (as an administrator) still have an 
 * Clone the existing active IdP configuration, update the secret there and then activate the clone. This avoids updating all the users. This is the preferred option.
 * Disable the IdP configuration, update the secret, and then enable it again.
   
+
 If the client secret has expired, ask [Mendix Support](https://support.mendix.com/hc/en-us) to update the client secret of your active IdP configuration.
 
 If this is unsuccessful, you can ask Mendix Support to deactivate the active IdP configuration. This means that you (and your users) without active sessions will no longer have access and will need to reset and then use your platform password. Once you have access to the platform, you can set up your IdP configuration again.

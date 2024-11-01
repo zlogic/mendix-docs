@@ -1,9 +1,11 @@
 ---
 title: "Application Health Dashboard"
+linktitle: "Health Dashboard"
 url: /control-center/application-health-dashboard/
 description: "Describes the Application Health Dashboard page in the Mendix Control Center."
-weight: 10
+weight: 20
 no_list: true
+beta: true
 ---
 
 {{% alert color="info" %}}
@@ -12,7 +14,7 @@ This feature is currently in beta. For more information, see [Beta Releases](/re
 
 ## Introduction
 
-The **Application Health Dashboard** gives an overview of the alert status of the whole application landscape of your company. Here you can see all the alerts of the production environments of the apps deployed on your Mendix Cloud and Mendix Cloud Dedicated.
+The **Application Health Dashboard** in Control Center gives an overview of the alert status of the whole application landscape of your company. Here you can see all the alerts of the production environments of the apps deployed on your Mendix Cloud and Mendix Cloud Dedicated.
 
 On the top of the page, you can see the following numbers:
 

@@ -2,13 +2,13 @@
 title: "Roles & Permissions"
 url: /control-center/roles-and-permissions/
 description: "Describes the Roles and Permissions page in the Mendix Control Center."
-weight: 75
+weight: 20
 no_list: true
 ---
 
 ## Introduction
 
-On the **Roles & Permissions** page, you can view and manage project roles and permissions. Additionaly, you can migrate default project-level roles to centralized company-level roles.
+On the **Roles & Permissions** page in Control Center, you can view and manage project roles and permissions. Additionally, you can migrate default project-level roles to centralized company-level roles.
 
 ## Default Project Roles
 

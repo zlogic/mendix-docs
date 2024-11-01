@@ -1,8 +1,8 @@
 ---
-title: "Marketplace Curation"
+title: "Public Marketplace"
 url: /control-center/marketplace-curation/
 description: "Describes the Marketplace Curation page in the Mendix Control Center."
-weight: 70
+weight: 10
 no_list: true
 ---
 
