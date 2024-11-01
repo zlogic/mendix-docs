@@ -122,13 +122,9 @@ Your base URL is now considered as a parameter. You can change its value in the 
 
 ### Adding Headers {#add-headers}
 
-{{% alert color="info" %}}
-The support for parameter in the header value was introduced in Mendix [10.7](/releasenotes/studio-pro/10.7/).
-{{% /alert %}}
-
 You can add a header for any HTTP request you have specified in your document. To add a header, do the following:
 
-1. Open the **Headers** tab and click **New**.
+1. Open the **Headers** tab and click **Add header**.
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/header-example.png" class="no-border" width="500" >}}
 
@@ -140,7 +136,7 @@ You can add a header for any HTTP request you have specified in your document. T
 
 ### Adding a Request Body (for POST, PUT, and PATCH requests only) {#add-a-request-body}
 
-`POST`, `PUT` and `PATCH` requests support JSON strings as a request body. Add the JSON body snippet to your request by doing the following:
+`POST`, `PUT`, and `PATCH` requests support JSON strings as a request body. Add the JSON body snippet to your request by doing the following:
 
 1. Click the **Body** tab and add your JSON string.
 
