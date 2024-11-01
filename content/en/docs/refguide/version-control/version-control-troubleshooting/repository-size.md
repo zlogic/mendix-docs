@@ -54,11 +54,11 @@ As a first step we will ensure new apps are created with a new split format (v2)
 
 #### Decreasing MPR File Size
 
-When a file exceeds the Git compression threshold, 512 MB by default, Git will store a full copy of the file with each new revision instead of only storing the delta. This results in extremely rapid repository growth with both client- and server-side consequences down the line.
+When a file exceeds the Git compression threshold, 512 MB by default, Git will store a full copy of the file with each new revision instead of only storing the delta. This results in extremely rapid repository growth with both client and server-side consequences.
 
-As the Mendix model is stored in a single file, this threshold can be exceeded by the *.mpr* file. To decrease the MPR file size, there are several steps you can take:
-* Remove [excluded and unused documents](/refguide/dev-best-practices/#excluded-and-unused-documents). If you have a large number of unnecessary documents in your app model, this can significantly increase the size of the MPR file.
-* Decrease duplication in pages. If you have a number of pages featuring the same content, such as an advanced datagrid, consider extracting this piece of logic to a widget. Reusing a widget on multiple pages prevents the data from being saved several times and can have a large impact on the size of the MPR file.
+As the Mendix model is stored in a single file, this threshold can be exceeded by the *.mpr* file. To decrease the MPR file size, you consider doing the following:
+* Remove [excluded and unused documents](/refguide/dev-best-practices/#excluded-and-unused-documents) – If you have a large number of unnecessary documents in your app model, this can significantly increase the size of the MPR file.
+* Decrease duplication in pages – If you have a number of pages featuring the same content, such as an advanced datagrid, consider extracting this piece of logic to a widget. Reusing a widget on multiple pages prevents the data from being saved several times and can have a large impact on the size of the MPR file.
 
 ### Working with a Large Repository Size
 
