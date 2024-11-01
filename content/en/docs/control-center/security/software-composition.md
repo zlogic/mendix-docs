@@ -2,8 +2,8 @@
 title: "Software Composition (Control Center)"
 linktitle: "Software Composition"
 url: /control-center/software-composition/
-description: "Describes the Software Composition page in the Mendix Control Center."
-weight: 80
+description: "Describes the Software Composition page in Control Center."
+weight: 20
 status: "Public Beta"
 beta: true
 ---

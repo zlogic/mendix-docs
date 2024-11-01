@@ -1,9 +1,9 @@
 ---
-title: "Company Apps Dashboard "
-linktitle: "Apps"
-url: /control-center/apps/
+title: "Apps Overview"
+linktitle: "Apps Overview"
+url: /control-center/apps-overview/
 description: "Describes the Apps page in the Mendix Control Center."
-weight: 15
+weight: 10
 no_list: true
 aliases:
     - /developerportal/company-app-roles/users.html
@@ -12,7 +12,7 @@ aliases:
 
 ## Introduction
 
-The **Apps** page gives an overview of all the apps belonging to your company. The page has the following tabs available: **Mendix Cloud**, **Mendix Free Cloud**, **Other Apps**, and **Deactivated Apps**.
+The **Apps Overview** page gives an overview of all the apps belonging to your company. The page has the following tabs available: **Mendix Cloud**, **Mendix Free Cloud**, **Other Apps**, and **Deactivated Apps**.
 
 {{% alert color="info" %}}
 Mendix will enhance this page to provide information about apps deployed on standalone private clouds. Stay tuned.

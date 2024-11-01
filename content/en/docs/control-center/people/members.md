@@ -2,7 +2,7 @@
 title: "Members"
 url: /control-center/members/
 description: "Describes the Members page in the Mendix Control Center."
-weight: 20
+weight: 10
 no_list: true 
 ---
 

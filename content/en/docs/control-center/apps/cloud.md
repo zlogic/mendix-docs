@@ -2,7 +2,7 @@
 title: "Cloud"
 url: /control-center/cloud/
 description: "Describes the Cloud page in the Mendix Control Center."
-weight: 45
+weight: 50
 no_list: true
 ---
 

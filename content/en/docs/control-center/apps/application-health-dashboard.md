@@ -1,9 +1,11 @@
 ---
 title: "Application Health Dashboard"
+linktitle: "Health Dashboard"
 url: /control-center/application-health-dashboard/
 description: "Describes the Application Health Dashboard page in the Mendix Control Center."
-weight: 10
+weight: 20
 no_list: true
+beta: true
 ---
 
 {{% alert color="info" %}}

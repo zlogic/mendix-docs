@@ -2,7 +2,7 @@
 title: "Roles & Permissions"
 url: /control-center/roles-and-permissions/
 description: "Describes the Roles and Permissions page in the Mendix Control Center."
-weight: 75
+weight: 20
 no_list: true
 ---
 
