@@ -68,7 +68,7 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 #### New Features
 
-* We have added a new tab to the **Apps** page: the [Private Cloud](/control-center/apps/#pc-connected) tab. Here you get an overview of all the apps deployed on Mendix Private Cloud Connected.
+* We have added a new tab to the **Apps** page: the [Private Cloud](/control-center/apps-overview/#pc-connected) tab. Here you get an overview of all the apps deployed on Mendix Private Cloud Connected.
 
 ### April 4, 2024
 
@@ -111,7 +111,7 @@ We upgraded the [Apps](/control-center/apps/) page as follows:
 * You can check the Mendix version deployed in your repository to check whether your Mendix version is up to date.
 * You can now update Technical Contact on the **Apps** page.
 * You can deactivate multiple free apps in one go.
-* You can [export the information of apps to an Excel file](/control-center/apps/#export-to-excel).
+* You can [export the information of apps to an Excel file](/control-center/apps-overview/#export-to-excel).
 
 ### December 7, 2023
 
@@ -242,11 +242,11 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features
 
-* The free Mendix Cloud environment of an app can now be deleted from the [app details](/control-center/apps/#app-details) page.
+* The free Mendix Cloud environment of an app can now be deleted from the [app details](/control-center/apps-overview/#app-details) page.
 
 #### Improvements
 
-* The free and licensed Mendix Cloud environments of an app are now visualized on the [app details](/control-center/apps/#app-details) page.
+* The free and licensed Mendix Cloud environments of an app are now visualized on the [app details](/control-center/apps-overview/#app-details) page.
 
 ### April 21, 2022
 
