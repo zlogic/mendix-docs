@@ -87,7 +87,7 @@ Do the following:
     {{< figure src="/attachments/refguide/modeling/integration/share-data/choose-key.png" class="no-border" >}}
 6. Click **OK** to see the **Edit published entity** dialog. 
 
-    {{< figure src=/attachments/refguide/modeling/integration/share-data/edit-published-resource-box.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/share-data/edit-published-resource-box.png" class="no-border" >}}
 
     {{% alert color="info" %}} Make a note of the **Exposed set name**. This defaults to the **Exposed name** with an "**s"** added to the end. When the service is registered in the Catalog, the **Exposed set name** will be displayed as the available **Dataset**. {{% /alert %}}
 
