@@ -23,10 +23,6 @@ You can use the Consumed REST Service document to do the following:
 
 ### Limitations
 
-* `PATCH` methods are only supported for [Mendix Studio Pro 10.7](/releasenotes/studio-pro/10.7/) and above. 
-* `PUT` methods are only supported for [Mendix Studio Pro 10.8](/releasenotes/studio-pro/10.8/) and above. 
-* `DELETE` methods are only supported for [Mendix Studio Pro 10.9](/releasenotes/studio-pro/10.9/) and above. 
-
 * To use the request response to create a data structure in your domain model, the response data should be in JSON format. Other formats, such as XML, are currently not supported. 
 * If you are debugging a running Published REST Service in the same app as your Consumed REST Service document, a deadlock could occur when sending the request. Wait until the timeout occurs (default: 300 seconds) for Studio Pro to respond again.
 
