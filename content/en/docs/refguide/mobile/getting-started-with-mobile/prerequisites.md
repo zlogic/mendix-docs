@@ -21,28 +21,30 @@ Developing mobile apps with Mendix requires some additional considerations. This
 
 ### Progressive Web Apps
 
-There are not special requirements for developing, deploying, and accessing Progressive Web Apps (PWAs) with Mendix.
+There are no special requirements for developing, deploying, and accessing Progressive Web Apps (PWAs) with Mendix.
 
 ### Native Mobile Apps
 
 Native mobile apps are not run in the device browser like web-based Mendix apps. Instead, a native app is built for each mobile operating system it should run on resulting in an APK or IPA file, which are then installed on the device. This introduces several special considerations:
 
-* **Developer Preview**: When developing a native mobile app, a special app called "Make It Native" is required to preview the app. It is not possible to preview it in the browser or directly in Studio Pro using Design Mode.
-* **Build Native App)**: For building native apps, we provide a tool called "Build Native App". This tool must be configured and run each time a new build is created. Build Native App is not supported on Studio Pro for Mac. Build Native App updates itself automatically by downloading a new version from AWS.
-* **Native Template**: Build Native App needs to download the "Native Template" from [GitHub](https://github.com/mendix/native-template). This template contains the react native project that is used to build the native app for iOS and Android.
+* **Developer Preview**: When developing a native mobile app, a special app called [Make It Native](/refguide/mobile/getting-started-with-mobile/prerequisites/) is required to preview the app. It is not possible to preview it in the browser or directly in Studio Pro using Design Mode.
+* **Build Native App**: For building native apps, we provide a tool called "Build Native App". This tool must be configured and run each time a new build is created. Build Native App is not supported on Studio Pro for Mac. Build Native App updates itself automatically by downloading a new version from AWS.
+* **Native Template**: Build Native App needs to download the "Native Template" from [GitHub](https://github.com/mendix/native-template). This template contains the React Native project that is used to build the native app for iOS and Android.
 * **Dependencies**: The Native Template makes use of several open-source projects, including React Native. These must be downloaded from several external services including npm, gradle, and Cocoapods.
 * **Building**: Once prepared using Build Native App, the Native Template can be built for each target mobile operating system. Building can be done [locally](/refguide/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/) by downloading the mobile operating system's IDE or [remotely](/refguide/mobile/distributing-mobile-apps/building-native-apps/deploying-native-app/) using a third-party continuous integration and delivery (CI/CD) platform. For building remotely, a [GitHub account](https://github.com/) and an [AppCenter account](https://appcenter.ms/) is required.
-* **Deploying**: Most mobile devices refuse to install APK/IPA files without additional steps. As a minimum, the file must be signed to identify its developer and prevent manipulation. Furthermore, for iOS and recent versions of Android, the app must be published via the official mobile operating system's store or a mobile device management (MDM) system.
-* **Connectivity**: When running a Mendix native mobile app, it must connect to the Mendix runtime at least once during startup. If no connection can be established, an error is shown. Connectivity is also needed to run Microflows and to synchronize data.
+* **Deploying**: Most mobile devices refuse to install APK/IPA files without additional steps. At minimum, the file must be signed to identify its developer and prevent manipulation. Furthermore, for iOS and recent versions of Android, the app must be published via the official mobile operating system's store or a mobile device management (MDM) system.
+* **Connectivity**: When running a Mendix native mobile app, it must connect to the Mendix runtime at least once during startup. If no connection can be established, an error is shown. Connectivity is also needed to run microflows and to synchronize data.
 
 ### Air-Gapped Development
 
 Developing and building native mobile apps requires access to several online resources.
 
 For development:
+
 * To preview their apps, developers need to be able to connect their mobile device running Make It Native to their Laptop running Studio Pro on ports 8080 and 8083.
 
 For building:
+
 * Download updates from AWS: `https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe`
 * Determine which native template version to download: `https://raw.githubusercontent.com/mendix/native-template/master/mendix_version.json`
 * Download the native template from GitHub: `https://github.com/mendix/native-template/archive/refs/tags/*.zip`
