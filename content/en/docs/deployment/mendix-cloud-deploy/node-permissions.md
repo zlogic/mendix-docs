@@ -51,7 +51,7 @@ To access the node permissions, do the following:
 1. Click **Environments** for your app.
 2. Switch to the **Permissions** tab.
 
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/node-permissions/permissions-tab.png" class="no-border" >}}
+    {{< figure src="/attachments/deployment/mendix-cloud-deploy/node-permissions/permissions-tab.png" >}}
 
 3. From the drop-down list in the upper-right corner, select the environment for which you want to change permissions.
 
@@ -63,7 +63,7 @@ To access the node permissions, do the following:
 
 The Technical Contact can enable and disable **Manage Permissions** for the other team members. Any team members with **Manage Permissions** enabled can set the following node permissions: **Transport Rights**, **Access to Backups**, **API Rights**, and **Access to Monitoring**.
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/node-permissions/node-permission.png" alt="Node permissions dashboard" class="no-border" >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/node-permissions/node-permission.png" alt="Node permissions dashboard" >}}
 
 #### Manage Permissions
 

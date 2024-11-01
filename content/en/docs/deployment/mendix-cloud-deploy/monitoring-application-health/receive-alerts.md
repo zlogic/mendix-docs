@@ -9,15 +9,16 @@ description: "Describes how to receive environment status alerts."
 
 You can receive alerts for Mendix application environments in two ways: via email or by using webhooks. You can find detailed information for both of these options below.
 
+Alerts are triggered by any of the following circumstances:
+
+* The app goes offline unexpectedly
+* The application logs a message with level **Critical**
+* The health check fails
+* An infrastructure problem occurs
+
 ## Email Alerts
 
-You can select the **Email Alerts** checkbox yourself on the **Alerts** page to set up email alerts for an environment
-
-Option for setting up email alerts are described below.
-
-### Alerts Page
-
-You can also manage the alerts by yourself. For this, you need an **Application Operator**, **Business Engineer**, or **Scrum Master** role. Or, if a [Mendix Admin](/control-center/members/) has defined a new team role for you, that role must have **Cloud Access**.
+You can select the **Email Alerts** checkbox on the **Alerts** page to set up email alerts for an environment. For this, you need an **Application Operator**, **Business Engineer**, or **Scrum Master** role. Or, if a [Mendix Admin](/control-center/members/) has defined a new team role for you, that role must have **Cloud Access**.
 
 To enable email alerts, follow these steps:
 
