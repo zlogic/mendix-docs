@@ -76,9 +76,9 @@ You can visualize your request in the **Response data** tab, then use the respon
 
 ### Authentication Methods {#authentication}
 
-You can configure basic authentication to use for all requests in your document. Authentication is not required but can be added if needed. To add basic authentication, do the following:
+You can configure basic authentication to use for all requests in your document. Authentication is not required, but can be added if needed. To add basic authentication, do the following:
 
-1. Click **Configuration & authentication**.
+1. Click **Authentication**.
 2. Under **Authentication method**, click the drop-down and select **Basic authentication**. 
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/authentication-setup.png" class="no-border" >}}
@@ -90,22 +90,34 @@ You can configure basic authentication to use for all requests in your document.
 
 ### Adding Parameters {#add-parameters}
 
-Parameters are fully supported in the path and query part of the URL and in the header value. They are defined within curly brackets. For example, in the URL, defining `numbers` as parameter would be `http://numbersapi.com/{numbers}`. All parameters must be added to the **Parameters** grid and match what is present within the curly brackets.
+{{% alert color="info" %}}
+
+Parameters are not supported in the authentication section.
+
+{{% /alert %}}
+
+Parameters are fully supported in the path and query part of the URL, in the header value, and in the body. They are defined within curly brackets. For example, in the URL, defining `numbers` as parameter would be `http://numbersapi.com/{numbers}`. All parameters must be added to the **Parameters** grid and match what is present within the curly brackets.
 
 {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/get-header.png" class="no-border" >}}
 
 To add a parameter, follow these steps:
 
-1. Open the **Parameters** tab and click **Add**.
-2. Name your parameter, add a test value, and click **OK**.
+1. Open the **Parameters** tab and click **Add parameter**.
+2. Name your parameter and add a test value, then click **OK**.
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/parameter.png" class="no-border" >}}
 
 3. To test the parameters, click **Send**. 
 
-{{% alert color="info" %}}
-Parameters are not supported in the [configuration](#configuration), including authentication and Base URL.
-{{% /alert %}} 
+#### Add a Base URL as a Parameter
+
+You can also add a Base URL as a parameter. TO do this, follow these steps:
+
+1. Click **Base URL**.
+2. In the Dynamic field, select **Yes**.
+3. Click **OK**
+
+Your base URL is now considered as a parameter. You can change its value in the [Send REST Request](/refguide/send-rest-request/) mciroflow activity. 
 
 ### Adding Headers {#add-headers}
 
