@@ -62,67 +62,66 @@ The results of migrating to the centralized company-level roles will be as follo
   When members of your company  [invite someone to an project](/developerportal/general/team/#inviting), they cannot select any old custom role with the tag **Inherited from project** shown here, as these roles will not be shown to them.
   {{% /alert %}} 
 
-### Overview
+### Project Roles Overview
 
-On the Roles & Permissions page you have an overview of all centralized project roles. Per role you will see a brief overview of the permissions in the role and in how many projects and by how many team members they are used.
-Clicking on the number of apps that use the role, will open up a popup with a list of projects where the role is used.
-From this page you can **Create**, **Edit**, or **Delete** a role.
+On the **Roles & Permission**s page, you have an overview of all centralized project roles. Per role you see a brief summary of the permissions that the role has as well as in how many projects and by how many team members they are used.
 
-### Create a role
+Clicking the number of projects that use the role opens up a pop-up window with a list of projects where the role is used. From this page you can **Create**, **Edit**, or **Delete** a role.
 
-The button Create Project Role on the top of the page will start a multi step process where you can set the characteristics of the role.
+### Creating a Role
 
-**Step 1. Project Role Details**
+To create a role, click **Create Project Role** at the top of the page. A wizard opens to guide you through the following steps to set the characteristics of the role:
 
-{{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-1.png" alt="Project Role Step 1" >}}
+1. Set the project role details. 
 
-* Enter a **Name** for the role. The name must not be used by any other role within the company
-* Optionally, add a **Description** to the role for further reference
+   {{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-1.png" alt="Project Role Step 1" >}}
 
-**Step 2. Project Permissions**
+   1. Enter the name for the role. Every role name in your company must be unique.
+   2. Optionally, add a description for the role for further reference.
 
-{{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-2.png" alt="Project Role Step 2" >}}
+2. Set the project permissions. These permissions determine what the team member is allowed to do within the context of project management.
 
-Set the Project Permissions. These permissions determine what the team member is allowed to do within the context of project management
+   {{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-2.png" alt="Project Role Step 2" >}}
 
-**Step 3. Non-production Environments**
+3. Set the environment permissions for non-productive environments, such as the test or acceptance environments. These permissions are applied to the assigned team members on the [Permission](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
 
-{{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-3.png" alt="Project Role Step 3" >}}
+   {{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-3.png" alt="Project Role Step 3" >}}
 
-Set the **Environment Permissions** for non-productive environments, such as the test or acceptance environments. These permissions will be applied to the assigned team members on the [Permission](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
+   1. Choose the correct **Access Rights**.
+   2. When granting environment access, you can choose between **Fixed** or **Custom**. 
+      * If you select **Fixed**, then set the permissions that this role has and they cannot be altered on the **Permissions** page.
+      * If you select **Custom**, you allow anyone with Manage Permissions rights, for example, the Technical Contact, to set the permissions per environment.
 
-* Choose the correct **Access Rights**
-* When granting environment access, you can choose between **Fixed** or **Custom**. Fixed will allow you to set the permissions in this role. They can not be altered on the Permissions page. Custom will allow the Technical Contact, or anyone with Manage Permissions rights to set the permissions per environment.
+4. Set the environment permissions for productive environments. These permissions are applied to the assigned team members on the **Permission** page in the Cloud Portal.
 
-**Step 4. Production Environments**
+   {{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-4.png" alt="Project Role Step 4" >}}
 
-{{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-4.png" alt="Project Role Step 4" >}}
+   1. Choose the correct **Access Rights**.
+   2. When granting environment access, you can choose between **Fixed** or **Custom**. 
+      * If you select **Fixed**, then set the permissions that this role has and they cannot be altered on the **Permissions** page.
+      * If you select **Custom**, you allow anyone with Manage Permissions rights, for example, the Technical Contact, to set the permissions per environment.
 
-Set the Environment Permissions for productive environments. These permissions will be applied to the assigned team members on the [Permission](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
+   {{% alert color="warning" %}}
+   Editing and saving the productive environment permissions can only be done after a **multi-factor authentication** has taken place.
+   {{% /alert %}}
 
-* Choose the correct **Access Rights**
-* When granting environment access, you can choose between **Fixed** or **Custom**. Fixed will allow you to set the permissions in this role. They can not be altered on the Permissions page. Custom will allow the Technical Contact, or anyone with Manage Permissions rights to set the permissions per environment.
+### Showing Details
 
-{{% alert color="warning" %}}
-Editing and saving the productive environment permissions can only be done after a **multi-factor authentication** has taken place.
-{{% /alert %}}
-
-### Show details
+To show the details of a role, click **Show Details** on the page. A pop-up window opens with detailed information of the role.
 
 {{< figure src="/attachments/control-center/roles-permissions/project-role-details.png" alt="Project Role Details" >}}
 
-Clicking the **Show Details** button, opens a popup with detailed information of the role.
-Here you will find the Role ID which can be used in the [Mendix Projects API](/apidocs-mxsdk/apidocs/projects-api/).
+Here you will find the role ID which can be used in the [Mendix Projects API](/apidocs-mxsdk/apidocs/projects-api/).
 
-### Edit a role
+### Editing a Role
 
-Click on **Edit Role** to make changes to the characteristics of a role.
+To edit the characteristics of a role, click **Edit Role** on the page.
 Changes made to the permissions of a role are immediately applied to the team members that are assigned to the role.
 To prevent concurrent changes overwriting each other, only one role can be edited at any one time.
 
-### Delete a role
+### Deleting a Role
 
-When you want to delete a role, click **Edit Role** and review the role you are about to delete.
+To delete a role, click **Edit Role** and review the role you are about to delete.
 On step 4, click **Delete Project Role** to permanently delete the role.
 If the role is used by a project, a replacement role must be selected. This role will be applied to all team members who are currently assigned to the role to be deleted. If the replacement role has different permissions, then these will be applied immediately.
 
