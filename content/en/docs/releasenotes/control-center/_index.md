@@ -136,7 +136,7 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features
 
-* On the **Security** page, Mendix Admins can now [disable the digital signing](/control-center/security/#disable-enable-digital-signing-emails) of the content of emails from Mendix, if it interferes with other email safety measures.
+* On the **Security** page, Mendix Admins can now [disable the digital signing](/control-center/security-settings/#disable-enable-digital-signing-emails) of the content of emails from Mendix, if it interferes with other email safety measures.
 
 ### September 7, 2023
 
