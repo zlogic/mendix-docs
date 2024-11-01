@@ -100,7 +100,6 @@ After you configure the authentication for Snowflake, you can implement the func
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/example_implementation.png" >}}
 
-
 ## Technical Reference
 
 To help you work with the Snowflake REST SQL connector, the following sections of this document list the available entities, enumerations, and activities that you can use in your application.

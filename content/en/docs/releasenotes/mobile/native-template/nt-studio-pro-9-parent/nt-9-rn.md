@@ -10,8 +10,8 @@ description: "Native Template 9 release notes."
 
 ### Improvements
 
-  * We upgraded Android SDK version to 35.
-  * We upgraded `react-native-permissions` to version 4.1.5
+* We upgraded Android SDK version to 35.
+* We upgraded `react-native-permissions` to version 4.1.5
  
 ## 9.0.1 {#901}
 

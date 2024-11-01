@@ -1223,7 +1223,7 @@ In the Amazon S3 plan configuration, enter the following details:
 
 {{% alert color="warning" %}}
 Do not use the name of an existing Service Account (environment name), or one of the reserved Kubernetes Service Account names:
-    * `mendix-operator`
+    *`mendix-operator`
     * `mendix-agent`
     * `mendix-storage-provisioner`
 {{% /alert %}}

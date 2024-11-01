@@ -170,6 +170,7 @@ You can configure custom settings that are only used when you run your app local
 
 {{% alert color="info" %}}
 To test SSL-based connections from the Database Connection wizard, use the Certificate Manager to add a CA certificate. To do this, follow these steps:
+
 1. Open the Start menu and search `Manage computer certificates`
 2. Open **Trusted Root Certification Authorities** > **Certificates** 
 3. Import the CA certificate file

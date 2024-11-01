@@ -58,4 +58,3 @@ In general, Mendix recommends building a PWA for your mobile app project. PWAs a
 1. **Developer Experience**: If most of your developers and designers are experienced in web technologies (and you have no developers familiar with building and publishing native mobile apps), you should build a PWA. Training your team to learn new native technologies while simultaneously developing apps can delay application production.
 
 If you decide to build a native mobile app after considering these requirements, please consult our documentation on [Building Efficient Mobile Apps](/refguide9/mobile/building-efficient-mobile-apps/) and [Building, Testing, and Distributing Apps](/refguide9/mobile/distributing-mobile-apps/).
-
