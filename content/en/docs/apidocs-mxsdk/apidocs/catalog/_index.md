@@ -11,8 +11,16 @@ aliases:
 
 ## APIs for the Catalog
 
-Mendix offers the following APIs for the [Catalog](/catalog/) 
+Mendix offers the following APIs for the [Catalog](/catalog/): 
 
-* [Search API](/apidocs-mxsdk/apidocs/search-api/) — search and retrieve information on registered assets that can be used in your app development
-* [Registration API](apidocs-mxsdk/apidocs/registration-api/) — register and update data sources to the organization's Catalog
-* Transform API — for Mendix users deploying to a non-Mendix environment, generate the request bodies to register data sources published from your Mendix app
+* [Search API](/apidocs-mxsdk/apidocs/search-api/)
+  
+  Search and retrieve information on registered assets that can be used in your app development.
+
+* [Registration API](/apidocs-mxsdk/apidocs/registration-api/)
+  
+  Register and update data sources to the organization's Catalog.
+
+* [Transform API](/apidocs-mxsdk/apidocs/registration-api/#transform-api)
+  
+  The v5 compatibility for the Transform API is accessible via the Registration API  in the Endpoints section. For more information, see the Preparing Your Service Details Using the Transform API section of Registration API.

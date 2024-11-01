@@ -1,12 +1,10 @@
 ---
-title: "Catalog APIs"
-linktitle: "Catalog"
-url: /apidocs-mxsdk/apidocs/catalog-apis/
-description: "The Catalog APIs register data sources from other business applications."
+title: "Registration API"
+linktitle: "Registration API"
+url: /apidocs-mxsdk/apidocs/registration-api/
+description: "The Registration API allows you to register and update data sources to the organization's."
 weight: 50
 restapi: true
-aliases:
-    - /apidocs-mxsdk/apidocs/data-hub-apis/
 ---
 
 ## Introduction
