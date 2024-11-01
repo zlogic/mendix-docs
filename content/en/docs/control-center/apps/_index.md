@@ -8,6 +8,6 @@ no_list: false
 
 ## Introduction
 
-In Control Center, you can manage your apps from your company in the **Apps** category.
+In the **Apps** category, you can effectively oversee and manage all applications associated with your company. This section offers a comprehensive suite of essential tools and dashboards designed to enhance your application governance and streamline management processes. 
 
 ### Documents in this Category

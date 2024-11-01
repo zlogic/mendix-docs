@@ -13,7 +13,7 @@ A member in Control Center means a user of the Mendix platform who participates 
 
 ## Introduction 
 
-The **Security** page allows you to configure the security settings, manage the single sign-on configurations, and view the security history of your company.
+The **Security Settings** page allows you to configure the security settings, manage the single sign-on configurations, and view the security history of your company.
 
 ## Security Settings
 

@@ -7,6 +7,6 @@ no_list: false
 ---
 ## Introduction 
 
-In Control Center, you can manage marketplace in the **Marketplace** category.
+The **Marketplace** category provides you with essential tools for governing component approvals and aligning with organizational standards.
 
 ## Documents in This Category

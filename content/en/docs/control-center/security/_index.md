@@ -9,6 +9,6 @@ no_list: false
 
 ## Introduction 
 
-In Control Center, you can manage security in the **People** category.
+The **Security** category provides you with essential tools that empower you to safeguard your company’s digital assets and uphold best practices in security management.
 
 ## Documents in This Category
