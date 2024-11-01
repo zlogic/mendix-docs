@@ -12,7 +12,7 @@ A member in Control Center means a user of the Mendix platform who participates 
 
 ## Introduction 
 
-The **Members** page allows you to manage active, deactivated, and external members of your company.
+The **Members** page in Control Center allows you to manage active, deactivated, and external members of your company.
 
 ## Active and Deactivated Members {#active-deactive-members}
 

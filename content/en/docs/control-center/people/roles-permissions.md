@@ -8,7 +8,7 @@ no_list: true
 
 ## Introduction
 
-On the **Roles & Permissions** page, you can view and manage project roles and permissions. Additionally, you can migrate default project-level roles to centralized company-level roles.
+On the **Roles & Permissions** page in Control Center, you can view and manage project roles and permissions. Additionally, you can migrate default project-level roles to centralized company-level roles.
 
 ## Default Project Roles
 

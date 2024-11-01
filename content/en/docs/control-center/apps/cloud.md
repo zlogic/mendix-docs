@@ -12,7 +12,7 @@ no_list: true
 This feature is not yet publicly available. Please talk to your Customer Success Manager to enable this page.
 {{% /alert %}}
 
-The **Cloud** page shows you an overview of the paid and free environments of your company.
+The **Cloud** page in Control Center shows you an overview of the paid and free environments of your company.
 
 ## Paid Environments {#paid-environments}
 

@@ -1,7 +1,7 @@
 ---
 title: "Apps"
 url: /control-center/apps/
-description: "Describes the Apps category in Control Center."
+description: "Describes the Apps category in the Mendix Control Center."
 weight: 10
 no_list: false 
 ---

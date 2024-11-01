@@ -1,7 +1,7 @@
 ---
 title: "Marketplace"
 url: /control-center/marketplace/
-description: "Describes the Marketplace category in Control Center."
+description: "Describes the Marketplace category in the Mendix Control Center."
 weight: 50
 no_list: false
 ---

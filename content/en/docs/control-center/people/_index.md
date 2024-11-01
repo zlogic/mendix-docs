@@ -1,7 +1,7 @@
 ---
 title: "People"
 url: /control-center/people/
-description: "Describes the People category in Control Center."
+description: "Describes the People category in the Mendix Control Center."
 weight: 30
 no_list: false
 ---

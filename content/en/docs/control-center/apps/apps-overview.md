@@ -12,7 +12,7 @@ aliases:
 
 ## Introduction
 
-The **Apps Overview** page gives an overview of all the apps belonging to your company. The page has the following tabs available: **Mendix Cloud**, **Mendix Free Cloud**, **Other Apps**, and **Deactivated Apps**.
+The **Apps** page in Control Center gives an overview of all the apps belonging to your company. The page has the following tabs available: **Mendix Cloud**, **Mendix Free Cloud**, **Other Apps**, and **Deactivated Apps**.
 
 {{% alert color="info" %}}
 Mendix will enhance this page to provide information about apps deployed on standalone private clouds. Stay tuned.
