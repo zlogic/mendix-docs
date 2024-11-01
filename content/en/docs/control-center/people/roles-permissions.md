@@ -116,15 +116,21 @@ Here you will find the role ID which can be used in the [Mendix Projects API](/a
 ### Editing a Role
 
 To edit the characteristics of a role, click **Edit Role** on the page.
+
 Changes made to the permissions of a role are immediately applied to the team members that are assigned to the role.
+
 To prevent concurrent changes overwriting each other, only one role can be edited at any one time.
+
+{{% alert color="info" %}}
+You cannot edit the Scrum Master role. This ensures that there is always someone in the project's team that can manage the project.
+{{% /alert %}}
 
 ### Deleting a Role
 
-To delete a role, click **Edit Role** and review the role you are about to delete.
-On step 4, click **Delete Project Role** to permanently delete the role.
-If the role is used by a project, a replacement role must be selected. This role will be applied to all team members who are currently assigned to the role to be deleted. If the replacement role has different permissions, then these will be applied immediately.
+To delete a role, click **Edit Role** and review the role you are about to delete and follow the steps.
+
+On step 4, click **Delete Project Role** to permanently delete the role. If the role is used by a project, a replacement role must be selected. This role will be applied to all team members who are currently assigned to the role to be deleted. If the replacement role has different permissions, then these will be applied immediately.
 
 {{% alert color="info" %}}
-You can not edit or delete the Scrum Master role. This ensures that there is always someone in the project's team that can manage the project.
+You cannot delete the Scrum Master role. This ensures that there is always someone in the project's team that can manage the project.
 {{% /alert %}}
