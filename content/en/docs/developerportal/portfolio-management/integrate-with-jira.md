@@ -21,6 +21,7 @@ Jira integration allows you to link [Jira projects](https://www.atlassian.com/so
 * Only Portfolio Managers from the same company as the portfolio can config Jira integration and link Jira projects to a portfolio. 
 * Only Portfolio Managers and Contributors from the same company as the portfolio can add Jira epics to initiatives.
 * Viewers or external members cannot use Jira integration functionality.
+* This integration is only one-sided, so you can only display Jira information on Portfolio Management and not vice-versa. 
 
 ## Configure Jira Integration
 
@@ -47,10 +48,10 @@ To connect your portfolio to Jira, follow these steps:
   * API Token: This is a valid API token issued by the Jira platform and assigned to the above-mentioned admin user. For more information on how to get this API token, see Manage API tokens for     your Atlassian account.
   
 5. Click Next.
-6. Select the projects from Jira from you want to make available in your portfolio for Portfolio managers and contributors to link Jira epics from these projects to your portfolio initiatives.
+6. Select the projects from Jira you want to make available in your portfolio.
 7. Click Save.
 
-Once the configuration is completed, your portfolio is connected to Jira, and you should be to see the following:
+Once the configuration is completed, your portfolio is connected to Jira, and you should be able to see the following:
 
 * A card with the information details of your Jira integration and a button to edit the current configuration. 
 * A table with the Jira projects connected to your portfolio if they have been linked during the Jira integration.
@@ -70,45 +71,47 @@ Once the integration with Jira has been completed, there should be a table with 
 
 * **Icon** - This is the icon of the linked Jira project.
 * **Name** - This is the name of the linked Jira project.
-* **Key** - This is the key of the linked Jira project and upon click, you can go to the Jira page of this project.
+* **Key** - This is the key of the linked Jira project and clicking it will take you to the Jira project page.
 * **Unlink button** -  By clicking this x button, you can unlink this Jira project from your portfolio.
 
 {{% alert color="info" %}}When you delete a project, all added epics of that project are going to be removed from initiatives as well.{{% /alert %}}
 
 ### Linking a Jira Project
 
-Once the integration with Jira has been completed, you can link Jira projects to your portfolio. On the integration tab beneath the Linked Projects table you can see the button to link projects.
+Once the integration with Jira has been completed, you can link Jira projects to your portfolio. On the integration tab, you can find the button to link projects beneath the Linked Projects table.
 
-{{% alert color="info" %}You can link only projects your api token has access for and a maximum 20 projects per portfolio{{% /alert %}}
+{{% alert color="info" %}You can only link projects your API Token has access to, with a maximum of 20 projects per portfolio.{{% /alert %}}
 
 1. Click on +Link Projects button
-2. In the opened pop up, search and select Jira projects you want to link to your portfolio.
+2. In the pop-up window, search for and select the Jira projects you want to link to your portfolio.
 3. Once your selection is complete, click on Done and the recently added projects should appear on the Linked Projects table in the Jira Configuration section.
 
 ## Manage Jira Epics
 
-Once you have Linked Jira projects to your portfolio, you can add epics of these projects to your initiatives.
+Once you have linked Jira projects to your portfolio, you can add epics of these projects to your initiatives.
 * Each initiative can not add more than 20 Jira epics.
 * External users cannot add Jira epics.
 
-In the initiative side pane, you can view your already added Jira epics. Each epic row contains following information:
+In the initiative side pane, you can view your already added Jira epics. Each epic row contains the following information:
 
-* **Icon** - This is the icon of the Jira project that epic belongs to.
-* **Key** - This is the key of the added Jira epic and upon click, you can go to the Jira page of this epic.
+* **Icon** - This is the icon of the Jira project that the epic belongs to.
+* **Key** - This is the key of the added Jira epic, and clicking it will take you to the Jira page of this epic.
 * **Summary** - This is the summary of the added Jira epic.
-* **Assignee** - This shows the avatar of epic assignee
+* **Assignee** - This shows the avatar of the the epic assignee. Hovering over will display their user name.
 * **Progress** - This shows the progress of the epic by displaying total and completed Jira stories.
 * **Remove button** -  By clicking this x button, you can remove this Jira epic from your initiative.
 
 ### Adding Jira Epics
 
-To add Jira epics, go to initiatives overview page and open initiative side pane. There you will see Add Jira epics section under Epics group table.
+To add Jira epics to an initiative, go to initiatives overview page and open the initiative side pane. Under the epics group table, you can see the Jira epics section and **+ Add Jira Epics** button.
 
-1. Click on +Add Jira Epics button
-2. In the opened pop up, first select a Jira project that you have added to your portfolio from the Portfolio settings page.
-3. Later search your Jira epic by full key name or summary
-4. Select epics you want to add
-5. Click add button
+{{% alert color="info" %}}To add Jira epics to your initiative you need to have linked Jira projects with some epics to your portfolio first.{{% /alert %}}
+
+1. Click on **+ Add Jira Epics** button
+2. In the pop-up window, first select a Jira project.
+3. Then, search for your Jira epics by its full key or summary.
+4. Select epics you want to add.
+5. Click add button.
 
 Now you should be able to see your added epics in the initiative side pane.
 
