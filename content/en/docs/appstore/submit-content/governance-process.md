@@ -27,7 +27,7 @@ Mendix checks the following:
 * That the logo is related to the component's functionality
 * That the screenshots are related to the configuration required to use the component in the end-user's app
 
-It may sometimes take a few iterations for a component to be approved, depending on the issues identified. To avoid a high number of necessary iterations, make sure you have followed the [content development guidelines](/appstore/sharing-content/#guidelines) and have performed the checks above before you submit a component for approval.
+It may sometimes take a few iterations for a component to be approved, depending on the issues identified. To avoid a high number of necessary iterations, make sure you have followed the [Guidelines for Content Creators](/appstore/guidelines-content-creators/) and have performed the checks above before you submit a component for approval.
 
 {{% alert color="info" %}}
 Review and approval by Mendix is required only for the first version of a publicly-listed component. Subsequent versions of a public component do not need review or approval by Mendix.
