@@ -70,52 +70,66 @@ Clicking the number of projects that use the role opens up a pop-up window with 
 
 ### Creating a Role
 
-To create a role, click **Create Project Role** at the top of the page. A wizard opens to guide you through the following steps to set the characteristics of the role:
+To create a role, do as follows:
 
-1. Set the project role details. 
+1. At the upper-right corner of the page, click **Create Project Role**. A wizard opens to guide you through the steps to set up the new role.
 
-   {{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-1.png" alt="Project Role Step 1" >}}
+2. In the wizard, configure the settings on the **Project Role Details** tab.
 
-   1. Enter the name for the role. Every role name in your company must be unique.
-   2. Optionally, add a description for the role for further reference.
+    {{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-1.png" alt="Project Role Step 1" >}}
 
-2. Set the project permissions. These permissions determine what the team member is allowed to do within the context of project management.
+    1. Enter a role name. Every role name in your company must be unique.
+    2. Optionally, add a description for the role for further reference.
 
-   {{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-2.png" alt="Project Role Step 2" >}}
+3. Click **Next** and configure the settings on **Project Permissions** tab.
 
-3. Set the environment permissions for non-productive environments, such as the test or acceptance environments. These permissions are applied to the assigned team members on the [Permission](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
+    {{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-2.png" alt="Project Role Step 2" >}}
+
+    These permissions determine what the team member is allowed to do within the context of project management.
+
+4. Click **Next** and configure the settings on the **Non-production Environments** tab.
 
    {{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-3.png" alt="Project Role Step 3" >}}
 
-   1. Choose the correct **Access Rights**.
-   2. When granting environment access, you can choose between **Fixed** or **Custom**. 
-      * If you select **Fixed**, then set the permissions that this role has and they cannot be altered on the **Permissions** page.
+   Set the environment permissions for non-productive environments, such as the test or acceptance environments, as instructed below. These permissions are applied to the assigned team members on the [Permission](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
+
+   1. Set the correct access rights.
+   2. For **Permission Management**, you can select **Fixed** or **Custom**. 
+      * If you select **Fixed**, continue to set the permissions for this role at the bottom. The permissions you set here will be fixed for this role. They cannot be altered later on the **Permissions** page.
       * If you select **Custom**, you allow anyone with Manage Permissions rights, for example, the Technical Contact, to set the permissions per environment.
 
-4. Set the environment permissions for productive environments. These permissions are applied to the assigned team members on the **Permission** page in the Cloud Portal.
+5. Click **Next** and configure the settings on the **Production Environments** tab.
 
-   {{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-4.png" alt="Project Role Step 4" >}}
+    {{< figure src="/attachments/control-center/roles-permissions/edit-project-role-step-4.png" alt="Project Role Step 4" >}}
 
-   1. Choose the correct **Access Rights**.
-   2. When granting environment access, you can choose between **Fixed** or **Custom**. 
-      * If you select **Fixed**, then set the permissions that this role has and they cannot be altered on the **Permissions** page.
-      * If you select **Custom**, you allow anyone with Manage Permissions rights, for example, the Technical Contact, to set the permissions per environment.
+    Set the environment permissions for productive environments as instructed below. The permissions you set here will be fixed for this role. They cannot be altered later on the [Permission](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
 
-   {{% alert color="warning" %}}
-   Editing and saving the productive environment permissions can only be done after a **multi-factor authentication** has taken place.
-   {{% /alert %}}
+    1. Set the correct access rights.
+    2. For **Permission Management**, you can select **Fixed** or **Custom**. 
+        
+        * If you select **Fixed**, continue to set the permissions for this role at the bottom. The permissions you set here will be fixed for this role. They cannot be altered later on the **Permissions** page.
+        
+        * If you select **Custom**, you allow anyone with Manage Permissions rights, for example, the Technical Contact, to set the permissions per environment.
+
+    {{% alert color="warning" %}}Editing and saving the productive environment permissions can only be done after a **multi-factor authentication** has taken place.{{% /alert %}}
 
 ### Showing Details
 
-To show the details of a role, click **Show Details** on the page. A pop-up window opens with detailed information of the role.
+To show the details of a role, click **Show Details**. The **Project Role Details** pop-up window opens with detailed information of the role.
 
 {{< figure src="/attachments/control-center/roles-permissions/project-role-details.png" alt="Project Role Details" >}}
 
-Here you will find the role ID which can be used in the [Mendix Projects API](/apidocs-mxsdk/apidocs/projects-api/).
+{{% alert color="info" %}}
+In the **Project Role Details** pop-up window, you can find the role ID that can be used in the [Mendix Projects API](/apidocs-mxsdk/apidocs/projects-api/).
+{{% /alert %}}
 
 ### Editing a Role
 
-To edit the characteristics of a role, click **Edit Role** on the page.
+To edit a role, do as follows:
+
+1. Click **Edit Role** for the role you want to edit.
+2. Make the changes.
+3. Click **Save Changes**.
 
 Changes made to the permissions of a role are immediately applied to the team members that are assigned to the role.
 
@@ -127,9 +141,14 @@ You cannot edit the Scrum Master role. This ensures that there is always someone
 
 ### Deleting a Role
 
-To delete a role, click **Edit Role** and review the role you are about to delete and follow the steps.
+To delete a role, do as follow:
 
-On step 4, click **Delete Project Role** to permanently delete the role. If the role is used by a project, a replacement role must be selected. This role will be applied to all team members who are currently assigned to the role to be deleted. If the replacement role has different permissions, then these will be applied immediately.
+1. Click **Edit Role** for the role you want to delete.
+2. Review the role.
+3. Click **Delete Project Role**. A dialog box opens to ask for confirmation.
+4. Click **Delete Project Role** to permanently delete the role.
+
+If the role is used by a project, a replacement role must be selected. This role will be applied to all team members who are currently assigned to the role to be deleted. If the replacement role has different permissions, then these will be applied immediately.
 
 {{% alert color="info" %}}
 You cannot delete the Scrum Master role. This ensures that there is always someone in the project's team that can manage the project.
