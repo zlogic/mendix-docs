@@ -21,7 +21,7 @@ Jira integration allows you to link [Jira projects](https://www.atlassian.com/so
 * Only Portfolio Managers from the same company as the portfolio can config Jira integration and link Jira projects to a portfolio. 
 * Only Portfolio Managers and Contributors from the same company as the portfolio can add Jira epics to initiatives.
 * Viewers or external members cannot use Jira integration functionality.
-* This integration is only one-sided, so you can only display Jira information on Portfolio Management and not vice-versa. 
+* This integration is only one-sided. You can only display Jira information on Portfolio Management and not vice-versa. 
 
 ## Configure Jira Integration
 
