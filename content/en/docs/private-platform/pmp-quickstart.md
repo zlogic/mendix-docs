@@ -11,7 +11,7 @@ aliases:
 
 This document provides a comprehensive guide for installing Private Mendix Platform, along with its optional components, in your own Kubernetes environment.
 
-### Prerequisites
+### Prerequisites {#prerequisites}
 
 Private Mendix Platform depends on Mendix for Private Cloud for the installation and deployment of Mendix apps.
 
@@ -32,13 +32,13 @@ Before starting the installation process, make sure that you have all the necess
 
     * A kubeconfig file with administrator privileges for your Kubernetes or OpenShift platform
     * A command line terminal that supports the console API and mouse interactions. In Windows, this can be PowerShell or the Windows Command Prompt.
-    * For OpenShit clusters, OpenShift CLI. For more information, see [Getting started with the CLI](https://docs.openshift.com/container-platform/4.1/cli_reference/getting-started-cli.html).
+    * For OpenShift clusters, OpenShift CLI. For more information, see [Getting started with the CLI](https://docs.openshift.com/container-platform/4.1/cli_reference/getting-started-cli.html).
     * Kubectl installed if you are deploying to another Kubernetes platform. For more information, see [Install and Set Up kubectl](https://kubernetes.io/docs/tasks/tools/).
 
 * Optionally, if you plan to install the Svix component:
 
-    * An existing PostgreSQL database instance
-    * A Redis instance
+    * An existing PostgreSQL database instance.
+    * An optional Redis server version 6.2.0 or higher, for the task queue and cache. Using Redis is recommended for high availability, where you expect a high volume of webhook calls, or if you have multiple Svix servers. As a best practice, enable persistence in Redis so that tasks are persisted across Redis server restarts and upgrades.
 
 ## Installing and Configuring the Mendix Operator
 
@@ -160,14 +160,49 @@ Private Cloud License Manager is a required component of Private Mendix Platform
 
 Svix is required if you want to use webhooks. Install the Svix component by doing the following steps:
 
-1. Run the command `./installer component -n=<namespace name>`, where `-n` indicates a namespace. The namespace must be the same as the namespace that you plan to use for Private Mendix Platform.
-2. Select **Svix** and specify the following parameters:
+1. Optional: If you are using a self-signed TLS certificate, build and deploy a private Svix server with custom self-signed TLS certification by performing the following steps:
+    1. Prepare the following Docker file to build a private Svix server image:
 
-    * **POSTGRES_DSN** - A Postgres DSN, for example, `postgresql://postgres:postgres@pgbouncer/postgres`
-    * **REDIS_DSN** - A Redis DSN, for example, `redis://redis:6379`
-    * **Image** - Svix server docker images which can access your cluster. The default value is set to the public registry `svix/svix-server:v0.75.0`. You can change it to your private image in a private cluster.
+        ```text
+        # Base build
+        FROM svix/svix-server:v1.25.0
+        # Add customer certification into system cert trust chain
+        COPY ./customer.crt /usr/local/share/ca-certificates/
+        USER root
+        RUN update-ca-certificates
+        # Start svix service
+        USER appuser
+        CMD \
+            set -ex ; \
+            if [ ! -z "$WAIT_FOR" ]; then \
+                WAIT_FOR_ARG="--wait-for 15"; \
+            fi ; \
+            exec svix-server --run-migrations $WAIT_FOR_ARG
+        ```
 
-3. Click **Install Svix**.
+    2. Build your private Svix server image with the above Docker file and your self-signed TLS certificate file by running the following command:
+    
+        ```text
+        docker build -t {customer-private-image-registry-url}/svix/svix-server:v1.25.tls
+        ```
+    
+    3. Push your private Svix server image to your private image registry by running the following command:
+    
+        ```text
+        docker push {customer-private-image-registry-url}/svix/svix-server:v1.25.tls
+        ```
+    
+2. Run the command `./installer component -n=<namespace name>`, where `-n` indicates a namespace. The namespace must be the same as the namespace that you plan to use for Private Mendix Platform.
+3. Select **Svix**, and then specify the following parameters:
+
+    * **POSTGRES_DSN** - A Postgres DSN, for example, `postgresql://postgres:postgres@pgbouncer/postgres`.
+    * **Image** - The Svix image path. The default path is `svix/svix-server:v1.25.0`. If you are using a self-signed TLS certificate, set this path to `{customer-private-image-registry-url}/svix/svix-server:v1.25.tls`.
+    * **Use Redis** - Optional. Select this check box if you want to use Redis for message cache and queues.
+    * **REDIS_DSN** - The Redis DSN, for example, `redis://redis:6379`. This field is only available if you select the **Use Redis** check box.
+
+4. Click **Install Svix** or **Upgrade Svix**.
+
+{{< figure src="/attachments/private-platform/pmp-installer-update-svix.png" class="no-border" >}}
 
 {{% alert color="info" %}}
 The installer does not catch your pod's running status. In case of issues, verify that the pod is running correctly.
@@ -185,7 +220,7 @@ Install the Private Mendix Platform by doing the following steps:
 3. Click **Configure**, and then specify the following parameters:
 
     * **AppName** - The default app name is `mxplatform`. You can change it as required.
-    * **DatasePlan/Storageplan** - The name of the plan that you created previously.
+    * **DatabasePlan/Storageplan** - The name of the plan that you created previously.
     * **AppUrl** - The endpoint where you can connect to your running app. It must be a URL which is supported by your platform. If you leave it blank, Mendix Operator will create it.
     * **EnableTLS** - Allows you to enable or disable TLS for the Mendix app's Ingress or OpenShift Router. The default value is use the default settings.
     * **TLS option** - Allows you to use an existing `kubernetes.io/tls` secret containing the TLS certificate, or to provide the `tls.crt` and `tls.key` values directly.
@@ -235,7 +270,7 @@ To ensure that components such as svix and PCLM work correctly, you should insta
 
 Re-running the installation command ensures that the installer fetches the relevant information from the components that you added.
 
-## Upgrading the Private Mendix Platform
+## Upgrading the Private Mendix Platform {#upgrade}
 
 If you have installed Private Mendix Platform before, you can upgrade it by doing the following steps:
 
@@ -260,7 +295,7 @@ If you have installed Private Mendix Platform before, you can upgrade it by doin
     {{< figure src="/attachments/private-platform/pmp-upgrade2.png" class="no-border" >}}
 
 {{% alert color="info" %}}
-For the Svix component, you can use the Svix panel to upgrade directly.
+To upgrade the PCLM component, select the option **Upgrade PCLM** in the upgrade wizard. For the Svix component, you can use the Svix panel to upgrade directly.
 {{% /alert %}}
 
 ## Running the Private Platform Configuration Wizard {#wizard}
