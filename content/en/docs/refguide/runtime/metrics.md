@@ -54,12 +54,12 @@ The details of each settings are listed below.
 The following settings can be used, depending on the type of metrics being generated:
 
 | Setting                   | DataType       | Manda-tory | Type            | Description                                                                                  | Default Value                      | Examples |
-|---------------------------|----------------| --- |-----------------|----------------------------------------------------------------------------------------------|------------------------------------| --- |
-| `db`                      | *String*       | No | influx          | The db to send metrics to                                                                    | mydb                               | customDb, metricDb |
-| `password`                | *String*       | Yes | influx          | Authenticate requests with this password                                                     | -                                  | - |
+|---------------------------|----------------| --- |----------------|----------------------------------------------------------------------------------------------|------------------------------------| --- |
+| `db`                      | *String*       | No | influx          | the database to which to send the metrics                                                    | mydb                               | customDb, metricDb |
+| `password`                | *String*       | Yes | influx         | Authenticate requests with this password                                                     | -                                  | - |
 | `uri`                     | *String*       | No | influx          | The URI for the back end                                                                     | http://localhost:8086 (for Influx) | - |
 | `url`                     | *String*       | No | opentelemetry   | The URL for the back end                                                                     | http://localhost:4318/v1/metrics   | - |
-| `userName`                | *String*       | Yes | influx          | Authenticate requests with this user                                                         | -                                  | - |
+| `userName`                | *String*       | Yes | influx         | Authenticate requests with this user                                                         | -                                  | - |
 | `protocol`                | *String*       | No | influx          | Protocol of the statsd connection                                                            | UDP                                | TCP, UDP |
 | `domain`                  | *String*       | No | jmx             | Jmx domain to publish the metrics to                                                         | metrics                            | "Mendix", "Employee" |
 | `enabled`                 | *Boolean*      | No | influx / statsd | Enables / Disables the meter                                                                 | true                               | true, false |
@@ -222,14 +222,14 @@ Example 2
 #### OpenTelemetry{#opentelemetry}
 
 {{% alert color="info" %}}
-This feature was introduced in Mendix versions 10.17.0.
+This feature was introduced in Mendix version 10.17.0.
 {{% /alert %}}
 
 * `url` – the OpenTelemetry metrics endpoint url to which data is reported.
-* `aggregationTemporality` – aggregation temporality determines how the additive quantities are expressed, in relation to time. The supported values are `cumulative` or `delta`. Defaults to `cumulative`.
+* `aggregationTemporality` – determines how the additive quantities are expressed, in relation to time. The supported values are `cumulative` or `delta`. Defaults to `cumulative`.
 * `headers` – additional headers to send with exported metrics, this can be used for authorization headers.
 * `step` – the step size or reporting frequency to use.
-* `resourceAttributes` – resource attributes are used for all metrics published, it can be used for including information about the environment.
+* `resourceAttributes` – additional attributes used for all metrics published. You can use this, for example, to include information about the environment.
 * `enabled` – set to `true` to enable the registry. This means you can switch the meter on and off while keeping the settings in the configuration.
 
 Example 1
