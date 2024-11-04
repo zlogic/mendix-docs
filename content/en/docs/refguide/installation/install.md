@@ -55,9 +55,11 @@ The prerequisites are the following:
     | [.NET Desktop Runtime 6.0.x](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) <br/> Mendix recommends using version 6.0.6 or above | [.NET Desktop Runtime 8.0.x](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) |
 
 * Eclipse Temurin JDK (x64) (see [JDK Installation](/refguide/jdk-installation/) if you want to install another version of the JDK). Mendix version 10.8.0 and 10.0.9 supports JDK 11 and 17. Mendix version 10.10.0 supports JDK 11, 17, and 21, but installer still installs JDK 11.
+
     | Studio Pro 10.0.0 - 10.10.0 | Studio Pro 10.11.0 and above |
     | --- | --- |
     | [JDK 11 (x64)](https://adoptium.net/temurin/releases/?version=11) | [JDK 21 (x64)](https://adoptium.net/temurin/releases/?version=21) |
+
 * [Microsoft Visual C++ 2015 and 2019 Redistributable Package](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 * [Mendix Native Mobile Builder one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
 * [Git for Windows (x64)](https://git-scm.com/download/win) using the versions described below. These are the versions of Git that Studio Pro installs if the Git version installed on the system is below the suggested one.  
@@ -68,10 +70,10 @@ The prerequisites are the following:
     
 * [Microsoft Edge WebView2 Evergreen Runtime (x64 or ARM64) (Evergreen Standalone Installer version)](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
 * One of the following versions of [Gradle](https://gradle.org/install/#manually) with Gradle extracted to the parent directory of the folder where Studio Pro is installed (usually `C:\Program Files\Mendix`) instead of `C:\Gradle`.
+
     | Studio Pro 10.0.0 - 10.9.0 | Studio Pro 10.10.0 and above |
     | --- | --- |
     | Gradle 7.6 or above | Gradle 8.5 or above |
-
 
 Based on the error message you get from the installer, you can choose to install a single prerequisite, or you can try to manually install them all.
 
