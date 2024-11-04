@@ -1,12 +1,12 @@
 ---
 title: "Governance Process"
-url: /appstore/sharing-content/governance-process/
+url: /appstore/submit-content/governance-process/
 description: "Describes the Mendix processes for approving and reviewing Marketplace content."
 ---
 
 ## Approval Process
 
-All components that are to be listed in the [Public Marketplace](/appstore/sharing-content/#public) are subject to an approval process to ensure the quality and accuracy of the listing and that the component meets the expectations of users. Component submissions are processed in a queue and reviewed on a first-come, first-served basis within five working days after submission.
+All components that are to be listed in the [Public Marketplace](/appstore/submit-content/#public) are subject to an approval process to ensure the quality and accuracy of the listing and that the component meets the expectations of users. Component submissions are processed in a queue and reviewed on a first-come, first-served basis within five working days after submission.
 
 {{% alert color="warning" %}}
 Mendix strongly recommends performing the checks below before you submit your component for approval. This will also speed up the approval process.
@@ -18,7 +18,7 @@ Mendix checks the following:
 
 * The licenses used in the uploaded *.mpk* files using the [Fossology](https://fossology.osuosl.org/repo/) tool
     * There should be no use of GPL, LGPL, or MPL licenses
-    * For more details, see the [Providing License Details](/appstore/sharing-content/#license) section above
+    * For more details, see the [Providing License Details](/appstore/submit-content/#license) section above
 * For malware in the *.mpk* files using the [VirusTotal](https://www.virustotal.com/gui/home/upload) tool
 * For third-party vulnerabilities using the [Snyk](https://snyk.io/) tool
 * That the component can be used without errors in a specific Studio Pro version (if the component is a widget, module, connector, or an industry template)
@@ -34,7 +34,7 @@ Review and approval by Mendix is required only for the first version of a public
 {{% /alert %}}
 
 {{% alert color="info" %}}
-[Private Marketplace](/appstore/sharing-content/#private) content does not require any review or approval.
+[Private Marketplace](/appstore/submit-content/#private) content does not require any review or approval.
 {{% /alert %}}
 
 ## Reviewing Outdated Components

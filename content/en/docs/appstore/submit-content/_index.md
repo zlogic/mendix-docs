@@ -1,6 +1,6 @@
 ---
 title: "Submit Content in the Marketplace"
-url: /appstore/sharing-content/
+url: /appstore/submit-content/
 weight: 12
 description_list: true
 description: "Describes how to create and share Mendix Marketplace content."
@@ -123,7 +123,7 @@ In the **How would you like to receive information on new leads?** field, you mu
 
 To finish up configuring this page, click **Upload** to upload an icon for your component.
 
-{{< figure src="/attachments/appstore/sharing-content/general.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/submit-content/general.png" class="no-border" >}}
 
 ### Package {#package}
 
@@ -135,7 +135,7 @@ On the **Package** page, you can **Upload Source File**:
 
 * If you select **Manual upload**, follow the steps in the dialog box for uploading the package source file
     * When you are finished, click **Save**
-* If you select **GitHub URL**, follow the steps in the dialog box for copying the link of the release you want to import (for details, see the [Using a GitHub Repo](#github) section above)
+* If you select **GitHub URL**, follow the steps in the dialog box for copying the link of the release you want to import (for details, see the [Using a GitHub Repo](/guidelines-content-creators/#github) section in *Guidelines for Content Creators*.
     * To include the repo's *README.md* file on the component's [Documentation](#doc) tab, make sure you have checked the **Import Documentation** box 
     * When you are finished, click **OK**
 
@@ -166,7 +166,7 @@ The editor comes with a set of basic formatting tools, such as bold, bullet list
 
 <a id="screenshot"></a>Click **Upload Screenshot** to select images of the component (especially for configuration) from your computer and upload them (this is required for submitting a new component):
 
-{{< figure src="/attachments/appstore/sharing-content/enable.png"  class="no-border" >}}
+{{< figure src="/attachments/appstore/submit-content/enable.png"  class="no-border" >}}
 
 You can optionally add a **YouTube URL** and a **Demo URL**.
 
@@ -180,17 +180,17 @@ On the **Capabilities** page, you can provide the following details about an ind
 * A **Use Case** relevant to the content (enter a **Header** and **CTA URL**)
 * **External Links** relevant to the content
 
-{{< figure src="/attachments/appstore/sharing-content/capabilities.png"  class="no-border" >}}
+{{< figure src="/attachments/appstore/submit-content/capabilities.png"  class="no-border" >}}
 
 ### Publish {#publish}
 
 Finally, on the **Publish** page, you can review all the details of your component you entered so far and edit as necessary (via the **Edit** button per section) before publishing.
 
-{{< figure src="/attachments/appstore/sharing-content/publish.png"   width="600"  class="no-border" >}}
+{{< figure src="/attachments/appstore/submit-content/publish.png"   width="600"  class="no-border" >}}
 
 After you click **Publish Content**, your draft will be reviewed by Mendix before it is visible in the Marketplace. 
 
-For details on the approval process, see [Governance Process](/appstore/sharing-content/governance-process/).
+For details on the approval process, see [Governance Process](/appstore/submit-content/governance-process/).
 
 ## Updating Existing Marketplace Content {#updating}
 

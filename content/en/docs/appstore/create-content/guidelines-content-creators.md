@@ -19,11 +19,11 @@ Below are the general guidelines for creating new Marketplace content:
 * Ensure that any latest version of your product supports at least one Mendix LTS versions or Mendix MTS versions.
 * Your products must be complete and fully functional, as advertised upon submission.
 
-When adding the content to the Marketplace, add information the end-user should know to the component [documentation](/appstore/sharing-content/#doc).
+When adding the content to the Marketplace, add information the end-user should know to the component [documentation](/appstore/submit-content/#doc).
 
 ### Using a GitHub Repo {#github}
 
-You can set up a GitHub repository to contain the development content for your Marketplace component, and you can share this repo URL as the component source on the [Package](/appstore/sharing-content/#package) page in the submission process.
+You can set up a GitHub repository to contain the development content for your Marketplace component, and you can share this repo URL as the component source on the [Package](/appstore/submit-content/#package) page in the submission process.
 
 When setting up the GitHub repo for your component, follow these guidelines:
 
@@ -42,9 +42,9 @@ To create a new component release for the Mendix Marketplace, follow these steps
 
 4. If you add the *.mpk* file as a binary file to the release tag, the Mendix Marketplace automatically syncs the *.mpk* to your new draft:
 
-   {{< figure src="/attachments/appstore/sharing-content/github-releases.png" >}}
+   {{< figure src="/attachments/appstore/submit-content/github-releases.png" >}}
 
-5. Link this GitHub release to the upcoming Mendix Marketplace release by mentioning the GitHub release number in the description. For more details, see the [Package](/appstore/sharing-content/#package) and [Updating Existing Marketplace Content](/appstore/sharing-content/#updating) sections in *How to Submit Marketplace Content*.
+5. Link this GitHub release to the upcoming Mendix Marketplace release by mentioning the GitHub release number in the description. For more details, see the [Package](/appstore/submit-content/#package) and [Updating Existing Marketplace Content](/appstore/submit-content/#updating) sections in *How to Submit Marketplace Content*.
 
 ## Preparing Your Submission
 
