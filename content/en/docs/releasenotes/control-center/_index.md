@@ -14,6 +14,12 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2024
 
+### November 3, 2024
+
+#### New Features
+
+- Mendix Admins can now centrally manage cloud permissions through the Control Center for apps deployed in the Mendix Cloud. This enhancement provides greater oversight over user roles and actions within different environments. This feature is available to companies that use [Company Roles](/control-center/roles-and-permissions/).
+
 ### October 31, 2024
 
 #### Improvements
