@@ -81,7 +81,7 @@ When loading data during an integration, inheritance can improve the development
 
 ## Microflows {#microflows}
 
-Although data retrieval for pages is optimized to only join with entities and retrieve attributes which are used in the data view, microflow retrieve activities are not. In a microflow, *all* columns are retrieved, from generalizations and specializations of the entity. In addition, all associated entities are retrieved where the selected entity is at the parent end of an association.
+Although data retrieval for pages is optimized to only join with entities and retrieve attributes which are used in the data view, microflow retrieve activities are not. In a microflow, *all* attributes are retrieved, from generalizations and specializations of the entity. In addition, all associated entities are retrieved where the selected entity is at the parent end of an association.
  
 For entities with a lot of attributes, this leads to a lot of data being retrieved from the database. For entities with a lot of associations where they are the parent, this also leads to a lot of additional queries.
  

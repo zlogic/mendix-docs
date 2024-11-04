@@ -157,7 +157,7 @@ To call a stored procedure, do the following:
 
 1. Select the **Stored procedure** checkbox.
 
-2. Enter the query to call a stored procedure. Use the syntax: `Call latest_schema.InsertDataIntoTable1({1},{2})`
+2. Enter the query to call a stored procedure. Add a schema name with the stored procedure name. For example, use the following syntax, where `latest_schema` is the schema name, and `InsertDataIntoTable1` is the stored procedure: `Call latest_schema.InsertDataIntoTable1({1},{2})`. 
 
     {{< figure src="/attachments/howto/integration/use-the-external-database-connector/9.png" >}}
 

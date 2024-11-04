@@ -13,7 +13,7 @@ aliases:
 
 Catalog is an open, standards-based metadata repository that enables Mendix developers and administrators to discover and explore data sources throughout their connected ecosystem. This repository is accessible to [authorized users](/catalog/manage-data-sources/user-roles/) in your company on the web app, catalog.mendix.com, or through [Catalog APIs](/apidocs-mxsdk/apidocs/catalog-apis/).
 
-{{% alert color="info" %}}The Catalog currently supports OData data sources, or services, APIs, or databases that are wrapped in OData.{{% /alert %}}
+{{% alert color="info" %}}The Catalog currently supports OData, REST, Web Services, and Business Events. It also supports services, APIs, or databases that are wrapped in OData.{{% /alert %}}
 
 ## Your Company's Catalog
 
@@ -31,7 +31,7 @@ You can use the Catalog with any deployment method, though there are differences
 
 | Deployment Method | How are Data Sources Registered? | 
 | --- | --- |
-| [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/) | Published OData services in a deployed app are [registered automatically](/catalog/register/register-data/#mendix-cloud) as data sources in the Catalog <br> [Register sources using the Registration API](/catalog/register/register-data/#register-services) |
+| [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/) | Published OData/REST services and Business Events services in a deployed app are [registered automatically](/catalog/register/register-data/#mendix-cloud) as data sources in the Catalog <br> [Register sources using the Registration API](/catalog/register/register-data/#register-services) |
 | [Private Cloud](/developerportal/deploy/private-cloud/) | Using the [Registration API](/catalog/register/register-data/#register-services) |
 | [On-Premises](/developerportal/deploy/on-premises-design/) | Using the [Registration API](/catalog/register/register-data/#register-services) |
 

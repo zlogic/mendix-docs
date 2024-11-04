@@ -34,7 +34,7 @@ The following steps assume you have a Windows machine, but these are equally app
 
 To create a certificate signing request manually, follow these steps:
 
-1. Download the LTS [OpenSSL for Windows](https://openssl-library.org/source/index.html) and install it. You just need to download and install the **Win32 OpenSSL Light** package (get the latest version at the top of the list).
+1. Download the LTS [OpenSSL for Windows](https://slproweb.com/products/Win32OpenSSL.html) and install it. You just need to download and install the **Win64 OpenSSL Light** package (get the latest version at the top of the list).
     * If the setup process complains about a missing VC++ redistributable libraries package, cancel the installation, and first download and install the **Visual C++ 2008 Redistributables** from the same list of packages (you will be redirected to a Microsoft download page). Install OpenSSL to, for example, *C:\OpenSSL* (make note of this directory, as you will need it in step 3).
 2. Open a command line interface (CLI) such as Command Prompt. On most systems, you need to do this as an administrator (right-click the Windows start menu link and select **Run as Administrator**).
 3. Generate a private key with the OpenSSL program that you just installed. Replace `C:\OpenSSL` with where you installed OpenSSL in step 1. The private key file is stored at the location specified after the `-out` parameter. The following example will store the file in the root directory of your C: drive (you can change this to anything you want, just select a convenient place and keep track of where the file is stored): `"C:\OpenSSL\bin\openssl.exe" genrsa -out "C:\private.key" 2048`. The command will output "Generating RSA private key, 2048 bit long modulus" and lots of dots and plus signs.
@@ -63,7 +63,7 @@ The resulting *key_and_certificate.p12* will be used by the Mendix Native Mobile
 
 ### Creating the Required Distribution Profile
 
-Once you have the certificate file, you need to obtain a distribution profile. The Apple Developer Member Center allows you to define an app identifier, a test device, and finally a distribution profile. For more information, check the Apple documentation on how to [maintain identifiers, devices and profiles](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingProfiles/MaintainingProfiles.html).
+Once you have the certificate file, you need to obtain a distribution profile. The Apple Developer Member Center allows you to define an app identifier, a test device, and finally a distribution profile. For more information, check the Apple documentation on how to [maintain identifiers, devices and profiles](https://developer.apple.com/help/account/configure-app-capabilities/create-order-type-identifiers-and-certificates/).
 
 ## Android{#android}
 

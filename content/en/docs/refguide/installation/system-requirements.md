@@ -76,7 +76,6 @@ These are the known limitations for Mac:
 
 * No native mobile support
 * No support for document templates
-* No **Structure mode** for the page editor
 * Start from spreadsheet cannot be used at this time 
 * If you have already installed JDK previously, it may not be picked up properly during installation. You can either configure this manually or remove all references to JDK and run the installer again.
     * The limitation that the JDK did not get installed while installing Studio Pro on macOS was removed in [10.8.0](/releasenotes/studio-pro/10.8/).
@@ -110,6 +109,18 @@ To run a Mendix app, Mendix Studio Pro uses the following ports by default. If y
 * 8100 – sign-in port
 
 For more information on ports and modifying Studio Pro's default ports, see [Configurations](/refguide/configuration/) and the [Troubleshooting Common Mobile Issues](/refguide/mobile/getting-started-with-mobile/prerequisites/#troubleshooting) section of *Native App Prerequisites and Troubleshooting*.
+
+### File Comparison
+
+{{% alert color="info" %}}
+Comparing files on disk with the original is currently not supported on macOS.
+{{% /alert %}}
+
+By default, Studio Pro points to an executable shipped with TortoiseGit for file comparison. To customize this, navigate to **Preferences** > **Version control** > **General** > **File comparison** > **Executable** and choose your preferred tool. 
+
+The default path for the binary when installing Studio Pro on a new device is `C:\Program Files\TortoiseGit\bin\TortoiseGitMerge.exe`.
+
+You can download the latest version of TortoiseGitMerge from the [TortoiseGit](https://tortoisegit.org/download/) website. 
 
 ### File Locations
 

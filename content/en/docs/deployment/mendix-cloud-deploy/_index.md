@@ -55,7 +55,7 @@ You can upgrade a Free App to a licensed app running on a node in Mendix Cloud. 
 
 #### Free Apps Archiving {#free-apps-archival}
 
-If a Free App has been in sleep mode for three months or longer, it may be archived. For Free Apps that are going to be archived, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) is informed two weeks beforehand. Upon archiving, the project and model are retained, but the running app, database, files, and backups for the Free App are deleted.
+If a Free App has been in sleep mode for three months or longer, it may be archived. For Free Apps that are going to be archived, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) is informed two weeks beforehand. Upon archiving, the project and model are retained and will remain active and accessible, but the running app, database, files, and backups for the Free App are deleted.
 
 There are two ways to prevent your Free App from being archived:
 
@@ -99,6 +99,10 @@ Mendix apps cannot use custom ports. They communicate on the standard HTTP and H
 ### Number of End-Users for Licensed Apps
 
 The number of end-users supported for your licensed app depends on your [pricing plan](#plans). End-users of your app are classified as either internal or external. You need to report this for licensing purposes, using either the [USAGE_METRICS_EMAIL_FIELDS custom variable](/developerportal/deploy/environments-details/#custom-environment-variables) (if you are using email domains to distinguish between end-users) or by [populating the user type](/howto/monitoring-troubleshooting/populate-user-type/) for each end-user of your app. Only end-users whose Mendix accounts are marked as **Active** are counted towards the number of end-users of the app.
+
+### Supported Mendix Versions {#mendix-cloud-supported-versions}
+
+Mendix Cloud supports deploying and running all [supported major versions](/releasenotes/studio-pro/lts-mts/#major-version) of Mendix. This includes major versions that are supported via the Extended Support product. It is not possible to deploy unsupported versions to Mendix Cloud.
 
 ## Mendix Pricing Plans {#plans}
 
