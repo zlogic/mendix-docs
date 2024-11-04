@@ -1,10 +1,10 @@
 ---
-title: "Sharing Marketplace Content"
-url: /appstore/sharing-content/
-weight: 20
-no_list: false
+title: "Submit Content in the Marketplace"
+url: /appstore/submit-content/
+weight: 12
 description_list: true
 description: "Describes how to create and share Mendix Marketplace content."
+tags: ["marketplace", "public marketplace", "private marketplace", widget", "module"]
 aliases:
     - /appstore/overview/share-content/
     - /appstore/general/share-app-store-content/
@@ -27,98 +27,6 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 * Familiarize yourself with the [Marketplace Overview](/appstore/overview/) and [Using Marketplace Content](/appstore/use-content/)
 
-## Marketplace Content Development Guidelines {#guidelines}
-
-This section presents guidelines for developing content that you will submit to the Mendix Marketplace.
-
-{{% alert color="info" %}}
-Submitted Marketplace content will be reviewed within five working days.
-{{% /alert %}}
-
-### General {#general}
-
-These are some general guidelines for creating new Marketplace content:
-
-* Set up a separate app to build and maintain your Marketplace component
-* Use a relatively recent Mendix version when creating the item, not only the latest Mendix version
-* Create multiple versions of your Marketplace component (for example, for Studio Pro 8 and 9)
-
-You can add information the end-user should know to the component [Documentation](#doc) when you are adding the content to the Marketplace.
-
-### Intellectual Property
-
-When considering intellectual property (IP) in the Mendix Marketplace, follow these guidelines:
-
-* Do not copy any text, names,or other data from other components published in the Marketplace, since you do not own the copyright. Do not create unnecessary ambiguity or confusion that would mislead users of Marketplace components.
-* Do not mention components published by others within your content on the Marketplace. 
-* Make sure your component documentation only includes intellectual property that you have created. Your component should not include information or content published by others on the Marketplace, as this may lead to removing your component from the Marketplace. This also means other components can also be removed if they are using your component information or content. 
-* If you come across instances of intellectual property abuse, let us know at *AppServices_Supplier_Team@mendix.com*.
-
-For more information, see [Apply IP Protection](/appstore/creating-content/sol-ip-protection/).
-
-### For Widgets
-
-To develop widgets and submit them to Marketplace, follow these guidelines:
-
-* The widget should be [pluggable](/howto/extensibility/create-a-pluggable-widget-one/)
-* When writing variable and function names, use lowerCamelCase (for example, *mySecondVariable*)
-* Add code comments
-* Use descriptive variable and function names in both XML and JavaScript
-* A function should not be more than 200 lines of code
-* A function should only do one thing, and it should do it properly
-* Use hooks and functional components over class components
-* Create test pages for mobile when content is made for mobile platforms
-
-### For Modules
-
-To develop modules and submit them to the Marketplace, follow these guidelines:
-
-* Create a folder named **USE_ME** and add the microflows and pages that are relevant for the user
-* Create an empty folder with the version number as its name, which will appear in Studio Pro's App Explorer
-* Java dependencies
-
-    * In Mendix versions 10.3.0 and above, use [managed dependencies](/refguide/managed-dependencies/) where possible.
-    * For versions below 10.3 and any [unmanaged dependencies](/refguide/managed-dependencies/#unmanaged) (that is, non-publicly-available `.jar` files), ensure that Java dependencies are put in the `userlib` folder.
-
-        * When putting `.jar` files in the `userlib` folder, make sure the name includes a version number (for example, `org.apache.commons.io-2.3.0.jar`) and is accompanied by a blank `{jarfile-including-version}.{module_name}.RequiredLib` file so that users know where the .*jar* files come from (for example, for the module *MyModule*, `org.apache.commons.io-2.3.0.jar.MyModule.RequiredLib`)
-
-            {{< figure src="/attachments/appstore/sharing-content/userlibBlankFiles_boxed.jpg" width="400"  class="no-border" >}}
-
-* Verify that the module's Java actions compile correctly (the easiest way to check is to create a deployment package, as it will clean the deployment folder and rebuild the app; for more information, see [Environments](/developerportal/deploy/environments/))
-* Reduce the use of layouts and use snippets instead, which will result in fewer module dependencies and will reduce the number of potential errors (for example, missing layouts)
-* Implement [user roles](/refguide/user-roles/) and [security](/refguide/security/)
-* Creating a new release or module export should be done while the security level of the app containing the module is set to **Production**
-* The [status](/refguide/app-security/#app-status) must be **Complete** for the following access: page, microflow, OData, entity, and dataset
-* For example pages and microflows to be copied to another module, select the **Exclude from project** option for the document in order to encourage duplication and reduce dependency errors 
-* Do not rename entities and attributes when creating new versions, as data in these entities will get lost (replacing an existing module is based on the entity names)
-* The module must include the English language
-
-### Using a GitHub Repo {#github}
-
-You can set up a GitHub repository to contain the development content for your Marketplace component, and you can share this repo URL as the component source on the [Package](#package) page in the submission process.
-
-When setting up the GitHub repo for your component, follow these guidelines:
-
-* Make sure the repo name matches the name that will be used for the published Marketplace component
-* Use UpperCamelCase to replace the spaces in the name (for example, *MyFirstApp*)
-* Make sure the repo description states what the component does (this description can also be used in the Mendix Marketplace)
-* Add a *.gitignore* file to keep your repo clean
-
-To create a new component release for the Mendix Marketplace, follow these steps:
-
-1. Create a new tag on the appropriate commit on the production or release branch in your GitHub repo.
-2. From this tag, create a [new release in GitHub](https://help.github.com/articles/creating-releases). 
-3. In this GitHub release, provide an official name, and write the release notes. You can use these for the Marketplace release as well.
-4. If you add the *.mpk* file as a binary file to the release tag, the Mendix Marketplace automatically syncs the *.mpk* to your new draft:
-
-    {{< figure src="/attachments/appstore/sharing-content/github-releases.png" class="no-border" >}}
-
-5. Link this GitHub release to the upcoming Mendix Marketplace release by mentioning the GitHub release number in the description. For more details, see the [Package](#package) and [Updating Existing Marketplace Content](#updating) sections below.
-
-### Mendix Partner Program
-
-For more information on what this program offers, see [Mendix Component Partner Program](/appstore/partner-program/) and [Mendix Commercial Solution Partner Program](https://www.mendix.com/partners/become-a-partner/isv-program/).
-
 ## Adding New Marketplace Content {#adding}
 
 To get started, click **Add Content** in the top bar of the Marketplace home screen. Follow the steps in the sections below to add and submit the content.
@@ -132,7 +40,7 @@ To get started, click **Add Content** in the top bar of the Marketplace home scr
 
 ### General {#general}
 
-On the **General** page, you need to provide some details about your component. 
+On the **General** page,  you need to provide some details about your component. 
 
 #### Describing Your Content
 
@@ -175,14 +83,14 @@ These are the open-source software license options available and their requireme
 | **Creative Commons CC0 1.0 Universal (CC-0)** (Public Domain) | | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="remove-circle-filled" color="red" >}} | {{< icon name="checkmark-circle-filled" color="green" >}} |
 
 {{% alert color="info" %}}
-The [GNU General Public License (GPL), version 3](https://www.gnu.org/licenses/gpl-3.0.en.html) is not available to use, as everything licensed under GNU GPL is public; GNU GPL has a strong copyleft effect; modification has a strong copyleft effect; and all consuming apps should make their code public.
+The [GNU General Public License (GPL), version 3](https://www.gnu.org/licenses/gpl-3.0.en.html)  is not available to use, as everything licensed under GNU GPL is public; GNU GPL has a strong copyleft effect; modification has a strong copyleft effect; and all consuming apps should make their code public.
 {{% /alert %}}
 
 ##### Proprietary Licenses {#proprietary-license}
 
 You can configure your own proprietary license for your company’s content. The license can be used for multiple components, and it can be used by everyone within your organization. 
 
-This license can be created for a new **Public Marketplace (all Mendix users)** component by requesting a new license and submitting it alongside the component. The license needs to be [approved by Mendix](/appstore/sharing-content/#guidelines) after you have created and submitted it the first time. Once it has been submitted for approval, you and the people within your organization can also use it for other components.
+This license can be created for a new **Public Marketplace (all Mendix users)** component by requesting a new license and submitting it alongside the component. The license needs to be approved by Mendix after you have created and submitted it the first time. Once it has been submitted for approval, you and the people within your organization can also use it it for other components.
 
 Follow these steps to configure a proprietary license for a new public component:
 
@@ -215,7 +123,7 @@ In the **How would you like to receive information on new leads?** field, you mu
 
 To finish up configuring this page, click **Upload** to upload an icon for your component.
 
-{{< figure src="/attachments/appstore/sharing-content/general.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/submit-content/general.png" class="no-border" >}}
 
 ### Package {#package}
 
@@ -227,7 +135,7 @@ On the **Package** page, you can **Upload Source File**:
 
 * If you select **Manual upload**, follow the steps in the dialog box for uploading the package source file
     * When you are finished, click **Save**
-* If you select **GitHub URL**, follow the steps in the dialog box for copying the link of the release you want to import (for details, see the [Using a GitHub Repo](#github) section above)
+* If you select **GitHub URL**, follow the steps in the dialog box for copying the link of the release you want to import (for details, see the [Using a GitHub Repo](/appstore/guidelines-content-creators/#github) section in *Guidelines for Content Creators*.
     * To include the repo's *README.md* file on the component's [Documentation](#doc) tab, make sure you have checked the **Import Documentation** box 
     * When you are finished, click **OK**
 
@@ -258,7 +166,7 @@ The editor comes with a set of basic formatting tools, such as bold, bullet list
 
 <a id="screenshot"></a>Click **Upload Screenshot** to select images of the component (especially for configuration) from your computer and upload them (this is required for submitting a new component):
 
-{{< figure src="/attachments/appstore/sharing-content/enable.png"  class="no-border" >}}
+{{< figure src="/attachments/appstore/submit-content/enable.png"  class="no-border" >}}
 
 You can optionally add a **YouTube URL** and a **Demo URL**.
 
@@ -272,17 +180,17 @@ On the **Capabilities** page, you can provide the following details about an ind
 * A **Use Case** relevant to the content (enter a **Header** and **CTA URL**)
 * **External Links** relevant to the content
 
-{{< figure src="/attachments/appstore/sharing-content/capabilities.png"  class="no-border" >}}
+{{< figure src="/attachments/appstore/submit-content/capabilities.png"  class="no-border" >}}
 
 ### Publish {#publish}
 
 Finally, on the **Publish** page, you can review all the details of your component you entered so far and edit as necessary (via the **Edit** button per section) before publishing.
 
-{{< figure src="/attachments/appstore/sharing-content/publish.png"   width="600"  class="no-border" >}}
+{{< figure src="/attachments/appstore/submit-content/publish.png"   width="600"  class="no-border" >}}
 
 After you click **Publish Content**, your draft will be reviewed by Mendix before it is visible in the Marketplace. 
 
-For details on the approval process, see [Governance Process](/appstore/sharing-content/governance-process/).
+For details on the approval process, see [Governance Process](/appstore/submit-content/governance-process/).
 
 ## Updating Existing Marketplace Content {#updating}
 
@@ -297,7 +205,7 @@ Mendix expects the following updates for components in the Platform, Community, 
 
 To update content that has already been published, follow these steps:
 
-1. Find the component by going to the Marketplace home page and selecting one of the following:
+1. Find the component by clicking **My Marketplace** and selecting one of the following:
     * **My Content**
     * **Company Content**
     * **Content Groups** (note that if an existing Marketplace component is assigned to a [content group](/appstore/overview/#content-groups) as specific content group [content](/appstore/overview/#group-content), you can only update the component if you are a member of that group)
@@ -314,5 +222,3 @@ To update content that has already been published, follow these steps:
     * **Patch** – a small change (which will save the component from 6.1.0 to 6.1.1, for example)
 
 5. On the **Publish** page, you can review all the details of your component you entered so far and edit as necessary (via the **Edit Section** button) before clicking **Publish Content**.
-
-## Documents in This Category

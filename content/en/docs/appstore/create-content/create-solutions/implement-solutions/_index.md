@@ -2,7 +2,7 @@
 title: "Implement a Solution"
 url: /appstore/creating-content/sol-solutions-impl/
 linktitle: "Implement Solutions"
-weight: 4
+weight: 30
 description: "Provides information and guidance on how to implement Mendix solutions."
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
@@ -15,7 +15,7 @@ This page provides information and guidance on how to set up and upgrade a solut
 
 This image presents the typical solution lifecycle:
 
-{{< figure src="/attachments/appstore/creating-content/sol-solutions-impl-guide/solution-lifecycle.png" alt="Adaptable Solution Lifecycle" class="no-border" >}}
+{{< figure src="/attachments/appstore/create-content/implement-solutions/solution-lifecycle.png" alt="Adaptable Solution Lifecycle" class="no-border" >}}
 
 There are three main stages a solution goes through during its lifecycle:
 
