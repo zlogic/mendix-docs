@@ -44,7 +44,7 @@ To create a new component release for the Mendix Marketplace, follow these steps
 
    {{< figure src="/attachments/appstore/sharing-content/github-releases.png" >}}
 
-5. Link this GitHub release to the upcoming Mendix Marketplace release by mentioning the GitHub release number in the description. For more details, see the [Package](/appstore/sharing-content/#package) and [Updating Existing Marketplace Content](/appstore/sharing-content/#updating) sections below.
+5. Link this GitHub release to the upcoming Mendix Marketplace release by mentioning the GitHub release number in the description. For more details, see the [Package](/appstore/sharing-content/#package) and [Updating Existing Marketplace Content](/appstore/sharing-content/#updating) sections in *How to Submit Marketplace Content*.
 
 ## Preparing Your Submission
 
