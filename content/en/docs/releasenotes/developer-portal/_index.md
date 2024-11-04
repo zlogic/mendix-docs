@@ -29,8 +29,8 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### Fixes
 
-- We have resolved an issue that was causing duplicate email notifications to be sent after the completion of the migration to Git.
-- We have resolved an issue that prevented teams from modifying their roles after migrating to the centralized company roles.
+* We have resolved an issue that was causing duplicate email notifications to be sent after the completion of the migration to Git.
+* We have resolved an issue that prevented teams from modifying their roles after migrating to the centralized company roles.
 
 ### October 17, 2024
 
