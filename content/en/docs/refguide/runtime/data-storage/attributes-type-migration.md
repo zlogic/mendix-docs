@@ -33,7 +33,7 @@ Key | Means
 
 Even if Mendix cannot convert the values of a specific attribute to another type, you can still manage that manually. Change the name of the attribute, for example append the text 'Deleted' to its name. Create a new attribute with the same name and the new data type. Look up each occurrence of the old (renamed) attribute in the whole model and change this to the new attribute. Be sure that there is no microflow or page anymore which refers to the old attribute.
 
-Create a microflow in which you retrieve all instances of the entity, loop through the instances and for each instance, read the value of the old attribute, convert the value, store it in the new attribute and commit the instance. Place a button on an administrator page which calls this microflow.
+Create a microflow in which you retrieve all objects of the entity, loop through the objects and for each object, read the value of the old attribute, convert the value, store it in the new attribute and commit the object. Place a button on an administrator page which calls this microflow.
 
 When you deploy, you have to run this microflow one time, after which you can remove both the microflow and the button pointing to it, and then you can also remove the old attribute.
 
