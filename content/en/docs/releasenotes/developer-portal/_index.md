@@ -19,6 +19,13 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2024
 
+### November 3, 2024
+
+#### New features
+
+- Mendix Administrators can now centrally manage cloud permissions through the Control Center for apps deployed in the Mendix Cloud. This enhancement provides greater oversight over user roles and actions within different environmentsThis feature is available to companies that use [Company Roles](/control-center/roles-and-permissions/).
+- We have added two more endpoints to [Projects API](/apidocs-mxsdk/apidocs/projects-api/) to help you manage your project roles. More are on their way!
+
 ### October 27, 2024
 
 #### Fixes
