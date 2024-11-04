@@ -59,7 +59,7 @@ To create a new component release for the Mendix Marketplace, follow these steps
 ## Preparing Your Submission
 
 {{% alert color="info" %}}
-If you are not a component partner, you can skip this section.
+If you are not a [component partner](/appstore/partner-program/), you can skip this section.
 {{% /alert %}}
 
 ### Legal and Compliance Guidelines
