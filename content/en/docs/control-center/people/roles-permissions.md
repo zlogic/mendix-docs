@@ -30,7 +30,7 @@ You can not edit or delete the **SCRUM Master** role.
 
 #### Why Migrate?
 
-Previously, project roles were managed at the individual project level. This allowed Scrum Masters of an project to create custom project roles within their specific project, even though Mendix Admins could create templates for project roles at the company level.
+Previously, project roles were managed at the individual project level. This allowed Scrum Masters of a project to create custom project roles within their specific project, even though Mendix Admins could create templates for project roles at the company level.
 
 Mendix has now centralized project roles at the company level. To take advantage of this update, you just need to migrate all individual project roles to the new centralized project roles. This will enhance your ability to govern access across all Mendix projects and also enable the programmatic assignment of project roles via [the Mendix Projects API](/apidocs-mxsdk/apidocs/projects-api/).
 
@@ -66,7 +66,9 @@ The results of migrating to the centralized company-level roles will be as follo
 
 On the **Roles & Permission**s page, you have an overview of all centralized project roles. Per role you see a brief summary of the permissions that the role has as well as in how many projects and by how many team members they are used.
 
-Clicking the number of projects that use the role opens up a pop-up window with a list of projects where the role is used. From this page you can **Create**, **Edit**, or **Delete** a role.
+Clicking the number of projects that use the role opens up a pop-up window with a list of projects where the role is used.
+
+From the overview page you can **Create**, **Edit**, or **Delete** a role.
 
 ### Creating a Role
 
@@ -141,7 +143,7 @@ You cannot edit the Scrum Master role. This ensures that there is always someone
 
 ### Deleting a Role
 
-To delete a role, do as follow:
+To delete a role, do as follows:
 
 1. Click **Edit Role** for the role you want to delete.
 2. Review the role.
