@@ -44,20 +44,26 @@ To connect your portfolio to Jira, follow these steps:
 4. In the **Jira integration** section, click **Configure Jira Integration**. The Jira integration wizard opens to guide you through the steps to set up the integration.
 
      * **Jira Company Domain**: This is the URL of your company’s environment within the Jira platform as provided by Jira. This URL usually looks like this: `https://my-company.atlassian.net`.
-
      * **Account**: This is the login name of a user on the Jira platform with project administration rights.
-
      * **API Token**: This is a valid API token issued by the Jira platform and assigned to the above-mentioned admin user. For more information on how to get this API token, see [Manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
 
-
 5. Click **Next**.
-6. Select the projects from Jira you want to make available in your portfolio. You can select up to a maximum of 20 project.
+6. Select the projects from Jira you want to link to your portfolio. You can link up to a maximum of 20 Jira projects per portfolio in total.
 7. Click **Save**.
 
 Once the configuration is completed, your portfolio is connected to Jira, and you can see the following:
 
 * A card with the information details of your Jira integration and a button to [edit the current configuration](#edit-configuration). 
-* A table with the Jira projects connected to your portfolio if they have been linked during the Jira integration.
+* A list with the Jira projects that are linked to this portfolio, which contains the folllowing items:
+
+* Project icon – This is the icon of the linked Jira project.
+* **Name** – This is the name of the linked Jira project.
+* **Key** – This is the key of the linked Jira project and clicking it will take you to the Jira project page.
+* Unlink button – Clicking **⨉** unlinks this Jira project from your portfolio.
+
+{{% alert color="warning" %}}
+After you unlink a project, all epics added from that project will also be removed from initiatives as well.
+{{% /alert %}}
 
 ## Editing Configuration {#edit-configuration}
 
@@ -87,20 +93,7 @@ To delete a configuration, do the following steps:
    A confirmation box opens to confirm your action.
    After you delete a configuration, all linked projects an epics added from those projects are removed.
 
-## Managing Jira Projects
-
-Once the integration with Jira has been completed, on the **Integrations** tab of the [Settings](/developerportal/portfolio-management/portfolio-settings/) page, there is a table with the list of projects linked to the portfolio. Each row contains the following project details:
-
-* Project icon – This is the icon of the linked Jira project.
-* **Name** – This is the name of the linked Jira project.
-* **Key** – This is the key of the linked Jira project and clicking it will take you to the Jira project page.
-* Unlink button – By clicking **⨉**, you can unlink this Jira project from your portfolio.
-
-{{% alert color="warning" %}}
-After you unlink a project, all epics added from that project will also be removed from initiatives as well.
-{{% /alert %}}
-
-### Linking a Jira Project
+### Linking a Jira Project {#link-jira-project}
 
 {{% alert color="info" %}}
 You can only link Jira projects your API Token has access to, with a maximum of 20 Jira projects per portfolio.
@@ -112,32 +105,23 @@ Once the integration with Jira has been completed, you can link Jira projects to
 2. Go to the [Settings](/developerportal/portfolio-management/portfolio-settings/) page.
 3. Go to the **Integrations** tab.
 4. Click **+Link Projects**.
-2. In the pop-up dialog box, search for and select the Jira projects you want to link to your portfolio.
-3. Once your selection is complete, click **Done**. 
+5. In the pop-up dialog box, search for and select the Jira projects you want to link to your portfolio.
+6. Once your selection is complete, click **Done**. 
 
 The Jira projects that you added appear on the **Linked Projects** list in the **Jira Configuration** section.
 
-## Managing Jira Epics
+* Project icon – This is the icon of the linked Jira project.
+* **Name** – This is the name of the linked Jira project.
+* **Key** – This is the key of the linked Jira project and clicking it will take you to the Jira project page.
+* Unlink button – By clicking **⨉**, you can unlink this Jira project from your portfolio.
 
-Once you have linked Jira projects to your portfolio, you can add epics of these projects to your initiatives.
-* Each initiative cannot add more than 20 Jira epics.
-* External users cannot add Jira epics.
+## Unlinking a Jira Project
 
-### Adding Jira Epics
+{{% alert color="warning" %}}
+After you unlink a project, all epics added from that project will also be removed from initiatives as well.
+{{% /alert %}}
 
-To add Jira epics to an initiative, go to initiatives overview page and open the initiative side pane. Under the epics group table, you can see the Jira epics section and **+ Add Jira Epics** button.
-
-{{% alert color="info" %}}To add Jira epics to your initiative you need to have linked Jira projects with some epics to your portfolio first.{{% /alert %}}
-
-1. Click on **+ Add Jira Epics** button
-2. In the pop-up window, first select a Jira project.
-3. Then, search for your Jira epics by its full key or summary.
-4. Select epics you want to add.
-5. Click add button.
-
-Now you should be able to see your added epics in the initiative side pane.
-
-{{% alert color="info" %}}Mendix and Jira epics each have seperate limits of 20.{{% /alert %}}
-
-
-
+1. Open the portfolio you want to integrate with Jira. 
+2. Go to the [Settings](/developerportal/portfolio-management/portfolio-settings/) page.
+3. Go to the **Integrations** tab.
+4. For the Jira project that you wnat to unlick, click **⨉** at the end of the row.

@@ -113,7 +113,11 @@ To delete an existing tag, do as follows:
 Only Portfolio Managers and Contributors from the same company as the portfolio can link epics to an initiative. Viewers or external members cannot do this action.
 {{% /alert %}} 
 
-You can link any epic from [Epics](/developerportal/project-management/epics/) to an initiative. Follow the procedure below:
+Depending on which project management tool you use, you can link an epic from [Epics](/developerportal/project-management/epics/) or from [Jira project](/developerportal/portfolio-management/integrate-with-jira/) to an initiative. 
+
+### Linking an Epic from Epics
+
+To link an epic from the procedure below:
 
 1. Make sure the app to which the epics belong is already linked in the **Link Existing App** field. 
 
@@ -122,13 +126,9 @@ You can link any epic from [Epics](/developerportal/project-management/epics/) t
    {{% alert color="info" %}}For more information about the differences among initiatives, apps, and epics, read the [section](#differences-initiatives-apps-epics) below. {{% /alert %}} 
 
 2. At the bottom of the **Epics** section, click **+ Link Epics**. The **Link Epics** dialog window opens.
-
 3. Select the app to which the epics belong.
-
 4. Select the epics. You can search by the epic ID or name. 
-
 5. Click **Add** to link the selected epics to the initiative. 
-
 6. If you need to link epics belonging to other apps to this initiative, repeat the steps from 2 to 5, until you link all the epics.
 
 Once an epic is added, its ID, name, owners, and progress are displayed in this section. Users can go to the epic directly from here if they have rights to the app to which the epic belongs.
@@ -136,6 +136,30 @@ Once an epic is added, its ID, name, owners, and progress are displayed in this 
 {{% alert color="info" %}}
 To remove an existing linked epic from the initiative, hover over the row where the epic is listed, and click the **Delete** button ({{% icon name="trash-can" %}}) that appears at the end of the row.
 {{% /alert %}}
+
+Now you can proceed to [add planning information](#add-planning-information).
+
+### Linking an Epic from Your Jira Project
+
+{{% alert color="info" %}}
+Users that are not from the same company as the Jira project cannot add Jira epics from that project.
+{{% /alert %}}
+
+1. Make sure that [you have linked the Jira project to your portfolio](/developerportal/portfolio-management/integrate-with-jira/#link-jira-project).
+2. At the bottom of the **Epics** section, click **+ Add Jira Epics**.
+2. Select the Jira project to which the epics belong.
+3. Select the epics. You can search by its full key or summary.
+5. Click **Add** to link the selected epics to the initiative. 
+6. If you need to link epics belonging to other apps to this initiative, repeat the steps from 2 to 5, until you link all the epics. You can add up to a maximum of 20 Jira initiatives.
+
+Once an epic is added, you can view the following details of the epics that you linked to the initiative:
+
+* **Icon** - This is the icon of the Jira project that the epic belongs to.
+* **Key** - This is the key of the added Jira epic, and clicking it will take you to the Jira page of this epic.
+* **Summary** - This is the summary of the added Jira epic.
+* **Assignee** - This shows the avatar of the the epic assignee. Hovering over will display their user name.
+* **Progress** - This shows the progress of the epic by displaying total and completed Jira stories.
+* **Remove button** - By clicking this x button, you can remove this Jira epic from your initiative.
 
 Now you can proceed to [add planning information](#add-planning-information).
 
