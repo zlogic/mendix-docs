@@ -87,11 +87,9 @@ To delete a configuration, do the following steps:
 2. Go to the [Settings](/developerportal/portfolio-management/portfolio-settings/) page.
 3. Go to the **Integrations** tab.
 4. Click the ellipsis icon (**...**) and then select **Delete**. 
-
-   {{% todo %}}Add a screenshot.{{% /todo %}}
-
    A confirmation box opens to confirm your action.
-   After you delete a configuration, all linked projects an epics added from those projects are removed.
+
+After you delete a configuration, all linked projects an epics added from those projects are removed.
 
 ### Linking a Jira Project {#link-jira-project}
 

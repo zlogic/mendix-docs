@@ -150,16 +150,16 @@ Users that are not from the same company as the Jira project cannot add Jira epi
 2. Select the Jira project to which the epics belong.
 3. Select the epics. You can search by its full key or summary.
 5. Click **Add** to link the selected epics to the initiative. 
-6. If you need to link epics belonging to other apps to this initiative, repeat the steps from 2 to 5, until you link all the epics. You can add up to a maximum of 20 Jira initiatives.
+6. If you need to link epics belonging to other apps to this initiative, repeat the steps from 2 to 5, until you link all the epics. You can link up to a maximum of 20 Jira initiatives.
 
 Once an epic is added, you can view the following details of the epics that you linked to the initiative:
 
-* **Icon** - This is the icon of the Jira project that the epic belongs to.
+Project icon - This is the icon of the Jira project that the epic belongs to.
 * **Key** - This is the key of the added Jira epic, and clicking it will take you to the Jira page of this epic.
 * **Summary** - This is the summary of the added Jira epic.
 * **Assignee** - This shows the avatar of the the epic assignee. Hovering over will display their user name.
 * **Progress** - This shows the progress of the epic by displaying total and completed Jira stories.
-* **Remove button** - By clicking this x button, you can remove this Jira epic from your initiative.
+* Unlink button - By clicking **⨉**,, you can unlink this Jira epic from your initiative.
 
 Now you can proceed to [add planning information](#add-planning-information).
 
