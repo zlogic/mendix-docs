@@ -69,7 +69,7 @@ Depending on the Mendix version used to build your app, you have to use a differ
 * **8.18.x** – Make It Native 8 LTS ([iOS](https://apps.apple.com/app/make-it-native-8/id1334081181))
 * **Other** – [Creating a Custom Developer App](/refguide/mobile/distributing-mobile-apps/building-native-apps/how-to-devapps/) or [Building Your Own Make It Native App](https://github.com/mendix/make-it-native)
 
-For information on which mobile operating systems are supported by the Mendix native mobile apps, see the [Mobile Operating Systems](/refguide/system-requirements/#mobileos) section of *System Requirements*.
+For information on which mobile operating systems are supported by the Mendix native mobile apps, see the [Mobile Operating Systems](/refguide/system-requirements/#mobile) section of *System Requirements*.
 
 ### Direct Download Links {#direct-links}
 

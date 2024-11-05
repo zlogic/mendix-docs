@@ -61,7 +61,7 @@ The Make It Native app allows developers to preview, test, and debug native mobi
 
 This app is available for both Android and iOS devices.
 
-For information on which mobile operating systems are supported by the Make It Native app, see the [Mobile Operating Systems](/refguide9/system-requirements/#mobileos) section of *System Requirements*.
+For information on which mobile operating systems are supported by the Make It Native app, see the [Mobile Operating Systems](/refguide9/system-requirements/#mobile) section of *System Requirements*.
 
 ### Direct Download Links {#direct-links}
 
