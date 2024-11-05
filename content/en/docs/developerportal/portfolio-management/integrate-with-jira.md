@@ -79,7 +79,7 @@ Once the configuration is completed, your portfolio is connected to Jira, and yo
 
     {{% alert color="warning" %}}If you already have [linked epics from the Jira project to an initiative](/developerportal/portfolio-management/initiatives-overview/#link-epic-from-jira-project), after you unlink the Jira project, the linked epics will be unlinked from the initiative automatically.{{% /alert %}}
 
-## Editing Configuration {#edit-configuration}
+## Editing Jira Configuration {#edit-configuration}
 
 If you want to connect to a different Jira environment or rotate the API key used by the Jira Integration, you can edit the current configuration as follows:
 
@@ -89,10 +89,10 @@ If you want to connect to a different Jira environment or rotate the API key use
 4. Click **Edit Configuration**.
 5. Make the changes and save.
 
-## Deleting Configuration
+## Deleting Jira Configuration
 
-{{% alert color="info" %}}
-After you delete a configuration, all linked projects an epics added from those projects are removed.
+{{% alert color="warning" %}}
+If you already have [linked Jira projects](#link-jira-project) to the portoflio using the Jira configuration, after you delete the Jira configuration, the linked Jira projects will be unlinked from the portfolio automatically.
 {{% /alert %}}
 
 To delete a configuration, do the following steps:
@@ -110,7 +110,7 @@ To delete a configuration, do the following steps:
 ## Linking a Jira Project {#link-jira-project}
 
 {{% alert color="info" %}}
-You can only link Jira projects your API Token has access to, with a maximum of 20 Jira projects per portfolio.
+You can only link Jira projects that your API Token has access to, with a maximum of 20 Jira projects per portfolio.
 {{% /alert %}}
 
 Once the integration with Jira has been completed, you can link Jira projects to your portfolio as follows:
@@ -142,6 +142,6 @@ If you already have [linked epics from the Jira project to an initiative](/devel
 3. Go to the **Integrations** tab.
 4. For the Jira project that you wnat to unlick, click **⨉** at the end of the row. A confirmation box opens to confirm your action.
 
-    {{< figure src="/attachments/developerportal/portfolio-management/integrate-with-jira/jira-project-unlink.png" >}}
+    {{< figure src="/attachments/developerportal/portfolio-management/integrate-with-jira/warning-jira-project-unlink.png" >}}
 
 4. Click **Unlink** to confirom your action.
