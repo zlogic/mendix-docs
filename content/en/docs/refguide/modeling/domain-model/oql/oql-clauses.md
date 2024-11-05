@@ -104,7 +104,7 @@ JOIN Cust/Sales.Customer_Request/Sales.Request Req
 
 #### Selecting Distinct Values with `DISTINCT` {#distinct}
 
-The keyword `DISTINCT` specifies that duplicate rows must not be included in the result. If used, `DISTINCT` should follow directly after `SELECT`. It is not possible to request only some attributes to be distinct. `Null` is treated as a separate value. If the query result containts multiple `Null` values, `DISTINCT` is appplied to them the same way it would be applied to other values.
+The keyword `DISTINCT` specifies that duplicate rows must not be included in the result. If used, `DISTINCT` should follow directly after `SELECT`. It is not possible to request only some attributes to be distinct. `Null` is treated as a separate value. If the query result contains multiple `Null` values, `DISTINCT` is applied to them the same way it would be applied to other values.
 
 In this example, the `Sales.Customer` entity has 4 objects.
 
@@ -192,14 +192,12 @@ FROM Sales.Request
 
 It is possible to build paths over multiple associations. Associated entities can be reached from both directions. System associations `System.owner` and `System.changedBy` can also be used in such association paths, assuming they are enabled for the entity. For example:
 
-
 ```sql
 SELECT
 	LastName AS CustomerName,
 	Sales.Customer/Sales.Request_Customer/Sales.Request/System.owner/System.User/Name AS UserName
 FROM Sales.Customer
 ```
-
 
 ### `FROM` clause
 
@@ -308,6 +306,7 @@ returns
 | 562949953421923   | Jane      | Moose    | 1688849860264231 | Moose        | 2      |
 
 To avoid ambiguity in case of duplicate attribute names, it is recommended to use entity name or alias when specifying columns to be selected. The format in that case is, respectively, `<module>.<entity>/<attribute>` or `<alias>/<attribute>`. It is also possible to retrieve all attributes of a particular entity using `<alias>/*`
+
 ```
 SELECT Cust/FirstName, Req/*
 FROM Sales.Customer Cust, Sales.Request Req
@@ -652,6 +651,7 @@ FROM Sales.Location
 | Veidt  | Rotterdam | 23    | Address 2 | 2              |
 | Veidt  | Rotterdam | 1     | Address 6 | 6              |
 | Veidt  | Utrecht   | 2     | Address 5 | 5              |
+
 {{% /alert %}}
 
 ##### `GROUP BY` with Single Aggregate
@@ -1052,6 +1052,7 @@ FROM (
 		FROM Sales.Customer
 	) AS Cust
 ```
+
 | LastName |
 | -------- |
 | Doe      |
@@ -1071,6 +1072,7 @@ FROM
 WHERE
 	Req.CustomerName = Cust.LastName
 ```
+
 | LastName | Number |
 | -------- | ------ |
 | Doe      | 1      |
@@ -1088,6 +1090,7 @@ FROM
 		WHERE Req.CustomerName = Cust.LastName
 	) AS Req
 ```
+
 | LastName | MaxNumber |
 | -------- | --------- |
 | Doe      | 1         |
@@ -1106,6 +1109,7 @@ FROM
 	) AS Cust
 	ON Req.CustomerName = Cust.LastName
 ```
+
 | LastName | Number |
 | -------- | ------ |
 | Doe      | 1      |
@@ -1132,6 +1136,7 @@ WHERE
 		WHERE Location.City = MaxStockLocation.City
 	)
 ```
+
 | Brand  | City      |
 | ------ | -----     |
 | Rekall | Utrecht   |
@@ -1151,6 +1156,7 @@ WHERE
 		FROM Sales.Request Req
 	)
 ```
+
 | FirstName | LastName |
 | --------- | -------- |
 | John      | Doe      |
@@ -1169,6 +1175,7 @@ WHERE
 		WHERE Req/CustomerName = Cust/LastName
 	)
 ```
+
 | FirstName | LastName |
 | --------- | -------- |
 | John      | Doe      |
@@ -1176,10 +1183,9 @@ WHERE
 
 #### Subquery in `HAVING` {#subquery-in-having}
 
-Subqueries can be used in `HAVING` clause the same way they are used in `WHERE`: as a value or combined with `IN` or `EXISTS` clauses. For thor cases, same limitations apply to the subquery outcome.
+Subqueries can be used in `HAVING` clause the same way they are used in `WHERE`: as a value or combined with `IN` or `EXISTS` clauses. For other cases, same limitations apply to the subquery outcome.
 
 Example:
-
 
 ```sql
 SELECT COUNT(*) AS LocationCount, SUM(Stock) as CityStock, City AS City
@@ -1191,9 +1197,10 @@ HAVING
 		FROM Sales.Location
 	)
 ```
+
 | LocationCount | CityStock | City   |
 | ------------- | --------- | ------ |
-| 1			    | 3         | Zwolle |
+| 1             | 3         | Zwolle |
 
 Example of `EXISTS`:
 
@@ -1210,10 +1217,11 @@ HAVING
 			AND SubLocation/Brand = 'Rekall'
 	)
 ```
+
 | LocationCount | City      |
 | ------------- | --------- |
-| 2				| Utrecht   |
-| 1			    | Zwolle    |
+| 2             | Utrecht   |
+| 1             | Zwolle    |
 
 The same result can be achieved with `IN`:
 
@@ -1228,7 +1236,8 @@ HAVING
 		WHERE SubLocation/Brand = 'Rekall'
 	)
 ```
+
 | LocationCount | City      |
 | ------------- | --------- |
-| 2				| Utrecht   |
-| 1			    | Zwolle    |
+| 2             | Utrecht   |
+| 1                | Zwolle    |

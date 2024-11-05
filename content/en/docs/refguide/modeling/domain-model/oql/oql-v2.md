@@ -8,7 +8,7 @@ weight: 100
 
 In Studio Pro version 10.17, we introduced OQL v2. It is necessary to switch to OQL v2 in order to enable View entities, see [View entities](/refguide/app-settings/#enable-view-entities) app setting.
 
-OQL v2 syntax is not different from OQL. There is a few differences in handling of specific, mostly not very common cases. When switchihng to OQL v2, you should check if existing OQL queries in your model have any of these features.
+OQL v2 syntax is not different from OQL. There is a few differences in handling of specific, mostly not very common cases. When switching to OQL v2, you should check if existing OQL queries in your model have any of these features.
 
 The following changes are included in OQL v2:
 
@@ -35,7 +35,7 @@ GROUP BY C/Name
 
 ### More strict data type validation in OQL functions
 
-! TODO: this will be added when implemented, as there are ambuiguities
+! TODO: this will be added when implemented, as there are ambiguities
 
 ### Subquery columns should have a name or an alias
 
@@ -65,7 +65,7 @@ SELECT
 FROM Module.City
 ```
 
-### Handling of duplcate columns in `SELECT`: No longer possible to use duplicate column without entity name
+### Handling of duplicate columns in `SELECT`: No longer possible to use duplicate column without entity name
 
 It is no longer allowed to select an attribute name when it is not clear which entity the attribute belongs to.
 
@@ -85,9 +85,9 @@ FROM Module.Person
 JOIN Module.Person/Module.Person_City/Module.City
 ```
 
-### Handling of duplcate columns in `SELECT *` from subquery: allowed to join subqueries with duplicate columns
+### Handling of duplicate columns in `SELECT *` from subquery: allowed to join subqueries with duplicate columns
 
-If both entities `Module.Person` and `Module.City` have a duplicate attribute `Name`, the following query would fail in OQL v1. In OQL v2, it no longer fails, which makes the behavior consistent with the case of `SELECT *` combined with `JOIN` without subqieries.
+If both entities `Module.Person` and `Module.City` have a duplicate attribute `Name`, the following query would fail in OQL v1. In OQL v2, it no longer fails, which makes the behavior consistent with the case of `SELECT *` combined with `JOIN` without subqueries.
 
 ```sql
 SELECT *
@@ -129,7 +129,7 @@ FROM (
 )
 ```
 
-In OQL v1, Runtime would pass such query to the database, and it woulkd be handled by most database engines except SQL Server.
+In OQL v1, Runtime would pass such query to the database, and it would be handled by most database engines except SQL Server.
 
 A subquery with `LIMIT` and/or `OFFSET` is still allowed. For instance, in the following query, the subquery returns first 20 objects of entity `Module.Person` ordered by `Name`:
 
@@ -145,7 +145,7 @@ FROM (
 
 ### `ORDER BY` without `LIMIT` and `OFFSET` in View Entity is not allowed
 
-For view entities, having `ORDER BY` without `LIMIT` and/or `OFFSET` is not allowed even for the top level query. Similarly to the case of subqueries, view entitiy results are not accessed directly. In Runtime, a View entity is wrapped inside another `SELECT` query as a subquery, which allows further filtering and ordering, which makes it similar to the Subquery case.
+For view entities, having `ORDER BY` without `LIMIT` and/or `OFFSET` is not allowed even for the top level query. Similarly to the case of subqueries, view entity results are not accessed directly. In Runtime, a View entity is wrapped inside another `SELECT` query as a subquery, which allows further filtering and ordering, which makes it similar to the Subquery case.
 
 ### Changes in result type handling of arithmetic functions
 
@@ -158,17 +158,17 @@ FROM Module.Entity
 
 In OQL v1, the result of the arithmetic operation will always be of type pf the first attribute in the expression. We would not handle type differences and instead would let the database handle it. Therefore, the result would depend on the underlying database engine.
 
-OQL v2 hjas more control over arithmetic operations. For numeric types (Integer, Long and Decimal), the result of the operation is always of the type pf the most precise attribute type in  the following precedence:
+OQL v2 has more control over arithmetic operations. For numeric types (Integer, Long and Decimal), the result of the operation is always of the type pf the most precise attribute type in  the following precedence:
 
-- Decimal (highest)
-- Long
-- Integer
+* Decimal (highest)
+* Long
+* Integer
 
 If any side of the operation is of a non-numeric type, no casting is performed, and we let the database handle such operation, the same as OQL v1. See [Expression syntax](/refguide/oql-expression-syntax/#type-coercion)
 
 ### The result type of `ROUND` is now `Decimal`
 
-In OQL v1, `ROUND` would return a result in nlo longer supported by Studio Pro type `Float`. In OQL v2, it always returns `Decimal`.
+In OQL v1, `ROUND` would return a result in the no-longer supported by Studio Pro type `Float`. In OQL v2, it always returns `Decimal`.
 
 ### Attribute alias in `WHERE`
 
