@@ -49,7 +49,7 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
 
 ## Installation {#installation}
 
-Follow the instructions in [Using Marketplace Content](/appstore/use-content/) to import the Documentation Generation module into your app.
+Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the Documentation Generation module into your app.
 
 ## Configuration {#configuration}
 
