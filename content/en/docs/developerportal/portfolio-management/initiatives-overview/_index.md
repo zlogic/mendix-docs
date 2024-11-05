@@ -115,7 +115,7 @@ Only Portfolio Managers and Contributors from the same company as the portfolio 
 
 Depending on which project management tool you use, you can link an epic from [Epics](/developerportal/project-management/epics/) or from [Jira project](/developerportal/portfolio-management/integrate-with-jira/) to an initiative. 
 
-### Linking an Epic from Epics
+#### Linking an Epic from Epics
 
 To link an epic from the procedure below:
 
@@ -139,7 +139,7 @@ To remove an existing linked epic from the initiative, hover over the row where 
 
 Now you can proceed to [add planning information](#add-planning-information).
 
-### Linking an Epic from Your Jira Project
+#### Linking an Epic from Your Jira Project
 
 {{% alert color="info" %}}
 Users that are not from the same company as the Jira project cannot add Jira epics from that project.
