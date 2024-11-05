@@ -78,58 +78,50 @@ After you delete a configuration, all linked projects an epics added from those 
 To delete a configuration, do the following steps:
 
 1. Open the portfolio you want to integrate with Jira. 
-
 2. Go to the [Settings](/developerportal/portfolio-management/portfolio-settings/) page.
-
 3. Go to the **Integrations** tab.
-
 4. Click the ellipsis icon (**...**) and then select **Delete**. 
 
    {{% todo %}}Add a screenshot.{{% /todo %}}
 
    A confirmation box opens to confirm your action.
-
    After you delete a configuration, all linked projects an epics added from those projects are removed.
 
-## Managing Projects
+## Managing Jira Projects
 
 Once the integration with Jira has been completed, on the **Integrations** tab of the [Settings](/developerportal/portfolio-management/portfolio-settings/) page, there is a table with the list of projects linked to the portfolio. Each row contains the following project details:
 
-{{% todo %}}Check what is the UX text.{{% /todo %}}
-
-* **Icon** – This is the icon of the linked Jira project.
+* Project icon – This is the icon of the linked Jira project.
 * **Name** – This is the name of the linked Jira project.
 * **Key** – This is the key of the linked Jira project and clicking it will take you to the Jira project page.
-* **X** – By clicking **X**, you can unlink this Jira project from your portfolio.
+* Unlink button – By clicking **⨉**, you can unlink this Jira project from your portfolio.
 
-{{% alert color="info" %}}
+{{% alert color="warning" %}}
 After you unlink a project, all epics added from that project will also be removed from initiatives as well.
 {{% /alert %}}
 
 ### Linking a Jira Project
 
-Once the integration with Jira has been completed, you can link Jira projects to your portfolio. On the integration tab, you can find the button to link projects beneath the Linked Projects table.
+{{% alert color="info" %}}
+You can only link Jira projects your API Token has access to, with a maximum of 20 Jira projects per portfolio.
+{{% /alert %}}
 
-{{% alert color="info" %}You can only link projects your API Token has access to, with a maximum of 20 projects per portfolio.{{% /alert %}}
+Once the integration with Jira has been completed, you can link Jira projects to your portfolio as follows:
 
-1. Click on +Link Projects button
-2. In the pop-up window, search for and select the Jira projects you want to link to your portfolio.
-3. Once your selection is complete, click on Done and the recently added projects should appear on the Linked Projects table in the Jira Configuration section.
+1. Open the portfolio you want to integrate with Jira. 
+2. Go to the [Settings](/developerportal/portfolio-management/portfolio-settings/) page.
+3. Go to the **Integrations** tab.
+4. Click **+Link Projects**.
+2. In the pop-up dialog box, search for and select the Jira projects you want to link to your portfolio.
+3. Once your selection is complete, click **Done**. 
 
-## Manage Jira Epics
+The Jira projects that you added appear on the **Linked Projects** list in the **Jira Configuration** section.
+
+## Managing Jira Epics
 
 Once you have linked Jira projects to your portfolio, you can add epics of these projects to your initiatives.
-* Each initiative can not add more than 20 Jira epics.
+* Each initiative cannot add more than 20 Jira epics.
 * External users cannot add Jira epics.
-
-In the initiative side pane, you can view your already added Jira epics. Each epic row contains the following information:
-
-* **Icon** - This is the icon of the Jira project that the epic belongs to.
-* **Key** - This is the key of the added Jira epic, and clicking it will take you to the Jira page of this epic.
-* **Summary** - This is the summary of the added Jira epic.
-* **Assignee** - This shows the avatar of the the epic assignee. Hovering over will display their user name.
-* **Progress** - This shows the progress of the epic by displaying total and completed Jira stories.
-* **Remove button** -  By clicking this x button, you can remove this Jira epic from your initiative.
 
 ### Adding Jira Epics
 
