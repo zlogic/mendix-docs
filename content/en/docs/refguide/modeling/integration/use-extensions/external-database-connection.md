@@ -1,7 +1,7 @@
 ---
 title: "External Database Connection"
 url: /refguide/external-database-connection/
-weight: 80
+weight: 30
 description: "Overview of the [External Database Connection document](https://marketplace.mendix.com/link/component/219862) in Studio Pro, downloaded from the Mendix Marketplace."
 ---
 
@@ -9,7 +9,7 @@ description: "Overview of the [External Database Connection document](https://ma
 
 The [Database Connector](/appstore/modules/external-database-connector/) integrates with Studio Pro with an **External database connection** service document. Use this document alongside the connector to connect to external databases right in Studio Pro.
 
-This page references the **External database connection** document in Studio Pro. See [External Database Connector](/appstore/modules/external-database-connector/) for the complete documentation. 
+This page references the External Database Connection document in Studio Pro. For information on how to configure the connector, see [External Database Connector](/appstore/modules/external-database-connector/). For information on how to create and validate SQL queries, see [Use the External Database Connector](/refguide/use-the-external-database-connector/).
 
 {{% alert color="warning" %}}
 You must have the [External Database Connector](https://marketplace.mendix.com/link/component/219862) installed for external database connections to work properly while running your app. For instructions on adding modules or connectors to your app, see [Use Marketplace Content in Studio Pro](/appstore/use-content/).
@@ -19,7 +19,7 @@ You must have the [External Database Connector](https://marketplace.mendix.com/l
 
 Right-click on your module and click **Add other > External database connection** to open the **Connect to Database** wizard:
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/database-connection-wizard.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/database-connection-wizard.png" class="no-border" width="600" >}}
 
 Once in the wizard, enter or select the following:
 
@@ -59,7 +59,7 @@ After entering your database information in the **Connect to Database** wizard, 
 
 The name of the document is the **Name** (not **Database name**) you provided when running the wizard:
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/database-service-document.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/database-service-document.png" class="no-border" width="600" >}}
 
 ### Query Screen {#query-screen}
 
