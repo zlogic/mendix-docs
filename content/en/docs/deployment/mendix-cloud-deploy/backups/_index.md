@@ -179,11 +179,11 @@ The **Snapshot Size** field sometimes does not display the backup size correctly
 
 #### Cause
 
-This issue happens when you upload a database backup only. If required, verify the size of the snapshot by checking locally.
+This issue happens when you upload a database backup only.
 
 #### Solution
 
-Proceed with the backup import. 
+Proceed with the backup import. If required, verify the size of the snapshot by checking locally.
 
 ## Read More
 
