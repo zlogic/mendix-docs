@@ -164,7 +164,7 @@ The entity name is prefilled, but you can change it to a custom name. To create 
 1. Click **Create Entity** > **OK**. 
 2. To view the entity in your domain model, click **Show**.
 
-You can also choose to flatten and simplify the structure of your response. Enable this feature by clicking **Flatten and simplify structure**. This gives you an easy structure to model with within Studio Pro, removes empty entities, and merges one-to-one relations between a parent and child.
+You can also choose to flatten and simplify the structure of your response. Enable this feature by selecting **Flatten and simplify structure**. This gives you an easy structure to model with within Studio Pro, removes empty entities, and merges one-to-one relations between a parent and child.
 
 ### Using a REST Request in a Microflow {#add-entity-to-microflow}
 
