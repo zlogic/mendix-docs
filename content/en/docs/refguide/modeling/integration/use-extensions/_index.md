@@ -32,8 +32,8 @@ Documents available for this topic:
 
 ## Read More
 
-* [Mendix Business Events](appstore/services/business-events/)
-* [Mendix Event Broker](/services/event-broker/)
+* [Mendix Business Events](/appstore/services/business-events/)
+* [Mendix Event Broker](/appstore/services/event-broker/)
 * [Import Data from File](/refguide/import-data-from-file/)
 * [External Database Connector](/appstore/modules/external-database-connector/)
 * [Query External Database](/refguide/query-external-database/)
