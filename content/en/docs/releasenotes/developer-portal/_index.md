@@ -19,6 +19,12 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2024
 
+### November 7, 2024
+
+#### New features
+
+* We made it possible for you to [integrate your portfolio with Jira](/developerportal/portfolio-management/integrate-with-jira/)! This means now you can link Jira projects to your portfolio, assign Jira epics from these Jira projects to portfolio initiatives, and also track their progress. We offer this functionality as a beta version and welcome your feedback! 
+
 ### October 27, 2024
 
 #### Fixes
