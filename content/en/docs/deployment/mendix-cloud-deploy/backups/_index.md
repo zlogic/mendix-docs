@@ -169,6 +169,22 @@ Mendix Cloud backups that contain a very large number of files (that is, greater
 
 Customization of the databases of apps in Mendix Cloud is not supported. This includes, but is not limited to, installing extensions and enabling or disabling specific features. Mendix does not support uploading and restoring backups of customized databases to Mendix Cloud. If you attempt to restore a backup of a customized database, the restore will likely fail. Note that customizing the database of an app in Mendix Cloud breaks the support and SLA for the app.
 
+## Troubleshooting
+
+This section lists possible solutions to known issues.
+
+### Snapshot Size Display
+
+The **Snapshot Size** field sometimes does not display the backup size correctly. The backup size is shown as 0.0 MB.
+
+#### Cause
+
+This issue happens when you upload a database backup only. If required, verify the size of the snapshot by checking locally.
+
+#### Solution
+
+Proceed with the backup import. 
+
 ## Read More
 
 * [Creating a Backup](/developerportal/operate/create-backup/)
