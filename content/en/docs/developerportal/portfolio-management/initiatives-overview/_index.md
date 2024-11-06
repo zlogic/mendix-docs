@@ -141,6 +141,10 @@ Now you can proceed to [add planning information](#add-planning-information).
 
 #### Linking an Epic from Your Jira Project {#link-epic-from-jira-project}
 
+{{% alert color="warning" %}}
+This feature is in beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
+{{% /alert %}}
+
 {{% alert color="info" %}}
 Only Portfolio Managers and Contributors from the same company as the portfolio can link Jira epics to initiatives.
 {{% /alert %}}
