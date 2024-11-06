@@ -1,11 +1,13 @@
 ---
 title: "Write Data to Another App"
-url: /howto/integration/write-data/
+url: /refguide/write-data/
 description: "Describes how to add annotations to an OData service in Mendix Studio Pro, see external entities with these features in the Catalog, and use them to build your app."
 weight: 20
 aliases:
     - /data-hub/write-data/
     - /catalog/write-data/
+    - /howto/integration/write-data/
+#If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
@@ -50,7 +52,7 @@ The updatable OData capability relates to the data in your app. The Catalog prov
 
 To see the capabilities of a particular OData entity, do the following: 
 
-1. Go to the [Catalog](https://catalog.mendix.com/) and search for the name of an exposed OData service endpoint, entity, attribute, or association. For more information, see the [Using the Catalog and Curating Your Own Service](/howto/integration/share-data/#use-and-curate) section in *Share Data Between Apps*.
+1. Go to the [Catalog](https://catalog.mendix.com/) and search for the name of an exposed OData service endpoint, entity, attribute, or association. For more information, see the [Using the Catalog and Curating Your Own Service](/refguide/share-data/#use-and-curate) section in *Share Data Between Apps*.
 2. Select your entity from the left-side search results pane. If you do not see many results, try removing the **Production** filter on your search.
 
 Notice the highlighted **CRUD** letters next to the entity name in the search panel and in the detailed information in the center. The purple letters indicate which operations are supported, and the gray letters indicate which are not. Hover over the letters to see which operations are supported. You will also see any OData restrictions here.
@@ -59,7 +61,7 @@ Notice the highlighted **CRUD** letters next to the entity name in the search pa
 
 Just like in the Catalog, you can see the **CRUD** capabilities of entities, attributes, and associations inside the [Integration pane](/refguide/integration-pane/) of Studio Pro.
 
-{{< figure src="/attachments/catalog/write-data/crud-capabilities.png" alt="crud capabilities" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/integration/write-data/crud-capabilities.png" alt="crud capabilities" class="no-border" >}}
 
 To consume an OData entity, do the following:
 
@@ -77,8 +79,8 @@ How does the published service know that an insert fails? In the publishing app,
 
 The domain model for the publishing app's validation message looks like this:
 
-{{< figure src="/attachments/catalog/write-data/validate-data-publishing-app.png" alt="publishing app validation" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/integration/write-data/validate-data-publishing-app.png" alt="publishing app validation" class="no-border" >}}
 
 In the client app, the error handler would look like this:
 
-{{< figure src="/attachments/catalog/write-data/validate-data-client-app.png" alt="client app validation" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/integration/write-data/validate-data-client-app.png" alt="client app validation" class="no-border" >}}
