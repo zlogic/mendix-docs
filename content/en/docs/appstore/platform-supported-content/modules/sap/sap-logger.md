@@ -24,7 +24,7 @@ In addition, the Connector supports multiline log messages.
 
 ## Getting the SAP Logging Connector
 
-To use the [SAP Logging](https://marketplace.mendix.com/link/component/110219/) connector, you need to import it into your app from the Marketplace. For more information on importing modules from the Marketplace, see [Using Marketplace Content](/appstore/use-content/).
+To use the [SAP Logging](https://marketplace.mendix.com/link/component/110219/) connector, you need to import it into your app from the Marketplace. For more information on importing modules from the Marketplace, see [How to Use Marketplace Content](/appstore/use-content/).
 
 ## Using the Connector
 

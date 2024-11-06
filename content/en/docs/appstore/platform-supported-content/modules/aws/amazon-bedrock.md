@@ -43,7 +43,7 @@ Depending on your use case, your deployment environment, and the type of app tha
 
 ## Installation
 
-Follow the instructions in [Using Marketplace Content](/appstore/use-content/) to import the Amazon Bedrock connector into your app.
+Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the Amazon Bedrock connector into your app.
 
 ## Configuration
 
@@ -234,8 +234,8 @@ Some capabilities of the chat completions operations are currently only availabl
 
 **Function calling microflows**: A microflow used as a tool for function calling must satisfy the following conditions:
 
-        1. One input parameter of type String or no input parameter.
-        2. Return value of type String.
+1. One input parameter of type String or no input parameter.
+2. Return value of type String.
 
 * **Vision** - This operation supports the *vision* capability for [supported models](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features). With vision, you can send image prompts, in addition to the traditional text prompts. You can use vision by adding a `FileCollection` with a `File` to the `Message` using the [Files: Initialize Collection with File](/appstore/modules/genai/commons/#initialize-filecollection) or the [Files: Add to Collection](/appstore/modules/genai/commons/#add-file-to-collection) operation. Make sure to set the `FileType` attribute to **image**.
 

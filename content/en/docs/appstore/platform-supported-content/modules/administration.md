@@ -27,7 +27,7 @@ The [Administration](https://marketplace.mendix.com/link/component/23513) module
 
 ## Installation
 
-Follow the instructions in [Using Marketplace Content](/appstore/use-content/) to import the Administration module into your app.
+Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the Administration module into your app.
 
 ## Usage
 

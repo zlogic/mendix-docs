@@ -11,7 +11,6 @@ With the introduction of the [Mendix Projects API](/apidocs-mxsdk/apidocs/projec
 
 This document guides you through the process of configuring your Mendix PAT in ATS.
 
-
 ## Prerequisites
 
 Before starting, ensure you have completed the following:
@@ -43,8 +42,3 @@ Before starting, ensure you have completed the following:
 6. After saving your PAT, click **Can't find your app** and then **Refresh my apps** to view your applications in ATS.
 
 You have successfully set up your Personal Access Token in ATS. This allows you to access and use the full functionality of ATS.
-
-
-
-
-

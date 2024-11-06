@@ -136,7 +136,7 @@ You can view details of a backup by clicking **More Options** ({{% icon name="th
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/backups/backup-details.png" alt="Backup Details" max-width=60% class="no-border" >}}
 
 {{% alert color="info" %}}
-The size of the backup file does not match the size of the actual database. Backups do not contain a copy of the database but rather contain instructions on how to recreate the database.
+The size of the snapshot does not match the size of the actual database within the application. Snapshots do not contain a copy of the database but rather contain instructions on how to recreate the database.
 {{% /alert %}}
 
 ## Data Location {#data-location}
