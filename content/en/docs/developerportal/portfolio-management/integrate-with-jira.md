@@ -11,9 +11,9 @@ Jira integration in the Portfolio Management Tool allows you to link [Jira proje
 
 ### Features
 
-* Supports connecting your portfolio to Jira.
-* Allows you to link Jira projects to your portfolio.
-* Allows you to link Jira epics to your initiatives.
+* Supports [connecting your portfolio to Jira](#configure-jira-integration).
+* Allows you to [link Jira projects to your portfolio](#link-jira-project).
+* Allows you to [link Jira epics to your initiatives](/developerportal/portfolio-management/initiatives-overview/#link-epic-from-jira-project).
 * Allows you to view and track progress of Jira epics linked to portfolio initiatives.
 
 ### Limitations
@@ -23,7 +23,7 @@ Jira integration in the Portfolio Management Tool allows you to link [Jira proje
 * Viewers or external members cannot use Jira integration functionality.
 * This integration is only one-sided. You can only display Jira information in the Portfolio Management tool and not vice versa. 
 
-## Configuring Jira Integration
+## Configuring Jira Integration {#configure-jira-integration}
 
 As a Portfolio Manager, you can integrate your portfolio with Jira. After configuring Jira, you can link Jira projects to your portfolio and link Jira epics to portfolio initiatives. Note that each portfolio requires a separate Jira integration setup.
 
