@@ -11,7 +11,7 @@ In the Portfolio Management app, the term "Initiative" represents a business obj
 
 The **Initiatives Overview** page gives an overview of all the initiatives in this portfolio.
 
-{{< figure src="/attachments/developerportal/portfolio-management/initiatives-overview.png" >}}
+{{< figure src="/attachments/developerportal/portfolio-management/initiatives-overview/initiatives-overview.png" >}}
 
 In the search box on the top, you can search for an initiative by the initiative name.
 

@@ -18,7 +18,7 @@ Typical use cases for Conversational UI include the following:
 
 * Create a chat interface for users to chat with Large Language Models (LLM). 
 * Allow users to switch between different implementations by switching providers. 
-* Include advanced capabilities to control the model's behavior, for example by setting the temperature parameter.
+* Include advanced capabilities to control the model's behavior, for example, by setting the temperature parameter.
 * Easily extend the chat interface with advanced concepts, such as RAG or the ReAct pattern. For more information, see [Using Generative AI](/appstore/modules/genai/using-gen-ai/).
 
 ### Features {#features}
@@ -30,7 +30,7 @@ The Conversational UI module provides the following functionalities:
     * Pages that you can use in your navigation for chat
     * Snippets that you can use directly on your pages, for example to display messages or a history sidebar
     * A floating button for opening a pop-up chat
-    * Pages, snippets and logic to display and export token usage data (if enabled in GenAI Commons and supported by the GenAI Connector of choice)
+    * Pages, snippets, and logic to display and export token usage data (if enabled in GenAI Commons and supported by the GenAI Connector of choice)
 * Operations to set up your context, interact with the model, and add the data to be displayed in the UI
 * Domain model to store the chat conversations and additional information
 * Integration with any model that is compatible with [GenAI Commons](https://marketplace.mendix.com/link/component/227933)
@@ -43,7 +43,7 @@ This module is intended to enable chat interactions between a user and an AI mod
 
 To use the Conversational UI module, your Mendix Studio Pro version must be [9.24.2](/releasenotes/studio-pro/9.24/#9242) or higher.
 
-You must also ensure that you have the prerequisite modules that Conversational UI requires. The modules are included by default in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934), the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) and the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035), otherwise you must install them yourself:
+You must also ensure you have the prerequisite modules that Conversational UI requires. The modules are included by default in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934), the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), and the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035), otherwise you must install them yourself:
 
 * [Atlas Core](https://marketplace.mendix.com/link/component/117187)
 * [Data Widgets](https://marketplace.mendix.com/link/component/116540) 
@@ -55,7 +55,7 @@ Finally, you must also install and configure a connector that is compatible with
 
 ## Installation {#installation}
 
-Follow the instructions in [Using Marketplace Content](/appstore/use-content/) to import the Conversational UI module into your app.
+Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the Conversational UI module into your app.
 
 ## Configuration {#configuration}
 
@@ -66,20 +66,20 @@ To use Conversational UI in your app, you must perform the following tasks in St
 3. Make sure there is a [chat context](#chat-context) available on the page where the conversation should be shown.
 4. Associate one or more [provider-configs](#provider-config) to the chat context. 
 5. Use a default [action microflow](#action-microflow) or create a custom flow that will be executed when the user clicks the **Send** button.
-6. In the project theme settings, include the ConversationalUI module in the right order . Add it after Atlas_Core so the styling does not get overwritten (see [Ordering UI Resource Modules](/howto/front-end/customize-styling-new/#ordering-ui-resource-modules) for more information).
+6. In the project theme settings, include the ConversationalUI module in the right order. Add it after Atlas_Core so the styling does not get overwritten (see [Ordering UI Resource Modules](/howto/front-end/customize-styling-new/#ordering-ui-resource-modules) for more information).
 7. Optionally, [customize styling](#customize-styling) by overwriting variables and adding custom scss. Custom styling modules need to be loaded after ConversationalUI when ordering UI resources.
 
-The main entities are shown for reference in the diagram below. For technical documentation, follow the steps in the [Technical reference](#technical-reference) section.
+The main entities are shown for reference in the diagram below. For technical documentation, follow the steps in the [Technical Reference](#technical-reference) section.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/conversational-ui/domain-model.png" >}}
 
 ### Configuring the Roles {#module-roles}
 
-Make sure that the module role `User` is part of the user roles that are intended to chat with the model. Optionally, you can grant the `_addOn_ReadAll` role to admin roles, so that users with that role can read all messages. A role for usage montoring is related only to the [Token monitor snippets](#snippet-token-monitor) and does not relate to the conversational snippets.
+Make sure that the module role `User` is part of the user roles that are intended to chat with the model. Optionally, you can grant the `_addOn_ReadAll` role to admin roles, so that users with that role can read all messages. A role for usage monitoring is related only to the [Token monitor snippets](#snippet-token-monitor) and does not relate to the conversational snippets.
 
 | Module role | Description |
 | --- | --- |
-| `User` | Role needed for every user that should be able to interact with the chat components. Users can only read their own messages (and related data). |
+| `User` | Role needed for every user that should be able to interact with the chat components. Users can only read their messages (and related data). |
 | `_addOn_ReadAll` | Role can be granted additionally. Users with both roles can read all chat data. |
 | `UsageMonitoring` | Can view and export all token usage data. This is related to a module role with the same name in the GenAI Commons module. |
 
@@ -95,7 +95,7 @@ You can include the following pages in your navigation, or copy them to your mod
 * **ConversationalUI_Sidebar** - This page displays the chat interface on the right side with the full height.
 * **ConversationalUI_PopUp** - This is a floating pop-up in the bottom-right corner. To open it, users can click the **Snippet_FloatingChatButton** that floats in the bottom-right corner. Alternatively, you can use the building block **Floating Chat Button** from the toolbox to create your custom opening logic.
 
-All pages expect a [ChatContext](#chat-context) that needs to have an active [ProviderConfig](#provider-config). The user can chat with the LLM on all these pages, but cannot configure additional settings, such as the model or system prompt. There are many ways to enable this: on a custom page before the chat was opened, on a custom version of chat page itself, or in the [action microflow](#action-microflow) that is stored in the active [ProviderConfig](#provider-config).
+All pages expect a [ChatContext](#chat-context) that needs to have an active [ProviderConfig](#provider-config). The user can chat with the LLM on all these pages, but cannot configure additional settings, such as the model or system prompt. There are many ways to enable this: on a custom page before the chat was opened, on a custom version of the chat page itself, or in the [action microflow](#action-microflow) that is stored in the active [ProviderConfig](#provider-config).
 
 #### Snippets {#snippets}
 
@@ -103,7 +103,7 @@ Drag the following snippets onto your other pages to quickly build your version 
 
 ##### Chat Interface Snippets {#snippet-chat-interface}
 
-Chat interface snippets contain the whole chat history as a list view and below that a text area for users to enter the user prompt. There are some UI components that show an error message when a call has failed, or that show progressing loading bots when waiting for the response. When a user clicks the **Send** button, the [action microflow](#action-microflow) is executed.
+Chat interface snippets contain the whole chat history as a list view and below that a text area for users to enter the user prompt. Some UI components show an error message when a call has failed, or that show progressing loading bots when waiting for the response. When a user clicks the **Send** button, the [action microflow](#action-microflow) is executed.
 
 The following versions are available and can be swapped as needed:
 
@@ -114,18 +114,18 @@ If the snippet does not fit your use case, you can [inline the snippet](/refguid
 
 ##### Message Snippets {#snippet-messages}
 
-The messages snippets are already part of the [Chat Interface Snippets](#snippet-chat-interface), but can be used individually in your custom setup if needed. They contain the content of a single message, for example to be used in a list view.
+The message snippets are already part of the [Chat Interface Snippets](#snippet-chat-interface) but can be used individually in your custom setup if needed. They contain the content of a single message, for example, to be used in a list view.
 
 The following versions are available and can be swapped as needed:
 
 * **Snippet_Message** - This snippet shows both the user messages and the responses on the left side of the list.
-* **Snippet_Message_Bubble** - This snippet shows the user messages on the right side and the responses on the left side, similarly to common chat apps. The content is placed inside colored cards (bubbles).
+* **Snippet_Message_Bubble** - This snippet shows the user messages on the right side and the responses on the left side, similar to common chat apps. The content is placed inside colored cards (bubbles).
 
 ##### Advanced Configuration Snippets {#snippet-configuration}
 
 The following additional snippets can be used to give the user more control over the chat conversations.
 
-* **Snippet_ChatContext_AdvancedSettings** - This snippet can be placed on pages to let users configure specific parameters (currently **temperature**). Use the microflow **AdvancedSettings_GetAndUpdate** to set the boundaries and default value for advanced settings in the UI. 
+* **Snippet_ChatContext_AdvancedSettings** - This snippet can be placed on pages to let users configure specific parameters (current **temperature**). Use the microflow **AdvancedSettings_GetAndUpdate** to set the boundaries and default value for advanced settings in the UI. 
 * **Snippet_ChatContext_SelectActiveProviderConfig** - With this snippet, users can select an active [Provider Config](#provider-config) from all associated configurations, for example, to let them select a model.
 * **Snippet_ChatContext_HistorySideBar** - This snippet can be used in a list view to show past conversations. It displays the **topic** of the chat context as well as a delete icon on hover. For details on how to set the topic, see [ChatContext operations](#chatcontext-operations).
 
@@ -143,7 +143,7 @@ Depending on the implementation, you can create this entity using a microflow th
 
 * `New Chat` creates a new `ChatContext` and a new `ProviderConfig` (or specialization of such depending on the input). The `ProviderConfig` is added to the `ChatContext` and set to active. Additionally, the action microflow of the new `ProviderConfig` is set.
 * `New Chat with Existing Config` creates a new `ChatContext` and sets a given `ProviderConfig` to active.
-* `New Chat with Additional Configs` creates a new `ChatContext` and adds a `ProviderConfig` to the `ChatContext` and sets it to active. In addition, a list of `ProviderConfig` can be added to the `ChatContext` (non-active, but selectable in the UI).
+* `New Chat with Additional Configs` creates a new `ChatContext`, adds a `ProviderConfig` to the `ChatContext`, and sets it to active. In addition, a list of `ProviderConfig` can be added to the `ChatContext` (non-active, but selectable in the UI).
 
 #### SuggestedUserPrompt {#suggested-user-prompt}
 
@@ -198,7 +198,7 @@ The following operations are used in a (custom) action microflow:
 
 ### Customizing styling {#customize-styling}
 
-The ConversationalUI module comes with its stylesheets that are intended to work on top of Atlas Core. You can use variables and custom classes to modify the default rendering, and think of colors, sizes, and positions. To learn more about customizing styling in a Mendix app in general and targeting elements using SCSS selectors, refer to the [how-to](/howto/front-end/customize-styling-new/#add-custom-styling) page.
+The ConversationalUI module comes with stylesheets that are intended to work on top of Atlas Core. You can use variables and custom classes to modify the default rendering and think of colors, sizes, and positions. To learn more about customizing styling in a Mendix app in general and targeting elements using SCSS selectors, refer to the [how-to](/howto/front-end/customize-styling-new/#add-custom-styling) page.
 
 #### Variables {#customize-styling-variables}
 
@@ -265,7 +265,7 @@ The export of usage data for the token monitor does not work correctly.
 
 #### Cause 
 
-The [Data Widgets](https://marketplace.mendix.com/link/component/116540) module that you have installed is in an older version which does not support exporting data to *.xlsx* format from the Data grid 2 widget.
+The [Data Widgets](https://marketplace.mendix.com/link/component/116540) module that you have installed is in an older version which does not support exporting data to *.xlsx* format from the Data Grid 2 widget.
 
 #### Solution 
 

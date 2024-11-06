@@ -76,7 +76,6 @@ These are the known limitations for Mac:
 
 * No native mobile support
 * No support for document templates
-* No **Structure mode** for the page editor
 * Start from spreadsheet cannot be used at this time 
 * If you have already installed JDK previously, it may not be picked up properly during installation. You can either configure this manually or remove all references to JDK and run the installer again.
     * The limitation that the JDK did not get installed while installing Studio Pro on macOS was removed in [10.8.0](/releasenotes/studio-pro/10.8/).
@@ -284,14 +283,14 @@ AWS S3 is also supported in the Windows Service Console.
 
 * Google Chrome (latest stable desktop and Android versions)
 * Mozilla Firefox (latest stable desktop version)
-* Apple Safari (latest stable desktop version and latest version for each [supported iOS](#mobileos) version)
+* Apple Safari (latest stable desktop version and latest version for each [supported iOS](#mobile) version)
 * Microsoft Edge (latest stable desktop version)
 
 {{% alert color="warning" %}}
 Internet Explorer is not supported in Studio Pro 10.
 {{% /alert %}}
 
-## Mobile Operating Systems {#mobileos}
+## Mobile {#mobile}
 
 For native and progressive web apps built with Mendix, the following operating system versions are supported:
 
@@ -308,6 +307,8 @@ Mendix recommends the following minimum hardware requirements for all mobile dev
 * Memory: minimum 2 GB
 
 Depending on your app's complexity, these minimum hardware requirements might not be sufficient and should be adjusted.
+
+Developing native mobile apps with Mendix comes with special requirements explained in [Native App Prerequisites and Troubleshooting](/refguide/mobile/getting-started-with-mobile/prerequisites/).
 
 ## MxBuild {#mxbuild}
 

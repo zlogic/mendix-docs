@@ -100,7 +100,7 @@ The module contains one constant: `CommunityCommons.MergeMultiplePdfs_MaxAtOnce`
 * `getTypeAsString` – This returns the actual type of an entity. Useful as an alternative way to split upon inheritance or as input for other functions in this module.
 * `memberHasChanged` – This checks whether a member has changed since the last commit. This is useful in combination with `GetOriginalValueAsString`.
 * `objectHasChanged` – This returns true if at least one member (including owned associations) of this object has changed.
-* `objectisNew ` – This returns `true` if this object is new (not committed in the database).
+* `objectisNew` – This returns `true` if this object is new (not committed in the database).
 * `refreshClass` – This refreshes a certain domain object in the client. This is useful for enforcing a data grid to refresh, for example.
 * `refreshClassByObject` – This refreshes a certain class via the domain object type in the client. This is useful for enforcing a data grid to refresh, for example.
 * `StartTransaction` – This starts a transaction. If a transaction is already started for this context, a savepoint will be added.
