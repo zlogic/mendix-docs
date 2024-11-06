@@ -3,15 +3,19 @@ title: "Integrate with Jira"
 url: /developerportal/portfolio-management/integrate-with-jira/
 weight: 40
 description: "Describes how to integrate the Portfolio Management Tool with Jira."
+beta: true
 ---
+
+{{% alert color="warning" %}}
+This feature is in beta. For more information, see [Beta Releases](/releasenotes/beta-features/).
+{{% /alert %}}
 
 ## Introduction
 
-Jira integration in the Portfolio Management Tool allows you to link [Jira projects](https://www.atlassian.com/software/jira/guides/projects/overview#what-is-a-jira-project) to your [portfolio](/developerportal/portfolio-management/#portfolio-landscape). With this integration, you can assign [Jira epics](https://www.atlassian.com/agile/project-management/epics) in those Jira projects to [portfolio initiatives](/developerportal/portfolio-management/initiatives-overview/#create-new-initiative) and track their progress.
+Jira integration in the Portfolio Management Tool allows you to link [Jira projects](https://www.atlassian.com/software/jira/guides/projects/overview#what-is-a-jira-project) to your [portfolio](/developerportal/portfolio-management/#portfolio-landscape). With this integration, you can assign [Jira epics](https://www.atlassian.com/agile/project-management/epics) from those Jira projects to [portfolio initiatives](/developerportal/portfolio-management/initiatives-overview/#create-new-initiative) and track their progress.
 
 ### Features
 
-* Supports [connecting your portfolio to Jira](#configure-jira-integration).
 * Allows you to [link Jira projects to your portfolio](#link-jira-project).
 * Allows you to [link Jira epics to your initiatives](/developerportal/portfolio-management/initiatives-overview/#link-epic-from-jira-project).
 * Allows you to view and track progress of Jira epics linked to portfolio initiatives.
@@ -25,14 +29,13 @@ Jira integration in the Portfolio Management Tool allows you to link [Jira proje
 
 ## Configuring Jira Integration {#configure-jira-integration}
 
-As a Portfolio Manager, you can integrate your portfolio with Jira. After configuring Jira, you can link Jira projects to your portfolio and link Jira epics to portfolio initiatives. Note that each portfolio requires a separate Jira integration setup.
+As a Portfolio Manager, you can integrate your portfolio with Jira. After configuring the Jira integration, you can link Jira projects to your portfolio and link Jira epics to portfolio initiatives. Note that each portfolio requires a separate Jira integration setup.
 
 ### Prerequisites
 
 * You need to have the Portfolio Manager role for the portfolio.
 * You need to have an active subscription to [Jira Software Cloud](https://support.atlassian.com/jira-cloud-administration/docs/explore-jira-cloud-plans/).
-* You need to have a project in Jira.
-* You need to have a user account and API token with administration rights to the project in Jira. For more information on how to get this API token, see [Manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+* You need to have a user account and API token with access rights to the project in Jira. For more information on how to get this API token, see [Manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
 
 ### Procedure
 
@@ -55,9 +58,9 @@ To connect your portfolio to Jira, follow these steps:
 
     {{< figure src="/attachments/developerportal/portfolio-management/integrate-with-jira/jira-configuration-wizard-page-2.png" >}}
 
-     * **Jira Environment URL**: This is the URL of your company’s environment within the Jira platform as provided by Jira. This URL usually looks like this: `https://my-company.atlassian.net`.
-     * **Account**: This is the login name of a user on the Jira platform with project administration rights.
-     * **API Token**: This is a valid API token issued by the Jira platform and assigned to the above-mentioned admin user. For more information on how to get this API token, see [Manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
+     * **Jira Environment URL**: This is the URL of your company’s environment within the Jira platform as provided by Jira. This URL usually looks like this: `https://mycompany.atlassian.net`.
+     * **Account**: This is the login name (the email address) of a user on the Jira platform with project access rights.
+     * **API Token**: This is a valid API token issued by the Jira platform and assigned to the above-mentioned account. For more information on how to get this API token, see [Manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/).
 
 5. Click **Next**.
 6. Select the Jira projects you want to link to your portfolio. You can link up to a maximum of 20 Jira projects per portfolio.
@@ -82,7 +85,7 @@ Once the configuration is completed, your portfolio is connected to Jira, and yo
 
 ## Editing Jira Configuration {#edit-configuration}
 
-If you want to connect to a different Jira environment or rotate the API key used by the Jira integration, you can edit the current configuration as follows:
+If you want to edit your existing Jira configuration, for example to rotate the API token, you can do this as follows:
 
 1. In the Portfolio Management tool, [open the portfolio](/developerportal/portfolio-management/#open-portfolio).
 2. Go to the [Portfolio Settings](/developerportal/portfolio-management/portfolio-settings/) page.
@@ -96,7 +99,7 @@ If you want to connect to a different Jira environment or rotate the API key use
 ## Deleting Jira Configuration
 
 {{% alert color="warning" %}}
-If you already have [linked Jira projects](#link-jira-project) to the portoflio,, after you delete the Jira configuration, the linked Jira projects will be unlinked from the portfolio automatically.
+If you already have [linked Jira projects](#link-jira-project) to the portoflio, after you delete the Jira configuration, the linked Jira projects will be unlinked from the portfolio automatically.
 {{% /alert %}}
 
 To delete a configuration, do the following steps:
@@ -126,18 +129,7 @@ Once the integration with Jira has been completed, you can link Jira projects to
 5. In the pop-up dialog box, search for and select the Jira projects you want to link to your portfolio.
 6. Once your selection is complete, click **Done**. 
 
-The Jira projects that you linked appear on the **Linked Projects** list in the **Jira Configuration** section. The list contains the following items:
-
-{{< figure src="/attachments/developerportal/portfolio-management/integrate-with-jira/linked-jira-projects-list.png" >}}
-
-* Project icon – This is the icon of the linked Jira project.
-* **Name** – This is the name of the linked Jira project.
-* **Key** – This is the key of the linked Jira project. Clicking it takes you to the Jira project page.
-* Unlink button (**⨉**) – By clicking **⨉**, you can [unlink this Jira project](#unlink-jira-project) from your portfolio.
-
-{{% alert color="info" %}}
-After a Jira project is linked to your portfolio, you can [link epics from this Jira project to initiatives](/developerportal/portfolio-management/initiatives-overview/#link-epic-from-jira-project) in your portfolio.
-{{% /alert %}}
+The Jira projects that you linked appear on the **Linked Projects** list in the **Jira Configuration** section.
 
 ## Unlinking a Jira Project {#unlink-jira-project}
 
@@ -148,7 +140,7 @@ If you already have [linked epics from the Jira project to an initiative](/devel
 1. In the Portfolio Management tool, [open the portfolio](/developerportal/portfolio-management/#open-portfolio).
 2. Go to the [Portfolio Settings](/developerportal/portfolio-management/portfolio-settings/) page.
 3. Go to the **Integrations** tab.
-4. For the Jira project that you wnat to unlick, click **⨉** at the end of the row. A confirmation box opens to confirm your action.
+4. For the Jira project that you want to unlink, click **⨉** at the end of the row. A confirmation box opens to confirm your action.
 
     {{< figure src="/attachments/developerportal/portfolio-management/integrate-with-jira/warning-jira-project-unlink.png" >}}
 
