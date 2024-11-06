@@ -131,6 +131,8 @@ The Jira projects that you added appear on the **Linked Projects** list in the *
 * **Key** – This is the key of the linked Jira project and clicking it will take you to the Jira project page.
 * Unlink button – By clicking **⨉**, you can unlink this Jira project from your portfolio.
 
+After a Jira project is linked to your portfolio, you can [link epics from this Jira project to initiatives](/developerportal/portfolio-management/initiatives-overview/#link-epic-from-jira-project) in your portfolio.
+
 ## Unlinking a Jira Project
 
 {{% alert color="warning" %}}

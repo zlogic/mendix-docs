@@ -113,9 +113,9 @@ To delete an existing tag, do as follows:
 Only Portfolio Managers and Contributors from the same company as the portfolio can link epics to an initiative. Viewers or external members cannot do this action.
 {{% /alert %}} 
 
-Depending on which project management tool you use, you can link an epic from [Epics](/developerportal/project-management/epics/) or from [Jira project](/developerportal/portfolio-management/integrate-with-jira/) to an initiative. 
+Depending on which project management tool you use, you can link an epic from [Mendix Epics](/developerportal/project-management/epics/) or from [Jira](/developerportal/portfolio-management/integrate-with-jira/) to an initiative. 
 
-#### Linking an Epic from Epics
+#### Linking an Epic from Mendix Epics
 
 To link an epic from the procedure below:
 
