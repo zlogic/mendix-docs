@@ -142,7 +142,7 @@ Now you can proceed to [add planning information](#add-planning-information).
 #### Linking an Epic from Your Jira Project {#link-epic-from-jira-project}
 
 {{% alert color="info" %}}
-Users that are not from the same company as the Jira project cannot add Jira epics from that project.
+Only Portfolio Managers and Contributors from the same company as the portfolio can link Jira epics to initiatives.
 {{% /alert %}}
 
 1. Make sure that [you have linked the Jira project to your portfolio](/developerportal/portfolio-management/integrate-with-jira/#link-jira-project).
@@ -150,16 +150,16 @@ Users that are not from the same company as the Jira project cannot add Jira epi
 2. Select the Jira project to which the epics belong.
 3. Select the Jira epics. You can search by its full key or summary.
 5. Click **Add** to link the selected epics to the initiative. 
-6. If you need to link epics belonging to other apps to this initiative, repeat the steps from 2 to 5, until you link all the epics. You can link up to a maximum of 20 Jira initiatives.
+6. If you need to link epics in other Jira projects to this initiative, repeat the steps from 2 to 5, until you link all the epics. You can link up to a maximum of 20 Jira epics per initiative.
 
 Once an epic is added, you can view the following details of the epics that you linked to the initiative:
 
-* Project icon - This is the icon of the Jira project that the epic belongs to.
-* **Key** - This is the key of the added Jira epic, and clicking it will take you to the Jira page of this epic.
-* **Summary** - This is the summary of the added Jira epic.
-* **Assignee** - This shows the avatar of the the epic assignee. Hovering over will display their user name.
-* **Progress** - This shows the progress of the epic by displaying total and completed Jira stories.
-* Unlink button - By clicking **⨉**,, you can unlink this Jira epic from your initiative.
+* Project icon – This is the icon of the Jira project that the epic belongs to.
+* **Key** – This is the key of the added Jira epic. Clicking it takes you to the Jira page of this epic.
+* **Summary** – This is the summary of the added Jira epic.
+* **Assignee** – This shows the avatar of the the epic assignee. Hovering over the avatar displays their user name.
+* **Progress** – This shows the progress of the epic by displaying total and completed Jira stories.
+* Unlink button (**⨉**) - By clicking **⨉**, you can unlink this Jira epic from your initiative.
 
 Now you can proceed to [add planning information](#add-planning-information).
 
