@@ -152,4 +152,4 @@ If you already have [linked epics from the Jira project to an initiative](/devel
 
     {{< figure src="/attachments/developerportal/portfolio-management/integrate-with-jira/warning-jira-project-unlink.png" >}}
 
-4. Click **Unlink** to confirom your action.
+4. Click **Unlink** to confirm your action.
