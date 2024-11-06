@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-The Catalog automatically registers published and consumed services when your application is deployed through the Mendix Cloud. Each deployment provides Catalog with the metadata of your services allowing us to not only register all the services published by an application, but also keep it up to date when any changes are made. This makes them easily discoverable within your organization. Supported service types that are automatically registered are OData, REST, Web Services and Business Events.
+The Catalog automatically registers published and consumed services when your application is deployed through the Mendix Cloud. Each deployment provides Catalog with the metadata of your services allowing us to not only register all the services published by an application, but also keep it up to date when any changes are made. This makes them easily discoverable within your organization. Supported publishied service types that are automatically registered are OData, REST, Web Services and Business Events. For consumption, only consumed OData services are automatically registered.
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ For OData your app needs to be on Mendix Studio Pro version 8.14.0 or above.
 
 For REST, Web Services and Business Events your app needs to be on Mendix Studio Pro version 10.0 or above.
 
-If your data sources are not hosted on Mendix Cloud, see [Register Data Sources](/catalog/register/) to explore alternative methods to register them.
+If your services are not hosted on Mendix Cloud, see [Register Resources](/catalog/register/) to explore alternative methods to register them.
 
 ## Who Can Discover My Services?
 
