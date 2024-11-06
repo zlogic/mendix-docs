@@ -43,7 +43,7 @@ The compatibility among Teamcenter Extension, Teamcenter Connector, and Studio P
 | ------------- | ------------- | ------------- |
 | 1.0.0 | 3.6.1, V 3.6.0, V 3.5.0 | 10.6.5 thru 10.7 |
 | 2.0.0 | 2406.0.0 | 10.12.1 and above |
-| 3.0.0                        | 2406.3.0                     | 10.12.6, 10.12.7, 10.16.0, and above |
+| 3.0.0                        | 2406.3.0                     | 10.12.6+, 10.16.0, and above |
 
 {{% alert color="info" %}}
 Teamcenter Extension is not compatible with Studio Pro versions between 10.8 to 10.11, 10.13.x, 10.14.x, and 10.15.x. If you use one of these Studio Pro versions, a possible workaround is to use Teamcenter Extension in one of the compatible versions of Studio Pro first, create necessary artifacts, and then import them into your version. However, Mendix always recommends using the latest MTS or LTS Studio Pro version.
@@ -241,28 +241,18 @@ Once you finished import mapping, click **Generate** to create microflows for th
 
 If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or below, and want to upgrade to Teamcenter Extension V 3.0.0 and Teamcenter Connector V 2406.3.0, perform the following procedure:
 
-1. Open your app in Studio Pro version 10.12.6 or higher.
+1. Open your app in Studio Pro version compatible with Teamcenter Extension V 3.0.0 (see version matrix under Dependencies section)
 2. Follow the instructions in [How to Use Marketplace Content in Studio Pro](/appstore/general/app-store-content/) to download [Teamcenter Extension V 3.0.0](https://marketplace.mendix.com/link/component/225544) from the Marketplace and install it.
 3. When a warning dialog box opens, click **Trust module and enable extension**. Otherwise, Teamcenter Extension will not be installed.
-4. Follow the instructions in [How to Upgrade the Module to a Newer Version](/appstore/use-content/#update-module) to upgrade Teamcenter Connector to V 2406.0.0. Teamcenter Connector V 2406.0.0 has updated domain model that made certain entities and associations in Teamcenter Extension V 1.0.0 redundant. As a result, you get errors after the upgrade.
+4. Follow the instructions in [How to Upgrade the Module to a Newer Version](/appstore/use-content/#update-module) to upgrade Teamcenter Connector to V 2406.0.0. Teamcenter Connector V 2406.3.0 has updated domain model that made certain entities and associations in Teamcenter Extension V 1.0.0 redundant. As a result, you get errors after the upgrade.
 
 5. To resolve the errors, use one of the solutions described the sections below:
 
-    * [Solution 1](#solution-1)
+    * [Solution 1](#solution-1) - Using Solution 1 has an advantage: after completing the procedure, the integrations will appear on the **History** tab.
 
-    * [Solution 2](#solution-2) – Using Solution 2 has an advantage: after completing the procedure, the integrations will appear on the **History** tab.
+    * [Solution 2](#solution-2) 
 
 ### Resolving the Errors – Solution 1 {#solution-1} 
-
-Follow the instructions in the table below:
-
-| Error message                                           | How to Solve the Error                                       |
-| ------------------------------------------------------- | ------------------------------------------------------------ |
-| `TeamcenterToolkit.BOMWindow` no longer exists          | <ol><li>Update all references to <br/>`TcConnector.BOMWindow`.</li><li>Search for `TeamcenterToolkit.BOMWindow` to find `BOMapping` parameters where the entity is used, and change it to `TcConnector.BOMWindow`.</li></ol> |
-| `TeamcenterToolkit.top_line` no longer exists           | Update all associations to `TcConnector.top_line`.           |
-| The selected Java action parameter […] no longer exists | Set all the Java action parameters again.                    |
-
-### Resolving the Errors – Solution 2 {#solution-2}
 
 {{% alert color="info" %}}
 Using Solution 2 has an advantage: after completing the procedure, the integrations will appear on the **History** tab.
@@ -273,3 +263,14 @@ As an alternative to solution 1, you can perform the following steps:
 1. Delete the microflows generated with Teamcenter Extension V 1.0.0. This will cause errors in the locations where these microflows were used. Keep these errors so that you can identify where the microflows need to be implemented again.
 2. Go to Teamcenter Extension V 3.0.0 and repeat the steps you did before in Teamcenter Extension V 1.0.0. Simply select the same entities and associations, as they already exist in your domain model.
 3. Go over the errors caused by the missing microflows and implement the newly-generated microflows. 
+
+### Resolving the Errors – Solution 2 {#solution-2}
+
+Follow the instructions in the table below:
+
+| Error message                                           | How to Solve the Error                                       |
+| ------------------------------------------------------- | ------------------------------------------------------------ |
+| `TeamcenterToolkit.BOMWindow` no longer exists          | <ol><li>Update all references to <br/>`TcConnector.BOMWindow`.</li><li>Search for `TeamcenterToolkit.BOMWindow` to find `BOMapping` parameters where the entity is used, and change it to `TcConnector.BOMWindow`.</li></ol> |
+| `TeamcenterToolkit.top_line` no longer exists           | Update all associations to `TcConnector.top_line`.           |
+| The selected Java action parameter […] no longer exists | Set all the Java action parameters again.                    |
+
