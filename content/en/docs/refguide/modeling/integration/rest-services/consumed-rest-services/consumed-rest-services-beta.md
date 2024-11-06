@@ -8,7 +8,7 @@ weight: 5
 
 ## Introduction
 
-Use the new Consumed REST Service document to send REST requests from Mendix Studio Pro. With this feature, you can build, test, and create data structures to store your requests. 
+Use the Consumed REST Service document to send REST requests from Mendix Studio Pro. With this feature, you can build, test, and create data structures to store your requests. 
 
 This feature is supported for [Mendix Studio Pro 10.17](/releasenotes/studio-pro/10.17/) and above.
 
@@ -47,7 +47,7 @@ Use the Consumed REST Service to configure a `GET`, `POST`, `PUT`, `PATCH`, or `
 
 {{% alert color="info" %}}
 
-As of Mendix 10.16.0, you can configure a Consumed REST service using the New Version or the Classic Version. It is recommended to use the New Version, as the Classic version will be removed in a future release.
+As of Studio Pro 10.16.0, you can configure a Consumed REST service using the New Version or the Classic Version. It is recommended to use the New Version, as the Classic version will be removed in a future release.
 
 {{% /alert %}}
 
@@ -86,7 +86,7 @@ You can configure basic authentication to use for all requests in your document.
 3. Select a constant or create a new one for your username and password. To create a new constant, follow these steps:
    1. Next to **Username** or **Password**, click **Select** > **New**.
    2. Name the constant and click **OK**.
-4. Add any additional information needed and click **OK** > **OK**.
+4. Add any additional information needed and click **OK**.
 
 ### Adding Parameters {#add-parameters}
 
@@ -96,7 +96,7 @@ Parameters are not supported in the authentication section.
 
 {{% /alert %}}
 
-Parameters are fully supported in the path and query part of the URL, in the header value, and in the body. They are defined within curly brackets. For example, in the URL, defining `numbers` as parameter would be `http://numbersapi.com/{numbers}`. All parameters must be added to the **Parameters** grid and match what is present within the curly brackets.
+Parameters are fully supported in the path and query part of the URL, in the header value, and in the body. They are defined within curly brackets. For example, in the URL, defining `numbers` as parameter would be `http://numbersapi.com/{numbers}`. All parameters must be added to the Parameters grid and match what is present within the curly brackets.
 
 {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/get-header.png" class="no-border" >}}
 
@@ -127,7 +127,7 @@ You can add a header for any HTTP request you have specified in your document. T
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/header-example.png" class="no-border" width="500" >}}
 
-2. In the **Key** field, click the drop-down and choose from the list of the most commonly used HTTP headers. You can also create a custom header by selecting **Custom** and adding in the value. 
+2. In the **Key** field, click the drop-down and choose from the list of the most commonly used HTTP headers. You can also create a custom header by changing the key to **Custom** and adding a value in the **Value** field.
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/accept-header.png" class="no-border" width="500" >}}
 
