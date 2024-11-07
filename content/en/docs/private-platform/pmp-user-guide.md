@@ -93,7 +93,7 @@ This includes the apps that you created, as well as the apps that are shared wit
 
 {{< figure src="/attachments/private-platform/pmp-ug5.png" class="no-border" >}}
 
-In the **Manage** section, you can you can quickly perform a number of actions:
+In the **General** section, you can you can quickly perform a number of actions:
 
 * Edit details such as app name and description
 * Invite users to work on the app
@@ -102,23 +102,21 @@ In the **Manage** section, you can you can quickly perform a number of actions:
 * Archive the app, provided you are the only team member. You will be warned of the consequences and asked for confirmation before the app is archived.
 * Delete the app, provided you are the only team member. You will be warned of the consequences and asked for confirmation before the app is deleted.
 
-## Deploying Your App
+## Deploying Your App {#deploy}
 
 In the **Deploy** section, you can configure the environment to which your app will be deployed.
 
-1. Click **New Environment**.
+1. Optional: In the **Environments** tab, create a new deployment package.
+2. Click **Create Environment**.
+3. Select your deployment package that you want to deploy to this environment, and then click **Next**. 
+4. Specify the following details about the environment:
 
-    {{< figure src="/attachments/private-platform/pmp-ug6.png" class="no-border" >}}
+    * **Internal Name** - An automatically generated internal name for the environment. The environment name can only contain lowercase letters and numbers. 
+    * **Display Name** - The name that will be displayed in the UI. You can have several environments for your app, for example *test*, *acceptance*, and *production*.
+    * **Cluster** and **Namespace** - An existing cluster and its namespace.
 
-2. Specify the following details about the environment:
-
-    * **Internal Name** - The name for the environment. The environment name can only contain lowercase letters and numbers. You can have several environments for your app, for example *test*, *acceptance*, and *production*.
-    * **Namespace** - An existing namespace. You can select any namespace of which you are a member.
-    * **Storage Plan** - A storage plan set up in the namespace which you selected.
-    * **Database Plan** - A database plan set up in the namespace which you selected.
-
-3. Click **Create**, and then click **Proceed**.
-4. After the environment is created, you can click **Operate** > **Deploy Environment** to deploy your app to this environment.
+5. Click **Next**.
+6. After the environment is created, you can use the **Details** menu to perform additional actions such as deleting the environment, or starting and stopping the app.
 
 ## Managing Marketplace Content
 
