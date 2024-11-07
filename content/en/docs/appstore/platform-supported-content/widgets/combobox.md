@@ -66,7 +66,7 @@ When Context source is selected, the **Data source** section (required) configur
 
 The database source type can be used to set the value of a string or integer attribute with options fetched from an attribute with the same type.
 
-* **Selection type** – (available in 2.0 and above) database datasource allows exposing selection, and this selection type determines how other [listen to widget](/refguide/listen-to-grid-source/) datasources perceive the data.
+* **Selection type** – (available in 2.0 and above) determines how other [listen to widget](/refguide/listen-to-grid-source/) data sources perceive the data. This property can only be used with widgets using a [database data source](/refguide/database-source/).
     * **Single** – Allows only a single item to be selected from the options list.
     * **Multi** – Allows multiple items to be selected from the options list.
 * **Caption** – Allows custom captions to be displayed on the options list.
