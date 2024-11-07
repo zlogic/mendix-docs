@@ -66,11 +66,11 @@ When Context source is selected, the **Data source** section (required) configur
 
 The database source type can be used to set the value of a string or integer attribute with options fetched from an attribute with the same type.
 
-* **Selection type** – from version 2.0 and above, database datasource allow exposing selection and this selection type determine how other [**listen to widget**](/refguide/listen-to-grid-source/) datasource perceive the data.
-    * **Single** – Allow only single item to be selected from the options list.
-    * **Multi** – Allow multiple items to be selected from the options list.
-* **Caption** – Allow custom caption to be display on the options list.
-* **Store value** – This optional configuration determine where the selected value will be saved into.
+* **Selection type** – (in version 2.0 and above) database datasource allow exposing selection and this selection type determine how other [**listen to widget**](/refguide/listen-to-grid-source/) datasource perceive the data.
+    * **Single** – Allows only a single item to be selected from the options list.
+    * **Multi** – Allows multiple items to be selected from the options list.
+* **Caption** – Allows custom captions to be displayed on the options list.
+* **Store value** (optional) – Determines where the selected value will be saved into.
 
 ##### Static Values {#static}
 
@@ -121,8 +121,8 @@ For more information, see [Editability Section](/refguide/common-widget-properti
 The following configurations are available:
 
 * **On change** – executes an action when the attribute value changes
-* **On enter action** – executes an action when user set focus on the widget
-* **On leave action** – executes an action when user move focus out of the widget
+* **On enter action** – executes an action when the user sets focus on the widget
+* **On leave action** – executes an action when the user moves focus away from the widget
 
 ### Accessibility Tab {#accessibility}
 
