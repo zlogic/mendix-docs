@@ -62,7 +62,7 @@ The OIDC SSO module supports the following features:
     * Supports user provisioning to custom user entities; you can map claims onto attributes of an entity which is a specialization of the `System.User` entity.
     * Supports page and microflow URLs with query parameters to allow seamless continuation after login and smooth navigation for users.
     * Prevents login for inactive users ensuring that only authorized, active accounts can access the application.
-    * Supports subpath routing by enabling compatibility with applications configured using subpath routing and providing flexibility for multi-app or shared domain environments.
+    * Supports subpath routing by enabling compatibility with applications configured using subpath routing and providing flexibility for multi-app or shared domain environments. For details, see the [ApplicationRootUrl](/refguide/custom-settings/#applicationrooturl-section) section of *Runtime Customization*.
 
 2. Configuration Experience Features:
 
