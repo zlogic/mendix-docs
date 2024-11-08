@@ -1,7 +1,7 @@
 ---
 title: "Marketplace Release Notes"
 linktitle: "General Marketplace"
-url: /releasenotes/general-marketplace/
+url: /releasenotes/marketplace-category/
 description: "Release notes for updates to the Mendix Marketplace"
 weight: 5
 numberless_headings: true
