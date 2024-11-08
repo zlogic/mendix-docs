@@ -1,6 +1,6 @@
 ---
 title: "Extensibility API Release Notes"
-title: "Extensibility API"
+linktitle: "Extensibility API"
 url: /releasenotes/studio-pro/extensibility-api/
 weight: 45
 numberless_headings: true
