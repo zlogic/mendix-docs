@@ -1,11 +1,12 @@
 ---
-title: "Release Notes"
-url: /apidocs-mxsdk/apidocs/extensibility-api/release-notes/
-weight: 6
+title: "Extensibility API Release Notes"
+title: "Extensibility API"
+url: /releasenotes/studio-pro/extensibility-api/
+weight: 45
 numberless_headings: true
 ---
 
-These release notes cover changes to the Extensibility API.
+These release notes cover changes to the [Extensibility API](/apidocs-mxsdk/apidocs/extensibility-api/).
 
 ## Version 10.15.0
 
