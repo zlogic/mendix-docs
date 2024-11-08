@@ -256,7 +256,7 @@ If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or bel
 ### Resolving the Errors – Solution 1 {#solution-1} 
 
 {{% alert color="info" %}}
-Using Solution 2 has an advantage: after completing the procedure, the integrations will appear on the **History** tab.
+Using Solution 1 has an advantage: after completing the procedure, the integrations will appear on the **History** tab.
 {{% /alert %}}
 
 Perform the following steps:
