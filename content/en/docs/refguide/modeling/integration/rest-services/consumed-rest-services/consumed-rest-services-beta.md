@@ -25,6 +25,7 @@ You can use the Consumed REST Service document to do the following:
 
 * To use the request response to create a data structure automatically in your domain model, the response data should be in JSON format. It's possible to process other formats, such as XML or raw text, but then you need to extract the data you are looking for yourself in a microflow.
 * If you are debugging a running Published REST Service in the same app as your Consumed REST Service document, a deadlock could occur when sending the request. Wait until the timeout occurs (default: 300 seconds) for Studio Pro to respond again.
+* For macOS, it is currently not possible to copy and paste in the URL or body fields. You may also experience issues while tabbing in the text field. 
 
 ### Prerequisites 
 
@@ -44,12 +45,6 @@ Download [Studio Pro](https://marketplace.mendix.com/link/studiopro/) and add th
 ## Configuration {#configuration}
 
 Use the Consumed REST Service to configure a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request for your app. 
-
-{{% alert color="info" %}}
-
-As of Studio Pro 10.16.0, you can configure a Consumed REST service using the New Version or the Classic Version. It is recommended to use the New Version, as the Classic version will be removed in a future release.
-
-{{% /alert %}}
 
 ### Basic Configuration {#configure-a-request}
 
@@ -96,11 +91,11 @@ Parameters are not supported in the authentication section.
 
 {{% /alert %}}
 
-Parameters are fully supported in the path and query part of the URL, in header values, and in the body. They are defined within curly brackets. For example, in the URL, defining `number` as parameter would be `http://numbersapi.com/{number}`. All parameters must be added to the Parameters grid and match what is present within the curly brackets.
+Parameters are fully supported in the path and query part of the URL, in the header value, and in the body. They are defined within curly brackets. For example, in the URL, defining `number` as parameter would be `http://numbersapi.com/{number}`. The parameters that are configured for the URL, headers, or body within curly brackets are automatically added to the parameters grid.
 
 {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/get-header.png" class="no-border" >}}
 
-To add a parameter, follow these steps:
+You can manually add new parameters to the parameters grid directly. To do so, follow these steps:
 
 1. Open the **Parameters** tab and click **Add parameter**.
 2. Name your parameter and add a test value.
@@ -131,7 +126,9 @@ You can add a header for any HTTP request you have specified in your document. T
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/accept-header.png" class="no-border" width="500" >}}
 
-3. Click **OK**. To test the header, click **Send**.  
+3. Click **OK**. To test the header, click **Send**.
+
+You can also add a parameter as the test value of a header, as seen below. For example, you can define an Authorization header where the authentication token is dynamic.
 
 ### Adding a Request Body (for POST, PUT, and PATCH requests only) {#add-a-request-body}
 
@@ -178,12 +175,13 @@ The entity name is prefilled, but you can change it to a custom name. To create 
 1. Click **Create Entity** > **OK**. 
 2. To view the entity in your domain model, click **Show**.
 
-You can also choose to flatten and simplify the structure of your response. Enable this feature by selecting **Flatten and simplify structure**. This gives you an easy structure to model with within Studio Pro, removes empty entities, and merges one-to-one relations between a parent and child.
+You can also add a parameter in the request body by generating a data structure (entities) as input. If only a small part of the request is dynamic, you can also use parameters directly in the JSON snippet.
+
+You can choose to flatten and simplify the structure of your response. Enable this feature by selecting **Flatten and simplify structure**. This gives you an easy structure to model with within Studio Pro, removes empty entities, and merges one-to-one relations between a parent and child.
 
 ### Processing Response Data that is not in JSON Format {#processing-non-json}
 
 When the response that comes back from the request is not in JSON format, it cannot be converted automatically into entities. Instead, you can extract the data in a microflow. When the [Send REST request](/refguide/send-rest-request/) is executed in a microflow, it will place the result into variable `latestHttpResponse`. In `latestHttpResponse` you can find `StatusCode` and `Content` of the request that was made. From there you can use microflow logic to extract the information. For example, if the response has XML format, you can use an [Import Mapping](refguide/import-mappings) to read the data.
-
 
 ### Using a REST Request in a Microflow {#add-entity-to-microflow}
 
