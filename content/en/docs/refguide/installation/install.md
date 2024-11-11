@@ -66,7 +66,7 @@ The prerequisites are the following:
     | --- | --- | --- |
     | [2.37.1](https://github.com/git-for-windows/git/releases/tag/v2.37.1.windows.1) | [2.41.0](https://github.com/git-for-windows/git/releases/tag/v2.41.0.windows.3) | [2.43.0](https://github.com/git-for-windows/git/releases/tag/v2.43.0.windows.1)|
     
-    {{% alert color="info" %}}Git does not get installed automatically because it needs Admin rights.{{% /alert %}}
+    {{% alert color="info" %}}You do not need Git for all operations but that you may need to install CLI Git if you are doing certain actions. For example, [rebase](/refguide/merge-algorithm/#rebase) will not work without Git.{{% /alert %}}
     
 * [Microsoft Edge WebView2 Evergreen Runtime (x64 or ARM64) (Evergreen Standalone Installer version)](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
 
@@ -118,6 +118,8 @@ While the regular installer installs Mendix Studio Pro dependencies in system di
 For Studio Pro version below 10.14, the portable installer does not include all tools that come installed with Studio Pro or can be leveraged by Studio Pro, such as the MPR tool, mx, MxBuild, mxuit, or the Console Log. The portable installer only includes the tools that are necessary to be able to build with Studio Pro and to run apps locally. 
 
 For Studio Pro 10.14 or above, the portable installer for Windows x64 and arm64 includes mx, mxbuild, mxutil, MprTool and MendixConsoleLog.
+
+{{% alert color="info" %}}Git does not get installed automatically for the portable version because it requires Admin rights.{{% /alert %}}
 
 Mendix Studio Pro that is installed via the portable installer does not show up in the in the Mendix Version Selector where you can manage Mendix versions. However, you can manually add a Studio Pro version by clicking **Add custom version** in the **Manage Mendix versions** and specifying the path to the executable file of the Studio Pro version:
 
