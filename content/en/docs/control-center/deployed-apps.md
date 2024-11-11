@@ -14,7 +14,7 @@ This feature is currently in beta. For more information, see [Beta Releases](/re
 
 ## Introduction
 
-The **Deployed Apps Overview** page provides a comprehensive view of all the apps within your company. On this page, you can find detailed information about each app, including its name, ID, Technical Contact, status, number of environments, and the number of [cloud credits](/control-center/entitlements/#cloud-credits) used, if applicable. Additionally, this page allows you to provision and offboard environments for apps on Mendix Cloud. Moreover, you can email or download the license keys for your apps directly from this page.
+The **Deployed Apps Overview** page provides a comprehensive view of all the apps within your company. On this page, you can find detailed information about each app, including its name, ID, Technical Contact, status, number of environments, and the number of [cloud tokens](/control-center/entitlements/#cloud-tokens) used, if applicable. Additionally, this page allows you to provision and offboard environments for apps on Mendix Cloud. Moreover, you can email or download the license keys for your apps directly from this page.
 
 The **Deployed Apps Overview** page has the following tabs: [Mendix Cloud](#mendix-cloud), [Free Apps](#free-apps), and [Apps with License Keys](#apps-license-keys).
 
@@ -69,7 +69,7 @@ The list shows the all the environments available for the app, with the followin
 To add a new environment for your app, click the name of an app, and then click the **Add Environment** button. You must specify the following information:
 
 * **Environment Name** – Enter a name for your new environment. The name must be unique (that is, your app cannot have more than one environment with the same name).
-* **Resource Pack** – Select the resources required for the new environment. The page displays the resources included in each resource pack, and their cost in cloud credits.
+* **Resource Pack** – Select the resources required for the new environment. The page displays the resources included in each resource pack, and their cost in cloud tokens.
 * **Production Environment** – Indicate whether the environment will be used for production.
 
 {{< figure src="/attachments/control-center/deployed-apps/new-environment.png"   alt="adding a new environment" >}}
