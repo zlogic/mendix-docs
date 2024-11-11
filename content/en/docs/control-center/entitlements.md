@@ -20,7 +20,7 @@ The **Entitlements** page is a self-service tool that displays the transactions 
 
 ## What Are Cloud Tokens? {#cloud-tokens}
 
-Cloud tokens are virtual credits that you can spend on the Mendix Platform to purchase [cloud resource packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack). If you want to top up the cloud tokens, you can just purchase standard, premium, or premium plus cloud resource packs. Your purchase will be converted into cloud tokens and you can then spend the cloud tokens on any cloud resource pack available to you.
+Cloud tokens function as a virtual currency for you to purchase [cloud resource packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack) on the Mendix Platform. If you want to top up the cloud tokens, you can just purchase standard, premium, or premium plus cloud resource packs. Your purchase will be converted into cloud tokens and you can then spend the cloud tokens on any cloud resource pack available to you.
 
 To use cloud tokens, you need to enable self-service. If you want to enable self-service or have questions about cloud tokens, contact your Customer Success Manager (CSM).
 
