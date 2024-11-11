@@ -24,7 +24,6 @@ You can use the Consumed REST Service document to do the following:
 ### Limitations
 
 * To use the request response to create a data structure automatically in your domain model, the response data should be in JSON format. It's possible to process other formats, such as XML or raw text, but then you need to extract the data you are looking for yourself in a microflow.
-* If you are debugging a running Published REST Service in the same app as your Consumed REST Service document, a deadlock could occur when sending the request. Wait until the timeout occurs (default: 300 seconds) for Studio Pro to respond again.
 * For macOS, it is currently not possible to copy and paste in the URL or body fields. You may also experience issues while tabbing in the text field. 
 
 ### Prerequisites 
@@ -185,7 +184,7 @@ You can choose to flatten and simplify the structure of your response. Enable th
 
 When the response is not in JSON format, it cannot be converted automatically into entities. Instead, you can extract the data in a microflow.
 
-When the [Send REST request](/refguide/send-rest-request/) action is executed in a microflow, it places the result into the variable `latestHttpResponse`. In `latestHttpResponse`, you can find the `StatusCode` and `Content` of the request that was made. From here, you can use microflow logic to extract the information. For example, if the response has XML formatting, you can use [Import Mapping](refguide/import-mappings) to read the data.
+When the [Send REST request](/refguide/send-rest-request/) action is executed in a microflow, it places the result into the variable `latestHttpResponse`. In `latestHttpResponse`, you can find the `StatusCode` and `Content` of the request that was made. From here, you can use microflow logic to extract the information. For example, if the response has XML formatting, you can use [Import Mapping](/refguide/import-mappings/) to read the data.
 
 ### Using a REST Request in a Microflow {#add-entity-to-microflow}
 
