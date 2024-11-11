@@ -160,13 +160,15 @@ Create body entities from a JSON snippet to your request by doing the following:
 
 4. The entity name is prefilled, but you can change it to a custom name. To create an entity, click **Create Entity** > **OK**. Click **Show** to view the entity in your domain model.
 
-### Processing Response Data when the Response is in JSON Format {#create-entity}
+### Processing Response Data
 
 You can check the response of your request in the **Response data** tab. 
 
 {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/response-data.png" class="no-border" >}}
 
-If the response is in JSON format, and you want to use the response to create an entity in your domain model, navigate to the **Response structure** tab, which displays a preview of the response data. 
+#### Response is in JSON Format {#create-entity}
+
+If the response is in JSON format and you want to use the response to create an entity, open the **Response structure** tab, which displays a preview of the response data:
 
 {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/response-structure.png" class="no-border" >}}
 
@@ -175,13 +177,15 @@ The entity name is prefilled, but you can change it to a custom name. To create 
 1. Click **Create Entity** > **OK**. 
 2. To view the entity in your domain model, click **Show**.
 
-You can also add a parameter in the request body by generating a data structure (entities) as input. If only a small part of the request is dynamic, you can also use parameters directly in the JSON snippet.
+You can also add a parameter in the request body by generating a data structure (entities) as input. If only a small part of the request is dynamic, you can use parameters directly in the JSON snippet.
 
 You can choose to flatten and simplify the structure of your response. Enable this feature by selecting **Flatten and simplify structure**. This gives you an easy structure to model with within Studio Pro, removes empty entities, and merges one-to-one relations between a parent and child.
 
-### Processing Response Data when the Response is not in JSON Format {#processing-non-json}
+#### Response is not in JSON Format {#processing-non-json}
 
-When the response that comes back from the request is not in JSON format, it cannot be converted automatically into entities. Instead, you can extract the data in a microflow. When the [Send REST request](/refguide/send-rest-request/) is executed in a microflow, it will place the result into variable `latestHttpResponse`. In `latestHttpResponse` you can find `StatusCode` and `Content` of the request that was made. From there you can use microflow logic to extract the information. For example, if the response has XML format, you can use an [Import Mapping](refguide/import-mappings) to read the data.
+When the response is not in JSON format, it cannot be converted automatically into entities. Instead, you can extract the data in a microflow.
+
+When the [Send REST request](/refguide/send-rest-request/) action is executed in a microflow, it places the result into the variable `latestHttpResponse`. In `latestHttpResponse`, you can find the `StatusCode` and `Content` of the request that was made. From here, you can use microflow logic to extract the information. For example, if the response has XML formatting, you can use [Import Mapping](refguide/import-mappings) to read the data.
 
 ### Using a REST Request in a Microflow {#add-entity-to-microflow}
 
