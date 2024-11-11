@@ -234,3 +234,114 @@ A successful `PUT` call results in a `200` status code and a JSON response body 
 {{% alert color="info" %}}
 Completing the `PUT` operation call more than once overwrites the details for all the published endpoints at the specified environment. If there is a collection of endpoints on the environment, you can create, update, and delete different endpoints all in one `PUT` call.
 {{% /alert %}}
+
+#### Behavior when Renaming an Environment 
+
+It is possible (although uncommon) to update the URL of a hosted environment. The root URLs update upon redeployment, and endpoints that are registered under that environment get updated endpoint locations.
+
+
+### Preparing Your Service Details Using the Transform API {#transform-api}
+
+The Transform API is an endpoint in the Registration API. It converts the *dependencies.json* file that your Mendix app generates into the fields that the Registration API requires to register services.
+
+{{% alert color="info" %}}These optional fields are not currently converted by the Transform API: `SecurityClassification`, `Discoverable`, `Validated`, `ServiceVersion`, and `Tags`.{{% /alert %}}
+
+To call the Transform endpoint of the Registration API, you need the following:
+
+* Your app's *dependencies.json* file converted to an escaped JSON string
+
+    {{% alert color="info" %}}You can find your *dependencies.json* file in the **deployment** > **model** folder of your Mendix application.{{% /alert %}}
+
+* Endpoint location `Name`
+* Endpoint location `Value`
+
+    {{% alert color="info" %}}You can find these two values in the *metadata.json* file for your exposed service. They are in an array called `Constants`, and named `Name` and `DefaultValue`.{{% /alert %}}
+
+    {{% alert color="info" %}}For more details on what can and cannot be provided in these fields, see the [API specification](https://datahub-spec.s3.eu-central-1.amazonaws.com/registration_v5.html#/Endpoints/post_transform_dependenciesjson).{{% /alert %}}
+
+You can see an example of a request that converts a *dependencies.json* file below:
+
+```bash
+curl --location --request POST 'https://catalog.mendix.com/rest/registration/v5/transform/dependenciesjson' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: MxToken <your_Personal_Access_Token>' \
+--data-raw '{
+  "dependenciesJsonString": "{ \"schemaVersion\": \"1.3\", \"appName\": \"HR Acme Corp\", \"published\": [ { \"name\": \"test.acme.employeeinformation\", \"version\": \"2.0\", \"path\": \"/employeeservice/v2\", \"serviceType\": \"OData 3.0\", \"contracts\": [ { \"type\": \"ServiceFeed\", \"value\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\r\\n<service xmlns=\\\"http://www.w3.org/2007/app\\\" xmlns:atom=\\\"http://www.w3.org/2005/Atom\\\" xml:base=\\\"https://hr.acmecorp.test/odata/test.acme.employeeinformation/v1/\\\">\\r\\n <workspace>\\r\\n <atom:title>Default</atom:title>\\r\\n <collection href=\\\"Employees\\\">\\r\\n <atom:title>Employees</atom:title>\\r\\n </collection>\\r\\n </workspace>\\r\\n</service>\" }, { \"type\": \"Metadata\", \"value\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\r\\n<edmx:Edmx xmlns:edmx=\\\"http://schemas.microsoft.com/ado/2007/06/edmx\\\" xmlns:mx=\\\"http://www.mendix.com/Protocols/MendixData\\\" Version=\\\"1.0\\\">\\r\\n <edmx:DataServices xmlns:m=\\\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\\\" m:DataServiceVersion=\\\"3.0\\\" m:MaxDataServiceVersion=\\\"3.0\\\">\\r\\n <Schema xmlns=\\\"http://schemas.microsoft.com/ado/2009/11/edm\\\" Namespace=\\\"DefaultNamespace\\\">\\r\\n <EntityType Name=\\\"Employee\\\">\\r\\n <Key>\\r\\n <PropertyRef Name=\\\"ID\\\" />\\r\\n </Key>\\r\\n <Property Name=\\\"ID\\\" Type=\\\"Edm.Int64\\\" Nullable=\\\"false\\\" mx:isAttribute=\\\"false\\\" />\\r\\n <Property Name=\\\"Name\\\" Type=\\\"Edm.String\\\" MaxLength=\\\"200\\\" />\\r\\n <Property Name=\\\"DateOfBirth\\\" Type=\\\"Edm.DateTimeOffset\\\" />\\r\\n <Property Name=\\\"Address\\\" Type=\\\"Edm.String\\\" MaxLength=\\\"200\\\" />\\r\\n <Property Name=\\\"JobTitle\\\" Type=\\\"Edm.String\\\" MaxLength=\\\"200\\\" />\\r\\n <Property Name=\\\"Salary\\\" Type=\\\"Edm.Decimal\\\" />\\r\\n </EntityType>\\r\\n <EntityContainer Name=\\\"test.acme.employeeinformation/v1Entities\\\" m:IsDefaultEntityContainer=\\\"true\\\">\\r\\n <EntitySet Name=\\\"Employees\\\" EntityType=\\\"DefaultNamespace.Employee\\\" />\\r\\n </EntityContainer>\\r\\n </Schema>\\r\\n </edmx:DataServices>\\r\\n</edmx:Edmx>\" } ], \"security\": { \"types\": [ { \"type\": \"MxID\", \"authenticationModuleId\": \"a4f7847b-9562-4b5a-adc2-4a0bf41cc534\" } ], \"allowedRoles\": [ { \"name\": \"User\", \"id\": \"91ca220e-9498-4d23-9d2e-90b9c19aca37\" } ] } } ], \"consumed\": [ { \"name\": \"test.acme.employeemanagement\", \"version\": \"1.0\", \"serviceType\": \"OData 3.0\", \"constant\": \"MyFirstModule.EmployeeManagement_Location\", \"uses\": [{ \"type\": \"entity\", \"name\": \"ManagingEmployees\" }] } ] }",
+  "endpointLocationConstants": [
+    {
+      "name": "MyFirstModule.EmployeeManagement_Location",
+      "value": "https://hr.acmecorp.test/employeeservice/v2"
+    }
+  ]
+}'
+```
+
+A successful `PUT` call results in a `200` status code and a JSON response body. To register your services, use the information in the `PUTPublishedEndpoints` section.
+
+```json
+{
+  "putPublishedEndpoints": {
+    "endpoints": {
+      "path": "/employeeservice/v2",
+      "discoverable": true,
+      "validated": true,
+      "serviceVersion": {
+        "version": "2.0",
+        "type": "OData",
+        "service": {
+          "name": "test.acme.employeeinformation"
+        },
+        "tags": [
+          {
+            "name": "hr"
+          },
+          {
+            "name": "employee"
+          }
+        ],
+        "securityScheme": {
+          "securityTypes": [
+            {
+              "name": "MxID",
+              "marketplaceModuleID": "93457"
+            }
+          ],
+          "mxAllowedRoles": [
+            {
+              "name": "User",
+              "uuid": "91ca220e-9498-4d23-9d2e-90b9c19aca37"
+            }
+          ],
+          "contracts": [
+            {
+              "type": "CSDL",
+              "documentBaseURL": "https://hr.acmecorp.test/odata/test.acme.employeeinformation/v1/",
+              "documents": [
+                {
+                  "isPrimary": true,
+                  "uri": "metadata.xml",
+                  "contents": "<?xml version=\"1.0\" encoding=\"utf-8\"?><edmx:Edmx Version=\"1.0\" xmlns:edmx=\"http://schemas.microsoft.com/ado/2007/06/edmx\" xmlns:mx=\"http://www.mendix.com/Protocols/MendixData\">  <edmx:DataServices m:DataServiceVersion=\"3.0\" m:MaxDataServiceVersion=\"3.0\" xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\">    <Schema Namespace=\"DefaultNamespace\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><EntityType Name=\"Employee\"><Key><PropertyRef Name=\"ID\" /></Key><Property Name=\"ID\" Type=\"Edm.Int64\" Nullable=\"false\" mx:isAttribute=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" MaxLength=\"200\" /><Property Name=\"DateOfBirth\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"Address\" Type=\"Edm.String\" MaxLength=\"200\" /><Property Name=\"JobTitle\" Type=\"Edm.String\" MaxLength=\"200\" /><Property Name=\"Salary\" Type=\"Edm.Decimal\" /></EntityType><EntityContainer Name=\"test.acme.employeeinformation/v1Entities\" m:IsDefaultEntityContainer=\"true\"><EntitySet Name=\"Employees\" EntityType=\"DefaultNamespace.Employee\" /></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "putConsumedEndpoints": {
+    "endpoints": [
+      {
+        "endpointLocation": "https://hr.acmecorp.test/employeeservice/v2",
+        "consumedItems": [
+          {
+            "type": "EntitySet",
+            "name": "ManagingEmployees",
+            "namespace": "DefaultNamespace"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
