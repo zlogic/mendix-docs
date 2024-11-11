@@ -9,7 +9,7 @@ description_list: true
 
 {{% alert color="warning" %}} This feature is in beta. For more information, see [Beta Releases](/releasenotes/beta-features/). {{% /alert %}}
 
-{{% alert color="info" %}} For information on new releases of Extensibility API, see [Extensibility API Release Notes](/releasenotes/studio-pro/extensibility-api/). {{% /alert %}}
+{{% alert color="info" %}} For information on new releases of the Extensibility API, see [Extensibility API Release Notes](/releasenotes/studio-pro/extensibility-api/). {{% /alert %}}
 
 ## Introduction
 
