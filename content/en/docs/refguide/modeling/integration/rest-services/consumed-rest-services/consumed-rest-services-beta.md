@@ -126,6 +126,8 @@ You can add a header for any HTTP request you have specified in your document. T
 
 3. Click **OK**. To test the header, click **Send**.
 
+You can also add a parameter as the test value of a header, as seen below. For example, you can define an Authorization header where the authentication token is dynamic.
+
 ### Adding a Request Body (for POST, PUT, and PATCH requests only) {#add-a-request-body}
 
 `POST`, `PUT`, and `PATCH` requests support JSON strings as a request body. Add the JSON body snippet to your request by doing the following:
