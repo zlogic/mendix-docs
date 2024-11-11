@@ -345,3 +345,7 @@ A successful `PUT` call results in a `200` status code and a JSON response body.
   }
 }
 ```
+
+## API Reference 
+
+{{< swaggerui src="/openapi-spec/XXX" >}}
