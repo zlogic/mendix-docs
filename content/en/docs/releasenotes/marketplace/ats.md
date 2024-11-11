@@ -1,8 +1,9 @@
 ---
 title: "ATS Release Notes"
-url: /appstore/partner-solutions/ats/release-notes/
+linktitle: "ATS"
+url: /releasenotes/marketplace/ats/
 description: "The release notes for Mendix Application Test Suite (ATS) with details on new features, bug fixes, and known issues."
-weight: 100
+weight: 15
 numberless_headings: true
 ---
 
