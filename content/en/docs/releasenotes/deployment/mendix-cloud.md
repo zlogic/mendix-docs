@@ -20,7 +20,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Pipelines New Features
 
-* We added a new **Variable** tab that allows you to create user-defined pipeline variables. For more information, see [The Variables Tab](/developerportal/deploy/pipelines/#variable-tab) in the *Pipelines* documentation.
+* We added a new **Variables** tab that allows you to create user-defined pipeline variables. For more information, see [The Variables Tab](/developerportal/deploy/pipelines/#variable-tab) in the *Pipelines* documentation.
 * We added a new pipeline step: Unit Testing. This step performs automated regression testing in a running environment after a new deployment and marks the pipeline as failed if any tests fail, providing the failure count and details.
 
 ### November 6, 2024
