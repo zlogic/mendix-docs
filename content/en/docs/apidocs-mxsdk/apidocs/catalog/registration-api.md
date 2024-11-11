@@ -9,50 +9,228 @@ restapi: true
 
 ## Introduction
 
-The [Catalog APIs](https://datahub-spec.s3.eu-central-1.amazonaws.com/index.html) are OpenAPI (formerly Swagger) specifications with the following APIs available:
-
-* [Search API](#search) — search and retrieve information on registered assets that can be used in your app development
-* [Registration API](#registration) — register and update data sources to the organization's [Catalog](/catalog/)
-* [Transform API](#transform) — for Mendix users deploying to a non-Mendix environment, generate the request bodies to register data sources published from your Mendix app
-
-{{% alert color="info" %}}
-At this time, the **Try it out** feature on the OpenAPI specs does not work.
-{{% /alert %}}
-
-{{% alert color="info" %}}
-These APIs were previously called Data Hub APIs.
-{{% /alert %}}
-
-### Authentication and Access Rights
-
-The Catalog APIs support OAuth2.0 and personal access tokens. For more information, see the [Personal Access Tokens](/community-tools/mendix-profile/user-settings/#pat) section of *Mendix Profile*.
-
-To view authentication instructions for each API, open the OpenAPI spec and click **Authorize** on the upper right of the screen. Supported authentication methods are documented there. As mentioned above, the **Try it out** feature does not work.
-
-Curation rights apply to some API activities.
-
-## Search API {#search}
-
-The [Search API](https://datahub-spec.s3.eu-central-1.amazonaws.com/search_v5.html) enables users to search and retrieve assets that are registered in the Catalog that satisfy the specified search criteria.
-
-You can paginate through search results with an offset, which allows you to limit the number of results and specify how many to skip. 
-
-For step-by-step instructions and an example API call, see the [Search Using the API](/catalog/manage/search/#search-api) section of *Search in the Catalog*. 
-
-## Registration API {#registration}
-
-The [Registration API](https://datahub-spec.s3.eu-central-1.amazonaws.com/registration_v5.html) can be used to register applications, environments, and services or data sources. 
-
+TThe Registration API can be used to register applications, environments, and services or data sources. Calling the Catalog Registration API allows you to register one or more exposed services.
 The API includes the following:
 
 * `POST` methods for registering new assets where a UUID is generated and returned for the asset in the response body
-* `PUT` calls to *update* assets for existing UUIDs or create new applications and environments for new UUIDs. If existing endpoints are not present in a `PUT` call, these endpoints will be deleted.
-* `DELETE` calls to *delete* applications
+* `PUT` calls to update assets for existing UUIDs or create new applications and environments for new UUIDs. If existing endpoints are not present in a PUT call, these endpoints will be deleted.
+* `DELETE` calls to delete applications
 
-For step-by-step instructions, see the [Registering a Service Through the Catalog Registration API](/catalog/register/register-data/#registration-api) section in *Register Resources in the Catalog*.
+## Authentication and Access Rights
 
-## Transform API {#transform}
+Authentication for the Registration API requires the following:
 
-Mendix users who deploy to *non-Mendix clouds* can make use of the [Transform API](https://datahub-spec.s3.eu-central-1.amazonaws.com/transform.html) to generate the request body for the Registration API. The Transform API reconfigures information from the *dependencies.json* file into the correct fields. For an example API, see the [Preparing Your Service Details Using the Transform API](/catalog/register/register-data/#transform-api) section of *Register Resources in the Catalog*.
+* Personal access token (PAT): For every API request you make to a Catalog API, include the following key-value pair with your headers: `Authorization: MxToken <your_Personal_Access_Token>`.
+* Application Name
 
-The v5 compatibility for the **Transform API** is accessible via the [Registration API](https://datahub-spec.s3.eu-central-1.amazonaws.com/registration_v5.html) under the **Endpoints** section.
+### Generating a PAT 
+
+For details on how to generate a PAT, see the [Personal Access Tokens](/community-tools/mendix-profile/user-settings/#pat) section of *User Settings*.
+
+Store the generated value {GENERATED_PAT} somewhere safe so you can use it to authorize your API calls.
+
+## Examples {#registration}
+
+### Calling the Catalog Registration API
+
+Follow this series of REST calls (described in detail in the following sections) to register the details of your exposed services:
+
+1. Register the application and retrieve an application UUID.
+2. Use the application UUID to register the environment and retrieve the environment UUID.
+3. Use the application UUID and the environment UUID to register services. If needed, use the Transform API (an endpoint of the Registration API) to get your service contract in the right format before registering the service.
+
+The Registration API specification describes all the optional fields, required formats, and other operations on these same paths. In this how-to, you will fill out only the required fields and one operation per path.
+
+### Registering an Application Through the Catalog Registration API
+
+To register an application, you need the following:
+
+* *Personal access token
+* *Application Name
+
+You can see an example of a request below:
+
+```bash
+curl --location --request POST 'https://catalog.mendix.com/rest/registration/v5/applications' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: MxToken <your_Personal_Access_Token>' \
+--data-raw '{"name": "My-Application"}'
+```
+
+A successful `POST` call results in a `201` status code and a JSON response body that includes the details you provided about the application, the location of an application icon, and a unique ID:
+
+```json
+{
+	"name":"My-Application",
+	"type":"Other",
+	"uuid":"0301800d-b104-417f-8a64-a8f3ba3450c3",
+	"icon":"https://catalog.mendix.com/resources/logos/other_icon.png"
+}
+```
+
+Use the application `uuid` to register your environment.
+
+### Registering an Environment Through the Catalog Registration API {#register-environment}
+
+To register an environment, you need the following:
+
+* Personal access token
+* `application_UUID`
+* Environment `Name`
+* Environment `Location`
+* Environment `Type`
+
+For more details on what can and cannot be provided in these fields, see the [API specification](https://datahub-spec.s3.eu-central-1.amazonaws.com/registration_v5.html#/Register/post_applications__AppUUID__environments). 
+
+You can see an example of a request below:
+
+```bash
+curl --location --request POST 'https://catalog.mendix.com/rest/registration/v5/applications/{application_UUID}/environments' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: MxToken <your_Personal_Access_Token>' \
+--data-raw '{"name": "My-Environment", "location": "https://my-deployed-application-url.com", "type": "Production"}'
+```
+
+A successful `POST` call results in a `201` status code and a JSON response body that includes the details you provided about the environment, along with a unique ID:
+
+```json
+{
+	"name":"My-Environment",
+	"uuid":"c3acf1e6-8ed3-472c-8c9f-d93cf3a53b9b",
+	"location":"https://my-deployed-application-url.com",
+	"type":"Production",
+	"application": {
+		"name":"My-Application",
+		"uuid":"0301800d-b104-417f-8a64-a8f3ba3450c3",
+		"type":"Other",
+		"icon":"https://catalog.mendix.com/resources/logos/other_icon.png"
+	}
+}
+```
+
+Use the application `uuid` and the environment `uuid` to register one or more services.
+
+### Registering Services Through the Catalog Registration API {#register-services}
+
+To register services, you need the following:
+
+* Personal access token
+* `application_UUID`
+* `environment_UUID`
+* Service `Path`, `Name`, and `ContractType`
+* Service version `Version` and `Security Scheme`
+* Service `Contract` with `Type` and `Value`
+
+{{% alert color="warning" %}}
+Once a version is released to production, any updated contracts should be given a new version. This applies even if you are only registering for a non-production environment.
+
+This is because changes to a particular version of a published OData service are reflected in the entities and attributes available through the Catalog, for every environment for which the service is published. For example, if you have version 1.0.0 published to both non-production and production environments, any changes you make to version 1.0.0 of the service in the non-production environment are also reflected in the service in production.
+{{% /alert %}}
+
+For more details on what can and cannot be provided in these fields, see the [API specification](https://datahub-spec.s3.eu-central-1.amazonaws.com/registration_v5.html#/Register/put_applications__AppUUID__environments__EnvironmentUUID__published_endpoints).
+
+You can see an example of a request below:
+
+```bash
+curl --location --request PUT 'https://catalog.mendix.com/rest/registration/v5/applications/{application_UUID}/environments/{environment_UUID}/published-endpoints' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: MxToken <your_Personal_Access_Token>'\
+--data-raw '{
+  "endpoints": [
+    {
+      "path": "/path/to/my/service/endpoint",
+      "serviceVersion": {
+        "version": "1.0",
+        "type": "OData",
+        "service": {
+          "name": "My-Service-Name",
+           "ContractType": "OData_3_0"
+        },
+        "securityScheme": {
+          "securityTypes": [
+            {
+              "name": "Basic"
+            }
+          ]
+        },
+        "contracts": [
+          {
+            "type": "CSDL",
+            "documentBaseURL": "https://hr.acmecorp.test/odata/test.acme.employeeinformation/v1/",
+            "documents": [
+              {
+                "isPrimary": true,
+                "uri": "metadata.xml",
+                "contents": "<?xml version=\"1.0\" encoding=\"utf-8\"?><edmx:Edmx Version=\"1.0\" xmlns:edmx=\"http://schemas.microsoft.com/ado/2007/06/edmx\" xmlns:mx=\"http://www.mendix.com/Protocols/MendixData\">  <edmx:DataServices m:DataServiceVersion=\"3.0\" m:MaxDataServiceVersion=\"3.0\" xmlns:m=\"http://schemas.microsoft.com/ado/2007/08/dataservices/metadata\">    <Schema Namespace=\"DefaultNamespace\" xmlns=\"http://schemas.microsoft.com/ado/2009/11/edm\"><EntityType Name=\"Employee\"><Key><PropertyRef Name=\"ID\" /></Key><Property Name=\"ID\" Type=\"Edm.Int64\" Nullable=\"false\" mx:isAttribute=\"false\" /><Property Name=\"Name\" Type=\"Edm.String\" MaxLength=\"200\" /><Property Name=\"DateOfBirth\" Type=\"Edm.DateTimeOffset\" /><Property Name=\"Address\" Type=\"Edm.String\" MaxLength=\"200\" /><Property Name=\"JobTitle\" Type=\"Edm.String\" MaxLength=\"200\" /><Property Name=\"Salary\" Type=\"Edm.Decimal\" /></EntityType><EntityContainer Name=\"test.acme.employeeinformation/v1Entities\" m:IsDefaultEntityContainer=\"true\"><EntitySet Name=\"Employees\" EntityType=\"DefaultNamespace.Employee\" /></EntityContainer></Schema></edmx:DataServices></edmx:Edmx>"
+              },
+              {
+                "isPrimary": false,
+                "uri": "servicefeed.xml",
+                "contents": "<?xml version=\"1.0\" encoding=\"utf-8\"?><service xmlns:atom=\"http://www.w3.org/2005/Atom\" xml:base=\"https://hr.acmecorp.test/odata/test.acme.employeeinformation/v1/\" xmlns=\"http://www.w3.org/2007/app\"><workspace><atom:title>Default</atom:title><collection href=\"Employees\"><atom:title>Employees</atom:title></collection>  </workspace></service>"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}'''
+```
+
+{{% alert color="info" %}} If you are receiving a `400` response because your contract metadata is getting rejected, use the [Transform API](#transform-api) to get the contract in the right format. If you want to register more than one service for the same application and environment at once, add another object to the `Endpoints` list in the request body.{{% /alert%}}
+
+A successful `PUT` call results in a `200` status code and a JSON response body that includes the details you provided about the service or services, along with a unique ID and some other details:
+
+```json
+{
+    "endpoints": [
+        {
+            "path": "path/to/my/service/endpoint",
+            "securityClassification": "Internal",
+            "uuid": "f8e1772a-4bd2-43c7-bb1c-3bc61eb8bf5c",
+            "links": [
+                {
+                    "href": "https://catalog.mendix.com/rest/registration/v5/endpoints/f8e1772a-4bd2-43c7-bb1c-3bc61eb8bf5c",
+                    "rel": "Self"
+                },
+                {
+                    "href": "https://catalog.mendix.com/link/endpoint?EndpointUUID=f8e1772a-4bd2-43c7-bb1c-3bc61eb8bf5c",
+                    "rel": "Catalog"
+                }
+            ],
+            "connections": 0,
+            "lastUpdated": "2023-08-03T11:40:39.462Z",
+            "serviceVersion": {
+                "version": "1.0",
+                "description": "",
+                "publishDate": "2023-08-03T11:40:04.978Z",
+                "uuid": "ffdf7a37-b3df-4488-b4de-79553ed34888",
+                "service": {
+                    "name": "My-Service-Name",
+                    "uuid": "e36650ab-9a89-4a2d-8b88-d57a2efa5b9e",
+                    "links": [
+                        {
+                            "href": "https://catalog.mendix.com/rest/registration/v5/applications/831ae898-7ee2-4e60-bf9c-2c709e0050b6/services/My-Service-Name",
+                            "rel": "Self"
+                        }
+                    ]
+                },
+                "securityScheme": {
+                    "securityTypes": [
+                        {
+                            "name": "Basic"
+                        }
+                    ]
+                },
+                "type": "OData"
+            },
+            "validated": false,
+            "discoverable": true
+        }
+    ]
+}
+```
+
+{{% alert color="info" %}}
+Completing the `PUT` operation call more than once overwrites the details for all the published endpoints at the specified environment. If there is a collection of endpoints on the environment, you can create, update, and delete different endpoints all in one `PUT` call.
+{{% /alert %}}
