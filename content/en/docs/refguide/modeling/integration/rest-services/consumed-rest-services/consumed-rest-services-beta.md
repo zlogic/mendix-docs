@@ -49,22 +49,21 @@ Use the Consumed REST Service to configure a `GET`, `POST`, `PUT`, `PATCH`, or `
 
 Create a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request to send data to your server by doing the following:
 
-1. In the **General** field, name your request. 
-2. In the **Method & URL** field, use the drop-down to select the HTTP method you want to use.
-3. Add an endpoint and click **Send**.
+1. In the **Method & URL** field, use the drop-down to select the HTTP method you want to use.
+2. Add an endpoint and click **Send**.
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/general-section.png" class="no-border" width="500" >}}
 
-4. Click **Base URL**.
-5. Add a base URL to use the same URL across all requests in this consumed REST Service document.
+3. Click **Base URL**.
+4. Add a base URL to use the same URL across all requests in this consumed REST Service document.
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/configuration-screen.png" class="no-border" width="500" >}}
 
     To make the base URL dynamic, see the [Dynamic Base URL](#dynamic-base-url) section below.
 
-6. Click **Authentication**.
-7. Select an authentication method, then click **OK**. For more information, see [Authentication methods](#authentication).
-8. Click **Send**. 
+5. Click **Authentication**.
+6. Select an authentication method, then click **OK**. For more information, see [Authentication methods](#authentication).
+7. Click **Send**. 
 
 You can visualize your request in the **Response data** tab, then use the response to [create an entity in the domain model](#create-entity). 
 
