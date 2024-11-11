@@ -9,50 +9,277 @@ restapi: true
 
 ## Introduction
 
-The [Catalog APIs](https://datahub-spec.s3.eu-central-1.amazonaws.com/index.html) are OpenAPI (formerly Swagger) specifications with the following APIs available:
+The Search API enables users to search and retrieve assets that are registered in the Catalog that satisfy the specified search criteria.
 
-* [Search API](#search) — search and retrieve information on registered assets that can be used in your app development
-* [Registration API](#registration) — register and update data sources to the organization's [Catalog](/catalog/)
-* [Transform API](#transform) — for Mendix users deploying to a non-Mendix environment, generate the request bodies to register data sources published from your Mendix app
+You can paginate through search results with an offset, which allows you to limit the number of results and specify how many to skip.
 
-{{% alert color="info" %}}
-At this time, the **Try it out** feature on the OpenAPI specs does not work.
-{{% /alert %}}
 
-{{% alert color="info" %}}
-These APIs were previously called Data Hub APIs.
-{{% /alert %}}
+## Authentication and Access Rights
 
-### Authentication and Access Rights
+Authentication for the Search API uses the following:
 
-The Catalog APIs support OAuth2.0 and personal access tokens. For more information, see the [Personal Access Tokens](/community-tools/mendix-profile/user-settings/#pat) section of *Mendix Profile*.
+* A personal access token (PAT)
+* A search term
 
-To view authentication instructions for each API, open the OpenAPI spec and click **Authorize** on the upper right of the screen. Supported authentication methods are documented there. As mentioned above, the **Try it out** feature does not work.
+### Generating a PAT
 
-Curation rights apply to some API activities.
+For details on how to generate a PAT, see the [Personal Access Tokens](/community-tools/mendix-profile/user-settings/#pat) section of *User Settings*.
 
-## Search API {#search}
+Store the generated value {GENERATED_PAT} somewhere safe so you can use it to authorize your API calls.
 
-The [Search API](https://datahub-spec.s3.eu-central-1.amazonaws.com/search_v5.html) enables users to search and retrieve assets that are registered in the Catalog that satisfy the specified search criteria.
+## Example 
 
-You can paginate through search results with an offset, which allows you to limit the number of results and specify how many to skip. 
+### Search in the Catalog
 
-For step-by-step instructions and an example API call, see the [Search Using the API](/catalog/manage/search/#search-api) section of *Search in the Catalog*. 
+You can see an example of a request below where the search term is Customer:
 
-## Registration API {#registration}
+```curl
+curl --location --request GET 'https://catalog.mendix.com/rest/search/v5/data?query=Customer' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: MxToken <your_Personal_Access_Token>'
+```
 
-The [Registration API](https://datahub-spec.s3.eu-central-1.amazonaws.com/registration_v5.html) can be used to register applications, environments, and services or data sources. 
+A successful `GET` call results in a `200` status code and a JSON response body that includes the details about the search results:
 
-The API includes the following:
+<details><summary><b>Click to see JSON response body</b></summary>
 
-* `POST` methods for registering new assets where a UUID is generated and returned for the asset in the response body
-* `PUT` calls to *update* assets for existing UUIDs or create new applications and environments for new UUIDs. If existing endpoints are not present in a `PUT` call, these endpoints will be deleted.
-* `DELETE` calls to *delete* applications
+```json
+{
+    "totalResults": 177,
+    "links": [
+        {
+            "rel": "First",
+            "href": "https://catalog.mendix.com/rest/search/v5/data?offset=0&serviceType=OData&query=Customer&limit=20"
+        },
+        {
+            "rel": "Current",
+            "href": "https://catalog.mendix.com/rest/search/v5/data?offset=0&serviceType=OData&query=Customer&limit=20"
+        },
+        {
+            "rel": "Next",
+            "href": "https://catalog.mendix.com/rest/search/v5/data?offset=20&serviceType=OData&query=Customer&limit=20"
+        },
+        {
+            "rel": "Last",
+            "href": "https://catalog.mendix.com/rest/search/v5/data?offset=160&serviceType=OData&query=Customer&limit=20"
+        }
+    ],
+    "data": [
+        {
+            "connections": 11,
+            "validated": true,
+            "description": "Primary data source for customer information. Requires approval for prod use - please contact owner for details.",
+            "totalEntities": 3,
+            "securityClassification": "Internal",
+            "specificationVersion": "3.0",
+            "name": "CustomerApi",
+            "version": "1.1.0",
+            "serviceType": "OData",
+            "environment": {
+                "type": "Production",
+                "uuid": "6e40b8c9-0d70-47ff-ba8c-cf1a074cafaf",
+                "name": "Production",
+                "location": "https://customermanagement103.mendixcloud.com"
+            },
+            "links": [
+                {
+                    "rel": "Self",
+                    "href": "https://catalog.mendix.com/rest/search/v5/endpoints/ca355a57-dae1-4449-873c-51e2d6fd1755"
+                },
+                {
+                    "rel": "Catalog",
+                    "href": "https://catalog.mendix.com/link/endpoint?EndpointUUID=ca355a57-dae1-4449-873c-51e2d6fd1755"
+                }
+            ],
+            "entities": [
+                {
+                    "topSupported": true,
+                    "countable": true,
+                    "skipSupported": true,
+                    "validated": false,
+                    "totalAttributes": 1,
+                    "totalAssociations": 2,
+                    "namespace": "mx.customer.api",
+                    "entityTypeName": "Customer",
+                    "name": "Customer",
+                    "type": "Dataset",
+                    "sortable": true,
+                    "entitySetName": "Customers",
+                    "filterable": true,
+                    "updatable": false,
+                    "links": [
+                        {
+                            "rel": "Catalog",
+                            "href": "https://catalog.mendix.com/link/entity?EndpointUUID=ca355a57-dae1-4449-873c-51e2d6fd1755&EntityUUID=9ef95bd7-198a-444a-958a-89c874443409"
+                        }
+                    ],
+                    "deletable": false,
+                    "attributes": [
+                        {
+                            "countable": true,
+                            "typeName": "Edm.Int64",
+                            "typeKind": "Attribute",
+                            "sortable": true,
+                            "filterable": true,
+                            "updatable": false,
+                            "insertable": false,
+                            "name": "CustomerId"
+                        }
+                    ],
+                    "associations": [
+                        {
+                            "countable": true,
+                            "multiplicity": "*",
+                            "entitySetName": "ContactHistorys",
+                            "updatable": false,
+                            "insertable": false,
+                            "namespace": "mx.customer.api",
+                            "referencedDataset": "ContactHistory",
+                            "name": "ContactHistory_Customer",
+                            "entityTypeName": "ContactHistory"
+                        },
+                        {
+                            "countable": true,
+                            "multiplicity": "0..1",
+                            "entitySetName": "ContactInfos",
+                            "updatable": false,
+                            "insertable": false,
+                            "namespace": "mx.customer.api",
+                            "referencedDataset": "ContactInfo",
+                            "name": "ContactInfo_Customer",
+                            "entityTypeName": "ContactInfo"
+                        }
+                    ],
+                    "insertable": false
+                },
+                {
+                    "topSupported": true,
+                    "countable": true,
+                    "skipSupported": true,
+                    "validated": false,
+                    "totalAttributes": 0,
+                    "totalAssociations": 1,
+                    "namespace": "mx.customer.api",
+                    "entityTypeName": "ContactHistory",
+                    "name": "ContactHistory",
+                    "type": "Dataset",
+                    "sortable": true,
+                    "entitySetName": "ContactHistorys",
+                    "filterable": true,
+                    "updatable": false,
+                    "links": [
+                        {
+                            "rel": "Catalog",
+                            "href": "https://catalog.mendix.com/link/entity?EndpointUUID=ca355a57-dae1-4449-873c-51e2d6fd1755&EntityUUID=325261db-a8c0-427e-ab4c-14768bfd9c9a"
+                        }
+                    ],
+                    "deletable": false,
+                    "associations": [
+                        {
+                            "countable": true,
+                            "multiplicity": "0..1",
+                            "entitySetName": "Customers",
+                            "updatable": false,
+                            "insertable": false,
+                            "namespace": "mx.customer.api",
+                            "referencedDataset": "Customer",
+                            "name": "ContactHistory_Customer",
+                            "entityTypeName": "Customer"
+                        }
+                    ],
+                    "insertable": false
+                },
+                {
+                    "topSupported": true,
+                    "countable": true,
+                    "skipSupported": true,
+                    "validated": false,
+                    "totalAttributes": 0,
+                    "totalAssociations": 1,
+                    "mamespace": "mx.customer.api",
+                    "entityTypeName": "ContactInfo",
+                    "mame": "ContactInfo",
+                    "type": "Dataset",
+                    "sortable": true,
+                    "entitySetName": "ContactInfos",
+                    "filterable": true,
+                    "updatable": false,
+                    "links": [
+                        {
+                            "rel": "Catalog",
+                            "href": "https://catalog.mendix.com/link/entity?EndpointUUID=ca355a57-dae1-4449-873c-51e2d6fd1755&EntityUUID=de5140bd-f181-4b0e-ab60-20664cc6184e"
+                        }
+                    ],
+                    "deletable": false,
+                    "items": [
+                        {
+                            "countable": true,
+                            "multiplicity": "*",
+                            "entitySetName": "Customers",
+                            "updatable": false,
+                            "insertable": false,
+                            "namespace": "mx.customer.api",
+                            "referencedDataset": "Customer",
+                            "name": "ContactInfo_Customer",
+                            "entityTypeName": "Customer"
+                        }
+                    ],
+                    "insertable": false
+                }
+            ],
+            "lastUpdated": "2021-05-26T16:12:52.795Z",
+            "uuid": "ca355a57-dae1-4449-873c-51e2d6fd1755",
+            "application": {
+                "type": "Other",
+                "technicalOwner": {
+                    "email": "andrej.koelewijn@mendix.com",
+                    "uuid": "d9d4b5bc-ffe8-4c5c-b237-7358d01f7981",
+                    "name": "Andrej Koelewijn"
+                },
+                "icon": "https://catalog.mendix.com/resources/logos/other_icon.png",
+                "uuid": "1bed66d2-4477-39a9-9144-d0f848212f1e",
+                "repositoryLocation": "https://sprintr.home.mendix.com/link/project/369386df-35b4-475b-a917-17adcc81c1b5",
+                "businessOwner": {
+                    "email": "andrej.koelewijn@mendix.com",
+                    "uuid": "d9d4b5bc-ffe8-4c5c-b237-7358d01f7981",
+                    "name": "Andrej Koelewijn"
+                },
+                "name": "CustomerApp"
+            },
+            "securityScheme": {
+                "securityTypes": [
+                    {
+                        "name": "Anonymous"
+                    }
+                ],
+                "mxAllowedRoles": [
+                    {
+                        "uuid": "8dd52bfa-6d7e-453b-b506-303c0a3d9567",
+                        "name": "Administrator"
+                    },
+                    {
+                        "uuid": "53f5d6fa-6da9-4a71-b011-454ec052cce8",
+                        "name": "User"
+                    }
+                ]
+            },
+            "tags": [
+                {
+                    "name": "customer"
+                },
+                {
+                    "name": "contact"
+                }
+            ]
+        }, 
+    ],
+    "limit": 20,
+    "offset": 0
+}
+```
 
-For step-by-step instructions, see the [Registering a Service Through the Catalog Registration API](/catalog/register/register-data/#registration-api) section in *Register Resources in the Catalog*.
+</details>
 
-## Transform API {#transform}
+## API Reference
 
-Mendix users who deploy to *non-Mendix clouds* can make use of the [Transform API](https://datahub-spec.s3.eu-central-1.amazonaws.com/transform.html) to generate the request body for the Registration API. The Transform API reconfigures information from the *dependencies.json* file into the correct fields. For an example API, see the [Preparing Your Service Details Using the Transform API](/catalog/register/register-data/#transform-api) section of *Register Resources in the Catalog*.
-
-The v5 compatibility for the **Transform API** is accessible via the [Registration API](https://datahub-spec.s3.eu-central-1.amazonaws.com/registration_v5.html) under the **Endpoints** section.
+{{< swaggerui src="/openapi-spec/XXX" >}}
