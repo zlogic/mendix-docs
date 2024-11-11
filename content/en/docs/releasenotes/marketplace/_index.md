@@ -1,7 +1,7 @@
 ---
 title: "Marketplace Release Notes"
 linktitle: "Marketplace"
-url: /releasenotes/marketplace/
+url: /releasenotes/marketplace-category/
 description: "Release notes for updates to the Mendix Marketplace, ATD, and ATS"
 weight: 35
 numberless_headings: true
@@ -10,8 +10,9 @@ aliases:
 #This document is mapped to the landing page, update the link there if renaming or moving the doc file.
 ---
 
-These release notes cover changes made to the following:
+The Marketplace release notes cover changes made to the following:
 
-* [Mendix Marketplace](/appstore/).
+* [Mendix Marketplace](/appstore/)
 * [ATD](/releasenotes/marketplace/atd/)
 * [ATS](/releasenotes/marketplace/ats/)
+
