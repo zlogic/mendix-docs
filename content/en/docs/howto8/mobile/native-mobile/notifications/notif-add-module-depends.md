@@ -53,7 +53,7 @@ Skip this section if the [Native Mobile Resources](https://marketplace.mendix.co
 ## Implement the Atlas Core Module
 
 {{% alert color="warning" %}}
-The Atlas UI Resources module is deprecated, as it pertains to Atlas 2. If you are still using Atlas 2, Mendix recommends that you [migrate from Atlas 2 To Atlas 3](/refguide9/moving-from-atlas-2-to-3/).
+The Atlas UI Resources module is deprecated, as is Atlas 2. If you are still using Atlas 2, Mendix recommends that you [migrate from Atlas 2 To Atlas 3](/refguide9/moving-from-atlas-2-to-3/).
 {{% /alert %}}
 
 Implement the Atlas Core module for apps in Mendix Studio Pro 9.0 and above. Skip this section if the [Atlas Core](https://marketplace.mendix.com/link/component/117187/Mendix/Atlas-Core) module is already implemented in your app. Implement this module by doing the following:

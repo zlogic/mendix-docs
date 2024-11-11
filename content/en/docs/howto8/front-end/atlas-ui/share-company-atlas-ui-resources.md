@@ -5,7 +5,7 @@ weight: 40
 ---
 
 {{% alert color="info" %}}
-The Atlas UI Resources module is deprecated, as it pertains to Atlas 2. If you are still using Atlas 2, Mendix recommends that you [migrate from Atlas 2 To Atlas 3](/refguide9/moving-from-atlas-2-to-3/).
+The Atlas UI Resources module is deprecated, as is Atlas 2. If you are still using Atlas 2, Mendix recommends that you [migrate from Atlas 2 To Atlas 3](/refguide9/moving-from-atlas-2-to-3/).
 {{% /alert %}}
 
 ## Introduction
