@@ -134,17 +134,17 @@ You can also add a parameter as the test value of a header, as seen below. For e
 
 `POST`, `PUT`, and `PATCH` requests support sending text as as a request body. Multiple formats are supported. 
 
-#### Adding a Request Body that sends Static Text
+#### Request Body That Sends Static Text
 
-If the request body content is static, you can do this by pasting in a text into the **Body** tab. This text will be included as the body content when you send the request.
+If the request body content is static, paste the text into the **Body** tab. This text will be included as the body content when you send the request.
 
-#### Adding a Request Body using Parameters
+#### Adding a Request Body Using Parameters
 
-When you include text inside the **Body** tab that contains a parameter name surrounded by curly braces, then this is interpreted as a parameter, and that can be used to change the body content dynamically. For example, if your body content is `product_curr={currency}&product_price={price}`, then you have two parameters `currency` and `price` that you can use to change the body content.
+When the text in the Body tab contains a parameter name surrounded by curly braces,  this is interpreted as a parameter. These parameters can be used to change the body content dynamically. For example, if your body content is `product_curr={currency}&product_price={price}`, the parameters `currency` and `price` can be used to change the body content.
 
-#### Adding a Request Body where the Content comes from one or more Entities
+#### Request Body Where Content Comes From Multiple Entities
 
-When you have a body that is in JSON format, it's possible to create entities in the domain model that will provide the body content. This allows you to easily send a body with dynamic data.
+When you have a body in JSON format, you can create entities in the domain model that will provide the body content. This allows you to easily send a body with dynamic data.
 
 Create body entities from a JSON snippet to your request by doing the following:
 
