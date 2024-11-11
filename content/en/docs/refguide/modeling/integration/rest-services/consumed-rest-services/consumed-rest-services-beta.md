@@ -23,6 +23,8 @@ You can use the Consumed REST Service document to do the following:
 
 ### Limitations
 
+* To use the request response to create a data structure automatically in your domain model, the response data should be in JSON format. It's possible to process other formats, such as XML or raw text, but then you need to extract the data you are looking for yourself in a microflow.
+* If you are debugging a running Published REST Service in the same app as your Consumed REST Service document, a deadlock could occur when sending the request. Wait until the timeout occurs (default: 300 seconds) for Studio Pro to respond again.
 * For macOS, it is currently not possible to copy and paste in the URL or body fields. You may also experience issues while tabbing in the text field. 
 
 ### Prerequisites 
@@ -89,7 +91,7 @@ Parameters are not supported in the authentication section.
 
 {{% /alert %}}
 
-Parameters are fully supported in the path and query part of the URL, in the header value, and in the body. They are defined within curly brackets. For example, in the URL, defining `numbers` as parameter would be `http://numbersapi.com/{numbers}`. The parameters that are configured for the URL, headers, or body within curly brackets are automatically added to the parameters grid.
+Parameters are fully supported in the path and query part of the URL, in the header value, and in the body. They are defined within curly brackets. For example, in the URL, defining `number` as parameter would be `http://numbersapi.com/{number}`. The parameters that are configured for the URL, headers, or body within curly brackets are automatically added to the parameters grid.
 
 {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/get-header.png" class="no-border" >}}
 
@@ -110,7 +112,7 @@ You can add a Base URL as a parameter. To do this, follow these steps:
 2. In the Dynamic field, select **Yes**.
 3. Click **OK**
 
-Your base URL is now considered as a parameter. You can change its value in the [Send REST Request](/refguide/send-rest-request/) mciroflow activity. 
+Your base URL is now considered as a parameter. You can change its value in the [Send REST Request](/refguide/send-rest-request/) microflow activity. 
 
 ### Adding Headers {#add-headers}
 
@@ -130,7 +132,21 @@ You can also add a parameter as the test value of a header, as seen below. For e
 
 ### Adding a Request Body (for POST, PUT, and PATCH requests only) {#add-a-request-body}
 
-`POST`, `PUT`, and `PATCH` requests support JSON strings as a request body. Add the JSON body snippet to your request by doing the following:
+`POST`, `PUT`, and `PATCH` requests support sending text as as a request body. Multiple formats are supported. 
+
+#### Request Body That Sends Static Text
+
+If the request body content is static, paste the text into the **Body** tab. This text will be included as the body content when you send the request.
+
+#### Adding a Request Body Using Parameters
+
+When the text in the Body tab contains a parameter name surrounded by curly braces,  this is interpreted as a parameter. These parameters can be used to change the body content dynamically. For example, if your body content is `product_curr={currency}&product_price={price}`, the parameters `currency` and `price` can be used to change the body content.
+
+#### Request Body Where Content Comes From Multiple Entities
+
+When you have a body in JSON format, you can create entities in the domain model that will provide the body content. This allows you to easily send a body with dynamic data.
+
+Create body entities from a JSON snippet to your request by doing the following:
 
 1. Click the **Body** tab and add your JSON string.
 
@@ -144,13 +160,15 @@ You can also add a parameter as the test value of a header, as seen below. For e
 
 4. The entity name is prefilled, but you can change it to a custom name. To create an entity, click **Create Entity** > **OK**. Click **Show** to view the entity in your domain model.
 
-### Creating an Entity from the Response {#create-entity}
+### Processing Response Data
 
 You can check the response of your request in the **Response data** tab. 
 
 {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/response-data.png" class="no-border" >}}
 
-If you want to use the response to create an entity in your domain model, navigate to the **Response structure** tab, which displays a preview of the response data. 
+#### Response is in JSON Format {#create-entity}
+
+If the response is in JSON format and you want to use the response to create an entity, open the **Response structure** tab, which displays a preview of the response data:
 
 {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/response-structure.png" class="no-border" >}}
 
@@ -159,9 +177,15 @@ The entity name is prefilled, but you can change it to a custom name. To create 
 1. Click **Create Entity** > **OK**. 
 2. To view the entity in your domain model, click **Show**.
 
-You can also add a parameter in the request body by generating a data structure (entities) as input. If only a small part of the request is dynamic, you can also use parameters directly in the JSON snippet.
+You can also add a parameter in the request body by generating a data structure (entities) as input. If only a small part of the request is dynamic, you can use parameters directly in the JSON snippet.
 
 You can choose to flatten and simplify the structure of your response. Enable this feature by selecting **Flatten and simplify structure**. This gives you an easy structure to model with within Studio Pro, removes empty entities, and merges one-to-one relations between a parent and child.
+
+#### Response is not in JSON Format {#processing-non-json}
+
+When the response is not in JSON format, it cannot be converted automatically into entities. Instead, you can extract the data in a microflow.
+
+When the [Send REST request](/refguide/send-rest-request/) action is executed in a microflow, it places the result into the variable `latestHttpResponse`. In `latestHttpResponse`, you can find the `StatusCode` and `Content` of the request that was made. From here, you can use microflow logic to extract the information. For example, if the response has XML formatting, you can use [Import Mapping](refguide/import-mappings) to read the data.
 
 ### Using a REST Request in a Microflow {#add-entity-to-microflow}
 
