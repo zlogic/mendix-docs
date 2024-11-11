@@ -14,6 +14,12 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2024
 
+### December 5, 2024
+
+#### Improvements
+
+* We made an update to how you purchase cloud resource packs! Starting now, you will use cloud tokens instead of cloud credits to complete your purchases. This change simplifies the purchasing process and enhances the overall user experience.
+
 ### October 24, 2024
 
 #### New Features
