@@ -13,6 +13,6 @@ aliases:
 The Marketplace release notes cover changes made to the following:
 
 * [Mendix Marketplace](/appstore/)
-* [ATD](/releasenotes/marketplace/atd/)
+* [APD](/releasenotes/marketplace/apd/)
 * [ATS](/releasenotes/marketplace/ats/)
 
