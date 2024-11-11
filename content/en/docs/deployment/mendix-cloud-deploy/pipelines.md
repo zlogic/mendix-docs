@@ -256,7 +256,7 @@ The pipeline design's status (**Active** or **Inactive**) is displayed in the ov
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/variables-tab.png" alt="" >}}
 
-The **Variables** tab allows you to create user defined pipeline variables, for example, Unit Testing Remote API Key which can be referenced in Pipeline designs for the application. It is useful when you want to use the same value in multiple pipelines or avoid storing secret credentials as plain text in your pipeline step.
+The **Variables** tab allows you to create user-defined pipeline variables, for example, Unit Testing Remote API Key which can be referenced in Pipeline designs for the application. It is useful when you want to use the same value in multiple pipelines or avoid storing secret credentials as plain text in your pipeline step.
 
 ### Creating a New Variable
 
