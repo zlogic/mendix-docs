@@ -157,6 +157,8 @@ To edit a mini survey, perform the following steps:
      
      * **Finished** – if both the start and end dates are in the past
 
+        {{% alert color="info" %}}Changes made to an active survey can take up to 10 minutes to show up in your app.{{% /alert %}}
+       
 ### Implementing a Mini Survey {#implement-survey}
 
 Before the start time of the mini survey is reached, you should implement the survey in Studio Pro. Otherwise, users will not actually receive the mini survey, even if it has the [Status](#survey-status) of **Active** on the **Survey Overview** page. You can [reset the start time in the Settings section](#edit-survey) if you need more time to implement the survey in Studio Pro.
