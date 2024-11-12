@@ -66,6 +66,12 @@ When Context source is selected, the **Data source** section (required) configur
 
 The database source type can be used to set the value of a string or integer attribute with options fetched from an attribute with the same type.
 
+* **Selection type** – (available in 2.0 and above) determines how other [listen to widget](/refguide/listen-to-grid-source/) data sources perceive the data. This property can only be used with widgets using a [database data source](/refguide/database-source/).
+    * **Single** – Allows only a single item to be selected from the options list.
+    * **Multi** – Allows multiple items to be selected from the options list.
+* **Caption** – Allows custom captions to be displayed on the options list.
+* **Store value** (optional) – Determines where the selected value will be saved into.
+
 ##### Static Values {#static}
 
 The static source type can be used to set the value of a string attribute with manually configured values.
@@ -78,7 +84,7 @@ The **General** section allows you to configure general behavior and captions fo
 * **Filter type** – allows the user to type into the input and filter displayable options on the combo box
 * **No options text** – captions that will be used when filter results are empty, or shown when there is no data displayed in the combo box's options
 * **Clearable** – if enabled, this allows selected data to be cleared all at once
-* **Custom content** – allows custom widgets to be displayed in the combo box instead of normal text values (only for association data source)
+* **Custom content** – allows custom widgets to be displayed in the combo box instead of normal text values
 * **Show footer** – if enabled, this allows custom widgets to be placed in a combo box's footer (as shown below). For example, you can include a link, button, or image in the footer. A popular choice is including a "new item" button in the footer:
     {{< figure src="/attachments/appstore/platform-supported-content/widgets/combobox/show-footer.png" alt="Shows a footer which can house custom widgets." class="no-border" >}}
 
@@ -115,6 +121,8 @@ For more information, see [Editability Section](/refguide/common-widget-properti
 The following configurations are available:
 
 * **On change** – executes an action when the attribute value changes
+* **On enter action** – executes an action when the user sets focus on the widget
+* **On leave action** – executes an action when the user moves focus away from the widget
 
 ### Accessibility Tab {#accessibility}
 

@@ -76,7 +76,7 @@ On the **Portfolio Landscape Overview** page, you can create a new portfolio as 
 
 The portfolio is created. You are the first Portfolio Manager of this portfolio. You can start [inviting other people](/developerportal/portfolio-management/access-management/#add-users) to the portfolio.
 
-### Opening a Portfolio 
+### Opening a Portfolio {#open-portfolio}
 
 When you click a portfolio card to which you have access, the portfolio opens with a menu on the left side. 
 

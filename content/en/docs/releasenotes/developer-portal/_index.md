@@ -19,12 +19,24 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2024
 
+### November 7, 2024
+
+#### New features
+
+* We made it possible for you to [integrate your portfolio with Jira](/developerportal/portfolio-management/integrate-with-jira/)! This means now you can link Jira projects to your portfolio, assign Jira epics from these Jira projects to portfolio initiatives, and also track their progress. We offer this functionality as a beta version and welcome your feedback!
+
+### November 3, 2024
+
+#### New features
+
+- We have added two more endpoints to [Projects API](/apidocs-mxsdk/apidocs/projects-api/) to help you manage your project roles. More are on their way!
+
 ### October 27, 2024
 
 #### Fixes
 
-- We have resolved an issue that was causing duplicate email notifications to be sent after the completion of the migration to Git.
-- We have resolved an issue that prevented teams from modifying their roles after migrating to the centralized company roles.
+* We have resolved an issue that was causing duplicate email notifications to be sent after the completion of the migration to Git.
+* We have resolved an issue that prevented teams from modifying their roles after migrating to the centralized company roles.
 
 ### October 17, 2024
 
