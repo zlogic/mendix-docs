@@ -39,8 +39,6 @@ Mendix Runtime has the concept of a cluster leader. This is a single node within
 * **Performing database synchronization after new deploy**
 * **Clear persistent sessions after new deploy** – invalidating all existing sessions so that they get in sync with the latest model version
 
-These activities are only performed by the cluster leader. If the cluster leader is not running, the cluster will still function. However, the activities listed above will not be performed.
-
 The Cloud Foundry Buildpack determines which cluster node becomes the cluster leader and which become cluster slaves.
 
 ## Cluster Startup
