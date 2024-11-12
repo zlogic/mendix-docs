@@ -95,6 +95,7 @@ This section provides clarity on the extent to which the OIDC Provider module su
 
     * supports [Authorization grant type](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3) to represent the resource owner's authorization
     * supports [Client credentials grant type](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4) to request an access token
+    * supports the refresh grant as defined in [RFC 6749: The OAuth 2.0 Authorization Framework](https://datatracker.ietf.org/doc/html/rfc6749) and provides a refresh token only when requested with the `offline_access` scope, as recommended by [OpenID Connect Core](https://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess)
 
 2. The OIDC Provider module supports the following Endpoints:
 
@@ -104,10 +105,7 @@ This section provides clarity on the extent to which the OIDC Provider module su
     * [`token_endpoint`](https://openid.net/specs/openid-connect-core-1_0.html#ImplicitAuthorizationEndpoint)
     * [`issuer`](https://openid.net/specs/openid-connect-core-1_0.html#IssuerIdentifier)
     * [`jwks_uri`](https://openid.net/specs/openid-connect-core-1_0.html#RotateSigKeys)
-
-3. The module supports the refresh grant as defined in [RFC 6749: The OAuth 2.0 Authorization Framework](https://datatracker.ietf.org/doc/html/rfc6749) and provides a refresh token only when requested with the `offline_access` scope, as recommended by [OpenID Connect Core](https://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess).
-
-4. The Provider supports the client registration API via the `/register` endpoint, based on [RFC 7591: OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591)  and [Final: OpenID Connect Dynamic Client Registration](https://openid.net/specs/openid-connect-registration-1_0.html). Only the specified client attributes are supported. The `/register` endpoint is secured with a registration access token using a mechanism that deviates from specifications. For more details, see the [Automatic Client Registration](#automatic-client-registration) section below.
+    * `/register` endpoint, based on [RFC 7591: OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591) and [Final: OpenID Connect Dynamic Client Registration](https://openid.net/specs/openid-connect-registration-1_0.html). Only the specified client attributes are supported. The `/register` endpoint is secured with a registration access token using a mechanism that deviates from specifications. For more details, see the [Automatic Client Registration](#automatic-client-registration) section below.
 
 ## Installation
 
@@ -281,7 +279,7 @@ If you cannot use automatic registration, you can register the client manually.
     * **Back channel logout session support**
     * **Front channel Logout URI**
 
-3. Select the **Allow Token Refresh grant type** option to enable refresh token generation. This option is visible only when the **Allow Authorization-Code grant type** is selected. When generating the refresh token, ensure the following:
+3. Select the **Allow Token Refresh grant type** option to enable refresh token generation. This option is visible only when the **Allow Authorization-Code grant type** is selected. When you want your provider app to generate refresh tokens to your client Mendix app, ensure the following:
 
     1. Both **Allow Token Refresh grant type** and **Allow Authorization-Code grant type** options are selected.
     2. The `offline_access` scope is selected.
