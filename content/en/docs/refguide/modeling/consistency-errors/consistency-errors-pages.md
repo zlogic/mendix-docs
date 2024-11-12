@@ -189,13 +189,15 @@ To fix CE0545, do one of the following:
 
 ### Incorrect Multiplicity for a Reference Selector {#incorrect-multiplicity-reference}
 
+Error message: *Association {Name} must be a reference (not a reference set).*
+
+You will get this error message if you have added a reference selector and then you changed the association from reference type to reference set (from one-to-many or one-to-one to many-to-many).
+
 A reference selector is a widget that is used to display and edit one-to-many or one-to-one associations. For more information on the widget, see [Reference Selector](/refguide/reference-selector/).  
 
 For example, you have several employees who are associated with one city where they work. This is a one-to-many association: multiple *Employees* objects are associated with one *City* object. Associations that refer to a single object in this manner are *references*, as opposed to *reference sets*, in which multiple objects can refer to multiple other objects. In a reference, the "single object" side of the association is always the association's owner. For more information on associations and their types, see [Associations](/refguide/associations/).
 
 {{< figure src="/attachments/refguide/modeling/consistency-errors/consistency-errors-pages/many-to-one-association.png" alt="One-to-many Association" class="no-border" >}}
-
-If you have added a reference selector and then you changed the association from reference type to reference set (from one-to-many or one-to-one to many-to-many), you will get a consistency error: *Association {Name} must be a reference (not a reference set)*.
 
 To fix this error, do the following:
 
@@ -214,18 +216,20 @@ Changing the domain model can result in other errors. To avoid changing the doma
 
 ### Incorrect Multiplicity for a Reference Set Selector and an Input Reference Set Selector {#incorrect-multiplicity-reference-set}
 
+Error messages:
+
+* *Association {Name} must be a reference set (not a reference)* – for an input reference set selector
+* *The reference set selector expects an association of type reference set that starts in the data view entity* – for a reference set selector
+
+You will get the above error messages if you have added an input reference set selector and then you changed the association from reference set type to reference (from many-to-many to one-to-many or one-to-one).
+
 Reference set selector and input set selector are widgets that are used to display and edit many-to-many associations. For more information on these widgets, see [Reference Set Selector](/refguide/reference-set-selector/) and [Input Reference Set Selector](/refguide/input-reference-set-selector/). 
 
 For example, you have several employees who can visit customers in different cities during the week. Thus, many employees are associated with many cities, this is a many-to-many association between an *Employee* entity and a *City* entity (multiple employees are associated with multiple cities). Associations that refer to multiple objects in this manner are *reference set*. For more information on associations and their types, see [Associations](/refguide/associations/). 
 
 {{< figure src="/attachments/refguide/modeling/consistency-errors/consistency-errors-pages/many-to-many-association.png" alt="Many-to-many Association" class="no-border" >}}
 
-If you have added an input reference set selector and then you changed the association from reference set type to reference (from many-to-many to one-to-many or one-to-one), you will get the following errors:
-
-* *Association {Name} must be a reference set (not a reference)* – for an input reference set selector
-* *The reference set selector expects an association of type reference set that starts in the data view entity* – for a reference set selector
-
-To fix the error, do the following:
+To fix the errors, do the following:
 
 1. Open your domain model and double-click the association that you are using for the reference set selector or the input reference set selector and do the following: <br/>
 2. In **Properties of Association** dialog box, change **Multiplicity** to many-to-many (in our example, multiple 'Employee' objects are associated with multiple 'City' objects).
@@ -234,10 +238,10 @@ To fix the error, do the following:
 
 3. Click **OK** to save changes.
 
-You have changed the association multiplicity and fixed the error. 
+You have changed the association multiplicity and fixed the errors. 
 
 {{% alert color="warning" %}}
-Сhanging the domain model can result in other errors. To avoid changing the domain model, you might want to use another widget instead of the reference set selector or input reference set selector, for example, a reference selector. 
+Changing the domain model can result in other errors. To avoid changing the domain model, you might want to use another widget instead of the reference set selector or input reference set selector, for example, a reference selector. 
 {{% /alert %}}
 
 ## Images, Videos and Files Consistency Errors
