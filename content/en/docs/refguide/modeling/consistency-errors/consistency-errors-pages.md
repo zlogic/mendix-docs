@@ -182,7 +182,7 @@ CE0545 error message: *Select an attribute for this {widget name}.*
 
 You will get CE0545 if you have added an input widget and it is inside a data container, but an attribute is not selected for it.
 
-To fix CE0545, do one of the following ways:
+To fix CE0545, do one of the following:
 
 * Right-click the widget, click **Select Attribute** in the drop-down list, and set an attribute. 
 * Or open widget's properties > the **Data source** section, and set an attribute in the **Attribute (path)** field.
