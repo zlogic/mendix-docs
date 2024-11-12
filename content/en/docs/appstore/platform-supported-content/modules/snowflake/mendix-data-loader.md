@@ -18,7 +18,7 @@ The Mendix Data Loader supports a range of data ingestion tasks, enabling organi
 
 To use the Mendix Data Loader, you must have the following:
 
-* A Mendix application with a [published OData service](/refguide/published-odata-services/) that includes exposed entities. 
+* A Mendix application with a [published OData service](/refguide/published-odata-services/) that includes exposed entities.
 * A Snowflake environment.
 
 ### Licensing and Cost
@@ -37,50 +37,54 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 
 1. View the README file which the application displays upon starting.
 2. Click the **MENDIX_DATA_LOADER** tab in the header to open the application interface.
-3. Grant the application the **USAGE** privilege on a warehouse. This step is required if you want to schedule the data ingestions.
-4. Grant the application the **CREATE DATABASE** and **EXECUTE TASK** privileges. This step is required for the application to create the staging database for data ingestion and to execute tasks.
-5. Configure the Mendix Data Loader by performing the following steps:
+3. The Data Source overview page is used for managing your Data Sources.
+4. Click the **Create** button to create a new Data Source.
 
-    1. Select either **Basic** or **OAuth** as the authentication type.
-    2. Click **Submit**.
-    3. Provide the required information, depending on the selected authentication type.
-   
+    1. Select a **Name** that will be used for your Data Source inside the Data Loader.
+    2. Select an **API endpoint** - The base endpoint for the OData resource in your Mendix application, for example, `https://yourmendixapp.mendixcloud.com/odata/snowflakedata/v1/`
+    3. Click **Save**.
+    4. Grant the application the **CREATE DATABASE** and **EXECUTE TASK** privileges. This step is required for the application to create the staging database for data ingestion and to execute tasks.
+
+5. The **Details** page shows the status of your Data Source setup.
+
+6. Click the **Authentication Configuration** tab to see the configuration status.
+7. Click **Edit** to start setting up the Authentication.
+    1. Provide the required information, depending on the selected authentication type.
         * For Basic authentication, provide the following information:
-       
-            * **API endpoint** - The base endpoint for the OData resource in your Mendix application, for example, `https://yourmendixapp.mendixcloud.com/odata/snowflakedata/v1/`
             * **Username** - The username for the basic authentication into the OData resource in your Mendix application
             * **Password** - The password for the basic authentication into the OData resource in your Mendix application
-            * **Target database name** - The name of the database to which you want to ingest the data
-            * **Target schema name** - The target schema name where all the data will be ingested
-
         * For OAuth authentication, provide the following information:
-       
-            * **API endpoint** - The base endpoint for the OData resource in your Mendix application
             * **Client ID** - The client ID from your OAuth provider
             * **Client secret** - The secret associated with the client from your OAuth provider
             * **Token endpoint** - The endpoint at which the token will be validated from your OAuth provider
             * **Allowed scopes** - The allowed and custom scopes configured on the client from your OAuth provider
             * **Access token validity** - The amount of time (in seconds) the access token is valid
-            * **Target database name** - The name of the database to which you want to ingest the data
-            * **Target schema name** - The target schema name where all the data will be ingested
-     
-    4. Click **Submit**.
+    2. Click **Generate Script**.
+    3. Click **Back** to return to the **Details** page.
 
-6. Click **Generate access script**.
-7. Copy the script, navigate to an SQL worksheet, and execute the entire script.
-8. Ingest the data by choosing one of the following options:
- 
-    * If you want to do a one-time ingestion from a Mendix app into Snowflake, navigate to the main tab and click **Ingest Data**. All ingested data is stored in [transient tables](https://docs.snowflake.com/en/user-guide/tables-temp-transient#transient-tables).
-    * If you want to create a schedule for data ingestion, navigate to the **Schedule Task** tab and specify the following configuration options:
+8. Click the **Ingestion Configuration** tab to setup your ingestion destination table.
+9. Click **Create** to start setting up the Ingestion Configuration.
+    * **Target Database** - The name of the database to which you want to ingest the data
+    * **Target Schema** - The target schema name where all the data will be ingested
+10. Click **Save**.
+
+11. Click the **Data ingestion** tab to start your Data Ingestion or setup a schedule.
+12. Click **Ingest Now** to start a data ingestion.
+
+13. Click **New Task** to create a CRON job for scheduling data ingestions.
+    1. If you want to create a schedule for data ingestion, specify the following configuration options:
         * **When should the ingestion task run?** - Provide the schedule using the CRON format. In this drop-down, you can choose between providing a custom CRON expression, Every day at 00:00 AM UTC, Every Monday at 00:00 AM UTC, or Every first day of the month at 00:00 AM UTC.
         * **Custom CRON expression** - This field should only be used when the user chooses to provide a custom CRON expression.
-        * **Time out** - This is an optional setting that can be used to change after how much time a timeout exception should happen. 
+        * **Time out** - This is an optional setting that can be used to change after how much time a timeout exception should happen.
         * **Number of retry attempts** - This setting sets how many retries should be performed if an ingestion job fails.
         * **Suspend task after number of failures** - This setting sets the number of times a task is allowed to consecutively fail before suspending the task.
 
-          After configuring the above, click **Schedule Ingestion Task**. You can view details of the created task on the **Task Management** tab where you can also view its performed ingestion jobs, suspend or enable the task, and drop the task. At present, one ingestion task can exist at a time.
+        After configuring the above, click **Schedule Ingestion Task**. You can view details of the created task on the **Task Management** tab where you can also view its performed ingestion jobs, suspend or enable the task, and drop the task. At present, one ingestion task can exist at a time.
 
-9. To view the ingested data, access the schema that was specified inside the specified target database.
+    2. Grant the application the **USAGE** privilege on a warehouse. This step is required if you want to schedule the data ingestions.
+
+14. Go to the Data Ingestion page to see the status of the ingestion.
+15. To view the ingested data, access the schema that was specified inside the specified target database.
 
 The ingested data is stored in the target schema of the target database specified by the user and created by the Mendix Data Loader application. This target schema in the target database serves as a staging area. Because of that, you should copy the tables of the target schema into a database and schema that you want to use to store the ingested data. This should be done after every ingestion.
 
@@ -113,7 +117,7 @@ Additionally, you may need to verify custom claims specific to your OAuth provid
 
 ## Setting up the app client in your OAuth provider
 
-When setting up the OAuth provider to be able to use it with the Mendix Data Loader, the correct **redirect URL** must be input in order for the authorization server to redirect the user back to the application. The redirect URL fro your Snowflake environment will be as follows:
+When setting up the OAuth provider to be able to use it with the Mendix Data Loader, the correct **redirect URL** must be input in order for the authorization server to redirect the user back to the application. The redirect URL from your Snowflake environment will be as follows:
 
 ```
 https://apps-api.c1.<cloud_region_id>.<cloud>.app.snowflake.com/oauth/complete-secret
@@ -155,7 +159,7 @@ The amount of data being ingested is so large that the JSON file has become too 
 
 #### Solution
 
-To solve this issue, configure the exposed OData entities to have pagination. For the best performance, make the pages as large as possible while still ensuring that the JSON does not become too large to parse. 
+To solve this issue, configure the exposed OData entities to have pagination. For the best performance, make the pages as large as possible while still ensuring that the JSON does not become too large to parse.
 
 ### No Response from my Mendix Application when Pagination is Enabled on Mendix Studio Pro 10.10
 
