@@ -22,6 +22,7 @@ The following are usage scenarios that would be achievable with the OIDC Provide
 * SSO brokering
 * SSO within multi-app Mendix solution
 * Non-user specific API consumption
+* Platform Extensions
 
 For more information on how SSO brokering and SSO are implemented within a multi-app Mendix solution, see the [End-User Account Creation in the OIDC Provider](#end-user-account) section below.
 
@@ -58,6 +59,16 @@ For API security, it is a best practice to use OAuth-tokens rather than API-keys
 * Use a machine identity: Machine identities are also known as service accounts or application accounts. In this case, access tokens are used by the client application to consume the API on behalf of itself. In this scenario, the end-user is not relevant.
 
 The OIDC Provider supports the so-called Client Credential grant. This means that, a client application can obtain a client access token by authenticating at the OIDC Provider and present that access token to the API it consumes. The OIDC SSO module (version 3.1.0 and above) helps you to implement security in your API. It validates the token either through token introspection at the OIDC Provider or by verifying its signature. Moreover, it creates a user that represents the client that is consuming the API.
+
+#### Platform Extensions
+
+Since its 10.12 release, Mendix Studio Pro is an [extensible IDE](https://www.mendix.com/blog/extensions-the-natural-evolution-of-the-developer-experience/) that allows you to build extensions to connect with other external tools. These external tools, or Extension Applications, offer services for platform extensions to consume, often as web applications with user interfaces and a set of “extension services” that provide web applications and APIs. With your extension, Studio Pro acts as a client that consumes these extension services. In this architecture, implementing a security mechanism for accessing the Extension Application is essential. Using OAuth/OpenID Connect (OIDC) SSO and OAuth Access Tokens is the current best practice for securing this access.
+
+In this setup, developers need both a Mendix platform account and an account for your Extension Application. Your IDE extension will prompt the developer to log in to the Extension Web Application and use the tokens to access the Extension Web APIs.
+
+{{< figure src="/attachments/appstore/platform-supported-content/services/oidc-provider/platform_extensions.png" class="no-border" >}}
+
+If you are building your Extension Application as a Mendix app, you can use the [OIDC Provider](https://marketplace.mendix.com/link/component/214681) module to allow platform users to log in to your Extension Application, get OAuth Access Tokens, and use these tokens to access web APIs provided by your Mendix Extension Services. The [OIDC SSO](/appstore/modules/oidc/) module then helps your web API validate the received token. Since the OIDC protocol requires a static URI for your IDE extension, you can set this URI using the Static URI API (available from Mendix 10.16 onward).
 
 ### Features and Limitations
 

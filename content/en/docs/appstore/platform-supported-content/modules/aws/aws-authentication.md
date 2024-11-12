@@ -64,7 +64,7 @@ If you plan to use AWS Authentication with a [platform-supported AWS connector](
 
 ## Installation
 
-Follow the instructions in [Using Marketplace Content](/appstore/use-content/) to import the AWS Authentication connector into your app.
+Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the AWS Authentication connector into your app.
 
 ## Usage
 

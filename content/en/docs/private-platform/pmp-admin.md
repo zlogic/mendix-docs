@@ -47,6 +47,10 @@ As the administrator, you can perform the following actions:
 * In the **Taxonomy Management** tab, you can configure the supported Studio Pro versions and sub-categories that your users can select when creating Marketplace content. You can also view and edit the available licenses.
 * In the **Content Import** tab, you can view the contents available in your Private Marketplace. You can also download and import the modules in bulk.
 
+## Deployment
+
+In the **Deployment** section, administrators can manage existing clusters and register new ones.
+
 ## Users
 
 In the **User Management** section, administrators can manage user accounts and user groups.
@@ -64,4 +68,15 @@ As the administrator, you can perform the following actions:
     * Configure the language and time zone settings for a user
     * Delete a user account
 
-In the **Group Management** tab, you can create and edit user groups. These groups typically reflect your organization's structure. You can also use the **Automation Settings** option to automatically assign users to groups based on their profile attributes.
+* In the **Group Management** tab, you can create and edit user groups. These groups typically reflect your organization's structure. You can also use the **Automation Settings** option to automatically assign users to groups based on their profile attributes.
+
+## Platform
+
+In the **Deployment** section, administrators can view and manage statistics, activity logs, webhooks, and licenses.
+
+As the administrator, you can perform the following actions:
+
+* In the **Platform Statistics** tab, you can access statistics such as the number of users and apps, daily user login times and numbers, or most active users.
+* In the **Platform Logs** tab, you can view a log of actions performed by users, for example, creating and deleting apps, starting a pipeline, or adding a new user.
+* In the **Webhooks** tab, you can view and manage your [Webhooks](/developerportal/deploy/webhooks/).
+* In the **Licensing** tab, you can check the status of your licences, or upload a new Private Mendix Platform license bundle.

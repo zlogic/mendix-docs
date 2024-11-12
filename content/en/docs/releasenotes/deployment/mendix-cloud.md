@@ -22,6 +22,17 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 * We introduced cloud tokens for your cloud resource pack purchases! Starting now, you will use [cloud tokens](/control-center/entitlements/#cloud-tokens) instead of cloud credits to complete your cloud resource purchases. With the transitioning from cloud credits to cloud tokens, Mendix is paving the way for a more streamlined and flexible approach to purchasing and switching between Mendix Cloud products.
 
+### November 6, 2024
+
+#### New Features
+
+* Cloud permissions are now included in project roles.
+* You can now manage all project roles centrally, on a company level, if you have switched to using company-level roles.
+
+#### Improvements
+
+* We have made improvements to the [permissions tab](/developerportal/deploy/node-permissions/#permissions-tab). The **Receive alerts** permission has also been removed from the permissions tab. You can subscribe to alerts using the **Email Alerts** option on the **Alerts** page.
+
 ### October 17, 2024
 
 #### Improvements

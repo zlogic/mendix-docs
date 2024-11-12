@@ -28,7 +28,7 @@ Ensure that the AWS user account used for authentication has the appropriate per
 
 ## Installation
 
-Follow the instructions in [Using Marketplace Content](/appstore/use-content/) to import the Amazon SQS connector into your app.
+Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the Amazon SQS connector into your app.
 
 ## Configuration
 
