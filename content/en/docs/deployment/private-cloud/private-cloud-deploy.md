@@ -359,8 +359,8 @@ This button contains a list of actions which you can perform quickly on the envi
 * **Transport Package** – allows you to deploy the deployment package in the current environment to another environment within the app, or to redeploy it in the current environment
 * **Environment Logs** – takes you to the log page defined by the cluster manager when they registered the namespace
 * **Model Options** – allows you to change the running of scheduled events and the values of constants for your app by taking you to the **Model Options** tab of the **Environment Details** page
-* **Stop Application** — stops the application by reducing the number of replicas to zero, but when you restart the application, the number of replicas set in the application will be started. If the application
-* **Delete Environment** – this deletes the environment (see [Current Limitations](#limitations), below, for additional details about what is deleted) — you will be asked to confirm this action
+* **Stop Application** — stops the application by reducing the number of replicas to zero, but when you restart the application, the number of replicas set in the application will be started.
+* **Delete Environment** – this deletes the environment (see [Current Limitations](#limitations), below, for additional details about what is deleted) — you will be asked to confirm this action.
 * **Set as Studio Pro Deployment target** - this allows you to select the default target environment for Studio Pro deployment.
 
 ### Activity
