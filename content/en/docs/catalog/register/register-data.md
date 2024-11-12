@@ -20,8 +20,9 @@ There are three ways to register published services in the Catalog. Mendix suppo
 
 This how-to teaches you how to register a service in the following ways:
 
-* [Through Mendix Cloud](#mendix-cloud), where registration occurs automatically when you deploy a [published OData](/refguide/published-odata-services/)/REST/Web service, or Business Event to Mendix Cloud
-* [Through the Catalog UI form](#registration-form)
+* Through [Mendix Cloud](#mendix-cloud), where registration occurs automatically when you deploy a [published OData](/refguide/published-odata-services/)/REST/Web service, or Business Event to Mendix Cloud
+* Through the [Catalog UI form](#registration-form)
+* Through the [Catalog Registration API](/apidocs-mxsdk/apidocs/registration-api/)
 
 ## Prerequisites
 
@@ -39,8 +40,8 @@ If you have a published service that is deployed to [Mendix Cloud](/developerpor
 
 If you are not using Mendix Cloud to deploy your Mendix application, there are two other ways to register an exposed service in the Catalog:
 
-* [Through the Catalog Registration API](/apidocs-mxsdk/apidocs/registration-api/)
-* [Through the Catalog UI form](#registration-form)
+* Through the [Catalog Registration API](/apidocs-mxsdk/apidocs/registration-api/)
+* Through the [Catalog UI form](#registration-form)
 
 The Catalog collects metadata about the application and environment where your application is deployed, so you can distinguish services from one another. To register your service, you need to provide details about both the application and the environment where the service is deployed.
 
