@@ -16,10 +16,12 @@ You can paginate through search results with an offset, which allows you to limi
 
 ## Authentication and Access Rights
 
-Authentication for the Search API uses the following:
+To use the Catalog Search API, you need the following:
 
 * A personal access token (PAT)
 * A search term
+
+For more details on what can and cannot be provided in your search query, see the API Reference section below.
 
 ### Generating a PAT
 
