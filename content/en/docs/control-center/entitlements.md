@@ -46,6 +46,7 @@ The tables below show how many cloud tokens each cloud resource pack costs:
 | XXL21                          | 320           |
 | XXXL21                         | 640           |
 | XXXXL21                        | 1280          |
+| XXXXL-XXXXXLDB | 2240 |
 
 |Premium Resource Packs                  | Cloud Tokens |
 | ------------------------------ | ------------- |
@@ -60,6 +61,7 @@ The tables below show how many cloud tokens each cloud resource pack costs:
 | XXL21 Premium Plus             | 800           |
 | XXXL21 Premium Plus            | 1600          |
 | XXXXL21 Premium Plus           | 3200          |
+| XXXXL-XXXXXLDB | 5600 |
 
 | Legacy Resource Packs | Cloud Tokens |
 | ------------------------------ | ------------- |
