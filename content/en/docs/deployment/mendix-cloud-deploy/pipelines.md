@@ -150,11 +150,11 @@ Check out a branch. To configure this step, use the drop-down menu to select the
 
 Build a deployment package based on the latest major, minor, or patch version of the branch you checked out. The highest version is incremented based on the increment settings specified in this step.
 
-##### Maia Best Practice Recommender
+##### Maia Best Practice Recommender{##recommender}
 
 Evaluate results of the [Maia Best Practice Recommender](/refguide/best-practice-recommender/) within your pipeline. You can configure this step to fail the pipeline if errors, warnings, deprecations, and/or recommendations are detected.
 
-##### Unit Testing
+##### Unit Testing{#unit-testing}
 
 [Unit Testing](/appstore/modules/unit-testing/) module can perform regression testing on an environment in which a new deployment package has been deployed. This step executes the Unit Testing module in a running environment. If any unit test fails, the pipeline will be marked as failed, with the run details and output parameters showing the failure count and relevant information. Ensure to add below prerequisites before you add the Unit Testing pipeline step:
 
@@ -162,6 +162,8 @@ Evaluate results of the [Maia Best Practice Recommender](/refguide/best-practice
 * The environment in which Unit Testing needs to happen should be in a running state.
 
 Since a remote API password is required to trigger Unit Tests and it is not advisable to have sensitive credential information in the pipeline definition, use variables within pipelines. These variables can then be easily referenced in the pipeline design. For more information, see the [Running Unit Tests Through the Remote API](/appstore/modules/unit-testing/#running-unit-tests-through-the-remote-api) section of *Unit Testing*.
+
+Using **Timeout Field**, users can restrict the execution time of unit tests. If the tests exceed the predefined duration or timeout, the test step fails. It helps to avoid unnecessary waiting if tests are stuck in a loop.
 
 ##### Publish
 
