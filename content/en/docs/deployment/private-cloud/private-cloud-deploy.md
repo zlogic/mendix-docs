@@ -285,6 +285,7 @@ You can perform the following actions:
 * **Add Environment**
 * View **Details**
 * Perform **Actions**
+* Reorder **Environments**
 
 These are described in more detail, below.
 
@@ -354,11 +355,11 @@ This opens the **Environment Details** page which is described in more detail in
 
 This button contains a list of actions which you can perform quickly on the environment. Most of these actions will be disabled if the app is currently starting or stopping. These actions are:
 
-* **Start Application** (only shown if app is stopped) – allows you to start a stopped application
+* **Start Application** – allows you to start a stopped application
 * **Transport Package** – allows you to deploy the deployment package in the current environment to another environment within the app, or to redeploy it in the current environment
 * **Environment Logs** – takes you to the log page defined by the cluster manager when they registered the namespace
 * **Model Options** – allows you to change the running of scheduled events and the values of constants for your app by taking you to the **Model Options** tab of the **Environment Details** page
-* **Stop Application** (only shown if at least one replica is running) — stops the application by reducing the number of replicas to zero
+* **Stop Application** — stops the application by reducing the number of replicas to zero, but when you restart the application, the number of replicas set in the application will be started. If the application
 * **Delete Environment** – this deletes the environment (see [Current Limitations](#limitations), below, for additional details about what is deleted) — you will be asked to confirm this action
 * **Set as Studio Pro Deployment target** - this allows you to select the default target environment for Studio Pro deployment.
 
@@ -421,6 +422,12 @@ This shows you the status of the environment and is the same as the status shown
 #### Action Buttons
 
 There are also buttons which allow you to perform various actions on your app and environment. These are described in the sections below.
+
+#### Reorder Environments -> Environment Settings
+
+Its also possible to adjust the order of the environments in the environment overview page. The environments can be moved up or down the order by pressing the arrow. You can navigate to the ordering page by clicking on **Environment Settings** button next to **Create Environment** button.
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/RedorderEnvironment.png" class="no-border" >}}
 
 ##### Stop/Start Application
 
