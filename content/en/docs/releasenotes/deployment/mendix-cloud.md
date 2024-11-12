@@ -20,7 +20,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Improvements
 
-* We made an update to how you purchase cloud resource packs! Starting now, you will use [cloud tokens](/control-center/entitlements/#cloud-tokens) instead of cloud credits to complete your purchases. This change simplifies the purchasing process and enhances the overall user experience.
+* We introduced cloud tokens for your cloud resource pack purchases! Starting now, you will use [cloud tokens](/control-center/entitlements/#cloud-tokens) instead of cloud credits to complete your cloud resource purchases. With the transitioning from cloud credits to cloud tokens, Mendix is paving the way for a more streamlined and flexible approach to purchasing and switching between Mendix Cloud products.
 
 ### October 17, 2024
 
