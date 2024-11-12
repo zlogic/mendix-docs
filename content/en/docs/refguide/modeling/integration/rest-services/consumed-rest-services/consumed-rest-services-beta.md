@@ -120,7 +120,7 @@ You can add a header for any HTTP request you have specified in your document. T
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/header-example.png" class="no-border" width="500" >}}
 
-2. In the **Key** field, click the drop-down and choose from the list of the most commonly used HTTP headers. You can also create a custom header by changing the key to **Custom** and adding a value in the **Value** field.
+2. In the **Key** field, click the drop-down and choose from the list of the most commonly used HTTP headers. You can also create a custom header by typing directly in the key field and adding a value in the **Value** field.
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/accept-header.png" class="no-border" width="500" >}}
 
