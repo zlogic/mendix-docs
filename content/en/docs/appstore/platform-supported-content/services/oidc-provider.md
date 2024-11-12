@@ -510,6 +510,10 @@ In versions of OIDC Provider below 1.1.0, the following values are not included 
 
 In versions of the OIDC Provider above 2.0.0, the sub value was changed from an Autonumber to a UUID.
 
+## Deleting Expired Access Tokens
+
+The `CleanupOldCodes` deletes expired access tokens from the database. The scheduler interval is set to one hour, and you can adjust it in the **USE_ME** folder of the **OpenIDConnectProvider** module according to your requirements. For more information, see [Scheduled Events](/refguide/scheduled-events/).
+
 ## Troubleshooting
 
 ### Infinite Loop of Redirects
@@ -579,3 +583,4 @@ For situations where the Centralized Authorization concept is used (see [Central
 These are set up in [Configuration of the OIDC Provider for Centralized Authorization with Scopes](#configure-scopes). Multiple scopes will be separated by spaces.
 
 For example: `mx:app:userrole:53f5d6fa-6da9-4a71-b011-454ec052cce8 mx:app:userrole:6c5ea333-799c-4438-96fc-2528ced788e4`
+
