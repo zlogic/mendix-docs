@@ -9,7 +9,7 @@ restapi: true
 
 ## Introduction
 
-TThe Registration API can be used to register applications, environments, and services or data sources. Calling the Catalog Registration API allows you to register one or more exposed services.
+The Registration API can be used to register applications, environments, and services or data sources. Calling the Catalog Registration API allows you to register one or more exposed services.
 The API includes the following:
 
 * `POST` methods for registering new assets where a UUID is generated and returned for the asset in the response body
@@ -29,24 +29,24 @@ For details on how to generate a PAT, see the [Personal Access Tokens](/communit
 
 Store the generated value {GENERATED_PAT} somewhere safe so you can use it to authorize your API calls.
 
-## Examples {#registration}
-
-### Calling the Catalog Registration API
+## Calling the Registration API
 
 Follow this series of REST calls (described in detail in the following sections) to register the details of your exposed services:
 
-1. Register the application and retrieve an application UUID.
-2. Use the application UUID to register the environment and retrieve the environment UUID.
-3. Use the application UUID and the environment UUID to register services. If needed, use the Transform API (an endpoint of the Registration API) to get your service contract in the right format before registering the service.
+1. [Register the application](#register-application) and retrieve an application UUID.
+2. Use the application UUID to [register the environment](#register-environment) and retrieve the environment UUID.
+3. Use the application UUID and the environment UUID to [register services](#register-services). If needed, use the [Transform API](#transform-api) (an endpoint of the Registration API) to get your service contract in the right format before registering the service.
 
-The Registration API specification describes all the optional fields, required formats, and other operations on these same paths. In this how-to, you will fill out only the required fields and one operation per path.
+The Registration API specification describes all the optional fields, required formats, and other operations on these same paths. 
 
-### Registering an Application Through the Catalog Registration API
+## Examples {#registration}
+
+### Registering an Application {#register-application}
 
 To register an application, you need the following:
 
-* *Personal access token
-* *Application Name
+* Personal access token
+* Application Name
 
 You can see an example of a request below:
 
@@ -70,7 +70,7 @@ A successful `POST` call results in a `201` status code and a JSON response body
 
 Use the application `uuid` to register your environment.
 
-### Registering an Environment Through the Catalog Registration API {#register-environment}
+### Registering an Environment {#register-environment}
 
 To register an environment, you need the following:
 
@@ -80,7 +80,7 @@ To register an environment, you need the following:
 * Environment `Location`
 * Environment `Type`
 
-For more details on what can and cannot be provided in these fields, see the [API specification](https://datahub-spec.s3.eu-central-1.amazonaws.com/registration_v5.html#/Register/post_applications__AppUUID__environments). 
+For more details on what can and cannot be provided in these fields, see the [API Reference](#api-reference) section below.
 
 You can see an example of a request below:
 
@@ -110,7 +110,7 @@ A successful `POST` call results in a `201` status code and a JSON response body
 
 Use the application `uuid` and the environment `uuid` to register one or more services.
 
-### Registering Services Through the Catalog Registration API {#register-services}
+### Registering Services {#register-services}
 
 To register services, you need the following:
 
@@ -127,7 +127,7 @@ Once a version is released to production, any updated contracts should be given 
 This is because changes to a particular version of a published OData service are reflected in the entities and attributes available through the Catalog, for every environment for which the service is published. For example, if you have version 1.0.0 published to both non-production and production environments, any changes you make to version 1.0.0 of the service in the non-production environment are also reflected in the service in production.
 {{% /alert %}}
 
-For more details on what can and cannot be provided in these fields, see the [API specification](https://datahub-spec.s3.eu-central-1.amazonaws.com/registration_v5.html#/Register/put_applications__AppUUID__environments__EnvironmentUUID__published_endpoints).
+For more details on what can and cannot be provided in these fields, see the [API Reference](#api-reference) section below.
 
 You can see an example of a request below:
 
@@ -257,7 +257,7 @@ To call the Transform endpoint of the Registration API, you need the following:
 
     {{% alert color="info" %}}You can find these two values in the *metadata.json* file for your exposed service. They are in an array called `Constants`, and named `Name` and `DefaultValue`.{{% /alert %}}
 
-    {{% alert color="info" %}}For more details on what can and cannot be provided in these fields, see the [API specification](https://datahub-spec.s3.eu-central-1.amazonaws.com/registration_v5.html#/Endpoints/post_transform_dependenciesjson).{{% /alert %}}
+    {{% alert color="info" %}}For more details on what can and cannot be provided in these fields, [API Reference](#api-reference) section below.{{% /alert %}}
 
 You can see an example of a request that converts a *dependencies.json* file below:
 
@@ -346,6 +346,6 @@ A successful `PUT` call results in a `200` status code and a JSON response body.
 }
 ```
 
-## API Reference 
+## API Reference {#api-reference}
 
-{{< swaggerui src="/openapi-spec/XXX" >}}
+{{< swaggerui src="/openapi-spec/registration_v5.yaml" >}}

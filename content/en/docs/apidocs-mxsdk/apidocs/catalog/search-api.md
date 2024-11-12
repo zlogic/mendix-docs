@@ -21,7 +21,7 @@ To use the Catalog Search API, you need the following:
 * A personal access token (PAT)
 * A search term
 
-For more details on what can and cannot be provided in your search query, see the API Reference section below.
+For more details on what can and cannot be provided in your search query, see the [API Reference](#api-reference) section below.
 
 ### Generating a PAT
 
@@ -282,6 +282,6 @@ A successful `GET` call results in a `200` status code and a JSON response body 
 
 </details>
 
-## API Reference
+## API Reference {#api-reference}
 
-{{< swaggerui src="/openapi-spec/XXX" >}}
+{{< swaggerui src="/openapi-spec/search_v5.yaml" >}}
