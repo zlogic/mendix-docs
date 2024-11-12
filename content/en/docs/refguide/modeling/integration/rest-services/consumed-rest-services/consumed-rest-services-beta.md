@@ -185,6 +185,14 @@ When the response is not in JSON format, it cannot be converted automatically in
 
 When the [Send REST request](/refguide/send-rest-request/) action is executed in a microflow, it places the result into the variable `latestHttpResponse`. In `latestHttpResponse`, you can find the `StatusCode` and `Content` of the request that was made. From here, you can use microflow logic to extract the information. For example, if the response has XML formatting, you can use [Import Mapping](/refguide/import-mappings/) to read the data.
 
+### Simplifying and Flattening Response Data
+
+When you receive JSON data, the structure of the response is simplified and flattened where possible. You can see this in the **Response structure** tab.   
+
+Take for example URL https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json that returns vehicle information. It returns a JSON object that contains property `"Results"` with a list of objects. Without simplification, when you press **Create entity** on the **Response structure** tab, you will get 3 entities. With simplification, only 2 enties are created, that still contains all vehicle information.
+
+By default, simplification and flattening is enabled. If you don't want that, you can uncheck the box **Flatten and simplify structure** on the **Response structure** tab before you click the **Create entity** button.
+
 ### Using a REST Request in a Microflow {#add-entity-to-microflow}
 
 To select a request in the microflow, complete the following steps:
