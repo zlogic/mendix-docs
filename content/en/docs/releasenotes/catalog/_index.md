@@ -14,16 +14,16 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 ## 2024
 
-### November 13, 2024
+### November 14, 2024
 
 #### Fixes
 
-* We resolved an issue with the "Owned By Me" filter in the Catalog search under Ownership, which was not returning accurate results.
+* We fixed an issue with the **Owned by me** filter under **Ownership** in the Catalog search, which was not returning accurate results.
 
 #### Improvement
 
-* We've made minor enhancements to UX and compatibility, including updates to widgets and filter displays.
-* We've integrated upgrade with minor UI changes on the Administration page for company admins.
+* We made minor enhancements to UX and compatibility, including updates to widgets and filter displays.
+* We integrated upgrade with minor UI changes on the Administration page for company admins.
 
 ### October 31, 2024
 
