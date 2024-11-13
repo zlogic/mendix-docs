@@ -70,7 +70,7 @@ The tables below show how many cloud tokens each cloud resource pack costs:
 | M20     | 40            |
 | L20     | 80            |
 | XL20    | 160           |
-| XXL20   | 320           |
+| 2XL20  | 320           |
 | Strato  | 12           |
 | Meso    | 47          |
 | Iono    | 67          |
