@@ -87,6 +87,20 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 
 The ingested data is stored in the target schema of the specified target database, created by the Mendix Data Loader application. This target schema serves as a staging area. After each ingestion, copy the tables from the target schema to the desired database and schema that you want to use to store the ingested data. This should be done after every ingestion.
 
+## Using Unique Schemas to Avoid Ingestion Job Conflicts
+
+When setting up ingestion jobs, it is recommended to use unique schemas for each job to avoid potential conflicts. Using distinct schemas allows each ingestion job to manage its data separately, which can prevent issues with data overlap, naming conflicts, and accidental overwrites. This is particularly important when multiple ingestion jobs are running concurrently, as they may otherwise attempt to access or modify the same tables.
+
+## Viewing Ingestion Jobs for a Data Source
+
+To view all ingestion jobs associated with a specific Data Source in Snowflake, you can use a SQL `SELECT` statement. This query retrieves records from the `core.ingestion_job` table for the specified `DATASOURCE_ID` and orders them by the job creation date in descending order, so the most recent ingestions appear first.
+
+### Example SQL Query
+
+```sql
+SELECT * FROM core.ingestion_job WHERE DATASOURCE_ID = '1234abcd' ORDER BY CREATED_DATE_TIME DESC;
+```
+
 ## Verifying the Access Token
 
 When using OAuth authentication with the Mendix Data Loader, it is crucial to verify the access token received by your Mendix application. This verification process ensures the token's authenticity and integrity, protecting your application from unauthorized access attempts.
@@ -126,8 +140,7 @@ The *cloud_region_id* and the *cloud* in the URL will depend on the configuratio
 
 ## Current Limitations
 
-* Exposing an association in an OData service is as a link is not supported yet by the Mendix Data Loader. Instead, choose the **As an associated object id** option in your OData settings. This option will store the associated object ID in the table, but not explicitly as foreign key.
-* The Mendix Data Loader supports single endpoint (OData) ingestion. If you want to ingest data from multiple endpoint, you can do this by ingesting the data from each endpoint separately one by one. Make sure to assign a different staging schema for every ingestion you do, or the previous ingestions will be overwritten. The ability to ingest data from multiple endpoints in one go will be added in a future release.
+* Exposing an association in an OData service as a link is not supported yet by the Mendix Data Loader. Instead, choose the **As an associated object id** option in your OData settings. This option will store the associated object ID in the table, but not explicitly as foreign key.
 * The Mendix Data Loader always ingests all the data exposed by the OData published by your Mendix application. If you do not want to ingest all of the data inside the exposed entities, you must filter the data at the Mendix/OData side.
 * The Mendix Data Loader does not support custom domains for Mendix applications when using pagination in published OData services. This is because the OData response always returns the base domain's root URL, regardless of the custom domain being used. As a result, the call for the next page fails because the returned root URL does not have a corresponding network rule in Snowflake.
 
