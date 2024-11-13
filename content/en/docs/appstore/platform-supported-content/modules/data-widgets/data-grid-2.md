@@ -462,6 +462,11 @@ To export data from the data grid, create a new nanoflow that calls *Export_To_E
 * **File name** - the file name to use for the exported document (does not require an appended file extension)
 * **Sheet name** - the name to use for the Excel sheet of the exported document
 * **Include column names** - a Boolean expression that, if true, tells the action to include column captions as the first row in the exported document
+* **Chunk size** - the number of rows fetched from the backend to the browser at a time.
+
+{{% alert color="info" %}}
+The recommended value for **Chunk Size** is 200. However, because each data grid has a unique set of columns and varying amounts of data per row, a different chunk size might result in better performance.
+{{% /alert %}}
 
 ## Configuration
 
