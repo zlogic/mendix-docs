@@ -204,8 +204,8 @@ To check the responses that have been collected, follow these steps:
 
 A user can choose to opt out of a survey. Once opted out, the survey will no longer appear for that user, even if they have not completed it. This occurs when a user dismisses the survey without submitting it.
 
-* The first time a user dismisses the survey, it will reappear the next time they visit the page. Any information they entered will be saved and shown when they see the survey again.
-* If the user dismisses the survey a second time, it will no longer appear for them, even if they trigger it again.
+* If a user leaves the page, without closing the survey, it will reappear the next time they visit the page. Any information they entered will be saved and shown when they see the survey again.
+* If the user dismisses the survey, it will no longer appear for them, even if they trigger it again.
 
 Survey opt-out rule is a variable cached to your internet browser. You can reset and show a survey multiple times by clearing your browser cache.
 
