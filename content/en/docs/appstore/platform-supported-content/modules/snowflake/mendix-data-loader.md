@@ -19,7 +19,7 @@ The Mendix Data Loader supports a range of data ingestion tasks, enabling organi
 To use the Mendix Data Loader, you must have the following:
 
 * A Mendix application with a [published OData service](/refguide/published-odata-services/) that includes exposed entities.
-* A Snowflake environment.
+* A Snowflake environment in which the account has the necessary permissions to create and maintain tables.
 
 ### Licensing and Cost
 
@@ -80,10 +80,10 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 
         After configuring, click **Schedule Ingestion Task**. View the created task on the **Task Management** tab, where you can monitor performed ingestion jobs, suspend or enable the task, and drop it. Currently, only one ingestion task can exist at a time.
 
-    * Grant the application **USAGE** privilege on a warehouse if you wish to schedule data ingestions.
+    * Grant the application **USAGE** privilege on a warehouse to enable scheduling of data ingestions. All data ingestions use the same warehouse.
 
-14. Go to the **Data Ingestion** page to check the ingestion status.
-15. To view the ingested data, access the schema specified in the target database.
+14. The page should go back to the details page. You can see the status of the last 3 ingestions on this page.
+15. To view the ingested data, access the schema specified in the target database within your snowflake environment.
 
 The ingested data is stored in the target schema of the specified target database, created by the Mendix Data Loader application. This target schema serves as a staging area. After each ingestion, copy the tables from the target schema to the desired database and schema that you want to use to store the ingested data. This should be done after every ingestion.
 
@@ -141,8 +141,9 @@ The *cloud_region_id* and the *cloud* in the URL will depend on the configuratio
 ## Current Limitations
 
 * Exposing an association in an OData service as a link is not supported yet by the Mendix Data Loader. Instead, choose the **As an associated object id** option in your OData settings. This option will store the associated object ID in the table, but not explicitly as foreign key.
-* The Mendix Data Loader always ingests all the data exposed by the OData published by your Mendix application. If you do not want to ingest all of the data inside the exposed entities, you must filter the data at the Mendix/OData side.
+* The Mendix Data Loader always ingests all data exposed by the OData published by your Mendix application. If you do not want to use everything within the exposed entities, you will need to apply further filtering on the Snowflake side. Enabling filtering on the Mendix side is currently on the roadmap.
 * The Mendix Data Loader does not support custom domains for Mendix applications when using pagination in published OData services. This is because the OData response always returns the base domain's root URL, regardless of the custom domain being used. As a result, the call for the next page fails because the returned root URL does not have a corresponding network rule in Snowflake.
+* Loading deltas is not yet supported on the OData side.
 
 ## Technical Reference {#technical-reference}
 
