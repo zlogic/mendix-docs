@@ -34,6 +34,12 @@ The `SELECT` clause specifies which entity attributes or other specified data mu
 
 The `SELECT` clause consists of the term `SELECT` and one or more column definitions. Each column definition must be separated by a comma. Each column definition defines a column or a set of columns in the result. Each single value column definition can have an alias, which will be the name of the column in the result.
 
+{{% alert color="info" %}}
+We use terms "attributes" and "columns" for data in different contexts. Attributes are the [entity attributes](/refguide/attributes/). If data belongs to objects of an entity, we refer to that data as attributes of those objects. While columns contain the same data, they are not tied to a particular entity. In the general case, OQL does not result in an entity, and so results on an OQL query are columns. When it comes to view entities, OQL columns are mapped to attributes of a view entity, and then we can speak of attributes again.
+
+Similarly, we use term "objects" when referring to objects of an entity, but for results of an OQL query, we use "rows" because the results are not necessarily mapped to objects of a particular entity.
+{{% /alert %}}
+
 ### Syntax
 
 The syntax is as follows:
@@ -78,7 +84,7 @@ Specifying `entity_name/*` and `from_alias/*` specify that the values of all att
 
 `entity_name` can optionally be put in double quotes. If the entity name is a [reserved OQL word](/refguide/oql-clauses/#reserved-oql-words) (like `Order` or `Group`), double quotes are mandatory.
 
-{{% alert color="warning" %}}
+{{% alert color="info" %}}
 Specifying all attributes will also return attributes which are normally hidden in the Domain Model, such as the `ID` of each object.
 {{% /alert %}}
 
@@ -158,7 +164,7 @@ returns
 
 `DISTINCT` can also be combined with `*`.
 
-{{% alert color="warning" %}}
+{{% alert color="info" %}}
 If you specify an entity name in `FROM`, this will return all columns, including the unique column `ID`. This means that adding `DISTINCT` does not affect the result.
 
 In more complex cases, `SELECT DISTINCT *` can become useful.
@@ -745,7 +751,7 @@ GROUP BY LENGTH(Brand)
 | 6       | 12       |
 | 5       | 26       |
 
-{{% alert color="warning" %}}
+{{% alert color="info" %}}
 `GROUP BY` behavior in OQL relies on the behavior of the underlying database. Some functionality is allowed by OQL syntax, but its implementation differs per vendor.
 
 It is recommended not to use the following functionality to avoid potential migration problems.
@@ -966,7 +972,7 @@ The syntax is as follows:
 
 ### `LIMIT` Clause
 
-`LIMIT` specifies how many rows must be returned.
+`LIMIT` specifies the maximum amount of rows to return.
 
 For example, the following query retrieves the first three records sorted by last name and first name:
 

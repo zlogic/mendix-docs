@@ -1,6 +1,6 @@
 ---
 title: "OQL Version 2 Features"
-linktitle: "OQL V2 Features"
+linktitle: "Switching to OQL Version 2"
 url: /refguide/oql-v2/
 weight: 100
 ---
@@ -129,7 +129,7 @@ ON P/Residence = C/Name
 
 ### `ORDER BY` in Subquery
 
-You must now have a `LIMIT` and `OFFSET` in subquery containing `ORDER BY`. Using `ORDER BY` in subquery makes sense only when it is combined with `LIMIT` and `OFFSET`. Without the limitations, database engines do not guarantee that the row order in the subquery will be preserved in the outer query.
+You must now have a `LIMIT` and/or `OFFSET` in subquery containing `ORDER BY`. Using `ORDER BY` in subquery makes sense only when it is combined with `LIMIT` and/or `OFFSET`. Without the limitations, database engines do not guarantee that the row order in the subquery will be preserved in the outer query.
 
 Consequently, you cannot use the following query in OQL v2.
 
