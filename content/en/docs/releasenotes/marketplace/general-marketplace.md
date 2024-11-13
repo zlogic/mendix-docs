@@ -14,7 +14,7 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 ## 2024
 
-### October 2024
+### October 31, 2024
 
 #### New Features
 New Component Details Page for Solutions & Industry Templates
@@ -28,7 +28,7 @@ New Component Details Page for Solutions & Industry Templates
 #### Improvements
 * The 'Start with Template' button takes you from the Component Details Page to a the new Create New App flow
 
-### September 2024
+### September 26, 2024
 
 #### New Features
 Marketplace Search: A new local search functionality in the Marketplace
