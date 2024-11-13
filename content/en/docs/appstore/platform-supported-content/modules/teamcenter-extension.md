@@ -6,13 +6,13 @@ description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamce
 
 ## Introduction {#introduction}
 
-The [Teamcenter Extension](https://marketplace.mendix.com/link/component/225544) is a Mendix Extension built using the Mendix Extensibility Framework to provide you with an effortless means to harness the capabilities of [Teamcenter Connector](https://marketplace.mendix.com/link/component/111627) for Mendix. Teamcenter Extension is built on the Teamcenter Connector. It provides a low-code experience by making it easier to visualize and access Teamcenter data models and automating creation of Mendix domain models and microflows.
+[Teamcenter Extension](https://marketplace.mendix.com/link/component/225544) is a Mendix Extension built using the Mendix Extensibility Framework to provide you with an effortless means to harness the capabilities of [Teamcenter Connector](https://marketplace.mendix.com/link/component/111627) for Mendix. Teamcenter Extension is built on Teamcenter Connector. It provides a low-code experience by making it easier to visualize and access Teamcenter data models and automating creation of Mendix domain models and microflows.
 
 {{% alert color="info" %}}Teamcenter Extension V 3.0.0 and above is also supported on macOS.{{% /alert %}}
 
 ### Typical Use Cases {#usecases}
 
-Teamcenter Extension offers a list of use cases for which domain models and microflows can be created. After you select a use case, it uses an import mapping approach similar to Mendix [import mapping](/refguide/import-mappings/). Here, Teamcenter Extension allows you to select data from the business model of your Teamcenter instance. Teamcenter Extension uses the selected use case, the import mapping and, in some use cases, additional configurations to generate and update the domain model for your integration and generate one or more ready-to-use microflows that you can drag and drop into your application logic.
+Teamcenter Extension offers a list of use cases for which domain models and microflows can be created. After you select a use case, it uses an import mapping approach similar to Mendix [import mapping](/refguide/import-mappings/). Here, Teamcenter Extension allows you to select data from the business model of your Teamcenter instance. Teamcenter Extension uses the selected use case, the import mapping, and, in some use cases, additional configurations to generate and update the domain model for your integration and generate one or more ready-to-use microflows that you can drag and drop into your application logic.
 
 Teamcenter Extension offers the following integration options:
 
@@ -45,7 +45,7 @@ Compatibility among Teamcenter Extension, Teamcenter Connector, and Studio Pro i
 | 3.0.0                        | 2406.3.0                     | 10.12 patch version 6 and above and 10.16.0 and above |
 
 {{% alert color="info" %}}
-Teamcenter Extension is not compatible with Studio Pro versions between 10.8 to 10.11, 10.13.x, 10.14.x, and 10.15.x. If you use one of these Studio Pro versions, a possible workaround is to use Teamcenter Extension in one of the compatible versions of Studio Pro first, create the necessary artifacts, and then import them into your version. However, Mendix always recommends using the latest MTS or LTS Studio Pro version.
+Teamcenter Extension is not compatible with Studio Pro versions between 10.8 and 10.11, as well as 10.13.x, 10.14.x, and 10.15.x. If you use one of these Studio Pro versions, a possible workaround is to use Teamcenter Extension in one of the compatible versions of Studio Pro first, create the necessary artifacts, and then import them into your version. However, Mendix always recommends using the latest MTS or LTS Studio Pro version.
 {{% /alert %}}
 
 {{% alert color="info" %}}
