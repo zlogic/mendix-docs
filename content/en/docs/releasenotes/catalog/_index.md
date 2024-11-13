@@ -23,7 +23,7 @@ These release notes cover changes made to the [Catalog](/catalog/).
 #### Improvement
 
 * We made minor enhancements to UX and compatibility, including updates to widgets and filter displays.
-* We integrated upgrade with minor UI changes on the Administration page for company admins.
+* We upgraded the starter kit module, which includes minor UI changes on the Administration page for company admins.
 
 ### October 31, 2024
 
