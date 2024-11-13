@@ -34,7 +34,7 @@ Literals represent values that are constant and are part of the query itself. Th
 | d+.d+  | 5.3             | `DECIMAL`            | Real number literal                           |
 |        | `NULL`          | N/A                  | NULL literal to represent non-existent values |
 
-Where `d` is a number, `s` is any character, * indicates zero or more characters, + indicated one or more characters.
+Where `d` is a number, `s` is any character, * indicates that the pattern can contain zero or more characters, and + indicates that the pattern can contain one or more characters.
 
 ### DATETIME
 
@@ -58,7 +58,7 @@ select Name from Person where Person_USER = '[%CurrentUser%]'
 
 ## Operators
 
-Operators perform common operations and do not use parenthesis in their syntax. They take `expression` as input, which can be other operator results, functions, columns and literals.
+Operators perform common operations and, unlike functions, do not put their parameters in parentheses. They take `expression` as input, which can be other operator results, functions, columns and literals.
 
 Supported operators are split into binary, unary, and other operators based on their syntax.
 These are further subdivided into logical and arithmetic operators, depending on their return type. Logical operators always return a `BOOLEAN` type. The return type of arithmetic operators depends on the datatypes of the expressions being operated on. `CASE` is detailed separately .
@@ -131,10 +131,10 @@ SELECT * FROM Sales.Order
 The operator can be used to modify an attribute in SELECT.
 
 ```sql
-SELECT (Number + 5) FROM Sales.Order
+SELECT LastName, (Number + 5) AS N FROM Sales.Order
 ```
 
-| LastName | Number |                                                         
+| LastName | N      |                                                         
 |----------|-------:|
 | Doe      | 12     |
 | Doe      | 8      |
@@ -344,13 +344,13 @@ In order to search for special characters, they should be escaped with the `\` e
 
 ##### Examples
 
-For example, say we have 3 strings for column `House`: `Apartment`, `Tenement`, and `Flat`. We can select all strings ending with "ment" with this condition:
+For example, say we have 3 strings for column `PropertyType`: `Apartment`, `Tenement`, and `Flat`. We can select all strings ending with "ment" with this condition:
 
 ```sql
-Select House FROM House LIKE '%ment' 
+Select PropertyType FROM RealEstate.Properties WHERE PropertyType LIKE '%ment' 
 ```
 
-| House     |                                                         
+| PropertyType |                                                         
 |-----------|
 | Apartment |
 | Tenement  |
@@ -358,21 +358,20 @@ Select House FROM House LIKE '%ment'
 A certain length of string can be enforced with the use of the `_` operator This query matches any string that has 4 of any character ending with "ment":
 
 ```sql
-Select House FROM House LIKE '____ment' 
+Select PropertyType FROM RealEstate.Properties WHERE PropertyType LIKE '____ment' 
 ```
 
-| House     |                                                         
+| PropertyType |                                                         
 |-----------|
-| Apartment |
 | Tenement  |
 
 This query will match any string containing the letter "a" and ending in "t":
 
 ```sql
-Select House FROM House LIKE '%a%t' 
+Select PropertyType FROM RealEstate.Properties WHERE PropertyType LIKE '%a%t' 
 ```
 
-| House     |                                                         
+| PropertyType |                                                         
 |-----------|
 | Apartment |
 | Flat      |
