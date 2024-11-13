@@ -423,15 +423,15 @@ This shows you the status of the environment and is the same as the status shown
 
 There are also buttons which allow you to perform various actions on your app and environment. These are described in the sections below.
 
-#### Reorder Environments -> Environment Settings
+#### Reorder Environments > Environment Settings
 
-Its also possible to adjust the order of the environments in the environment overview page. The environments can be moved up or down the order by pressing the arrow. You can navigate to the ordering page by clicking on **Environment Settings** button next to **Create Environment** button.
+You can adjust the order of the environments on the **Environment Overview** page. To move the environments up or down, press the arrow. You can navigate to the ordering page by clicking the **Environment Settings** button next to **Create Environment** button.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/RedorderEnvironment.png" class="no-border" >}}
 
 ##### Stop/Start Application
 
-If the app is not currently running (**Replicas Running** is set to *None*) you will see **Start** Application. Clicking this will immediately trigger the app to begin running by increasing the number of replicas.
+If the app is not currently running (**Replicas Running** is set to *None*), the **Start Application** option is available. Clicking this option starts the app by increasing the number of replicas.
 
 If the app is currently running, clicking **Stop Application** immediately stops the application by reducing the number of replicas to zero.
 
