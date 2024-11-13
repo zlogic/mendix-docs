@@ -785,7 +785,7 @@ DATEPART ( datepart , date_expression [, timezone ] )
 | `HOUR`       | 0 to 23                                          | 16                                          |
 | `MINUTE`     | 0 to 59                                          | 34                                          |
 | `SECOND`     | 0 to 59                                          | 20                                          |
-| `MILISECOND` | 0 to 999                                         | 356                                         |
+| `MILLISECOND` | 0 to 999                                         | 356                                         |
 
 `DATEPART` can be used to filter dates on specific components. The following query returns all end dates that are in the year "2025".
 
@@ -971,7 +971,7 @@ REPLACE ( expression, pattern, replacement )
 
 `expression` specifies the string to be searched.
 
-`pattern` specifies the pattern to search for. In the function output, all occurrences of the pattern will be replaced with the value of `replacement`.
+`pattern` specifies the substring to search for. In the function output, all occurrences of the substring will be replaced with the value of `replacement`.
 
 `replacement` specifies the string to replace the pattern.
 
