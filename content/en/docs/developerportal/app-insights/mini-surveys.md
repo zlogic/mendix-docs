@@ -157,7 +157,7 @@ To edit a mini survey, perform the following steps:
      
      * **Finished** – if both the start and end dates are in the past
 
-        {{% alert color="info" %}}Changes made to an active survey can take up to 10 minutes to show up in your app.{{% /alert %}}
+    {{% alert color="info" %}}Changes made to an active survey can take up to 10 minutes to show up in your app.{{% /alert %}}
        
 ### Implementing a Mini Survey {#implement-survey}
 
