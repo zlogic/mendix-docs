@@ -24,7 +24,7 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 #### Improvements
 * Videos previously located on the **Documentation** tab have been moved to the **Overview** tab on the component details page.
-* If you click **Start with Template**, now you go from the component details page to a the new "Create New App" flow.
+* If you click **Start with App** on a component details page of a starter app, you will start the Create App flow.
 
 #### Deprecations
 
