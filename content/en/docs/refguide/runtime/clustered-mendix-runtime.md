@@ -2,7 +2,7 @@
 title: "Clustered Mendix Runtime"
 url: /refguide/clustered-mendix-runtime/
 weight: 40
-description: "Describe the cluster functionality of the Mendix Runtime, which allows you to set up your Mendix application to run behind a load balancer to enable a failover and/or high availability architecture."
+description: "Describes the cluster functionality of the Mendix Runtime, which allows you to set up your Mendix application to run behind a load balancer to enable a failover and/or high availability architecture."
 ---
 
 ## Introduction
