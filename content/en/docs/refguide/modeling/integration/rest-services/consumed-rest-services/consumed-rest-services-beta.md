@@ -177,7 +177,7 @@ The entity name is prefilled, but you can change it to a custom name. To create 
 
 You can also add a parameter in the request body by generating a data structure (entities) as input. If only a small part of the request is dynamic, you can use parameters directly in the JSON snippet.
 
-You can choose to flatten and simplify the structure of your response. Enable this feature by selecting **Flatten and simplify structure**. This gives you an easy structure to model with within Studio Pro, removes empty entities, and merges one-to-one relations between a parent and child.
+You can choose to flatten and simplify the structure of your response. Enable this feature by selecting **Flatten and simplify structure**. For more information, see [Simplifying and Flattening Response Data](#simplify-and-flatten) below.
 
 #### Response is not in JSON Format {#processing-non-json}
 
@@ -185,7 +185,7 @@ When the response is not in JSON format, it cannot be converted automatically in
 
 When the [Send REST request](/refguide/send-rest-request/) action is executed in a microflow, it places the result into the variable `latestHttpResponse`. In `latestHttpResponse`, you can find the `StatusCode` and `Content` of the request that was made. From here, you can use microflow logic to extract the information. For example, if the response has XML formatting, you can use [Import Mapping](/refguide/import-mappings/) to read the data.
 
-### Simplifying and Flattening Response Data
+### Simplifying and Flattening Response Data {#simplify-and-flatten}
 
 When you receive JSON data, the structure of the response is simplified and flattened where possible. This can be seen in the **Response structure** tab.   
 
