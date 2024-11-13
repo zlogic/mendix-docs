@@ -187,11 +187,11 @@ When the [Send REST request](/refguide/send-rest-request/) action is executed in
 
 ### Simplifying and Flattening Response Data
 
-When you receive JSON data, the structure of the response is simplified and flattened where possible. You can see this in the **Response structure** tab.   
+When you receive JSON data, the structure of the response is simplified and flattened where possible. This can be seen in the **Response structure** tab.   
 
-Take for example URL https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json that returns vehicle information. It returns a JSON object that contains property `"Results"` with a list of objects. Without simplification, when you press **Create entity** on the **Response structure** tab, you will get 3 entities. With simplification, only 2 enties are created, that still contains all vehicle information.
+For example, the URL `https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json` returns vehicle information. It returns a JSON object that contains the property `"Results"` with a list of objects. Without simplification, when you click **Create entity**, you will get 3 entities. With simplification, only 2 entities are created that still contain all vehicle information.
 
-By default, simplification and flattening is enabled. If you don't want that, you can uncheck the box **Flatten and simplify structure** on the **Response structure** tab before you click the **Create entity** button.
+By default, simplification and flattening is enabled. To change this, uncheck the box **Flatten and simplify structure** on the **Response structure** tab before clicking the **Create entity** button.
 
 ### Using a REST Request in a Microflow {#add-entity-to-microflow}
 
