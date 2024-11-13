@@ -40,7 +40,36 @@ GROUP BY C/Name
 
 ### More Strict Data Type Validation in OQL Functions
 
-{{% todo %}}this will be added when implemented, as there are ambiguities{{% /todo %}}
+OQL v2 has more strict data type validation of some functions and other expressions.
+
+#### `CASE`
+
+In OQL v2, all result expressions of a [CASE](/refguide/oql-expression-syntax/#case-expression) expression should have matching types or be Null. In OQL v1, there was no such validation, and handling of different types was delegated to the database, which made the behavior database-specific and unreliable.
+
+Also, in OQL v2 it is no longer possible to have Null as the result of all result expressions of CASE. In OQL v1, that was allowed, but would lead to database-level exceptions for some database vendors.
+
+Numeric types Integer, Long and Decimal are considered matching. See [examples](/refguide/oql-expression-syntax/#case-expression-examples) of `CASE` expressions for details on how different numeric types are combined.
+
+#### `COALESCE`
+
+Data type validation of [COALESCE](/refguide/oql-expression-syntax/#coalesce-expression) follows the same logic as CASE.
+
+In OQL v2, all arguments of a [COALESCE](/refguide/oql-expression-syntax/#coalesce-expression) expression should have matching types or be Null. In OQL v1, there was no such validation, and handling of different types was delegated to the database, which made the behavior database-specific and unreliable.
+
+Also, in OQL v2 it is no longer possible to have a COALESCE expression where all arguments are Null literals. In OQL v1, that was allowed, but would lead to database-level exceptions for some database vendors.
+
+Numeric types Integer, Long and Decimal are considered matching. See [examples](/refguide/oql-expression-syntax/#coalesce-expression-examples) of `COALESCE` for details on how different numeric types are combined.
+
+#### `LENGTH`
+
+In OQL v2, the argument of [LENGTH](/refguide/oql-expression-syntax/#length-function) function can only be of type String. Noth that values of Enumerations are also treated as Strings. In OQL v1, there was no such validation, and handling of other types was delegated to the database.
+
+#### `DATEPART` and `DATEDIFF`
+
+In OQL v2, the date arguments of functions [DATEPART](/refguide/oql-expression-syntax/#datepart-function) and [DATEDIFF](/refguide/oql-expression-syntax/#datediff-function) can be only of one of the following types:
+- Date and time
+- String. In this case, Runtime will implicitly attempt conversion of the string to a Date and time.
+- One of Numeric types Integer, Long and Decimal. In this case, the value is treated as a Java timestamp.
 
 ### Subquery Columns Should Have a Name or an Alias
 

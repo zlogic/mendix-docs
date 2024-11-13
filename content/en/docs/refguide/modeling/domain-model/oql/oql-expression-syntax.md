@@ -61,7 +61,7 @@ select Name from Person where Person_USER = '[%CurrentUser%]'
 Operators perform common operations and, unlike functions, do not put their parameters in parentheses. They take `expression` as input, which can be other operator results, functions, columns and literals.
 
 Supported operators are split into binary, unary, and other operators based on their syntax.
-These are further subdivided into logical and arithmetic operators, depending on their return type. Logical operators always return a `BOOLEAN` type. The return type of arithmetic operators depends on the datatypes of the expressions being operated on. `CASE` is detailed separately .
+These are further subdivided into logical and arithmetic operators, depending on their return type. Logical operators always return a `BOOLEAN` type. The return type of arithmetic operators depends on the datatypes of the expressions being operated on. `CASE` is detailed separately.
 
 ### Binary operators
 
@@ -487,11 +487,11 @@ The `IS` operator can be used to filter out rows with values that are NULL. For 
 	SELECT Revenue, Cost FROM Sales.Finance WHERE Revenue IS NOT NULL 
 ```
 
-| Revenue | Cost |                                                       
+| Revenue | Cost |
 |--------:|-----:|
 | 10      | 7    |
 
-### CASE
+### CASE {#case-expression}
 
 The `CASE` expression is a conditional expression, similar to if/else statements in other programming languages. If the result of a following `WHEN` condition is `TRUE`, the value of the `CASE` expression is the result that follows the condition and the remainder of the `CASE` expression is not processed. If the result is not `TRUE`, any subsequent `WHEN` clauses are examined in the same manner. If no `WHEN` condition yields `TRUE`, the value of the `CASE` expression is the result of the `ELSE` clause. If the `ELSE` clause is omitted and no condition is `TRUE`, the result is null.
 
@@ -506,7 +506,7 @@ The `CASE` expression can be used in two ways – simple:
 	END
 ```
 
-In a simple `CASE` expression, `input_expression` will be compared to `when_expression`. If  `input_expression` matches  `when_expression`, the result of the whole `CASE` expression will be `result_expression` given after `THEN`. The data types of `input_expression` and `when_expression` must tch.
+In a simple `CASE` expression, `input_expression` will be compared to `when_expression`. If `input_expression` matches `when_expression`, the result of the whole `CASE` expression will be `result_expression` given after `THEN`. The data types of `input_expression` and `when_expression` must tch.
 
 There is also an extended version:
 
@@ -520,6 +520,70 @@ There is also an extended version:
 In an extended Case expression, `boolean_expression` is evaluated and if it is `TRUE`, the result of the whole `CASE` expression will be `result_expression` given after `THEN`. `boolean_expression` must have return type `BOOLEAN`. 
 
 In both instances, `else_result_expression` is the result of the whole `CASE` expression, when no previous `when_expression` matched or no previous `boolean_expression` returned `TRUE`.
+
+#### Examples {#case-expression-examples}
+
+Simple expression:
+
+```sql
+SELECT
+	LastName,
+	Number,
+	CASE Number
+		WHEN 7 THEN True
+		ELSE False
+		END AS IsLuckyNumber
+FROM Sales.Order
+```
+
+| LastName | Number | IsLuckyNumber |                                                         
+|:---------|-------:|:--------------|
+| Doe      | 7      | True          |
+| Doe      | 2      | False         |
+| Moose    | 3      | False         |
+
+Extended expression:
+
+```sql
+SELECT
+	LastName,
+	Number,
+	Price,
+	CASE
+		WHEN Price > 7 THEN 'Priority'
+		WHEN Number = 7 THEN 'Lucky'
+		ELSE 'Regular'
+		END AS OrderType
+FROM Sales.Order
+```
+| LastName | Number | Price | OrderType |
+|:---------|-------:|------:|:----------|
+| Doe      | 7      | 1.5   | Lucky     |
+| Doe      | 2      | 5.0   | Regular   |
+| Moose    | 3      | 8.2   | Priority  |
+
+If result expressions have different numeric types, date type of the result expression in the first WHEN has priority, and the whole CASE expression has type of that result expression. This behavior matches the behavior of supported database vendors.
+
+```sql
+SELECT
+	LastName,
+	Number,
+	Price,
+	CASE Name
+		WHEN 'Doe' THEN Price
+		ELSE Number
+		END AS PriceOrNumber,
+	CASE Name
+		WHEN 'Doe' THEN Number
+		ELSE Price
+		END AS NumberOrPrice
+FROM Sales.Order
+```
+| LastName | Number | Price | PriceOrNumber (type: Decimal) | NumberOrPrice (type: Integer) |
+|:---------|-------:|------:|--------------:|--------------:|
+| Doe      | 7      | 1.5   | 1.5     | 7     |
+| Doe      | 2      | 5.0   | 5.0   | 2     |
+| Moose    | 3      | 8.2   | 3.0 | 8     |
 
 ### Operator Precedence
 
@@ -630,7 +694,7 @@ SELECT (Number : 2) as Normal, (Cast(Number AS DECIMAL) : 2) as Casted FROM Sale
 
 {{% todo %}}Proofread from here to the end{{% /todo %}}
 
-### COALESCE
+### COALESCE {#coalesce-expression}
 
 Returns the value of the first `expression` that is not NULL. Can be used with columns.
 
@@ -644,7 +708,7 @@ COALESCE ( expression [ ,...n ] )
 
 `expression` specifies the expression to check. Most databases expect the function to be given at least two `expression` arguments.
 
-#### Examples
+#### Examples {#coalesce-expression-examples}
 
 Assume entity `Sales.Customer` entity now has some `NULL` values:
 
@@ -652,15 +716,15 @@ Assume entity `Sales.Customer` entity now has some `NULL` values:
 SELECT * FROM Sales.Customer
 ```
 
-| ID | LastName | FirstName |                                                         
-|----|----------|-----------|
-| -  | Doe      | NULL      |
-| -  | NULL     | Jane      |
+| ID | LastName | FirstName | Age  | TotalOrderAmount |
+|----|----------|-----------|-----:|-----:|
+| -  | Doe      | NULL      | 25   | NULL |
+| -  | NULL     | Jane      | NULL | 42.3 |
 
 Selecting a non-null name for a customer, ignoring if it is the first name or last name, can be done with `COALESCE`:
 
 ```sql
-SELECT COALESCE(LastName, FirstName) as Name FROM Sales.Customer
+SELECT COALESCE(LastName, FirstName) AS Name FROM Sales.Customer
 ```
 
 | Name |                                                         
@@ -668,7 +732,20 @@ SELECT COALESCE(LastName, FirstName) as Name FROM Sales.Customer
 | Doe  |
 | Jane |
 
-### DATEDIFF
+If arguments of `COALESCE` have different numeric types, the expression gets the type of the first argument. This behavior matches the behavior of supported database vendors.
+
+```sql
+SELECT
+	COALESCE(Age, TotalOrderAmount) AS AgeOrAmount,
+	COALESCE(TotalOrderAmount, Age) AS AmountOrAge,
+FROM Sales.Customer
+```
+| AgeOrAmount (type: Integer) | AmountOrAge (type: Decimal) |
+|------:|------:|
+| 25   | 25.0   |
+| 42   | 42.3   |
+
+### DATEDIFF {#datediff-function}
 
 The `DATEDIFF` function returns the difference between two given `DATETIME` expressions. The difference is given in the specified unit.
 
@@ -747,7 +824,7 @@ SELECT Revenue : DATEDIFF(MONTH, End, Start ) as avg_revenue FROM Sales.Period
 The way the difference is calculated depends on the database. The `YEAR` difference between "2002-01-01" and "2001-12-31" will be `1` with some databases and `0` with others.
 {{% /alert %}}
 
-### DATEPART
+### DATEPART {#datepart-function}
 
 The `DATEPART` function retrieves a specified element from `DATETIME` values. The return type is `INTEGER`.
 
@@ -797,7 +874,7 @@ SELECT End FROM Sales.Period WHERE DATEPART(YEAR, End) = 2025
 |---------------------|
 | 2025-07-05 00:00:00 |
 
-### LENGTH
+### LENGTH {#length-function}
 
 #### Description
 
