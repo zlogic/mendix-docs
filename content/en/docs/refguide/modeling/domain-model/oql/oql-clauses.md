@@ -1053,7 +1053,7 @@ FROM Sales.Request Req
 | -1            | 0             |
 
 {{% alert color="info" %}}
-If you use a subquery as an expression in `SELECT`, then such subquery should always return a single column, and the number of rows should be at most one. If the subquery returns more than one row or a number of columns different than one, that will lead to an exception during runtime.
+If you use a subquery as an expression in `SELECT`, then such subquery should always return a single row and column. If the subquery returns more than one row or column, that will lead to an exception during runtime.
 {{% /alert %}}
 
 ### Subquery in `FROM` {#subquery-in-from}
