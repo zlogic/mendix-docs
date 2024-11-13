@@ -17,26 +17,26 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 ### October 31, 2024
 
 #### New Features
-* Marketplace components now have two new content types: **Solutions** and **Industry Templates**.
+* Marketplace components now support two new content types: Solutions and Industry Templates.
 
-* On the component details page, you can now find information about the company that produces the componen, as well as the industry it belongs to.
-* We added two search bars on the **Releases** tab on the component details page. Now you can search for a release by release notes and Mendix versions.
+* On the component details page, you can now view information about the company that owns the component and the industry it belongs to.
+* The **Releases** tab on the component details page now includes two search bars, enabling you to search by release notes and Mendix versions.
 
 #### Improvements
-* On the component details page, Videos are moved to the **Overview** tab from the **Documentation** tab.
+* Videos previously located on the **Documentation** tab have been moved to the **Overview** tab on the component details page.
 * If you click **Start with Template**, now you go from the component details page to a the new "Create New App" flow.
 
-#### Deprecation
+#### Deprecations
 
-* The content types **Banners** and **Solution Capabilities** are offboarded. You can no longer upload these two content types.
+* The content types Banners and Solution Capabilities have been deprecated. You can no longer upload these two content types.
 
 ### September 26, 2024
 
 #### New Features
-* We introduced new features to the Marketplace home page:
-  * Now you can search marketplace content by component name or company name, combined with filters.
-  * You can clear the respective filters.
-  * New pagination is added for search results.
+* We added several new features to the Marketplace home page:
+  - You can now search for marketplace content by component name or company name, and apply relevant filters.
+  - Filters can now be easily cleared.
+  - Pagination has been introduced for search results, making navigation more streamlined.
 
 ### June 27, 2024
 
