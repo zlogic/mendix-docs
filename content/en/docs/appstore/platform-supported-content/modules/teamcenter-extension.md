@@ -41,7 +41,7 @@ Compatibility among Teamcenter Extension, Teamcenter Connector, and Studio Pro i
 | Teamcenter Extension Version | Teamcenter Connector Version | Studio Pro Version |
 | ------------- | ------------- | ------------- |
 | 1.0.0 | 3.6.1, V 3.6.0, V 3.5.0 | 10.6.5 thru 10.7 |
-| 2.0.0 | 2406.0.0 | 10.12.1 and above |
+| 2.0.0 | 2406.0.0 | 10.12, patch versions 1 and above and 10.16.0 and above |
 | 3.0.0                        | 2406.3.0                     | 10.12 patch version 6 and above and 10.16.0 and above |
 
 {{% alert color="info" %}}
