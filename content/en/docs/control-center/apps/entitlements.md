@@ -43,10 +43,10 @@ The tables below show how many cloud tokens each cloud resource pack costs:
 | M21                            | 40            |
 | L21                            | 80            |
 | XL21                           | 160           |
-| XXL21                          | 320           |
-| XXXL21                         | 640           |
-| XXXXL21                        | 1280          |
-| XXXXL-XXXXXLDB | 2240 |
+| 2XL21                         | 320           |
+| 3XL21                      | 640           |
+| 4XL21                       | 1280          |
+| 4XL-5XLDB | 2240 |
 
 |Premium Resource Packs                  | Cloud Tokens |
 | ------------------------------ | ------------- |
@@ -54,14 +54,14 @@ The tables below show how many cloud tokens each cloud resource pack costs:
 | M21 Premium                    | 60            |
 | L21 Premium                    | 120           |
 | XL21 Premium                   | 240           |
-| XXL21 Premium                  | 480           |
-| XXXL21 Premium                 | 960           |
-| XXXXL21 Premium                | 1920          |
+| 2XL21 Premium                 | 480           |
+| 3XL21 Premium                | 960           |
+| 4XL21 Premium               | 1920          |
 | XL21 Premium Plus              | 400           |
-| XXL21 Premium Plus             | 800           |
-| XXXL21 Premium Plus            | 1600          |
-| XXXXL21 Premium Plus           | 3200          |
-| XXXXL-XXXXXLDB Premium Plus | 5600 |
+| 2XL21 Premium Plus            | 800           |
+| 3XL21 Premium Plus           | 1600          |
+| 4XL21 Premium Plus          | 3200          |
+| 4XL-5XLDB Premium Plus | 5600 |
 
 | Legacy Resource Packs | Cloud Tokens |
 | ------------------------------ | ------------- |
@@ -79,5 +79,5 @@ The tables below show how many cloud tokens each cloud resource pack costs:
 | M       | 16           |
 | L       | 37          |
 | XL      | 73          |
-| XXL     | 167         |
-| XXXL    | 640           |
+| 2XL   | 167         |
+| 3XL   | 640           |
