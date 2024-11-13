@@ -42,7 +42,7 @@ GROUP BY C/Name
 
 OQL v2 has more strict data type validation of some functions and other expressions.
 
-#### `CASE`
+#### `CASE` {#case-validations}
 
 In OQL v2, all result expressions of a [CASE](/refguide/oql-expression-syntax/#case-expression) expression should have matching types or be Null. In OQL v1, there was no such validation, and handling of different types was delegated to the database, which made the behavior database-specific and unreliable.
 
@@ -50,7 +50,7 @@ Also, in OQL v2 it is no longer possible to have Null as the result of all resul
 
 Numeric types Integer, Long and Decimal are considered matching. See [examples](/refguide/oql-expression-syntax/#case-expression-examples) of `CASE` expressions for details on how different numeric types are combined.
 
-#### `COALESCE`
+#### `COALESCE` {#coalesce-validations}
 
 Data type validation of [COALESCE](/refguide/oql-expression-syntax/#coalesce-expression) follows the same logic as CASE.
 
@@ -60,11 +60,11 @@ Also, in OQL v2 it is no longer possible to have a COALESCE expression where all
 
 Numeric types Integer, Long and Decimal are considered matching. See [examples](/refguide/oql-expression-syntax/#coalesce-expression-examples) of `COALESCE` for details on how different numeric types are combined.
 
-#### `LENGTH`
+#### `LENGTH` {#length-validations}
 
 In OQL v2, the argument of [LENGTH](/refguide/oql-expression-syntax/#length-function) function can only be of type String. Noth that values of Enumerations are also treated as Strings. In OQL v1, there was no such validation, and handling of other types was delegated to the database.
 
-#### `DATEPART` and `DATEDIFF`
+#### `DATEPART` and `DATEDIFF` {#date-validations}
 
 In OQL v2, the date arguments of functions [DATEPART](/refguide/oql-expression-syntax/#datepart-function) and [DATEDIFF](/refguide/oql-expression-syntax/#datediff-function) can be only of one of the following types:
 - Date and time

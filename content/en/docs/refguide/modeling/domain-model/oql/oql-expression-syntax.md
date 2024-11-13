@@ -495,6 +495,8 @@ The `IS` operator can be used to filter out rows with values that are NULL. For 
 
 The `CASE` expression is a conditional expression, similar to if/else statements in other programming languages. If the result of a following `WHEN` condition is `TRUE`, the value of the `CASE` expression is the result that follows the condition and the remainder of the `CASE` expression is not processed. If the result is not `TRUE`, any subsequent `WHEN` clauses are examined in the same manner. If no `WHEN` condition yields `TRUE`, the value of the `CASE` expression is the result of the `ELSE` clause. If the `ELSE` clause is omitted and no condition is `TRUE`, the result is null.
 
+If [OQL v2](/refguide/oql-v2/) is enabled, additional data type validations apply to result expressions of `CASE`. See the corresponding [page](/refguide/oql-v2/#case-validations) for details.
+
 #### Syntax
 
 The `CASE` expression can be used in two ways – simple:
@@ -698,6 +700,8 @@ SELECT (Number : 2) as Normal, (Cast(Number AS DECIMAL) : 2) as Casted FROM Sale
 
 Returns the value of the first `expression` that is not NULL. Can be used with columns.
 
+If [OQL v2](/refguide/oql-v2/) is enabled, additional data type validations apply to arguments of `COALESCE`. See the corresponding [page](/refguide/oql-v2/#coalesce-validations) for details.
+
 #### Syntax
 
 The syntax is as follows:
@@ -748,6 +752,8 @@ FROM Sales.Customer
 ### DATEDIFF {#datediff-function}
 
 The `DATEDIFF` function returns the difference between two given `DATETIME` expressions. The difference is given in the specified unit.
+
+If [OQL v2](/refguide/oql-v2/) is enabled, additional data type validations apply to the arguments of `DATEDIFF`. See the corresponding [page](/refguide/oql-v2/#date-validations) for details.
 
 #### Syntax
 
@@ -828,6 +834,8 @@ The way the difference is calculated depends on the database. The `YEAR` differe
 
 The `DATEPART` function retrieves a specified element from `DATETIME` values. The return type is `INTEGER`.
 
+If [OQL v2](/refguide/oql-v2/) is enabled, additional data type validations apply to the arguments of `DATEPART`. See the corresponding [page](/refguide/oql-v2/#date-validations) for details.
+
 #### Syntax
 
 The syntax is as follows:
@@ -879,6 +887,8 @@ SELECT End FROM Sales.Period WHERE DATEPART(YEAR, End) = 2025
 #### Description
 
 The `LENGTH` function returns the length in characters of the result of a string expression.
+
+If [OQL v2](/refguide/oql-v2/) is enabled, additional data type validations apply. See the corresponding [page](/refguide/oql-v2/#length-validations) for details.
 
 #### Syntax
 
