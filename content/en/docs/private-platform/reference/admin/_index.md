@@ -1,17 +1,20 @@
 ---
-title: "Private Mendix Platform Administration Guide"
-url: /private-mendix-platform/administration/
-description: "Documents the business-as-usual administrator tasks for the Private Mendix Platform."
-weight: 40
-aliases:
-    - /private-mendix-platform-administration/
+title: "Private Mendix Platform Functionalities - Administrators"
+linktitle: "Administrators"
+url: /private-mendix-platform/reference-guide/admin/
+description: "Provides details on the features and functionality of the Private Mendix Platform that are available to administrators."
+weight: 10
 ---
 
 ## Introduction
 
-As a user with Administrator access rights, you can perform the business-as-usual administrator tasks such as app management and user management. You can also manage Marketplace-related settings for your company.
+This section of the Private Mendix Platform Reference Guide provides information about the menus and functionalities of the Private Mendix Platform that are available to administrator users.
 
-## App Management
+## Apps
+
+...
+
+### App Management
 
 On the **App Management** page, administrators can manage their apps.
 
@@ -35,7 +38,11 @@ By clicking **More Actions** ({{% icon name="three-dots-menu-horizontal" %}}) in
     
     You will be warned of the consequences and asked for confirmation before the app is archived.
 
-## Marketplace
+### Import Apps
+
+...
+
+### Marketplace
 
 In the **Marketplace** section, administrators can manage various settings related to the content available on the Private Platform Marketplace. The Private Platform Marketplace is a local version of the [Mendix Marketplace](/appstore/overview/), enclosed entirely within the Private Platform. Developers in your organization can also create their own modules, connectors, and sample apps, and share them on the Private Platform Marketplace to make them available to other users.
 
@@ -47,11 +54,27 @@ As the administrator, you can perform the following actions:
 * In the **Taxonomy Management** tab, you can configure the supported Studio Pro versions and sub-categories that your users can select when creating Marketplace content. You can also view and edit the available licenses.
 * In the **Content Import** tab, you can view the contents available in your Private Marketplace. You can also download and import the modules in bulk.
 
-## Deployment
+#### Content Management
+
+...
+
+#### Taxonomy Management
+
+...
+
+#### Import Content
+
+...
+
+### Deployment
 
 In the **Deployment** section, administrators can manage existing clusters and register new ones.
 
-## Users
+#### Cluster Manager
+
+...
+
+### Users
 
 In the **User Management** section, administrators can manage user accounts and user groups.
 
@@ -70,7 +93,15 @@ As the administrator, you can perform the following actions:
 
 * In the **Group Management** tab, you can create and edit user groups. These groups typically reflect your organization's structure. You can also use the **Automation Settings** option to automatically assign users to groups based on their profile attributes.
 
-## Platform
+#### User Management
+
+...
+
+#### Group Management
+
+...
+
+### Platform
 
 In the **Deployment** section, administrators can view and manage statistics, activity logs, webhooks, and licenses.
 
@@ -80,3 +111,79 @@ As the administrator, you can perform the following actions:
 * In the **Platform Logs** tab, you can view a log of actions performed by users, for example, creating and deleting apps, starting a pipeline, or adding a new user.
 * In the **Webhooks** tab, you can view and manage your [Webhooks](/developerportal/deploy/webhooks/).
 * In the **Licensing** tab, you can check the status of your licenses, or upload a new Private Mendix Platform license bundle.
+
+#### Platform Statistics
+
+...
+
+#### Activity Logs
+
+...
+
+#### Webhooks
+
+...
+
+#### Licensing
+
+...
+
+## Settings
+
+...
+
+### Preferences
+
+...
+
+#### General
+
+...
+
+#### Notifications
+
+...
+
+#### Marketplace
+
+...
+
+#### Version Support
+
+...
+
+### Integrations
+
+...
+
+#### Identity & Access
+
+...
+
+#### Project Management
+
+...
+
+#### Version Control
+
+...
+
+#### Build
+
+...
+
+#### Deployment
+
+...
+
+### Advanced
+
+...
+
+#### Capabilities
+
+...
+
+#### Operational
+
+...
