@@ -41,7 +41,7 @@ Compatibility among Teamcenter Extension, Teamcenter Connector, and Studio Pro i
 | Teamcenter Extension Version | Teamcenter Connector Version | Studio Pro Version |
 | ------------- | ------------- | ------------- |
 | 1.0.0 | 3.6.1, V 3.6.0, V 3.5.0 | 10.6.5 thru 10.7 |
-| 2.0.0 | 2406.0.0 | 10.12.1 and above |
+| 2.0.0 | 2406.0.0 | 10.12, patch versions 1 and above and 10.16.0 and above |
 | 3.0.0                        | 2406.3.0                     | 10.12 patch version 6 and above and 10.16.0 and above |
 
 {{% alert color="info" %}}
@@ -256,7 +256,7 @@ If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or bel
 ### Resolving the Errors – Solution 1 {#solution-1} 
 
 {{% alert color="info" %}}
-Using Solution 2 has an advantage: after completing the procedure, the integrations will appear on the **History** tab.
+Using Solution 1 has an advantage: after completing the procedure, the integrations will appear on the **History** tab.
 {{% /alert %}}
 
 Perform the following steps:
