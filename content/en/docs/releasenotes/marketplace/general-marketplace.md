@@ -14,7 +14,7 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 ## 2024
 
-### October 2024
+### October 31, 2024
 
 #### New Features
 * Marketplace components now have two new content types: **Solutions** and **Industry Templates**.
@@ -30,7 +30,7 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 * The content types **Banners** and **Solution Capabilities** are offboarded. You can no longer upload these two content types.
 
-### September 2024
+### September 26, 2024
 
 #### New Features
 * We introduced new features to the Marketplace home page:
