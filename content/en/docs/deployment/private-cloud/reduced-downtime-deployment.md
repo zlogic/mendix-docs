@@ -22,13 +22,13 @@ You can enable the `PreferRolling` deployment strategy if your environment fulfi
 
 If the app can be deployed without having to modify the database schema (model), it will now be deployed using a Rolling deployment strategy.
 
-### How a PreferRolling Strategy Works
+## How a PreferRolling Strategy Works
 
 When the Operator is configured to use a **PreferRolling** strategy, it will try to do an optimistic update and use a **Rolling** strategy. If the app needs to perform a database schema update, it signals to the Operator that it is waiting for approval to perform the update. The Operator then switches the app to use a **Recreate** strategy (stop all current replicas and start an updated version) and wait until all replicas of the app are running the same MDA version. Then, the Operator lets the app know that it is safe to update the database schema, and approve the process.
 
 As a **Rolling** strategy can run multiple versions of the app at the same time, requests from the browser must be routed to a matching app version (that is, an app that has the same microflow or nanoflow parameters). The Operator uses Kubernetes service labels to perform an atomic switch, and instantly switch all clients to the updated version. This is done automatically once the number of updated replicas reaches a certain threshold. By default the threshold is 50% of all replicas. The value is specified in the [switchoverThreshold](#prefer-rolling-in-standalone) parameter.
 
-## Use Cases
+### Use Cases
 
 Whether a change can be performed without downtime depends on the type of the change. For example, the following changes can be done without downtime:
 
