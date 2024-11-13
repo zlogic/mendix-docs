@@ -17,26 +17,26 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 ### October 2024
 
 #### New Features
-New Component Details Page for Solutions & Industry Templates
+* Marketplace components now have two new content types: **Solutions** and **Industry Templates**.
 
-* A new design is introduced for Marketplace components which have the contenttype 'Solutions' & 'Industry Tempplates'
-* A new Company & Industry section are introduced in the Component Details Page
-* Videos are moved from the Documentation Section to the Overview section in the page
-* From these contenttypes Banners and Solution Capabilities are offboarded and can no longer be uploaded
-* Users can search based on Release Notes and Release Versions in the Releases Tab in Marketplace Components
+* On the component details page, you can now find information about the company that produces the componen, as well as the industry it belongs to.
+* We added two search bars on the **Releases** tab on the component details page. Now you can search for a release by release notes and Mendix versions.
 
 #### Improvements
-* The 'Start with Template' button takes you from the Component Details Page to a the new Create New App flow
+* On the component details page, Videos are moved to the **Overview** tab from the **Documentation** tab.
+* If you click **Start with Template**, now you go from the component details page to a the new "Create New App" flow.
+
+#### Deprecation
+
+* The content types **Banners** and **Solution Capabilities** are offboarded. You can no longer upload these two content types.
 
 ### September 2024
 
 #### New Features
-Marketplace Search: A new local search functionality in the Marketplace
-
-* Users can search Marketplace content by component name or company name
-* Users can search with keywords combined with filters
-* Users can clear the respective filters
-* New pagination is added for search results
+* We introduced new features to the Marketplace home page:
+  * Now you can search marketplace content by component name or company name, combined with filters.
+  * You can clear the respective filters.
+  * New pagination is added for search results.
 
 ### June 27, 2024
 
