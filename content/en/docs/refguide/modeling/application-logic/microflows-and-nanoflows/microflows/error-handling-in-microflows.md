@@ -130,7 +130,7 @@ In microflows that apply entity access, you may not be able to inspect the attri
 
 ### Inspecting REST Errors
 
-If the error is a REST fault (an error that occurs as a result of a REST call), the result of the call will be stored in `$latestHttpResponseVariable` which is an object of type `HttpResponse`.  This object is available in your custom error flows and you can use it to write more focused messages to the log or to make other decisions within the error flow. For more information, see the [Response Tab](/refguide/call-rest-action/#response) section in *Call REST Service*.
+If the error is a REST fault (an error that occurs as a result of a REST call), the result of the call will be stored in the `$latestHttpResponse` variable which is an object of type `HttpResponse`.  This object is available in your custom error flows and you can use it to write more focused messages to the log or to make other decisions within the error flow. For more information, see the [Response Tab](/refguide/call-rest-action/#response) section in *Call REST Service*.
 
 ### Inspecting SOAP Errors
 

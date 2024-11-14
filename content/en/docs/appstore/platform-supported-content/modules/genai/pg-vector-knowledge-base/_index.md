@@ -50,7 +50,7 @@ You should have access to your own (remote) PostgreSQL database server with the 
 
 ## Installation {#installation}
 
-Follow the instructions in [Using Marketplace Content](/appstore/use-content/) to import the PgVector Knowledge Base module into your app.
+Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the PgVector Knowledge Base module into your app.
 
 ## Configuration {#configuration}
 
@@ -86,7 +86,7 @@ A typical pattern for populating a knowledge base is as follows:
 
 1. Create a new `ChunkCollection`. See the [Initialize ChunkCollection](/appstore/modules/genai/commons/) section.
 2. For each knowledge item that needs to be inserted, do the following:
-    * Use [Initialize MetadataCollection with Metadata](/appstore/modules/genai/commons/) and [Add Metadata to MetadataCollection](/appstore/modules/genai/commons/) as many times as needed to create a collection of the necessary metadata for the knowledge base item.
+    * Use [Initialize MetadataCollection with Metadata](/appstore/modules/genai/commons/) and [Add Metadata to MetadataCollection](/appstore/modules/genai/commons/) to create a collection of the necessary metadata for the knowledge base item.
     * With both collections as input parameters, use [Add KnowledgeBaseChunk to ChunkCollection](/appstore/modules/genai/commons/) for the knowledge item.
 3. Call an embeddings endpoint with the `ChunkCollection` to generate an embedding vector for each `KnowledgeBaseChunk`
 4. With the `ChunkCollection`, use [(Re)populate Knowledge Base](#repopulate-knowledge-base) to store the chunks.
@@ -118,7 +118,7 @@ Currently, four operations are available for on-demand retrieval of data chunks 
 A typical pattern for retrieval from a knowledge base uses GenAI Commons operations and can be illustrated as follows:
 
 1. Use [Initialize MetadataCollection with Metadata](/appstore/modules/genai/commons/) to set up a `MetadataCollection` for filtering with its first key-value pair added immediately. 
-2. Use [Add Metadata to MetadataCollection](/appstore/modules/genai/commons/) as many times as needed to create a collection of the necessary metadata.
+2. Use [Add Metadata to MetadataCollection](/appstore/modules/genai/commons/) (iteratively) to create a collection of the necessary metadata.
 3. Do the retrieval. For example, you could use [Retrieve Nearest Neighbors](#retrieve-nearest-neighbors) to find chunks based on vector similarity.
 
 For scenarios in which the created chunks were based on Mendix objects at the time of population and these objects need to be used in logic after the retrieval step, two additional operations are available. The Java actions [Retrieve & Associate](#retrieve-associate) and [Retrieve Nearest Neighbors & Associate](#retrieve-nearest-neighbors-associate) take care of the chunk retrieval and set the association towards the original object, if applicable.
@@ -126,7 +126,7 @@ For scenarios in which the created chunks were based on Mendix objects at the ti
 A typical pattern for this retrieval is as follows:
 
 1. Use [Initialize MetadataCollection with Metadata](/appstore/modules/genai/commons/) to set up a `MetadataCollection` for filtering with its first key-value pair added immediately. 
-2. Use [Add Metadata to MetadataCollection](/appstore/modules/genai/commons/) as many times as needed to create a collection of the necessary metadata.
+2. Use [Add Metadata to MetadataCollection](/appstore/modules/genai/commons/) (iteratively) to create a collection of the necessary metadata.
 3. Do the retrieval. For example, you could use [Retrieve Nearest Neighbors & Associate](#retrieve-nearest-neighbors-associate) to find chunks based on vector similarity.
 4. For each retrieved chunk, retrieve the original Mendix object and do custom logic.
 
@@ -171,7 +171,7 @@ The **Documentation** pane displays the documentation for the currently selected
 1. In the [View menu](/refguide/view-menu/) of Studio Pro, select **Documentation**.
 2. Click the element for which you want to view the documentation.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/doc-pane.png" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" >}}
 
 ## Showcase Application {#showcase-application}
 

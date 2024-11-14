@@ -54,7 +54,7 @@ Typically, feedback module usage has the following flow:
 
 ## Installation
 
-You should install the latest version of the Mendix Feedback module, as it will provide the most up-to-date features for leaving feedback and communicating with the team. To ensure you have the latest version of the module included in your app, follow the instructions in [Using Marketplace Content](/appstore/use-content/) to import the latest version of the module into your app.
+You should install the latest version of the Mendix Feedback module, as it will provide the most up-to-date features for leaving feedback and communicating with the team. To ensure you have the latest version of the module included in your app, follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the latest version of the module into your app.
 
 ## Usage
 

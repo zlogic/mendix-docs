@@ -244,34 +244,182 @@ paths:
           $ref: '#/components/responses/Http404'
         '500':
           $ref: '#/components/responses/Http500'
+  '/accounts/{account-id}/roles':
+    get:
+      tags:
+        - Accounts
+      summary: 'Get a list of project roles for a specified account.'
+      description: 'Returns a list of project roles for a specified account (or company). The output is restricted based on the authorization of the calling user. The calling user must be a member of the specified company.</br></br>Every request must be authenticated by a Personal Access Token containing the scope `mx:app:roles:read`.'
+      operationId: get-company-roles
+      parameters: 
+        - $ref: '#/components/parameters/account-id'
+        - name: changedSince
+          in: query
+          description: 'If supplied only roles created or changed since this date will be returned. This date time should be provided in the ISO 8601 format, for example `2024-08-21T11:07:00Z`'
+          schema:
+            type: string
+            format: date-time
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+      responses:
+        '200': 
+          $ref: '#/components/responses/AccountRolesResponse'
+        '400':
+          $ref: '#/components/responses/Http400'
+        '401':
+          $ref: '#/components/responses/Http401'
+        '404':
+          $ref: '#/components/responses/Http404'
+        '500':
+          $ref: '#/components/responses/Http500'
+  '/roles/{role-id}':
+    get:
+      tags:
+        - Roles
+      summary: 'Get all details of a specific project role'
+      description: 'Get all details of a specific project role.</br></br>Every request must be authenticated by a Personal Access Token containing the scope `mx:app:roles:read`.'
+      parameters:
+        - $ref: '#/components/parameters/role-id'
+      responses:
+        '200':
+          $ref: '#/components/responses/RolesResponse'
+        '401':
+          $ref: '#/components/responses/Http401'
+        '404':
+          $ref: '#/components/responses/Http404'
+        '500':
+          $ref: '#/components/responses/Http500'
 tags:
-  - name: Users
-    description: 'Mendix platform users'
   - name: Projects
     description: 'App projects managed on the Mendix platform'
+  - name: Users
+    description: 'Mendix platform users'
+  - name: Accounts
+    description: 'Mendix platform companies'
+  - name: Roles
+    description: 'Project roles'
 components:
+  schemas:
+    ProjectRole:
+      type: object
+      properties:
+        roleId:
+          type: string
+          description: 'Unique identifier for roles on the Mendix platform.'
+          format: uuid
+          pattern: '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
+          minLength: 36
+          maxLength: 36
+        roleName:
+          type: string
+          description: 'Name of the role.'
+          maxLength: 200
+        roleDescription:
+          type: string
+          description: 'Description of the role.'
+          maxLength: 400
+        account:
+          type: object
+          description: 'Account (or company) that owns the role'
+          properties:
+            accountId: 
+              type: string
+              description: 'Unique identifier of the account'
+              maxLength: 200
+            accountName:
+              type: string
+              description: 'Name of the account'
+              maxLength: 100
+        isAdministrator:
+          type: boolean
+          description: 'Indicates whether the role is a project administrator.'
+        hasRepositoryAccess:
+          type: boolean
+          description: 'Indicates whether the role is allowed to make changes to the app''s model.'
+        hasCloudAccess:
+          type: boolean
+          description: 'Indicates whether the role has access to the cloud environments.'
+        hasStoryAccess:
+          type: boolean
+          description: 'Indicates whether the role has access to Stories and Feedback of the app.'
+        hasInvitationRights:
+          type: boolean
+          description: 'Indicates whether the role is allowed to invite other users to the project team.'
+        environmentPermissions:
+          type: array
+          description: 'Array of environment permissions.'
+          items:
+            type: object
+            properties:
+              environmentType:
+                type: string
+                description: 'Type of the environment.'
+                enum:
+                - non_production
+                - production
+              accessType:
+                type: string
+                description: 'Type of the access.'
+                enum:
+                - no_access
+                - access
+                - custom
+              hasManageRights:
+                type: boolean
+                description: 'Indicates whether the role has environment management rights.'
+              hasTransportRights:
+                type: boolean
+                description: 'Indicates whether the role has environment transportation rights.'
+              hasBackupAccess:
+                type: boolean
+                description: 'Indicates whether the role is allowed to access the environment'' backups.'
+              hasMonitoringAccess:
+                type: boolean
+                description: 'Indicates whether the role has access to the environment''s monitoring.'
+              hasApiRights:
+                type: boolean
+                description: 'Indicates whether the role has environment API rights.'
   parameters:
     app-id:
       name: app-id
       in: path
-      description: The unique id of the app
+      description: 'The unique identifier of an app project'
       required: true
       schema:
         type: string
     user-id:
       name: user-id
       in: path
-      description: The unique id of the user
+      description: 'The unique identifier of a user'
       required: true
       schema:
         type: string
     job-id:
       name: job-id
       in: path
-      description: Identifier of a project creation job
+      description: 'The unique identifier of a project creation job'
       required: true
       schema:
         type: string
+    account-id:
+      name:  account-id
+      in: path
+      description: 'The unique identifier of the account or company'
+      required: true
+      schema:
+        type: string
+        maxLength: 100
+    role-id:
+      name: role-id
+      in: path
+      description: 'The unique identifier of a project role'
+      required: true
+      schema:
+        type: string
+        format: uuid
+        pattern: '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
+        minLength: 36
+        maxLength: 36
     limit:
       name: limit
       in: query
@@ -676,11 +824,65 @@ components:
                     role:
                       name: string
                       isAdministrator: boolean
-                      iisTechnicalContact: boolean
-                      ihasRepositoryAccess: boolean
-                      ihasCloudAccess: boolean
-                      ihasStoryAccess: boolean
-                      ihasInvitationRights: boolean
+                      isTechnicalContact: boolean
+                      hasRepositoryAccess: boolean
+                      hasCloudAccess: boolean
+                      hasStoryAccess: boolean
+                      hasInvitationRights: boolean
+    AccountRolesResponse:
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              page:
+                type: object
+                description: 'Contains information about the current page, and total elements to be retrieved'
+                properties:
+                  totalElements:
+                    type: integer
+                    description: 'Total number of items to be expected'
+                  offset:
+                    type: integer
+                    description: 'Offset used by the current request'
+                  elements:
+                    type: integer
+                    description: 'Number of items in this current page'
+              items:
+                type: array
+                description: 'Array of roles.'
+                items:
+                  $ref: "#/components/schemas/ProjectRole"
+          example:
+            page:
+              totalElements: 0
+              offset: 0
+              elements: 0
+            items:
+              - roleId: '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+                roleName: 'Scrum Master'
+                roleDescription: 'Project administrator'
+                isAdministrator: true
+                hasRepositoryAccess: true
+                hasCloudAccess: true
+                hasStoryAccess: true
+                hasInvitationRights: true
+                environmentPermissions:
+                  - environmentType: 'non_production'
+                    accessType: 'access'
+                    hasManageRights: true
+                    hasTransportRights: true
+                    hasBackupAccess: true
+                    hasMonitoringAccess: true
+                    hasApiRights: true
+                  - environmentType: 'production'
+                    accessType: 'custom'
+                    hasManageRights: false
+                    hasTransportRights: false
+                    hasBackupAccess: false
+                    hasMonitoringAccess: false
+                    hasApiRights: false
     Http204:
       description: 'No Content'
     Http400:
@@ -842,5 +1044,38 @@ components:
                   instance:
                     type: string
                     description: 'UUID of the request for troubleshooting purposes'
+    RolesResponse:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ProjectRole'
+          example:
+            roleId: '3fa85f64-5717-4562-b3fc-2c963f66afa6'
+            roleName: 'Scrum Master'
+            roleDescription: 'Project administrator'
+            account:
+              accountId: 'Mendix'
+              accountName: 'Mendix'
+            isAdministrator: true
+            hasRepositoryAccess: true
+            hasCloudAccess: true
+            hasStoryAccess: true
+            hasInvitationRights: true
+            environmentPermissions:
+              - environmentType: 'non_production'
+                accessType: 'access'
+                hasManageRights: true
+                hasTransportRights: true
+                hasBackupAccess: true
+                hasMonitoringAccess: true
+                hasApiRights: true
+              - environmentType: 'production'
+                accessType: 'custom'
+                hasManageRights: false
+                hasTransportRights: false
+                hasBackupAccess: false
+                hasMonitoringAccess: false
+                hasApiRights: false
 security:
   - PersonalAccessToken: []

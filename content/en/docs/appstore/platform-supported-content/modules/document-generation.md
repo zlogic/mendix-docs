@@ -49,7 +49,7 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
 
 ## Installation {#installation}
 
-Follow the instructions in [Using Marketplace Content](/appstore/use-content/) to import the Documentation Generation module into your app.
+Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the Documentation Generation module into your app.
 
 ## Configuration {#configuration}
 
@@ -234,15 +234,15 @@ To see the generated document in the browser or download it, you can use the **D
 
 For scenarios where you want to generate documents as a system task (for example in a scheduled event), the recommended approach is to set up one or more service users for document generation.
 
-1. Add a specific app role for service users to your app, for example **DocGenServiceUser** or **ReadOnly**. 
-2. Assign the **User** module role from the **DocumentGeneration** module to the new app role.
+1. Add a specific user role for service users to your app, for example **DocGenServiceUser** or **ReadOnly**. 
+2. Assign the **User** module role from the **DocumentGeneration** module to the new user role.
 3. Assign or add the required module roles to allow read access to the relevant data in your app’s modules. 
    
     As a good practice, let Studio Pro generate separate module roles and set strict entity access that only allows read access to the applicable data. In this case, the service user needs to have the **DocumentGeneration.User** module role, while the user who runs the microflow to generate a document does not.
 
    {{% alert color="info" %}}Do not use regular user accounts for the **Generate as user** parameter, since this could have side effects, for example, changes in the last login date, or failures when multiple sessions are disabled and the applicable user logs in at the same time.{{% /alert %}}
 
-4. Run the app and create a new local user as the service user. Give the service user the app role that you created above and use a strong password. The service user will be used to generate documents.
+4. Run the app and create a new local user as the service user. Give the service user the user role that you created above and use a strong password. The service user will be used to generate documents.
 
    {{% alert color="info" %}}
    When starting with a blank app, you can use the **Administration.Account_Overview** page from the [Administration module](/appstore/modules/administration/) to manage and create new users.

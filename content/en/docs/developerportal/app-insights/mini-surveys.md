@@ -182,7 +182,7 @@ To obtain an API key for the implementation, follow these steps:
 To install the [Mendix Mini Surveys](/appstore/modules/mendix-mini-surveys/) module, follow these steps:
 
 1. Open your app in Studio Pro.
-2. Follow the instructions in [Using Marketplace Content](/appstore/use-content/) to import the module into your app.
+2. Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the module into your app.
 3. Follow the instructions in the [Configuration](/appstore/modules/mendix-mini-surveys/#configuration) section in *Mendix Mini Surveys* to complete the implementation of the mini survey in Studio Pro.
 
 ### Viewing or Exporting Responses {#view-export-responses}

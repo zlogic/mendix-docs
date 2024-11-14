@@ -17,7 +17,7 @@ After you have created a [mini survey](/developerportal/app-insights/mini-survey
 
 ## Installation
 
-To import this module into your app, follow the instructions in [Using Marketplace Content](/appstore/use-content/).
+To import this module into your app, follow the instructions in [How to Use Marketplace Content](/appstore/use-content/).
 
 ## Configuration {#configuration}
 

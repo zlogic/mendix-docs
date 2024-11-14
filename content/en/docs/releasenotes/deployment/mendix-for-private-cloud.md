@@ -12,6 +12,26 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2024
 
+### November 7, 2024
+
+#### License Manage CLI v0.10.0
+
+* To enhance security, we have implemented support for Azure Workload Identity and IRSA authentication, allowing connections to the PCLM server without relying on static credentials.
+
+### November 6, 2024
+
+#### Mendix Operator v2.20.0 {#2.20.0}
+
+* We have added an option to choose a custom deployment strategy, which in some situations allows you to update an app or its configuration without causing downtime. In addition, we have also documented how to use PodDisruptionBudgets to reduce downtime during cluster upgrades. For more details, see the new [Reduced downtime deployment](/developerportal/deploy/private-cloud-reduced-downtime/) page.
+* We have updated components to use Go 1.23 and the latest dependency versions in order to improve security score ratings for container images.
+* We have modified the `mxpc-cli` installation and configuration tool to return an error exit code in non-interactive mode if an error occurs. If `mxpc-cli` was able to successfully apply changes, a normal exit code (0) will be returned.
+* We have fixed a memory leak in the Mendix Gateway Agent.
+* We have rephrased the *License server is not configured, runtime will run in trial mode* log message to clarify tha this means that PCLM is not used for an environment.
+* We have extended the `mxpc-cli version` command to return the version of `mxpc-cli` itself.
+* We have changed the StorageInstance finalizers to no longer cause *prefer a domain-qualified finalizer name* warnings in the Operator logs.
+* We have fixed an issue with license checks when using Global Operator with a static license.
+* Upgrading to Mendix Operator v2.20.0 from a previous version will restart environments managed by that version of the Operator.
+
 ### October 17th, 2024
 
 #### Deploy API

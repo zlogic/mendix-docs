@@ -36,7 +36,7 @@ You must have the following Marketplace module installed:
 ## Installation
 
 1. Install the dependencies.
-2. Follow the instructions in [Using Marketplace Content](/appstore/use-content/) to import the OPC-UA connector into your app.
+2. Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the OPC-UA connector into your app.
 
 ## Basic Configuration
 
@@ -286,4 +286,6 @@ The module includes technical reference documentation for the available entities
 The **Documentation** pane displays the documentation for the currently selected element. To view it, perform the following steps:
 
 1. In the [View menu](/refguide/view-menu/) of Studio Pro, select **Documentation**.
-2. Click the element for which you want to view the documentation.  {{< figure src="/attachments/appstore/platform-supported-content/modules/doc-pane.png" >}}
+2. Click the element for which you want to view the documentation.
+
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" >}}

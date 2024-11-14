@@ -5,11 +5,15 @@ description: "Describes the configuration and usage of the Excel Exporter module
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
+{{% alert color="warning" %}}
+The Atlas UI Resources module is deprecated, as is Atlas 2. If you are still using Atlas 2, Mendix recommends that you [migrate from Atlas 2 To Atlas 3](/refguide9/moving-from-atlas-2-to-3/).
+{{% /alert %}}
+
 ## Introduction
 
 With the [Excel Exporter](https://marketplace.mendix.com/link/component/726/) module, you can create templates that export data from your Mendix application to the Excel, macro-enabled Excel, or CSV formats. The module creates an OQL query and directly prints the result to a FileDocument system module entity in your desired format. You can add styling to your Excel to create proper headers and styling formats in order to create a complete report.
 
-The Excel Exporter is compatible with the [Excel Importer](/appstore/modules/excel-importer/) version 8.1.1 or higher and [Atlas UI Resources](/appstore/modules/atlas-ui-resources/) version 1.2.2 or higher.
+The Excel Exporter is compatible with the [Excel Importer](/appstore/modules/excel-importer/) version 8.1.1 or higher and [Atlas UI Resources](https://marketplace.mendix.com/link/component/104730) version 1.2.2 or higher.
 
 ## Prerequisites
 

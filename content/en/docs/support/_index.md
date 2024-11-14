@@ -53,11 +53,11 @@ We expect that many questions and issues can be solved by reading the [Mendix Do
 
 ### Mendix Academy
 
-If you have questions about [Mendix Academy](https://academy.mendix.com/) these will normally be handled by the Academy team.
+[Mendix Academy](https://academy.mendix.com/) issues can also be raised with Mendix Support. This covers all aspects of Mendix Academy, for example technical issues or queries related to certifications. 
 
-You can contact Mendix Academy directly at [academy@mendix.com](mailto:academy@mendix.com). Mendix Academy may take 3-5 business days to reply to your inquiry.
-
+{{% alert color="info" %}}
 If you have passed a Mendix certification, Mendix Academy will need 3-5 business days to prepare your certificate. You do not need to raise a support ticket as it will only be forwarded to the Academy team.
+{{% /alert %}}
 
 ## Feature Requests
 
@@ -95,7 +95,7 @@ Reading these alerts carefully and acting upon them is important, as they can af
 
 ### Training
 
-We expect your support team to be trained and certified on Studio Pro and the Mendix Portal so that they can interpret and analyze alerts, graphs, and logs in the Mendix Portal. For more information, please check our available [classroom courses](https://academy.mendix.com/link/classroom) and [expert webinars](https://academy.mendix.com/link/webinar) or contact the Mendix Academy ([academy@mendix.com](mailto:academy@mendix.com)).
+We expect your support team to be trained and certified on Studio Pro and the Mendix Portal so that they can interpret and analyze alerts, graphs, and logs in the Mendix Portal. For more information, please check our available [classroom courses](https://academy.mendix.com/link/classroom) and [expert webinars](https://academy.mendix.com/link/webinar).
 
 ## Platform Status
 

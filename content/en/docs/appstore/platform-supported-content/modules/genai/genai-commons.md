@@ -30,7 +30,7 @@ You must also download the [Community Commons](/appstore/modules/community-commo
 
 If you are starting from the [Blank GenAI app](https://marketplace.mendix.com/link/component/227934), or the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), the GenAI Commons module is included and does not need to be downloaded manually.
 
-If you start from a blank app, or have an existing project where you want to include a connector for which the GenAI Commons module is a required module, you must install GenAI Commons manually. First, install the [Community commons](/appstore/modules/community-commons-function-library/) module, and then follow the instructions in [using Marketplace content](/appstore/use-content/) to import the GenAI Commons module into your app.
+If you start from a blank app, or have an existing project where you want to include a connector for which the GenAI Commons module is a required module, you must install GenAI Commons manually. First, install the [Community commons](/appstore/modules/community-commons-function-library/) module, and then follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the GenAI Commons module into your app.
 
 ## Implementation {#implementation}
 
@@ -191,7 +191,7 @@ This entity represents a collection of chunks. It is a wrapper entity for [Chunk
 
 #### `Chunk` {#chunk-entity}
 
-A piece of information (InputText) and the corresponding embeddings vector retrieved from an Embeddings API.
+A piece of information (InputText) and the corresponding embeddings vector retrieved from an Embeddings API. This is the relevant entity if you need to generate embedding vectors but do not need to store them in a knowledge base.
 
 | Attribute | Description |
 | --- | --- |
@@ -201,7 +201,7 @@ A piece of information (InputText) and the corresponding embeddings vector retri
 
 #### `KnowledgeBaseChunk` {#knowledgebasechunk-entity}
 
-This entity represents a discrete piece of knowledge that can be used in embed and store operations. It is a specialization of [Chunk](#chunk-entity).
+This entity represents a discrete piece of knowledge that can be used for embedding and storage operations. As a specialization of [Chunk](#chunk-entity), it is the appropriate entity to use when both generating embedding vectors and storing them in a knowledge base.
 
 | Attribute | Description |
 | --- | --- |
@@ -217,7 +217,7 @@ An optional collection of metadata. This is a wrapper entity for one or more [Me
 
 #### `Metadata` {#metadata-entity}
 
-This entity represents additional information that is to be stored with the [KnowledgeBaseChunk](#knowledgebasechunk-entity) in the knowledge base. It can be used for custom filtering during retrieval.
+This entity represents additional information to be stored with the [KnowledgeBaseChunk](#knowledgebasechunk-entity) in the knowledge base. At the insertion stage, you can link multiple metadata objects to a KnowledgeBaseChunk as needed. These metadata objects consist of key-value pairs used for custom filtering during retrieval. Retrieval operates on an exact string-match basis for each key-value pair, returning records only if they match all metadata records specified in the search criteria.
 
 | Attribute | Description |
 | --- | --- |

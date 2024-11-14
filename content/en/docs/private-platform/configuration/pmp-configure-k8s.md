@@ -15,7 +15,7 @@ This document explains the configuration options available when configuring a Co
 To configure the CI/CD pipeline, prepare the following:
 
 * A namespace where you want to deploy the Mendix app.
-* An S3-compatible endpoint where you can store an MDA file.
+* An S3-compatible endpoint or Azure storage account where you can store an MDA file.
 
 ## Configuring the CI/CD Pipeline
 
@@ -136,11 +136,25 @@ The settings in this section configure the images.
 
     * **File Server** - This option allows anonymous access without any authentication.
     * **S3 Bucket** - This option requires an access key ID and secret access key for authentication.
-    * **Azure Blob** - This option requires the Azure Workload identity authentication. The default service account is used in the build pod for downloading the *mxbuild* package. Add role assignment with the Storage Blob Data Reader role to the storage account in your managed identity.
+    * **Azure Blob** - This option requires the Azure Workload identity authentication. The default service account is used in the build pod for downloading the *mxbuild* package. To configure the managed identity and service account, perform the following steps:
+
+        1. Create a managed identity in the Azure portal
+        2. Configure federated credentials for the Kubernetes service account.
+        3. In the **Managed Identity** section, add a role assignment with the **Storage Blob Data Reader** role scoped to the storage account.
+        4. Add an annotation to the service account, as in the following example:
+
+            ```text
+            kind: ServiceAccount
+            metadata:
+              name: default
+              namespace: default # The same as the one in Configuring Build Cluster Setting
+              annotations:
+                azure.workload.identity/client-id: {client-id}
+            ```
 
 * **Build Package Path** - This setting is required for the **File Server** build package source. The default value is `https://cdn.mendix.com/runtime`. If you have your own file server, you must download the package from the Mendix Content Delivery Network, and then upload it to your file server. The file name format is *mxbuild-9.24.1.4658.tar.gz*.
 * **S3 Endpoint**, **S3 Bucket Name**, **Region**, **Access Key ID**, **Secret Access Key** - These settings are required for the **S3 Bucket** build package source.
-* **Storage Account**, **Container** - These settings are requried for the **Azure Blob** build package source.
+* **Storage Account**, **Container** - These settings are required for the **Azure Blob** build package source.
 * **Build OCI Image** - Select this check box to build the OCI image besides the MDA file. Only OCI image can be used for deployment if this is checked. This option can be used to avoid configuring anonymous access to your S3 bucket or Azure Blob container.
 * **Runtime Base Image** - This setting is only applicable if you selected the **Build OCI Image** check box. The default value is `private-cloud.registry.mendix.com/app-building-blocks`. If you are in an air gap environment, sync tag `ubi9-1-jre{XX}-entrypoint` and `runtime-{YYYYY}`, where `{XX}` is java version in your app, and `{YYYYY}` is your app runtime version. For example: `app-building-blocks:ubi9-1-jre21-entrypoint` and `app-building-blocks:runtime-10.12.1.39914`.
 * **Allow Anonymous Access** - Select this checkbox if above Runtime Base Image is accessible without authentication.
@@ -154,9 +168,43 @@ The settings in this section configure the images.
 
 The settings in this section configure the storage for build output artifacts.
 
-* **Mda Storage Option** - Configure where to store the build output artifacts. The supported values are S3 Bucket and Azure Blob. The Azure Blob option requires the Azure Workload identity authentication. The *default* service account is used in the build pod for uploading build artifacts. Add role assignment with the Storage Blob Data Contributor role to the storage account in your managed identity.
+* **Mda Storage Option** - Configure where to store the build output artifacts. The supported values are S3 Bucket and Azure Blob. This option requires the Azure Workload identity authentication. The default service account is used in the build pod for uploading the build artifacts. To configure the managed identity and service account, perform the following steps:
+
+    1. Create or reuse a managed identity on Azure portal, and configure federated credentials for the Kubernetes service account.
+    2. In the **Managed Identity**, add a role assignment with the **Storage Blob Data Contributor** role scoped to the storage account.
+    3. Add the correct annotation to the Service Account for build pod and PMP.
+    4. Add annotations for the build pod and Private Mendix Platform to the service account, as in the following example:
+
+        ```text
+        kind: ServiceAccount
+        metadata:
+            name: default
+            namespace: default # The same as the one in Configuring Build Cluster Setting
+                azure.workload.identity/client-id: {client-id}
+        ```
+
+        ```text
+        kind: ServiceAccount
+        metadata:
+            name: default
+            namespace: {pmp-namespace} # The namespace where Private Mendix Platform is installed
+                azure.workload.identity/client-id: {client-id}
+        ```
+    5. Add **customPodLabels** to the Mendix Operator to label the Private Mendix Platform pod with the proper configuration. This configuration allows Private Mendix Platform to get build artifacts from Azure Storage Blob.
+
+        ```text
+        kind: OperatorConfiguration
+        metadata:
+          name: mendix-operator-configuration
+          namespace: {pmp-namespace}
+        spec:
+          customPodLabels:
+            general:
+                azure.workload.identity/use: "true"
+        ```
+
 * **S3 Endpoint** - For example, `https://s3.ap-southeast-1.amazonaws.com`.
-* **No Verify SSL** - Select this checkbox if you use your own bucket server, and its certificate is self-signed. Selecting this option adds --no-verify-ssl to the AWS CLI command to avoid failure.
+* **No Verify SSL** - Select this checkbox if you use your own bucket server, and its certificate is self-signed. Selecting this option adds *--no-verify-ssl* to the AWS CLI command to avoid failure.
 * **S3 Bucket Name** - Your S3 bucket name, for example, *mybucket*.
 * **Mda Location** - Your S3 bucket name's domain, for example, `https://mybucket.s3.ap-southeast-1.amazonaws.com`. This URL is used to access build artifacts, the whole path is: `Mda Location + Appid + Mda/Meta file`. Make sure that the S3 bucket is configured to allow anonymous access.
 * **Region** - For example, `ap-southeast-1`.

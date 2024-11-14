@@ -22,6 +22,7 @@ The following are usage scenarios that would be achievable with the OIDC Provide
 * SSO brokering
 * SSO within multi-app Mendix solution
 * Non-user specific API consumption
+* Platform Extensions
 
 For more information on how SSO brokering and SSO are implemented within a multi-app Mendix solution, see the [End-User Account Creation in the OIDC Provider](#end-user-account) section below.
 
@@ -59,6 +60,16 @@ For API security, it is a best practice to use OAuth-tokens rather than API-keys
 
 The OIDC Provider supports the so-called Client Credential grant. This means that, a client application can obtain a client access token by authenticating at the OIDC Provider and present that access token to the API it consumes. The OIDC SSO module (version 3.1.0 and above) helps you to implement security in your API. It validates the token either through token introspection at the OIDC Provider or by verifying its signature. Moreover, it creates a user that represents the client that is consuming the API.
 
+#### Platform Extensions
+
+Since its 10.12 release, Mendix Studio Pro is an [extensible IDE](https://www.mendix.com/blog/extensions-the-natural-evolution-of-the-developer-experience/) that allows you to build extensions to connect with other external tools. These external tools, or Extension Applications, offer services for platform extensions to consume, often as web applications with user interfaces and a set of “extension services” that provide web applications and APIs. With your extension, Studio Pro acts as a client that consumes these extension services. In this architecture, implementing a security mechanism for accessing the Extension Application is essential. Using OAuth/OpenID Connect (OIDC) SSO and OAuth Access Tokens is the current best practice for securing this access.
+
+In this setup, developers need both a Mendix platform account and an account for your Extension Application. Your IDE extension will prompt the developer to log in to the Extension Web Application and use the tokens to access the Extension Web APIs.
+
+{{< figure src="/attachments/appstore/platform-supported-content/services/oidc-provider/platform_extensions.png" class="no-border" >}}
+
+If you are building your Extension Application as a Mendix app, you can use the [OIDC Provider](https://marketplace.mendix.com/link/component/214681) module to allow platform users to log in to your Extension Application, get OAuth Access Tokens, and use these tokens to access web APIs provided by your Mendix Extension Services. The [OIDC SSO](/appstore/modules/oidc/) module then helps your web API validate the received token. Since the OIDC protocol requires a static URI for your IDE extension, you can set this URI using the Static URI API (available from Mendix 10.16 onward).
+
 ### Features and Limitations
 
 The OIDC Provider has the following features and limitations:
@@ -91,19 +102,21 @@ The following modules need to be imported into your app:
 
 This section provides clarity on the extent to which the OIDC Provider module supports the OIDC protocol. It is targeted at readers who are familiar with the OAuth and the OIDC protocol.
 
-The OIDC Provider module supports the following Grant Types:
+1. The OIDC Provider module supports the following Grant Types:
 
-* supports [Authorization grant type](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3) to represent the resource owner's authorization
-* supports [Client credentials grant type](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4) to request an access token
+    * supports [Authorization grant type](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3) to represent the resource owner's authorization
+    * supports [Client credentials grant type](https://datatracker.ietf.org/doc/html/rfc6749#section-4.4) to request an access token
+    * supports the refresh grant as defined in [RFC 6749: The OAuth 2.0 Authorization Framework](https://datatracker.ietf.org/doc/html/rfc6749) and provides a refresh token only when requested with the `offline_access` scope, as recommended by [OpenID Connect Core](https://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess)
 
-The OIDC Provider module supports the following Endpoints:
+2. The OIDC Provider module supports the following Endpoints:
 
-* [`userInfo_endpoint`](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo)
-* [`introspection_endpoint`](https://datatracker.ietf.org/doc/html/rfc7662)
-* [`authorization_endpoint`](https://openid.net/specs/openid-connect-core-1_0.html#ImplicitAuthorizationEndpoint)
-* [`token_endpoint`](https://openid.net/specs/openid-connect-core-1_0.html#ImplicitAuthorizationEndpoint)
-* [`issuer`](https://openid.net/specs/openid-connect-core-1_0.html#IssuerIdentifier)
-* [`jwks_uri`](https://openid.net/specs/openid-connect-core-1_0.html#RotateSigKeys)
+    * [`userInfo_endpoint`](https://openid.net/specs/openid-connect-core-1_0.html#UserInfo)
+    * [`introspection_endpoint`](https://datatracker.ietf.org/doc/html/rfc7662)
+    * [`authorization_endpoint`](https://openid.net/specs/openid-connect-core-1_0.html#ImplicitAuthorizationEndpoint)
+    * [`token_endpoint`](https://openid.net/specs/openid-connect-core-1_0.html#ImplicitAuthorizationEndpoint)
+    * [`issuer`](https://openid.net/specs/openid-connect-core-1_0.html#IssuerIdentifier)
+    * [`jwks_uri`](https://openid.net/specs/openid-connect-core-1_0.html#RotateSigKeys)
+    * `/register` endpoint, based on [RFC 7591: OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591) and [Final: OpenID Connect Dynamic Client Registration](https://openid.net/specs/openid-connect-registration-1_0.html). Only the specified client attributes are supported. The `/register` endpoint is secured with a registration access token using a mechanism that deviates from specifications. For more details, see the [Automatic Client Registration](#automatic-client-registration) section below.
 
 ## Installation
 
@@ -186,9 +199,11 @@ The rest of the configuration can be performed through the app.
 
     You can register a new client (an app using the OIDC SSO module for sign in which identifies this app as its IdP) in one of two ways. Follow one of the sets of instructions below:
 
-#### Automatic Client Registration
+#### Automatic Client Registration{#automatic-client-registration}
 
-To check that this works, you will need a tool for testing APIs (such as [Postman](https://www.postman.com/)) which allows you to execute HTTP commands to the Registration URI of you IdP.
+The provider offers a `/register` endpoint for registering clients through an API call. This endpoint is secured with a registration access token, which can be obtained by an Admin user via the Administration UI in the OIDC Provider module. The token is valid for ten minutes and can be used only once.
+
+To check that this works, you will need a tool for testing APIs (such as [Postman](https://www.postman.com/)) which allows you to execute HTTP commands to the Registration URI of your IdP.
 
 1. Select **Automatic Registration**.
 1. Take a copy of the **Bearer Registration Access token** and the **Registration URI**.
@@ -196,7 +211,7 @@ To check that this works, you will need a tool for testing APIs (such as [Postma
     * a **POST** command to the **Registration URI** with the endpoint `/oidc/register`, for example, for a locally-deployed app, `http://localhost:8080/oidc/register`
     * an HTTP header with **Key** = "Authorization" and **Value** = **Bearer Registration Access token**
     * an HTTP request body with the following format (for a Client `ClientID` which is running on host and port `localhost:8081`):
-1. For the `grant_types`: `authorization_code`
+1. For the `grant_types`: `authorization_code` and `refresh token`
 
     ```json
     {
@@ -205,8 +220,8 @@ To check that this works, you will need a tool for testing APIs (such as [Postma
         "client_secret" : "ClientSecret",
         "redirect_uris" : [ "http://localhost:8081/oauth/v2/callback" ],
         "post_logout_redirect_uris" : ["http://localhost:8081/logout"],
-        "grant_types": [ "authorization_code" ],
-        "scope": "User"
+        "grant_types": [ "authorization_code" , "refresh_token"],
+        "scope": "openid offline_access" 
     }
     ```
 
@@ -215,7 +230,7 @@ To check that this works, you will need a tool for testing APIs (such as [Postma
     ```json
     {
         "post_logout_redirect_uris": [ "http://localhost:8081/logout" ],
-        "grant_types": [ "authorization_code" ],
+        "grant_types": [ "authorization_code" , "refresh_token" ],
         "client_secret_expires_at": 0,
         "scope": "User",
         "client_secret": "ClientSecret",
@@ -271,9 +286,14 @@ If you cannot use automatic registration, you can register the client manually.
     Additionally, you need to add below information if you select **Allow Authorization-Code grant type**
 
     * **Post Logout redirect URI** – the fully qualified logout url, `<appurl>/logout` — for example, for testing a local OIDC SSO app on port `8081`, `http://localhost:8081/logout`
-    * **Redirect URI** – for example, for testing a local OIDC SSO app on port `8081`, `http://localhost:8081/oauth/v2/callback`
+    * **Redirect URI** – Redirects support both URIs with and without a port. For example, `http://localhost/oauth/v2/callback` and `http://localhost:8081/oauth/v2/callback` for testing a local OIDC SSO app on port `8081`.
     * **Back channel logout session support**
     * **Front channel Logout URI**
+
+3. Select the **Allow Token Refresh grant type** option to enable refresh token generation. This option is visible only when the **Allow Authorization-Code grant type** is selected. When you want your provider app to generate refresh tokens to your client Mendix app, ensure the following:
+
+    1. Both **Allow Token Refresh grant type** and **Allow Authorization-Code grant type** options are selected.
+    2. The `offline_access` scope is selected.
 
 #### Configuring Centralized Authorization{#configuring-authorization}
 
@@ -499,6 +519,10 @@ In versions of OIDC Provider below 1.1.0, the following values are not included 
 
 In versions of the OIDC Provider above 2.0.0, the sub value was changed from an Autonumber to a UUID.
 
+## Deleting Expired Access Tokens
+
+The `CleanupOldCodes` deletes expired access tokens from the database. The scheduler interval is set to one hour, and you can adjust it in the **USE_ME** folder of the **OpenIDConnectProvider** module according to your requirements. For more information, see [Scheduled Events](/refguide/scheduled-events/).
+
 ## Troubleshooting
 
 ### Infinite Loop of Redirects
@@ -568,3 +592,4 @@ For situations where the Centralized Authorization concept is used (see [Central
 These are set up in [Configuration of the OIDC Provider for Centralized Authorization with Scopes](#configure-scopes). Multiple scopes will be separated by spaces.
 
 For example: `mx:app:userrole:53f5d6fa-6da9-4a71-b011-454ec052cce8 mx:app:userrole:6c5ea333-799c-4438-96fc-2528ced788e4`
+
