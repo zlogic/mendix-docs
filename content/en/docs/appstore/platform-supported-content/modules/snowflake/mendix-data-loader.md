@@ -37,63 +37,57 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 
 1. View the README file, which the application displays upon starting.
 2. Click the **MENDIX_DATA_LOADER** tab in the header to open the application interface.
-3. Use the Data Source overview page to manage your Data Sources.
-4. Click **Create** to create a new Data Source.
-    * Enter a **Name** for your Data Source within the Data Loader.
-    * Enter an **API endpoint** – the base endpoint for the OData resource in your Mendix application, e.g., `https://yourmendixapp.mendixcloud.com/odata/snowflakedata/v1/`.
-    * Click **Save**.
-    * Grant the application **CREATE DATABASE** and **EXECUTE TASK** privileges. This step is necessary for the application to create the staging database for data ingestion and to execute tasks.
+3. Use the **Data Source overview** page to manage your data sources.
+4. Click **Create** to create a new data source.
+    1. Enter a **Name** for your data source within the Data Loader.
+    2. Enter an **API endpoint** – that is, the base endpoint for the OData resource in your Mendix application, for example, `https://yourmendixapp.mendixcloud.com/odata/snowflakedata/v1/`.
+    3. Click **Save**.
+    4. Grant the application **CREATE DATABASE** and **EXECUTE TASK** privileges. This step is necessary for the application to create the staging database for data ingestion and to execute tasks.
 
-5. The **Details** page displays the status of your Data Source setup.
-
-6. Click the **Authentication Configuration** tab to view the configuration status.
-7. Click **Edit** to set up Authentication.
-    * Provide the required information based on the selected authentication type:
-        * For Basic authentication, enter:
-            * **Username** – Username for basic authentication into the OData resource in your Mendix application
-            * **Password** – Password for basic authentication into the OData resource in your Mendix application
-        * For OAuth authentication, enter:
-            * **Client ID** – Client ID from your OAuth provider
-            * **Client Secret** – Secret associated with the client from your OAuth provider
-            * **Token Endpoint** – Endpoint at which the token will be validated by your OAuth provider
+5. To view the status of your data source, check the **Details**.
+6. To view the configuration status, click the **Authentication Configuration** tab.
+7. To set up authentication, click **Edit**, and then provide the required information based on the selected authentication type:
+        * For basic authentication, enter the following information:
+            * **Username** – A username for basic authentication into the OData resource in your Mendix application
+            * **Password** – A password for basic authentication into the OData resource in your Mendix application
+        * For OAuth authentication, enter the following information:
+            * **Client ID** – A client ID from your OAuth provider
+            * **Client Secret** – A secret associated with the client from your OAuth provider
+            * **Token Endpoint** – An endpoint at which the token will be validated by your OAuth provider
             * **Allowed Scopes** – Allowed and custom scopes configured on the client from your OAuth provider
-            * **Access Token Validity** – Duration (in seconds) that the access token is valid
-    * Click **Generate Script**.
-    * Click **Back** to return to the **Details** page.
-
-8. Click the **Ingestion Configuration** tab to set up your ingestion destination table.
-9. Click **Create** to start setting up the Ingestion Configuration.
+            * **Access Token Validity** – Duration (in seconds) for which the access token is valid
+8. Click **Generate Script**.
+9. Click **Back** to return to the **Details** page.
+10. Click the **Ingestion Configuration** tab to set up your ingestion destination table.
+11. Click **Create** to start setting up the Ingestion Configuration.
     * **Target Database** – Name of the database for data ingestion
     * **Target Schema** – Target schema where all data will be ingested
-10. Click **Save**.
-
-11. Click the **Data Ingestion** tab to start your data ingestion or set up a schedule.
-12. Click **Ingest Now** to start a data ingestion.
-
-13. Click **New Task** to create a CRON job for scheduled data ingestions.
-    * To schedule data ingestion, specify the following options:
-        * **Ingestion Task Schedule** – Choose from custom CRON expression, Every day at 00:00 AM UTC, Every Monday at 00:00 AM UTC, or Every first day of the month at 00:00 AM UTC.
+12. Click **Save**.
+13. Click the **Data Ingestion** tab, where you can start your data ingestion or set up a schedule.
+14. Click **Ingest Now** to start a data ingestion.
+15. Click **New Task** to create a CRON job for scheduled data ingestions.
+    * To schedule the data ingestion, specify the following parameters:
+        * **Ingestion Task Schedule** – Choose from custom CRON expression, every day at 00:00 AM UTC, every Monday at 00:00 AM UTC, or every first day of the month at 00:00 AM UTC.
         * **Custom CRON Expression** – Use this field only when specifying a custom CRON expression.
         * **Timeout** – Optional setting to specify when a timeout exception should occur.
         * **Number of Retry Attempts** – Number of retries for failed ingestion jobs.
         * **Suspend Task After Failures** – Number of consecutive failures allowed before suspending the task.
 
-        After configuring, click **Schedule Ingestion Task**. View the created task on the **Task Management** tab, where you can monitor performed ingestion jobs, suspend or enable the task, and drop it. Currently, only one ingestion task can exist at a time.
+16. Click **Schedule Ingestion Task**.
+17. To view the created task, go to the **Task Management** tab, where you can monitor performed ingestion jobs, suspend or enable the task, or drop it. Currently, only one ingestion task can exist at a time.
+18. Grant the application **USAGE** privilege on a warehouse to enable scheduling of data ingestions. All data ingestions use the same warehouse.
+    You are now redirected to the **Details** page, where you can see the status of the last three ingestionse.
+19. To view the ingested data, access the schema specified in the target database within your Snowflake environment.
 
-    * Grant the application **USAGE** privilege on a warehouse to enable scheduling of data ingestions. All data ingestions use the same warehouse.
-
-14. The page should go back to the details page. You can see the status of the last 3 ingestions on this page.
-15. To view the ingested data, access the schema specified in the target database within your snowflake environment.
-
-The ingested data is stored in the target schema of the specified target database, created by the Mendix Data Loader application. This target schema serves as a staging area. After each ingestion, copy the tables from the target schema to the desired database and schema that you want to use to store the ingested data. This should be done after every ingestion.
+The ingested data is stored in the target schema of the specified target database, created by the Mendix Data Loader application. This target schema serves as a staging area. After each ingestion, copy the tables from the target schema to the desired database and schema that you want to use to store the ingested data.
 
 ## Using Unique Schemas to Avoid Ingestion Job Conflicts
 
-When setting up ingestion jobs, it is recommended to use unique schemas for each job to avoid potential conflicts. Using distinct schemas allows each ingestion job to manage its data separately, which can prevent issues with data overlap, naming conflicts, and accidental overwrites. This is particularly important when multiple ingestion jobs are running concurrently, as they may otherwise attempt to access or modify the same tables.
+As a best practice, when setting up ingestion jobs, use unique schemas for each job to avoid potential conflicts. Using distinct schemas allows each ingestion job to manage its data separately, which can prevent issues with data overlap, naming conflicts, and accidental overwrites. This is particularly important when multiple ingestion jobs are running concurrently, as they may otherwise attempt to access or modify the same tables.
 
 ## Viewing Ingestion Jobs for a Data Source
 
-To view all ingestion jobs associated with a specific Data Source in Snowflake, you can use a SQL `SELECT` statement. This query retrieves records from the `core.ingestion_job` table for the specified `DATASOURCE_ID` and orders them by the job creation date in descending order, so the most recent ingestions appear first.
+To view all ingestion jobs associated with a specific data source in Snowflake, you can use an SQL `SELECT` statement. This query retrieves records from the `core.ingestion_job` table for the specified `DATASOURCE_ID`, and orders them by the job creation date in descending order, so the most recent ingestions appear first.
 
 ### Example SQL Query
 
@@ -105,7 +99,7 @@ SELECT * FROM core.ingestion_job WHERE DATASOURCE_ID = '1234abcd' ORDER BY CREAT
 
 When using OAuth authentication with the Mendix Data Loader, it is crucial to verify the access token received by your Mendix application. This verification process ensures the token's authenticity and integrity, protecting your application from unauthorized access attempts.
 
-The [OIDC SSO module](https://marketplace.mendix.com/link/component/120371) in the Mendix Marketplace can be used to authenticate the access token. To find out more please refer to the [OIDC SSO documentation](/appstore/modules/oidc/#client-credential-grant).
+The [OIDC SSO module](https://marketplace.mendix.com/link/component/120371) in the Mendix Marketplace can be used to authenticate the access token. For more information, refer to the [OIDC SSO documentation](/appstore/modules/oidc/#client-credential-grant).
 
 ### Token Verification Process
 
