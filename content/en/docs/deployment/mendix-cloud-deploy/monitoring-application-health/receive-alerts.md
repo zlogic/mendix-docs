@@ -5,33 +5,20 @@ description: "Describes how to receive environment status alerts."
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 ---
 
-## 1 Introduction
+## Introduction
 
 You can receive alerts for Mendix application environments in two ways: via email or by using webhooks. You can find detailed information for both of these options below.
 
-## 2 Email Alerts
+Alerts are triggered by any of the following circumstances:
 
-There are two ways to set up email alerts for an environment:
+* The app goes offline unexpectedly
+* The application logs a message with level **Critical**
+* The health check fails
+* An infrastructure problem occurs
 
-* The Technical Contact can grant you the **Receive Alerts** permission in **Node Permissions**
-* You can select the **Email Alerts** checkbox yourself on the **Alerts** page
+## Email Alerts
 
-Both options for setting up email alerts are described below.
-
-### 2.1 Node Permissions  
-
-If you are the Technical Contact for an app, you can grant team members the **Receive Alerts** permission by following these steps:
-
-1. From [Apps](https://sprintr.home.mendix.com), go to the **Environments** page of your app.
-1. Click **Details** ({{% icon name="notes-paper-edit" %}}) for the environment for which you want to set up alerts. You can set alerts permissions separately for each environment.
-1. Switch to the **Permissions** tab.
-1. Select the checkbox below **Receive Alerts** for the user (or users) who should receive alerts. Your changes will save automatically.
-
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/monitoring-application-health/receive-alerts/receive-alerts.png" class="no-border" >}}
-
-### 2.2 Alerts Page
-
-You can also manage the alerts by yourself. For this, you need an **Application Operator**, **Business Engineer**, or **Scrum Master** role. Or, if a [Mendix Admin](/control-center/members/) has defined a new team role for you, that role must have **Cloud Access**.
+You can select the **Email Alerts** checkbox on the **Alerts** page to set up email alerts for an environment. For this, you need an **Application Operator**, **Business Engineer**, or **Scrum Master** role. Or, if a [Mendix Admin](/control-center/members/) has defined a new team role for you, that role must have **Cloud Access**.
 
 To enable email alerts, follow these steps:
 
@@ -42,7 +29,7 @@ To enable email alerts, follow these steps:
 
     {{< figure src="/attachments/deployment/mendix-cloud-deploy/monitoring-application-health/receive-alerts/email-alerts.png" alt="The Email Alerts checkbox" width="70%" class="no-border" >}}
 
-## 3 Alerts Using Webhooks 
+## Alerts Using Webhooks 
 
 As an alternative to alert emails, you can set a webhook to receive alerts.
 
@@ -50,7 +37,7 @@ Webhooks are set on the application level.
 
 For details on webhooks, see the [Webhooks](/developerportal/deploy/webhooks/) page.
 
-### 3.1 Setting Alerts Webhooks
+### Setting Alerts Webhooks
 
 To set a new webhook in the Mendix Portal, follow these steps:
 
@@ -63,13 +50,13 @@ To set a new webhook in the Mendix Portal, follow these steps:
 
 After you set a new webhook, the receiver endpoint will start getting alerts when they are triggered. 
 
-## 4 Issue: Receiving Too Many Alerts
+## Issue: Receiving Too Many Alerts
 
 Under some circumstances, a critical alert in one instance of a multi-instance app can cause emails to be sent out constantly. The other instances of your app will continue to run without reporting issues, so it will appear to be working.
 
 If you cannot resolve the issue in the instance reporting the critical error, you will need to restart your app to ensure that all instances are healthy. Otherwise, you will continue to receive regular email alerts.
 
-## 5 Read More
+## Read More
 
 * [Alerts](/developerportal/operate/monitoring-application-health/)
 * [Metrics](/developerportal/operate/metrics/)

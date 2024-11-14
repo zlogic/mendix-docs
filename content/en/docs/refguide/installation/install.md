@@ -10,13 +10,13 @@ aliases:
 
 {{% button color="info" href="https://marketplace.mendix.com/link/studiopro/" text="Go to Marketplace" title="Download Studio Pro from the Marketplace" %}}
 
-## 1 Introduction
+## Introduction
 
 Mendix Studio Pro allows you to build apps on the Mendix Platform. This document will guide you through the steps of [installing the latest version of Studio Pro](https://marketplace.mendix.com/link/studiopro/). For the full list of supported systems and required frameworks, see [System Requirements](/refguide/system-requirements/). 
 
 If you use a Mac device and need to use a version of Mendix Studio Pro older than 10.7, see [Configuring Parallels](/refguide/using-mendix-studio-pro-on-a-mac/) to configure your Windows virtual machine. 
 
-## 2 Downloading Mendix Studio Pro
+## Downloading Mendix Studio Pro
 
 Mendix Studio Pro can be installed on your Windows machine with a Windows executable file or on your Mac machine using a .pkg file. This file can be downloaded from the Mendix Marketplace. 
 
@@ -25,7 +25,7 @@ Follow these steps to download Mendix Studio Pro:
 1. Go to the Studio Pro download page in the [Mendix Marketplace](https://marketplace.mendix.com/link/studiopro/).
 2. Click **Download for Windows** or **Download for Mac**, depending on your operating system. 
 
-## 3 Installing Mendix Studio Pro {#install}
+## Installing Mendix Studio Pro {#install}
 
 Mendix Studio Pro needs to be installed on your computer before you can start building apps. Follow these steps to install Mendix Studio Pro:
 
@@ -40,9 +40,9 @@ Mendix Studio Pro needs to be installed on your computer before you can start bu
 
 5. If you are asked to restart your computer, make a selection and click **Finish**. Otherwise, check **Launch Mendix 10.X.X** and click **Finish** to finish the installation and launch Studio Pro.
 
-## 4 Troubleshooting {#troubleshooting}
+## Troubleshooting {#troubleshooting}
 
-### 4.1 Installing Prerequisites Separately {#prerequisites}
+### Installing Prerequisites Separately {#prerequisites}
 
 If you run into problems installing Studio Pro, one work-around is to restart your system and install the prerequisites separately if they are not installed yet. 
 
@@ -54,23 +54,32 @@ The prerequisites are the following:
     | --- | --- |
     | [.NET Desktop Runtime 6.0.x](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) <br/> Mendix recommends using version 6.0.6 or above | [.NET Desktop Runtime 8.0.x](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) |
 
-* [Eclipse Temurin JDK 11, 17, or 21 (x64)](https://adoptium.net/temurin/releases/?version=21) (see [JDK Installation](/refguide/jdk-installation/) if you want to install another version of the JDK)
+* Eclipse Temurin JDK (x64) (see [JDK Installation](/refguide/jdk-installation/) if you want to install another version of the JDK). Mendix version 10.8.0 and 10.0.9 supports JDK 11 and 17. Mendix version 10.10.0 supports JDK 11, 17, and 21, but installer still installs JDK 11.
+
+    | Studio Pro 10.0.0 - 10.10.0 | Studio Pro 10.11.0 and above |
+    | --- | --- |
+    | [JDK 11 (x64)](https://adoptium.net/temurin/releases/?version=11) | [JDK 21 (x64)](https://adoptium.net/temurin/releases/?version=21) |
+
 * [Microsoft Visual C++ 2015 and 2019 Redistributable Package](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 * [Mendix Native Mobile Builder one-click Installer](https://appdev-mx-cdn.s3.amazonaws.com/native-builders/latest.exe)
 * [Git for Windows (x64)](https://git-scm.com/download/win) using the versions described below. These are the versions of Git that Studio Pro installs if the Git version installed on the system is below the suggested one.  
   
-    | Studio Pro 10.0.0 - 10.1.0 | Studio Pro 10.2.0 - 10.9 | Studio Pro 10.10 and above |
+    | Studio Pro 10.0.0 - 10.1.0 | Studio Pro 10.2.0 - 10.9 | Studio Pro 10.6.10 (MTS), 10.10 and above
     | --- | --- | --- |
     | [2.37.1](https://github.com/git-for-windows/git/releases/tag/v2.37.1.windows.1) | [2.41.0](https://github.com/git-for-windows/git/releases/tag/v2.41.0.windows.3) | [2.43.0](https://github.com/git-for-windows/git/releases/tag/v2.43.0.windows.1)|
     
 * [Microsoft Edge WebView2 Evergreen Runtime (x64 or ARM64) (Evergreen Standalone Installer version)](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
-* [Gradle 7.6 or above](https://gradle.org/install/#manually) with Gradle extracted to the parent directory of the folder where Studio Pro is installed (usually `C:\Program Files\Mendix`) instead of `C:\Gradle`.
+* One of the following versions of [Gradle](https://gradle.org/install/#manually) with Gradle extracted to the parent directory of the folder where Studio Pro is installed (usually `C:\Program Files\Mendix`) instead of `C:\Gradle`.
+
+    | Studio Pro 10.0.0 - 10.9.0 | Studio Pro 10.10.0 and above |
+    | --- | --- |
+    | Gradle 7.6 or above | Gradle 8.5 or above |
 
 Based on the error message you get from the installer, you can choose to install a single prerequisite, or you can try to manually install them all.
 
 Then, you can retry installing Studio Pro.
 
-## 5 Installing Mendix Studio Pro Offline {#offline}
+## Installing Mendix Studio Pro Offline {#offline}
 
 The Mendix Studio Pro installation experience includes all the tools and frameworks required to run the application. If any of the prerequisites are not found at the moment of installation, the Studio Pro setup process will attempt to download and install the missing elements automatically. The Mendix Studio Pro installer does not include all dependencies and relies on internet connectivity to obtain them if any of the required pieces of software are missing. 
 
@@ -83,7 +92,8 @@ It is possible to prepare the prerequisite installers beforehand so the setup pr
 5. Rename the following dependencies:
     * For Studio Pro versions 10.0.0 -10.10.0, The Microsoft .NET Desktop Runtime 6.0.x executable (*dotnet.exe*) to *windowsdesktop-runtime-6.0-x64.exe*
     * For Studio Pro versions 10.11.0 and above, The Microsoft .NET Desktop Runtime 8.0.x executable (*dotnet.exe*) to *windowsdesktop-runtime-8.0-x64.exe*
-    * The Java Development Kit 11 (x64) *msi* (for example, *OpenJDK11U-jdk_x64_windows_hotspot_11.0.3_7.msi*) to*adoptiumjdk_11_x64.msi*
+    * For Studio Pro versions 10.0.0 - 10.10.0, The Java Development Kit 11 (x64) *msi* (for example, *OpenJDK11U-jdk_x64_windows_hotspot_11.0.3_7.msi*) to *adoptiumjdk_11_x64.msi*
+    * For Studio Pro versions 10.11.0 and above, The Java Development Kit 21 (x64) *msi* (for example, *OpenJDK21U-jdk_x64_windows_hotspot_21.0.4_7.msi*) to *adoptiumjdk_21_x64.msi*
     * The Visual C++ Redistributable for Visual Studio 2019 (x64) executable (for example, *VC_redist.x64.exe*) to*vcredist2019_x64.exe*
     * The `latest` executable to *mendix_native_mobile_builder.exe*
     * The *Git-{version}-64-bit.exe* executable to *git_for_windows_installer.exe*
@@ -103,7 +113,7 @@ If managed dependencies are used (in Mendix 10.3.0 and above), you need to set u
 
 For more information on how to configure a custom repository, see the *Custom Repositories* section of [Managed Dependencies](/refguide/managed-dependencies/#custom-repos).
 
-## 6 Installing Mendix Studio Pro Without Admin Rights
+## Installing Mendix Studio Pro Without Admin Rights
 
 Mendix offers a Studio Pro installer called the **Portable** installer that does not require admin rights. The portable installer is available to download on the [Get Studio Pro](https://marketplace.mendix.com/link/studiopro/) page in the Mendix Marketplace. 
 
@@ -115,7 +125,7 @@ Mendix Studio Pro that is installed via the portable installer does not show up 
 
 {{< figure src="/attachments/refguide/installation/install/version-selector.png"  alt="Version Selector" width="450" class="no-border" >}}
 
-## 7 Signing In
+## Signing In
 
 When starting Studio Pro for the first time after installation, it will ask you to sign in to the Mendix Platform. This gives you access to Mendix platform services from within Studio Pro, such as Team Server, Marketplace, and app deployment to the cloud.
 
@@ -131,7 +141,7 @@ To continue, you may accept the certificate for the current session by clicking 
 Accepting untrusted certificates can bring security risks. You should only do so after having received confirmation from your network administrator.
 {{% /alert %}}
 
-## 8 Next Steps
+## Next Steps
 
 Congratulations on installing Mendix Studio Pro! Now you are ready to start modeling your apps. 
 

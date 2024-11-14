@@ -6,7 +6,7 @@ description: "Describes the Backups page of Apps."
 #To update these screenshots, you can log in with credentials detailed in How to Update Screenshots Using Team Apps.
 ---
 
-## 1 Introduction
+## Introduction
 
 Backup snapshots for apps running in Mendix Cloud are automatically created every night, week, and month. They can also be created on demand, as described in the [Backups](#backups) section, below.
 
@@ -14,7 +14,7 @@ Backup snapshots contain both the database and file documents referred to in the
 
 {{% alert color="info" %}}This page describes backups for apps deployed to Mendix Cloud. If your app is deployed to SAP Business Technology Platform (SAP BTP) instead, the **Backups** page links to the SAP BTP cockpit.{{% /alert %}}
 
-## 2 Creation and Retention Schedules
+## Creation and Retention Schedules
 
 Backups are created and retained as follows:
 
@@ -29,7 +29,7 @@ Each backup is automatically deleted when its retention period is over, but you 
 
 {{% alert color="info" %}}Automatic backups are only created when the app is deployed and running.{{% /alert %}}
 
-### 2.1 Nightly Backups{#nightly-backups}
+### Nightly Backups{#nightly-backups}
 
 The **Start Time** of nightly backups in UTC is shown below. The **Local Time** indicates the time at the regional data center; this may vary if **Summer Time** or other adjustments are in place.
 
@@ -59,21 +59,21 @@ Nightly backups start once an app has been successfully deployed to and started 
 
 If a nightly backup fails, it is retried two more times.
 
-### 2.2 Notes on Retention
+### Notes on Retention
 
 The monthly backup occurs on the first Sunday of the month. If the first nightly backup takes place after the first Sunday in the month, then there is no monthly backup retained for that month. In this case, you can download a copy of a nightly or weekly backup if you need to retain a backup for longer than three months.
 
-## 3 Backups{#backups}
+## Backups{#backups}
 
 The **Backups** page presents options for managing your backups. These are described below.
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/backups/backup-controls.png" alt="" class="no-border" >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/backups/backup-controls.png" alt="" >}}
 
-### 3.1 Create Backup
+### Create Backup
 
 Clicking **Create Backup** automatically generates a backup snapshot from your application data. For more information, see [Creating a Backup](/developerportal/operate/create-backup/).
 
-### 3.2 Upload Backup {#upload}
+### Upload Backup {#upload}
 
 To upload a backup, click **Upload Backup** and then select the backup archive you want to upload. For information on downloading backup archives, see [Download Backup](#download-backup), below.
 
@@ -88,7 +88,7 @@ You can upload archives containing the following:
 
 Uploading a backup creates a new backup item in your backup list. You can then restore the new backup item via the regular restore process (as described in [Restore Backup](#restore-backup), below). This ensures less downtime for your application.
 
-### 3.3 Download Backup {#download-backup}
+### Download Backup {#download-backup}
 
 To download a backup, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) > **Download** on the backup you want to download.
 
@@ -104,7 +104,7 @@ For more information, see the [Downloading a Backup](/developerportal/operate/do
 Because the download archive is generated on request, it is not possible to estimate the file size before requesting a download.
 {{% /alert %}}
 
-### 3.4 Restore Backup {#restore-backup}
+### Restore Backup {#restore-backup}
 
 To restore a backup, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) > **Restore** on the backup you want to restore.
 
@@ -118,7 +118,7 @@ If the restore takes too long, the system shows a timeout message. In this case,
 
 For more information, see the [Restoring a Backup](/developerportal/operate/restore-backup/) page.
  
-### 3.5 Details {#backups-details}
+### Details {#backups-details}
 
 You can view details of a backup by clicking **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) and then **Details**. You will see the following details:
 
@@ -135,29 +135,57 @@ You can view details of a backup by clicking **More Options** ({{% icon name="th
 
 {{< figure src="/attachments/deployment/mendix-cloud-deploy/backups/backup-details.png" alt="Backup Details" max-width=60% class="no-border" >}}
 
-## 4 Data Location {#data-location}
+{{% alert color="info" %}}
+The size of the snapshot does not match the size of the actual database within the application. Snapshots do not contain a copy of the database but rather contain instructions on how to recreate the database.
+{{% /alert %}}
 
-Backups are always stored in at least one secondary location, separate from the primary hosting location. Each individual backup is immutable; in other words, once it has been written to Mendix’s storage location, it can no longer be modified or overwritten.
+## Data Location {#data-location}
 
-For some regions, data is always stored in the same political region. This applies to the following regions:
+Application data, including files and backups, is always replicated by default to a secondary region, separate from the primary region, for security and compliance reasons. Each individual backup is immutable; in other words, once it has been written to Mendix’s storage location, it can no longer be modified or overwritten.
 
-* Data in the EU, including backups, stays within the EU
-    * Data in the EU is not backed up in the UK
-    * Data in the UK is backed up in the EU
-* Data in the US, including backups, stays within the US
-* Data in Japan is backed up in Japan
+Where possible, application data is replicated to a secondary region in the same political region. This is not possible in regions where there is only one region available in the political region, which has the following consequences:
 
-## 5 Limitations
+* Application data in the Bahrain region, including backups, is replicated to the Mumbai region
+* Application data in the Cape Town region, including backups, is replicated to the Frankfurt region
+* Application data in the Jakarta region, including backups, is replicated to the Singapore region
+* Application data in the São Paulo region, including backups, is replicated to the N. Virginia region
+* Application data in the Seoul region, including backups, is replicated to the Singapore region
+* Application data in the Singapore region, including backups, is replicated to the Sydney region
+* Application data in the UAE region, including backups, is replicated to the Mumbai region
 
-### 5.1 Performance {#limitations-performance}
+We will change the replication region for these regions if a new region is opened in the political region.
+
+### Application Data Replication {#application-data-replication}
+
+If you have a Standard or Premium platform subscription, you can opt out of application data replication for your licensed applications on Mendix Cloud. In that case, application data of licensed apps will not be replicated to a secondary region for any of your applications. Changing the application data replication setting only affects licensed applications and environments that have not yet been provisioned. This setting does not apply if you have a Basic plan.
+
+## Limitations
+
+### Performance {#limitations-performance}
 
 Mendix Cloud backups that contain a very large number of files (that is, greater than about 50,000) experience slow performance for all backup operations (create, download, restore, and upload). This is because of the inherent overhead associated with each file. As the number of files increases, the overhead becomes quite significant and can add several hours to the duration.
 
-### 5.2 Customizations {#limitations-customizations}
+### Customizations {#limitations-customizations}
 
 Customization of the databases of apps in Mendix Cloud is not supported. This includes, but is not limited to, installing extensions and enabling or disabling specific features. Mendix does not support uploading and restoring backups of customized databases to Mendix Cloud. If you attempt to restore a backup of a customized database, the restore will likely fail. Note that customizing the database of an app in Mendix Cloud breaks the support and SLA for the app.
 
-## 6 Read More
+## Troubleshooting
+
+This section lists possible solutions to known issues.
+
+### Snapshot Size Display
+
+The **Snapshot Size** field sometimes does not display the backup size correctly. The backup size is shown as 0.0 MB.
+
+#### Cause
+
+This issue happens when you upload a database backup only.
+
+#### Solution
+
+Proceed with the backup import. If required, verify the size of the snapshot by checking locally.
+
+## Read More
 
 * [Creating a Backup](/developerportal/operate/create-backup/)
 * [Downloading a Backup](/developerportal/operate/download-backup/)
