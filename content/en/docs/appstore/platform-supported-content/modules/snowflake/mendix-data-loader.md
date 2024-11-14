@@ -134,8 +134,8 @@ The *cloud_region_id* and the *cloud* in the URL depend on the configurations of
 
 ## Current Limitations
 
-* Exposing an association in an OData service as a link is not supported yet by the Mendix Data Loader. Instead, choose the **As an associated object id** option in your OData settings. This option will store the associated object ID in the table, but not explicitly as foreign key.
-* The Mendix Data Loader always ingests all data exposed by the OData published by your Mendix application. If you do not want to use everything within the exposed entities, you will need to apply further filtering on the Snowflake side. Enabling filtering on the Mendix side is currently on the roadmap.
+* Exposing an association in an OData service as a link is not supported yet by the Mendix Data Loader. Instead, choose the **As an associated object id** option in your OData settings. This option stores the associated object ID in the table, but not explicitly as foreign key.
+* The Mendix Data Loader always ingests all data exposed by the OData published by your Mendix application. If you do not want to use everything within the exposed entities, you must apply further filtering on the Snowflake side. Enabling filtering on the Mendix side is currently on the roadmap.
 * The Mendix Data Loader does not support custom domains for Mendix applications when using pagination in published OData services. This is because the OData response always returns the base domain's root URL, regardless of the custom domain being used. As a result, the call for the next page fails because the returned root URL does not have a corresponding network rule in Snowflake.
 * Loading deltas is not yet supported on the OData side.
 
