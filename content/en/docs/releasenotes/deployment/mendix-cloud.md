@@ -16,7 +16,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2024
 
-### November xx, 2024
+### November 14, 2024
 
 #### Pipelines New Features
 
