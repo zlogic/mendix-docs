@@ -8,7 +8,7 @@ description: "Describes the configuration and usage of the Mendix Mini Surveys m
 
 After you have created a [mini survey](/developerportal/app-insights/mini-surveys/) in the Mendix Portal, use the [Mendix Mini Surveys](https://marketplace.mendix.com/link/component/205483) module to implement your mini survey in Studio Pro.
 
-{{% alert color="warning" %}}Mendix has renamed the top-level module in v3.0.1 from **AppInsights_MiniSurvey** to **MiniSurveys**. When upgrading from any previous version to v3.0.1, make sure you manually delete the old **AppInsights_MiniSurvey** module. To do this, following these steps:
+{{% alert color="warning" %}}Mendix has renamed the top-level module in v3.0.2 from **AppInsights_MiniSurvey** to **MiniSurveys**. When upgrading from any previous version to v3.0.2, make sure you manually delete the old **AppInsights_MiniSurvey** module. To do this, following these steps:
 
 1. In the App Explorer, go to **App** > **Marketplace modules**.
 2. Find and remove the old **AppInsights_MiniSurvey** module.
