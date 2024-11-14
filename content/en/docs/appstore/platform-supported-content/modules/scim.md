@@ -36,7 +36,7 @@ Your IdP can perform create, read, update and delete (CRUD) operations on the us
 
 * Create users: users who are in Entra ID and assigned to the Mendix SCIM application in Azure are automatically created in the Mendix application.
 
-* Remove users: user deletion can be either a 'hard' delete, which removes user records from the app's database, or a 'soft' delete, which deactivates the Mendix user but keeps their records. If you set the flag **Default_DeleteUserPermanently** to *True*, the user will be deleted permanently. By default, the flag is set to *False*.
+* Remove users: user deletion can be either a 'hard' delete, which removes user records from the app's database, or a 'soft' delete, which deactivates the Mendix user but keeps their records. If you set the flag **Default_DeleteUserPermanently** in the **Acceptance Environment Details** of the Mendix application environment to *True*, the user will be hard deleted. By default, the flag is set to *False*.
 
 * The following user attributes are supported during the creation or updating of users: first name, last name, and email address.
 
@@ -64,7 +64,7 @@ The SCIM module has the following limitations:
 * The SCIM module does not sync groups (or group memberships) to your app. This means you cannot use the SCIM module to assign user roles to your app’s users. Instead, you can assign user roles using the features offered by [SAML SSO](/appstore/modules/saml/) or [OIDC SSO](/appstore/modules/oidc/) modules.
 * If you want to do **Provision on demand** from Entra ID to test the SCIM integration of your app you cannot trigger a partial sync based on a group. This will trigger Entra ID to invoke a `/groups` endpoint, which is not yet supported.
 * The module does not support the development of a SCIM client application.
-* By default, the SCIM module’s admin screen is displayed in English and Dutch. Users cannot add additional languages to the module, as it is protected and does not support language modification. 
+* By default, the SCIM module’s admin screen is displayed in English. Users cannot add additional languages to the module, as it is protected and does not support language modification. 
 
 ### SCIM Protocol Adherence
 
