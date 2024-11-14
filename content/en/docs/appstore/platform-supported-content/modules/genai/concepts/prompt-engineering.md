@@ -231,7 +231,7 @@ Skip the preamble.
 </output_formatting>
 ```
 
-{{% alert color="info" %}}If you would like to know more tips on prompt engineering, read [Part 1](https://www.mendix.com/blog/part-one-hey-chatgpt-can-you-write-me-a-blog-post-about-prompt-engineering/) and Part 2 of our blog post *Hey ChatGPT, Can You Write Me a Blog Post About Prompt Engineering?*.{{% /alert %}}
+{{% alert color="info" %}}If you would like to know more tips on prompt engineering, read [Part 1](https://www.mendix.com/blog/part-one-hey-chatgpt-can-you-write-me-a-blog-post-about-prompt-engineering/) and [Part 2](https://www.mendix.com/blog/hey-chatgpt-can-you-write-me-a-blog-post-about-prompt-engineering-part-2/) of our blog post *Hey ChatGPT, Can You Write Me a Blog Post About Prompt Engineering?*.{{% /alert %}}
 
 ## Learn More
 
