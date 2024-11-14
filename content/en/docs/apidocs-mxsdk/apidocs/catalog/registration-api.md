@@ -2,14 +2,14 @@
 title: "Registration API"
 linktitle: "Registration API"
 url: /apidocs-mxsdk/apidocs/registration-api/
-description: "The Registration API allows you to register and update data sources to the organization's."
+description: "The Registration API allows you to register and update services to the organization's Catalog."
 weight: 50
 restapi: true
 ---
 
 ## Introduction
 
-The Registration API can be used to register applications, environments, and services or data sources. Calling the Catalog Registration API allows you to register one or more exposed services.
+The Registration API can be used to register applications, environments, and services. Calling the Catalog Registration API allows you to register one or more exposed services.
 The API includes the following:
 
 * `POST` methods for registering new assets where a UUID is generated and returned for the asset in the response body
@@ -179,7 +179,7 @@ curl --location --request PUT 'https://catalog.mendix.com/rest/registration/v5/a
 
 {{% alert color="info" %}} If you are receiving a `400` response because your contract metadata is getting rejected, use the [Transform API](#transform-api) to get the contract in the right format. If you want to register more than one service for the same application and environment at once, add another object to the `Endpoints` list in the request body.{{% /alert%}}
 
-A successful `PUT` call results in a `200` status code and a JSON response body that includes the details you provided about the service or services, along with a unique ID and some other details:
+A successful `PUT` call results in a `200` status code and a JSON response body that includes the details you provided about the service or services, along with a unique UUID and some other details:
 
 ```json
 {
@@ -242,9 +242,9 @@ It is possible (although uncommon) to update the URL of a hosted environment. Th
 
 ### Preparing Your Service Details Using the Transform API {#transform-api}
 
-The Transform API is an endpoint in the Registration API. It converts the *dependencies.json* file that your Mendix app generates into the fields that the Registration API requires to register services.
+The Transform API is an endpoint in the Registration API. It converts the *dependencies.json* file that your Mendix app generates into the structure the Registration API requires to register services.
 
-{{% alert color="info" %}}These optional fields are not currently converted by the Transform API: `SecurityClassification`, `Discoverable`, `Validated`, `ServiceVersion`, and `Tags`.{{% /alert %}}
+{{% alert color="info" %}}These optional fields are not currently converted by the Transform API: `SecurityClassification`, `Discoverable`, `Validated`, and `Tags`.{{% /alert %}}
 
 To call the Transform endpoint of the Registration API, you need the following:
 

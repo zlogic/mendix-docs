@@ -19,7 +19,7 @@ Mendix offers the following APIs for the [Catalog](/catalog/):
 
 * [Registration API](/apidocs-mxsdk/apidocs/registration-api/)
   
-  Register and update data sources to the organization's Catalog.
+  Register and update services to the organization's Catalog.
 
 * [Transform API](/apidocs-mxsdk/apidocs/registration-api/#transform-api)
   
