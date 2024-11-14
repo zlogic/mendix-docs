@@ -79,6 +79,14 @@ Here is an example containing a column with **Yes, hidden by default** in **Desi
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/data-grid-2/hidden-columns-design-mode.png" alt="Example containing a column with “Yes, hidden by default” in Design mode" class="no-border" >}}
 
+### Allow Row Events
+
+{{% alert color="info" %}}
+**Allow Row Events** is only available when a column is set to **Custom Content**.
+{{% /alert %}}
+
+When set to **Yes**, default events such as On Click action or selection will be triggered when the user interacts with the content. If a column contains interactive elements such as buttons, this might lead to unexpected behavior when both a click on the button and the action configured on the row are triggered. To prevent default events from triggering when interacting with content, set this setting to **No**.
+
 ## Pagination
 
 {{% alert color="info" %}}
