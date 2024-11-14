@@ -179,6 +179,8 @@ The microflow may take an [HttpRequest](/refguide/http-request-and-response-enti
 
 The microflow may also take an [HttpResponse](/refguide/http-request-and-response-entities/#http-response) as a parameter. When the microflow sets the status code of this response to something other then **200**, this value is returned and the operation will not be executed. Any headers set on the response are returned (except when the microflow returns an empty user).
 
+The microflow may also take a List of [HttpHeader](/refguide/http-request-and-response-entities/#http-header) as a parameter. Note that this cannot be used in combination with [HttpRequest](/refguide/http-request-and-response-entities/#http-request) parameter.
+
 The authentication microflow should return a User.
 
 There are three possible outcomes of the authentication microflow:
