@@ -18,7 +18,7 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 #### New Features
 
-* The content types Solutions and Industry Templates now have product details page.
+* Components with the content type Solutions or Industry Templates now have a product details page.
 * On the component details page, you can now view information about the company that owns the component and the industry it belongs to.
 * The **Releases** tab on the component details page now includes two search bars, enabling you to search by release notes and Mendix versions.
 
