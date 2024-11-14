@@ -14,6 +14,8 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ### November 14, 2024
 
+#### Private Cloud Portal
+
 * You can now enable the custom deployment strategy directly from the **Application Configuration** section of the **Namespace Details** page. This feature allows for application or configuration updates with minimized downtime in certain scenarios. For further information, see [Reduced Downtime Deployment](/developerportal/deploy/private-cloud-reduced-downtime/).
 * The **Environment Overview** page now supports reordering environments.
 * We have corrected a text alignment issue that occurred when a cluster description was particularly long.
