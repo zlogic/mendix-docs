@@ -37,13 +37,3 @@ For more information on HTTP status codes, see the [W3C Specification of Status 
 You can retrieve or create response headers via the `HttpHeaders` association.
 
 An important `HttpResponse` header is `Content-Type`, which indicates how the content should be interpreted. For more information on this header, see the [W3C specification of Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html).
-
-## 3 HttpHeader {#http-header}
-
-The `HttpHeader` entity has the following attributes:
-
-|  Attribute  |  Type  |  Default Value | Description  |
-|  ---  |  ---  |  ---  |  ---  |
-|  `Key`  |  String  | empty | Header key. |
-|  `Value`  |  String  | empty | Header value.  |
-

@@ -39,7 +39,16 @@ You can retrieve or create response headers via the `HttpHeaders` association.
 
 An important `HttpResponse` header is `Content-Type`, which indicates how the content should be interpreted. For more information on this header, see the [W3C specification of Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html).
 
-### 3.1 Why Does Setting `ReasonPhrase` Have No Effect? {#reason-phrase}
+## 4 HttpHeader {#http-header}
+
+The `HttpHeader` entity has the following attributes:
+
+|  Attribute  |  Type  |  Default Value | Description  |
+|  ---  |  ---  |  ---  |  ---  |
+|  `Key`  |  String  | empty | Header key. |
+|  `Value`  |  String  | empty | Header value.  |
+
+### 4.1 Why Does Setting `ReasonPhrase` Have No Effect? {#reason-phrase}
 
 The HTTP/1.x protocol allowed servers to include a reason phrase in the response, including non-standard ones. In HTTP/2, reason phrases have been removed. Many web servers (including the one Mendix Runtime uses), do not allow setting anything other than the default reason phrase for the status code (even in HTTP/1.x, which technically allows it).
 
