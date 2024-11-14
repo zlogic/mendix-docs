@@ -36,7 +36,7 @@ Your IdP can perform create, read, update and delete (CRUD) operations on the us
 
 * Create users: users who are in Entra ID and assigned to the Mendix SCIM application in Azure are automatically created in the Mendix application.
 
-* Remove users: deactivates users in the Mendix app when they are deleted from Entra ID or removed from the group of users assigned to use your app.
+* Remove users: user deletion can be either a 'hard' delete, which removes user records from the app's database, or a 'soft' delete, which deactivates the Mendix user but keeps their records. If you set the flag **Default_DeleteUserPermanently** to *True*, the user will be deleted permanently. By default, the flag is set to *False*.
 
 * The following user attributes are supported during the creation or updating of users: first name, last name, and email address.
 
@@ -55,17 +55,16 @@ If you are using the SCIM module in combination with Entra ID and OIDC SSO, you 
 
 * Your IdP allows the selection of users that sync with your Mendix app, meaning your IdP controls which users are created and active in your app.
 * Each application within your organization using the SCIM module must undergo separate configuration. This allows the selection of the right target group of users for each app.
-* Users can be synchronized from multiple SCIM clients.
+* Synchronization of users from multiple SCIM clients is currently in beta.
 
 ### Limitations
 
 The SCIM module has the following limitations:
 
 * The SCIM module does not sync groups (or group memberships) to your app. This means you cannot use the SCIM module to assign user roles to your app’s users. Instead, you can assign user roles using the features offered by [SAML SSO](/appstore/modules/saml/) or [OIDC SSO](/appstore/modules/oidc/) modules.
-
 * If you want to do **Provision on demand** from Entra ID to test the SCIM integration of your app you cannot trigger a partial sync based on a group. This will trigger Entra ID to invoke a `/groups` endpoint, which is not yet supported.
-
 * The module does not support the development of a SCIM client application.
+* By default, the SCIM module’s admin screen is displayed in English and Dutch. Users cannot add additional languages to the module, as it is protected and does not support language modification. 
 
 ### SCIM Protocol Adherence
 
