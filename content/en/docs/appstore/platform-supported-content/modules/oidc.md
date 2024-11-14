@@ -19,7 +19,7 @@ If you are using Mendix 9.20 and above, ensure you are using version 2.0.0 or ab
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-If you are migrating to OIDC module version 3.0.0 and above, you need to include the [UserCommons](https://marketplace.mendix.com/link/component/223053) module as a dependency and configure your app to run the startup microflow (OIDC.Startup) in the OIDC module as part of the after-startup microflow. For the module version 3.1.0 and above, replace the OIDC.Startup with OIDC.ASU_OIDC_Startup as part of after-startup microflow. For more information, see the [Upgrading the OIDC SSO Module](#upgrade) section below.
+If you are migrating to the OIDC module version 3.0.0 and above, include the [UserCommons](https://marketplace.mendix.com/link/component/223053) module as a dependency and configure the `OIDC.Startup` microflow as part of after-startup Microflow. In the module version 3.1.0 and above, `OIDC.Startup` has been renamed to `OIDC.ASU_OIDC_Startup`. For more details, see the [Upgrading the OIDC SSO Module](#upgrade) section below.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -204,7 +204,7 @@ If you are using OIDC module version 3.1.0 and above, you need to configure your
 
 ### Configuring Roles
 
-Ensure that you have allocated the following user roles to the OIDC module and UserCommons (in version 2.4.0 and above) roles:
+Ensure that you have allocated the following user roles to the OIDC module and UserCommons (in version 3.0.0 and above) roles:
 
 | User Role | OIDC Module Role |
 | --- | --- |
@@ -466,7 +466,7 @@ When the `IsClientGrantOnly` constant is set to *true*, the OIDC SSO module cons
 
 Initially your app will not have any end-users. The OIDC module provides so-called Just-In-Time (JIT) user provisioning. This means that an end-user will be created in your app when they log in for the first time. If you do not want JIT user provisioning, it is possible to disable it as described in the section [Custom User Provisioning at Runtime](#custom-provisioning-rt).
 
-By default, end-users are provisioned using the `Account` object in the Administration module. If you need to use a custom user entity you can do this via [Custom User Provisioning Using a Microflow](#custom-provisioning-mf) or (in version 2.4.0 and above) [Deploy-time User Provisioning Configuration](#custom-provisioning-dep) or [Custom User Provisioning at Runtime](#custom-provisioning-rt).
+By default, end-users are provisioned using the `Account` object in the Administration module. If you need to use a custom user entity you can do this via [Custom User Provisioning Using a Microflow](#custom-provisioning-mf) or (in version 3.0.0 and above) [Deploy-time User Provisioning Configuration](#custom-provisioning-dep) or [Custom User Provisioning at Runtime](#custom-provisioning-rt).
 
 ### Default User Provisioning
 
@@ -526,7 +526,7 @@ You can set up custom user provisioning by setting the following constants. You 
 #### Custom User Provisioning at Runtime{#custom-provisioning-rt}
 
 {{% alert color="info" %}}
-This feature is available in version 2.4.0 and above
+This feature is available in version 3.0.0 and above
 {{% /alert %}}
 
 You can set up custom user provisioning once your app is running using the `OIDC.OIDC_Client_Overview` page that you set up for the administrator for the app in [Configuring Navigation](#configure-nav). You can set up custom user provisioning as follows:
