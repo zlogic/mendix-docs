@@ -107,33 +107,15 @@ The list shows the following information about the component:
     
     For more information, refer to [SBOM Generation](/refguide/sbom-generation/).
     
-* **Support**
+* **Support type** – This shows the support type of the Marketplace component. It can be **Mendix**, **Partner**, or **Community**. For more information, see [Content Support Categories](/appstore/marketplace-content-support/#category).
 
-    * **Mendix**
-    * **Partner**
-    * **Community**
+* **Version** – This is the component version.
 
-* **Version**: This is the component version.
+* **Licence **– This shows the end-user license for the component.
 
-* **Company usage**
+* **Latest version** – This shows the lastest version of the component.
 
-    * **Direct**
-    * **Transitive**
-
-* **Support type**
-
-    * **Mendix**
-    * **Partner**
-    * **Community**
-
-* **Licence**
-
-* **Latest version**
-
-* **Marketplace**
-
-    * **Public**
-    * **Private**
+* **Marketplace** – This shows whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Compnay Content](/appstore/overview/#company-content) page.
 
 * **Apps using component**: This shows the number of apps where the component is used.
 
