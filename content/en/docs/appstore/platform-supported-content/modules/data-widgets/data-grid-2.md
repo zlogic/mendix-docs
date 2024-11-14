@@ -79,13 +79,17 @@ Here is an example containing a column with **Yes, hidden by default** in **Desi
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-widgets/data-grid-2/hidden-columns-design-mode.png" alt="Example containing a column with “Yes, hidden by default” in Design mode" class="no-border" >}}
 
-### Allow Row Events
+### Allow Row Events {#allow-row-events}
 
 {{% alert color="info" %}}
 **Allow Row Events** is only available when a column is set to **Custom Content**.
 {{% /alert %}}
 
-When set to **Yes**, default events such as On Click action or selection will be triggered when the user interacts with the content. If a column contains interactive elements such as buttons, this might lead to unexpected behavior when both a click on the button and the action configured on the row are triggered. To prevent default events from triggering when interacting with content, set this setting to **No**.
+When set to **Yes**, default events such as On click action or selection will be triggered when the user interacts with the content. 
+
+{{% alert color="alert" %}}
+If a column contains interactive elements such as buttons, this might lead to unexpected behavior when both a click on the button and the action configured on the row are triggered. To prevent default events from triggering when interacting with content, set this setting to **No**.
+{{% /alert %}}
 
 ## Pagination
 
@@ -194,7 +198,7 @@ This property is not available if you enable **Custom content** for the column
 
 * **Reference** — this property defines the association that will be used for filtering. When set, it enables filtering over association with the Drop-down filter. Drop-down filter will prioritize this property over `Attribute` property.
 * **Data source** — defines data source for filter options. The data source should return list of all possible entities that could be associated with a parent.
-* **Use lazy load** — When set to **Yes**, data for the filter will be fetched only when the drop-down filter is opened. This improves the loading times of the data grid but limits the functionality of saving filter values. For more details, see [Drop-down Filter](#drop-down-filter).
+* **Use lazy load** — When set to **Yes**, data for the filter will be fetched only when the drop-down filter is opened. This improves the loading times of the data grid, but limits the functionality of saving filter values. For more details, see [Drop-down Filter](#drop-down-filter).
 * **Option caption** — the expression that will be used as caption for the option.
 
 {{% alert color="info" %}}
