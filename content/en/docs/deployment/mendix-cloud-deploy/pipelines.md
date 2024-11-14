@@ -278,7 +278,7 @@ While editing a saved variable, selecting **Mask > No** will allow you to verify
 
 ## The Settings Tab{#settings-tab}
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/settings-tab.png" >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/pipelines/the_settings_tab.png" >}}
 
 The **Settings** tab lets you configure user settings. You must add your API key and personal access token (PAT) before you can activate or run your first pipeline. If you still need to configure these user settings, the **Settings** tab is marked with an alert icon ({{% icon name="alert-circle-filled" color="red" %}}).
 
