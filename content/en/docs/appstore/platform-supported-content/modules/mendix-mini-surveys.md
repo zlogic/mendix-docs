@@ -35,7 +35,7 @@ To import this module into your app, follow the instructions in [How to Use Mark
     * For the on-action option:
 
         1. Open the **Show Survey** folder, then copy the **ShowSurvey_OnAction** nanoflow to your own module.
-        2. In the nanoflow, double-click **Create String variable**, fill in the **Survey ID** of the mini survey, and then save the changes. You can find the survey ID on the [Settings](/developerportal/app-insights/mini-surveys/#survey-details-settings) tab or [Implementation](/developerportal/app-insights/mini-surveys/#survey-details-implementation) tab of the survey details page in **Mini Surveys** in the Mendix Portal.
+        2. In the nanoflow, double-click **Create String variable**, fill in the **Survey ID** of the mini survey, and then save the changes. You can find the survey ID on the [Settings](/developerportal/app-insights/mini-surveys/#survey-details-settings) tab of the survey details page in **Mini Surveys** in the Mendix Portal.
         3. (Optional) Double-click **CHANGE ME**, add your microflow or nanoflow action, then save the changes.
         4. Create a button that calls the **ShowSurvey_OnAction** nanoflow on the page where **Template_SurveyWidget** is placed. Mendix recommends renaming the flow to something that describes the original action.
 
