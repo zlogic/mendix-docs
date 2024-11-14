@@ -78,7 +78,7 @@ Tip: you can provide information in a JSON or XML structure to ensure the inform
 
 ### Input Data
 
-The actual input provided by the end-user, either the exact message as typed by the user (e.g. in a chat-bot interface), or some specific set of data the user entered (e.g. in a custom app). This is typically covered in the user prompt.
+The actual input provided by the end-user, either the exact message as typed by the user (e.g. in a chat-bot interface), or some specific set of data the user entered (e.g. in a custom app). This is typically the main, if not all, component in the user prompt.
 
 ## Prompt Techniques
 
