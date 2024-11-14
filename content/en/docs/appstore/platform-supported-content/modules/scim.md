@@ -42,7 +42,7 @@ Your IdP can perform create, read, update, and delete (CRUD) operations on the u
 
 * Update users: synchronizes changes in the user's profile in your IdP with your Mendix app, such as a change in the user’s information.
 
-* Disable (Deactivate) / Enable (activate) users: deactivates or activate users in your Mendix app when you disable or enable them in the Entra ID.
+* Disable (Deactivate) / Enable (activate) users: deactivates or activates users in your Mendix app when you disable or enable them in the Entra ID.
 
 The SCIM module also has the following features:
 
@@ -56,6 +56,7 @@ If you are using the SCIM module in combination with Entra ID and OIDC SSO, you 
 * Your IdP allows the selection of users that sync with your Mendix app, meaning your IdP controls which users are created and active in your app.
 * Each application within your organization using the SCIM module must undergo a separate configuration. This allows the selection of the right target group of users for each app.
 * Synchronization of users from multiple SCIM clients is currently in beta.
+* The module supports deployment-time configuration using constants, eliminating a need for runtime configuration by a local admin user.
 
 ### Limitations
 
@@ -283,8 +284,10 @@ Once you have your SCIM module configured, you can test it by creating, updating
 The test case below is defined for the scope of **Sync only assigned user and groups** and validation of provisioning status in the SCIM server.
 
 * Create a user with default `userPrincipalName`. Optionally, you may choose to change the user Mappings in the Microsoft Entra ID. You can change Entra ID attribute from `userPrincipalName` to another attribute. For example, `mailNickName`.
-* Update a user in the Microsoft Entra ID. For Example, add/update work email, last name etc.
+* Update a user in the Microsoft Entra ID. For Example, add/update work email, last name, etc.
 * Delete a user in the Microsoft Entra ID.
+
+To hard delete a user, you can set the flag **Default_DeleteUserPermanently** (in the **Acceptance Environment Details** of the Mendix application environment) to *True*. By default, this flag is set to *False*.
 
 You may want to use **Provision on demand** while testing SCIM module integration for immediate provisioning. You can either select individual users or users in a group (or groups).
 Below options provide you the choice of user selection during on demand provisioning.
