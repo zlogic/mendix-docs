@@ -194,6 +194,7 @@ This property is not available if you enable **Custom content** for the column
 
 * **Reference** — this property defines the association that will be used for filtering. When set, it enables filtering over association with the Drop-down filter. Drop-down filter will prioritize this property over `Attribute` property.
 * **Data source** — defines data source for filter options. The data source should return list of all possible entities that could be associated with a parent.
+* **Use lazy load** — When set to **Yes**, data for the filter will be fetched only when the drop-down filter is opened. This improves the loading times of the data grid but limits the functionality of saving filter values. For more details, see [Drop-down Filter](#drop-down-filter).
 * **Option caption** — the expression that will be used as caption for the option.
 
 {{% alert color="info" %}}
@@ -315,7 +316,11 @@ When a drop-down filter is used in conjunction with an Association Filter data g
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Due to current limitations, **Saved attribute**, and **Default value** properties will be ignored when a drop-down filter is used in conjunction with an [Association Filter](#association-filter) data grid configuration. This limitation also applies when using page state, meaning that the filter value used in the drop-down filter will not persist when navigating between pages.
+Due to current limitations, **Default value** property will be ignored when a drop-down filter is used in conjunction with an [Association Filter](#association-filter) data grid configuration.
+{{% /alert %}}
+
+{{% alert color="warning" %}}
+Due to current limitations, **Saved attribute** property will be ignored when a drop-down filter is used in conjunction with an [Association Filter](#association-filter) data grid configuration where **Use lazy load** is set to **Yes**. This limitation also applies when using page state, meaning that the filter value used in the drop-down filter will not persist when navigating between pages.
 {{% /alert %}}
 
 When adding a new option, the following properties are required:
