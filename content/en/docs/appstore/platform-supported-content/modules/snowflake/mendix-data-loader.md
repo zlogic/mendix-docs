@@ -122,15 +122,15 @@ Additionally, you may need to verify custom claims specific to your OAuth provid
 
 {{% alert color="info" %}} The exact properties and verification process may vary depending on your OAuth provider and security requirements. Always refer to your provider's documentation and your organization's security policies when implementing token verification. {{% /alert %}}
 
-## Setting up the app client in your OAuth provider
+## Setting up the App Client in your OAuth Provider
 
-When setting up the OAuth provider to be able to use it with the Mendix Data Loader, the correct **redirect URL** must be input in order for the authorization server to redirect the user back to the application. The redirect URL from your Snowflake environment will be as follows:
+When setting up the OAuth provider to be able to use it with the Mendix Data Loader, you must specify aredirect URL in order for the authorization server to redirect the user back to the application. The redirect URL from your Snowflake environment has the following format:
 
 ```
 https://apps-api.c1.<cloud_region_id>.<cloud>.app.snowflake.com/oauth/complete-secret
 ```
 
-The *cloud_region_id* and the *cloud* in the URL will depend on the configurations of your Snowflake account. You can check out [Supported Cloud Regions](https://docs.snowflake.com/en/user-guide/intro-regions) and [Supported Cloud Platforms](https://docs.snowflake.com/en/user-guide/intro-cloud-platforms) to see what these values will be according to the region and cloud platform your account is in.
+The *cloud_region_id* and the *cloud* in the URL depend on the configurations of your Snowflake account. See [Supported Cloud Regions](https://docs.snowflake.com/en/user-guide/intro-regions) and [Supported Cloud Platforms](https://docs.snowflake.com/en/user-guide/intro-cloud-platforms) for more information on what these values are according to the region and cloud platform your account is in.
 
 ## Current Limitations
 
