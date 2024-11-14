@@ -12,6 +12,13 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2024
 
+### November 14, 2024
+
+* You can now enable the custom deployment strategy directly from the **Application Configuration** section of the **Namespace Details** page. This feature allows for application or configuration updates with minimized downtime in certain scenarios. For further information, see [Reduced Downtime Deployment](/developerportal/deploy/private-cloud-reduced-downtime/).
+* The **Environment Overview** page now supports reordering environments.
+* We have corrected a text alignment issue that occurred when a cluster description was particularly long.
+* The debugger URL has been fixed to remove an extra **/** character. This issue was addressed in [Ticket 231867](https://mendixsupport.zendesk.com/agent/tickets/231867) and [Ticket 233392](https://mendixsupport.zendesk.com/agent/tickets/233392).
+
 ### November 7, 2024
 
 #### License Manage CLI v0.10.0
