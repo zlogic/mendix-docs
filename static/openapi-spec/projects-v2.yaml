@@ -226,7 +226,7 @@ paths:
             type: string
         - name: isPinnedByUser
           in: query
-          description: 'Indicates whether the user has pinned the project as a favourite. If not supplied, both pinned and un-pinned projects are returned.'
+          description: 'Indicates whether the user has pinned the project as a favorite. If not supplied, both pinned and un-pinned projects are returned.'
           schema:
             type: boolean
         - $ref: '#/components/parameters/limit'
@@ -754,7 +754,7 @@ components:
                       description: 'Indicates whether a project is active and can be maintained by a team. Inactive projects will only be returned to Mendix administrators. Note this attribute does not indicate whether the app project is actively deployed or running in the cloud.'
                     isPinnedByUser:
                       type: boolean
-                      description: 'Indicates whether the project was pinned as a favourite.'
+                      description: 'Indicates whether the project was pinned as a favorite.'
                     role:
                       type: object
                       description: 'The set of permissions the team member has within the project team.'
