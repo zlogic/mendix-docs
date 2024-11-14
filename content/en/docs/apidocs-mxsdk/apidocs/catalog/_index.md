@@ -23,4 +23,4 @@ Mendix offers the following APIs for the [Catalog](/catalog/):
 
 * [Transform API](/apidocs-mxsdk/apidocs/registration-api/#transform-api)
   
-  For Mendix users deploying to a non-Mendix environment, generate the request bodies to register data sources published from your Mendix app. The v5 compatibility for the Transform API is accessible via the Registration API in the Endpoints section. 
+  For users deploying their Mendix applications outside Mendix Cloud, generate the request bodies to register services using the Registration API. The v5 compatibility for the Transform API is accessible via the Registration API in the Endpoints section. 
