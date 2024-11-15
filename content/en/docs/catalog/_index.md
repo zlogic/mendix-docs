@@ -54,10 +54,10 @@ From the Catalog [Home](https://catalog.mendix.com) screen, you can navigate to 
 From the **Home** screen, you can do the following:
 
 * **Search** – search in the Catalog using the **Search** box or by clicking the suggested **Tags**
-* **Register a new data source** – manually register an OData service from your enterprise business application to the Catalog (for more details, see [How to Register OData Resources in the Catalog](/catalog/register/register-data/))
+* **Register a new service** – manually register an OData service from your enterprise business application to the Catalog (for more details, see [How to Register OData Resources in the Catalog](/catalog/register/register-data/))
 
 * **Most Recent Changes** – view the most recently changed services
-* **Popular Data Sources** – view the most popular services
+* **Popular Services** – view the most popular services
 
 The Catalog is also integrated in Mendix Studio Pro to find and connect to shared services in your apps. For further details on using Catalog in Studio Pro, see [Integration Pane](/refguide/integration-pane/) in the *Studio Pro Guide*.
 
