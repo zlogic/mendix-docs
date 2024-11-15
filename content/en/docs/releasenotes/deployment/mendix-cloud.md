@@ -20,10 +20,10 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### Deployment Portal Fixes
 
-* We fixed a bug in the activity log that was not getting logged when an application was stopped. (Ticket #231546)
-* We fixed a bug in the old UI's permissions page where changing an application's technical contact was leading to a blank page.
-* We fixed a bug in the new UI where the 'scalable' tag was incorrectly shown.
-* We fixed a few other bugs related to dark mode.
+* We fixed a bug where stopping an application was not logged in the activity log. (Ticket #231546)
+* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions), where changing an application's technical contact resulted in a blank page.
+* We fixed a bug in the [new UI](/developerportal/deploy/environments-redesign/), where the **scalable** tag was displayed for environments that were not scalable.
+* We fixed a number of other bugs related to dark mode.
 
 ### November 14, 2024
 
