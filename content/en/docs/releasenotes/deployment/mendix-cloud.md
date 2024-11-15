@@ -16,6 +16,15 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2024
 
+### November 17, 2024
+
+#### Deployment Portal Fixes
+
+* We fixed a bug in the activity log that was not getting logged when an application was stopped.
+* We fixed a bug in the old UI's permissions page where changing an application's technical contact was leading to a blank page.
+* We fixed a bug in the new UI where the 'scalable' tag was incorrectly shown.
+* We fixed a few other bugs related to dark mode.
+
 ### November 14, 2024
 
 #### Pipelines New Features
