@@ -1,5 +1,5 @@
 ---
-title: "Register Services (On-Prem or Private Cloud)"
+title: "Register Resources (On-Prem or Private Cloud)"
 description: "Describes how to use Catalog and external entities for local deployments, or for private cloud or on-premises solutions."
 url: /catalog/register/data-sources-without-mendix-cloud/
 linktitle: "Private Cloud/On-Premises Registration"
