@@ -1,5 +1,5 @@
 ---
-title: "Manage Data Sources"
+title: "Manage Services"
 url: /catalog/manage/
 weight: 30
 aliases:
