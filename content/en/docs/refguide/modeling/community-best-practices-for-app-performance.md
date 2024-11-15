@@ -53,10 +53,10 @@ If you made a simple and sound design of the app's domain models, consider the f
 Indexes is a topic with a long history of best practices from the database world. For Mendix apps, the following best practices apply:
 
 * Create as many indexes as needed. Although every index takes up space and the `insert`, `update`, and `delete` statements will be a bit slower, your queries will benefit a lot.
-* Since Mendix will retrieve the object for you with all of its columns, your index is needed for two reasons. The first reason is to get the unique internal Mendix IDs fast. The second reason is for sorting.
+* Since Mendix will retrieve the object for you with all of its attributes, your index is needed for two reasons. The first reason is to get the unique internal Mendix IDs fast. The second reason is for sorting.
 * You only need to cover your search clauses and sort clauses, preferably in one index.
 * Don't create different indexes that start with the same attributes.
-* As a rule of thumb, try to minimize the number of index columns. Stay below three, or use a maximum of five.
+* As a rule of thumb, try to minimize the number of index attributes. Stay below three, or use a maximum of five.
 * Start with the most selective attribute, although you need to consider that searches on single attribute can only use indexes that start with that attribute.
 * Indexes can be used best for equal searches, ranges searches for dates and numbers, and leading/`startsWith` searches on strings.
 * Index scans can be done to match more difficult clauses like `contains` or `endsWith`. These are still faster then full table scans.

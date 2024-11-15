@@ -31,7 +31,7 @@ To authenticate with SAP, you must also obtain authorization credentials for the
 
 ## Installation
 
-Follow the instructions in [Using Marketplace Content](/appstore/use-content/) to import the [OData Connector for SAP solutions](https://marketplace.mendix.com/link/component/74525) into your app.
+Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the [OData Connector for SAP solutions](https://marketplace.mendix.com/link/component/74525) into your app.
 
 ## Configuration
 
@@ -44,11 +44,11 @@ This how-to teaches you how to do the following:
 
 ### Getting an SAP Data Model
 
-You can use the [Model Creator for SAP Integrations](https://sapmodelcreator.mendixcloud.com/) to generate a data model from the metadata of your OData service, exposed from your SAP back-end system, or from APIs in the SAP API Business Hub or the SAP Catalog Service. For more details see [Model Creator for SAP Integrations](/appstore/services/use-sap-model-creator/).
+You can use the [Model Creator for SAP Integrations](https://sap-model-creator.home.mendix.com/) to generate a data model from the metadata of your OData service, exposed from your SAP back-end system, or from APIs in the SAP API Business Hub or the SAP Catalog Service. For more details see [Model Creator for SAP Integrations](/appstore/services/use-sap-model-creator/).
 
 In this example, you will display a list of products from the GWSAMPLE_BASIC OData service. You will need to create an SAP data model module for the GWSAMPLE_BASIC OData service. The module contains a pre-built domain model that you can add to your app.
 
-1. Open the [Model Creator for SAP Integrations](https://sapmodelcreator.mendixcloud.com/).
+1. Open the [Model Creator for SAP Integrations](https://sap-model-creator.home.mendix.com/).
 2. Click **SAP Catalog Service**.
 3. Enter your **User name** and **Password** for the ES5 SAP Service Catalog (see [Prerequisites](#prerequisites), above).
 4. Type *sapes5.sapdevcenter.com* as the **Server**. (Leave the protocol as `https://` and the **Port** as `443`).
@@ -784,7 +784,7 @@ For more information on domain models, see [Domain Model](/refguide/domain-model
 
 Most of the actions of the OData Connector for SAP solutions make use of a domain model representing the SAP service data model. These models contain non-persistable Mendix entities which represent entities in the OData service which is exposed by an SAP back-end system. The entities contain attributes which correspond to the entity properties plus additional attributes which support the OData Connector for SAP solutions.
 
-You can create a data model by inspecting the service metadata. The response from the service can be used in the [Model Creator for SAP Integrations](https://sapmodelcreator.mendixcloud.com/) to generate a domain model which can be imported into your app. Instructions for doing this are in [Model Creator for SAP Integrations](/appstore/services/use-sap-model-creator/).
+You can create a data model by inspecting the service metadata. The response from the service can be used in the [Model Creator for SAP Integrations](https://sap-model-creator.home.mendix.com/) to generate a domain model which can be imported into your app. Instructions for doing this are in [Model Creator for SAP Integrations](/appstore/services/use-sap-model-creator/).
 
 {{% alert color="info" %}}
 In addition to the domain model, the Model Creator will also create three other items:
@@ -802,10 +802,10 @@ The examples used in this guide are based on the **GWSAMPLE_BASIC** OData servic
 You will need to have an SAP account with access to the [SAP NetWeaver (ES5)](https://sapes5.sapdevcenter.com/) system to be able to use this service.
 {{% /alert %}}
 
-This data model for the GWSAMPLE_BASIC service can be obtained from the [Model Creator for SAP Integrations](https://sapmodelcreator.mendixcloud.com/). To create the data model, you do one of the following:
+This data model for the GWSAMPLE_BASIC service can be obtained from the [Model Creator for SAP Integrations](https://sap-model-creator.home.mendix.com/). To create the data model, you do one of the following:
 
 * You can create it manually using the OData metadata XML for GWSAMPLE_BASIC, which can be found at [https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata](https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata)
-* You can find it in the **SAP Catalog Service** of the [Model Creator for SAP Integrations](https://sapmodelcreator.mendixcloud.com/)
+* You can find it in the **SAP Catalog Service** of the [Model Creator for SAP Integrations](https://sap-model-creator.home.mendix.com/)
     * Sign in to the server *sapes5.sapdevcenter.com* using your SAP ES5 credentials
     * Search for the GWSAMPLE_BASIC API
     * Use the GWSAMPLE_BASIC Schema

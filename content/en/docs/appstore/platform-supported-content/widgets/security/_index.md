@@ -43,6 +43,8 @@ For information on Maps widget CSP configurations, see [Maps CSP](/appstore/widg
 
 ### Rich Text
 
+Use versions 3.0 and higher of [Rich Text](/appstore/widgets/rich-text/) for strict CSP compliance.
+
 You can enable `allowlist` CSP for [Rich Text](/appstore/widgets/rich-text/) by including these directives:
 
 ```text

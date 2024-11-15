@@ -16,6 +16,24 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2024
 
+### November 14, 2024
+
+#### Pipelines New Features
+
+* We added a new **Variables** tab that allows you to create user-defined pipeline variables. For more information, see [The Variables Tab](/developerportal/deploy/pipelines/#variable-tab) in the *Pipelines* documentation.
+* We added a new pipeline step: [Unit Testing](/developerportal/deploy/pipelines/#unit-testing). This step executes the Unit Testing module in a running environment to perform a regression testing and marks the pipeline as failed if any tests fail, providing the failure count and details.
+
+### November 6, 2024
+
+#### New Features
+
+* Cloud permissions are now included in project roles.
+* You can now manage all project roles centrally, on a company level, if you have switched to using company-level roles.
+
+#### Improvements
+
+* We have made improvements to the [permissions tab](/developerportal/deploy/node-permissions/#permissions-tab). The **Receive alerts** permission has also been removed from the permissions tab. You can subscribe to alerts using the **Email Alerts** option on the **Alerts** page.
+
 ### October 17, 2024
 
 #### Improvements
@@ -27,7 +45,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 #### Pipelines New Features
 
 * We released an API that lets you start a new pipeline run for a saved and activated pipeline design and retrieve the status of a pipeline run. For more information, see [Pipelines API](/apidocs-mxsdk/apidocs/pipelines-api/).
-* We added a new pipeline step: Best Practice Recommender Check. This step lets you evaluate results of the Maia Best Practice Recommender within your pipeline.
+* We added a new pipeline step: [Best Practice Recommender](/developerportal/deploy/pipelines/#recommender) Check. This step lets you evaluate results of the Maia Best Practice Recommender within your pipeline.
 
 ### September 5, 2024
 

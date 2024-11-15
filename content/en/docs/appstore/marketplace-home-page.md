@@ -26,7 +26,7 @@ The Marketplace home page is your entry point to the various parts of the Mendix
 The search box at the top of the page allows you to search for content. You can filter your search results using the fitlers on the right side of the page:
 
 * **Support** – the support categories (for details, see the [Marketplace Content Support](/appstore/marketplace-content-support/))
-* **Visibility** – for [Public](/appstore/sharing-content/#public) or [Private](/appstore/sharing-content/#private) content
+* **Visibility** – for [Public](/appstore/submit-content/#public) or [Private](/appstore/submit-content/#private) content
 * **Content Types** – the types of content (for details, see the [Types of Marketplace Components](/appstore/#components-type) section in *Marketplace*)
 * **Category** – for specific domains in which components or services share characteristics, functions, or purposes
 * **Industry** – for specific sectors or business domains in which components or services are used
@@ -48,7 +48,7 @@ On the left side of the page, you can see the following categories:
 
 The **Explore** category contains the following items:
 
-* Create Content: to [share new Marketplace content](/appstore/sharing-content/) you have developed.
+* Create Content: to [share new Marketplace content](/appstore/submit-content/) you have developed.
 * Get Studio Pro: to get the latest version of [Studio Pro](/releasenotes/studio-pro/)
 
 ## Personal {#personal}
@@ -76,7 +76,7 @@ These are the possible **Status** entries for each item:
 
 * **Incomplete draft** – The draft is incomplete and requires additional information before you can submit it
 * **Ready to publish** – The draft of the new version of the component is ready to be published to the Mendix Marketplace
-* **Waiting for approval** – The component is being [reviewed by Mendix](/appstore/sharing-content/governance-process/) 
+* **Waiting for approval** – The component is being [reviewed by Mendix](/appstore/submit-content/governance-process/) 
 * **Declined** – The draft was declined after review by Mendix; you can find specific feedback in the email notification and on the draft edit page
 
 On this page, click **More Options** ({{% icon name="three-dots-menu-horizontal" %}}) on a component to access the following options:
@@ -100,14 +100,14 @@ Click the context menu to access various options for managing your content:
     * Only one draft version of a component can exist at a time, so when one draft version is in progress, another draft cannot be initiated
     * If there is a draft version in progress, you will see options to **Edit Draft** or **Delete Draft**
     * If there is a draft version in progress assigned to another user, you will see an option to **Reassign Draft** to yourself 
-    * For more information on creating a draft version, see the [Updating Existing Marketplace Content](/appstore/sharing-content/#updating) section of *How to Share Marketplace Content*
-* **Edit a Version** – Click this to edit the component (for details on editing, see the [Adding New Marketplace Content](/appstore/sharing-content/#adding) section of *How to Share Marketplace Content*)
+    * For more information on creating a draft version, see the [Updating Existing Marketplace Content](/appstore/submit-content/#updating) section of *How to Share Marketplace Content*
+* **Edit a Version** – Click this to edit the component (for details on editing, see the [Adding New Marketplace Content](/appstore/submit-content/#adding) section of *How to Share Marketplace Content*)
 * **Unpublish a Version** – Click this to remove one version or all versions of the component
     * If the component is [protected content](#group-content) from a [content group](#content-groups), a [group member](#members) can unpublish any version
     * If the component is not the protected content of a content group, you can only unpublish a version that you have published yourself
     * Select **Unpublish All My Versions** to remove all your versions of the component
 
-You may see the **Private** label on a component, which means it is your company's private Marketplace content (for details on how this is configured, see the [Adding New Marketplace Content](/appstore/sharing-content/#private) section of *How to Share Marketplace Content*). This content can be shared with [guests](#guests).
+You may see the **Private** label on a component, which means it is your company's private Marketplace content (for details on how this is configured, see the [Adding New Marketplace Content](/appstore/submit-content/#private) section of *How to Share Marketplace Content*). This content can be shared with [guests](#guests).
 
 In addition, you may see a label on a component name for the [content group](#content-groups) to which the component is assigned as group [group content](#group-content).
 

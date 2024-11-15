@@ -40,7 +40,7 @@ The header for a component presents the following details:
 
 * The latest **Version** number of the component
 * The Studio Pro version that the component **Requires** to work
-* The type of [license](/appstore/sharing-content/#license) for the component
+* The type of [license](/appstore/submit-content/#license) for the component
 
 The **Publisher** section presents the name of the company who created the component as well as the **Date** when the component was first published.
 
