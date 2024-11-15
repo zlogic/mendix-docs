@@ -43,7 +43,8 @@ To understand this concept, imagine a user interacting with a chatbot while aski
 
 ## Typical Components of a Prompt
 
-A prompt typically consists of four main components that work together to guide the AI’s responses. The **system prompt** sets the foundational *instructions* and the preferred *output style*. The **context prompt** provides relevant *context and additional information*. Lastly, the **user prompt** is the specific question or *input data* from the end-user.
+A prompt typically consists of four main components that work together to guide the AI’s responses. The system prompt sets the foundational instructions and the preferred output style. The context prompt provides relevant context and additional information. Lastly, the
+user prompt is the specific question or input data from the end-user.
 
 ### Instructions
 
@@ -61,8 +62,8 @@ When the input text is coming directly from the end-user, also include what not 
 You can instruct the model to format the output in a specific way. For example:
 
 * tell the model to specify its reasoning steps, or just give the answer
-* give examples of the output style you want, for example a JSON structure, if you want to use a structured response to generate data or get structured information about intermediate steps taken, or decisions made, in coming up with a final response to a prompt.
-* request that responses are in a particular tone of voice, target a specific audience, or have a specified content length
+* give examples of the output style you want, for example, a JSON structure, if you want to use a structured response to generate data or get structured information about intermediate steps taken, or decisions made, in coming up with a final response to a prompt.
+* request that responses be in a particular tone of voice, target a specific audience, or have a specified content length
 * request the use (or not) of Markdown formatting
 * ask the model to skip or include a preamble
 
@@ -78,19 +79,19 @@ Tip: you can provide information in a JSON or XML structure to ensure the inform
 
 ### Input Data
 
-The actual input provided by the end-user, either the exact message as typed by the user (e.g. in a chat-bot interface), or some specific set of data the user entered (e.g. in a custom app). This is typically the main, if not all, component in the user prompt.
+The actual input provided by the end-user, either the exact message as typed by the user (for example, in a chatbot interface) or some specific set of data the user entered (for example, in a custom app). This is typically the main, if not all, component in the user prompt.
 
 ## Prompt Techniques
 
-There are different prompt techniques that can be used to guide AI models in performing their specific tasks. Each technique is described along with its use case and an example prompt instruction in the following table: 
+Different prompt techniques can be used to guide AI models in performing their specific tasks. Each technique is described along with its use case and an example prompt instruction in the following table: 
 
 | Prompt technique | Description | Use Case and Prompt Example |
 |-------------------|---------------------------------------------------|----------------------------------|
-| Interview Pattern Approach| Using an interview-style approach allows the model to ask follow-up questions to the end-user to provide a better fitting response. | **Use case**: Movie Recommendation Engine.<br>**Prompt instruction**: *You will act as a movie recommender expert. You will ask the user a series of detailed questions, one at a time, to understand their preferences in movies*. |
-| Instruction Prompt| The instruction gives the AI model directions on how to perform a task. It can be a guidance on the type of output, such as summarization or translation, style, format, and more. | **Use case**: Mendix ML Kit Python Script Generator.<br>**Prompt instruction**: *You will act as an expert Python developer specializing in the Mendix ML Kit. The output/response should be given in a python script with annotations for the Mendix ML Kit*. |
-| Few-shot Prompt | It helps the model to learn a task or pattern dynamically by providing examples. It can also be part of the system prompt. | **Use case**: English-Spanish Translator.<br>**Prompt instruction**: *You are a kind assistant that helps translate English texts to Spanish. For example, “Good Evening” to Spanish: “Buenas Noches*” |
-| Chain-of-Thought | It simplifies complex tasks by turning them into discrete steps that happen in a certain order. | **Use case**: Medical Diagnosis for interns.<br>**Prompt instruction**: *You are a diagnosis assistant designed to help trainee doctors ask a series of questions for patients’ initial evaluation. Your goal is to identify the patient’s symptoms, health history, and other relevant variables to reach an accurate evaluation that, depending on the result, will be forwarded to nurses or doctors. Start by asking the patient about their primary symptoms and the reason for their visit. Then, ...* |
-| Tree-of-Thought | Similar to a decision tree, it includes several lines of thought to allow the model to evaluate and find its path to the correct outcome. | **Use case**: Support Assistant Bot.<br>**Prompt instruction**: *You are a helpful assistant supporting the IT department with employees’ requests, such as support tickets, licenses, or hardware inquiries. Follow the instructions below according to the type of request. If the user asks about ... If the request is vague or incomplete, ... If the request is about licenses or hardware, first ... then ... If the user wants to know about their support tickets, ...* |
+| Interview Pattern Approach| Using an interview-style approach allows the model to ask follow-up questions to the end-user to provide a better-fitting response. | Use case: Movie Recommendation Engine.<br>Prompt instruction: *You will act as a movie recommender expert. You will ask the user a series of detailed questions, one at a time, to understand their preferences in movies*. |
+| Instruction Prompt | The instruction gives the AI model directions on how to perform a task. It can be a guidance on the type of output, such as summarization or translation, style, format, and more. | Use case: Mendix ML Kit Python Script Generator.<br>Prompt instruction: *You will act as an expert Python developer specializing in the Mendix ML Kit. The output/response should be given in a python script with annotations for the Mendix ML Kit*. |
+| Few-shot Prompt | It helps the model to learn a task or pattern dynamically by providing examples. It can also be part of the system prompt. | Use case: English-Spanish Translator.<br>Prompt instruction: *You are a kind assistant who helps translate English texts to Spanish. For example, “Good Evening” to Spanish: “Buenas Noches*” |
+| Chain-of-Thought | It simplifies complex tasks by turning them into discrete steps that happen in a certain order. | Use case: Medical Diagnosis for interns.<br>Prompt instruction: *You are a diagnosis assistant designed to help trainee doctors ask a series of questions for patients’ initial evaluation. Your goal is to identify the patient’s symptoms, health history, and other relevant variables to reach an accurate evaluation that, depending on the result, will be forwarded to nurses or doctors. Start by asking the patient about their primary symptoms and the reason for their visit. Then, ...* |
+| Tree-of-Thought | Similar to a decision tree, it includes several lines of thought to allow the model to evaluate and find its path to the correct outcome. | Use case: Support Assistant Bot.<br>Prompt instruction: *You are a helpful assistant supporting the IT department with employees’ requests, such as support tickets, licenses, or hardware inquiries. Follow the instructions below according to the type of request. If the user asks about ... If the request is vague or incomplete, ... If the request is about licenses or hardware, first ... then ... If the user wants to know about their support tickets, ...* |
 
 ## Use an Iterative Approach
 
@@ -98,17 +99,17 @@ Mendix recommends that you test your prompt against different scenarios. Writing
 
 You should do the following:
 
-1. **Setting a goal**: what should the model do?
-2. **Think about your test and edge cases**: what should the model do in a particular situation?
-3. **Draft version**: Write a first version of the prompt.
-4. **Testing and more testing**: Test your prompt against your test cases.
-5. **Refinement of the prompt**: Refine the prompt, by tweaking your variables and writing defensive statements against undesired behavior.
+1. Setting a goal: what should the model do?
+2. Think about your test and edge cases: what should the model do in a particular situation?
+3. Draft version: Write a first version of the prompt.
+4. Testing and more testing: Test your prompt against your test cases.
+5. Refinement of the prompt: Refine the prompt, by tweaking your variables and writing defensive statements against undesired behavior.
 
-There is a difference between how models behave. For example newer models might interpret instructions slightly differently, or be more elaborate. You should therefore retest your prompt when you switch models (for example, after moving from ChatGPT-3.5 to ChatGPT-4o).
+There is a difference between how models behave. For example, newer models might interpret instructions slightly differently, or be more elaborate. You should therefore retest your prompt when you switch models (for example, after moving from ChatGPT-3.5 to ChatGPT-4o).
 
 ## Tips for Better Prompting
 
-There are some techniques which have been found to produce better responses from GenAI models. The following examples are focusing on [system prompts](#system-prompt). If you would like to see some examples, visit our [Prompt Library](https://mendixlabs.github.io/smart-apps-prompt-library/).
+There are some techniques that have been found to produce better responses from GenAI models. The following examples are focusing on [system prompts](#system-prompt). If you would like to see some examples, visit our [Prompt Library](https://mendixlabs.github.io/smart-apps-prompt-library/).
 
 ### Be Clear
 
@@ -122,7 +123,7 @@ and
 
 ```text 
 You are a helpful assistant who provides information about Mendix. 
-If the user has a technical question, check the Mendix Documentations and include the link. 
+If the user has a technical question, check the Mendix Documentation and include the link. 
 If the user is struggling with a bug, check Mendix Forum or Documentation for a solution. 
 Please provide the source of the information in your response. 
 Lastly, if you are not sure about the response, do not try to create one but rather inform the user that you do not know the answer.
@@ -134,13 +135,13 @@ Tip: if you are unsure about whether a prompt is clear enough, ask a co-worker t
 
 Instead of relying on the model to come up with the best strategy to solve a problem, break the larger problem down into smaller steps.
 
-Provide the model with examples of the steps to solve the problem. This encourages the model to follow those patterns. As an end result, the quality of the output will be higher compared to asking the LLM to come up with the answer right away.
+Provide the model with examples of the steps to solve the problem. This encourages the model to follow those patterns. As a result, the quality of the output will be higher compared to asking the LLM to come up with the answer right away.
 
 When you want the model to respond in a specific manner or syntax that is hard to describe, it can be particularly useful to provide examples. This technique is known as *One-Shot-Prompting* (1 example) or *Few-Shot-Prompting* (multiple examples).
 
 ```text 
-You are an classification assistant.
-You're job is to classify user reviews based on their sentiment.
+You are a classification assistant.
+Your job is to classify user reviews based on their sentiment.
 
 <examples>
 User prompt: I love the product!
@@ -156,9 +157,9 @@ Response: positive
 
 ### Allow the Model to Say "I don't know"
 
-A model will always try to follow the instructions and can therefore come up with a response that might not be what you expect, or worse made up. This is known as *hallucination*.
+A model will always try to follow the instructions and can therefore come up with a response that might not be what you expect, or worse made up. This is known as hallucination.
 
-If your prompt includes instructions which allow the LLM to ask for more info, or respond that it does not know something, this will make it more effective.
+If your prompt includes instructions that allow the LLM to ask for more info, or respond that it does not know something, this will make it more effective.
 
 Example instructions are:
 
@@ -167,7 +168,7 @@ If you are unsure how to respond, say “Sorry, I didn’t get that. Could you r
 ```
 
 ```text 
-You are a barista that only talks about coffee.
+You are a barista who only talks about coffee.
 If a user asks something about other topics, say:
     “Sorry, as a barista I cannot help you with that. Would you like some recommendations on how to brew coffee?”
 ```
@@ -175,7 +176,7 @@ If a user asks something about other topics, say:
 Or, when using RAG:
 
 ```xml 
-You are a helpful assistant that tries to answer user questions based on chunks of topic-specific data.
+You are a helpful assistant who tries to answer user questions based on chunks of topic-specific data.
 If you cannot answer a question based on the provided information alone, you respond that you do not know.
 For the current question, please base the answer on the following pieces of information:
 <information>
@@ -194,12 +195,12 @@ You are a helpdesk assistant.
 ```
 
 ```text 
-You are a writer that is specialized in marketing content.
+You are a writer who specializes in marketing content.
 ```
 
 ### Tell the Model How to Use Provided Tools
 
-When using features like [function calling](/appstore/modules/genai/function-calling/), give the functions a descriptive name. Also, instruct the model what the functions can do and how they should be used. This will guide the LLM to call the functions at the right moment and use the response in the correct way.
+When using features like [function calling](/appstore/modules/genai/function-calling/), give the functions a descriptive name. Also, instruct the model on what functions can do and how they should be used. This will guide the LLM to call the functions at the right moment and use the response correctly.
 
 For example, say you have a tool called `GetTicketInformationForIdentifier` which retrieves information from a specific support ticket in a database; you could add the following to the prompt:
 
@@ -241,7 +242,7 @@ Check out our [Prompt Library](https://mendixlabs.github.io/smart-apps-prompt-li
 
 ### Showcases
 
-Check out the [GenAI](https://marketplace.mendix.com/link/component/220475) showcase app in the Marketplace to see how you can apply prompt engineering in practice to let a model perform specific tasks from a Mendix app.
+Check out the [GenAI](https://marketplace.mendix.com/link/component/220475) showcase app in the Marketplace to see how you can apply prompt engineering in practice to let a model perform specific tasks from the Mendix app.
 
 ### Bedrock and Anthropic Claude
 
