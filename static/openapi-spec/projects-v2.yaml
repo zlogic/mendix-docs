@@ -748,10 +748,10 @@ components:
                       description: 'URL of the project image/logo.'
                     cloudTarget:
                       type: string
-                      description: 'URL of the cloud portal the app project is hosted on.'
+                      description: 'URL of the cloud portal the project is hosted on.'
                     active:
                       type: boolean
-                      description: 'Indicates whether a project is active and can be maintained by a team. Inactive projects will only be returned to Mendix administrators. Note this attribute does not indicate whether the app project is actively deployed or running in the cloud.'
+                      description: 'Indicates whether a project is active and can be maintained by a team. Inactive projects will only be returned to Mendix administrators. Note this attribute does not indicate whether the project is actively deployed or running in the cloud.'
                     isPinnedByUser:
                       type: boolean
                       description: 'Indicates whether the project was pinned as a favorite.'
