@@ -39,7 +39,7 @@ Click **View** to display the asset details. You can then perform curate actions
 
 ## Curate Page {#curation-option}
 
-Curation is performed on the Edit Data Source screen. If you are a curator or owner of an asset, you will see the option to **Edit** the selected item.
+Curation is performed on the Edit Services screen. If you are a curator or owner of an asset, you will see the option to **Edit** the selected item.
 
 {{% alert color="info" %}}
 Owners of registered assets can only curate their services.
@@ -47,7 +47,7 @@ Owners of registered assets can only curate their services.
 
 When a service is selected, click **Edit** to do the following:
 
-* Add or edit the description of the data source
+* Add or edit the description of the service
 * Set the service as **Validated** and/or **Discoverable** 
     * **Validated** – indicates the service has been validated
     * **Discoverable** – determines if the service is visible and can be found (and consumed) by users of the Catalog; if a service is set to **Not discoverable**, only the owners of the service (**Business** and **Technical**) and curators can find the registered service
@@ -61,9 +61,9 @@ When a dataset is selected, click **Edit the dataset** to do the following:
 
 ## Editing the Metadata of an App {#curate-application}
 
-The curate functions that are available for a selected service are to change **Data source**, **Application**, and **Authentication** details This section describes the application details that can be changed: changing owners or changing the application icon.
+The curate functions that are available for a selected service are to change **Service**, **Application**, and **Authentication** details This section describes the application details that can be changed: changing owners or changing the application icon.
 
-You can curate Application details from the **Application** tab as follows:
+You can curate application details from the **Application** tab as follows:
 
 1. Click **Edit** > **Application** tab.
 
@@ -106,7 +106,7 @@ To add a custom **Business Owner**, follow these steps:
 
     {{% alert color="info" %}}When you create or select a custom owner for an application, this will be displayed in the **Application** tab as a link to the email specified. Custom owners will have curate or access rights to the Catalog or the asset in the Catalog. Only Mendix users that are added as an owner can curate assets they own. {{% /alert %}}
 
-1. Click **Save** to return to the **Application** tab. Click **Save** to return to the Data Source details page where the changes will be displayed in the right-hand metadata pane.
+1. Click **Save** to return to the **Application** tab. Click **Save** to return to the Service details page where the changes will be displayed in the right-hand metadata pane.
 
 ### Changing the App Icon {#application-icon}
 
@@ -147,7 +147,7 @@ To **Upload a different icon** for the app, follow these steps:
 
     {{< figure src="/attachments/catalog/curate/asset-metadata-new-icon.png" alt="upload icon" class="no-border" >}}
 
-6. Click **Save** to return to the Data Source details page. The custom icon will be stored in the **Icon Library**.
+6. Click **Save** to return to the Service details page. The custom icon will be stored in the **Icon Library**.
 
 #### Selecting an Icon from the Library
 
@@ -159,26 +159,25 @@ You can curate service to add a Catalog description and add tags.
 
 ### Adding or Editing a Catalog Description
 
-If a description was included in the contract, it will be displayed in the Data Source details page for the selected service. You can add a description or edit an existing description for the Catalog. They are included in searches.
+If a description was included in the contract, it will be displayed in the Service details page for the selected service. You can add a description or edit an existing description for the Catalog. They are included in searches.
 
-{{% alert color="info" %}}If there is a **Catalog Description** for a service, both descriptions will be retained for the service in the Catalog regardless of the one that is selected for display in the Data Source details page. {{% /alert %}}
+{{% alert color="info" %}}If there is a **Catalog Description** for a service, both descriptions will be retained for the service in the Catalog regardless of the one that is selected for display in the Service details page. {{% /alert %}}
 
 To edit the asset metadata, follow these steps:
 
-1. On the **Curate** page, click **Edit** to display the Edit Data Source box:
-
+1. On the **Curate** page, click **Edit** to display the Edit Service
     {{< figure src="/attachments/catalog/curate/service-metadata-box.png" alt="service metadata" class="no-border" >}}
 
 2. The description from the service metadata is displayed in the **Description provided by the contract**. This cannot be changed, as it is part of the service definition. You can provide an alternative description in the **Description** box.
 
 3. Add a description. This will be stored with the service details in the Catalog.
-4. Click **Save** to save the changes and return to the Data Source details page, which will now display the selected description.
+4. Click **Save** to save the changes and return to the Service details page, which will now display the selected description.
 
 ### Adding or Editing Tags to a Service {#tags}
 
 Add tags to categorize a registered service and provide additional means for finding the service. Tags that are specified for a service also apply to the datasets and attributes that are exposed in the service. Specify tags for the selected service by following these steps:
 
-1. On the Data Source details page of a selected service, click **Edit** to display the Edit Data Source screen.
+1. On the Service details page of a selected service, click **Edit** to display the Edit Service screen.
 2. To add tags, click the empty **Tags** input area:
 
     {{< figure src="/attachments/catalog/curate/service-metadata-tags.png" alt="tags" class="no-border" >}}
@@ -189,7 +188,7 @@ Add tags to categorize a registered service and provide additional means for fin
 
 4. You can enter multiple tags separated by spaces. You can remove tags by clicking the {{% icon name="remove" %}}.
 
-5. When you are finished specifying the tags, click **Save** to register the changes. The tags will be shown on the Data Source details page.
+5. When you are finished specifying the tags, click **Save** to register the changes. The tags will be shown on the Service details page.
 
 ### Adding Authentication to a Service {#authentication}
 
@@ -199,7 +198,7 @@ For a description of supported authentication methods, see the [Selecting an Aut
 
 ## Discoverable and Validated {#discoverability}
 
-The discoverable and validated properties of registered assets can be set from the Edit Data Source page for the selected asset.
+The discoverable and validated properties of registered assets can be set from the Edit Service page for the selected asset.
 
 ### Discoverable
 
@@ -209,7 +208,7 @@ When the **Discoverable** setting is turned off, it will only be visible to the 
 
 When a service is set to **Not discoverable**, the service, and the datasets that are exposed cannot be found by other users (except by owners and curators). However, there may be instances of the same datasets in the Catalog, from the same apps, that are available through other discoverable services.
 
-{{% alert color="info" %}}The **Share Data Source** and **Share Dataset** links will not be accessible to users for a **Not discoverable** service and the exposed datasets unless they are an owner or curator.
+{{% alert color="info" %}}The **Share Service** and **Share Dataset** links will not be accessible to users for a **Not discoverable** service and the exposed datasets unless they are an owner or curator.
 {{% /alert %}}
 
 To change the discoverability of a service, follow these steps:
@@ -217,11 +216,11 @@ To change the discoverability of a service, follow these steps:
 1. In the Catalog, select the desired service.
 2. If you have curation rights, the **Edit** button is displayed. Click the **Discoverable** toggle to turn it on or off. 
 
-A message is displayed to indicate the discoverability of the asset and the discoverability icon is updated in the search results and Data Source details page.
+A message is displayed to indicate the discoverability of the asset and the discoverability icon is updated in the search results and Service details page.
 
 ### Validated {#validated}
 
-The **Validated** property can be assigned to a service or a dataset to indicate, for example, that it has been qualified and is a reliable asset. You can turn it on and off by clicking the **Validated** toggle. A validated service or dataset is indicated by the validation shield on the Data Source details page and in the search results pane.
+The **Validated** property can be assigned to a service or a dataset to indicate, for example, that it has been qualified and is a reliable asset. You can turn it on and off by clicking the **Validated** toggle. A validated service or dataset is indicated by the validation shield on the Service details page and in the search results pane.
 
 Setting an asset as **Validated** contributes to the weighting of the asset in the search results. This means that **Validated** assets will be listed before unvalidated assets in the results.
 
@@ -229,6 +228,6 @@ Setting an asset as **Validated** contributes to the weighting of the asset in t
 
 Owners of a service can delete their own services. Anyone with curation rights (Mendix Admins or curators) can delete any service within the company. This ensures that their Catalog is free of outdated or irrelevant services.
 
-Deleting something from the Catalog only removes the metadata registration. It does not affect the publishing application or any applications that are consuming the data source.
+Deleting something from the Catalog only removes the metadata registration. It does not affect the publishing application or any applications that are consuming the service.
 
-To delete a service, click the delete icon (red trash can) on the Data Source details page, then click **Delete**.
+To delete a service, click the delete icon (red trash can) on the Service details page, then click **Delete**.
