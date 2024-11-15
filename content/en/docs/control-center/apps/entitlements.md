@@ -115,7 +115,7 @@ Mendix introduces this product at the start of 2025.
 
 ### What Cloud Products Can I Purchase Using Mendix Cloud Tokens?
 
-At the introduction of cloud tokens, you can purchase cloud resource packs and additional file or database storage products. In the future, more cloud products will be added.
+At the introduction of cloud tokens, you can purchase cloud resource packs. In the future, more cloud products will be added.
 
 ### Where Can I Ask Any Further Questions Regarding Mendix cloud Tokens?
 
