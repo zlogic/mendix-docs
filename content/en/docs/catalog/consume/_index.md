@@ -12,7 +12,7 @@ The Catalog makes it easy to consume services within your company's ecosystem.
 
 Common tasks for users who want to consume services from the Catalog include the following:
 
-* Understanding services [authentication](/catalog/register/register-data/#authentication) set by publishing developers
+* Understanding service [authentication](/catalog/register/register-data/#authentication) set by publishing developers
 * Using the [Integration pane](/refguide/integration-pane/)
 * Understanding how sources are related in the [Landscape](/data-hub/data-hub-landscape/)
 
