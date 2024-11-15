@@ -94,16 +94,19 @@ It is possible to prepare the prerequisite installers beforehand so the setup pr
 3. Create a folder with the name *Dependencies* in the same location that  the Mendix Studio Pro installer was placed.
 4. Download the prerequisites listed in the [Troubleshooting](#troubleshooting) section, above, and move them into the **Dependencies** folder.
 5. Rename the following dependencies:
-    * Rename the Java Development Kit 21 (x64) *msi* (for example, *OpenJDK21U-jdk_x64_windows_hotspot_21.0.4_7.msi*) to*adoptiumjdk_21_x64.msi*
     * Rename the Visual C++ Redistributable for Visual Studio 2019 (x64) executable (for example, *VC_redist.x64.exe*) to*vcredist2019_x64.exe*
     * Rename the `latest` executable to *mendix_native_mobile_builder.exe*
     * Rename the *Git-{version}-64-bit.exe* executable to *git_for_windows_installer.exe*    * For Studio Pro versions 10.0.0 through 10.9.0, rename the Gradle zip file to *gradle-7.6.3-bin.zip*
-    * For Studio Pro versions 10.0.0 through 10.10.0, rename the Microsoft .NET Desktop Runtime 6.0.x executable (*dotnet.exe*) to *windowsdesktop-runtime-6.0-x64.exe*
-    * For Studio Pro versions 10.10.0 and above, rename the Gradle zip file to *gradle-8.5-bin.zip*
+    * For Studio Pro versions 10.0.0 through 10.10.0, rename the Microsoft .NET Desktop Runtime 6.0.x executable (*dotnet.exe*) to *windowsdesktop-runtime-6.0-x64.exe*, rename the Java Development Kit 11 (x64) *msi* (for example, *OpenJDK11U-jdk_x64_windows_hotspot_11.0.3_7.msi*) to *adoptiumjdk_11_x64.msi*
     * For Studio Pro versions 10.11.0 and above, rename the Microsoft .NET Desktop Runtime 8.0.x executable (*dotnet.exe*) to *windowsdesktop-runtime-8.0-x64.exe*
-
+    * For Studio Pro versions 10.10.0 and above, rename the Gradle zip file to *gradle-8.5-bin.zip*
+    
+    * For Studio Pro versions 10.0.0 through 10.10.0, 
+    
+    * For Studio Pro versions 10.11.0 and above, rename the Java Development Kit 21 (x64) *msi* (for example, *OpenJDK21U-jdk_x64_windows_hotspot_21.0.4_7.msi*) to*adoptiumjdk_21_x64.msi*
+    
     * Do not rename the Microsoft Edge WebView2 Evergreen Runtime installer *MicrosoftEdgeWebview2Setup.exe*; keep it as is
-
+    
 6. Run the installer as described in the [Installing Mendix Studio Pro](#install) section above.
 
 If an error occurs during JDK installation, try the following:
