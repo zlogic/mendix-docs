@@ -18,7 +18,7 @@ Due to TinyMCE changing its public license, we transitioned to the Quill V2 libr
 
 The [Rich Text](https://marketplace.mendix.com/link/component/74889/) widget provides the user with an WYSIWYG editor, where the user can enter and edit rich-text content. The widget automatically converts the rich-text content into a string in HTML format, which can be stored in an attribute of an entity.
 
-{{< figure src="/attachments/appstore/widgets/rich-text/rich-text-v4.png" alt="Example" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/widgets/rich-text/rich-text-v4.png" alt="Example" >}}
 
 ### Features
 
@@ -78,7 +78,7 @@ To configure this widget, follow these steps:
 
     {{% alert color="info" %}}For more information, see [Visibility Section](/refguide/common-widget-properties/#visibility-properties) in the *Studio Pro Guide*.{{% /alert %}}
 
-### 2.2 Custom Toolbar Tab
+### Custom Toolbar Tab
 
 * **Custom** – allows you to make your toolbar with customized options
     * **Toolbar group** 

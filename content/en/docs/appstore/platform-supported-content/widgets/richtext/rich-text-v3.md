@@ -4,10 +4,11 @@ url: /appstore/widgets/rich-text-v3/
 category: "Widgets"
 description: "Describes the configuration and usage of the Rich Text widget, which is available in the Mendix Marketplace."
 tags: ["marketplace", "marketplace component", "widget", "rich text", "platform support"]
+weight: 60
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-## 1 Introduction
+## Introduction
 
 {{% alert color="info" %}}
 This documentation applies to Rich Text widget versions 3 that use the TinyMCE library.
@@ -22,7 +23,7 @@ The [Rich Text](https://marketplace.mendix.com/link/component/74889/) widget pro
 
 {{< figure src="/attachments/appstore/widgets/rich-text/example.png" alt="Example" >}}
 
-### 1.1 Features
+### Features
 
 * Allows the user to enter and format text in a WYSIWYG editor
 * Configures which buttons are available on the toolbar of the editor
@@ -43,7 +44,7 @@ The [Rich Text](https://marketplace.mendix.com/link/component/74889/) widget pro
 
 For more details, click the **Help** button on the toolbar.
 
-## 2 Configuration
+## Configuration
 
 To configure this widget, follow these steps:
 
@@ -51,7 +52,7 @@ To configure this widget, follow these steps:
 1. Double-click the rich text  widget to open the **Edit Rich Text** dialog box.
 1. Configure the widget using the properties described in the sections below.
 
-### 2.1 General Tab
+### General Tab
 
 * **Data source**
     * **Value attribute** (required) – sets a String attribute to store the rich-text content
@@ -104,7 +105,7 @@ To configure this widget, follow these steps:
 
     {{% alert color="info" %}}For more information, see [Visibility Section](/refguide/common-widget-properties/#visibility-properties) in the *Studio Pro Guide*.{{% /alert %}}
 
-### 2.2 Custom Menubar
+### Custom Menubar
 
 * **Custom** – allows you to make your menubar with customized options
     * **Menubar group** 
@@ -125,7 +126,7 @@ To configure this widget, follow these steps:
 
 The full configuration of the menubar groups are as follows:
 
-### 2.3 Custom Toolbar Tab
+### Custom Toolbar Tab
 
 * **Custom** – allows you to make your toolbar with customized options
     * **Toolbar group** 
@@ -160,7 +161,7 @@ The full configuration of the menubar groups are as follows:
             * **Delete** – deletes the selected button
             * **Edit** – opens the **Edit Advanced Groups Item** dialog box where you can make changes to the selected button 
 
-### 2.4 Dimensions Tab
+### Dimensions Tab
 
 * **Width unit** – the width of the widget
     * **Percentage** – specifies the width in relation to the rest of the elements on the page
@@ -172,7 +173,7 @@ The full configuration of the menubar groups are as follows:
     * **Percentage of parent** – specifies the width in relation to the rest of the elements on the page
 * **Height** – used as an appropriate CSS value
 
-### 2.5 Events Tab
+### Events Tab
 
 * **On focus** – specifies an action to execute when the user focus on the editor
 * **On blur** – specifies an action to execute when the user move focus out of the editor
@@ -189,6 +190,6 @@ The full configuration of the menubar groups are as follows:
 * **Highlight on focus** - adds a blue outline to the editor when that editor is made the input focus
 * **Editor resize** - allows the resize handle to be disabled or to set the resize handler to resize both horizontally and vertically
 
-### 2.7 Common Tab
+### Common Tab
 
 For more information, see [Common Section](/refguide/common-widget-properties/#common-properties) in *Properties Common in the Page Editor*.
