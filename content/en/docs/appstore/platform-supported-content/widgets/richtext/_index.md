@@ -10,10 +10,10 @@ description: "Describes the configuration and usage of the Rich Text widget, whi
 {{% alert color="info" %}}
 This documentation applies to Rich Text widget versions 4.0 and above. 
 
-For documentation on Rich Text widget versions 3 with TinyMCE, see [Rich Text v3](/appstore/widgets/rich-text-v3/) documentation.
-For documentation on Rich Text widget versions 2 with CKEditor4, see [Rich Text v2](/appstore/widgets/rich-text-v2/) documentation.
+For documentation on Rich Text widget versions 3 with TinyMCE, see [Rich Text v3](/appstore/widgets/rich-text-v3/).
+For documentation on Rich Text widget versions 2 with CKEditor4, see [Rich Text v2](/appstore/widgets/rich-text-v2/).
 
-Due to TinyMCE changes its public license, we transition into Quill V2 library in Rich Text 4.
+Due to TinyMCE changing its public license, we transitioned to the Quill V2 library in Rich Text 4.
 {{% /alert %}}
 
 The [Rich Text](https://marketplace.mendix.com/link/component/74889/) widget provides the user with an WYSIWYG editor, where the user can enter and edit rich-text content. The widget automatically converts the rich-text content into a string in HTML format, which can be stored in an attribute of an entity.
@@ -31,7 +31,7 @@ The [Rich Text](https://marketplace.mendix.com/link/component/74889/) widget pro
 
 {{% alert color="info" %}}
 
-Unlike Rich Text v3, this version no longer put the editor inside a sandboxed iframe. Thus, page styling will directly affected the rich text's styling.
+Unlike Rich Text v3, this version no longer hosts the editor inside a sandboxed `iframe`. Thus, page styling will directly affect the rich text's styling.
 
 {{% /alert %}}
 
@@ -118,17 +118,17 @@ To configure this widget, follow these steps:
 
 ### Events Tab
 
-* **On change** – specifies an action to execute when the user change the value of the editor
-    * **On change type** - specifies which type of even that will trigger the on change action
-        * **When user leaves input field** - if selected, on change action will be triggered when user move focus out of the editor
-        * **While user is entering data** - if selected, on change action will be triggered each time data change occurs
-* **On enter** – specifies an action to execute when the user focus on the editor
+* **On change** – specifies an action to execute when the user changes the value of the editor
+    * **On change type** - specifies which type of event that will trigger the on change action
+        * **When user leaves input field** - if selected, an on change action will be triggered when user moves focus out of the editor
+        * **While user is entering data** - if selected, an on change action will be triggered each time a data change occurs
+* **On enter** – specifies an action to execute when the user focuses on the editor
 * **On leave** – specifies an action to execute when the user move focus out of the editor
-* **On load** – specifies an action to execute after the editor fully loaded in the DOM
+* **On load** – specifies an action to execute after the editor is fully loaded in the DOM
 
 ### Advanced Tab
 
-* **Enable spell checking** – configures to use the browser’s native spell checker. 
+* **Enable spell checking** – configures to use the browser’s native spell checker
 
 ### Common Tab
 
