@@ -51,42 +51,42 @@ If you select **Use connection string**, enter the following:
 
 ### Password Security
 
-The password that you provide when using one of the above connection methods will be stored in a constant, which can be altered upon deployment on a Cloud node. Starting with Mendix 10.9, you can indicate which constants contain private or sensitive information, to ensure that this information is saved locally, and is not shared on the TeamServer, or the Cloud Portal.
+The password you provide when using one of the above connection methods will be stored in a constant, which can be altered upon deployment on a Cloud node. As of Mendix Studio Pro 10.9, you can indicate which constants contain private or sensitive information to ensure this information is saved locally, and that it is not shared on the TeamServer or Cloud Portal.
 
 ## External Database Connection Document {#external-database-document}
 
-After entering your database information in the **Connect to Database** wizard, the external database connection document is open in Studio Pro. 
+After entering your database information in the Database Connection wizard, the external database connection document is open in Studio Pro. 
 
 The name of the document is the **Name** (not **Database name**) you provided when running the wizard:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/database-service-document.png" class="no-border" width="600" >}}
 
-### Query Screen {#query-screen}
+### Query Field {#query-screen}
 
-On the left side of the document is the **Query** screen. Here, you can write an SQL query to retrieve data and run it to validate its response.
+On the left side of the document is the **Query** field. In this field, you can write an SQL query to retrieve data and run it to validate its response.
 
 View data from the database in the [Tables & Columns](#tables-columns) screen on the right.
 
-This screen includes the following fields:
+The Query field includes the following fields:
 
 * **Query Name** — query name, which is saved and can be used later
 * **SQL Query** — text box where you can enter your query
 
-In the **Parameters** section, click **Add Parameter** to enter the following information:
+In the **Parameters** field, click **Add Parameter** to enter the following information:
 
-* **Name** — name of the parameter that can be used in the **SQL Query** field (in the form of {parameter_name})
-* **Data Type** — select the type of data for your parameter
+* **Name** — name of the parameter that can be used in the **SQL Query** field (in the form of `{parameter_name}`)
+* **Data Type** — the type of data for your parameter
 * **Test Value** — enter or select the value of the parameter
 
 Click **Execute Query** to view a preview of the response.
 
 ### Tables & Columns {#tables-columns}
 
-The **Tables & Columns** field on the right side of the screen displays the information from your database. You can use queries to access certain information in your database.
+The **Tables & Columns** field on the right side of the screen displays the information from your database. You can use queries to access specific information in your database.
 
 ### Response {#response}
 
-After [querying the database](/appstore/modules/external-database-connector/#query-database), you can view the data included in the query in the **Response** screen.
+After [querying the database](/appstore/modules/external-database-connector/#query-database), view the data included in the query in the **Response data** field.
 
 If you are satisfied with the response, click **Use Response**. This will take you to the [Data Structure](#data-structure) tab where you can preview and create an entity from the response.
 
