@@ -13,7 +13,7 @@ The Catalog is a catalog of OData services exposing datasets that you can use in
 
 ## Using Registered Assets in Your App {#consuming-services-entities}
 
-You can use the Catalog or the [Integration Pane](/refguide/integration-pane/) in Studio Pro to find registered services. Click [Copy Data Source URI](/catalog/manage/search/#service-details) to obtain the OData service URI, which can be used in other enterprise applications.
+You can use the Catalog or the [Integration Pane](/refguide/integration-pane/) in Studio Pro to find registered services. Click [Copy URI](/catalog/manage/search/#service-details) to obtain the OData service URI, which can be used in other enterprise applications.
 
 The following sections summarize important points to consider when using OData services and registered datasets in your apps in Studio Pro.
 
