@@ -248,9 +248,23 @@ This selection can be blank if you do not want to add custom logic. Save this co
 
 ### Deploy-time Configuration {#deploy-time}
 
-Setting up connectivity with an IdP varies depending on the vendor. The following subsection shows the configuration for the Microsoft Entra ID.
+Starting from version 2.3.0, you can configure the SCIM module using app [constants](https://docs.mendix.com/refguide/constants/) instead of the app administration pages. As an app developer that uses SCIM, you can set default values. These values can be overridden at deploy-time using the app constants.
+
+To enable app constants for configuring the SCIM module, set your app to run the after startup microflow in the OIDC module (SCIM.ASU_StartUp).
+
+Use the following security best practices when setting up your constants:
+
+* Set the export level of these constants to **Hidden** to enhance security.
+* Mask the client_secret to prevent its value from being visible in the Mendix Portal. For more details, see the [Constants](/developerportal/deploy/environments-details/#constants) section of the *Environment Details*.
+
+The following error messages will be displayed when you try to edit/delete default deploy-time configuration at runtime:
+
+* Error at edit: *You cannot modify as it is created from deployment*.
+* Error at delete: *You cannot delete as it is created from deployment*.
 
 #### Configuration with Entra ID
+
+Setting up connectivity with an IdP varies depending on the vendor. The following subsection shows the configuration for the Microsoft Entra ID.
 
 1. On the Microsoft Entra ID tenant, select **Enterprise Application** and create SCIM client in it.
 2. Change the **Provisioning Mode** to **Automatic**.
