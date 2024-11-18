@@ -104,7 +104,7 @@ Inform your team members that they should commit their changes before starting t
 
 {{% alert color="warning" %}}
 
-Deleted SVN branches are not mapped to Git branches by the migration process. If the deleted branch was not merged to a non-deleted branch prior to the migration, all commits are lost.
+Previously deleted SVN branches will not be mapped to Git branches by the migration process and will be permanently removed. If the deleted SVN branch has not been merged to another branch beforehand, commits belonging to the deleted SVN branch will also be permanently removed.
 
 {{% /alert %}}
 
