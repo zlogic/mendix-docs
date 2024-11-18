@@ -262,6 +262,26 @@ The following error messages will be displayed when you try to edit/delete defau
 * Error at edit: *You cannot modify as it is created from deployment*.
 * Error at delete: *You cannot delete as it is created from deployment*.
 
+#### Customizing Default Deploy-time Configuration
+
+The table below shows you the default mandatory and optional constants:
+
+| Constants | Description | Mandatory/Optional | Default Value |
+| --- | --- | --- | --- |
+| `Default_APIKey_Value` | **API Key** (token) for the authentication | Mandatory | No default value |
+| `Default_IdPConfiguration_Name` | Default IdP Configuration name. Since only one default deploy-time configuration constant is supported, it cannot be modified or deleted.| Mandatory | No default Value |
+| `Default_AllowCreateUsers` | allows to create users in the application | Optional | `True` |
+| `Default_CustomEntity_Name` | a Custom Entity name that can be specified for provisioning | Optional | `Administration.Account` |
+| `Default_DeleteUserPermanently` | A flag to delete users permanently or not | Optional | `False` |
+| `Default_FirstNameMapping` | sets the mapping entity attribute to the Identity provider attribute | Optional | `FullName` |
+| `Default_LastNameMapping` | sets the mapping entity attribute to the Identity provider attribute | Optional | No default Value |
+| `Default_PrincipalEntityAttribute` | the attribute holding the unique identifier of an authenticated user | Optional | `Name` |
+| `Default_PrincipalIdPAttribute` | the IdP claim which is the unique identifier of an authenticated user | Optional | `ExternalId` |
+| `Default_UserIdMapping` | sets the mapping entity attribute to the Identity provider attribute | Optional | No default Value |
+| `Default_UserNameMapping` | sets the mapping entity attribute to the Identity provider attribute |  Optional | No default Value |
+| `Default_UserRole` | sets the mapping entity attribute to the Identity provider attribute | Optional | `User` |
+| `Default_UserType` | sets the mapping entity attribute to the Identity provider attribute | Optional | `Internal` |
+
 #### Configuration with Entra ID
 
 Setting up connectivity with an IdP varies depending on the vendor. The following subsection shows the configuration for the Microsoft Entra ID.
