@@ -7,36 +7,36 @@ description: "Overview of the [External Database Connection document](https://ma
 
 ## Introduction
 
-The [Database Connector](/appstore/modules/external-database-connector/) integrates with Studio Pro with an **External database connection** service document. Use this document alongside the connector to connect to external databases right in Studio Pro.
+The [External Database Connector](/appstore/modules/external-database-connector/) integrates with Studio Pro with an **External database connection** service document. Use this document to connect to external databases in Studio Pro.
 
 This page references the External Database Connection document in Studio Pro. For information on how to configure the connector, see [External Database Connector](/appstore/modules/external-database-connector/). For information on how to create and validate SQL queries, see [Use the External Database Connector](/refguide/use-the-external-database-connector/).
 
-{{% alert color="warning" %}}
+{{% alert color="info" %}}
 You must have the [External Database Connector](https://marketplace.mendix.com/link/component/219862) installed for external database connections to work properly while running your app. For instructions on adding modules or connectors to your app, see [Use Marketplace Content in Studio Pro](/appstore/use-content/).
 {{% /alert %}}
 
 ## Connect to Database Wizard {#wizard}
 
-Right-click on your module and click **Add other > External database connection** to open the **Connect to Database** wizard:
+Right-click your module and click **Add other > External database connection** to open the **Database Connection** wizard:
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/external-database-connector/database-connection-wizard.png" class="no-border" width="600" >}}
 
-Once in the wizard, enter or select the following:
+Enter or select the following:
 
 * **Name** — name of your database connection
-* **Database Type** — Microsoft SQL, MySQL, Oracle, PostgreSQL, Snowflake (Beta support from [Studio Pro 10.10](/releasenotes/studio-pro/10.10/))
+* **Database Type** — Microsoft SQL, MySQL, Oracle, PostgreSQL, or Snowflake (Beta support from [Studio Pro 10.10](/releasenotes/studio-pro/10.10/))
 
-### Connecting Using Connection Details
+### Connection Details
 
 If you select **Use connection details**, enter:
 
-* **Host** — the hostname (`localhost` when testing locally)
+* **Host** — the host name (`localhost` when testing locally)
 * **Port** — the port number
 * **Database Name** — the name of the database
 * **User Name** — the username to access the database
 * **Password** — the password to access the database
 
-### Connecting Using Connection String
+### Connection String
 
 If you select **Use connection string**, enter the following:
 
