@@ -248,7 +248,7 @@ This selection can be blank if you do not want to add custom logic. Save this co
 
 ### Deploy-time Configuration {#deploy-time}
 
-Starting from version 2.3.0, you can configure the SCIM module using app [constants](https://docs.mendix.com/refguide/constants/) instead of the app administration pages. As an app developer that uses SCIM, you can set default values. These values can be overridden at deploy-time using the app constants.
+Starting from version 1.0.2, you can configure the SCIM module using app [constants](https://docs.mendix.com/refguide/constants/) instead of the app administration pages. As an app developer that uses SCIM, you can set default values. These values can be overridden at deploy-time using the app constants.
 
 To enable app constants for configuring the SCIM module, set your app to run the after startup microflow in the OIDC module (SCIM.ASU_StartUp).
 
