@@ -255,7 +255,7 @@ To enable app constants for configuring the SCIM module, set your app to run the
 Use the following security best practices when setting up your constants:
 
 * Set the export level of these constants to **Hidden** to enhance security.
-* Mask the client_secret to prevent its value from being visible in the Mendix Portal. For more details, see the [Constants](/developerportal/deploy/environments-details/#constants) section of the *Environment Details*.
+* Mask the `client_secret` to prevent its value from being visible in the Mendix Portal. For more details, see the [Constants](/developerportal/deploy/environments-details/#constants) section of the *Environment Details*.
 
 The following error messages will be displayed when you try to edit/delete default deploy-time configuration at runtime:
 
