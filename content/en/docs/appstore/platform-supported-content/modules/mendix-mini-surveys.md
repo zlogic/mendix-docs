@@ -8,6 +8,13 @@ description: "Describes the configuration and usage of the Mendix Mini Surveys m
 
 After you have created a [mini survey](/developerportal/app-insights/mini-surveys/) in the Mendix Portal, use the [Mendix Mini Surveys](https://marketplace.mendix.com/link/component/205483) module to implement your mini survey in Studio Pro.
 
+{{% alert color="warning" %}}Mendix has renamed the top-level module in v3.0.2 from **AppInsights_MiniSurvey** to **MiniSurveys**. When upgrading from any previous version to v3.0.2, make sure you manually delete the old **AppInsights_MiniSurvey** module. To do this, following these steps:
+
+1. In the App Explorer, go to **App** > **Marketplace modules**.
+2. Find and remove the old **AppInsights_MiniSurvey** module.
+
+{{% /alert %}}
+
 ## Installation
 
 To import this module into your app, follow the instructions in [How to Use Marketplace Content](/appstore/use-content/).
@@ -28,7 +35,7 @@ To import this module into your app, follow the instructions in [How to Use Mark
     * For the on-action option:
 
         1. Open the **Show Survey** folder, then copy the **ShowSurvey_OnAction** nanoflow to your own module.
-        2. In the nanoflow, double-click **Create String variable**, fill in the **Survey ID** of the mini survey, and then save the changes. You can find the survey ID on the [Settings](/developerportal/app-insights/mini-surveys/#survey-details-settings) tab or [Implementation](/developerportal/app-insights/mini-surveys/#survey-details-implementation) tab of the survey details page in **Mini Surveys** in the Mendix Portal.
+        2. In the nanoflow, double-click **Create String variable**, fill in the **Survey ID** of the mini survey, and then save the changes. You can find the survey ID on the [Settings](/developerportal/app-insights/mini-surveys/#survey-details-settings) tab of the survey details page in **Mini Surveys** in the Mendix Portal.
         3. (Optional) Double-click **CHANGE ME**, add your microflow or nanoflow action, then save the changes.
         4. Create a button that calls the **ShowSurvey_OnAction** nanoflow on the page where **Template_SurveyWidget** is placed. Mendix recommends renaming the flow to something that describes the original action.
 

@@ -6,20 +6,20 @@ description: "Describes Teamcenter Extension from the Mendix Marketplace. Teamce
 
 ## Introduction {#introduction}
 
-The [Teamcenter Extension](https://marketplace.mendix.com/link/component/225544) is a Mendix Extension built using the Mendix Extensibility Framework to provide you with an effortless means to harness the capabilities of [Teamcenter Connector](https://marketplace.mendix.com/link/component/111627) for Mendix. Teamcenter Extension is layered atop the Teamcenter Connector. It provides a low-code experience by making it easier to visualize and access Teamcenter data models and automate creation of Mendix domain models and microflows.
+[Teamcenter Extension](https://marketplace.mendix.com/link/component/225544) is a Mendix Extension built using the Mendix Extensibility Framework to provide you with an effortless means to harness the capabilities of [Teamcenter Connector](https://marketplace.mendix.com/link/component/111627) for Mendix. Teamcenter Extension is built on Teamcenter Connector. It provides a low-code experience by making it easier to visualize and access Teamcenter data models and automating creation of Mendix domain models and microflows.
 
 {{% alert color="info" %}}Teamcenter Extension V 3.0.0 and above is also supported on macOS.{{% /alert %}}
 
 ### Typical Use Cases {#usecases}
 
-Teamcenter Extension offers a list of use cases for which domain models and microflows can be created. After you select a use case, it uses an import mapping approach similar to Mendix [import mapping](/refguide/import-mappings/). Here, Teamcenter Extension allows you to select data from the business model of your Teamcenter instance. Based on the selected use case, the import mapping, and, for some use cases, additional configurations, Teamcenter Extension generates and updates the domain model for your integration and generates one or more ready-to-use microflows that you can drag and drop into your application logic.
+Teamcenter Extension offers a list of use cases for which domain models and microflows can be created. After you select a use case, it uses an import mapping approach similar to Mendix [import mapping](/refguide/import-mappings/). Here, Teamcenter Extension allows you to select data from the business model of your Teamcenter instance. Teamcenter Extension uses the selected use case, the import mapping, and, in some use cases, additional configurations to generate and update the domain model for your integration and generate one or more ready-to-use microflows that you can drag and drop into your application logic.
 
 Teamcenter Extension offers the following integration options:
 
 * Search item revisions
 * Create item and item revision
 * Update item and item revision
-* Revise Item revison
+* Revise item revision
 * Search datasets
 * Get datasets for item revision
 * Search workspace objects
@@ -33,24 +33,23 @@ Teamcenter Extension is free to download and use. You may, however, require a Te
 
 You must have these Marketplace modules installed:
 
+* [Teamcenter Connector](https://marketplace.mendix.com/link/component/111627): needed for all versions of Teamcenter Extension
 * [Community Commons](https://marketplace.mendix.com/link/component/170): only needed for Teamcenter Extension V 1.0.0
 
-* [Teamcenter Connector](https://marketplace.mendix.com/link/component/111627): needed for all versions of Teamcenter Extension
-
-The compatibility among Teamcenter Extension, Teamcenter Connector, and Studio Pro is as follows:
+Compatibility among Teamcenter Extension, Teamcenter Connector, and Studio Pro is as follows:
 
 | Teamcenter Extension Version | Teamcenter Connector Version | Studio Pro Version |
 | ------------- | ------------- | ------------- |
 | 1.0.0 | 3.6.1, V 3.6.0, V 3.5.0 | 10.6.5 thru 10.7 |
-| 2.0.0 | 2406.0.0 | 10.12.1 and above |
-| 3.0.0                        | 2406.3.0                     | 10.12.6, 10.12.7, 10.16.0, and above |
+| 2.0.0 | 2406.0.0 | 10.12, patch versions 1 and above and 10.16.0 and above |
+| 3.0.0                        | 2406.3.0                     | 10.12 patch version 6 and above and 10.16.0 and above |
 
 {{% alert color="info" %}}
-Teamcenter Extension is not compatible with Studio Pro versions between 10.8 to 10.11, 10.13.x, 10.14.x, and 10.15.x. If you use one of these Studio Pro versions, a possible workaround is to use Teamcenter Extension in one of the compatible versions of Studio Pro first, create necessary artifacts, and then import them into your version. However, Mendix always recommends using the latest MTS or LTS Studio Pro version.
+Teamcenter Extension is not compatible with Studio Pro versions between 10.8 and 10.11, as well as 10.13.x, 10.14.x, and 10.15.x. If you use one of these Studio Pro versions, a possible workaround is to use Teamcenter Extension in one of the compatible versions of Studio Pro first, create the necessary artifacts, and then import them into your version. However, Mendix always recommends using the latest MTS or LTS Studio Pro version.
 {{% /alert %}}
 
 {{% alert color="info" %}}
-If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or below, and want to upgrade to Teamcenter Extension V 3.0.0 and Teamcenter Connector V 2406.3.0, see the [Upgrading Teamcenter Extension V 1.0.0 to V 3.0.0](#upgrade) section.
+If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or below and want to upgrade to Teamcenter Extension V 3.0.0 and Teamcenter Connector V 2406.3.0, see the [Upgrading Teamcenter Extension V 1.0.0 to V 3.0.0](#upgrade) section.
 {{% /alert %}}
 
 ### Demo App {#demoapp}
@@ -241,18 +240,32 @@ Once you finished import mapping, click **Generate** to create microflows for th
 
 If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or below, and want to upgrade to Teamcenter Extension V 3.0.0 and Teamcenter Connector V 2406.3.0, perform the following procedure:
 
-1. Open your app in Studio Pro version 10.12.6 or higher.
+1. Open your app in a Studio Pro version compatible with Teamcenter Extension V 3.0.0 (see version matrix under [Dependencies](#dependencies) section)
 2. Follow the instructions in [How to Use Marketplace Content in Studio Pro](/appstore/general/app-store-content/) to download [Teamcenter Extension V 3.0.0](https://marketplace.mendix.com/link/component/225544) from the Marketplace and install it.
 3. When a warning dialog box opens, click **Trust module and enable extension**. Otherwise, Teamcenter Extension will not be installed.
-4. Follow the instructions in [How to Upgrade the Module to a Newer Version](/appstore/use-content/#update-module) to upgrade Teamcenter Connector to V 2406.0.0. Teamcenter Connector V 2406.0.0 has updated domain model that made certain entities and associations in Teamcenter Extension V 1.0.0 redundant. As a result, you get errors after the upgrade.
+4. Follow the instructions in [How to Upgrade the Module to a Newer Version](/appstore/use-content/#update-module) to upgrade Teamcenter Connector to V 2406.0.0.
+
+    {{% alert color="info" %}}Teamcenter Connector V 2406.3.0 has an updated domain model that makes certain entities and associations in Teamcenter Extension V 1.0.0 redundant. As a result, you will get errors after the upgrade.{{% /alert %}}
 
 5. To resolve the errors, use one of the solutions described the sections below:
 
-    * [Solution 1](#solution-1)
+    * [Solution 1](#solution-1) – Delete and recreate microflows—using Solution 1 has the advantage that after completing the procedure, the integrations will appear on the **History** tab.
 
-    * [Solution 2](#solution-2) – Using Solution 2 has an advantage: after completing the procedure, the integrations will appear on the **History** tab.
+    * [Solution 2](#solution-2) – Update references and parameters.
 
 ### Resolving the Errors – Solution 1 {#solution-1} 
+
+{{% alert color="info" %}}
+Using Solution 1 has an advantage: after completing the procedure, the integrations will appear on the **History** tab.
+{{% /alert %}}
+
+Perform the following steps:
+
+1. Delete the microflows generated with Teamcenter Extension V 1.0.0. This will cause errors in the locations where these microflows were used. Keep these errors so that you can identify where the microflows need to be implemented again.
+2. Go to Teamcenter Extension V 3.0.0 and repeat the steps you did before in Teamcenter Extension V 1.0.0. Simply select the same entities and associations, as they already exist in your domain model.
+3. Go over the errors caused by the missing microflows and implement the newly-generated microflows. 
+
+### Resolving the Errors – Solution 2 {#solution-2}
 
 Follow the instructions in the table below:
 
@@ -261,15 +274,3 @@ Follow the instructions in the table below:
 | `TeamcenterToolkit.BOMWindow` no longer exists          | <ol><li>Update all references to <br/>`TcConnector.BOMWindow`.</li><li>Search for `TeamcenterToolkit.BOMWindow` to find `BOMapping` parameters where the entity is used, and change it to `TcConnector.BOMWindow`.</li></ol> |
 | `TeamcenterToolkit.top_line` no longer exists           | Update all associations to `TcConnector.top_line`.           |
 | The selected Java action parameter […] no longer exists | Set all the Java action parameters again.                    |
-
-### Resolving the Errors – Solution 2 {#solution-2}
-
-{{% alert color="info" %}}
-Using Solution 2 has an advantage: after completing the procedure, the integrations will appear on the **History** tab.
-{{% /alert %}}
-
-As an alternative to solution 1, you can perform the following steps:
-
-1. Delete the microflows generated with Teamcenter Extension V 1.0.0. This will cause errors in the locations where these microflows were used. Keep these errors so that you can identify where the microflows need to be implemented again.
-2. Go to Teamcenter Extension V 3.0.0 and repeat the steps you did before in Teamcenter Extension V 1.0.0. Simply select the same entities and associations, as they already exist in your domain model.
-3. Go over the errors caused by the missing microflows and implement the newly-generated microflows. 

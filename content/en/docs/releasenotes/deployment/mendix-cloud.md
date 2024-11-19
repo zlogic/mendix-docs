@@ -16,6 +16,21 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2024
 
+### November 17, 2024
+
+#### Deployment Portal Fixes
+
+* We fixed a bug in the [Permissions tab of the legacy UI](/developerportal/deploy/environments/#permissions), where changing an application's technical contact resulted in a blank page.
+* We fixed a bug in the [new UI](/developerportal/deploy/environments-redesign/), where the **scalable** tag was displayed for environments that were not scalable.
+* We fixed a number of other bugs related to dark mode.
+
+### November 14, 2024
+
+#### Pipelines New Features
+
+* We added a new **Variables** tab that allows you to create user-defined pipeline variables. For more information, see [The Variables Tab](/developerportal/deploy/pipelines/#variable-tab) in the *Pipelines* documentation.
+* We added a new pipeline step: [Unit Testing](/developerportal/deploy/pipelines/#unit-testing). This step executes the Unit Testing module in a running environment to perform a regression testing and marks the pipeline as failed if any tests fail, providing the failure count and details.
+
 ### November 6, 2024
 
 #### New Features
@@ -38,7 +53,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 #### Pipelines New Features
 
 * We released an API that lets you start a new pipeline run for a saved and activated pipeline design and retrieve the status of a pipeline run. For more information, see [Pipelines API](/apidocs-mxsdk/apidocs/pipelines-api/).
-* We added a new pipeline step: Best Practice Recommender Check. This step lets you evaluate results of the Maia Best Practice Recommender within your pipeline.
+* We added a new pipeline step: [Best Practice Recommender](/developerportal/deploy/pipelines/#recommender) Check. This step lets you evaluate results of the Maia Best Practice Recommender within your pipeline.
 
 ### September 5, 2024
 

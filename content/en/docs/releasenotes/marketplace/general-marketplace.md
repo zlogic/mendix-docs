@@ -14,6 +14,30 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 ## 2024
 
+### October 31, 2024
+
+#### New Features
+
+* Components with the content type Solutions or Industry Templates now have a component details page.
+* On the component details page, you can now view information about the company that owns the component and the industry it belongs to.
+* The **Releases** tab on the component details page now includes two search bars, enabling you to search by release notes and Mendix versions.
+
+#### Improvements
+* Videos previously located on the **Documentation** tab have been moved to the **Overview** tab on the component details page.
+* If you click **Start with App** on a component details page of a starter app, you will start the Create App flow.
+
+#### Deprecations
+
+* The content types Banners and Solution Capabilities have been deprecated. You can no longer upload these two content types.
+
+### September 26, 2024
+
+#### New Features
+* We added several new features to the Marketplace home page:
+  - You can now search for marketplace content by component name or company name, and apply relevant filters.
+  - Filters can now be easily cleared.
+  - Pagination has been introduced for search results, making navigation more streamlined.
+
 ### June 27, 2024
 
 #### New Features
