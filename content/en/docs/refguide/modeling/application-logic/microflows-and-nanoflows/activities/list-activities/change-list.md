@@ -5,6 +5,10 @@ weight: 2
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
+{{% alert color="warning" %}}
+This activity works slight differently in microflows and in nanoflows. For more information, see the 
+[Differences between Microflows and Nanoflows](/refguide/microflows-and-nanoflows/#list-changes-in-sub-nanoflows) section in *Microflows and Nanoflows*. {{% /alert %}}
+
 ## Introduction
 
 The **Change list** activity allows you to change a list by adding objects to, and removing objects from, it. The activity works directly on the list provided, in contrast to the [List operation](/refguide/list-operation/) activity.
