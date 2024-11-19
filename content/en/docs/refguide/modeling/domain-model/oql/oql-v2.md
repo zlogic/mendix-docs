@@ -24,7 +24,7 @@ In OQL v2, you can no longer use a path over association in a `GROUP BY` query b
 This query is not allowed anymore:
 
 ```sql
-SELECT COUNT(*)
+SELECT COUNT(*) AS count
 FROM Module.Person
 GROUP BY Module.Person/Module.Person_City/Module.City/Name
 ```
@@ -32,7 +32,7 @@ GROUP BY Module.Person/Module.Person_City/Module.City/Name
 Instead, you can use the long path in the `JOIN` pattern as follows:
 
 ```sql
-SELECT COUNT(*)
+SELECT COUNT(*) AS count
 FROM Module.Person AS P
 JOIN Module.Person/Module.Person_City/Module.City AS C
 GROUP BY C/Name
