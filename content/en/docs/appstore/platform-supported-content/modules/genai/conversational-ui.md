@@ -239,7 +239,7 @@ You can use the following classes in your custom stylesheets to create your own 
 
 #### Creating a custom page {#custom-page}
 
-You may need to use the following classes when building a more complex custom page that includes Converstaional UI components.
+You may need to use the following classes when building a more complex custom page that includes Conversational UI components.
 
 | Class name | Description |
 | --- | --- | 
@@ -283,7 +283,7 @@ The chat UI snippets from this module rely on the height property of the parent 
 
 Make sure that any custom containers and layoutgrids that were added on your page (or the page layout for that matter) around the Conversational UI components have their `height` property defined. Useful helper classes that could be used for this are `chat-container`, `chat-card--full-height` and `layoutgrid--full-height`. 
 
-If needed, verif that no data view widget is breaking the flow; use e.g. `dataview--display-contents`. See example page `ConversationalUI_FullScreenChat` for a basic implementation of the mentioned elements.
+If needed, verify that no data view widget is breaking the flow; use e.g. `dataview--display-contents`. See example page `ConversationalUI_FullScreenChat` for a basic implementation of the mentioned elements.
 
 ### Cannot Export Usage Data for the Token Monitor
 
