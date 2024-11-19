@@ -198,11 +198,11 @@ The table below compares the primary user-identifying attribute used by SCIM (i.
 
 #### API Security {#api_security}
 
-Ensure that only legitimate SCIM clients can interact with your app via the SCIM module. You need to enable your SCIM client to authenticate itself with your app. The SCIM module currently supports usage of an **API Key** (token) for the authentication. You can either generate an API Key to download or upload one into your SCIM client during [Deploy Time Configuration](#deploy-time). This can be done by below two options:
+Ensure that only legitimate SCIM clients can interact with your app via the SCIM module. You need to enable your SCIM client to authenticate itself with your app. The SCIM module currently supports using an **API Key** (token) for the authentication. You can generate an API Key to download or upload one into your SCIM client during [Deploy Time Configuration](#deploy-time). This can be done using two options below:
 
-1. Using SCIM module to generate API-key
+1. Using SCIM module to generate API key
 
-    To generate and download an API-key, click **New** in the **IdPConfiguration** page and configure below fields:
+    To generate and download an API key, click **New** on the **IdPConfiguration** page and configure the fields below:
 
     * **Alias**: This is an alias name for your configuration. For Example, *Azure*.
 
@@ -222,7 +222,7 @@ In the **Provisioning** tab of the SCIM server configuration, you need to config
 * **The attribute where the user principal is stored** (primary attribute): unique identifier associated with an authenticated user.
 * **Allow the module to create users**: this enables the module to create users based on user provisioning and attribute mapping configurations.
     * By default, the value is set to ***Yes***.
-* **Default Userrole**: the role which will be assigned to newly created users by default.
+* **Default Userrole**: the role that will be assigned to newly created users by default.
 * **User Type**: this allows you to configure end-users of your application as internal or external.
     * By default, the value is set to ***Internal***.
 * **Attribute Mapping**: under **Attribute Mapping**, select an **IdP Attribute** (claim) for each piece of information you want to add to your custom user entity. Specify the **Configured Entity Attribute** where you want to store the information.
@@ -244,7 +244,7 @@ The custom microflow name must begin with the string `UC_CustomProvisioning` and
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/scim/user_commons.png" class="no-border" >}}
 
-This selection can be blank if you do not want to add custom logic. Save this configuration. Double click on **Alias** name and you will be able to copy the generated **API Key**.
+This selection can be blank if you do not want to add custom logic. Save this configuration. Double-click on the **Alias** name and you will be able to copy the generated **API Key**.
 
 ### Deploy-time Configuration {#deploy-time}
 
@@ -259,8 +259,8 @@ Use the following security best practices when setting up your constants:
 
 The following error messages will be displayed when you try to edit/delete default deploy-time configuration at runtime:
 
-* Error at edit: *You cannot modify as it is created from deployment*.
-* Error at delete: *You cannot delete as it is created from deployment*.
+* Error at edit: *You cannot modify it as it is created from deployment*.
+* Error at delete: *You cannot delete it as it is created from deployment*.
 
 #### Customizing Default Deploy-time Configuration
 
@@ -269,10 +269,10 @@ The table below shows you the default mandatory and optional constants:
 | Constants | Description | Mandatory/Optional | Default Value |
 | --- | --- | --- | --- |
 | `Default_APIKey_Value` | **API Key** (token) for the authentication | Mandatory | No default value |
-| `Default_IdPConfiguration_Name` | Default IdP Configuration name. Since only one default deploy-time configuration constant is supported, it cannot be modified or deleted.| Mandatory | No default Value |
+| `Default_IdPConfiguration_Name` | default IdP Configuration name. Since only one default deploy-time configuration constant is supported, it cannot be modified or deleted.| Mandatory | No default Value |
 | `Default_AllowCreateUsers` | allows to create users in the application | Optional | `True` |
-| `Default_CustomEntity_Name` | a Custom Entity name that can be specified for provisioning | Optional | `Administration.Account` |
-| `Default_DeleteUserPermanently` | A flag to delete users permanently or not | Optional | `False` |
+| `Default_CustomEntity_Name` | custom Entity name that can be specified for provisioning | Optional | `Administration.Account` |
+| `Default_DeleteUserPermanently` | a flag to delete users permanently or not | Optional | `False` |
 | `Default_FirstNameMapping` | sets the mapping entity attribute to the Identity provider attribute | Optional | `FullName` |
 | `Default_LastNameMapping` | sets the mapping entity attribute to the Identity provider attribute | Optional | No default Value |
 | `Default_PrincipalEntityAttribute` | the attribute holding the unique identifier of an authenticated user | Optional | `Name` |
@@ -299,7 +299,7 @@ Setting up connectivity with an IdP varies depending on the vendor. The followin
 
 4. Configure **Mappings** and **Settings**.
 
-    * **Mappings** allow you to define how data should be mapped between Entra ID and Mendix application.
+    * **Mappings** allow you to define how data should be mapped between Entra ID and the Mendix application.
     * Click **Settings** and you can change the scope to **Sync only assigned user and groups**.
     * **Save** the configuration.
 
@@ -317,18 +317,18 @@ Once you have your SCIM module configured, you can test it by creating, updating
 
 The test case below is defined for the scope of **Sync only assigned user and groups** and validation of provisioning status in the SCIM server.
 
-* Create a user with default `userPrincipalName`. Optionally, you may choose to change the user Mappings in the Microsoft Entra ID. You can change Entra ID attribute from `userPrincipalName` to another attribute. For example, `mailNickName`.
+* Create a user with the default `userPrincipalName`. Optionally, you may choose to change the user Mappings in the Microsoft Entra ID. You can change Entra ID attribute from `userPrincipalName` to another attribute. For example, `mailNickName`.
 * Update a user in the Microsoft Entra ID. For Example, add/update work email, last name, etc.
 * Delete a user in the Microsoft Entra ID.
 
 To hard delete a user, you can set the flag **Default_DeleteUserPermanently** (in the **Acceptance Environment Details** of the Mendix application environment) to *True*. By default, this flag is set to *False*.
 
 You may want to use **Provision on demand** while testing SCIM module integration for immediate provisioning. You can either select individual users or users in a group (or groups).
-Below options provide you the choice of user selection during on demand provisioning.
+The below options provide you with the choice of user selection during on-demand provisioning.
 
 * **View members only**: select users from the group
 * **View all users**: select users from the Entra ID
 
 {{% alert color="info" %}}
-Your app may have multiple tenants in the Entra ID. Users created from any of the Entra ID tenant will have same domain in their `user_principle_name`. This results in an active user in your app which you have not assigned in your application in Entra ID.
+Your app may have multiple tenants in the Entra ID. Users created from any of the Entra ID tenants will have a same domain in their `user_principle_name`. This results in an active user in your app which you have not assigned in your application in Entra ID.
 {{% /alert %}}
