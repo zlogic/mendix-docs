@@ -66,6 +66,7 @@ The SCIM module has the following limitations:
 * If you want to do **Provision on demand** from Entra ID to test the SCIM integration of your app you cannot trigger a partial sync based on a group. This will trigger Entra ID to invoke a `/groups` endpoint, which is not yet supported.
 * The module does not support the development of a SCIM client application.
 * By default, the SCIM module’s admin screen is displayed in English. Users cannot add additional languages to the module, as it is protected and does not support language modification. 
+* Multiple clients can be configured only at runtime via the admin screen.
 
 ### SCIM Protocol Adherence
 
@@ -77,13 +78,13 @@ This section provides clarity on the extent to which the SCIM module supports th
 
 * The supported features align with the requirements for integration with Entra ID.
 
-Currently, the SCIM module does not support the following features of the SCIM protocol:
+* SCIM module supports users via the `/users` endpoint. Known resources can be retrieved using a GET.
+
+* It is possible to have multiple SCIM clients for a single Mendix application. The tenancy model enables each client to create and access a private subset of users. For more information, see the [Multi-Tenancy](https://datatracker.ietf.org/doc/html/rfc7644#section-6) section.
+
+Currently, the SCIM module does not support the following features of the SCIM schema:
 
 * Sync password
-
-* Enhanced group push
-
-* Import groups
 
 * User attributes other than a basic user profile. Mendix currently supports a limited set of user attributes from the SCIM user schema, including UserName, Email, FamilyName, GivenName, and Active status
 
@@ -91,11 +92,17 @@ Currently, the SCIM module does not support the following features of the SCIM p
 
 * User schema extensions
 
-* /Me endpoint
-
-* Bulk operations
-
 * Multi-tenancy
+
+The SCIM module does not support the following features of the SCIM protocol:
+
+* `/Me` endpoint
+
+* Query resources using GET
+
+* Bulk operations `/bulk`
+
+* `/group` endpoint
 
 ### Prerequisites
 
@@ -255,16 +262,11 @@ To enable app constants for configuring the SCIM module, set your app to run the
 Use the following security best practices when setting up your constants:
 
 * Set the export level of these constants to **Hidden** to enhance security.
-* Mask the `client_secret` to prevent its value from being visible in the Mendix Portal. For more details, see the [Constants](/developerportal/deploy/environments-details/#constants) section of the *Environment Details*.
-
-The following error messages will be displayed when you try to edit/delete default deploy-time configuration at runtime:
-
-* Error at edit: *You cannot modify it as it is created from deployment*.
-* Error at delete: *You cannot delete it as it is created from deployment*.
+* Mask the `Default_APIKey_Value` to prevent its value from being visible in the Mendix Portal. For more details, see the [Constants](/developerportal/deploy/environments-details/#constants) section of the *Environment Details*.
 
 #### Customizing Default Deploy-time Configuration
 
-The table below shows you the default mandatory and optional constants:
+The table below lists all supported constants. Mandatory constants must be set at deploy-time, while optional constants can typically be set at design-time but, if necessary, can be overridden at deploy-time.
 
 | Constants | Description | Mandatory/Optional | Default Value |
 | --- | --- | --- | --- |
@@ -311,9 +313,9 @@ Setting up connectivity with an IdP varies depending on the vendor. The followin
 
 ## Testing and Troubleshooting
 
-Once you have your SCIM module configured, you can test it by creating, updating, and deleting the user.
-
 ### Testing with Entra ID
+
+Once you have your SCIM module configured, you can test it by creating, updating, and deleting the user.
 
 The test case below is defined for the scope of **Sync only assigned user and groups** and validation of provisioning status in the SCIM server.
 
@@ -332,3 +334,7 @@ The below options provide you with the choice of user selection during on-demand
 {{% alert color="info" %}}
 Your app may have multiple tenants in the Entra ID. Users created from any of the Entra ID tenants will have a same domain in their `user_principle_name`. This results in an active user in your app which you have not assigned in your application in Entra ID.
 {{% /alert %}}
+
+### Troubleshooting
+
+Attempting to edit or delete the default deploy-time configuration at runtime will result in errors. These errors indicate that the SCIM configuration was created at runtime with possible deploy-time overrides, as explained in the [Deploy-time configuration](#deploy-time) section above. You cannot modify such configurations at runtime using the admin screens.
