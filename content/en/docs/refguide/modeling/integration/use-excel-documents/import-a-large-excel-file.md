@@ -8,7 +8,7 @@ aliases: /howto/integration/import-a-large-excel-file/
 
 ## Introduction
 
-Use XML-to-domain mapping to create a new import entity from an Excel sheet in a quick, semi-automated way.
+Use XML-to-domain mapping to create a new import entity from an Excel sheet in a quick, semi-automated way. There is also a new & fully automated way available to create placeholder entity based off of Excel files, refer section **Using Data Importer Extension to create Entity using a Large Excel.**
 
 This how-to teaches you how to do the following:
 
@@ -141,3 +141,24 @@ To keep your application clean, you can delete the XSD schema and XML-to-domain 
 A video demonstrating this technique can be viewed below:  
 
 {{< youtube 8qLyIoUqKEE >}}
+
+## Using Data Importer Extension to create Entity using a Large Excel.
+
+{{% alert color="info" %}}
+You will need Mx10.7 and above to work with this approach. It can also support creating Entity from CSV file as input, following the exact same steps given below.
+{{% /alert %}}
+
+The Data Importer extension can be used to automatically create an Entity in your Domain model without any manual efforts. We will be using the same input excel (countries.xlsx) to create an Entity. 
+To create Entity in your Doamin Model using input Excel sheet, follow these steps:
+
+1. Right click on your module (e.g. MyFirstModule) and navigate to *Add other* > *Data Importer*.
+2. Provide a name for the DI document (e.g. DataImporter_Countries) and you will be routed to upload a sample file.
+3. Drop the "Countries.xlsx" file or navigate to the file after clicking *Select a local file*
+4. Set the configuration in terms of *Sheet Name*, *Header Row No*, and *Read Data from*
+5. Click on *Preview Source Data & Entity*
+6. If the column names do not conform to Mx naming conventions, then they will be auto-corrected and you will be informed.
+7. The extension also tries to identify correct data-types of the columns of Excel like String, Boolean, Decimal, Date etc.
+8. If all looks good in the preview, you can hit *Create Entity* and a non-persistent entity (NPE) will be created in your Domain Model.
+   {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/create-entity-using-excel-input.png" class="no-border" >}}
+9. You can later change the name of the Entity, change its persistence etc and you are ready to use this Emtity in your App.
+   
