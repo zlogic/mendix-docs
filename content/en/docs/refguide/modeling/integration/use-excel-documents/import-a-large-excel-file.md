@@ -145,20 +145,21 @@ A video demonstrating this technique can be viewed below:
 ## Using Data Importer Extension to create Entity using a Large Excel.
 
 {{% alert color="info" %}}
-You will need Mx10.7 and above to work with this approach. It can also support creating Entity from CSV file as input, following the exact same steps given below.
+Mendix Studio Pro 10.7 or above is required for this approach. You can also use these steps to create an entity from a CSV file.
 {{% /alert %}}
 
-The Data Importer extension can be used to automatically create an Entity in your Domain model without any manual efforts. We will be using the same input excel (countries.xlsx) to create an Entity. 
-To create Entity in your Doamin Model using input Excel sheet, follow these steps:
+The [Data Importer](/appstore/modules/data-importer/) extension can be used to automatically create an entity in your domain model. This example uses the same input Excel (*countries.xlsx*) to create an entity. 
 
-1. Right click on your module (e.g. MyFirstModule) and navigate to *Add other* > *Data Importer*.
-2. Provide a name for the DI document (e.g. DataImporter_Countries) and you will be routed to upload a sample file.
-3. Drop the "Countries.xlsx" file or navigate to the file after clicking *Select a local file*
-4. Set the configuration in terms of *Sheet Name*, *Header Row No*, and *Read Data from*
-5. Click on *Preview Source Data & Entity*
-6. If the column names do not conform to Mx naming conventions, then they will be auto-corrected and you will be informed.
-7. The extension also tries to identify correct data-types of the columns of Excel like String, Boolean, Decimal, Date etc.
-8. If all looks good in the preview, you can hit *Create Entity* and a non-persistent entity (NPE) will be created in your Domain Model.
+To create entity in your domain model using an Excel sheet, follow these steps:
+
+1. Right-click your module and navigate to **Add other** > **Data Importer**.
+2. Provide a name for the Data Importer document. You will then have the ability to upload a sample file.
+3. Drop the *Countries.xlsx* file or click **Select a local file** and navigate to the file.
+4. Set the configuration in terms of **Sheet Name**, **Header Row No**, and **Read Data from**.
+5. Click **Preview Source Data & Entity**
+   * If the column names do not conform to Mendix naming conventions, they will automatically be corrected.    
+   * The extension identifies correct data types of each column (such as string, boolean, or date).
+6. After reviewing the preview, click **Create Entity** and a non-persistable entity (NPE) is created in your domain model.
    {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/create-entity-using-excel-input.png" class="no-border" >}}
-9. You can later change the name of the Entity, change its persistence etc and you are ready to use this Emtity in your App.
-   
+
+    You can change the name of the entity or change its persistence later, if necessary.
