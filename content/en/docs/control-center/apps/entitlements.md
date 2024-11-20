@@ -89,13 +89,13 @@ The tables below show how many cloud credits each cloud resource pack costs:
 
 Mendix cloud tokens are annual capacity-based virtual credits that allow you to provision and allocate any Mendix cloud resource pack for your Mendix Cloud deployments.
 
-Mendix cloud tokens are the successor of cloud credits.
+Mendix cloud tokens are the successor to cloud credits.
 
-### I Already Enabled Cloud Credits, What Changes Will I See When Mendix Cloud Tokens Are Introduced?
+### I Already Enabled Cloud Credits. What Changes Will I See When Mendix Cloud Tokens Are Introduced?
 
 You will notice the following changes:
 
-* Name change: cloud tokens are the successor of cloud credits and completely replace this concept. Once introduced, cloud tokens will replace cloud credits throughout the Mendix Platform. This name change will primarily affect the **Entitlements** page and the **Deployed Apps** page in Control Center.
+* Name change: cloud tokens are the successor to cloud credits and completely replace this concept. Once introduced, cloud tokens will replace cloud credits throughout the Mendix Platform. This name change will primarily affect the **Entitlements** page and the **Deployed Apps** page in Control Center.
 * Value adjustment: Mendix cloud resource packs are valued differently with cloud tokens compared to cloud credits. You will see this change on the **Entitlements** page in Control Center. Once cloud tokens are introduced, your existing transactions and cloud tokens will be automatically adjusted.
 * Direct ordering: you will be able to order Mendix cloud tokens directly from the Mendix pricelist. You can use your available cloud tokens to provision any cloud resource pack for your apps.
 
@@ -107,6 +107,6 @@ No, one cloud credit is equivalent to ten cloud tokens. For example, the smalles
 
 Mendix cloud tokens will be available as a product on the Mendix pricelist, starting in early 2025.
 
-### Where Can I ask Any Further Questions Regarding Mendix Cloud Tokens?
+### Where Can I Ask Any Further Questions Regarding Mendix Cloud Tokens?
 
 For any questions, contact your Mendix Customer Success Manager. If you experience any issues, create a support ticket with Mendix Support.
