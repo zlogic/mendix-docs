@@ -93,7 +93,7 @@ Above the list, you can use the search box to search for a component. Next to th
 The list shows the following information about the component:
 
 * **Component**: This is the name of the component.
-* **Version**: This is the component version.
+
 * **Type**: This shows the type of the component. The type could be modules, widgets, framework, Java libraries (JAR), etc. The descriptions of each type are as follows:
 
     * **Modules** – Standard marketplace modules imported from the Marketplace, for example [Community Commons](https://marketplace.mendix.com/link/component/170)
@@ -104,7 +104,21 @@ The list shows the following information about the component:
     * **Unknown** – When the type of the component is none of the above and hence undetermined
 
   For more information, refer to [SBOM Generation](/refguide/sbom-generation/).
+  
+* **Support type** – This shows the support type of the Marketplace component. It can be **Mendix**, **Partner**, or **Community**. For more information, see [Content Support Categories](/appstore/marketplace-content-support/#category).
+
+* **Version**: This is the component version.
+
+* **Licence**– This shows the end-user license for the component.
+
+* **Marketplace** – This shows whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the  Marketplace, while a private component is available only via your [Compnay Content](/appstore/overview/#company-content) page.
+
+* **Latest version** – This shows the lastest version of the component.
+
+    **Publisher** – This shows the name of the organization that published the component.
+
 * Column customization ({{% icon name="view" %}}): You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the checkboxes.
+
 * **View details**: Clicking this opens the [Component Usage](#component-usage) page.
 
 ### Component Usage {#component-usage}
