@@ -19,6 +19,15 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2024
 
+### November 14, 2024
+
+#### Improvements
+
+* We have improved [Mini Surveys](/developerportal/app-insights/mini-surveys/) as follows:
+  * Mini Surveys now features an updated onboarding flow that guides you step by step through the installation process.
+  * You no longer need to restart your application to switch surveys, as we have changed the module to use the survey location instead of linking it to a survey ID. 
+  * We have simplified the process of creating a new survey by introducing a wizard that walks you through each step.
+
 ### November 7, 2024
 
 #### New features
@@ -29,7 +38,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### New features
 
-- We have added two more endpoints to [Projects API](/apidocs-mxsdk/apidocs/projects-api/) to help you manage your project roles. More are on their way!
+* We have added two more endpoints to [Projects API](/apidocs-mxsdk/apidocs/projects-api/) to help you manage your project roles. More are on their way!
 
 ### October 27, 2024
 
@@ -174,7 +183,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 #### Improvements
 
 * In Feedback, we have fixed an issue where the reporter's name appeared empty on the **Contact Reporter** tab. Now if there is no reporter's name available, their email address will be shown instead.
-* We released the following improvements for [Mini survey](/developerportal/app-insights/mini-surveys/):
+* We released the following improvements for [Mini surveys](/developerportal/app-insights/mini-surveys/):
     * We improved your experience of copying the generated API key by implementing a new widget on the [Settings](/developerportal/app-insights/mini-surveys/#settings) tab of the **Survey Overview** page.
     * We improved our error messages by providing more details.
 
@@ -218,7 +227,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### Fixes
 
-* We fixed a bug where the sidepanel would flicker upon loading either [Mini survey](/developerportal/app-insights/mini-surveys/) or [Feedback](/developerportal/app-insights/feedback/).
+* We fixed a bug where the sidepanel would flicker upon loading either [Mini Surveys](/developerportal/app-insights/mini-surveys/) or [Feedback](/developerportal/app-insights/feedback/).
 * In Feedback, creating, archiving, and deleting feedback items should now show the correct pages.
 
 ### February 8, 2024

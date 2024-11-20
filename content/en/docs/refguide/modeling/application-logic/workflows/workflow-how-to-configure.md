@@ -59,9 +59,14 @@ Before starting this how-to, make sure you have completed the following prerequi
 
         {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-how-to-configure/enumeration-laptop-model.png" width="500" >}}
 
-* Make sure you have an **EmployeesToOnboard** page that contains a list view and has the **EmployeeOnboarding** entity as the data source:
+* Make sure you have an **EmployeesOnboarding_NewEdit** pop-up page that can be used to add a new **EmployeeOnboarding** object. For more information on how to create an entity detail page, see [Create Overview and Detail pages](/howto/front-end/create-your-first-two-overview-and-detail-pages/)
+
+* Make sure you have an **EmployeesToOnboard** page that looks like the following:
 
     {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-how-to-configure/employees-page.png" alt="Employees Page" class="no-border" >}}
+
+    * Contains an **Add** button that is configured to create a new **EmployeeOnboarding** object via the **EmployeeOnboarding_NewEdit** pop-up page
+    * Contains a list view and has the **EmployeeOnboarding** entity as the data source
 
 * Add the following pages to your navigation (pages are part of the Workflow Commons module):
     * TaskInbox
@@ -143,20 +148,21 @@ The next step in setting up security is to configure the entity access otherwise
 4. In the **New Access rule** dialog box, do the following:
 
     1. In the **Rule applies to the following modules** section, select the **HR** role.
-    2. In the **Create and delete rights** section, select **Allow creating new objects**. This allows HR to create a new **EmployeeOnboarding** object when a workflow is started.     
-    3. In the **Member read and write rights** section, click **Set all to Read**. As the HR needs only to start the workflow, but not to change any employee information, **Read** rights are sufficient for all attributes of the entity. 
+    2. In the **Create and delete rights** section, select **Allow creating new objects**. This allows HR to create a new **EmployeeOnboarding** object.
+    3. In the **Member read and write rights** section, set the access rights of **FullName** and **FirstDay** to **Read, Write** as HR needs to fill in the new employee's full name and their first working day.
+    4. Set the access rights of **WFH**, **PhoneModel**, and **LaptopModel** to **Read**.
 
         {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-how-to-configure/access-rules-hr.png" alt="Access Rules for the HR role" width="600" >}}
 
-    4. Click **OK** to save settings.
+    5. Click **OK** to save settings.
 
 5. In the **Access rules** tab, click **New** again to create rule for the Manager role.
 
     1. In the **Rule applies to the following modules** section, select the **Manager** role.
-    2. In the **Member read and write rights** section, click the drop-down list for the **FullName** attribute and select **Read**. 
-    3. As the Manager should be able to select where the new employee is working from and devices that they need, set the **WFH**, **PhoneModel**, and **LaptopModel** to **Read,Write**.
+    2. In the **Member read and write rights** section, set the access right of **FullName** to **Read**. 
+    3. As the Manager should be able to select where the new employee is working from and devices that they need, set the access rights of **WFH**, **PhoneModel**, and **LaptopModel** to **Read, Write**.
 
-    4. Set the **FirstDay** attribute to **Read**.
+    4. Set the access right of **FirstDay** to **Read**.
 
         {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-how-to-configure/access-rules-manager.png" alt="Access Rules for the Manager Role" width="600" >}}
 
@@ -199,9 +205,9 @@ Good job! You have created a workflow and configured the Workflow Context parame
 
 ## Triggering the Workflow from a Page
 
-To start you workflow, you need to trigger it. In this use case, the workflow is started by an HR specialist who should fill in the new hire's name, the first day, and then click the **Start Onboarding** button that will trigger the workflow. 
+To start you workflow, you need to trigger it. In this use case, an HR specialist should first add a new hire by filling in their name and their first day, and then click an **Start Onboarding** button that will trigger the workflow. 
 
-You have an **EmployeesToOnboard** page that contains a list of all employees and has the **EmployeeOnboarding** entity as the data source:
+You have an **EmployeesToOnboard** page that contains an **Add** button that can be used to add a new hire, that is, a new **EmployeeOnboarding** object, and a list view that has the **EmployeeOnboarding** entity as the data source:
 
 {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-how-to-configure/employees-page.png" alt="New Employee Page" class="no-border" >}}
 
@@ -223,7 +229,7 @@ Good job! Now when the HR specialist clicks the button, the workflow will start:
 
 ## Selecting a Device and a Location for the New Hire {#select-device}
 
-The manager of a new employee will get a task to specify devices for the new hire and indicate whether the new hire is working from home or in the office. For this functionality you need to add activities to the workflow. Follow the steps below: 
+The manager of a new employee will get a task to specify devices for the new hire and indicate whether the new hire is working from home or in the office. For this functionality, you need to add activities to the workflow. Follow the steps below: 
 
 1. Navigate to the **Toolbox** pane, find a **User task** activity, and drag it into the workflow editor.
 
@@ -235,7 +241,7 @@ The manager of a new employee will get a task to specify devices for the new hir
 
     {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-how-to-configure/specify-device-and-location-properties.png" alt="SpecifyDevice Properties" width="350" >}} 
 
-5. Now configure the user task to be assigned to the Manager role, as only managers should specify devices for the new employee. Make sure **Target users using** is set to **XPath** and click the ellipsis icon in the **XPath constraint** property.
+5. Now configure the user task to be assigned to the Manager role, as only managers should specify devices and location for the new employee. Make sure **Target users using** is set to **XPath** and click the ellipsis icon in the **XPath constraint** property.
 
 6. In the **Edit XPath Constraint** dialog box, type in the expression: `[System.UserRoles = '[%UserRole_Manager%]']` and click **OK**.
 
@@ -297,12 +303,12 @@ Do the following:
 
 4. Now you need to configure what happens in both scenarios: when the new hire works from the home (true) and when the new hire works from office (false). Open the **Toolbox**, drag a **User task** activity to the **false** path, and do the following:
 
-    1. Name the user task **Prepare_Desk** and set its title to **Facilities: Prepare Desk** referring to steps 2-4 of the [Selecting a Device for the New Hire](#select-device) section:
+    1. Name the user task **Prepare_Desk** and set its title to **Facilities: Prepare Desk** by referring to steps 2-4 of the [Selecting a Device for the New Hire](#select-device) section:
 
         {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-how-to-configure/prepare-desk.png" alt="Prepare Desk" class="no-border" >}}
 
-    2. Configure the task to be assigned to the Facilities role only referring to steps 5 and 6 of the [Selecting a Device for the New Hire](#select-device) section and using the `[System.UserRoles = '[%UserRole_Facilities%]']` expression.
-    3. Set a new page called **PrepareDesk_Workflow** for the **Page** property referring to steps 7-9 of the [Selecting a Device for the New Hire](#select-device) section.
+    2. Configure the task to be assigned to the Facilities role by only referring to steps 5 and 6 of the [Selecting a Device for the New Hire](#select-device) section and using the `[System.UserRoles = '[%UserRole_Facilities%]']` expression.
+    3. Set a new page called **PrepareDesk_Workflow** for the **Page** property by referring to steps 7-9 of the [Selecting a Device for the New Hire](#select-device) section.
 
 5. You need to make sure that only the relevant information is displayed on the **PrepareDesk_Workflow** page. In the App Explorer, double-click the **PrepareDesk_Workflow** page to open it.
 6. By default, all attributes are added to the employee detail form. You need to make sure that the Facilities department will be able to view the fields but not change them. Do the following: 
@@ -376,11 +382,13 @@ To test your workflow, you need to switch between different user roles. Follow t
 
     {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-how-to-configure/user-icon.png" alt="User Icon" width="500" class="no-border" >}}
 
-5. Switch between different demo user roles to test the use case. Do can do the following:
+5. Switch between different demo user roles to test the use case. You can do the following:
 
     1. Start the onboarding process: select the HR demo user that has **EmployeesToOnboard** as the home page, add a new employee, and then click **Start Onboarding**:
 
         {{< figure src="/attachments/refguide/modeling/application-logic/workflows/workflow-how-to-configure/demo_hr.png" alt="EmployeeToOnboard Example" class="no-border" >}}
+
+        {{% alert color="info" %}}Now HR can start the onboarding process for the same employee more than once, which is okay for testing purposes, but it is not ideal in reality. A good solution is to add an OnboardingStatus attribute to the **EmployeeOnboarding** entity and configure the **Start Onboarding** button to trigger a microflow that updates the OnboardingStatus and then starts the workflow. Also, add conditional visibility for the **Start Onboarding** button so that it is not visible anymore after the OnboardingStatus is updated after the HR presses the button. For information on how to add conditional visibility for a button, see the [Visibility Section](/refguide/common-widget-properties/#visibility-properties) in *Properties Common in the Page Editor*. This solution, however, falls outside of the scope of the current how-to. {{% /alert %}}
 
     2. Test the process: switch users, view inbox for each user, complete tasks, see how new inbox items are created for the user roles you configured at the next task in the process. 
     3. Open the Workflow Admin Center.
