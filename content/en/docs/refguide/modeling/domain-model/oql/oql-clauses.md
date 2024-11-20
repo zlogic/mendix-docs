@@ -28,6 +28,8 @@ Clauses must be presented in the following order, but can be left out if they ar
 7. `LIMIT`
 8. `OFFSET`
 
+The `UNION` clause defies the usual order presented above. It will be presented in a [Union Clause](#oql-union) section at the end.
+
 ## `SELECT` Clause
 
 The `SELECT` clause specifies which entity attributes or other specified data must be retrieved. The clause returns all the requested values of objects which match the `SELECT` clause.
@@ -813,10 +815,8 @@ HAVING
 
 The `ORDER BY` clause specifies the sort order used on columns returned in a `SELECT` statement. Multiple columns can be specified. Columns are ordered in the sequence of the items in the `ORDER BY` clause.
 
-{{% todo %}}Add link to UNION documentation{{% /todo %}}
-
 {{% alert color="info" %}}
-This clause can include items that do not appear in the `SELECT` clause, except when `SELECT DISTINCT` is specified or when a `GROUP BY` clause exists. When `UNION` is used, the column names or aliases must be those specified in the `SELECT` clause of the first part of the query.
+This clause can include items that do not appear in the `SELECT` clause, except when `SELECT DISTINCT` is specified or when a `GROUP BY` clause exists. When `UNION` is used, the column names or aliases must be those specified in the `SELECT` clause of the first part of the query. More information is presented in the [Union Clause](#oql-union) section.
 {{% /alert %}}
 
 ### Syntax
@@ -1026,6 +1026,128 @@ OFFSET 2
 | Rekall | Zwolle    | 3              |
 | Rekall | Utrecht   | 4              |
 | Veidt  | Utrecht   | 5              |
+
+## `UNION` Clause {#oql-union}
+The clause takes multiple select queries and combines their results into a single result set.
+The resulting set by default only includes distinct rows. The `ALL` keyword can be used to include all rows. Rows are considered distinct if the combination of the column values is distinct from all other rows. Comparison logic of values is the same as the `DISTINCT` keyword of a `SELECT` clause.
+
+All select queries must define the same number of columns in the same order and their datatypes should match.
+
+### Syntax
+
+The syntax is as follows:
+
+```sql
+  select_query
+    { 
+       UNION [ALL] select_query
+    } [ ,...n ]
+    [ order_by_clause ]
+    [ LIMIT number ]
+    [ OFFSET number ]
+```
+
+{{% todo %}} Document data type behaviour when corresponding oql v2 issue is finished {{% /todo %}}
+
+### Examples
+
+The following query combines sales person and customer names into a single table:
+
+```sql
+SELECT FirstName, LastName
+FROM Sales.SalesPerson
+UNION
+SELECT FirstName, LastName
+FROM Sales.Customer
+```
+
+| FirstName | LastName |
+|-----------|----------|
+| John      | Doe      |
+| Amelia    | Doe      |
+| Oliver    | Doe      |
+| Oliver    | Moose    |
+| Jane      | Moose    |
+| Jane      | Doe      |
+
+Some names are duplicated across the tables, so only some entries are included in the result. The query below uses `UNION ALL` to include all names the result:
+
+```sql
+SELECT FirstName, LastName
+FROM Sales.SalesPerson
+UNION ALL
+SELECT FirstName, LastName
+FROM Sales.Customer
+```
+
+| FirstName | LastName |
+|-----------|----------|
+| John      | Doe      |
+| Amelia    | Doe      |
+| Oliver    | Doe      |
+| Oliver    | Moose    |
+| Jane      | Moose    |
+| John      | Doe      |
+| Jane      | Doe      |
+| Jane      | Doe      |
+| Jane      | Moose    |
+
+
+The following query performs a self union of a table, returning fewer rows than the original table, as only distinct rows are included in the result.
+
+```sql
+SELECT FirstName FName, LastName LName
+FROM Sales.Customer
+UNION
+SELECT FirstName FName, LastName LName
+FROM Sales.Customer
+```
+
+| FName | LName |
+| ----- | ----- |
+| John  | Doe   |
+| Jane  | Doe   |
+| Jane  | Moose |
+
+The result of the union can also be sorted and limited, similar to a normal `SELECT` clause. This query retrieves the first 4 names sorted on both first and last name:
+
+```sql
+SELECT FirstName, LastName
+FROM Sales.SalesPerson
+UNION
+SELECT FirstName, LastName
+FROM Sales.Customer
+ORDER BY FirstName, LastName
+LIMIT 4
+```
+
+| FirstName | LastName |
+|-----------|----------|
+| Amelia    | Doe      |
+| Jane      | Doe      |
+| Jane      | Moose    |
+| John      | Doe      |
+
+`UNION` can be chained to use more than 2 select queries as a source. This query collects all distinct first and last names into a single column in a single table:
+
+```sql
+SELECT FirstName AS Name FROM Sales.SalesPerson
+UNION
+SELECT FirstName AS Name FROM Sales.Customer
+UNION
+SELECT LastName AS Name FROM Sales.SalesPerson
+UNION
+SELECT LastName AS Name FROM Sales.Customer
+```
+
+| Name   |
+|--------|
+| John   |
+| Amelia |
+| Oliver |
+| Jane   |
+| Doe    |
+| Moose  |
 
 ## Subqueries
 
