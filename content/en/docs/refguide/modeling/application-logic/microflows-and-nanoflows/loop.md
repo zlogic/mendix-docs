@@ -12,7 +12,7 @@ The loop can contain all types of elements used in microflows, except for [start
 
 ## The current index variable
 
-Within a loop body, the variable `$currentIndex` contains the current index of the loop. This index starts at zero and increments for each iteration. When a loop is nested inside another loop, the `$currentIndex` variable holds the index of its direct parent. The `$currentIndex` variable is also available inside the expression of a while loop. This feature was introduced in Mendix 10.17.
+Within a loop, the variable `$currentIndex` contains how many iterations the loop has gone through so far. This index starts at zero and increments for each iteration. In the case of nested loops, the `$currentIndex` variable holds the index of the innermost loop it is part of. The `$currentIndex` variable is also available inside the expression of a while loop. This feature was introduced in Mendix 10.17.
 
 ## Loop Type Property {#loop-type}
 
