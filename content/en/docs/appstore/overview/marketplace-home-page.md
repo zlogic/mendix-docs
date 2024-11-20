@@ -1,6 +1,6 @@
 ---
 title: "Marketplace Home Page"
-url: /appstore/overview/
+url: /appstore/home-page/
 weight: 1
 no_list: true
 description: "Presents overview information on the Mendix Marketplace."
