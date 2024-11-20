@@ -103,7 +103,7 @@ In the past, downloading a component directly from the web Marketplace could lea
 #### Fixes
 
 * We fixed an issue with the notifications that are sent when a component update becomes available.
-* If a user's email address contained an upper-case letter, they did not have access to private components in [content groups](/appstore/overview/#content-groups). This issue has been fixed.
+* If a user's email address contained an upper-case letter, they did not have access to private components in [content groups](/appstore/home-page/#content-groups). This issue has been fixed.
 
 ### April 20, 2023
 
@@ -148,7 +148,7 @@ If you are using Studio Pro on a Mac with Parallels, see [this update](https://k
 
 #### Improvements
 
-* We have added the **My Drafts** page, where you can access component drafts. We have also extended the actions you can perform on drafts. For more information, see the [My Drafts](/appstore/overview/#my-drafts) section of *Marketplace Home Page*.
+* We have added the **My Drafts** page, where you can access component drafts. We have also extended the actions you can perform on drafts. For more information, see the [My Drafts](/appstore/home-page/#my-drafts) section of *Marketplace Home Page*.
 
 ### August 11, 2022
 
@@ -169,7 +169,7 @@ If you are using Studio Pro on a Mac with Parallels, see [this update](https://k
 #### New Features
 
 * There are now user trials available for **Premium** app services, such as Email Service and Speech to Text. This self-service experience helps you to evaluate the capabilities offered with these components and realize the value of premium content.
-* User trial subscriptions are now listed under [My Subscriptions](/appstore/overview/#my-subscriptions), and company trial and paid subscriptions are now listed under [Company Subscriptions](/appstore/overview/#company-subscriptions).
+* User trial subscriptions are now listed under [My Subscriptions](/appstore/home-page/#my-subscriptions), and company trial and paid subscriptions are now listed under [Company Subscriptions](/appstore/home-page/#company-subscriptions).
 * For new uploads of public components, you can now optionally share a [virus scan report](/appstore/submit-content/#package) to speed up the governance process.
 * For solutions and solution templates, you can now add a [use case](/appstore/submit-content/#capabilities) relevant to the component. The use case is displayed in the component listing and includes header text and an external link.
 
@@ -215,7 +215,7 @@ If you are using Studio Pro on a Mac with Parallels, see [this update](https://k
 
 * Marketplace filtering has been revamped. You can now find content faster by filtering by **Industry**, [Content Type](/appstore/#components-type), and Studio Pro **Compatibility**. 
 * We have made 15+ fully developed solutions and 10+ solution templates available to help you realize value even more quickly.
-* We have listed 10+ **Premium** app services, and we now support a self-service [subscription](/appstore/overview/#company-subscriptions) experience using credit card for two app services in supported regions.
+* We have listed 10+ **Premium** app services, and we now support a self-service [subscription](/appstore/home-page/#company-subscriptions) experience using credit card for two app services in supported regions.
 
 ### August 12, 2021
 
@@ -253,7 +253,7 @@ If you are using Studio Pro on a Mac with Parallels, see [this update](https://k
 
 * We released support for the subscription to an app service (like *MindSphere IIoT for Makers*):
     * Automatic provisioning of the app service on subscription.
-    * The [Service Management Dashboard](/appstore/overview/#company-subscriptions), where you can view the service instance to which you have subscribed and generate binding keys for your service instance.
+    * The [Service Management Dashboard](/appstore/home-page/#company-subscriptions), where you can view the service instance to which you have subscribed and generate binding keys for your service instance.
 
 ### May 4, 2021
 
@@ -342,7 +342,7 @@ If you are using Studio Pro on a Mac with Parallels, see [this update](https://k
 
 * Downloading [private content](/appstore/submit-content/#private) from the App Store available in Studio Pro/Desktop Modeler has been temporarily disabled due to a security vulnerability.
     * You will be able to download private content from the App Store available in Studio Pro/Desktop Modeler again once a fix is released in a future [8.x](/releasenotes/studio-pro/8/), [8.6.x](/releasenotes/studio-pro/8.6/), and 7.23.x release. This functionality will then only be available in those specific versions with the fix and subsequent versions. This functionality will not be available again for the App Store in Desktop Modeler version 6.
-    * You can continue downloading the latest version of private App Store content from the [Company Content](/appstore/overview/#company-content) page in the [Mendix Marketplace](https://marketplace.mendix.com/) and use it in the respective versions of Studio Pro/Desktop Modeler.
+    * You can continue downloading the latest version of private App Store content from the [Company Content](/appstore/home-page/#company-content) page in the [Mendix Marketplace](https://marketplace.mendix.com/) and use it in the respective versions of Studio Pro/Desktop Modeler.
 
 ### February 26, 2020
 
@@ -370,11 +370,11 @@ For more information on these support levels, see the [Marketplace Content Suppo
 
 #### New Features
 
-You can now create [user groups](/appstore/overview/#content-groups) for your company and assign your company’s App Store content to different groups. Management of user group content is restricted to only the members of the group. You can also add [guest](/appstore/overview/#guests) users to these groups and allow them to download selected private company content.
+You can now create [user groups](/appstore/home-page/#content-groups) for your company and assign your company’s App Store content to different groups. Management of user group content is restricted to only the members of the group. You can also add [guest](/appstore/home-page/#guests) users to these groups and allow them to download selected private company content.
 
-The former App Store **Content Managers** and **External Downloaders** groups have been removed. Members of these groups have been migrated to a new temporary user group called **Migrated Data**. Former “content managers” have been added as user group [members](/appstore/overview/#members), and former “external downloaders” have been added as [guests](/appstore/overview/#guests).
+The former App Store **Content Managers** and **External Downloaders** groups have been removed. Members of these groups have been migrated to a new temporary user group called **Migrated Data**. Former “content managers” have been added as user group [members](/appstore/home-page/#members), and former “external downloaders” have been added as [guests](/appstore/home-page/#guests).
 
-Content that was marked as **Protected** as well as content marked as **Shared with Others** has been migrated to the [Content](/appstore/overview/#group-content) tab of the Migrated Data user group. This makes all “externally shared” content protected for that user group.
+Content that was marked as **Protected** as well as content marked as **Shared with Others** has been migrated to the [Content](/appstore/home-page/#group-content) tab of the Migrated Data user group. This makes all “externally shared” content protected for that user group.
 
 ### October 1, 2019
 
