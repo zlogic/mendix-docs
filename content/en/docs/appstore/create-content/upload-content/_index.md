@@ -34,7 +34,7 @@ To get started, click **Add Content** in the top bar of the Marketplace home scr
 {{% alert color="info" %}}
 <a id="draft"></a>On each page of the upload flow, click one of the following buttons:
 
-* **Save Draft** to save the details you have entered so far to the draft (which you can access via the [My Drafts](/appstore/overview/#my-drafts) link in the top bar)
+* **Save Draft** to save the details you have entered so far to the draft (which you can access via the [My Drafts](/appstore/home-page/#my-drafts) link in the top bar)
 * **Save & Continue** to go to the next page of the upload flow
 {{% /alert %}}
 
@@ -54,8 +54,8 @@ Follow these steps to describe your content:
 
     * <a id="public"></a>**Public Marketplace (all Mendix users)** – your component will be available to the Mendix community
         * This content will have to be reviewed and approved by Mendix before it is available)
-    * <a id="private"></a>**Private Marketplace (your company only)** – your content will receive the **Private** label and be available only via your [Company Content](/appstore/overview/#company-content) page
-        * Selected private content of a content group can also be made available to [content group guests](/appstore/overview/#guests) for download
+    * <a id="private"></a>**Private Marketplace (your company only)** – your content will receive the **Private** label and be available only via your [Company Content](/appstore/home-page/#company-content) page
+        * Selected private content of a content group can also be made available to [content group guests](/appstore/home-page/#guests) for download
         * This content will not be reviewed by Mendix
 
     {{% alert color="warning" %}}You can only set the location in the initial version of your content. You cannot change this setting by updating the Marketplace component later.{{% /alert %}}
@@ -208,7 +208,7 @@ To update content that has already been published, follow these steps:
 1. Find the component by clicking **My Marketplace** and selecting one of the following:
     * **My Content**
     * **Company Content**
-    * **Content Groups** (note that if an existing Marketplace component is assigned to a [content group](/appstore/overview/#content-groups) as specific content group [content](/appstore/overview/#group-content), you can only update the component if you are a member of that group)
+    * **Content Groups** (note that if an existing Marketplace component is assigned to a [content group](/appstore/home-page/#content-groups) as specific content group [content](/appstore/home-page/#group-content), you can only update the component if you are a member of that group)
 
 2. Click the menu item next to the component you want to update and select **Manage Draft**.
 
