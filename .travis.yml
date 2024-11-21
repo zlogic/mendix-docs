@@ -84,6 +84,9 @@ install:
 
   - ./htmltest/htmltest 2>&1 | sed "s/\o033\[[0-9;]*m//g" | sed "s/\(^.*$\)/\o033[33;1m\1\o033[0m/g" |tee -a $TRAVIS_BUILD_DIR/hugo.log
 
+  # And put a blank line at the end!
+  - echo "" >> $TRAVIS_BUILD_DIR/hugo.log
+
 before_script:
 ##############
   - pyenv versions # list python versions supported by pyenv in case version in next command is removed
