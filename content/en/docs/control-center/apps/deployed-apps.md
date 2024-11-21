@@ -34,7 +34,7 @@ The list on this tab shows the following information:
 * **Env Count** – This is the number of the environments available for this app.
 * **Credits Used** – This shows the number of credits that the app has used.
 
-    {{% alert color="info" %}}From December 5, 2024, cloud credits will be changed to cloud tokens. For more information about this change, see [Cloud Tokens FAQ](/control-center/entitlements/#cloud-tokens-faq).{{% /alert %}}
+    {{% alert color="info" %}}Mendix is working on changing cloud credits to cloud tokens. For more information about this change, see [Cloud Tokens FAQ](/control-center/entitlements/#cloud-tokens-faq).{{% /alert %}}
 
 ### App Environment Details {#mendix-cloud-app-environment}
 
@@ -58,7 +58,7 @@ The list shows the all the environments available for the app, with the followin
 * **Mendix Version** – This shows the Mendix version.
 * **Credits Used** – This shows the number of the credit that the environment has used.
 
-    {{% alert color="info" %}}From December 5, 2024, cloud credits will be changed to cloud tokens. For more information about this change, see [Cloud Tokens FAQ](/control-center/entitlements/#cloud-tokens-faq).{{% /alert %}}
+    {{% alert color="info" %}}Mendix is working on changing cloud credits to cloud tokens. For more information about this change, see [Cloud Tokens FAQ](/control-center/entitlements/#cloud-tokens-faq).{{% /alert %}}
 
 * **Action**
     * **Offboard** – Clicking this button starts [offboarding an environment](#offboard-environment)
@@ -70,7 +70,7 @@ To add a new environment for your app, click the name of an app, and then click 
 * **Environment Name** – Enter a name for your new environment. The name must be unique (that is, your app cannot have more than one environment with the same name).
 * **Resource Pack** – Select the resources required for the new environment. The page displays the resources included in each resource pack, and their cost in cloud credits.
 
-    {{% alert color="info" %}}From December 5, 2024, cloud credits will be changed to cloud tokens. For more information about this change, see [Cloud Tokens FAQ](/control-center/entitlements/#cloud-tokens-faq).{{% /alert %}}
+    {{% alert color="info" %}}Mendix is working on changing cloud credits to cloud tokens. For more information about this change, see [Cloud Tokens FAQ](/control-center/entitlements/#cloud-tokens-faq).{{% /alert %}}
 
 * **Production Environment** – Indicate whether the environment will be used for production.
 
