@@ -115,7 +115,7 @@ The list shows the following information about the component:
 
 * **Latest version** – This shows the lastest version of the component.
 
-    **Publisher** – This shows the name of the organization that published the component.
+* **Publisher** – This shows the name of the organization that published the component.
 
 * Column customization ({{% icon name="view" %}}): You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the checkboxes.
 
