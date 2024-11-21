@@ -4,6 +4,9 @@ linktitle: "Administrators"
 url: /private-mendix-platform/reference-guide/admin/
 description: "Provides details on the features and functionality of the Private Mendix Platform that are available to administrators."
 weight: 10
+aliases:
+    - /private-mendix-platform-administration/
+    - /private-mendix-platform/administration/
 ---
 
 ## Introduction
