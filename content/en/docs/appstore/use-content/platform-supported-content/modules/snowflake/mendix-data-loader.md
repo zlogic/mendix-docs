@@ -19,6 +19,7 @@ The Mendix Data Loader supports a range of data ingestion tasks, enabling organi
 To use the Mendix Data Loader, you must have the following:
 
 * A Mendix application with a [published OData service](/refguide/published-odata-services/) that includes exposed entities.
+* A Snowflake account with [Anaconda Packages enabled by ORGADMIN](https://docs.snowflake.com/en/developer-guide/udf/python/udf-python-packages.html#using-third-party-packages-from-anaconda). If you do not have a Snowflake account, you can register for a [free trial account](https://signup.snowflake.com).
 * A Snowflake environment in which the account has the necessary permissions to create and maintain tables.
 
 ### Licensing and Cost
