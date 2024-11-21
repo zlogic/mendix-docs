@@ -25,6 +25,14 @@ The data type of a parameter defines the type of the value that it expects. See 
 
 Default: *Object*
 
+### Argument
+
+Determines whether the argument is optional or required. When the argument is **optional**, it can be ommitted when calling the microflow/nanoflow. In case it is **required** an argument must be passed.
+
+### Default value
+
+When an argument is **optional**, a default value can be set. The default value is used when the argument is omitted, not when the value is empty.
+
 ### Name
 
 **Name** refers to the name of the parameter.
