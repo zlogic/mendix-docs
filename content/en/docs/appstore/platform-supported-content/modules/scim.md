@@ -311,9 +311,7 @@ Setting up connectivity with an IdP varies depending on the vendor. The followin
 
 6. On the SCIM client app, click **Provisioning** to do the user provisioning.
 
-## Testing and Troubleshooting
-
-### Testing with Entra ID
+## Testing with Entra ID
 
 Once you have your SCIM module configured, you can test it by creating, updating, and deleting the user.
 
@@ -335,6 +333,6 @@ The below options provide you with the choice of user selection during on-demand
 Your app may have multiple tenants in the Entra ID. Users created from any of the Entra ID tenants will have a same domain in their `user_principle_name`. This results in an active user in your app which you have not assigned in your application in Entra ID.
 {{% /alert %}}
 
-### Troubleshooting
+## Troubleshooting
 
 Attempting to edit or delete the default deploy-time configuration at runtime will result in errors. These errors indicate that the SCIM configuration was created at runtime with possible deploy-time overrides, as explained in the [Deploy-time configuration](#deploy-time) section above. You cannot modify such configurations at runtime using the admin screens.
