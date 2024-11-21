@@ -58,7 +58,7 @@ The list shows the all the environments available for the app, with the followin
 * **Mendix Version** – This shows the Mendix version.
 * **Credits Used** – This shows the number of the credit that the environment has used.
 
-    {{% alert color="info" %}}From December 5, 2024, cloud credits will be changed to cloud tokens. For more information about this change, see [Cloud Tokens FAQ](/control-center/entitlements/#cloud-tokens-faq).{{% /alert %}}
+    {{% alert color="info" %}}Mendix is working on changing cloud credits to cloud tokens. For more information about this change, see [Cloud Tokens FAQ](/control-center/entitlements/#cloud-tokens-faq).{{% /alert %}}
 
 * **Action**
     * **Offboard** – Clicking this button starts [offboarding an environment](#offboard-environment)
