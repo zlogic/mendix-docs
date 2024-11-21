@@ -27,11 +27,11 @@ Default: *Object*
 
 ### Argument
 
-Determines whether the argument is optional or required. When the argument is **optional**, it can be ommitted when calling the microflow/nanoflow. In case it is **required** an argument must be passed.
+Determines whether the argument is optional or required. When the argument is **optional**, it can be ommitted when calling the microflow/nanoflow. In case it is **required**, an argument must be passed.
 
 ### Default value
 
-When an argument is **optional**, a default value can be set. The default value is used when the argument is omitted, not when the value is empty.
+When an argument is set to **optional**, a default value can be set. The default value is used when the argument is omitted, not when the value is empty.
 
 ### Name
 
