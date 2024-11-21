@@ -1,18 +1,18 @@
 ---
-title: "Rich Text v2.0 & Below"
+title: "Rich Text v2"
 url: /appstore/widgets/rich-text-v2/
 description: "Describes the configuration and usage of the Rich Text widget, which is available in the Mendix Marketplace."
+weight: 50
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
 ## Introduction
 
 {{% alert color="info" %}}
-This documentation applies to Rich Text widget versions 2.0 and below. 
+This documentation applies to Rich Text widget versions 2 which uses CKEditor4 library. 
 
-For documentation on Rich Text widget versions 3.0 and above, see [Rich Text](/appstore/widgets/rich-text/).
-
-Due to CKEditor 4 reaching end of life support status, we transitioned the rich text widget to tinyMCE starting with version 3.0.0.
+For documentation on Rich Text widget versions 4 with QuillV2, see [Rich Text](/appstore/widgets/rich-text/) documentation.
+For documentation on Rich Text widget versions 3 with TinyMCE, see [Rich Text v3](/appstore/widgets/rich-text-v3/) documentation.
 {{% /alert %}}
 
 The [Rich Text](https://marketplace.mendix.com/link/component/74889/) widget provides the user with an WYSIWYG editor, where the user can enter and edit rich-text content. The widget automatically converts the rich-text content into a string in HTML format, which can be stored in an attribute of an entity.
