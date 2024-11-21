@@ -91,7 +91,7 @@ Mendix cloud tokens are annual capacity-based virtual credits that allow you to 
 
 Mendix cloud tokens are the successor to cloud credits.
 
-### I Already Enabled Cloud Credits. What Changes Will I See When Mendix Cloud Tokens Are Introduced?
+### I Am Already Working with Cloud Credits. What Changes Will I See When Cloud Tokens Are Introduced?
 
 You will notice the following changes:
 
