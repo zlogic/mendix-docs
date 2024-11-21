@@ -10,14 +10,16 @@ weight: 10
 
 This section of the Private Mendix Platform Reference Guide provides information about the menus and functionalities of the Private Mendix Platform that are available to administrator users. As an administrator, you can access the options described in this section by clicking on your user icon in the upper right corner of the screen, and then selecting **Switch to Admin Mode**.
 
-The administrator navigation menu is divided into the following sections:
+Private Mendix Platform distinguishes between the following types of administrator roles:
 
-* [Manage](#manage)
-* [Settings](#settings)
+* Company admin - This role primarily manages business-as-usual everyday tasks, for example inviting new users to an app, or approving Marketplace contents. Settings relevant for company admins are available in the [Manage](#manage) section of the admin navigation menu.
+* Systems admin - This role primarily manages key settings which must be configured during the initial implementation, and which are rarely modified during normal operation. Settings relevant for systems admins are available in the [Settings](#settings) section of the admin navigation menu.
+
+{{< figure src="/attachments/private-platform/pmp-admin4.png" class="no-border" >}}
 
 ## Manage {#manage}
 
-
+The **Manage** section of the administrator navigation menu contains setting relevant to your day-to-day tasks as a company admin. You can use it to manage your company apps, users and groups, Marketplace contents, and deployment clusters.
 
 ### Apps
 
