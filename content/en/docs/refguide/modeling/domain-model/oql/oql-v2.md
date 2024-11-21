@@ -85,6 +85,7 @@ SELECT
   )
 FROM Module.City
 ```
+The column names in this case would be `Name` and a `null` name which would not be possible to refer to.
 
 In OQL v2, such queries are no longer allowed. You must always provide an alias for subqueries that do not result in a named column. The query above can be rewritten as follows:
 
@@ -98,6 +99,26 @@ SELECT
   ) AS PersonCount
 FROM Module.City
 ```
+
+This also applies to constants as attributes, including `NULL`. The query below is no longer allowed:
+```sql
+SELECT
+  Name,
+  NULL
+FROM Module.City
+```
+
+It can be rewritten to use aliases for constants:
+```sql
+SELECT
+  Name,
+  NULL as NullColumn
+FROM Module.City
+```
+
+{{% alert color="info" %}}
+This requirement only applies to attributes in the main `SELECT` query. `SELECT` clauses inside subquries are not affected, as are columns that are used for comparisons like in a `WHERE` clause.
+{{% /alert %}}
 
 ### Duplicate Columns in ‘SELECT’
 
