@@ -8,13 +8,22 @@ weight: 10
 
 ## Introduction
 
-This section of the Private Mendix Platform Reference Guide provides information about the menus and functionalities of the Private Mendix Platform that are available to administrator users.
+This section of the Private Mendix Platform Reference Guide provides information about the menus and functionalities of the Private Mendix Platform that are available to administrator users. As an administrator, you can access the options described in this section by clicking on your user icon in the upper right corner of the screen, and then selecting **Switch to Admin Mode**.
 
-## Apps
+The administrator navigation menu is divided into the following sections:
+
+* [Manage](#manage)
+* [Settings](#settings)
+
+## Manage {#manage}
+
+
+
+### Apps
 
 ...
 
-### App Management
+#### App Management
 
 On the **App Management** page, administrators can manage their apps.
 
@@ -38,7 +47,7 @@ By clicking **More Actions** ({{% icon name="three-dots-menu-horizontal" %}}) in
     
     You will be warned of the consequences and asked for confirmation before the app is archived.
 
-### Import Apps
+#### Import Apps
 
 ...
 
@@ -128,7 +137,7 @@ As the administrator, you can perform the following actions:
 
 ...
 
-## Settings
+## Settings {#settings}
 
 ...
 
