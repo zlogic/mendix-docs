@@ -1,8 +1,9 @@
 ---
 title: "Use Marketplace Content"
 url: /appstore/use-content/
-weight: 2
+weight: 3
 description: "Covers the basics of how to access the Marketplace from Studio Pro and provides examples of how to add a widget and module to your app."
+no_list: false
 aliases:
     - /appstore/general/app-store-content/
     - /community/app-store/use-app-store-content-in-the-modeler/
@@ -306,3 +307,5 @@ To remove a module and user data from your app, follow these steps:
 * [Importing and Exporting Apps, Modules, Widgets, and Documents](/refguide/import-and-export/)
 * [Properties Common in the Page Editor](/refguide/common-widget-properties/)
 * [My Top 5 Mendix Widgets for Speeding Up Application Development](https://www.mendix.com/blog/top-5-mendix-widgets-speeding-application-development/)
+
+## Other Documents in This Category
