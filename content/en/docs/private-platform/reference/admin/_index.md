@@ -26,24 +26,22 @@ The **Manage** section of the administrator navigation menu contains setting rel
 
 ### Apps
 
-...
+The **Apps** section of the navigation menu lets administrators manage their apps.
 
 #### App Management
 
-On the **App Management** page, administrators can manage their apps.
+On the **App Management** page, you can view a summary of your apps.
 
 {{< figure src="/attachments/private-platform/pmp-admin1.png" class="no-border" >}}
-
-The page shows you a summary of your apps.
 
 Click an app tile to see more details about the app.
 
 By clicking **More Actions** ({{% icon name="three-dots-menu-horizontal" %}}) in the app tile, you can quickly perform a number of actions:
 
 * Edit details such as app name and description
-* Invite users to work on the app
-* View the Git revisions per branch for the app
 * Assign the app to a new owner or group
+* Share the app with selected user groups
+* View the Git revisions per branch for the app
 * Archive the app, provided you are the only team member.
     
     You will be warned of the consequences and asked for confirmation before the app is archived.
