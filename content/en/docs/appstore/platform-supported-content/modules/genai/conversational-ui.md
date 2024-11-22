@@ -221,7 +221,7 @@ You can find the default values of these variables in the `_chat-variables.scss`
 
 #### Creating Custom SCSS {#customize-styling-classes}
 
-You can use the following classes in your custom stylesheets to create your own scss selectors and overwrite the default styling of Conversational UI and modify the behavior of the chat elements in your app. 
+You can use the following classes in your custom stylesheets to create SCSS selectors, override the default Conversational UI styling, and modify the behavior of chat elements in your app. 
 
 | Class name | Target element |
 | --- | --- | 
@@ -246,7 +246,7 @@ You may need to use the following classes when building a more complex custom pa
 | `chat-container` | To be added to additional containers around the chat interface snippet, to make sure the height and flex grow properties work correctly | 
 | `card--full-height` | To be added to a `card` container, in case the chat interface snippet needs to be displayed as a card | 
 | `layoutgrid--full-height` | To be added to any layoutgrid (1 row is supported) around the chat UI components |
-| `dataview--display-contents` | To be added to any dataview around chat components to prevent it from breaking the flex flow on the page | 
+| `dataview--display-contents` | To be added to any dataview around chat components to prevent it from breaking the flex-flow on the page | 
 
 
 ### Token Monitor Snippets {#snippet-token-monitor}
@@ -271,7 +271,7 @@ The **Documentation** pane displays the documentation for the currently selected
 
 This section lists possible solutions to known issues.
 
-### Chat Messages Do Not Appear in UI
+### Chat Messages Do Not Appear in the UI
 
 The messages that are sent and received do not show up in the user interface, even though the technical communication with the LLM is successful. 
 
@@ -281,9 +281,9 @@ The chat UI snippets from this module rely on the height property of the parent 
 
 #### Solution 
 
-Make sure that any custom containers and layoutgrids that were added on your page (or the page layout for that matter) around the Conversational UI components have their `height` property defined. Useful helper classes that could be used for this are `chat-container`, `chat-card--full-height` and `layoutgrid--full-height`. 
+Make sure that any custom containers and layoutgrids that were added on your page (or the page layout for that matter) around the Conversational UI components have their `height` property defined. Useful helper classes that could be used for this are `chat-container`, `chat-card--full-height`, and `layoutgrid--full-height`. 
 
-If needed, verify that no data view widget is breaking the flow; use e.g. `dataview--display-contents`. See example page `ConversationalUI_FullScreenChat` for a basic implementation of the mentioned elements.
+If needed, verify that no data view widget is breaking the flow; for example, use `dataview--display-contents`. See the example page `ConversationalUI_FullScreenChat` for a basic implementation of the mentioned elements.
 
 ### Cannot Export Usage Data for the Token Monitor
 
