@@ -31,7 +31,6 @@ The **Settings** page always contains the following tabs:
 These tabs are only available for users with the **App Settings** permission:
 
 * **Cloud Settings**
-* **API Keys**
 * **Project Management**
 * **History**
 * **Story Archive**
@@ -111,29 +110,6 @@ To invite new app users to your app, click **Invite Users** for that environment
 The invitee will receive an email asking them to authorize access to their Mendix account on this screen.
 
 After they provide authorization, they will be brought to your deployed app.
-
-## API Keys {#general-settings-api-keys}
-
-{{% alert color="info" %}}
-Only users with the **App Settings** permission can manage app-specific API keys.
-{{% /alert %}}
-
-In **API Keys**, there is an overview of the API keys created for your app with the following information:
-
-* **API Key Name**
-* Date of **Creation**
-* Date **Last Used**
-
-{{< figure src="/attachments/developerportal/general/settings/keys.png"   width="800"  class="no-border" >}}
-
-To create a new app-specific API key, click **Create New API Key**  and follow these steps:
-
-1. Fill in the **API key name**.
-2. Click **Generate API Key** to be able to use the app API key.
-
-{{% alert color="warning" %}}For security reasons, the app API key will only be displayed once, during **Step 2 of 2**. It will not be displayed again.{{% /alert %}}
-
-To delete an app API key, click **Revoke**.
 
 ## Project Management {#project-management}
 

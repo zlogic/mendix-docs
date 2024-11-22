@@ -55,9 +55,11 @@ The following frameworks are required. They will be installed automatically by t
 When you are running Studio Pro on a Parallels virtual machine on an ARM64 device (for example, an M1 Mac), you need the following dependencies in addition to the x64 version listed above:
 
 * .NET Desktop Runtime (arm64)
+
     | Studio Pro 10.0.0 - 10.10.0 | Studio Pro 10.11.0 and above |
     | --- | --- |
     | .NET 6 Desktop Runtime | .NET 8 Desktop Runtime |
+
 * Microsoft Edge WebView2 Evergreen Runtime (arm64)
 
 {{% alert color="info" %}}
@@ -74,7 +76,6 @@ These are the known limitations for Mac:
 
 * No native mobile support
 * No support for document templates
-* No **Structure mode** for the page editor
 * Start from spreadsheet cannot be used at this time 
 * If you have already installed JDK previously, it may not be picked up properly during installation. You can either configure this manually or remove all references to JDK and run the installer again.
     * The limitation that the JDK did not get installed while installing Studio Pro on macOS was removed in [10.8.0](/releasenotes/studio-pro/10.8/).
@@ -108,6 +109,18 @@ To run a Mendix app, Mendix Studio Pro uses the following ports by default. If y
 * 8100 – sign-in port
 
 For more information on ports and modifying Studio Pro's default ports, see [Configurations](/refguide/configuration/) and the [Troubleshooting Common Mobile Issues](/refguide/mobile/getting-started-with-mobile/prerequisites/#troubleshooting) section of *Native App Prerequisites and Troubleshooting*.
+
+### File Comparison
+
+{{% alert color="info" %}}
+Comparing files on disk with the original is currently not supported on macOS.
+{{% /alert %}}
+
+By default, Studio Pro points to an executable shipped with TortoiseGit for file comparison. To customize this, navigate to **Preferences** > **Version control** > **General** > **File comparison** > **Executable** and choose your preferred tool. 
+
+The default path for the binary when installing Studio Pro on a new device is `C:\Program Files\TortoiseGit\bin\TortoiseGitMerge.exe`.
+
+You can download the latest version of TortoiseGitMerge from the [TortoiseGit](https://tortoisegit.org/download/) website. 
 
 ### File Locations
 
@@ -228,7 +241,7 @@ Current support:
 * [Azure SQL](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-2017): v12 compatibility mode 140 or higher
 * [MySQL](/refguide/mysql/): 8.0, 8.4
 * [Oracle Database](/refguide/oracle/): 19, 21c
-* PostgreSQL: 12, 13, 14, 15, 16
+* PostgreSQL: 12, 13, 14, 15, 16, 17
 * [SAP HANA](/refguide/saphana/): 2.00.076.00.1705400033
 
 {{% alert color="warning" %}}
@@ -270,14 +283,14 @@ AWS S3 is also supported in the Windows Service Console.
 
 * Google Chrome (latest stable desktop and Android versions)
 * Mozilla Firefox (latest stable desktop version)
-* Apple Safari (latest stable desktop version and latest version for each [supported iOS](#mobileos) version)
+* Apple Safari (latest stable desktop version and latest version for each [supported iOS](#mobile) version)
 * Microsoft Edge (latest stable desktop version)
 
 {{% alert color="warning" %}}
 Internet Explorer is not supported in Studio Pro 10.
 {{% /alert %}}
 
-## Mobile Operating Systems {#mobileos}
+## Mobile {#mobile}
 
 For native and progressive web apps built with Mendix, the following operating system versions are supported:
 
@@ -294,6 +307,8 @@ Mendix recommends the following minimum hardware requirements for all mobile dev
 * Memory: minimum 2 GB
 
 Depending on your app's complexity, these minimum hardware requirements might not be sufficient and should be adjusted.
+
+Developing native mobile apps with Mendix comes with special requirements explained in [Native App Prerequisites and Troubleshooting](/refguide/mobile/getting-started-with-mobile/prerequisites/).
 
 ## MxBuild {#mxbuild}
 
