@@ -381,20 +381,22 @@ You may get a consistency error when importing the Email Connector module in Men
 
 ### Duplicate Mx Model Reflection Objeccts in Email Template
 
-Email Template export/import functionality introduced in Email Connector version 5.8.0 had a bug which is subsequently fixed in v5.9.0. If you have exported and imported Email templates using EC v5.8.0, you may see duplicate records in the placeholder entity dropdown as below.
+{{% alert color="info" %}} It is recommended to try this microflow in a non-production environment and check if is working as expected after the clean up. After the successful validations, run it in the production environment.{{% /alert %}}
+
+The Email Template export/import functionality introduced in EC v5.8.0 had a bug, which was subsequently fixed in v5.9.0. If you exported and imported Email templates using EC v5.8.0, you may see duplicate records in the placeholder entity drop-down, as shown below.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/email-connector/duplicate-mx-reflection-objs.png" class="no-border" width="700" >}}
 
-To clean-up these duplicate Mx Reflection records, a microflow is being delivered as part of EC v5.9.2. The section below explains how the clean-up of duplicate MX Reflection records should be done. As the clean-up microflow (**DEL_DuplicateMxReflectionObjects**) deletes Database records from certain tables, we strongly advise to take a full DB back-up before proceeding with the steps below. At the least, following 3 tables MUST be fully backed up before starting.
+To clean up these duplicate Mx Reflection records, a microflow is delivered as part of EC v5.9.2. As the clean up microflow (**DEL_DuplicateMxReflectionObjects**) deletes database records from certain tables, it is strongly advised to complete a full DB backup before proceeding with the steps below. At a minimum, the following 3 tables must be fully backed up before starting.
 
 1. MxObjectMember
 2. MxObjectReference
 3. MxObjectType
 
-This MF (**DEL_DuplicateMxReflectionObjects**) should be called from a page using "Call microflow action button", preferably an Admin user should trigger this microflow. This is a *one-time* activity and this MF identifies the duplicate records in the backend and removes them. On completion, you will be shown a pop-up dialong informing about the competion of the process. You can see how many records were removed from respective table in the console log as shown in the below picture.
+To perform the clean up, follow these steps:
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/email-connector/mx-reflection-objs-cleanup-logs.png" class="no-border" width="700" >}}
+1. Call the **DEL_DuplicateMxReflectionObjects** microflow from a page using the **Call microflow** button. Preferably, an Admin user should trigger this microflow. This is a one-time activity. This microflow identifies the duplicate records in the backend and removes them. Upon completion, you see a pop-up dialog stating that the process has been completed. You can see how many records were removed from respective table in the Console log, as shown below.
 
-Post the clean-up of duplicate records, the "Call microflow action button" should be removed from the page so that the clean-up MF cannot be triggered again. 
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/email-connector/mx-reflection-objs-cleanup-logs.png" class="no-border" width="700" >}}
 
-{{% alert color="info" %}}We suggest to first try this MF in a non-prod environment and check if functionality is working as expected after duplicate records clean-up. Post the successful validations, you can run it in Prod environment.{{% /alert %}}
+2. After the cleanup, remove the **Call microflow** button from the page so the microflow cannot be triggered again. 
