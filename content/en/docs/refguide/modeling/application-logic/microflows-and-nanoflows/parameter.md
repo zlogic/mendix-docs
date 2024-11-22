@@ -31,11 +31,17 @@ Default: *Object*
 This feature was introduced in Studio Pro 10.17.0.
 {{% /alert %}}
 
-Determines whether the argument is optional or required. When the argument is **optional**, it can be ommitted when calling the microflow/nanoflow. In case it is **required**, an argument must be passed.
+Determines whether the argument is optional or required. When the argument is set to be **Optional**, it can be omitted when calling the microflow/nanoflow. When the argument is set to be **Required**, an argument must be passed.
 
 #### Default Value
 
-When an argument is set to **optional**, a default value can be set. The default value is used when the argument is omitted, not when the value is empty.
+When an argument is set to **optional**, a default value can be set:
+
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/parameter/argument-option.png" max-width=70% >}}
+
+{{% alert color="info" %}}
+ The default value is used when the argument is omitted, not when the argument value is `empty`.
+{{% /alert %}}
 
 ### Name
 
