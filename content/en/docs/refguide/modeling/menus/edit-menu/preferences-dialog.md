@@ -54,6 +54,10 @@ This is the directory where new apps are stored. It is used in the [App Settings
 
 ## Deployment Tab {#deployment}
 
+In the **Deployment** tab you can configure various settings related to application deployment.
+
+{{< figure src="/attachments/refguide/modeling/menus/edit-menu/preferences-dialog/preferences-deployment-tab.png" alt="Preferences" width="600" class="no-border" >}}
+
 ### JDK {#jdk}
 
 Here the directories of the Java Development Kit (JDK) for each supported Java version can be selected.
@@ -77,6 +81,14 @@ This setting is visible and effective when the React client is enabled. By defau
 #### Generate Full Debug Info {#debug-info}
 
 Enabling this option includes debug information about local variables in the Java actions when building them, which aids debugging from Eclipse. Without this option, only line numbers and source information will be included.
+
+#### Gradle Synchronization {#gradle-synchronization}
+
+{{% alert color="info" %}}
+This feature was introduced in Mendix versions 10.16.0, 10.12.7, and 10.6.17.
+{{% /alert %}}
+
+This option controls the synchronization of managed dependencies. For more information, see the [Offline Usage](/refguide/managed-dependencies/#disabling-synchronization) section in *Managed Dependencies*.
 
 #### Gradle Directory
 

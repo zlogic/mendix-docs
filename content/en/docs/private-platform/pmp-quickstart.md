@@ -270,7 +270,7 @@ To ensure that components such as svix and PCLM work correctly, you should insta
 
 Re-running the installation command ensures that the installer fetches the relevant information from the components that you added.
 
-## Upgrading the Private Mendix Platform
+## Upgrading the Private Mendix Platform {#upgrade}
 
 If you have installed Private Mendix Platform before, you can upgrade it by doing the following steps:
 
@@ -295,7 +295,7 @@ If you have installed Private Mendix Platform before, you can upgrade it by doin
     {{< figure src="/attachments/private-platform/pmp-upgrade2.png" class="no-border" >}}
 
 {{% alert color="info" %}}
-For the Svix component, you can use the Svix panel to upgrade directly.
+To upgrade the PCLM component, select the option **Upgrade PCLM** in the upgrade wizard. For the Svix component, you can use the Svix panel to upgrade directly.
 {{% /alert %}}
 
 ## Running the Private Platform Configuration Wizard {#wizard}

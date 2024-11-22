@@ -81,21 +81,20 @@ The **Clear Environment** button lets you clear your environment so that you can
 
 {{% alert color="info" %}}
 You do not need to clear your environment if you are restoring an existing backup of the currently deployed app. The restoration process removes the current database and replaces it with the data from the backup.
+
+Clearing the database does not delete the database instance itself. Some disk usage, like logs and system data, will still remain.
 {{% /alert %}}
 
 To clear your environment, follow these steps:
 
 1. Click **Clear Environment**.
 2. Select one of the following options:
-    * **Only clear the database** – This empties all data from your database. After you confirm the deletion, the application is stopped, the existing database is deleted, a new database is created, and the application is restarted. Ensure you have a backup of any data that you want to keep.
+    * **Only clear the database** – This deletes all tables in the database. After you confirm the deletion, the application is stopped, the existing tables are dropped, and the application is restarted. Be sure to back up any data that you wish to keep.
     * **Clear the full environment (model and database)** – This clears all data from your database and file storage. It also removes your app from this environment. Clear the full environment if you want to deploy a different app to the environment.
 3. Confirm that you want to clear your environment by typing the indicated text (*clear database* or *clear model and database*, depending on which option you selected).
 4. Click **Clear Environment**.
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/clear-environment.png"
-    alt="Clear Environment options and confirmation"
-    max-width=70%
-    >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/clear-environment.png" alt="Clear Environment options and confirmation" max-width=70% >}}
 
 ### Naming of Environments – Flexible Environments in Mendix Cloud {#naming}
 
