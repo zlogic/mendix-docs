@@ -71,7 +71,7 @@ Private configuration values are available in Studio Pro 10.9.0 and above. In ve
 You can use custom server settings to configure the Runtime beyond the standard possibilities offered by Studio Pro.
 
 {{% alert color="warning" %}}
-Only use this functionality if you know exactly what you are doing. Wrong values can prevent the Runtime from starting.
+Only use this functionality if you know what you are doing. Wrong values can prevent the Mendix Runtime from starting.
 {{% /alert %}}
 
 Each custom setting consists of a name and a value. For example, to set the hash algorithm to BCRYPT you add a custom setting with name `HashAlgorithm` and value `BCRYPT`.
@@ -80,13 +80,13 @@ For settings overview, see [Runtime Customization](/refguide/custom-settings/).
 
 ### Headers {#headers}
 
-You can specify custom headers that will be applied to responses coming from the runtime. 
+You can specify custom headers that will be applied to responses coming from the Mendix Runtime. 
 
 {{% alert color="warning" %}}
-Only use this functionality if you know exactly what you are doing. Wrong values can stop the application from working correctly.
+Only use this functionality if you know what you are doing. Wrong values can stop the application from working correctly.
 {{% /alert %}}
 
-Each header consists of a name and a value. By default, when configuring a custom header, it can be selected from the dropdown. A custom header can be specified by selecting the "Custom..." option in the dropdown. In most cases the header will be returned for all responses from the runtime.
+Each header consists of a name and a value. By default, when configuring a custom header it can be selected from the dropdown menu. A custom header can be specified by selecting the **Custom...** option in the dropdown menu. In most cases the header will be returned for all responses from the Mendix Runtime.
 
 #### Special headers
 
