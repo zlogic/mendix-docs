@@ -33,6 +33,8 @@ Describe your application or its main goals in the chatbox, and Maia will use th
 In this dedicated chat, only requests related to domain model generation will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
 {{% /alert %}}
 
+After a domain model is generated and if the dedicated chat is still active, you can still ask Maia to add more entities and associations to the generated domain model. In Studio Pro 10.17 and above, it also supports deleting or editing what are already in the generated domain model. This includes adding more attributes to an existing entity. Have a try!
+
 ### Best Practices for Text Input
 
 To achieve optimal results, provide context about your application by describing its main use cases, customer needs, or other relevant details. The more Maia knows about your application, the more tailored and accurate the generated domain model will be.
@@ -59,14 +61,6 @@ Studio Pro restart is required after Domain Model Generator is enabled in the Pr
 If the **Generate Domain Model** option is greyed out, it is because it currently only works for empty domain models. You can always start fresh with an empty domain model by creating a new module in your application.
 
 {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/domain-model-generator/domain-model-generator-greyed-out.png" max-width=100% >}}
-
-### Creating only
-
-After a domain model is generated and if the dedicated chat is still active, you can still ask Maia to add more entities and associations to the generated domain model. 
-
-However, it currently does not support deleting or editing what are already in the generated domain model. This includes adding more attributes to an existing entity. Such requests will not be handled properly at this moment.
-
-You can always edit the generated domain model manually, or remove it and ask Maia to generate a new domain model with adjusted text input.
 
 ### Enumeration Generation Not Supported
 
