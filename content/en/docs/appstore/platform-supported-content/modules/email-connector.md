@@ -383,7 +383,7 @@ You may get a consistency error when importing the Email Connector module in Men
 
 Email Template export/import functionality introduced in Email Connector version 5.8.0 had a bug which is subsequently fixed in v5.9.0. If you have exported and imported Email templates using EC v5.8.0, you may see duplicate records in the placeholder entity dropdown as below.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/email-connector/duplicate-mx-reflection-objs.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/email-connector/duplicate-mx-reflection-objs.png" class="no-border" width="700" >}}
 
 To clean-up these duplicate Mx Reflection records, a microflow is being delivered as part of EC v5.9.2. The section below explains how the clean-up of duplicate MX Reflection records should be done. As the clean-up microflow (**DEL_DuplicateMxReflectionObjects**) deletes Database records from certain tables, we strongly advise to take a full DB back-up before proceeding with the steps below. At the least, following 3 tables MUST be fully backed up before starting.
 
@@ -393,7 +393,7 @@ To clean-up these duplicate Mx Reflection records, a microflow is being delivere
 
 This MF (**DEL_DuplicateMxReflectionObjects**) should be called from a page using "Call microflow action button", preferably an Admin user should trigger this microflow. This is a *one-time* activity and this MF identifies the duplicate records in the backend and removes them. On completion, you will be shown a pop-up dialong informing about the competion of the process. You can see how many records were removed from respective table in the console log as shown in the below picture.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/email-connector/mx-reflection-objs-cleanup-logs.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/email-connector/mx-reflection-objs-cleanup-logs.png" class="no-border" width="700" >}}
 
 Post the clean-up of duplicate records, the "Call microflow action button" should be removed from the page so that the clean-up MF cannot be triggered again. 
 
