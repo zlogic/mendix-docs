@@ -78,7 +78,7 @@ In the **Parameters** field, click **Add Parameter** to enter the following info
 * **Data Type** — the type of data for your parameter
 * **Test Value** — enter or select the value of the parameter
 
-Click **Execute Query** to view a preview of the response.
+Click **Run Query** to view a preview of the response.
 
 ### Tables & Columns {#tables-columns}
 
@@ -88,11 +88,11 @@ The **Tables & Columns** field on the right side of the screen displays the info
 
 After [querying the database](/appstore/modules/external-database-connector/#query-database), view the data included in the query in the **Response data** field.
 
-If you are satisfied with the response, click **Use Response**. This will take you to the [Data Structure](#data-structure) tab where you can preview and create an entity from the response.
+If you are satisfied with the response, click **Use Response**. This will take you to the [Response Structure](#data-structure) tab where you can preview and create an entity from the response.
 
 ### Response Structure {#data-structure}
 
-The **Data Structure** tab displays a preview of an entity that can be created from the response of your query. You can adjust the name, or move back to a previous step. Click **Save Query & Create Entity** to create the entity in your domain model.
+The **Response Structure** tab displays a preview of an entity that can be created from the response of your query. You can adjust the name, or move back to a previous step. Click **Save Query & Create Entity** to create the entity in your domain model.
 
 ## Read More
 
