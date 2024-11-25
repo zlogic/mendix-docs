@@ -151,7 +151,11 @@ If the request body content is static, paste the text into the **Body** tab. Thi
 
 #### Adding a Request Body Using Parameters
 
-When the text in the Body tab contains a parameter name surrounded by curly braces,  this is interpreted as a parameter. These parameters can be used to change the body content dynamically. For example, if your body content is `product_curr={currency}&product_price={price}`, the parameters `currency` and `price` can be used to change the body content.
+When the text in the Body tab contains a parameter name surrounded by curly braces,  this is interpreted as a parameter. These parameters can be used to change the body content dynamically. 
+
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/body-structure-example.png" class="no-border"  width="500" >}}
+
+For example, if your body content is `product_curr={currency}&product_price={price}`, the parameters `currency` and `price` can be used to change the body content.
 
 #### Request Body Where Content Comes From Multiple Entities
 
