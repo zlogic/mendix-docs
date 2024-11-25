@@ -63,7 +63,7 @@ Create a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request to send data to your
 3. Click **Base URL**.
 4. Add a base URL to use the same URL across all requests in this consumed REST Service document. 
    
-   {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/base-url.png" class="no-border" >}}
+   {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/base-url.png" class="no-border"  width="500" >}}
 
    To make the base URL dynamic, see the [Dynamic Base URL](#dynamic-base-url) section below.
 
@@ -129,11 +129,11 @@ You can add a header for any HTTP request you have specified in your document. T
 
 1. Open the **Headers** tab and click **Add header**.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/header-example.png" class="no-border" width="500" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/header-example.png" class="no-border"  width="300" >}}
 
 2. In the **Key** field, click the drop-down and choose from the list of the most commonly used HTTP headers. You can also create a custom header by typing directly in the key field and adding a value in the **Value** field.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/accept-header.png" class="no-border" width="500" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/accept-header.png" class="no-border"  width="500" >}}
 
 3. Click **OK**. To test the header, click **Send**.
 
@@ -147,7 +147,7 @@ You can also add a parameter as the test value of a header, as seen below. For e
 
 If the request body content is static, paste the text into the **Body** tab. This text will be included as the body content when you send the request.
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/json-example.png" class="no-border" width="500" >}}
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/json-example.png" class="no-border" width="300" >}}
 
 #### Adding a Request Body Using Parameters
 
@@ -165,7 +165,7 @@ Create body entities from a JSON snippet to your request by doing the following:
 
 3. If you want to use the newly-created JSON string as an entity in your domain model, click **Use JSON Snippet**. The body string can be viewed in the **Body structure** tab.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/body-structure-tab.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/body-structure-tab.png" class="no-border"  width="400" >}}
 
 4. The entity name is prefilled, but you can change it to a custom name. To create an entity, click **Create Entity** > **OK**. Click **Show** to view the entity in your domain model.
 
@@ -173,13 +173,13 @@ Create body entities from a JSON snippet to your request by doing the following:
 
 You can check the response of your request in the **Response data** tab. 
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/response-tab.png" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/response-tab.png" class="no-border"  width="500" >}}
 
 #### Response is in JSON Format {#create-entity}
 
 If the response is in JSON format and you want to use the response to create an entity, open the **Response structure** tab, which displays a preview of the response data:
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/response-structure-tab.png" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/response-structure-tab.png" class="no-border"  width="500" >}}
 
 The entity name is prefilled, but you can change it to a custom name. To create an entity, do the following:
 
