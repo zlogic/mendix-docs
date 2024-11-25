@@ -1,15 +1,19 @@
 ---
-title: "MPR Analyze"
+title: "MPR Analyze Command"
 url: /refguide/analyze-mpr/
 weight: 60
-description: "Shows the contents of the MPR file and their contribution to file size."
+description: "Describes MPR analyze command, which shows the contents of the MPR file and their contribution to file size."
 ---
 
 ## Introduction
 
 The `mx analyze-mpr` command enables you to show information about the MPR file in the form of plaintext. 
 
-This command is available as of Mendix 10.17.
+{{% alert color="info" %}}
+
+This command is available from Studio Pro 10.17.0 and above.
+
+{{% /alert %}}
 
 {{% alert color="info" %}}
 This tool shipped with Mendix 10 can also be used to analyze MPR files created in Mendix 9.24 LTS.
