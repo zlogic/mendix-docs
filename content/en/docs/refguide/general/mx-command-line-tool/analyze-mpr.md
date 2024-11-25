@@ -1,20 +1,22 @@
 ---
 title: "MPR Analyze"
-url: /refguide/mx-command-line-tool/analyze-mpr
+url: /refguide/analyze-mpr/
 weight: 60
 description: "Shows the contents of the MPR file and their contribution to file size."
 ---
 
 ## Introduction
 
-The `mx analyze-mpr` command enables you to show information about the MPR file in the form of plaintext. This command is available as of Mendix 10.17.
+The `mx analyze-mpr` command enables you to show information about the MPR file in the form of plaintext. 
+
+This command is available as of Mendix 10.17.
 
 {{% alert color="info" %}}
 This tool shipped with Mendix 10 can also be used to analyze MPR files created in Mendix 9.24 LTS.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-Exact output of this tool may change. You can not rely on this format staying consistent over time.
+The exact output of this tool may change. You cannot rely on this format staying consistent over time.
 {{% /alert %}}
 
 ## Usage
@@ -23,7 +25,7 @@ Use the following command pattern: `mx analyze-mpr TARGET-FILE [OPTIONS]`
 
 The `TARGET-FILE` points to the location of the project file (this file has the extension *.mpr*).
 
-These are the `OPTIONS`:
+The `OPTIONS` are described in the table below:
 
 | Option | Result |
 | --- | --- |
@@ -33,21 +35,21 @@ These are the `OPTIONS`:
 
 ### Analysis
 
-To identify which types of units (pages, microflows, etc.) have the largest contribution to the MPR file size, you can focus on the *Size by unit type* section, where the number of occurences and file size contribution in % are displayed.
+To identify which types of documents (pages, microflows, etc.) have the largest contribution to the MPR file size, you can focus on the **Size by unit type** section, where the number of occurrences and file size contribution are displayed in percentage.
 
 ### Examples
 
-These are valid examples:
+Valid examples are given below:
 
 * `mx analyze-mpr temp.mpr`
 * `mx analyze-mpr temp.mpr > analysis.txt`, to output to a text file
 
-A sample output would be:
+An example of the output is presented below:
 
 <details>
 
 <summary>Expand for code sample</summary>
-  
+
   ```json
 Reading file...
 Calculating stats...
@@ -160,6 +162,6 @@ Size by property
                                  CustomIcons$CustomIcon.Tags |       13.112 bytes |  0,13% of MPR |        1.224 occurrences
                                Forms$DesignPropertyValue.Key |       12.699 bytes |  0,13% of MPR |          774 occurrences
                                  CustomIcons$CustomIcon.Name |       12.438 bytes |  0,13% of MPR |          732 occurrences
-```
-  
+  ```
+
 </details>
