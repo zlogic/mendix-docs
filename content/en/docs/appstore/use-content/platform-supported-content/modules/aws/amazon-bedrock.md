@@ -185,6 +185,18 @@ To invoke a Bedrock agent for your Mendix app, do the following steps:
 7. Select a microflow that takes an **AmazonBedrockConnector.InvokeAgentResponse** object as an input and handles that response.
     This is necessary because InvokeAgent is an asynchronous operation which means that it will not necessarily finish when the process that it was invoked from finishes. By giving the operation a handler microflow, the response can be handled as soon as it arrives. For an example handler microflow, see **AmazonBedrockConnector.InvokeAgentResponse_Handle** in the connector module. This microflow logs the response, so you can also use it just to investigate the response.
 
+
+### Token Usage {#tokenusage}
+ 
+Token Usage monitoring is now possible for 
+
+1. Chat Completions with History
+2. Chat Completion without History
+3. Embeddings with Cohere Embed
+4. Embeddings with Amazon Titan Embeddings
+
+for more infromation about how you can use the token usage at [GenAI commons](https://docs.mendix.com/appstore/modules/genai/commons/#token-usage).
+
 ## Technical Reference {#technical-reference}
 
 The module includes technical reference documentation for the available entities, enumerations, activities, and other items that you can use in your application. You can view the information about each object in context by using the **Documentation** pane in Studio Pro.
