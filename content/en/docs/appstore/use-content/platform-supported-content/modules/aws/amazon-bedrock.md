@@ -188,14 +188,14 @@ To invoke a Bedrock agent for your Mendix app, do the following steps:
 
 ### Token Usage {#tokenusage}
  
-Token Usage monitoring is now possible for 
+[Token usage](/appstore/modules/genai/commons/#token-usage) monitoring is now possible for the following operations: 
 
-1. Chat Completions with History
-2. Chat Completion without History
-3. Embeddings with Cohere Embed
-4. Embeddings with Amazon Titan Embeddings
+* Chat Completions with History
+* Chat Completion without History
+* Embeddings with Cohere Embed
+* Embeddings with Amazon Titan Embeddings
 
-for more infromation about how you can use the token usage at [GenAI commons](https://docs.mendix.com/appstore/modules/genai/commons/#token-usage).
+For more information about using this feature, refer to the [GenAI commons documentation](/appstore/modules/genai/commons/#token-usage).
 
 ## Technical Reference {#technical-reference}
 
