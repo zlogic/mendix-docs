@@ -61,15 +61,18 @@ Create a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request to send data to your
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/general-section.png" class="no-border" width="500" >}}
 
 3. Click **Base URL**.
-4. Add a base URL to use the same URL across all requests in this consumed REST Service document.
+4. Add a base URL to use the same URL across all requests in this consumed REST Service document. 
+   
+   {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/base-url.png" class="no-border" >}}
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/configuration-screen.png" class="no-border" width="500" >}}
-
-    To make the base URL dynamic, see the [Dynamic Base URL](#dynamic-base-url) section below.
+   To make the base URL dynamic, see the [Dynamic Base URL](#dynamic-base-url) section below.
 
 5. Click **Authentication**.
 6. Select an authentication method, then click **OK**. For more information, see [Authentication methods](#authentication).
-7. Click **Send**. 
+
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/configuration-screen.png" class="no-border" width="500" >}}
+
+7.  Click **Send**. 
 
 You can visualize your request in the **Response data** tab, then use the response to [create an entity in the domain model](#create-entity). 
 
@@ -104,7 +107,7 @@ You can manually add new parameters to the parameters grid directly. To do so, f
 1. Open the **Parameters** tab and click **Add parameter**.
 2. Name your parameter and add a test value.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/parameter.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/adding-parameters.png" class="no-border" >}}
 
 3. To test the parameters, click **Send**. 
 
@@ -115,6 +118,8 @@ You can add a Base URL as a parameter. To do this, follow these steps:
 1. Click **Base URL**.
 2. In the Dynamic field, select **Yes**.
 3. Click **OK**
+
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/dynamic-base-url.png" class="no-border" >}}
 
 Your base URL is now considered as a parameter. You can change its value in the [Send REST Request](/refguide/send-rest-request/) microflow activity. 
 
@@ -142,6 +147,8 @@ You can also add a parameter as the test value of a header, as seen below. For e
 
 If the request body content is static, paste the text into the **Body** tab. This text will be included as the body content when you send the request.
 
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/json-example.png" class="no-border" width="500" >}}
+
 #### Adding a Request Body Using Parameters
 
 When the text in the Body tab contains a parameter name surrounded by curly braces,  this is interpreted as a parameter. These parameters can be used to change the body content dynamically. For example, if your body content is `product_curr={currency}&product_price={price}`, the parameters `currency` and `price` can be used to change the body content.
@@ -154,13 +161,11 @@ Create body entities from a JSON snippet to your request by doing the following:
 
 1. Click the **Body** tab and add your JSON string.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/json-example.png" class="no-border" width="500" >}}
-
 2. To validate the input, click **Send**.
 
 3. If you want to use the newly-created JSON string as an entity in your domain model, click **Use JSON Snippet**. The body string can be viewed in the **Body structure** tab.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/json-body-structure.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/body-structure-tab.png" class="no-border" >}}
 
 4. The entity name is prefilled, but you can change it to a custom name. To create an entity, click **Create Entity** > **OK**. Click **Show** to view the entity in your domain model.
 
@@ -168,13 +173,13 @@ Create body entities from a JSON snippet to your request by doing the following:
 
 You can check the response of your request in the **Response data** tab. 
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/response-data.png" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/response-tab.png" class="no-border" >}}
 
 #### Response is in JSON Format {#create-entity}
 
 If the response is in JSON format and you want to use the response to create an entity, open the **Response structure** tab, which displays a preview of the response data:
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/response-structure.png" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/response-structure-tab.png" class="no-border" >}}
 
 The entity name is prefilled, but you can change it to a custom name. To create an entity, do the following:
 
@@ -206,6 +211,6 @@ To select a request in the microflow, complete the following steps:
 1. Create a new microflow and drag the [Send REST request](/refguide/send-rest-request/) activity into it.
 2. Double-click the activity and click **Select** to choose the request you want to add, then click **Select** > **OK**.
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/select-rest-request.png" class="no-border" width="500" >}}
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/send-request-activity.png" class="no-border" width="500" >}}
 
 If you have defined parameters in the request, they will be added to the activity. Click **Edit** to change the parameter in the microflow. The parameter values in this activity are used by the runtime instead of the test value defined in the request.
