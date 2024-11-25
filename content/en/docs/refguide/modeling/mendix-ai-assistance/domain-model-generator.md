@@ -33,8 +33,12 @@ Describe your application or its main goals in the chatbox, and Maia will use th
 In this dedicated chat, only requests related to domain model generation will be properly handled. If you have other questions, close this chat and go back to the general [Maia Chat](/refguide/maia-chat/) interface.
 {{% /alert %}}
 
-After a domain model is generated and if the dedicated chat is still active, you can still ask Maia to add more entities and associations to the generated domain model. In Studio Pro 10.17 and above, it also supports deleting or editing what are already in the generated domain model. This includes adding more attributes to an existing entity. Have a try!
+After a domain model is generated and if the dedicated chat is still active, you can still ask Maia to add more entities and associations to the generated domain model. In Studio Pro 10.17 and above, it also supports editing what are already in the generated domain model. This includes adding more attributes to an existing entity. Give it a try!
 
+{{% alert color="info" %}}
+Domain Model Generator does not support deleting items in the domain model. You can always delete them manually. 
+{{% /alert %}}
+ 
 ### Best Practices for Text Input
 
 To achieve optimal results, provide context about your application by describing its main use cases, customer needs, or other relevant details. The more Maia knows about your application, the more tailored and accurate the generated domain model will be.
