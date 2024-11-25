@@ -38,17 +38,29 @@ Click an app tile to see more details about the app.
 
 By clicking **More Actions** ({{% icon name="three-dots-menu-horizontal" %}}) in the app tile, you can quickly perform a number of actions:
 
-* Edit details such as app name and description
-* Assign the app to a new owner or group
-* Share the app with selected user groups
-* View the Git revisions per branch for the app
-* Archive the app, provided you are the only team member.
-    
-    You will be warned of the consequences and asked for confirmation before the app is archived.
+##### Editing App details
 
-* Delete the app, provided you are the only team member.
-    
-    You will be warned of the consequences and asked for confirmation before the app is archived.
+...
+
+##### Assigning the App to a New owner
+
+...
+
+##### Sharing the App with Selected User groups
+
+...
+
+##### Archiving the App
+
+...
+
+You will be warned of the consequences and asked for confirmation before the app is archived.
+
+##### Deleting the App
+
+...
+
+You will be warned of the consequences and asked for confirmation before the app is archived.
 
 #### Import Apps
 
