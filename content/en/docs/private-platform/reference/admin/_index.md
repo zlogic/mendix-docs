@@ -13,6 +13,8 @@ aliases:
 
 This section of the Private Mendix Platform Reference Guide provides information about the menus and functionalities of the Private Mendix Platform that are available to administrator users. As an administrator, you can access the options described in this section by clicking on your user icon in the upper right corner of the screen, and then selecting **Switch to Admin Mode**.
 
+{{< figure src="/attachments/private-platform/pmp-admin5.png" class="no-border" >}}
+
 Private Mendix Platform distinguishes between the following types of administrator roles:
 
 * Company admin - This role primarily manages business-as-usual everyday tasks, for example inviting new users to an app, or approving Marketplace contents. Settings relevant for company admins are available in the [Manage](#manage) section of the admin navigation menu.
@@ -34,19 +36,24 @@ On the **App Management** page, you can view a summary of your apps.
 
 {{< figure src="/attachments/private-platform/pmp-admin1.png" class="no-border" >}}
 
-Click an app tile to see more details about the app.
+By clicking **More Actions** ({{% icon name="three-dots-menu-horizontal" %}}) in the **Action** column, you can quickly perform a number of actions:
 
-By clicking **More Actions** ({{% icon name="three-dots-menu-horizontal" %}}) in the app tile, you can quickly perform a number of actions:
+* Edit app details
+* Assign the app to a new owner
+* Share the app with groups
+* Archive the app
 
-##### Editing App details
+##### Editing App Details
+
+Company admins can edit basic app details such as the app branding or ownership.
 
 ...
 
-##### Assigning the App to a New owner
+##### Assigning the App to a New Owner
 
 ...
 
-##### Sharing the App with Selected User groups
+##### Sharing the App with Selected User Groups
 
 ...
 
@@ -66,27 +73,34 @@ You will be warned of the consequences and asked for confirmation before the app
 
 ...
 
+{{< figure src="/attachments/private-platform/pmp-admin6.png" class="no-border" >}}
+
 ### Marketplace
 
 In the **Marketplace** section, administrators can manage various settings related to the content available on the Private Platform Marketplace. The Private Platform Marketplace is a local version of the [Mendix Marketplace](/appstore/overview/), enclosed entirely within the Private Platform. Developers in your organization can also create their own modules, connectors, and sample apps, and share them on the Private Platform Marketplace to make them available to other users.
 
-{{< figure src="/attachments/private-platform/pmp-admin2.png" class="no-border" >}}
-
 As the administrator, you can perform the following actions:
 
-* In the **Content Management** tab, you can view the Marketplace content that your users have already published, as well as any items which are pending approval, or which have been rejected.
-* In the **Taxonomy Management** tab, you can configure the supported Studio Pro versions and sub-categories that your users can select when creating Marketplace content. You can also view and edit the available licenses.
-* In the **Content Import** tab, you can view the contents available in your Private Marketplace. You can also download and import the modules in bulk.
-
 #### Content Management
+
+In the **Content Management** tab, you can view the Marketplace content that your users have already published, as well as any items which are pending approval, or which have been rejected.
+
+{{< figure src="/attachments/private-platform/pmp-admin7.png" class="no-border" >}}
 
 ...
 
 #### Taxonomy Management
 
+In the **Taxonomy Management** tab, you can configure the supported Studio Pro versions and sub-categories that your users can select when creating Marketplace content. You can also view and edit the available licenses.
+
+{{< figure src="/attachments/private-platform/pmp-admin8.png" class="no-border" >}}
+
 ...
 
 #### Import Content
+In the **Content Import** tab, you can view the contents available in your Private Marketplace. You can also download and import the modules in bulk.
+
+{{< figure src="/attachments/private-platform/pmp-admin9.png" class="no-border" >}}
 
 ...
 
