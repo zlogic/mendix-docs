@@ -31,7 +31,7 @@ The **System.User** entity has inbuilt access rules where access is given to its
 ## Defining Access Rules
 
 {{% alert color="info" %}}
-With Studio Pro 10.6.0, a new entity access rule editor has been released as a [beta](/releasenotes/beta-features/) and will be generally available in Studio Pro 10.18.0. You can enable this new editor in the [Preferences Dialog](/refguide/preferences-dialog/#new-features).
+A new entity access rule editor was released in Studio Pro version 10.6.0, as a [beta](/releasenotes/beta-features/). This will be made generally available in Studio Pro version 10.18.0. You can enable this new editor in the [Preferences Dialog](/refguide/preferences-dialog/#new-features).
 
 For guidance on using the new editor, see [Defining Access Rules Using the New Editor](#new-editor), below.
 {{% /alert %}}
@@ -199,7 +199,7 @@ Non-persistable objects cannot have XPath constraints.
 ## Defining Access Rules Using the New Editor {#new-editor}
 
 {{% alert color="warning" %}}
-The new access rule editor was introduced in Studio Pro version 10.6.0 as a beta and will be generally available in 10.18.0. For more information on beta features, see [Beta Releases](/releasenotes/beta-features/).
+The new access rule editor was introduced in Studio Pro version 10.6.0 as a beta and will be made generally available in Studio Pro version 10.18.0. For more information on beta features, see [Beta Releases](/releasenotes/beta-features/).
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -207,26 +207,30 @@ In Studio Pro version 10.6.0 and above, you will need to enable the new editor v
 {{% /alert %}}
 
 {{% alert color="info" %}}
-From Studio Pro 10.6.0 until 10.16.0, the new access rule editor worked with normalized access rules. A normalized access rule is an access rule that has exactly one module role attached to it. See [Access Rule Normalization](#normalization), below, for the implications when you switch to the new editor for those versions.
+From Studio Pro version 10.6.0 until version 10.16.0, the new access rule editor worked with normalized access rules. A normalized access rule is an access rule that has exactly one module role attached to it. See [Access Rule Normalization](#normalization), below, for the implications when you switch to the new editor for those versions.
 {{% /alert %}}
 
 ### Editor Layout
-The access rules editor displays each access rule belonging to the entity as an individual column. The modules role(s) the access rules is applied to, is shown in the header. When the module role name is long or there are multiple modules, the label is clipped. Hover over the header to show the full module role(s).
 
-When there are no access rules yet, it can be added by pressing the **New** button. 
+The access rules editor displays each access rule belonging to the entity as an individual column. The header shows the modules role(s) the access rules apply to. When the module role name is long or there are multiple modules, the label is clipped. Hover over the header to show the full module role(s).
 
-An access rule can be selected by clicking on the column. When an access rule is selected, it can be editted, duplicated or deleted using the respective buttons. An access rule can also be editted by double clicking it.
+When there are no access rules yet, they can be added by clicking **New**. 
+
+Select an access rule by clicking on the column. When an access rule is selected, it can be edited, duplicated or deleted using the respective buttons. You can also edit an access rule by double-clicking it.
 
 {{< figure src="/attachments/refguide/modeling/domain-model/entities/access-rules/access-rules-editor.png" alt="This image indicates the position of the Delete icons" width="550px" class="no-border" >}}
 
-#### XPath constraint
-When there is a value shown in the **XPath constraint** row for a specific access rule, it has an XPath constraint. The access rule will only be granted if the XPath constraint is true. When an XPath constraint has a caption, it is shown instead of the XPath constraint itself.
+#### XPath Constraint
+
+When there is a value shown in the **XPath constraint** row for a specific access rule, this means it has an XPath constraint. The access rule will only be granted if the XPath constraint is true. When an XPath constraint has a caption, this is shown instead of the XPath constraint itself.
 
 ### Entity Rights
 
-By setting the appropiate entity rights in an access rule, the ability to create and/or delete objects of the entity can be controlled. By default, an access rule has no entity rights. 
+By setting the appropriate entity rights in an access rule, you can control the ability to create and/or delete objects of the entity. By default, an access rule has no entity rights. 
 
-When an access rule has entity rights, this is shown as using the **Create** and/or **Delete** icon in the entity rights row for the specific access rule.
+When an access rule has entity rights, this is shown using the **Create** and/or **Delete** ({{% icon name="trash-can" %}}) icon in the entity rights row for the specific access rule.
+
+{{% todo %}}Continue Review from here.{{% /todo %}}
 
 ### Attribute and Association Rights
 
