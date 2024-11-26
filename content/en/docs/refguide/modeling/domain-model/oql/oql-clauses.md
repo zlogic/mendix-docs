@@ -1031,7 +1031,7 @@ OFFSET 2
 The clause takes multiple select queries and combines their results into a single result set.
 The resulting set by default only includes distinct rows. The `ALL` keyword can be used to include all rows. Rows are considered distinct if the combination of the column values is distinct from all other rows. Comparison logic of values is the same as the `DISTINCT` keyword of a `SELECT` clause.
 
-All select queries must define the same number of columns in the same order and their datatypes should match. The resulting column names will those used in the very first `SELECT` clause.
+All select queries must define the same number of columns in the same order and their datatypes should match. The resulting column names will be those used in the very first `SELECT` clause.
 
 ### Syntax
 
