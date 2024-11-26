@@ -14,6 +14,30 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2024
 
+### November 3, 2024
+
+#### New Features
+
+- Mendix Admins can now centrally manage cloud permissions through the Control Center for apps deployed in the Mendix Cloud. This enhancement provides greater oversight over user roles and actions within different environments. This feature is available to companies that use [Company Roles](/control-center/roles-and-permissions/).
+
+### October 31, 2024
+
+#### Improvements
+
+* Control center has a new menu structure to make it easier to find the pages. **Roles and Permissions** still shows the flat menu, but this will be updated soon.
+
+### October 24, 2024
+
+#### New Features
+
+* On the [Apps](/control-center/apps/) page, we added a search bar that allows you to find an app using either the app ID or the app name.
+
+### October 17, 2024
+
+#### Improvements
+
+* We have made performance improvements to [Software Composition](/control-center/software-composition/). Software Bills of Materials (SBOMs) generated automatically upon the creation of deployment packages now show up on the **Software Composition** page within minutes.
+
 ### September 29, 2024
 
 #### New Features
@@ -50,7 +74,7 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 #### New Features
 
-* We have added a new tab to the **Apps** page: the [Private Cloud](/control-center/apps/#pc-connected) tab. Here you get an overview of all the apps deployed on Mendix Private Cloud Connected.
+* We have added a new tab to the **Apps** page: the [Private Cloud](/control-center/apps-overview/#pc-connected) tab. Here you get an overview of all the apps deployed on Mendix Private Cloud Connected.
 
 ### April 4, 2024
 
@@ -93,7 +117,7 @@ We upgraded the [Apps](/control-center/apps/) page as follows:
 * You can check the Mendix version deployed in your repository to check whether your Mendix version is up to date.
 * You can now update Technical Contact on the **Apps** page.
 * You can deactivate multiple free apps in one go.
-* You can [export the information of apps to an Excel file](/control-center/apps/#export-to-excel).
+* You can [export the information of apps to an Excel file](/control-center/apps-overview/#export-to-excel).
 
 ### December 7, 2023
 
@@ -118,7 +142,7 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features
 
-* On the **Security** page, Mendix Admins can now [disable the digital signing](/control-center/security/#disable-enable-digital-signing-emails) of the content of emails from Mendix, if it interferes with other email safety measures.
+* On the **Security** page, Mendix Admins can now [disable the digital signing](/control-center/security-settings/#disable-enable-digital-signing-emails) of the content of emails from Mendix, if it interferes with other email safety measures.
 
 ### September 7, 2023
 
@@ -224,11 +248,11 @@ We made the following improvements to the [access management](/control-center/po
 
 #### New Features
 
-* The free Mendix Cloud environment of an app can now be deleted from the [app details](/control-center/apps/#app-details) page.
+* The free Mendix Cloud environment of an app can now be deleted from the [app details](/control-center/apps-overview/#app-details) page.
 
 #### Improvements
 
-* The free and licensed Mendix Cloud environments of an app are now visualized on the [app details](/control-center/apps/#app-details) page.
+* The free and licensed Mendix Cloud environments of an app are now visualized on the [app details](/control-center/apps-overview/#app-details) page.
 
 ### April 21, 2022
 

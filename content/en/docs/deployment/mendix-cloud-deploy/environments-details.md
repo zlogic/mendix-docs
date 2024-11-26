@@ -81,6 +81,8 @@ The **Clear Environment** button lets you clear your environment so that you can
 
 {{% alert color="info" %}}
 You do not need to clear your environment if you are restoring an existing backup of the currently deployed app. The restoration process removes the current database and replaces it with the data from the backup.
+
+Clearing the database does not delete the database instance itself. Some disk usage, like logs and system data, will still remain.
 {{% /alert %}}
 
 To clear your environment, follow these steps:
@@ -97,10 +99,7 @@ To clear your environment, follow these steps:
 3. Confirm that you want to clear your environment by typing the indicated text (*clear database* or *clear model and database*, depending on which option you selected).
 4. Click **Clear Environment**.
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/clear-environment.png"
-    alt="Clear Environment options and confirmation"
-    max-width=70%
-    >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/clear-environment.png" alt="Clear Environment options and confirmation" max-width=70% >}}
 
 ### Naming of Environments – Flexible Environments in Mendix Cloud {#naming}
 

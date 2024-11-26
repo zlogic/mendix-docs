@@ -38,6 +38,10 @@ Within a team, there are predefined roles that can be provisioned to team member
 
 Scrum Masters can edit and create new team roles on the [Team](/developerportal/general/team/) page, and Mendix Admins can edit and create new team roles within the company in [Control Center](/control-center/).
 
+{{% alert color="info" %}}
+It is not possible to maintain project dedicated roles, if your company is using [Centralized Project Roles](/control-center/roles-and-permissions/).
+{{% /alert %}}
+
 ## Technical Contact {#technical-contact}
 
 Every deployed app has a Technical Contact. When you view the [Settings](/developerportal/collaborate/general-settings/#general) for a deployed app, you can see the app's Technical Contact. The Technical Contact is the user you can contact with questions related to the app. 

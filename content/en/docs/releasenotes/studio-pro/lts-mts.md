@@ -50,6 +50,7 @@ A patch version is released on an as-needed basis. It includes security fixes an
 An LTS version is the last minor release of a major version. Its release is aligned with the GA release of the next major version. For example, the 10.24 LTS version will be released in the same month as Mendix 11 GA. Once a minor version becomes an LTS, it will not have new features added to it. 
 
 These are the current LTS versions of Studio Pro:
+
 * [9.24](/releasenotes/studio-pro/9.24/) (started in March, 2023)
 * [8.18](/releasenotes/studio-pro/8.18/) (started in March, 2021)
 

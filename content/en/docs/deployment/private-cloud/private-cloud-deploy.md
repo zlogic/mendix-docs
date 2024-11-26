@@ -285,6 +285,7 @@ You can perform the following actions:
 * **Add Environment**
 * View **Details**
 * Perform **Actions**
+* Reorder **Environments**
 
 These are described in more detail, below.
 
@@ -354,13 +355,13 @@ This opens the **Environment Details** page which is described in more detail in
 
 This button contains a list of actions which you can perform quickly on the environment. Most of these actions will be disabled if the app is currently starting or stopping. These actions are:
 
-* **Start Application** (only shown if app is stopped) – allows you to start a stopped application
+* **Start Application** – allows you to start a stopped application
 * **Transport Package** – allows you to deploy the deployment package in the current environment to another environment within the app, or to redeploy it in the current environment
 * **Environment Logs** – takes you to the log page defined by the cluster manager when they registered the namespace
 * **Model Options** – allows you to change the running of scheduled events and the values of constants for your app by taking you to the **Model Options** tab of the **Environment Details** page
-* **Stop Application** (only shown if at least one replica is running) — stops the application by reducing the number of replicas to zero
-* **Delete Environment** – this deletes the environment (see [Current Limitations](#limitations), below, for additional details about what is deleted) — you will be asked to confirm this action
-* **Set as Studio Pro Deployment target** - this allows you to select the default target environment for Studio Pro deployment.
+* **Stop Application** — stops the application by reducing the number of replicas to zero; when you restart the application, the number of replicas set in the application will be started
+* **Delete Environment** – allows you to delete the environment (see [Current Limitations](#limitations) for additional details about what is deleted); if you select this action, you must confirm your choice before the environment is deleted
+* **Set as Studio Pro Deployment target** – allows you to select the default target environment for Studio Pro deployment
 
 ### Activity
 
@@ -422,9 +423,15 @@ This shows you the status of the environment and is the same as the status shown
 
 There are also buttons which allow you to perform various actions on your app and environment. These are described in the sections below.
 
+#### Reorder Environments > Environment Settings
+
+You can adjust the order of the environments on the **Environment Overview** page. To move the environments up or down, press the arrow. You can navigate to the ordering page by clicking the **Environment Settings** button next to **Create Environment** button.
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/RedorderEnvironment.png" class="no-border" >}}
+
 ##### Stop/Start Application
 
-If the app is not currently running (**Replicas Running** is set to *None*) you will see **Start** Application. Clicking this will immediately trigger the app to begin running by increasing the number of replicas.
+If the app is not currently running (**Replicas Running** is set to *None*), the **Start Application** option is available. Clicking this option starts the app by increasing the number of replicas.
 
 If the app is currently running, clicking **Stop Application** immediately stops the application by reducing the number of replicas to zero.
 
@@ -492,7 +499,7 @@ If any of these garbage collection steps fail, you will no longer see the enviro
 
 If you need to enter or change the subscription secret, then you can do that here.
 
-Subscription secrets are obtained from [Mendix support](https://support.mendix.com/).
+Subscription secrets are obtained from [Mendix support](https://support.mendix.com/). You can use subscription secrets in [standalone mode](/developerportal/deploy/private-cloud-technical-appendix-02/).
 
 We have also released an alternate way of licensing your apps in the Private Cloud by using PCLM. For more information, see [Private Cloud License Manager](/developerportal/deploy/private-cloud/private-cloud-license-manager/).
 
