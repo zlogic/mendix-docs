@@ -212,7 +212,7 @@ From Studio Pro version 10.6.0 until version 10.16.0, the new access rule editor
 
 ### Editor Layout
 
-The access rules editor displays each access rule belonging to the entity as an individual column. The header shows the modules role(s) the access rules apply to. When the module role name is long or there are multiple modules, the label is clipped. Hover over the header to show the full module role(s).
+The access rules editor displays each access rule belonging to the entity as an individual column. The header shows the modules role(s) the access rules apply to. When the module role name is long or there are multiple roles, the label is clipped. Hover over the header to show the full module role(s).
 
 When there are no access rules yet, they can be added by clicking **New**. 
 
