@@ -14,6 +14,40 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 ## 2024
 
+### November 14, 2024
+
+#### Fixes
+
+* We fixed an issue with the **Owned by me** filter under **Ownership** in the Catalog search, which was not returning accurate results.
+
+#### Improvement
+
+* We made minor enhancements to UX and compatibility, including updates to widgets and filter displays.
+* We upgraded the starter kit module, which includes minor UI changes on the Administration page for company admins.
+
+### October 31, 2024
+
+#### Fixes
+
+* We fixed a bug where clicking on the search results would lead to an error.
+
+#### Features
+
+* We added support for Web Services (SOAP) through automatic registration and manual API registration. 
+
+### October 17, 2024
+
+#### Features
+
+* We have introduced support for Business Events, which includes the following enhancements:
+    * Validation, processing, and storage of Business Events received via CloudEvents.
+    * Business Events are now included in the responses of `GET` endpoints.
+    * Business Events have been integrated into key app functions, such as search results, filtering, and editing, ensuring a seamless experience across the platform.
+
+#### Fixes
+
+* We fixed a bug where Published Business Event Services were being created incorrectly.
+
 ### September 26, 2024
 
 #### Improvement
