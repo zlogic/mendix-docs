@@ -22,13 +22,11 @@ The **Entitlements** page is a self-service tool that displays the transactions 
 
 Mendix cloud tokens are annual capacity-based virtual credits that allow you to provision and allocate any Mendix [cloud resource pack](/developerportal/deploy/mendix-cloud-deploy/#resource-pack) for your Mendix Cloud deployments.
 
-Cloud tokens will be available as a product on the Mendix pricelist, starting in early 2025.
+To use cloud tokens, you need to enable self-service. If you want to enable self-service or have questions about cloud tokens, contact your Customer Success Manager (CSM).
 
 {{% alert color="info" %}}
-If you previously enabled cloud credits, please note that cloud tokens have now replaced cloud credits. One cloud credit is equivalent to ten cloud tokens. For more information, see the [Transition from Cloud Credits to Cloud Tokens](#cloud-tokens-faq).
+If you previously worked with cloud credits, please note that cloud tokens have now replaced cloud credits. Cloud tokens will be available as a product on the Mendix pricelist, starting in early 2025. One cloud credit is equivalent to ten cloud tokens. For more information, see the [Transition from Cloud Credits to Cloud Tokens](#cloud-tokens-faq).
 {{% /alert %}}
-
-To use cloud tokens, you need to enable self-service. If you want to enable self-service or have questions about cloud tokens, contact your Customer Success Manager (CSM).
 
 {{% alert color="info" %}}
 From now on, you can only purchase and provision standard, premium, and premium plus cloud resource packs, not legacy resource packs. The cloud tokens for legacy resource packs that you already purchased will be credited back to your account if you deprovision an environment.
@@ -90,7 +88,7 @@ The tables below show how many cloud tokens each cloud resource pack costs:
 
 ## Transition from Cloud Credits to Cloud Tokens{#cloud-tokens-faq}
 
-If you enabled cloud credits previously, you can see the following changes after Mendix cloud tokens are introduced:
+If you already working with cloud credits previously, you can see the following changes after Mendix cloud tokens are introduced:
 
 * Name change: cloud tokens are the successor to cloud credits and completely replace this concept. Cloud tokens have replaced cloud credits throughout the Mendix Platform. This name change has primarily affected the **Entitlements** page and the [Deployed Apps](/control-center/deployed-apps/) page in Control Center.
 * Value adjustment: A cloud credit is equivalent to ten cloud tokens. As a result, Mendix cloud resource packs are valued differently with cloud tokens compared to cloud credits. For example, the smallest cloud resource pack, XS standard resource pack, which was valued at one cloud credit, is now equivalent to ten cloud tokens. Your existing transactions and the number of cloud tokens are automatically adjusted. You can see this change on the **Entitlements** page in Control Center. 
