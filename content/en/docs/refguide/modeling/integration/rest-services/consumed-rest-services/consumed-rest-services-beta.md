@@ -20,7 +20,7 @@ The Consumed REST Service document is released for general availability (GA) for
 
 ### Use Cases
 
-You can use the Consumed REST Service document to do the following:
+Use the Consumed REST Service document to do the following:
 
 * Consume a REST Service
 * Configure `GET`, `POST`, `PUT`, `PATCH`, and `DELETE` requests
@@ -29,7 +29,7 @@ You can use the Consumed REST Service document to do the following:
 
 ### Limitations
 
-* To use the request response to create a data structure automatically in your domain model, the response data should be in JSON format. It's possible to process other formats, such as XML or raw text, but then you need to extract the data you are looking for yourself in a microflow.
+* To use the request response to create a data structure automatically in your domain model, the response data should be in JSON format. It is possible to process other formats, such as XML or raw text, but you will need to extract the data you are looking for in a microflow.
 * For macOS, it is currently not possible to copy and paste in the URL or body fields. You may also experience issues while tabbing in the text field. 
 
 ### Prerequisites 
@@ -45,7 +45,7 @@ Download [Studio Pro](https://marketplace.mendix.com/link/studiopro/) and add th
 2. Select **Add other** > **Consumed REST service**. 
 3. Name the service and click **OK**.
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/add-service.png" width="500" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/add-service.png" width="500" class="no-border" >}}
 
 ## Configuration {#configuration}
 
@@ -74,7 +74,7 @@ Create a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request to send data to your
 
 7.  Click **Send**. 
 
-You can visualize your request in the **Response data** tab, then use the response to [create an entity in the domain model](#create-entity). 
+You can visualize your request in the **Response** tab, then use the response to [create an entity in the domain model](#create-entity). 
 
 ### Authentication Methods {#authentication}
 
@@ -88,13 +88,13 @@ You can configure basic authentication to use for all requests in your document.
 3. Select a constant or create a new one for your username and password. To create a new constant, follow these steps:
    1. Next to **Username** or **Password**, click **Select** > **New**.
    2. Name the constant and click **OK**.
-4. Add any additional information needed and click **OK**.
+4. Add any additional information you may need, then click **OK**.
 
 ### Adding Parameters {#add-parameters}
 
 {{% alert color="info" %}}
 
-Parameters are not supported in the authentication section.
+Parameters are not supported in the Authentication section.
 
 {{% /alert %}}
 
@@ -107,7 +107,7 @@ You can manually add new parameters to the parameters grid directly. To do so, f
 1. Open the **Parameters** tab and click **Add parameter**.
 2. Name your parameter and add a test value.
 
-    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/adding-parameters.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/adding-parameters.png" class="no-border" width="600" >}}
 
 3. To test the parameters, click **Send**. 
 
@@ -119,7 +119,7 @@ You can add a Base URL as a parameter. To do this, follow these steps:
 2. In the Dynamic field, select **Yes**.
 3. Click **OK**
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/dynamic-base-url.png" class="no-border" >}}
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/dynamic-base-url.png" class="no-border" width="600" >}}
 
 Your base URL is now considered as a parameter. You can change its value in the [Send REST Request](/refguide/send-rest-request/) microflow activity. 
 
@@ -151,7 +151,7 @@ If the request body content is static, paste the text into the **Body** tab. Thi
 
 #### Adding a Request Body Using Parameters
 
-When the text in the Body tab contains a parameter name surrounded by curly braces,  this is interpreted as a parameter. These parameters can be used to change the body content dynamically. 
+When the text in the Body tab contains a parameter name surrounded by curly braces, it is interpreted as a parameter. These parameters can be used to change the body content dynamically. 
 
 {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/body-structure-example.png" class="no-border"  width="500" >}}
 
@@ -171,7 +171,9 @@ Create body entities from a JSON snippet to your request by doing the following:
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/body-structure-tab.png" class="no-border"  width="400" >}}
 
-4. The entity name is prefilled, but you can change it to a custom name. To create an entity, click **Create Entity** > **OK**. Click **Show** to view the entity in your domain model.
+   The entity name is prefilled, but you can change it to a custom name. 
+
+4. To create an entity, click **Create Entity** > **OK**. Click **Show** to view the entity in your domain model.
 
 ### Processing Response Data
 
@@ -192,9 +194,9 @@ The entity name is prefilled, but you can change it to a custom name. To create 
 
 You can also add a parameter in the request body by generating a data structure (entities) as input. If only a small part of the request is dynamic, you can use parameters directly in the JSON snippet.
 
-You can choose to flatten and simplify the structure of your response. Enable this feature by selecting **Flatten and simplify structure**. For more information, see [Simplifying and Flattening Response Data](#simplify-and-flatten) below.
+You can choose to flatten and simplify the structure of your response. Enable this feature by selecting **Flatten and simplify structure**. For more information, see the [Simplifying and Flattening Response Data](#simplify-and-flatten) section below.
 
-#### Response is not in JSON Format {#processing-non-json}
+#### Response is Not in JSON Format {#processing-non-json}
 
 When the response is not in JSON format, it cannot be converted automatically into entities. Instead, you can extract the data in a microflow.
 
@@ -204,7 +206,7 @@ When the [Send REST request](/refguide/send-rest-request/) action is executed in
 
 When you receive JSON data, the structure of the response is simplified and flattened where possible. This can be seen in the **Response structure** tab.   
 
-For example, the URL `https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json` returns vehicle information. It returns a JSON object that contains the property `"Results"` with a list of objects. Without simplification, when you click **Create entity**, you will get 3 entities. With simplification, only 2 entities are created that still contain all vehicle information.
+For example, the URL `https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json` returns vehicle information. It returns a JSON object that contains the property `Results` with a list of objects. Without simplification, when you click **Create entity**, you will get 3 entities. With simplification, only 2 entities are created that still contain all vehicle information.
 
 By default, simplification and flattening is enabled. To change this, uncheck the box **Flatten and simplify structure** on the **Response structure** tab before clicking the **Create entity** button.
 
@@ -215,6 +217,6 @@ To select a request in the microflow, complete the following steps:
 1. Create a new microflow and drag the [Send REST request](/refguide/send-rest-request/) activity into it.
 2. Double-click the activity and click **Select** to choose the request you want to add, then click **Select** > **OK**.
 
-{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/send-request-activity.png" class="no-border" width="500" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/send-request-activity.png" class="no-border" width="500" >}}
 
 If you have defined parameters in the request, they will be added to the activity. Click **Edit** to change the parameter in the microflow. The parameter values in this activity are used by the runtime instead of the test value defined in the request.
