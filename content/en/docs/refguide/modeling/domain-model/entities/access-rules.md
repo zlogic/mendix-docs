@@ -110,7 +110,7 @@ The set of objects that can be deleted can be limited by using an [XPath constra
 | Read, Write | End-users are allowed to view and edit the value of this member. |
 
 {{% alert color="info" %}}
-You cannot set *Write* access to attributes which are calculated. This includes attributes of type *Autonumber* and attributes where the attribute value is set to **Calculated**.
+You cannot set *Write* access to attributes which are calculated. This includes both attributes where the attribute value is set to **Calculated** and attributes of type *Autonumber*.
 {{% /alert %}}
 
 **Default rights for new members** specifies the rights which are applied to new attributes or associations of this entity.
@@ -207,7 +207,11 @@ In Studio Pro version 10.6.0 and above, you will need to enable the new editor v
 {{% /alert %}}
 
 {{% alert color="info" %}}
-From Studio Pro version 10.6.0 until version 10.16.0, the new access rule editor worked with normalized access rules. A normalized access rule is an access rule that has exactly one module role attached to it. See [Access Rule Normalization](#normalization), below, for the implications when you switch to the new editor for those versions.
+In preparation for making the new access rule editor generally available, the features and interface were modified in Studio Pro version 10.17.0. The description below describes that version of the interface and does not fully describe the previous beta interface (Studio Pro versions 10.6.0 through 10.16.0).
+{{% /alert %}}
+
+{{% alert color="info" %}}
+For Studio Pro versions 10.6.0 through 10.16.0, the new access rule editor worked with normalized access rules. A normalized access rule is an access rule that has exactly one module role attached to it. See [Access Rule Normalization](#normalization), below, for the implications when you switch to the new editor for those versions.
 {{% /alert %}}
 
 ### Editor Layout
@@ -230,32 +234,30 @@ By setting the appropriate entity rights in an access rule, you can control the 
 
 When an access rule has entity rights, this is shown using the **Create** ({{% icon name="create" color="gray" %}}) and/or **Delete** ({{% icon name="trash-can" %}}) icon in the entity rights row for the specific access rule.
 
-{{% todo %}}Continue Review from here.{{% /todo %}}
-
 ### Attribute and Association Rights
 
-In the access rule, access to a specific member (attribute or association belonging to the entity) can be controlled. The access can be **None**, **Read** or **Read and Write**. When there is no access, no icon is display in the row of the member in the access rule column. If there is **Read** access, a **Read** icon is displayed. For **Read and Write** access, both the **Read** and the **Write** icon are displayed.
+In the access rule, access to specific members (attributes or associations belonging to the entity) can be controlled. The access can be **None**, **Read**, or **Read and Write**. When there is no access, no icon is displayed in the row of the member in the access rule column. If there is **Read** access, a **Read** icon ({{% icon name="view" %}}) is displayed. For **Read and Write** access, both the **Read** ({{% icon name="view" %}}) and **Write** ({{% icon name="pencil" %}}) icons are displayed.
 
 ### Creating or editing an access rule
 
-Access rules can be created from the **New Access Rule** dialog. This dialog can be opened by clicking on the **New** button. To edit an excisting access rule, select an access rule and click on **Edit**. You can also double click on an access rule. 
+Access rules can be created from the **New Access Rule** dialog. This dialog can be opened by clicking **New**. To edit an existing access rule, select an access rule and click **Edit**. You can also double-click on an access rule. 
 
 {{< figure src="/attachments/refguide/modeling/domain-model/entities/access-rules/access-rule-editor.png" alt="This image indicates the position of the Delete icons" width="550px" class="no-border" >}}
 
 #### Documentation
 
-In this field, documentation can be added for the access rule. 
+You can add documentation to describe the access rule. 
 
 #### Module roles
 
-Select to which module role(s) this access rule applies. When there are no module roles selected there will be a consistency error.
+Select the module role(s) this access rule applies to. If there are no module roles selected there will be a consistency error.
 
 #### XPath Constraints
 
-Click on the **Edit...** button next to the XPath constraint field. This will open the XPath editor dialogue to edit the XPath constraint of the access rule.
+To edit the XPath constraint, click **Edit...** next to the XPath constraint field. This will open the XPath editor dialogue to edit the XPath constraint of the access rule.
 
 {{% alert color="warning" %}}
-XPath constraints can only be applied to persistable entities as they are applied by the database. Defining XPath constraints for non-persistable entities results in consistency errors.
+XPath constraints can only be applied to persistable entities, as they are applied by the database. Defining XPath constraints for non-persistable entities results in consistency errors.
 {{% /alert %}}
 
 There are two constraints that can be appended easily with a single button click. 
@@ -289,28 +291,28 @@ Because of this XPath constraint, access defined in the access rule is only appl
 
 #### Entity Rights
 
-Entity rights can be added or edited with the toggles next to **Allow creating new and deleting existing objects**. 
+You can add or edit entity rights using the toggles next to **Allow creating new and deleting existing objects**. 
 
-XPath constraints are not applied to create operations, meaning that if you enable create access for one access rule wich applies to a certain module role, any end-user with this module role can create objects of this entity.
+XPath constraints are not applied to create operations, meaning that if you enable create access in an access rule which applies to a certain module role, any end-user with this module role can create objects of this entity.
 
-In contrast to create access, XPath constraints are applied to delete operations.
+XPath constraints are applied to delete operations, unlike create operations.
 
-#### Attribute and association rights
+#### Attribute and Association Rights
 
-The access for the members can be set using the toggles in the column next to the member description. 
+Access to the members can be set using the toggles in the column next to the member description. 
 
 You can also click **Read** or **Write** in the **Set all to** footer to enable or disable 'Read' or 'Read and Write' access for all attributes and associations in this column. 
 
 {{% alert color="info" %}}
-You cannot set *Write* access to attributes which are calculated. This includes attributes of type *Autonumber* and attributes where the attribute value is set to **Calculated**.
+You cannot set *Write* access to attributes which are calculated. This includes both attributes where the attribute value is set to **Calculated** and attributes of type *Autonumber*.
 {{% /alert %}}
 
-Module roles will have no access to newly added attributes or associations. The option in the old editor to set default rights for new members (described in [Member Read and Write Rights Section](#member-access), above) has been removed from the new editor to improve security.
+Attributes and associations which are added to an entity in the domain model will default to allowing no access to any module roles. This improves security by forcing you to choose who can access any new information which is added to the domain model and is a change from the old editor where you could set default rights for new members (described in [Member Read and Write Rights Section](#member-access), above).
 
 See [Attribute Changes and Security Constraints](#attribute-changes), above, for important considerations about giving access to attributes.
 
 ### Access Rule Normalization{#normalization}
 
-Older iterations of the new access rule editor, from Studio Pro 10.6 until 10.16, worked with normalized access rules. A normalized access rule is an access rule that has exactly one module role attached to it. This change was made because the editor used to work with a table where the entity members make use of the rows and module roles (optionally with XPaths) use the columns. 
+Older beta versions of the new access rule editor, in Studio Pro versions 10.6 through 10.16, worked with normalized access rules. A normalized access rule is an access rule that has exactly one module role attached to it. This change was made because the editor used to work with a table where the entity members make use of the rows and module roles (optionally with XPaths) use the columns. 
 
 Access rules were automatically normalized when first using the new editor for an entity. Alternatively, all access rules in a project could be normalized at once by going to *App* *Tools* > *Normalize access rules*;
