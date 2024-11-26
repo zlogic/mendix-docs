@@ -72,7 +72,7 @@ Create a `GET`, `POST`, `PUT`, `PATCH`, or `DELETE` request to send data to your
 
     {{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/configuration-screen.png" class="no-border" width="500" >}}
 
-7.  Click **Send**. 
+7. Click **Send**. 
 
 You can visualize your request in the **Response** tab, then use the response to [create an entity in the domain model](#create-entity). 
 
@@ -138,6 +138,8 @@ You can add a header for any HTTP request you have specified in your document. T
 3. Click **OK**. To test the header, click **Send**.
 
 You can also add a parameter as the test value of a header, as seen below. For example, you can define an Authorization header where the authentication token is dynamic.
+
+{{< figure src="/attachments/refguide/modeling/integration/consumed-rest-services-beta/parameters-for-header.png" class="no-border" width="300" >}}
 
 ### Adding a Request Body (for POST, PUT, and PATCH requests only) {#add-a-request-body}
 
