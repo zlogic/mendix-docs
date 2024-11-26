@@ -28,7 +28,7 @@ The steps below use Studio Pro as an example of what the REST service returns:
 
     {{< figure src="/attachments/refguide/modeling/integration/consume-a-rest-service/get-call-result.png" alt="Screenshot of the result of the rest call" class="no-border" >}}
 
-2. Select the **Raw Data** tab and copy the whole JSON snippet.
+2. Copy the whole JSON snippet.
 3. Create a module and name it *RESTconsume*. 
 4. Add the new [JSON structure](/refguide/json-structures/) to your module by right-clicking the module in the **App Explorer** and selecting **Add other** > **JSON structure**. 
 5. Enter *JSON_structure* in the **Name** field and click **OK**.
