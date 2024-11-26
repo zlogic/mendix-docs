@@ -88,7 +88,7 @@ The tables below show how many cloud tokens each cloud resource pack costs:
 
 ## Transition from Cloud Credits to Cloud Tokens{#cloud-tokens-faq}
 
-If you already working with cloud credits previously, you can see the following changes after Mendix cloud tokens are introduced:
+If you previously worked with cloud credits previously, you can see the following changes after Mendix cloud tokens are introduced:
 
 * Name change: cloud tokens are the successor to cloud credits and completely replace this concept. Cloud tokens have replaced cloud credits throughout the Mendix Platform. This name change has primarily affected the **Entitlements** page and the [Deployed Apps](/control-center/deployed-apps/) page in Control Center.
 * Value adjustment: A cloud credit is equivalent to ten cloud tokens. As a result, Mendix cloud resource packs are valued differently with cloud tokens compared to cloud credits. For example, the smallest cloud resource pack, XS standard resource pack, which was valued at one cloud credit, is now equivalent to ten cloud tokens. Your existing transactions and the number of cloud tokens are automatically adjusted. You can see this change on the **Entitlements** page in Control Center. 
