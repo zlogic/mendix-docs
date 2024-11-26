@@ -1149,6 +1149,43 @@ SELECT LastName AS Name FROM Sales.Customer
 | Doe    |
 | Moose  |
 
+#### Union of associations
+
+Performing a `UNION` with columns that are associations is possible, given the columns refer to the same entity for all select clauses. 
+
+Presume an entity that has one-to-many association to `Sales.Customer`:
+
+```sql
+SELECT *
+FROM Sales.ExtraInfo
+```
+
+| ID              | CustomerName |
+|-----------------|--------------|
+| 403600446162337 | Doe          |
+| 403600446169432 | Elk          |
+
+
+The query below combines associations to the `Sales.Customer` entity from 2 different source entities with duplicates:
+
+```sql
+SELECT Cust.LastName as CustomerName FROM (
+    SELECT Sales.Request/Sales.Request_Customer as RequestAssoc
+    FROM Sales.Request
+    UNION ALL
+    SELECT Sales.ExtraInfo/Sales.ExtraInfo_Customer as RequestAssoc
+    FROM Sales.ExtraInfo
+) AS Cust
+```
+
+| CustomerName |
+|--------------|
+| Doe          |
+| Moose        |
+| Doe          |
+| Elk          |
+
+
 ## Subqueries
 
 A subquery is an OQL query nested inside another query. A subquery can contain the same clauses as a regular OQL query. The entities from the outer query can be referred to in a subquery. A subquery can be used in different parts of the query.
