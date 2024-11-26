@@ -234,7 +234,7 @@ When an access rule has entity rights, this is shown using the **Create** and/or
 
 ### Attribute and Association Rights
 
-In the access rule, access to a specific member (attribute or association belonging to the entity) can be controlled. The access can be **None**, **Read** or **Read and Write**. When there is no access, no icon is display in the row of the member in the access rule column. If there is **Read** access, a **Read** icon is displayed. For **Read and Write** access, both the **Read** and the **Write** icon are displayed.
+In the access rule, access to a specific member (attribute or association belonging to the entity) can be controlled. The access can be **None**, **Read** or **Read and Write**. When there is no access, no icon is displayed in the row of the member in the access rule column. If there is **Read** access, a **Read** icon is displayed. For **Read and Write** access, both the **Read** and the **Write** icon are displayed.
 
 ### Creating or editing an access rule
 
