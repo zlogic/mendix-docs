@@ -23,10 +23,7 @@ The Wikipedia REST service allows you to retrieve the summary of a page. This se
 We will start by providing Studio Pro as an example of what the REST service returns:
 
 1. Open your browser and go to [https://en.wikipedia.org/api/rest_v1/page/summary/Tahiti](https://en.wikipedia.org/api/rest_v1/page/summary/Tahiti).
-2. This calls the REST service with a GET request – the result is the summary of the [Tahiti page on Wikipedia](https://en.wikipedia.org/wiki/Tahiti) in the JSON format:
-
-    {{< figure src="/attachments/refguide9/modeling/integration/consume-a-rest-service/get-call-result.png" alt="Screenshot of the result of the rest call" class="no-border" >}}
-
+2. This calls the REST service with a GET request – the result is the summary of the [Tahiti page on Wikipedia](https://en.wikipedia.org/wiki/Tahiti) in the JSON format.
 3. Copy the whole JSON snippet.
 4. Create a module and name it *RESTconsume*. Add the new [JSON structure](/refguide9/json-structures/) to your module: right-click the module in the **App Explorer** and select **Add other** > **JSON structure**. 
 5. Enter a **Name** for the structure: *JSON_structure* and click **OK**.
