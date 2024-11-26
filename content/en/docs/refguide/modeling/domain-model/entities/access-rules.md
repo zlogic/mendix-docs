@@ -228,7 +228,7 @@ When there is a value shown in the **XPath constraint** row for a specific acces
 
 By setting the appropriate entity rights in an access rule, you can control the ability to create and/or delete objects of the entity. By default, an access rule has no entity rights. 
 
-When an access rule has entity rights, this is shown using the **Create** and/or **Delete** ({{% icon name="trash-can" %}}) icon in the entity rights row for the specific access rule.
+When an access rule has entity rights, this is shown using the **Create** ({{% icon name="create" color="gray" %}}) and/or **Delete** ({{% icon name="trash-can" %}}) icon in the entity rights row for the specific access rule.
 
 {{% todo %}}Continue Review from here.{{% /todo %}}
 
