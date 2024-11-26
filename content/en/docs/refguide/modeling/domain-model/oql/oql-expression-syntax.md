@@ -7,7 +7,7 @@ url: /refguide/oql-expression-syntax/
 
 Operators and functions in OQL use expressions as inputs to perform mathematical, comparison, conditional, string, date operations and return the result. They allow an OQL query to perform modifications on data on the database to present a different view of the data or make complex conditions.
 
-This document details the use and syntax of expressions in an oql query.
+This document details the use and syntax of expressions in an OQL query.
 
 ## Data Types
 
@@ -558,6 +558,7 @@ SELECT
 		END AS OrderType
 FROM Sales.Order
 ```
+
 | LastName | Number | Price | OrderType |
 |:---------|-------:|------:|:----------|
 | Doe      | 7      | 1.5   | Lucky     |
@@ -581,6 +582,7 @@ SELECT
 		END AS NumberOrPrice
 FROM Sales.Order
 ```
+
 | LastName | Number | Price | PriceOrNumber (type: Decimal) | NumberOrPrice (type: Integer) |
 |:---------|-------:|------:|--------------:|--------------:|
 | Doe      | 7      | 1.5   | 1.5     | 7     |
@@ -694,8 +696,6 @@ SELECT (Number : 2) as Normal, (Cast(Number AS DECIMAL) : 2) as Casted FROM Sale
 | 1      | 1.0      |
 | 1      | 1.5    |
 
-{{% todo %}}Proofread from here to the end{{% /todo %}}
-
 ### COALESCE {#coalesce-expression}
 
 Returns the value of the first `expression` that is not NULL. Can be used with columns.
@@ -744,6 +744,7 @@ SELECT
 	COALESCE(TotalOrderAmount, Age) AS AmountOrAge,
 FROM Sales.Customer
 ```
+
 | AgeOrAmount (type: Integer) | AmountOrAge (type: Decimal) |
 |------:|------:|
 | 25   | 25.0   |

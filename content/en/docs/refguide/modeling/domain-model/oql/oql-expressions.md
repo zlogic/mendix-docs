@@ -13,12 +13,12 @@ An OQL expression is a query building block that returns a value or a list of va
 * a subquery
 * a combination of attribute names, constants, system variables, functions, and subqueries connected by operators
 
-
 OQL expressions can be used in `WHERE`, `SELECT`, `GROUP BY`, `UNION`, `HAVING`, and `ON` conditions of `JOIN` clauses. For more information, see [OQL clauses](/refguide/oql-clauses/).
 
 ## Aggregations{#aggregates}
 
 Aggregations are functions that reduce a list of values from a retrieved column (or columns) into a single value. They can be used in the following ways:
+
 * as an attribute in a `SELECT` clause
 * as a condition in a `HAVING` clause 
 
@@ -131,7 +131,6 @@ SELECT COUNT(DISTINCT Name) AS DistinctNameEntryCount FROM Sales.Product
 |:----------------------:|
 |           3            |
 
-
 #### AVG
 
 The average stock per product entry:
@@ -198,7 +197,6 @@ SELECT Sum(DISTINCT Stock) AS DistinctStockSum FROM Sales.Product
 | DistinctStockSum |
 |:----------------:|
 |       103        |
-
 
 #### STRING_AGG
 

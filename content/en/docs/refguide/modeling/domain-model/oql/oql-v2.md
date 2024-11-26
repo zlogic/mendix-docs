@@ -62,14 +62,15 @@ Numeric types Integer, Long and Decimal are considered matching. See [examples](
 
 #### `LENGTH` {#length-validations}
 
-In OQL v2, the argument of [LENGTH](/refguide/oql-expression-syntax/#length-function) function can only be of type String. Noth that values of Enumerations are also treated as Strings. In OQL v1, there was no such validation, and handling of other types was delegated to the database.
+In OQL v2, the argument of [LENGTH](/refguide/oql-expression-syntax/#length-function) function can only be of type String. Note that values of Enumerations are also treated as Strings. In OQL v1, there was no such validation, and handling of other types was delegated to the database.
 
 #### `DATEPART` and `DATEDIFF` {#date-validations}
 
 In OQL v2, the date arguments of functions [DATEPART](/refguide/oql-expression-syntax/#datepart-function) and [DATEDIFF](/refguide/oql-expression-syntax/#datediff-function) can be only of one of the following types:
-- Date and time
-- String. In this case, Runtime will implicitly attempt conversion of the string to a Date and time.
-- One of Numeric types Integer, Long and Decimal. In this case, the value is treated as a Java timestamp.
+
+* Date and time
+* String. In this case, Runtime will implicitly attempt conversion of the string to a Date and time.
+* One of Numeric types Integer, Long and Decimal. In this case, the value is treated as a Java timestamp.
 
 ### Subquery Columns Should Have a Name or an Alias
 
@@ -85,6 +86,7 @@ SELECT
   )
 FROM Module.City
 ```
+
 The column names in this case would be `Name` and a `null` name which would not be possible to refer to.
 
 In OQL v2, such queries are no longer allowed. You must always provide an alias for subqueries that do not result in a named column. The query above can be rewritten as follows:
@@ -101,6 +103,7 @@ FROM Module.City
 ```
 
 This also applies to constants as attributes, including `NULL`. The query below is no longer allowed:
+
 ```sql
 SELECT
   Name,
@@ -109,6 +112,7 @@ FROM Module.City
 ```
 
 It can be rewritten to use aliases for constants:
+
 ```sql
 SELECT
   Name,
@@ -117,7 +121,7 @@ FROM Module.City
 ```
 
 {{% alert color="info" %}}
-This requirement only applies to attributes in the main `SELECT` query. `SELECT` clauses inside subquries are not affected, as are columns that are used for comparisons like in a `WHERE` clause.
+This requirement only applies to attributes in the main `SELECT` query. `SELECT` clauses inside subqueries are not affected, as are columns that are used for comparisons like in a `WHERE` clause.
 {{% /alert %}}
 
 ### Duplicate Columns in ‘SELECT’

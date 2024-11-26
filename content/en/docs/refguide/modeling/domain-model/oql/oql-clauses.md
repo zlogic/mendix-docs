@@ -1028,6 +1028,7 @@ OFFSET 2
 | Veidt  | Utrecht   | 5              |
 
 ## `UNION` Clause {#oql-union}
+
 The clause takes multiple select queries and combines their results into a single result set.
 The resulting set by default only includes distinct rows. The `ALL` keyword can be used to include all rows. Rows are considered distinct if the combination of the column values is distinct from all other rows. Comparison logic of values is the same as the `DISTINCT` keyword of a `SELECT` clause.
 
@@ -1091,7 +1092,6 @@ FROM Sales.Customer
 | Jane      | Doe      |
 | Jane      | Doe      |
 | Jane      | Moose    |
-
 
 The following query performs a self union of a table, returning fewer rows than the original table, as only distinct rows are included in the result.
 
