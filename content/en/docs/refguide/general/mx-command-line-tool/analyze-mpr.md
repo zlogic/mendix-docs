@@ -10,17 +10,12 @@ description: "Describes MPR analyze command, which shows the contents of the MPR
 The `mx analyze-mpr` command enables you to show information about the MPR file in the form of plaintext. 
 
 {{% alert color="info" %}}
-
-This command is available from Studio Pro 10.17.0 and above.
-
-{{% /alert %}}
-
-{{% alert color="info" %}}
-This tool shipped with Mendix 10 can also be used to analyze MPR files created in Mendix 9.24 LTS.
+This command is available in `mx.exe` from Studio Pro 10.17.0 and above.
+However, it can also be used to analyze MPR files created in older versions starting from Studio Pro 9.24.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-The exact output of this tool may change. You cannot rely on this format staying consistent over time.
+We do not recommend building custom tooling on top of this outpur, as the output and the format may change over time.
 {{% /alert %}}
 
 ## Usage
