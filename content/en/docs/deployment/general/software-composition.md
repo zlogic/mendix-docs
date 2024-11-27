@@ -111,7 +111,7 @@ The list shows the following information about the component:
 
 * **License**– This shows the end-user license for the component.
 
-* **Marketplace** – This shows whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the  Marketplace, while a private component is available only via your [Compnay Content](/appstore/overview/#company-content) page.
+* **Marketplace** – This shows whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the  Marketplace, while a private component is available only via your [Compnay Content](/appstore/home-page/#company-content) page.
 
 * **Latest version** – This shows the lastest version of the component.
 
