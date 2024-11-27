@@ -98,7 +98,7 @@ This tab is available for mini surveys with the status of **Active** or **Finish
 
 On this tab, you can view all the responses that have been collected for the mini survey.
 
-### Settings Page
+### Settings Page {#settings}
 
 When you click {{% icon name="cog" %}} **Settings** at the upper-right corner of the **Survey Overivew** page, the **Settings** page opens. Here you can change all your settings and preferences for the mini survey. There are two tabs available: **Survey Locations** and **API Key**.
 
