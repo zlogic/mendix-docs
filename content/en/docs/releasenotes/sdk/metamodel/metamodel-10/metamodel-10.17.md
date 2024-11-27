@@ -12,18 +12,18 @@ parent: "metamodel-10"
 * We introduced the `defaultValue` property. 
 
 #### RestOperationCallAction (Element)
-* We introduced the `baseUrlParameterMapping` property. Info: "To store parameter for base url"
+* We introduced the `baseUrlParameterMapping` property. Info: "To store parameter for base url."
 
 #### RestParameterMapping (Element)
-* We introduced this element. Info: "To configure body variable for REST Request"
+* We introduced this element. Info: "To configure body variable for REST Request."
 
-### Rest
+### REST
 
 #### ConsumedRestService (ModelUnit)
-* We introduced the `baseUrlParameter` property. Info: "Base url parameter"
+* We introduced the `baseUrlParameter` property. Info: "Base url parameter."
 
 #### RestParameter (Element)
-* We introduced this element. Info: "REST Document level parameter for base url"
+* We introduced this element. Info: "REST Document level parameter for base url."
 
 ### Pages
 
@@ -39,7 +39,6 @@ parent: "metamodel-10"
 #### Snippet (ModelUnit)
 * We introduced the `variables` property. 
 
-### Workflows
 
 #### BoundaryEvent (Element)
 * We introduced the `isInterrupting` property. 
