@@ -19,7 +19,7 @@ To configure the CI/CD pipeline, prepare the following:
 
 ## Configuring the CI/CD Pipeline
 
-If you have a Kubernetes cluster, you can set Kubernetes as your CI System in **Settings** > **DevOps** > **CI/CD**. You need to first obtain and configure a [CA certificate](#ca-certificate), and then configure the followings settings:
+If you have a Kubernetes cluster, you can set Kubernetes as your CI System in **Switch to Admin Mode** > **Settings** > **Build settings** > **Build Utility**. You need to first obtain and configure a [CA certificate](#ca-certificate), and then configure the followings settings:
 
 * [Build Cluster Setting](#build-cluster)
 * [Build Images Setting](#build-images)
@@ -27,7 +27,7 @@ If you have a Kubernetes cluster, you can set Kubernetes as your CI System in **
 
 Finally, you must also [register your Kubernetes cluster](#register-cluster).
 
-{{< figure src="/attachments/private-platform/pmp-cicd1.png" class="no-border" >}}
+{{< figure src="/attachments/private-platform/pmp-cicd4.png" class="no-border" >}}
 
 ### Obtaining and Configuring the CA Certificate {#ca-certificate}
 

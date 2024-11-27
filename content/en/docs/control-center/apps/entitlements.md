@@ -19,6 +19,10 @@ The **Entitlements** page in Control Center is a self-service tool that displays
 
 ## What Are Cloud Credits? {#cloud-credits}
 
+{{% alert color="info" %}}
+Mendix is working on changing cloud credits to cloud tokens. For more information about this change, see [Cloud Tokens FAQ](#cloud-tokens-faq).
+{{% /alert %}}
+
 Cloud credits are virtual credits that you can spend on the Mendix Platform to purchase [cloud resource packs](/developerportal/deploy/mendix-cloud-deploy/#resource-pack). If you want to top up the cloud credits, you can just purchase standard, premium, or premium plus cloud resource packs. Your purchase will be converted into cloud credits and you can then spend the cloud credits on any cloud resource pack available to you.
 
 To use cloud credits, you need to enable self-service. If you want to enable self-service or have questions about cloud credits, contact your Customer Success Manager (CSM).
@@ -78,3 +82,31 @@ The tables below show how many cloud credits each cloud resource pack costs:
 | XL      | 7.33          |
 | XXL     | 16.67         |
 | XXXL    | 64            |
+
+## Cloud Tokens FAQ {#cloud-tokens-faq}
+
+### What Are Mendix Cloud Tokens?
+
+Mendix cloud tokens are annual capacity-based virtual credits that allow you to provision and allocate any Mendix cloud resource pack for your Mendix Cloud deployments.
+
+Mendix cloud tokens are the successor to cloud credits.
+
+### I Am Already Working with Cloud Credits. What Changes Will I See When Cloud Tokens Are Introduced?
+
+You will notice the following changes:
+
+* Name change: cloud tokens are the successor to cloud credits and completely replace this concept. Once introduced, cloud tokens will replace cloud credits throughout the Mendix Platform. This name change will primarily affect the **Entitlements** page and the **Deployed Apps** page in Control Center.
+* Value adjustment: Mendix cloud resource packs are valued differently with cloud tokens compared to cloud credits. You will see this change on the **Entitlements** page in Control Center. Once cloud tokens are introduced, your existing transactions and cloud tokens will be automatically adjusted.
+* Direct ordering: you will be able to order Mendix cloud tokens directly from the Mendix pricelist. You can use your available cloud tokens to provision any cloud resource pack for your apps.
+
+### Is the Value of Cloud Credits and Cloud Tokens the Same?
+
+No, one cloud credit is equivalent to ten cloud tokens. For example, the smallest cloud resource pack, XS standard resource pack, which was valued at one cloud credit, is now equivalent to ten cloud tokens.
+
+### When Can I Purchase Mendix Cloud Tokens as a Product?
+
+Mendix cloud tokens will be available as a product on the Mendix pricelist, starting in early 2025.
+
+### Where Can I Ask Any Further Questions Regarding Mendix Cloud Tokens?
+
+For any questions, contact your Mendix Customer Success Manager. If you experience any issues, create a support ticket with Mendix Support.
