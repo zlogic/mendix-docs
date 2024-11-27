@@ -42,5 +42,3 @@ parent: "metamodel-10"
 
 #### BoundaryEvent (Element)
 * We introduced the `isInterrupting` property. 
-
-This page has been generated automatically.
