@@ -252,6 +252,12 @@ The input and output for this service are shown in the table below:
 
 The request object passed to this operation must include a KnowledgeBaseTool object, which can be added to the request using the [Request: Add Knowledge Base Tool to Collection](#add-knowledge-base-tool) operation.
 
+ ##### Prompt Template {#PromptTemplate} 
+
+Prompt Template, not to be confused with System prompt, is the orchestration prompt that is send with request response generation when a user query a knowledge base with Amazon Bedrock Retrieve and Generate you can find out more on [Amazon Documentation for Prompt Template](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt).
+An example case where a custom Prompt Template can be useful is when we want to influence the response when no seacrh results are returned from the knowledge base, like if no  
+
+
 #### Chatting with History {#retrieve-and-generate-with-history}
 
 The `RetrieveAndGenerate` operation only allows a single user message to be part of the request. Unlike the `ChatCompletions` operation, it is not supported to send a history of messages to the model. 
