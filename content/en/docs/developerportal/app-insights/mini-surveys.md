@@ -27,7 +27,7 @@ On the upper-left corner of the page, you can see the name of the app currently 
 
 The tabs of the **Survey Overview** page are described below.
 
-{{< figure src="/attachments/developerportal/app-insights/mini-surveys/survey-overview.png" class="no-border" >}}
+{{< figure src="/attachments/developerportal/app-insights/mini-surveys/Mini surveys overview.png" class="no-border" >}}
 
 #### Active Tab {#active}
 
@@ -35,7 +35,7 @@ The **Active** tab shows all the mini surveys that are active for the app with t
 
 * **ID** – This is the unique ID of the mini survey. You can also find this ID on the [survey details](#survey-details) page of the mini survey.
 * **Name** – This is the name of the mini survey.
-* **Location** – The Location is an identifier that refers to the location where the mini survey will appear in your app.
+* **Location** – The location is a reference to the where mini survey widget pops up in your app.
 * **Responses** – This shows the number of responses that have been collected for the mini survey.
 * **Status** – This shows the status of the mini survey. For more information, see the [Statuses of Mini Surveys](#survey-status) section.
 * **Start & End Dates** – This shows the start and end dates of the mini survey.
@@ -73,14 +73,6 @@ The list on this tab contains the following information:
 
 Clicking the mini survey in a row on the list shows its [survey details](#survey-details) page.
 
-#### Settings Tab {#settings}
-
-On the **Settings** tab of **Survey Overview**, you can view or generate API keys.
-
-* **API Keys** – You can view API keys here, or generate an API key if there is none available. You need to use the API key as input when you configure the Mendix Mini Surveys module in Studio Pro to implement the mini survey. You need only one API key per app.
-
-    * To generate an API key, click **Generate API Key** here.
-
 ### Survey Details {#survey-details}
 
 When you click a mini survey on the [Survey Overview](#survey-overview) page, the survey details page of the mini survey opens.
@@ -106,6 +98,24 @@ This tab is available for mini surveys with the status of **Active** or **Finish
 
 On this tab, you can view all the responses that have been collected for the mini survey.
 
+### Settings page
+
+When you click the settings button in the top right, you'll open the **settings page**. Here you can change all your settings and preferences for Mini Surveys. There are two tabs available.
+
+#### Survey Locations
+
+You can create and manage your survey locations in here. All the available survey locations are listed in here. You can add additional survey locations by clicking the **Add Location** button. This will open a pop up where you can select the name. Cancelling, or closing the pop up, will not save the Location. If you want to use the newly created Location, make sure that the widget uses the same name as the location. You can find more information in the documentation for the [module](https://docs.mendix.com/developerportal/app-insights/mini-surveys/).
+
+If you want to delete a survey location, you can use the **Delete** button. This will remove the Location from App Insights. If you want to use this Location again, you can simply recreate the location with the same name again. If a Location has an active survey, or a scheduled survey, you are unable to delete this location.
+
+#### API key
+
+On this tab, you can view or generate API keys.
+
+* **API Keys** – You can view API keys here, or generate an API key if there is none available. You need to use the API key as input when you configure the Mendix Mini Surveys module in Studio Pro to implement the mini survey. You need only one API key per app.
+
+    * To generate an API key, click **Generate API Key** here.
+
 ## Running a Mini Survey
 
 ### Creating a Mini Survey {#create-survey}
@@ -125,9 +135,9 @@ The first time you complete the onboarding, Mendix creates a demo survey for you
         * **Description** – Descirbe your survey.
         * **Start date & End date** – Set the start and end time of the mini survey.
         * **Survey Location** – Select the location of the survey widget.
-    * **Questions** – You can set up to three questions per mini survey.
+    * **Questions** – You can set up to five questions per mini survey.
         * **Open Question** – Create a question where the user can fill in their own answer.
-        * **Score** – Create a question where a user can give a star or emoji rating.
+        * **Score** – Create a question where a user can give a star, emoji or numerical rating.
         * **Multiple Choice** – Create a question where you can set up to 4 answers for the user to pick from.
         * **NPS** – Let the user pick a score between 0 and 10 to rate your app.
     * **Finalize** – Shows an summary of your survey.
