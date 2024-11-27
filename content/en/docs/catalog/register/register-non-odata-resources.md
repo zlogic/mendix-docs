@@ -1,7 +1,7 @@
 ---
-title: "Register Non-OData Resources in the Catalog"
-linktitle: "Register Non-OData Resources"
-url: /catalog/register/register-non-odata-resources/
+title: "Register Services Wrapped in OData in the Catalog"
+linktitle: "Register Services Wrapped in OData"
+url: /catalog/register/register-odata-wrapped-services/
 description: "Describes how to convert non-OData resources into OData and then register them in the Catalog."
 weight: 30
 aliases:
@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-The Catalog collects metadata from exposed services and currently supports all OData XML resources. If you want to connect something other than OData, you can do so by wrapping it in OData and then registering the data source contract file in the Catalog. Afterwards, you can make it available for being consumed in Mendix Studio Pro. Currently there are two ways to wrap data in OData:
+The Catalog collects metadata from exposed services and currently supports OData, REST, Web Services and Business Events. If you want to connect something other than those, you can do so by wrapping it in OData and then registering the service contract file in the Catalog. Afterwards, you can make it available for being consumed in Mendix Studio Pro. Currently there are two ways to wrap data in OData:
 
 * [Expose OData via a Mendix app](#use-mendix-app)
 * [Expose OData via a service wrapper (a custom solution)](#use-service-wrapper)
