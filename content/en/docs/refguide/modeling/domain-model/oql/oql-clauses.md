@@ -2,6 +2,14 @@
 title: "OQL Clauses"
 url: /refguide/oql-clauses/
 weight: 10
+aliases:
+    - /refguide/oql-from-clause/
+    - /refguide/oql-group-by-clause/
+    - /refguide/oql-limit-clause/
+    - /refguide/oql-order-by-clause/
+    - /refguide/oql-select-clause/
+    - /refguide/oql-subqueries/
+    - /refguide/oql-where-clause/
 ---
 
 ## Introduction
@@ -19,18 +27,18 @@ These basic clauses define the data that needs to be retrieved and which entity 
 
 Clauses must be presented in the following order, but can be left out if they are optional:
 
-1. `SELECT`
-2. `FROM`
-3. `WHERE`
-4. `GROUP BY`
-5. `HAVING` (allowed only in combination with `GROUP BY`)
-6. `ORDER BY`
-7. `LIMIT`
-8. `OFFSET`
+1. [`SELECT`](#select)
+2. [`FROM`](#from)
+3. [`WHERE`](#where)
+4. [`GROUP BY`](#group-by)
+5. [`HAVING`](#having) (allowed only in combination with `GROUP BY`)
+6. [`ORDER BY`](#order-by)
+7. [`LIMIT`](#limit-offset)
+8. [`OFFSET`](#limit-offset)
 
 The `UNION` clause defies the usual order presented above. It will be presented in a [Union Clause](#oql-union) section at the end.
 
-## `SELECT` Clause
+## `SELECT` Clause {#select}
 
 The `SELECT` clause specifies which entity attributes or other specified data must be retrieved. The clause returns all the requested values of objects which match the `SELECT` clause.
 
@@ -212,7 +220,7 @@ SELECT
 FROM Sales.Customer
 ```
 
-## `FROM` Clause
+## `FROM` Clause {#from}
 
 The `FROM` clause specifies the entities or other source or sources from which the data must be retrieved.
 
@@ -627,7 +635,7 @@ WHERE NULL
 | FirstName | LastName |
 | --------- | -------- |
 
-## `GROUP BY` Clause
+## `GROUP BY` Clause {#group-by}
 
 The `GROUP BY` clause groups OQL query results into summary rows based on the values of one or more attributes. You can filter aggregated results further using a `HAVING` clause.
 
@@ -762,7 +770,7 @@ It is recommended not to use the following functionality to avoid potential migr
 2. Subqueries in `GROUP BY`. Supported database vendors which do allow subqueries in `GROUP BY` are PostgreSQL, MariaDB, and MySQL.
 {{% /alert %}}
 
-### Using `GROUP BY` with `HAVING`
+### Using `GROUP BY` with `HAVING`{#having}
 
 The `HAVING` clause is used to filter aggregated results of `GROUP BY`. The difference between `HAVING` and `WHERE` is that `WHERE` is applied to every object before the objects are grouped, and `HAVING` is applied only to the aggregate rows.
 
@@ -811,7 +819,7 @@ HAVING
 	)
 ```
 
-## `ORDER BY` Clause
+## `ORDER BY` Clause{#order-by}
 
 The `ORDER BY` clause specifies the sort order used on columns returned in a `SELECT` statement. Multiple columns can be specified. Columns are ordered in the sequence of the items in the `ORDER BY` clause.
 
@@ -954,7 +962,7 @@ ORDER BY Sales.Customer/Sales.Customer_Request/Sales.Request/Number
 | Moose        |
 | Elk          |
 
-## `LIMIT` and `OFFSET` Clauses
+## `LIMIT` and `OFFSET` Clauses {#limit-offset}
 
 With the `LIMIT` and `OFFSET` clauses, you can specify that only a portion of the results of a query is returned.
 
