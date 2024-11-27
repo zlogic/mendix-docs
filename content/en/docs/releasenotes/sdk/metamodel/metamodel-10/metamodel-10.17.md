@@ -1,6 +1,7 @@
 ---
 title: "10.17"
-parent: "metamodel-10"
+url: /releasenotes/sdk/metamodel-10.17/
+weight: 83
 ---
 
 ## 10.17.0
