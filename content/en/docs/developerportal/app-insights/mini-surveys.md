@@ -35,7 +35,7 @@ The **Active** tab shows all the mini surveys that are active for the app with t
 
 * **ID** – This is the unique ID of the mini survey. You can also find this ID on the [survey details](#survey-details) page of the mini survey.
 * **Name** – This is the name of the mini survey.
-* **Location** – The location is a reference to the where mini survey widget pops up in your app.
+* **Location** – The location is a reference to where the mini survey widget pops up in your app.
 * **Responses** – This shows the number of responses that have been collected for the mini survey.
 * **Status** – This shows the status of the mini survey. For more information, see the [Statuses of Mini Surveys](#survey-status) section.
 * **Start & End Dates** – This shows the start and end dates of the mini survey.
@@ -98,23 +98,32 @@ This tab is available for mini surveys with the status of **Active** or **Finish
 
 On this tab, you can view all the responses that have been collected for the mini survey.
 
-### Settings page
+### Settings Page
 
-When you click the settings button in the top right, you'll open the **settings page**. Here you can change all your settings and preferences for Mini Surveys. There are two tabs available.
+When you click {{% icon name="cog" %}} **Settings** at the upper-right corner of the **Survey Overivew** page, the **Settings** page opens. Here you can change all your settings and preferences for the mini survey. There are two tabs available: **Survey Locations** and **API Key**.
 
-#### Survey Locations
+{{< figure src="/attachments/developerportal/app-insights/mini-surveys/settings-page.png" >}}
 
-You can create and manage your survey locations in here. All the available survey locations are listed in here. You can add additional survey locations by clicking the **Add Location** button. This will open a pop up where you can select the name. Cancelling, or closing the pop up, will not save the Location. If you want to use the newly created Location, make sure that the widget uses the same name as the location. You can find more information in the documentation for the [module](https://docs.mendix.com/developerportal/app-insights/mini-surveys/).
+#### Survey Locations {#survey-locations}
 
-If you want to delete a survey location, you can use the **Delete** button. This will remove the Location from App Insights. If you want to use this Location again, you can simply recreate the location with the same name again. If a Location has an active survey, or a scheduled survey, you are unable to delete this location.
+On the **Survey Locations** tab, you can create and manage your survey locations. You can see all the available survey locations in the list.
 
-#### API key
+To add a new survey locations, click **Add Location** above the right corner of the list. This opens a pop-up dialog box you can enter the name of the new location.
+
+{{< figure src="/attachments/developerportal/app-insights/mini-surveys/add-survey-location.png" max-width=60% >}}
+
+To use a newly-created location, make sure that theMendix Mini Survey widget uses the same name as the location. For more information, see [Mendix Mini Surveys](/appstore/modules/mendix-mini-surveys/).
+
+To delete a survey location, click {{% icon name="trash-can" %}} **Delete** at the end of the row of the location in the list. This removes the location from the list. To use this location again, simply create the location again with the same name.
+
+{{% alert color="info" %}}If a location is used in an active survey or a scheduled survey, you are unable to delete this location.{{% /alert %}}
+
+#### API Key
 
 On this tab, you can view or generate API keys.
 
 * **API Keys** – You can view API keys here, or generate an API key if there is none available. You need to use the API key as input when you configure the Mendix Mini Surveys module in Studio Pro to implement the mini survey. You need only one API key per app.
-
-    * To generate an API key, click **Generate API Key** here.
+* To generate an API key, click **Generate API Key** here.
 
 ## Running a Mini Survey
 
