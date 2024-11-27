@@ -37,7 +37,7 @@ Determines whether the argument is optional or required. When the argument is se
 
 When an argument is set to **optional**, a default value can be set:
 
-{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/parameter/argument-option.png" max-width=70% >}}
+{{< figure src="/attachments/refguide/modeling/application-logic/microflows-and-nanoflows/parameter/argument-optional.png" max-width=70% >}}
 
 {{% alert color="info" %}}
  The default value is used when the argument is omitted, not when the argument value is `empty`.
