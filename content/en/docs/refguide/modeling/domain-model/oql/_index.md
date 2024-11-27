@@ -30,66 +30,44 @@ Words with a specific purpose in OQL are reserved. If you use reserved words for
 
 Here is a list of all OQL reserved words:
 
-* `ALL`
-* `AND`
-* `AS`
-* `ASC`
-* `AVG`
-* `BOOLEAN`
-* `BY`
-* `CASE`
-* `CAST`
-* `COUNT`
-* `DATEDIFF`
-* `DATEPART`
-* `DATETIME`
-* `DAY`
-* `DAYOFYEAR`
-* `DECIMAL`
-* `DESC`
-* `DISTINCT`
-* `ELSE`
-* `END`
-* `EXISTS`
-* `FALSE`
-* `FLOAT`
-* `FROM`
-* `FULL`
-* `GROUP`
-* `HAVING`
-* `HOUR`
-* `IN`
-* `INNER`
-* `INTEGER`
-* `IS`
-* `JOIN`
-* `LEFT`
-* `LIKE`
-* `LIMIT`
-* `LONG`
-* `MAX`
-* `MILLISECOND`
-* `MIN`
-* `MINUTE`
-* `MONTH`
-* `NOT`
-* `NULL`
-* `OFFSET`
-* `ON`
-* `OR`
-* `ORDER`
-* `OUTER`
-* `QUARTER`
-* `RIGHT`
-* `SECOND`
-* `SELECT`
-* `STRING`
-* `SUM`
-* `THEN`
-* `TRUE`
-* `UNION`
-* `WEEK`
-* `WEEKDAY`
-* `WHEN`
-* `WHERE`
-* `YEAR`
+`ALL`, `AND`, `AS`, `ASC`, `AVG`
+
+`BOOLEAN`, `BY`
+
+`CASE`, `CAST`, `COUNT`
+
+`DATEDIFF`, `DATEPART`, `DATETIME`, `DAY`, `DAYOFYEAR`, `DECIMAL`, `DESC`, `DISTINCT`
+
+`ELSE`, `END`, `EXISTS`
+
+`FALSE`, `FLOAT`, `FROM`, `FULL`
+
+`GROUP`
+
+`HAVING`, `HOUR`
+
+`IN`, `INNER`, `INTEGER`, `IS`
+
+`JOIN`
+
+`LEFT`, `LIKE`, `LIMIT`, `LONG`
+
+`MAX`, `MILLISECOND`, `MIN`, `MINUTE`, `MONTH`
+
+`NOT`, `NULL`
+
+`OFFSET`, `ON`, `OR`, `ORDER`, `OUTER`
+
+`QUARTER`
+
+`RIGHT`
+
+`SECOND`, `SELECT`, `STRING`, `SUM`
+
+`THEN`, `TRUE`
+
+`UNION`
+
+`WEEK`, `WEEKDAY`, `WHEN`, `WHERE`
+
+`YEAR`
