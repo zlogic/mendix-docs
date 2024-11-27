@@ -112,7 +112,7 @@ To add a new survey locations, click **Add Location** above the right corner of 
 
 {{< figure src="/attachments/developerportal/app-insights/mini-surveys/add-survey-location.png" max-width=60% >}}
 
-To use a newly-created location, make sure that theMendix Mini Survey widget uses the same name as the location. For more information, see [Mendix Mini Surveys](/appstore/modules/mendix-mini-surveys/).
+To use a newly-created location, make sure that theMendix Mini Survey widget uses the same name as the location.
 
 To delete a survey location, click {{% icon name="trash-can" %}} **Delete** at the end of the row of the location in the list. This removes the location from the list. To use this location again, simply create the location again with the same name.
 
@@ -120,10 +120,11 @@ To delete a survey location, click {{% icon name="trash-can" %}} **Delete** at t
 
 #### API Key
 
-On this tab, you can view or generate API keys.
+{{< figure src="/attachments/developerportal/app-insights/mini-surveys/api-key.png" >}}
 
-* **API Keys** – You can view API keys here, or generate an API key if there is none available. You need to use the API key as input when you configure the Mendix Mini Surveys module in Studio Pro to implement the mini survey. You need only one API key per app.
-* To generate an API key, click **Generate API Key** here.
+On this tab, you can view or generate API keys. The list shows all the active API keys. 
+
+To generate a new API key, click **Generate API Key** above the right corner of the list.  In the **Confirmation dialog** box, click **Proceed**. The **Generated Token** pop-up window opens and shows the new API key.
 
 ## Running a Mini Survey
 
@@ -187,8 +188,8 @@ Before the start time of the mini survey is reached, you should implement the su
 To obtain an API key for the implementation, follow these steps:
 
 1. On the [Survey Overview](#survey-overview) page.
-2. Go to the [Setting](#settings) tab.
-3. Check the **API Keys** section:
+2. At the upper-right corner, click {{% icon name="cog" %}} **Settings** to go to the [Setting](#settings) page.
+3. Check the **API Key** section:
     * If there is already an active API key, it is shown on the table. If it is suitable to use, click **Copy** to copy the API key, and save it for later use.
     * If there is no active API key that you can use, generate one as follows:
 
