@@ -27,7 +27,7 @@ On the upper-left corner of the page, you can see the name of the app currently 
 
 The tabs of the **Survey Overview** page are described below.
 
-{{< figure src="/attachments/developerportal/app-insights/mini-surveys/Mini surveys overview.png" class="no-border" >}}
+{{< figure src="/attachments/developerportal/app-insights/mini-surveys/mini-surveys-overview.png">}}
 
 #### Active Tab {#active}
 
