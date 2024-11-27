@@ -174,6 +174,14 @@ To show the Feedback button, do as follows:
 4. Set **Show in Design mode** to **Yes**.
 5. Click **OK** to save the change.
 
+### Users do not see their image after they uploaded a file from their computer
+
+1. In your Sprintr project, navigate to environments.
+2. In here, choose the environment you want to fix this issue, and go to details.
+3. Navigate to the network tab.
+4. Under **HTTP Headers**, select **Content-Secutiry-Policy** and click Edit.
+5. In here, add the follow code: 'img-src: blob:;'
+
 ## Legacy Feedback Widget Docs {#legacy-feedback-docs}
 
 {{% alert color="warning" %}}
