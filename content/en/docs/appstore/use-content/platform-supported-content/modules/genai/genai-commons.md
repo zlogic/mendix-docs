@@ -250,7 +250,7 @@ An optional input object for the image generations operations to set optional re
 | `Height` | This determines the height of the image. |
 | `Width` | This determines the width of the image. |
 | `NumberOfImages` | This determines the number of images to be generated. |
-| `Seed` | This can be used to influence the randomness of the generation. Ensures the reproducability and consistency in the generated images by controlling the initial state of the random number generator. |
+| `Seed` | This can be used to influence the randomness of the generation. Ensures the reproducibility and consistency in the generated images by controlling the initial state of the random number generator. |
 | `CfgScale` | This can be used to influence the randomness of the generation. Adjusts the balance between adherence to the prompt and creative randomness in the image generation process. |
 | `ImageGenerationType` | This describes the type of image generation. Currently only text to image is supported. For more information, see [ENUM_ImageGenerationType](#enum-imagegenerationtype). |
 
@@ -655,7 +655,7 @@ This Java action adds a new [KnowledgeBaseChunk](#knowledgebasechunk-entity) to 
 | `InputText` | String | mandatory | Input text to generate an embedding vector for. |
 | `HumanReadableID` | String | mandatory | This is a front-end identifier that can be used for showing or retrieving sources in a custom way. If it is not relevant, "empty" must be passed explicitly here. |
 | `MxObject` | Type parameter | optional | This parameter is used to capture the Mendix object to which the chunk refers. This can be used for finding back the record in the Mendix database later on after the retrieval step. |
-| `MetadataCollection` | [MetadataCollection](#metadatacollection-entity) | optional | This is an optional MetadataCollection that contains extra information about the KnowledgeBaaseChunk. Any key-value pairs can be stored. In the retrieval operations it is possible to filter on one or multiple metadata key-value pairs. |
+| `MetadataCollection` | [MetadataCollection](#metadatacollection-entity) | optional | This is an optional MetadataCollection that contains extra information about the KnowledgeBaseChunk. Any key-value pairs can be stored. In the retrieval operations it is possible to filter on one or multiple metadata key-value pairs. |
 
 ###### Return Value
 
@@ -703,7 +703,7 @@ This microflow creates a new [MetadataCollection](#metadatacollection-entity) an
 
 | Name | Type | Mandatory | Description |
 |--- |--- |--- |--- |
-| `Key` | String | madatory | This is the name of the metadata and typically tells how the value should be interpreted. |
+| `Key` | String | mandatory | This is the name of the metadata and typically tells how the value should be interpreted. |
 | `Value` | String | mandatory | This is the value of the metadata that provides additional information about the chunk in the context of the given key. |
 
 ###### Return Value

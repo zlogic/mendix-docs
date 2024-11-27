@@ -44,9 +44,9 @@ The following changes in the UI can be done without downtime, but as soon as the
 
 * Page changes, including layout or CSS changes
 * Changes in nanoflows or microflow parameters, if the microflow is used on a page
-* Changes in Javascript actions
+* Changes in JavaScript actions
 
-Thes following changes will be deployed with downtime, because the model must be updated:
+The following changes will be deployed with downtime, because the model must be updated:
 
 * Adding Marketplace modules that have persistent entities
 * Updating the object model in the app itself, or its Marketplace modules

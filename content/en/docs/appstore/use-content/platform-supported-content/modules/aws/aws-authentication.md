@@ -311,7 +311,7 @@ It takes the following parameters as input:
 * A `Credentials` object
 * A `ENUM_Region` enumeration value
 
-The output is a boolean indicating whether the credentials are valid. 
+The output is a Boolean indicating whether the credentials are valid. 
 
 ## Read More
 

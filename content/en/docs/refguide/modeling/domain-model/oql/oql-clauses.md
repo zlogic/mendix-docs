@@ -1056,7 +1056,7 @@ The syntax is as follows:
     [ OFFSET number ]
 ```
 
-{{% todo %}} Document data type behaviour when corresponding oql v2 issue is finished {{% /todo %}}
+{{% todo %}} Document data type behavior when corresponding oql v2 issue is finished {{% /todo %}}
 
 ### Examples
 
@@ -1173,7 +1173,6 @@ FROM Sales.ExtraInfo
 | 403600446162337 | Doe          |
 | 403600446169432 | Elk          |
 
-
 The query below combines associations to the `Sales.Customer` entity from 2 different source entities with duplicates:
 
 ```sql
@@ -1192,7 +1191,6 @@ SELECT Cust.LastName as CustomerName FROM (
 | Moose        |
 | Doe          |
 | Elk          |
-
 
 ## Subqueries
 
