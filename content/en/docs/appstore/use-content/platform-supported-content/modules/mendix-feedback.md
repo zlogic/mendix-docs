@@ -155,7 +155,7 @@ If you see the following error, click **close** and then remove the duplicate ol
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/mendix-feedback/widget-error.png" width="600px" class="no-border" >}}
 
-### Feedback Button isn't visible in Design Mode / Hiding the Feedback Button
+### Feedback Button Isn't visible in Design Mode / Hiding the Feedback Button
 
 After you add the Feedback widget to a page of your app in Studio Pro, you can hide or show the **Feedback** button in Design mode.
 
@@ -174,13 +174,14 @@ To show the Feedback button, do as follows:
 4. Set **Show in Design mode** to **Yes**.
 5. Click **OK** to save the change.
 
-### Users do not see their image after they uploaded a file from their computer
+### Users Do not See Their Image Afte Uploading a File from Their Computer
 
-1. In your Sprintr project, navigate to environments.
-2. In here, choose the environment you want to fix this issue, and go to details.
-3. Navigate to the network tab.
-4. Under **HTTP Headers**, select **Content-Secutiry-Policy** and click Edit.
-5. In here, add the follow code: 'img-src: blob:;'
+1. In [Apps](https://sprintr.home.mendix.com/link/myapps), open your app.
+2. In your **Apps** [navigation pane](/developerportal/#navigation-pane), go to **Environments**.
+3. Go to the environment where you want to fix this issue and click **Details** ({{% icon name="notes-paper-edit" %}}) by the environment you want to view.
+4. Go to the **Network** tab.
+5. Under **HTTP Headers**, select **Content-Secutiry-Policy** and click **Edit**.
+6. Add the following code: `img-src: blob:;`.
 
 ## Legacy Feedback Widget Docs {#legacy-feedback-docs}
 
