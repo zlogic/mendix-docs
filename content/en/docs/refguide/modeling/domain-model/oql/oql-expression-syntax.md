@@ -1,6 +1,22 @@
 ---
 title: "OQL Expression Syntax"
 url: /refguide/oql-expression-syntax/
+weight: 30
+aliases:
+    - /refguide/oql-case-expression/
+    - /refguide/oql-cast/
+    - /refguide/oql-coalesce/
+    - /refguide/oql-datediff/
+    - /refguide/oql-datepart/
+    - /refguide/oql-functions/
+    - /refguide/oql-length/
+    - /refguide/oql-lower/
+    - /refguide/oql-operators/
+    - /refguide/oql-rangebegin/
+    - /refguide/oql-rangeend/
+    - /refguide/oql-replace/
+    - /refguide/oql-round/
+    - /refguide/oql-upper/
 ---
 
 ## Introduction

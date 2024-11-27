@@ -1,6 +1,11 @@
 ---
 title: "OQL Expressions"
-url: /refguide/oql-expressions-new/
+weight: 20
+url: /refguide/oql-expressions/
+aliases:
+    - /refguide/oql-aggregation/
+    - /refguide/oql-parameters/
+
 ---
 
 ## Introduction
