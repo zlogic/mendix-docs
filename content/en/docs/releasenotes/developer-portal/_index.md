@@ -19,6 +19,12 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2024
 
+### November 28, 2024
+
+#### New Features
+
+* In Mini Surveys, now you can [add multiple survey locations](/developerportal/app-insights/mini-surveys/#survey-locations) to your app.
+
 ### November 14, 2024
 
 #### Improvements
