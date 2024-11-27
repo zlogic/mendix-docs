@@ -1,6 +1,6 @@
 ---
-title: "Domain Model"
-linktitle: "Domain Model (Data)"
+title: "Data in the Domain Model"
+linktitle: "Data (Domain Model)"
 url: /refguide/domain-model/
 weight: 30
 description: "Introduces the domain model in Studio Pro."

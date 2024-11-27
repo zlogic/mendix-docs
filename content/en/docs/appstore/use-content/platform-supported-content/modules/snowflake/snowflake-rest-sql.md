@@ -106,7 +106,7 @@ To help you work with the Snowflake REST SQL connector, the following sections o
 
 ### Domain Model {#domain-model}
 
-The domain model is a data model that describes the information in your application domain in an abstract way. For more information, see [Domain Model](/refguide/domain-model/).
+The domain model is a data model that describes the information in your application domain in an abstract way. For more information, see [Data in the Domain Model](/refguide/domain-model/).
 
 #### ConnectionDetails {#connection-details}
 
