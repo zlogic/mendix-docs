@@ -38,20 +38,34 @@ On the **App Management** page, you can view a summary of your apps.
 
 By clicking **More Actions** ({{% icon name="three-dots-menu-horizontal" %}}) in the **Action** column, you can quickly perform a number of actions:
 
-* Edit app details
-* Assign the app to a new owner
+* [Edit app details](#app-details)
+* [Assign the app to a new owner](#ownership)
 * Share the app with groups
 * Archive the app
 
-##### Editing App Details
+##### Editing App Details {#app-details}
 
-Company admins can edit basic app details such as the app branding or ownership.
+Company admins can edit app details such as the app branding or ownership, team membership, and others.
 
-...
+1. In the **App Management** page, in the **Action** column, click **More Actions** > **Edit**.
+2. Configure any of the following settings:
 
-##### Assigning the App to a New Owner
+* **App Details** - Configure the following basic app details:
+    * **App ID** - An automatically assigned internal ID. This value cannot be adjusted.
+    * **Name** - The name of your app. This value should be meaningful, so that users can easily identify the app.
+    * **Description** - An optional description of the application.
+    * **App Logo** - A browser logo for your app. This value can only be adjusted by the app owner.
+* **Team Membership** - Invite users to join your app, or remove them from the app. Before you can invite a user, you must first configure their account on the [User Management](#users) page.
+* **Git Server** - View the revisions per branch for this app.
+* **Ownership and Sharing** - Select the user and optionally the group that owns this app. If an app is owned by a specific group, the owner must be a user who belongs to that group.
 
-...
+##### Assigning the App to a New Owner {#ownership}
+
+Each app is owned by a specific user, who can change settings such as the application branding (logo). By default, the owner is the user who created the app. To transfer the ownership to another user, perform the following steps:
+
+1. In the **App Management** page, in the **Action** column, click **More Actions** > **Transfer Ownership**.
+* In the 
+
 
 ##### Sharing the App with Selected User Groups
 
@@ -112,7 +126,7 @@ In the **Deployment** section, administrators can manage existing clusters and r
 
 ...
 
-### Users
+### Users {#users}
 
 In the **User Management** section, administrators can manage user accounts and user groups.
 
