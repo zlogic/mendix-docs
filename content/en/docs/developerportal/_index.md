@@ -103,17 +103,15 @@ There are also details on the app's [Target Cloud](/deployment/), and the [Total
 
 You can also sort the order of the apps here by **Updated Date**, **Last Created**, **App Name**, **App Name, descending**, **Oldest Updated**, or **Oldest Created**.
 
-## Retention policy of an App
+## Retention Policy of an App
 
-Unused free apps ([non-licensed](/developerportal/deploy/mendix-cloud-deploy/#free-app) and using the [public Mendix cloud](/developerportal/deploy/mendix-cloud-deploy/)) are kept on the [Team Server](/developerportal/general/team-server/) for a maximum of one year. After this period the app, its repository, and any cloud resources will be permanently deleted.
+If a Free App, namely a [non-licensed](/developerportal/deploy/mendix-cloud-deploy/#free-app) app that uses the [public Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), has never seen any acitivity sence it was created, it is kept on the [Team Server](/developerportal/general/team-server/) for a maximum of one year. After this period, the app, its repository, and any cloud resources will be permanently deleted.
 
-Unused apps are apps that have never seen any activity since they were created.
+You can prevent this clean up by performing one of the following actions:
 
-You can prevent this clean up by performing one of the following actions
-
-* [pin your app](/developerportal/#app-tiles)
-* [invite someone](/developerportal/general/team/#inviting) to collaborate with you on your app
-* show us you are working on your app by making changes and commit them to the Team Server
+* [Pin your app](/developerportal/#app-tiles)
+* [Invite someone](/developerportal/general/team/#inviting) to collaborate with you on your app
+* Make changes and commit them to the Team Server
 
 ## Guide Categories
 
