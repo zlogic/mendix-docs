@@ -92,7 +92,7 @@ To create the mapping, follow these steps:
 
 10. Add a **Retrieve** activity to the microflow to retrieve the **Order** based on the **OrderID**. Set this activity to retrieve the first matching order from the database.
 
-    {{< figure src="/attachments/refguide/modeling/integration/publish-rest-service/RetrieveOrder.png" alt="Range and XPath constraint settings in the Retrieve Objects dialog box" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/publish-rest-service/RetrieveOrder.png" alt="Range and XPath constraint settings in the Retrieve dialog box" >}}
 
 #### Building an Export Mapping (optional){#export-mapping}
 
