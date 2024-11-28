@@ -41,12 +41,12 @@ In this tab, you can find the following items:
 
 * **Logo** of the app
 * **Description** of the app
-* **App ID**
+* **Project ID**
 * [Technical Contact](/developerportal/general/app-roles/#technical-contact) of the app
 * **Danger Zone**
-    * **Leave this app**
-    * **Deactivate this app**
-    * **Delete this app**
+    * **Leave this project**
+    * **Deactivate this project**
+    * **Delete this project**
 
 {{% alert color="info" %}}
 Only users with the **App Settings** permission can change the description of the app.<br/>Only users with the **App Settings** permission can deactivate or delete an app. For details, see [How to Leave, Delete, or Deactivate an App](/developerportal/general/leave-delete-app/).
