@@ -34,17 +34,15 @@ To import this module into your app, follow the instructions in [How to Use Mark
 
     * For the on-action option:
 
-        1. Open the **Show Survey** folder, then copy the **ShowSurvey_OnAction** nanoflow to your own module.
-        2. In the nanoflow, double-click **Create String variable** and fill in the survey location of the mini survey. Make sure that you use the exactly the same name as the location name in the [Survey Locations](/developerportal/app-insights/mini-surveys/#survey-locations) list.
-        3. (Optional) Double-click **CHANGE ME**, add your microflow or nanoflow action, then save the changes.
+        1. Open the **Show Survey** folder and copy the **ShowSurvey_OnAction** nanoflow to your own module.
+        2. In the nanoflow, double-click **Create String variable** and fill in the survey location of the mini survey. Ensure the location name is exactly the same as the one listed in the [Survey Locations](/developerportal/app-insights/mini-surveys/#survey-locations) list in Mini Surveys in the Mendix Portal.
+        3. (Optional) Double-click **CHANGE ME**, add your microflow or nanoflow action and save the changes.
         4. Create a button that calls the **ShowSurvey_OnAction** nanoflow on the page where **Template_SurveyWidget** is placed. Mendix recommends renaming the flow to something that describes the original action.
-
     * For the on-page load option:
     
-        1. Open the **Show Survey** folder, and copy the mini survey widget from **ShowSurvey_OnPageLoad** to your page.
-        2. Place this widget on any page you wish to show the survey. You can use multiple mini survey widgets in your app to trigger many surveys.
-        3. Double-click the mini survey widget and fill in the survey location of the mini survey. Make sure that you use the exactly the same name as the location name in the [Survey Locations](/developerportal/app-insights/mini-surveys/#survey-locations) list.
-
+        1. Open the **Show Survey** folder and copy the mini survey widget from **ShowSurvey_OnPageLoad** to your page.
+        2. Place the mini survey widget on any page you wish to show the survey. You can use multiple mini survey widgets in your app to trigger multiple surveys.
+        3. For each mini survey widget, double-click the widget and enter the survey location. Ensure the location name is exactly the same as the one listed in the [Survey Locations](/developerportal/app-insights/mini-surveys/#survey-locations) list in Mini Surveys in the Mendix Portal.
 6. In **App Explorer**, double-click **Security**, and add the **AppInsights_MiniSurvey.User** user role to all the system roles that use the mini survey in the **App Security** dialog box.
 
 {{% alert color="info" %}}Once the start time of the mini survey is reached, the mini survey will start running, and all the target users of the mini survey will receive the survey automatically.{{% /alert %}}
