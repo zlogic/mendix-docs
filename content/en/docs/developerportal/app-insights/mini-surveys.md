@@ -106,13 +106,15 @@ When you click {{% icon name="cog" %}} **Settings** at the upper-right corner of
 
 #### Survey Locations {#survey-locations}
 
-On the **Survey Locations** tab, you can create and manage your survey locations. You can see all the available survey locations in the list.
+On the **Survey Locations** tab, you can create and manage your survey locations. 
+
+You can see all the available survey locations in the list.
 
 To add a new survey location, click **Add Location** above the right corner of the list. This opens a pop-up dialog box where you can enter the name of the new location.
 
 {{< figure src="/attachments/developerportal/app-insights/mini-surveys/add-survey-location.png" max-width=60% >}}
 
-To use a newly-created location, make sure that the [Mendix Mini Surveys](/appstore/modules/mendix-mini-surveys/) module uses the same name as the location.
+To use a newly-created location, make sure that the configuration of the mini survey widget uses exactly the same name as the location name shown in the list here. For more information, see the [Configuration](/appstore/modules/mendix-mini-surveys/#configuration) section in *Mendix Mini Surveys*.
 
 To delete a survey location, click {{% icon name="trash-can" %}} **Delete** at the end of the row of the location in the list. This removes the location from the list. To use this location again, simply create the location again with the same name.
 
@@ -144,7 +146,7 @@ The first time you complete the onboarding, Mendix creates a demo survey for you
         * **Survey Title** – Give the mini survey a name.
         * **Description** – Descirbe your survey.
         * **Start date & End date** – Set the start and end time of the mini survey.
-        * **Survey Location** – Select the location of the survey widget.
+        * **Survey Location** – Select the location of the mini survey widget.
     * **Questions** – You can set up to five questions per mini survey.
         * **Open Question** – Create a question where the user can fill in their own answer.
         * **Score** – Create a question where a user can give a star, emoji or numerical rating.
