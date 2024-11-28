@@ -33,16 +33,16 @@ To import this module into your app, follow the instructions in [How to Use Mark
 
     * For the on-action option:
 
-        1. Open the **Show Survey** folder, then copy the **ShowSurvey_Manual** nanoflow to your own module.
+        1. Open the **Show Survey** folder and copy the **ShowSurvey_Manual** nanoflow to your own module.
         2. In the nanoflow, double-click **Survey Location**, fill in the **SurveyLocation** of the mini survey, and then save the changes. You can find the survey ID on the [Survey Locations](/developerportal/app-insights/mini-surveys/#survey-locations) tab of the settings page in **Mini Surveys** in the Mendix Portal.
-        3. (Optional) Add your own microflow or nanoflow action after the **Show Survey** Javascript action, then save the changes.
+        3. (Optional) Add your own microflow or nanoflow action after the **Show Survey** Javascript action and save the changes.
         4. Create a button that calls the **ShowSurvey_Manual** nanoflow on the page where **SurveyWidget** is placed. Mendix recommends renaming the flow to something that describes the original action.
 
     * For the on-page load option:
     
         1. Open the **Show Survey** folder, and copy **SurveyWidget** from **Drag SurveyWidget On Page** to your page.
-        2. Place this widget on any page you wish to show the survey (you can use multiple **Drag SurveyWidget On Page** widgets in your app to trigger many surveys).
-        3. Double-click the **SurveyWidget** widget, then fill in the **Survey Location**.
+        2. Place this widget on any page you wish to show the survey. You can use multiple Drag SurveyWidget On Page widgets in your app to trigger many surveys.
+        3. Double-click the **SurveyWidget** widget and then fill in the **Survey Location**.
 
 6. In **App Explorer**, double-click **Security**, and add the **AppInsights_MiniSurvey.User** user role to all the system roles that use the mini survey in the **App Security** dialog box.
 
@@ -66,7 +66,7 @@ If a user only answers one or two questions before they close the mini survey. T
 
 ### Can I Use Multiple Widgets on a Single Page?
 
-Mendix recommends using only one Mini Survey widget per page. If you want multiple surveys on one page, make sure each one is using a different Survey Location. See [Mini Surveys](https://docs.mendix.com/developerportal/app-insights/mini-surveys/#survey-locations) for more information on how to configure multiple Survey Locations.
+Mendix recommends using only one Mini Survey widget per page. If you want multiple surveys on one page, make sure each one is using a different survey location. For more information on how to configure multiple survey locations, see the [Survey Locations](/developerportal/app-insights/mini-surveys/#survey-locations) section in *Mini Surveys*.
 
 If your app uses a master layout page and many child pages. You can place one Mini Survey widget on the master layout page and then use multiple **ShowSurvey_Manual** nanoflow actions to trigger the survey to show.
 
