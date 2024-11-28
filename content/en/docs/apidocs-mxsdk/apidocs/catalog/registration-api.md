@@ -9,11 +9,12 @@ restapi: true
 
 ## Introduction
 
-The Registration API can be used to register applications, environments, and services. Calling the Catalog Registration API allows you to register one or more exposed services.
+The Registration API can be used to register applications, environments, and services.
+
 The API includes the following:
 
 * `POST` methods for registering new assets where a UUID is generated and returned for the asset in the response body
-* `PUT` calls to update assets for existing UUIDs or create new applications and environments for new UUIDs. If existing endpoints are not present in a PUT call, these endpoints will be deleted.
+* `PUT` calls to update assets for existing UUIDs or create new applications and environments for new UUIDs. 
 * `DELETE` calls to delete applications, environments, and endpoints.
 
 ## Authentication and Access Rights
