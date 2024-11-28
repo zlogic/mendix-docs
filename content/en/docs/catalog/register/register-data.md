@@ -34,7 +34,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 ## Registering a Service Through Mendix Cloud {#mendix-cloud}
 
-If you have a published service that is deployed to [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), then your service is already registered in the [Catalog](/catalog/).
+If you have a published service that is deployed to [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), then your service is already [registered in the Catalog](/catalog/register/automatically-registered-services/).
 
 ## Registering a Service Without Mendix Cloud {#without-mendix-cloud}
 
