@@ -62,6 +62,16 @@ There are two ways to prevent your Free App from being archived:
 * Visit the Free App
 * Deploy a new version of your app to your Free App environment
 
+#### Deletion of Unused Free Apps
+
+If a Free App, namely a [non-licensed](/developerportal/deploy/mendix-cloud-deploy/#free-app) app that uses the [public Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), has never seen any acitivity sence it was created, it is kept on the [Team Server](/developerportal/general/team-server/) for a maximum of one year. After this period, the app, its repository, and any cloud resources will be permanently deleted.
+
+You can prevent this clean up by performing one of the following actions:
+
+* [Pin your app](/developerportal/#app-tiles)
+* [Invite someone](/developerportal/general/team/#inviting) to collaborate with you on your app
+* Make changes and commit them to the Team Server
+
 ### Licensed App
 
 A licensed app runs on a node with at least two environments: production and acceptance. If required, you can also add a test environment or use [Flexible Environments](#flexible-environments). Your licensed app is linked to a node and can be deployed to any of these environments. It is possible to specify different [resource packs](#resource-pack) for each of these environments, but Mendix recommends that you make your production and acceptance environments the same size.
