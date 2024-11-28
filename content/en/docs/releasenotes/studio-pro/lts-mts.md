@@ -155,7 +155,7 @@ The impact of upgrading between monthly releases is the highest of these options
 
 ## End of Support {#end}
 
-The "end of support" for a version means that fixes, updates, investigating, troubleshooting, and other forms of assistance are no longer provided. Applications using [unsupported Mendix versions](/developerportal/deploy/mendix-cloud-deploy/#mendix-cloud-supported-versions) cannot be deployed or run on Mendix Cloud. They can still be deployed and run on infrastructure that is owned by customers, but Mendix will not investigate any issues related to these applications.
+The "end of support" for a version means that fixes (including fixes for security vulnerabilities), updates, investigating, troubleshooting, and other forms of assistance are no longer provided. Applications using [unsupported Mendix versions](/developerportal/deploy/mendix-cloud-deploy/#mendix-cloud-supported-versions) cannot be deployed or run on Mendix Cloud. They can still be deployed and run on infrastructure that is owned by customers, but Mendix will not investigate any issues related to these applications.
 
 If a new major version is nearing release, that means an older major version is nearing its end of support. If you are still using a major version for which support will end, Mendix recommends that you stop using that version and move to a newer LTS version that is supported. 
 
