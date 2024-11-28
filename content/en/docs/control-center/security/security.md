@@ -53,6 +53,4 @@ On the **Single Sign-On** tab, you can set up an identity federation between the
 
 ## Security History Tab
 
-On the **Security History** tab, you can click **Show Security History** to open a page (in a new browser tab) that presents an audit trail of security-related changes in **App History** and **Member History**. You can search through and view details on these changes as well as export the audit trail to a CSV file.
-
-{{< figure src="/attachments/control-center/security/security.jpg" class="no-border" >}}
+On the **Security History** tab, you can view a detailed history of changes to application data  replication settings, including when the changes were made and by whom.
