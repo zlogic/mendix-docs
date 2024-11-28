@@ -183,6 +183,10 @@ Fallback ensures that the data in your database is automatically copied to a dat
 
 The connections between AZs are low latency. However, the implementation of these features means that your monitoring may indicate that apps deployed to Mendix Cloud under a Premium plan suffer an additional latency of a few milliseconds compared with apps deployed using a Standard plan. For a well-designed app, this difference is not noticeable to end-users. 
 
+#### Application Data Replication
+
+With a premium plan, you can replicate application data in Mendix Cloud to another region for security and disaster recovery purposes. For more information, see [Application Data Replication](/control-center/security-settings/#application-data-replication) in *Security Settings in Control Center*.
+
 #### Regional Fallback{#regional-fallback}
 
 You can also purchase a Premium Plus plan, which provides all the features of the Premium plan, with the addition of Regional Fallback.

@@ -31,7 +31,11 @@ To disable the digital signing of emails, turn off the toggle. To enable the dig
 
 Digital signing of email content contributes to security, but why do you want to disable the digital signing of email content sometimes? Digital signing might interfere with other email safety measures like “External Email Warning”. This feature might add a customized HTML warning to the email. Since Mendix emails cannot be altered, some email servers will wrap the original message in a blank email and add the original email as an attachment. This is not beneficial for the experience of the user and will make the emails look suspicious, impacting user engagement. Also, it makes searching for emails with specific text content more difficult for users.
 
-### Application Data Replication
+### Application Data Replication {#application-data-replication}
+
+{{% alert color="info" %}}
+This feature is only available for [premium cutomers](/developerportal/deploy/mendix-cloud-deploy/#additional-resources).
+{{% /alert %}}
 
 For security and disaster recovery purposes, you may want to replicate application data in Mendix Cloud to another region. If that is the case, click **Activate** to activate application data replication. By default, application data replication is activated. 
 
