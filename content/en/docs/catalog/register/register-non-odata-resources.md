@@ -23,11 +23,11 @@ For more information, see [Published OData Services](/refguide/published-odata-s
 
 ## Expose OData via a Service Wrapper {#use-service-wrapper}
 
-As a custom solution, you can expose OData via a service wrapper. If you have a web server and a custom application with a non-OData data source, it is possible to build a service wrapper that converts the app data to OData. It is possible to create an OData API wrapper on top of different types of data sources like REST API and Async API. For example, you can use the Apache Olingo library to create an OData service.
+As a custom solution, you can expose OData via a service wrapper. If you have a web server and a custom application with a non-OData service, it is possible to build a service wrapper that converts the app data to OData. It is possible to create an OData API wrapper on top of different types of services, like REST API and Async API. For example, you can use the Apache Olingo library to create an OData service.
 
 There are certain limitations on consumed OData services. For more information on limitations, see the [OData Services and External Entities](/refguide/consumed-odata-services/#external-entities) section in *Consumed OData Services*. 
 
-The diagram below represents how an OData API wrapper can be used to connect a custom app data source to a Mendix Studio Pro app:
+The diagram below represents how an OData API wrapper can be used to connect a custom app service to a Mendix Studio Pro app:
 
 {{< figure src="/attachments/catalog/register-non-odata-resources/non-odata.png" alt="Catalog connecting to non-OData resources" class="no-border" >}}
 

@@ -1,6 +1,7 @@
 ---
 title: "10.17"
-parent: "metamodel-10"
+url: /releasenotes/sdk/metamodel-10.17/
+weight: 83
 ---
 
 ## 10.17.0
@@ -42,5 +43,3 @@ parent: "metamodel-10"
 
 #### BoundaryEvent (Element)
 * We introduced the `isInterrupting` property. 
-
-This page has been generated automatically.
