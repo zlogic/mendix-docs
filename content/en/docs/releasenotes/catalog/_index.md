@@ -14,6 +14,17 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 ## 2024
 
+### November 28, 2024
+
+#### Fixes
+
+* We fixed a bug where the Edit button was not appearing for Business Events.
+* We fixed an issue where users that were promoted to Technical Owner received an incorrect notification.
+
+#### Improvement
+
+* We made various UI improvements to offer better insight into service registration. 
+
 ### November 14, 2024
 
 #### Fixes
