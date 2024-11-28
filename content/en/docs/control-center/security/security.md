@@ -15,7 +15,7 @@ A member in Control Center means a user of the Mendix platform who participates 
 
 The **Settings** page in the **Security** catogry in Control Center allows you to configure the security settings, manage the single sign-on configurations, and view the security history of your company.
 
-## Security Settings
+## Security Settings Tab
 
 ### Password Policy
 
@@ -31,11 +31,23 @@ To disable the digital signing of emails, turn off the toggle. To enable the dig
 
 Digital signing of email content contributes to security, but why do you want to disable the digital signing of email content sometimes? Digital signing might interfere with other email safety measures like “External Email Warning”. This feature might add a customized HTML warning to the email. Since Mendix emails cannot be altered, some email servers will wrap the original message in a blank email and add the original email as an attachment. This is not beneficial for the experience of the user and will make the emails look suspicious, impacting user engagement. Also, it makes searching for emails with specific text content more difficult for users.
 
-## Single Sign-On
+### Application Data Replication
+
+For security and disaster recovery purposes, you may want to replicate application data in Mendix Cloud to another region. If that is the case, click **Activate** to activate application data replication. By default, application data replication is activated. 
+
+When application data application is activated, all data and backups of your application on Mendix Cloud are replicated to another region in the country. If there is only one region in the country, the data is replicated to a region in another country. 
+
+If you want to keep your data always in the same region, click **Deactivate** to deactivate application data replication.
+
+{{% alert color="info" %}}
+When you activate or deactivate application data replication, this only affects apps and environments that have not been provisioned yet.
+{{% /alert %}}
+
+## Single Sign-On Tab
 
 On the **Single Sign-On** tab, you can set up an identity federation between the Mendix Platform and your corporate identity provider. We call this feature *Bring Your Own Identity Provider (BYOIDP)* and you can find more information in [How to Set Up an SSO (BYOIDP)](/control-center/security/set-up-sso-byoidp/).
 
-## Security History
+## Security History Tab
 
 On the **Security History** tab, you can click **Show Security History** to open a page (in a new browser tab) that presents an audit trail of security-related changes in **App History** and **Member History**. You can search through and view details on these changes as well as export the audit trail to a CSV file.
 
