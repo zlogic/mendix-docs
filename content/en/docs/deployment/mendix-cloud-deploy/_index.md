@@ -185,7 +185,7 @@ The connections between AZs are low latency. However, the implementation of thes
 
 #### Application Data Replication
 
-With a premium plan, you can replicate application data in Mendix Cloud to another region for security and disaster recovery purposes. For more information, see [Application Data Replication](/control-center/security-settings/#application-data-replication) in *Security Settings in Control Center*.
+With a premium plan, you can replicate application data in Mendix Cloud to another region for security and disaster recovery purposes. For more information, see the [Application Data Replication](/control-center/security-settings/#application-data-replication) section in *Security Settings in Control Center*.
 
 #### Regional Fallback{#regional-fallback}
 
