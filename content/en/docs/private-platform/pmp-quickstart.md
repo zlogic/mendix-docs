@@ -227,7 +227,7 @@ Install the Private Mendix Platform by doing the following steps:
     * **TLS Secret** - An existing `kubernetes.io/tls` secret containing the TLS certificate. Cannot be used together with certificate and key. If you leave it blank, the default TLS certificate from the Ingress Controller or OpenShift Router will be used.
     * **TLS certificate** and **TLS key** – Allows you to provide the `tls.crt` and `tls.key` values directly (not recommended for production environments). Cannot be used together with secretName.
     * **SourceUrl** - The location of the deployment package, in the format `oci-image://<your image location>`. This location must be accessible from your cluster.
-    * **Replicas** – By default one replica will be started when you deploy your app.
+    * **Replicas** – When you deploy your app, one replica is deployed automatically. Do not increase the number of replicas yourself, as this may cause data to be duplicated.
 
     {{< figure src="/attachments/private-platform/pmp-install7.png" class="no-border" >}}
 
