@@ -113,7 +113,7 @@ Mendix recommends using the latest patch version of the release as the latest ve
 
 ### Support Duration
 
-Support for an MTS version ends three months after the LTS version of that major version is released. For example, version 10.24 is released in June 2025. Support for the 10.6, 10.12 and 10.18 MTS versios will then end in September 2025.
+Support for an MTS version ends three months after the LTS version of that major version is released. For example, version 10.24 is released in June 2025. Support for the 10.6, 10.12 and 10.18 MTS versions will then end in September 2025.
 
 ### Release Cycle
 
