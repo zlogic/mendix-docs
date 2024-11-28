@@ -103,16 +103,6 @@ There are also details on the app's [Target Cloud](/deployment/), and the [Total
 
 You can also sort the order of the apps here by **Updated Date**, **Last Created**, **App Name**, **App Name, descending**, **Oldest Updated**, or **Oldest Created**.
 
-## Retention Policy of an App
-
-If a Free App, namely a [non-licensed](/developerportal/deploy/mendix-cloud-deploy/#free-app) app that uses the [public Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), has never seen any acitivity sence it was created, it is kept on the [Team Server](/developerportal/general/team-server/) for a maximum of one year. After this period, the app, its repository, and any cloud resources will be permanently deleted.
-
-You can prevent this clean up by performing one of the following actions:
-
-* [Pin your app](/developerportal/#app-tiles)
-* [Invite someone](/developerportal/general/team/#inviting) to collaborate with you on your app
-* Make changes and commit them to the Team Server
-
 ## Guide Categories
 
 The documentation of **Apps** is divided into the following categories:
