@@ -108,11 +108,11 @@ When you click {{% icon name="cog" %}} **Settings** at the upper-right corner of
 
 On the **Survey Locations** tab, you can create and manage your survey locations. You can see all the available survey locations in the list.
 
-To add a new survey locations, click **Add Location** above the right corner of the list. This opens a pop-up dialog box you can enter the name of the new location.
+To add a new survey location, click **Add Location** above the right corner of the list. This opens a pop-up dialog box where you can enter the name of the new location.
 
 {{< figure src="/attachments/developerportal/app-insights/mini-surveys/add-survey-location.png" max-width=60% >}}
 
-To use a newly-created location, make sure that theMendix Mini Survey widget uses the same name as the location.
+To use a newly-created location, make sure that the [Mendix Mini Surveys](/appstore/modules/mendix-mini-surveys/) module uses the same name as the location.
 
 To delete a survey location, click {{% icon name="trash-can" %}} **Delete** at the end of the row of the location in the list. This removes the location from the list. To use this location again, simply create the location again with the same name.
 
@@ -122,7 +122,7 @@ To delete a survey location, click {{% icon name="trash-can" %}} **Delete** at t
 
 {{< figure src="/attachments/developerportal/app-insights/mini-surveys/api-key.png" >}}
 
-On this tab, you can view or generate API keys. The list shows all the active API keys. 
+On the **API Key** tab, you can view or generate API keys. The list shows all the active API keys. 
 
 To generate a new API key, click **Generate API Key** above the right corner of the list.  In the **Confirmation dialog** box, click **Proceed**. The **Generated Token** pop-up window opens and shows the new API key.
 
