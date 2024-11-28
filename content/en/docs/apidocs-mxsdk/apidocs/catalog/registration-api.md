@@ -14,14 +14,13 @@ The API includes the following:
 
 * `POST` methods for registering new assets where a UUID is generated and returned for the asset in the response body
 * `PUT` calls to update assets for existing UUIDs or create new applications and environments for new UUIDs. If existing endpoints are not present in a PUT call, these endpoints will be deleted.
-* `DELETE` calls to delete applications
+* `DELETE` calls to delete applications, environments, and endpoints.
 
 ## Authentication and Access Rights
 
 Authentication for the Registration API requires the following:
 
 * Personal access token (PAT): For every API request you make to a Catalog API, include the following key-value pair with your headers: `Authorization: MxToken <your_Personal_Access_Token>`.
-* Application Name
 
 ### Generating a PAT 
 
@@ -348,4 +347,4 @@ A successful `PUT` call results in a `200` status code and a JSON response body.
 
 ## API Reference {#api-reference}
 
-{{< swaggerui src="/openapi-spec/registration_v5.yaml" >}}
+{{< swaggerui src="/openapi-spec/catalog-registration_v5.yaml" >}}
