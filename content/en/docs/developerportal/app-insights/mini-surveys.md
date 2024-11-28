@@ -112,7 +112,7 @@ To add a new survey location, click **Add Location** above the right corner of t
 
 {{< figure src="/attachments/developerportal/app-insights/mini-surveys/add-survey-location.png" max-width=60% >}}
 
-To use a newly-created location, make sure that the [Mendix Mini Surveys](/appstore/modules/mendix-mini-surveys/) module uses the same name as the location.
+To use a newly-created location, make sure that the configuration of the Mini Survey widget uses the same name as the location. For more information, see the [Configuration](/appstore/modules/mendix-mini-surveys/#configuration) section in *Mendix Mini Surveys*.
 
 To delete a survey location, click {{% icon name="trash-can" %}} **Delete** at the end of the row of the location in the list. This removes the location from the list. To use this location again, simply create the location again with the same name.
 
