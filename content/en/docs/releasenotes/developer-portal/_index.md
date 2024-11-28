@@ -19,6 +19,12 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2024
 
+### November 28, 2024
+
+#### New Features
+
+* In Mini Surveys, now you can [add multiple survey locations](/developerportal/app-insights/mini-surveys/#survey-locations) to your app.
+
 ### November 14, 2024
 
 #### Improvements
@@ -184,7 +190,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 * In Feedback, we have fixed an issue where the reporter's name appeared empty on the **Contact Reporter** tab. Now if there is no reporter's name available, their email address will be shown instead.
 * We released the following improvements for [Mini surveys](/developerportal/app-insights/mini-surveys/):
-    * We improved your experience of copying the generated API key by implementing a new widget on the [Settings](/developerportal/app-insights/mini-surveys/#settings) tab of the **Survey Overview** page.
+    * We improved your experience of copying the generated API key by implementing a new widget on the **Settings** tab of the **Survey Overview** page.
     * We improved our error messages by providing more details.
 
 ### March 28, 2024
