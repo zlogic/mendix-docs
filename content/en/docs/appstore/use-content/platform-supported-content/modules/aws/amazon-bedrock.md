@@ -254,18 +254,17 @@ The request object passed to this operation must include a KnowledgeBaseTool obj
 
  ##### Prompt Template {#PromptTemplate} 
  
-Amazon Bedrock’s Retrieve and Generate action has a limitation: it doesn’t support System prompts within the request. This can pose challenges when trying to orchestrate responses in specific ways, such as adopting a subject expert’s tone or providing tailored advice when certain conditions are met (e.g., suggesting contacting support if no search results are found).
+Amazon Bedrock's Retrieve and Generate action has a limitation: it does not support system prompts within the request. This can pose challenges when trying to orchestrate responses in specific ways, such as adopting a subject expert's tone or providing tailored advice when certain conditions are met (for example, suggesting contacting support if no search results are found).
 
-To address this limitation, Amazon Bedrock offers a solution through Prompt Templates. A Prompt Template acts as an orchestration prompt that’s sent along with the request response generation when a user queries a knowledge base using Amazon Bedrock’s Retrieve and Generate feature. While Prompt Templates can contain instructions similar to system prompts, they are distinct and serve a different purpose in the query process.
+To address this limitation, Amazon Bedrock offers a solution through prompt templates. A prompt template acts as an orchestration prompt that is sent along with the request response generation when a user queries a knowledge base using Amazon Bedrock's Retrieve and Generate feature. While prompt templates can contain instructions similar to system prompts, they are distinct and serve a different purpose in the query process.
 
-Prompt Templates allow for greater flexibility in response generation. When creating a Prompt Template, you can use various tokens to customize the output. It’s crucial to note that the “$searchresult$” token is mandatory in every Prompt Template, as it represents where the retrieved information will be inserted.
+Prompt templates allow for greater flexibility in response generation. When creating a prompt template, you can use various tokens to customize the output. It is crucial to note that the *$searchresult$* token is mandatory in every prompt template, as it represents where the retrieved information will be inserted.
 
-By leveraging Prompt Templates, you can influence the tone, structure, and content of responses, even in scenarios where the standard Retrieve and Generate action might fall short. This feature enables more nuanced and context-appropriate interactions with the knowledge base.
+By leveraging prompt templates, you can influence the tone, structure, and content of responses, even in scenarios where the standard Retrieve and Generate action might fall short. This feature enables more nuanced and context-appropriate interactions with the knowledge base.
 
-For a deeper understanding of Prompt Templates and their implementation, refer to the official Amazon Documentation on Prompt Templates, which provides comprehensive guidance on their usage and best practices. [Amazon Documentation for Prompt Template](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt).
+For a deeper understanding of prompt templates and their implementation, refer to the [Amazon documentation on prompt templates](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt), which provides comprehensive guidance on their usage and best practices. .
 
-For more information about how to structure your prompts please read [Prompt engineering](https://docs.mendix.com/appstore/modules/genai/prompt-engineering/).
-
+For more information about how to structure your prompts, see [Prompt engineering](https://docs.mendix.com/appstore/modules/genai/prompt-engineering/).
 
 #### Chatting with History {#retrieve-and-generate-with-history}
 
