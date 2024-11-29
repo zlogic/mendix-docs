@@ -14,11 +14,11 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 ## 2024
 
-### November 28, 2024
+### November 29, 2024
 
 #### New Features
 
-* We enhanced Software Composition to include marketplace-related metadata. You can now view this additional information on both the [All Components](/control-center/software-composition/#all-components) tab and the [Company Summary](/control-center/software-composition/#component-summary) page for a more comprehensive overview of your components.
+* We enhanced Software Composition to include marketplace-related metadata. You can now view this additional information on both the [All Components](/control-center/software-composition/#all-components) tab and the [Company Usage](/control-center/software-composition/#component-usage) page for a more comprehensive overview of your components.
 
 ### November 3, 2024
 
