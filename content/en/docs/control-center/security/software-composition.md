@@ -66,7 +66,7 @@ The list contains the following information:
 
 To export the information of selected items in the list to an Excel file, select the check boxes of the items in the list, and then click {{% icon name="office-sheet" %}} **Selection Export** that appears at the bottom of the page.
 
-### Component Usage {#component-summary}
+### Component Summary {#component-summary}
 
 On the **Overview** tab, if you click **View Details** for an item in the list, the **Component Usage** page opens. This page shows the components of the selected app environment for your easy visual consumption.
 
