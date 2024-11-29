@@ -68,7 +68,7 @@ The list contains the following information:
 
 On the **Overview** tab, if you click **View Details** for a deployment package in the list, the **Component Summary** page opens.
 
-{{< figure src="/attachments/deployment/general/software-composition/component-summary-page.png" >}}
+{{< figure src="/attachments/deployment/general/software-composition/component-summary.png" >}}
 
 On the top of the page, you can find the name of the deployment package, the environment name, the Mendix Runtime version, and the version of the deployment package.
 
