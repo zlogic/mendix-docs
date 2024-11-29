@@ -96,8 +96,9 @@ To subscribe to the MQTT broker, follow these steps:
 When subscribing to a topic, define in the subscribe action which microflow is triggered for each message, and that the topic and payload is passed on into that microflow.
 
 {{% alert color="info" %}} 
-Once a connection is established with the broker, that connection can be used to publish and subscribe to multiple topics.
-* If the broker is sending messages on multiple topics at the same time, the **OnMessageMicroflow** configured in the *Subscribe to MQTT* activity will be called concurrently.
+Once a connection is established with the broker, that connection can be used to publish and subscribe to multiple topics in the following order:
+
+* If the broker is sending messages on multiple topics at the same time, the **OnMessageMicroflow** configured in the **Subscribe to MQTT** activity will be called concurrently.
 * If the broker is sending multiple messages at the same time on a given topic, the microflow will be called sequentially.
 {{% /alert %}}
 
