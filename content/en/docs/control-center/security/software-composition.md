@@ -131,7 +131,7 @@ To export the information of selected items in the list to an Excel file, select
 
 On the **All Components** tab, if you click **View details** for an item, the **Component Usage** page opens. This page lists the apps and the environments where the selected component is being used. If a security vulnerabilities is found in one of the components, then the component usage tab can be used to assess the impact radius.
 
-{{< figure src="/attachments/control-center/software-composition/component-usage.png" >}}
+{{< figure src="/attachments/control-center/software-composition/component-usage-page.png" >}}
 
 On the top of the page, you can find the component name, the component version, the component type, the number of apps where the component is used, and the number of environments where the component is used.
 
