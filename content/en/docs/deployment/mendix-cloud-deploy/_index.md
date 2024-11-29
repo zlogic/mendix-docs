@@ -53,7 +53,7 @@ If, after a couple of minutes, your app does not wake up, contact [Mendix Suppor
 
 You can upgrade a Free App to a licensed app running on a node in Mendix Cloud. For more information, see [Licensing Mendix Cloud Apps](/developerportal/deploy/licensing-apps/).
 
-#### Free Apps Archiving {#free-apps-archival}
+#### Archiving of Free Apps {#free-apps-archival}
 
 If a Free App has been in sleep mode for three months or longer, it may be archived. For Free Apps that are going to be archived, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) is informed two weeks beforehand. Upon archiving, the project and model are retained and will remain active and accessible, but the running app, database, files, and backups for the Free App are deleted.
 
@@ -64,7 +64,7 @@ There are two ways to prevent your Free App from being archived:
 
 #### Deletion of Unused Free Apps
 
-If a Free App, namely a [non-licensed](/developerportal/deploy/mendix-cloud-deploy/#free-app) app that uses the [public Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), has never seen any acitivity sence it was created, it is kept on the [Team Server](/developerportal/general/team-server/) for a maximum of one year. After this period, the app, its repository, and any cloud resources will be permanently deleted.
+If a Free App has never seen any acitivity sence it was created, it is kept on the [Team Server](/developerportal/general/team-server/) for a maximum of one year. After this period, the app, its repository, and any cloud resources will be permanently deleted.
 
 You can prevent this clean up by performing one of the following actions:
 
