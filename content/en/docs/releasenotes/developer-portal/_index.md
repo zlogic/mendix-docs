@@ -23,11 +23,11 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### Improvements
 
-* We expanded the response of our Projects API to include details on the company owning a particular app.
+* We expanded the response of our [Projects API](/apidocs-mxsdk/apidocs/projects-api/) to include details on the company owning a particular app.
 
 #### Fixes
 
-* We fixed an issue where revisions on the Team Server page would not redirect to stories associated with a commit.
+* We fixed an issue where revisions on the **Team Server** page would not redirect to stories associated with a commit.
 * We fixed a tiny but annoying issue where the description of a new app would not accept special characters properly.
 
 ### November 28, 2024
