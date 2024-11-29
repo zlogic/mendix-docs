@@ -15,7 +15,7 @@ This feature is currently in beta. For more information, see [Beta Releases](/re
 
 The **Entitlements** page in Control Center is a self-service tool that displays the transactions using cloud credits. You can use the page to monitor your consumption of cloud credits.
 
-{{< figure src="/attachments/control-center/entitlements/entitlements.png" alt="entitlements page" class="no-border" >}}
+{{< figure src="/attachments/control-center/apps/entitlements/entitlements.png" alt="entitlements page" class="no-border" >}}
 
 ## What Are Cloud Credits? {#cloud-credits}
 

@@ -40,7 +40,7 @@ The list on this tab shows the following information:
 
 If you click the name of an app in the list, a page opens and shows the app environment details.
 
-{{< figure src="/attachments/control-center/deployed-apps/cloud-provisioning.png"  alt="cloud provisioning page for an app" >}}
+{{< figure src="/attachments/control-center/apps/deployed-apps/cloud-provisioning.png"  alt="cloud provisioning page for an app" >}}
 
 On the top, you can see the app name, credits used, and the Technical Contact. The labels below show whether the app is licensed or active.
 
@@ -74,13 +74,13 @@ To add a new environment for your app, click the name of an app, and then click 
 
 * **Production Environment** – Indicate whether the environment will be used for production.
 
-{{< figure src="/attachments/control-center/deployed-apps/new-environment.png"   alt="adding a new environment" >}}
+{{< figure src="/attachments/control-center/apps/deployed-apps/new-environment.png"   alt="adding a new environment" >}}
 
 #### Offboarding an Environment {#offboard-environment}
 
 To offboard an environment, click **Offboard**, which is available for stopped environments. After that, confirm that you have made any necessary backups, and type *Offboard* to confirm.
 
-{{< figure src="/attachments/control-center/deployed-apps/offboarding.png" width= 50% alt="confirming the offboarding" class="no-border" >}}
+{{< figure src="/attachments/control-center/apps/deployed-apps/offboarding.png" width= 50% alt="confirming the offboarding" class="no-border" >}}
 
 {{% alert color="warning" %}}
 Offboarding an environment deletes it permanently. You are responsible for making a backup of the environment in case you need it in the future.
