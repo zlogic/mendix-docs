@@ -19,6 +19,7 @@ The Mendix Data Loader supports a range of data ingestion tasks, enabling organi
 To use the Mendix Data Loader, you must have the following:
 
 * A Mendix application with a [published OData service](/refguide/published-odata-services/) that includes exposed entities.
+* A Snowflake account with [Anaconda Packages enabled by ORGADMIN](https://docs.snowflake.com/en/developer-guide/udf/python/udf-python-packages.html#using-third-party-packages-from-anaconda). If you do not have a Snowflake account, you can register for a [free trial account](https://signup.snowflake.com).
 * A Snowflake environment in which the account has the necessary permissions to create and maintain tables.
 
 ### Licensing and Cost
@@ -178,7 +179,7 @@ A bug in the published OData service resource in Mendix Studio Pro 10.10 where t
 
 #### Solution
 
-This issue will be resolved in a future Mendix Studio Pro release. If you wish to work around this issue, you can set the ApplicationRootUrl of the application so that it has a trailing slash "/", e.g., **https://mymendixapp.mendixcloud.com/**. This resolution is the same as setting a custom domain as described in the [Custom Domains Mendix Documentation](/developerportal/deploy/custom-domains/#use-custom-url).
+This issue is resolved in Mendix Studio Pro version 10.12 and newer. For information about using OData pagination, see [Published OData Entity: Use Paging](/refguide/published-odata-entity/#paging).
 
 ## Contact Information
 

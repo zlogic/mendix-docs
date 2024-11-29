@@ -5,6 +5,7 @@ description: "Describes the configuration and usage of the Email Connector modul
 aliases:
     - /appstore/connectors/email-connector/
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
+#ki: DHC-2535
 ---
 
 ## Introduction
@@ -378,3 +379,25 @@ If you already have the [included widgets](#included-widgets) in your app and th
 You may get a consistency error when importing the Email Connector module in Mendix 10.1 or above that states *"No argument has been selected for parameter "Token" and no default is available"*. This can be resolved by double-clicking the error, which takes you to the snippet **SNIP_EmailTemplate_NewEdit**. Double-click the **Edit [default]** button, then in the **Events** field under **Page settings**, click **Edit**. Once the **Page Settings** dialog box opens, click **OK**, as shown in the image below. The error should resolve. 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/email-connector/consistency-error-token.png" class="no-border" >}}
+
+### Duplicate Mx Model Reflection Objeccts in Email Template
+
+{{% alert color="info" %}} It is recommended to try this microflow in a non-production environment and check if is working as expected after the clean up. After the successful validations, run it in the production environment.{{% /alert %}}
+
+The Email Template export/import functionality introduced in EC v5.8.0 had a bug, which was subsequently fixed in v5.9.0. If you exported and imported Email templates using EC v5.8.0, you may see duplicate records in the placeholder entity drop-down, as shown below.
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/email-connector/duplicate-mx-reflection-objs.png" class="no-border" width="700" >}}
+
+To clean up these duplicate Mx Reflection records, a microflow is delivered as part of EC v5.9.2. As the clean up microflow (**DEL_DuplicateMxReflectionObjects**) deletes database records from certain tables, it is strongly advised to complete a full DB backup before proceeding with the steps below. At a minimum, the following 3 tables must be fully backed up before starting.
+
+1. MxObjectMember
+2. MxObjectReference
+3. MxObjectType
+
+To perform the clean up, follow these steps:
+
+1. Call the **DEL_DuplicateMxReflectionObjects** microflow from a page using the **Call microflow** button. Preferably, an Admin user should trigger this microflow. This is a one-time activity. This microflow identifies the duplicate records in the backend and removes them. Upon completion, you see a pop-up dialog stating that the process has been completed. You can see how many records were removed from respective table in the Console log, as shown below.
+
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/email-connector/mx-reflection-objs-cleanup-logs.png" class="no-border" width="700" >}}
+
+2. After the cleanup, remove the **Call microflow** button from the page so the microflow cannot be triggered again. 

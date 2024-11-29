@@ -16,7 +16,7 @@ This feature is currently in beta. For more information, see [Beta Releases](/re
 
 The **Entitlements** page is a self-service tool that displays the transactions using cloud tokens. You can use the page to monitor your consumption of cloud tokens.
 
-{{< figure src="/attachments/control-center/entitlements/entitlements.png" alt="entitlements page" class="no-border" >}}
+{{< figure src="/attachments/control-center/apps/entitlements/entitlements.png" alt="entitlements page" class="no-border" >}}
 
 ## What Are Mendix Cloud Tokens? {#cloud-tokens}
 

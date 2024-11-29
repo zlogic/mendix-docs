@@ -22,6 +22,12 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 * We introduced cloud tokens for your cloud resource pack purchases! Starting now, you will use [cloud tokens](/control-center/entitlements/#cloud-tokens) instead of cloud credits to complete your cloud resource purchases. With the transitioning from cloud credits to cloud tokens, Mendix is paving the way for a more streamlined and flexible approach to purchasing and switching between Mendix Cloud products.
 
+### November 29, 2024
+
+#### New Features
+
+* We enhanced Software Composition to include marketplace-related metadata. You can now view this additional information on both the [All Components](/developerportal/deploy/software-composition/#all-components) tab and the [Company Summary](/developerportal/deploy/software-composition/#component-summary) page for a more comprehensive overview of your components.
+
 ### November 17, 2024
 
 #### Deployment Portal Fixes

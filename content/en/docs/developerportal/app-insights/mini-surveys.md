@@ -27,7 +27,7 @@ On the upper-left corner of the page, you can see the name of the app currently 
 
 The tabs of the **Survey Overview** page are described below.
 
-{{< figure src="/attachments/developerportal/app-insights/mini-surveys/survey-overview.png" class="no-border" >}}
+{{< figure src="/attachments/developerportal/app-insights/mini-surveys/mini-surveys-overview.png">}}
 
 #### Active Tab {#active}
 
@@ -35,7 +35,7 @@ The **Active** tab shows all the mini surveys that are active for the app with t
 
 * **ID** – This is the unique ID of the mini survey. You can also find this ID on the [survey details](#survey-details) page of the mini survey.
 * **Name** – This is the name of the mini survey.
-* **Location** – The Location is an identifier that refers to the location where the mini survey will appear in your app.
+* **Location** – The location is a reference to where the mini survey widget pops up in your app.
 * **Responses** – This shows the number of responses that have been collected for the mini survey.
 * **Status** – This shows the status of the mini survey. For more information, see the [Statuses of Mini Surveys](#survey-status) section.
 * **Start & End Dates** – This shows the start and end dates of the mini survey.
@@ -73,14 +73,6 @@ The list on this tab contains the following information:
 
 Clicking the mini survey in a row on the list shows its [survey details](#survey-details) page.
 
-#### Settings Tab {#settings}
-
-On the **Settings** tab of **Survey Overview**, you can view or generate API keys.
-
-* **API Keys** – You can view API keys here, or generate an API key if there is none available. You need to use the API key as input when you configure the Mendix Mini Surveys module in Studio Pro to implement the mini survey. You need only one API key per app.
-
-    * To generate an API key, click **Generate API Key** here.
-
 ### Survey Details {#survey-details}
 
 When you click a mini survey on the [Survey Overview](#survey-overview) page, the survey details page of the mini survey opens.
@@ -106,6 +98,36 @@ This tab is available for mini surveys with the status of **Active** or **Finish
 
 On this tab, you can view all the responses that have been collected for the mini survey.
 
+### Settings Page {#settings}
+
+When you click {{% icon name="cog" %}} **Settings** at the upper-right corner of the **Survey Overivew** page, the **Settings** page opens. Here you can change all your settings and preferences for the mini survey. There are two tabs available: **Survey Locations** and **API Key**.
+
+{{< figure src="/attachments/developerportal/app-insights/mini-surveys/settings-page.png" >}}
+
+#### Survey Locations {#survey-locations}
+
+On the **Survey Locations** tab, you can create and manage your survey locations. 
+
+You can see all the available survey locations in the list.
+
+To add a new survey location, click **Add Location** above the right corner of the list. This opens a pop-up dialog box where you can enter the name of the new location.
+
+{{< figure src="/attachments/developerportal/app-insights/mini-surveys/add-survey-location.png" max-width=60% >}}
+
+To use a newly-created location, make sure that the configuration of the mini survey widget uses exactly the same name as the location name shown in the list here. For more information, see the [Configuration](/appstore/modules/mendix-mini-surveys/#configuration) section in *Mendix Mini Surveys*.
+
+To delete a survey location, click {{% icon name="trash-can" %}} **Delete** at the end of the row of the location in the list. This removes the location from the list. To use this location again, simply create the location again with the same name.
+
+{{% alert color="info" %}}If a location is used in an active survey or a scheduled survey, you are unable to delete this location.{{% /alert %}}
+
+#### API Key
+
+{{< figure src="/attachments/developerportal/app-insights/mini-surveys/api-key.png" >}}
+
+On the **API Key** tab, you can view or generate API keys. The list shows all the active API keys. 
+
+To generate a new API key, click **Generate API Key** above the right corner of the list.  In the **Confirmation dialog** box, click **Proceed**. The **Generated Token** pop-up window opens and shows the new API key.
+
 ## Running a Mini Survey
 
 ### Creating a Mini Survey {#create-survey}
@@ -124,10 +146,10 @@ The first time you complete the onboarding, Mendix creates a demo survey for you
         * **Survey Title** – Give the mini survey a name.
         * **Description** – Descirbe your survey.
         * **Start date & End date** – Set the start and end time of the mini survey.
-        * **Survey Location** – Select the location of the survey widget.
-    * **Questions** – You can set up to three questions per mini survey.
+        * **Survey Location** – Select the location of the mini survey widget.
+    * **Questions** – You can set up to five questions per mini survey.
         * **Open Question** – Create a question where the user can fill in their own answer.
-        * **Score** – Create a question where a user can give a star or emoji rating.
+        * **Score** – Create a question where a user can give a star, emoji or numerical rating.
         * **Multiple Choice** – Create a question where you can set up to 4 answers for the user to pick from.
         * **NPS** – Let the user pick a score between 0 and 10 to rate your app.
     * **Finalize** – Shows an summary of your survey.
@@ -168,8 +190,8 @@ Before the start time of the mini survey is reached, you should implement the su
 To obtain an API key for the implementation, follow these steps:
 
 1. On the [Survey Overview](#survey-overview) page.
-2. Go to the [Setting](#settings) tab.
-3. Check the **API Keys** section:
+2. At the upper-right corner, click {{% icon name="cog" %}} **Settings** to go to the [Setting](#settings) page.
+3. Check the **API Key** section:
     * If there is already an active API key, it is shown on the table. If it is suitable to use, click **Copy** to copy the API key, and save it for later use.
     * If there is no active API key that you can use, generate one as follows:
 
