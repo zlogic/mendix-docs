@@ -107,9 +107,19 @@ The list shows the following information about the component:
     
     For more information, refer to [SBOM Generation](/refguide/sbom-generation/).
     
-* **Version**: This is the component version.
+* **Support type** – This shows the support type of the Marketplace component. It can be **Mendix**, **Partner**, or **Community**. For more information, see [Content Support Categories](/appstore/marketplace-content-support/#category).
+
+* **Version** – This shows the version of the component that is being used.
+
+* **License** – This shows the end-user license for the component.
+
+* **Marketplace** – This shows whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Compnay Content](/appstore/home-page/#company-content) page.
 
 * **Apps using component**: This shows the number of apps where the component is used.
+
+* **Latest version** – This shows the lastest version of the component.
+
+* **Publisher** – This shows the name of the organization that published the component.
 
 * Column customization ({{% icon name="view" %}}): You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the check boxes.
 
@@ -121,7 +131,7 @@ To export the information of selected items in the list to an Excel file, select
 
 On the **All Components** tab, if you click **View details** for an item, the **Component Usage** page opens. This page lists the apps and the environments where the selected component is being used. If a security vulnerabilities is found in one of the components, then the component usage tab can be used to assess the impact radius.
 
-{{< figure src="/attachments/control-center/software-composition/component-usage.png" >}}
+{{< figure src="/attachments/control-center/software-composition/component-usage-page.png" >}}
 
 On the top of the page, you can find the component name, the component version, the component type, the number of apps where the component is used, and the number of environments where the component is used.
 
