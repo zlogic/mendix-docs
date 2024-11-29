@@ -56,13 +56,13 @@ Above the list, you can use the search box to search for information in the list
 
 The list contains the following information:
 
-* **App Name**: This is the name of the app.
-* **Environment**: This is the name of the environment.
-* **Runtime**: This shows the Mendix Runtime version.
-* **Technical Contact**: This shows the Technical Contact of the app.
-* **Target Cloud**: This shows the type of the cloud where the deployment package is deployed. Currently, only Mendix Free Cloud and Mendix Cloud (including Mendix Cloud Dedicated) are supported.
-* Column customization ({{% icon name="view" %}}): You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the check boxes.
-* **View details**: Click this opens the [Component Summary](#component-summary) page, if it is available. The **View details** button is grayed out when an SBOM is not available for the selected application environment. Ensure you are on a compatible runtime version and create a new deployment package in order to get component visibility here.
+* **App Name** – This is the name of the app.
+* **Environment** – This is the name of the environment.
+* **Runtime** – This shows the Mendix Runtime version.
+* **Technical Contact** – This shows the Technical Contact of the app.
+* **Target Cloud** – This shows the type of the cloud where the deployment package is deployed. Currently, only Mendix Free Cloud and Mendix Cloud (including Mendix Cloud Dedicated) are supported.
+* Column customization ({{% icon name="view" %}}) – You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the check boxes.
+* **View details** – Click this opens the [Component Summary](#component-summary) page, if it is available. The **View details** button is grayed out when an SBOM is not available for the selected application environment. Ensure you are on a compatible runtime version and create a new deployment package in order to get component visibility here.
 
 To export the information of selected items in the list to an Excel file, select the check boxes of the items in the list, and then click {{% icon name="office-sheet" %}} **Selection Export** that appears at the bottom of the page.
 
@@ -94,9 +94,9 @@ Above the list, you can use the search box to search for a component name or a c
 
 The list shows the following information about the component:
 
-* **Component**: This is the name of the component.
+* **Component** – This is the name of the component.
 
-* **Type**: This shows the type of the component. The type could be modules, widgets, framework, Java libraries (JAR), etc. The descriptions of each type are as follows:
+* **Type** – This shows the type of the component. The type could be modules, widgets, framework, Java libraries (JAR), etc. The descriptions of each type are as follows:
   
     * **Modules** – Standard marketplace modules imported from the Marketplace, for example [Community Commons](https://marketplace.mendix.com/link/component/170)
     * **Widgets** – User interface elements downloaded from the Marketplace, for example [Charts](https://marketplace.mendix.com/link/component/105695)
@@ -115,15 +115,15 @@ The list shows the following information about the component:
 
 * **Marketplace** – This shows whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Compnay Content](/appstore/home-page/#company-content) page.
 
-* **Apps using component**: This shows the number of apps where the component is used.
+* **Apps using component** – This shows the number of apps where the component is used.
 
 * **Latest version** – This shows the lastest version of the component.
 
 * **Publisher** – This shows the name of the organization that published the component.
 
-* Column customization ({{% icon name="view" %}}): You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the check boxes.
+* Column customization ({{% icon name="view" %}}) – You can customize the columns of the list by clicking the {{% icon name="view" %}} icon and adjusting the selection of the check boxes.
 
-* **View details**: Click this opens the [Component Usage](#component-usage) page.
+* **View details** – Click this opens the [Component Usage](#component-usage) page.
 
 To export the information of selected items in the list to an Excel file, select the check boxes of the items in the list, and then click {{% icon name="office-sheet" %}} **Selection Export** that appears at the bottom of the page.
 
