@@ -181,16 +181,22 @@ Conversions work in the following way:
 
 If the value of an attribute in the database is empty, this is interpreted as "unknown" and any comparison of that attribute to another attribute will not match, even if both are empty.
 This follows the semantics of `NULL` values in SQL, to which XPath expressions are translated.
-For example, `[Attribute1 = Attribute2]` will only match if both attributes are not empty and the values are equal, not if both are empty.
-While `[Attribute1 != Attribute2]` will only match if both attributes are not empty and the values are not equal, not if one is empty and the other is not.
+
+Here are two examples:
+
+* `[Attribute1 = Attribute2]` is `true` if both attributes are not empty and the values are equal. It is `false` if both attributes are empty.
+* `[Attribute1 != Attribute2]` is `true` if both attributes are not empty and the values are not equal. It is `false` if one attribute is empty and the other is not.
 
 There are some exceptions that are treated as special cases:
-* `[Attribute = empty]` will only match if the attribute is empty.
-* `[Attribute != empty]` will only match if the attribute is not empty.
-* `[Attribute != 'value']` where the value is a constant will also match if the attribute is empty.
-* `[not(Attribute = 'value')]` where the value is a constant will also match if the attribute is empty.
 
+* `[Attribute = empty]` is `true` if the attribute is empty.
+* `[Attribute != empty]` is `true` if the attribute is not empty.
+* `[Attribute != 'value']` is `true` if the attribute does not match the constant `'value'` or if the attribute is empty.
+* `[not(Attribute = 'value')]` is `true` if the attribute does not match the constant `'value'` or if the attribute is empty.
+
+{{% alert color="info" %}}
 For the purpose of evaluating an XPath expression, a microflow variable is also treated as a constant, because it has a fixed value during the XPath evaluation.
+{{% /alert %}}
 
 ## Functions
 
