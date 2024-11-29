@@ -59,7 +59,7 @@ After setting up the authentication, to analyze a document, implement the **Anal
 5. Create new access rules by doing the following steps:
     1. Click **New**.
     2. Select a user role, and then select the checkboxes **Allow creating new objects** and **Allow deleting existing objects**. 
-    3. Set the access rights for **Name**, **DeleteAfterDownload** and **Contents** to **Read/write**
+    3. Set the access rights for **Name** and **Contents** to **Read/write**.
     4. Set the remaining access rights to **Read**.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/aws-textract/6-completed-access-rules.png" class="no-border" >}}
