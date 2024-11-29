@@ -114,7 +114,7 @@ The **Committing** state of the **IMendixObject** is deprecated.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-The **Delete object(s)** activity also removes the variable from the microflow. Be careful not to use the variable anymore after using it in a **Delete object(s)** activity.
+The **Delete object(s)** activity also removes the variable from the microflow. Be careful not to use the variable anymore after using it in a **Delete object(s)** activity. An exception on this applies to list variables since Studio Pro 10.17. From that version onwards, list variables are not removed, but only emptied when the **Delete object(s)** activity is executed on it. They can still be used to add new objects again and following activities can act on the objects of these lists.
 {{% /alert %}}
 
 * Events:
