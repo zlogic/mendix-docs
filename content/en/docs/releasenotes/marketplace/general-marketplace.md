@@ -23,6 +23,7 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 * The **Releases** tab on the component details page now includes two search bars, enabling you to search by release notes and Mendix versions.
 
 #### Improvements
+
 * Videos previously located on the **Documentation** tab have been moved to the **Overview** tab on the component details page.
 * If you click **Start with App** on a component details page of a starter app, you will start the Create App flow.
 
@@ -33,10 +34,11 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 ### September 26, 2024
 
 #### New Features
+
 * We added several new features to the Marketplace home page:
-  - You can now search for marketplace content by component name or company name, and apply relevant filters.
-  - Filters can now be easily cleared.
-  - Pagination has been introduced for search results, making navigation more streamlined.
+    * You can now search for marketplace content by component name or company name, and apply relevant filters.
+    * Filters can now be easily cleared.
+    * Pagination has been introduced for search results, making navigation more streamlined.
 
 ### June 27, 2024
 

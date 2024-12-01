@@ -252,7 +252,7 @@ The input and output for this service are shown in the table below:
 
 The request object passed to this operation must include a KnowledgeBaseTool object, which can be added to the request using the [Request: Add Knowledge Base Tool to Collection](#add-knowledge-base-tool) operation.
 
- ##### Prompt Template {#PromptTemplate} 
+##### Prompt Template {#PromptTemplate} 
  
 Amazon Bedrock's Retrieve and Generate action has a limitation: it does not support system prompts within the request. This can pose challenges when trying to orchestrate responses in specific ways, such as adopting a subject expert's tone or providing tailored advice when certain conditions are met (for example, suggesting contacting support if no search results are found).
 

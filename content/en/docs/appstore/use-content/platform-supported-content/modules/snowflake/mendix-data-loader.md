@@ -48,13 +48,13 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 5. To view the status of your data source, check the **Details**.
 6. To view the configuration status, click the **Authentication Configuration** tab.
 7. To set up authentication, click **Edit**, and then provide the required information based on the selected authentication type:
-        * For basic authentication, enter the following information:
+        *For basic authentication, enter the following information:
             * **Username** – A username for basic authentication into the OData resource in your Mendix application
-            * **Password** – A password for basic authentication into the OData resource in your Mendix application
+            ***Password** – A password for basic authentication into the OData resource in your Mendix application
         * For OAuth authentication, enter the following information:
-            * **Client ID** – A client ID from your OAuth provider
+            ***Client ID** – A client ID from your OAuth provider
             * **Client Secret** – A secret associated with the client from your OAuth provider
-            * **Token Endpoint** – An endpoint at which the token will be validated by your OAuth provider
+            ***Token Endpoint** – An endpoint at which the token will be validated by your OAuth provider
             * **Allowed Scopes** – Allowed and custom scopes configured on the client from your OAuth provider
             * **Access Token Validity** – Duration (in seconds) for which the access token is valid
 8. Click **Generate Script**.

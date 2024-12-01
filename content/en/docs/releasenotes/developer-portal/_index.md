@@ -30,9 +30,9 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 #### Improvements
 
 * We have improved [Mini Surveys](/developerportal/app-insights/mini-surveys/) as follows:
-  * Mini Surveys now features an updated onboarding flow that guides you step by step through the installation process.
-  * You no longer need to restart your application to switch surveys, as we have changed the module to use the survey location instead of linking it to a survey ID. 
-  * We have simplified the process of creating a new survey by introducing a wizard that walks you through each step.
+    * Mini Surveys now features an updated onboarding flow that guides you step by step through the installation process.
+    * You no longer need to restart your application to switch surveys, as we have changed the module to use the survey location instead of linking it to a survey ID. 
+    * We have simplified the process of creating a new survey by introducing a wizard that walks you through each step.
 
 ### November 7, 2024
 

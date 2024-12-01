@@ -190,6 +190,7 @@ The settings in this section configure the storage for build output artifacts.
             namespace: {pmp-namespace} # The namespace where Private Mendix Platform is installed
                 azure.workload.identity/client-id: {client-id}
         ```
+
     5. Add **customPodLabels** to the Mendix Operator to label the Private Mendix Platform pod with the proper configuration. This configuration allows Private Mendix Platform to get build artifacts from Azure Storage Blob.
 
         ```text
