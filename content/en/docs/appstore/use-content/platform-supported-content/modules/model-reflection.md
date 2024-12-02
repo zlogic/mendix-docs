@@ -9,6 +9,21 @@ description: "Describes the configuration and usage of the Mx Model Reflection m
 
 The [Mx Model Reflection](https://marketplace.mendix.com/link/component/69/) module allows you to access information about the domain model and about microflows of your app from your app. For example, you can loop through all the attribute names of an entity type in a microflow.
 
+### Dependencies
+
+* [Atlas Core](https://marketplace.mendix.com/link/component/117187)
+* [Combo Box](https://marketplace.mendix.com/link/component/219304)
+* [Data Widgets](https://marketplace.mendix.com/link/component/116540)
+
+{{% alert color="info" %}}
+Before importing Mx Model Reflection, latest versions of [Data Widgets](https://marketplace.mendix.com/link/component/116540) and
+[Combo Box](https://marketplace.mendix.com/link/component/219304) should be imported.
+{{% /alert %}}
+
+### React Readiness
+
+Versions 8.0.3 and above are compatible with [React client](https://docs.mendix.com/refguide/mendix-client/react/). For backwards compatibility we left the select pages inside the **\_USE_ME** > **\_DEPRECATED** > **ModelInformationSelectPages**. Those select pages are not used by the module anymore. When React client is enabled these pages should be removed.
+
 ### Typical Use Cases
 
 The typical usage scenario is selecting and showing entities from your domain model to use for another configuration. 
@@ -49,6 +64,11 @@ All the patterns use the locale from the context. Based on the user's language, 
     * Pattern: `#,##0.0`
     * Value: `12345.678`
     * Result: `12,345.7`
+
+## Troubleshooting
+
+* Getting the following error: On click action must be set to "Do nothing" when "Selection" is enabled"  
+*Solution*: Update the "Data Widgets" module to latest version then re-import Mx Model Reflection.
 
 ## Read More
 
