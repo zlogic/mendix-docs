@@ -40,8 +40,9 @@ By clicking **More Actions** ({{% icon name="three-dots-menu-horizontal" %}}) in
 
 * [Edit app details](#app-details)
 * [Assign the app to a new owner](#ownership)
-* Share the app with groups
-* Archive the app
+* [Share the app with groups](#share)
+* [Archive the app](#archive)
+* [Delete the app](#delete)
 
 ##### Editing App Details {#app-details}
 
@@ -61,27 +62,25 @@ Company admins can edit app details such as the app branding or ownership, team 
 
 ##### Assigning the App to a New Owner {#ownership}
 
-Each app is owned by a specific user, who can change settings such as the application branding (logo). By default, the owner is the user who created the app. To transfer the ownership to another user, perform the following steps:
+Each app is owned by a specific user, who can change settings such as the application branding (logo). By default, the owner is the user who created the app. To transfer the ownership to another user, on the **App Management** page, in the **Action** column, click **More Actions** > **Transfer Ownership**. Alternatively, you can access the same options in the **Ownership and Sharing** tab of the [App Details](#app-details) page.
 
-1. In the **App Management** page, in the **Action** column, click **More Actions** > **Transfer Ownership**.
-* In the 
+In addition to specifying the owner, you can also assign ownership of the app to a specific group. If an app is owned by a group, the owner must be a user who belongs to that group.
 
+##### Sharing the App with Selected User Groups {#share}
 
-##### Sharing the App with Selected User Groups
+You can share your app with any user groups by selecting the **More Actions** > **Share with Groups** option from the **App Management** page.
 
-...
-
-##### Archiving the App
+##### Archiving the App {#archive}
 
 ...
 
 You will be warned of the consequences and asked for confirmation before the app is archived.
 
-##### Deleting the App
+##### Deleting the App {#delete}
 
 ...
 
-You will be warned of the consequences and asked for confirmation before the app is archived.
+You will be warned of the consequences and asked for confirmation before the app is deleted.
 
 #### Import Apps
 
@@ -112,6 +111,7 @@ In the **Taxonomy Management** tab, you can configure the supported Studio Pro v
 ...
 
 #### Import Content
+
 In the **Content Import** tab, you can view the contents available in your Private Marketplace. You can also download and import the modules in bulk.
 
 {{< figure src="/attachments/private-platform/pmp-admin9.png" class="no-border" >}}
