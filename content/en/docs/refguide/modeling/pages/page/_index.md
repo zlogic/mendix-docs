@@ -94,10 +94,33 @@ In **Structure mode**, there are several ways to add an element on a page:
 
     1. Select an element you would like to add and confirm your choice by clicking **Select**.
 
-In **Design mode**, you can add elements though the Toolbox. Do the following:
+In **Design mode**, you can add elements through the Toolbox and UI Recommender. Do the following:
 
-1. Open the **Toolbox** and select **Widgets** or **Building blocks** tab there. 
-2. Select an element you would like to add and drag this element onto your page.
+1. Through the **Toolbox**:
+   1. Open the **Toolbox** and select **Widgets** or **Building blocks** tab there. 
+   1. Select an element you would like to add and drag this element onto your page.
+
+2. Through the **UI Recommender**:
+
+    #### Opening the Dialog
+
+    1. When hovering over an element on the page, a blue plus/dot will appear:
+        1. The blue dot will appear at the closest border of the widget (top/bottom or left/right for inline widgets).
+        1. **Widgets** can be inserted before or after an element: top/left for before, bottom/right for after.
+        1. Click on the dot/plus to open the dialog.
+
+    2. Alternatively, you can open the dialog using keyboard shortcuts:
+       1. Highlight/select an element on the page.
+       2. Press <kbd>Ctrl</kbd> + <kbd>,</kbd> to insert the widget before the element.
+       3. Press <kbd>Ctrl</kbd> + <kbd>.</kbd> to insert the widget after the element.
+
+    #### Selecting and Inserting the Widget
+
+    1. In the dialog, search for the element you would like to add.
+    2. Navigate the list using the up or down arrow keys.
+    3. Insert the selected element by pressing <kbd>Enter</kbd> or by clicking on the element from the list.
+    4. The inserted widget/element will become highlighted/selected, and the dialog will close.
+    5. The dialog can also be closed by pressing <kbd>Esc</kbd>.
 
 ### Viewing Element Properties {#view-properties}
 
