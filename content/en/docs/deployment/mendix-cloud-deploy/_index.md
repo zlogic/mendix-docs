@@ -66,6 +66,15 @@ There are two ways to prevent your Free App from being archived:
 
 If a Free App has never seen any activity since it was created, it is kept on the [Team Server](/developerportal/general/team-server/) for a maximum of one year. After this, the app, its repository, and any cloud resources will be permanently deleted.
 
+The system uses the following criteria when determining if an app is unused:
+
+* Free App (i.e. unlicensed)
+* Deployed to the Public Mendix Cloud
+* Unpinned
+* A project team with only 1 team member
+* The app was created more than a year ago
+* No commits since the app was created
+
 You can prevent this clean up by performing one of the following actions:
 
 * Make changes and commit them to the Team Server
