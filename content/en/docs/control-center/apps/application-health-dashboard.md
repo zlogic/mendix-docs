@@ -24,7 +24,7 @@ On the top of the page, you can see the following numbers:
 
 On the list below, apps are ordered in the following order: environments with the most critical alerts are placed at the top, followed by environments with the most warning alerts, and then environments with no alerts. 
 
-You can use the search box to search for an app in the list using the app name or app ID. The list can also be filtered on **Alert Type** and **Alert Level**.
+You can use the search box to search for an app in the list using the app name or project ID. The list can also be filtered on **Alert Type** and **Alert Level**.
 
 The list shows the following information:
 

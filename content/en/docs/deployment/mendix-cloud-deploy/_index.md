@@ -64,13 +64,13 @@ There are two ways to prevent your Free App from being archived:
 
 #### Deletion of Unused Free Apps
 
-If a Free App has never seen any acitivity sence it was created, it is kept on the [Team Server](/developerportal/general/team-server/) for a maximum of one year. After this period, the app, its repository, and any cloud resources will be permanently deleted.
+If a Free App has never seen any activity since it was created, it is kept on the [Team Server](/developerportal/general/team-server/) for a maximum of one year. After this, the app, its repository, and any cloud resources will be permanently deleted.
 
 You can prevent this clean up by performing one of the following actions:
 
+* Make changes and commit them to the Team Server
 * [Pin your app](/developerportal/#app-tiles)
 * [Invite someone](/developerportal/general/team/#inviting) to collaborate with you on your app
-* Make changes and commit them to the Team Server
 
 ### Licensed App
 
