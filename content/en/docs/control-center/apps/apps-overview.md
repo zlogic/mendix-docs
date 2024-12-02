@@ -18,7 +18,7 @@ The **Apps** page in Control Center gives an overview of all the apps belonging 
 Mendix will enhance this page to provide information about apps deployed on standalone private clouds. Stay tuned.
 {{% /alert %}} 
 
-The search bar at the top of the page allows you to find an app using either the app ID or the app name.
+The search bar at the top of the page allows you to find an app using either the app ID (which you can find under **Project ID** in your app’s [Settings](/developerportal/collaborate/general-settings/) in [Apps](https://sprintr.home.mendix.com/)) or the app name.
 
 {{< figure src="/attachments/control-center/apps/apps-overview/top-search-bar.png" >}}
 
