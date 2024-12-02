@@ -16,10 +16,11 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 ### December 05, 2024
 
-#### Improvements & updates
-* Release notes are now editable for all versions of your Marketplae components. No need to reach out to Mendix Support anymore to change it.
-* The Company Subscriptions page is deprecated and offboarded from the Marketplace.
-* The Support Type labels 'Siemens' and 'Partner' are added to the Marketplace in StudioPro.
+#### Improvements
+
+* Release notes are now editable for all versions of your Marketplace components. You no longer have to reach out to Mendix Support to change them.
+* The Company Subscriptions page has been removed from the Marketplace.
+* The Support Type labels 'Siemens' and 'Partner' have been added to the Marketplace in Studio Pro.
 
 ### October 31, 2024
 
