@@ -14,11 +14,18 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 ## 2024
 
+### December 05, 2024
+
+#### Improvements & updates
+* Release notes are now editable for all versions of your Marketplae components. No need to reach out to Mendix Support anymore to change it.
+* The Company Subscriptions page is deprecated and offboarded from the Marketplace.
+* The Support Type labels 'Siemens' and 'Partner' are added to the Marketplace in StudioPro.
+
 ### October 31, 2024
 
 #### New Features
 
-* Components with the content type Solutions or Industry Templates now have a component details page.
+* Components with the content type Solutions or Industry Templates now have a new component details page.
 * On the component details page, you can now view information about the company that owns the component and the industry it belongs to.
 * The **Releases** tab on the component details page now includes two search bars, enabling you to search by release notes and Mendix versions.
 
