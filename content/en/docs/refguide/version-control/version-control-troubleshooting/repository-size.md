@@ -54,6 +54,10 @@ Collaborating within one app on MPRv1 and MPRv2 branches is possible. To limit r
 [Merging and diffing commands](/refguide/mx-command-line-tool/#merging-and-diffing-commands) on the command line through *mx.exe* are not yet supported for MPRv2.
 {{% /alert %}}
 
+{{% alert color="warning" %}}
+Merging on the command line with `git merge`, or by using third-party tooling, is not yet supported for MPRv2.
+{{% /alert %}}
+
 #### Converting MPR storage format
 
 Upgrading to the new format is opt-in and can be executed on a per-branch basis through the [File menu](/refguide/file-menu/). To upgrade to MPRv2, open your app and select **File > Upgrade app to split MPR format (v2)**. After confirmation the app will be converted and you will be prompted to commit.
