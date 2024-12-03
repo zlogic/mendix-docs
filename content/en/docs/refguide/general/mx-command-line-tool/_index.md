@@ -30,7 +30,7 @@ These are the available [app commands](/refguide/mx-command-line-tool/app/):
 | [create-project](/refguide/mx-command-line-tool/app/#create-project) | Creates a new Mendix app. |
 | [show-version](/refguide/mx-command-line-tool/app/#show-version) | Shows the Studio Pro version that was last used to edit the app. |
 | [show-java-version](/refguide/mx-command-line-tool/app/#show-java-version) | Show the configured Java version of the app. |
-| [analyze-mpr](/refguide/analyze-mpr/) | Shows the contents of the MPR file and their contribution to file size. |
+| [analyze-mpr](/refguide/mx-command-line-tool/analyze-mpr/) | Shows the contents of the MPR file and their contribution to file size. |
 
 ### Adaptable Solutions Commands
 
@@ -70,7 +70,6 @@ These are the available [merging and diffing commands](/refguide/mx-command-line
 | [merge](/refguide/mx-command-line-tool/merge/#merge) | Merges the *.mpr* files. |
 | [diff](/refguide/mx-command-line-tool/merge/#diff) | Shows the diff of the *.mpr* files. |
 | [dump-mpr](/refguide/mx-command-line-tool/dump-mpr/) | Create a JSON description of the model of a Mendix App |
-| [analyze-mpr](/refguide/mx-command-line-tool/analyze-mpr/) | Create a plaintext export of the *.mpr* file for analysis |
 
 ## Undocumented Options
 
