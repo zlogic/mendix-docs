@@ -108,6 +108,8 @@ In **Design mode**, you can add elements through the Toolbox and UI Recommender.
         1. The blue dot will appear at the closest border of the widget (top/bottom or left/right for inline widgets).
         1. **Widgets** can be inserted before or after an element: top/left for before, bottom/right for after.
         1. Click on the dot/plus to open the dialog.
+      
+        {{< figure src="/attachments/refguide/modeling/pages/page/ui-recommender-dot.png" alt="UI Recommender dot" class="no-border" >}}
 
     2. Alternatively, you can open the dialog using keyboard shortcuts:
        1. Highlight/select an element on the page.
@@ -119,8 +121,12 @@ In **Design mode**, you can add elements through the Toolbox and UI Recommender.
     1. In the dialog, search for the element you would like to add.
     2. Navigate the list using the up or down arrow keys.
     3. Insert the selected element by pressing <kbd>Enter</kbd> or by clicking on the element from the list.
-    4. The inserted widget/element will become highlighted/selected, and the dialog will close.
+    4. The inserted widget/element will become highlighted/selected, and the dialog will close automatically.
     5. The dialog can also be closed by pressing <kbd>Esc</kbd>.
+  
+   {{< figure src="/attachments/refguide/modeling/pages/page/ui-recommender-dialog.png" alt="UI Recommender dialog" class="no-border" >}}
+
+> **Note:** The UI Recommender can be enabled or disabled from the `Edit` -> `Preferences` -> `New features` under Page editor Enable UI Recommender.
 
 ### Viewing Element Properties {#view-properties}
 
