@@ -95,43 +95,33 @@ The [Dynamic Image](/refguide/image-viewer/) and [Static Image](/refguide/image/
 
 To automatically convert a dynamic image or a static image, right-click the widget (or the error message) and select **Convert to Image**.
 
-{{% alert color="info" %}}
-We are working on a batch conversion for image widgets that lets you convert all images in your project with a few clicks. We will announce the release in our [Release Notes](/releasenotes/studio-pro/10/).
-{{% /alert %}}
+Note that the configuration options on the table below are not supported in the universal Image widget and will be skipped during the automatic conversion: 
 
-### Reference Selector{#reference-selector}
+| Unsupported Configuration Options |
+|-----------------------------------|
+| Height in Percentage              |
 
-The reference selector widgets ([Reference Selector](/refguide/reference-selector/), [Reference Set Selector](/refguide/reference-set-selector/), and [Input Reference Set Selector](/refguide/input-reference-set-selector/)) are not supported in the React client. To leverage React, replace them with the [Combo Box](/appstore/widgets/combobox/) widget. The combo box widget can be [downloaded from the Mendix Marketplace](https://marketplace.mendix.com/link/component/219304).
+### Reference Selectors & Drop-down{#reference-selectors-drop-down}
 
-To replace a reference selector widget, follow these steps:
+The reference selector widgets ([Reference Selector](/refguide/reference-selector/), [Reference Set Selector](/refguide/reference-set-selector/), and [Input Reference Set Selector](/refguide/input-reference-set-selector/)) and the [Drop-down](/refguide/drop-down/) are not supported in the React client. To leverage React, replace them with the [Combo Box](/appstore/widgets/combobox/) widget. The combo box widget can be [downloaded from the Mendix Marketplace](https://marketplace.mendix.com/link/component/219304).
 
-1. Add a combo box widget next to the original widget.
-1. Set the **Attribute**, **Caption**, and **Label** properties to match the original widget.
-1. Set any other properties to match the original widget.
+To automatically convert a reference selector widget or a drop-down to a combo box, right-click on the widget (or the consistency error message) and select **Convert to combo box**.
 
-To replace a reference set selector widget, follow these steps:
+Note that the configuration options on the table below are not supported in the Combo box widget and will be skipped during the automatic conversion:
 
-1. Add a combo box widget next to the original widget.
-1. Set the **Attribute** to the association that was used as data source in the original widget.
-1. Set the **Caption** to the attribute used in the column of the original widget, or use an expression to reflect multiple columns.
-1. Set the **Label** to a meaningful label for the attribute.
+| Unsupported Configuration Options |
+|-----------------------------------|
+| Go to Page                        |
+| Screen Reader Caption             |
+| 'Text' Read-only Style            |
+| 'Required' Validation             |
+| 'Custom' Validation               |
+| Constrained By                    |
+| Decimal Precision Formatting      |
+| Group Digits Formatting           |
 
-This will replace the table from the reference set selector with a more commonly used [drop-down widget](/refguide/drop-down/) supporting multiple selection.
-
-To replace an input reference set selector, follow these steps:
-
-1. Add a combo box widget next to the original widget.
-1. Set the **Attribute** to the association used as data source on the select page used by the original widget.
-1. Set the **Caption** to the attribute used on the select page, or use an expression to reflect multiple columns.
-1. Set the **Label** and any other properties to match the original widget.
-1. Remove the select page.
-
-This will replace the pop-up showing a table for selection with a more commonly used dropdown widget supporting multiple selection (see above).
-
-We also recommended you replace drop down widgets with combo box widgets for a better user experience. This change is not required.
-
-{{% alert color="info" %}}
-We are working on an automatic conversion for reference selector widgets that lets you convert a reference selector automatically to a combo box. We will announce the release in our [Release Notes](/releasenotes/studio-pro/10/).
+{{% alert color="warning" %}}
+Since the Reference Set Selector widget is technically a grid while Combo box is a drop-down, only the applicable configuration options will be transferred to the resulting Combo box during conversion.
 {{% /alert %}}
 
 ### Data Grid{#data-grid}
@@ -140,9 +130,30 @@ The data grid widget is not supported in the React client. To leverage React, re
 
 To automatically convert a data grid widget to a data grid 2, right-click the widget (or the error message) and select **Convert to Data Grid 2**.
 
-{{% alert color="info" %}}
-We are working on a batch conversion for data grid widgets that lets you convert all data grids in your project with a few clicks. We will announce the release in our [Release Notes](/releasenotes/studio-pro/10/).
-{{% /alert %}}
+Note that the configuration options on the table below are not supported in the Data grid 2 widget and will be skipped during the automatic conversion:
+
+| Unsupported Configuration Options               |
+|-------------------------------------------------|
+| Data Source Wait for Search                     |
+| Server Side Paging                              |
+| Show Empty Rows                                 |
+| Column Size in Pixels                           |
+| Tooltip Page                                    |
+| Paging Bar Without Total Count                  |
+| Single and Maintain Selection                   |
+| Select First                                    |
+| All Rows Variable                               |
+| Select All Button                               |
+| Export to CSV Button                            |
+| Inline Editing                                  |
+| Range Search Field                              |
+| Search Field for a Invisible Column             |
+| Search Field for Read-only Type                 |
+| Search Field for Hidden Type with Default Value |
+| Reference Set Columns                           |
+| Editable Columns                                |
+| Aggregate Functions and Column Captions         |
+| Multiple Search Fields for an Attribute         |
 
 ### Template Grid{#template-grid}
 
@@ -185,3 +196,7 @@ JavaScript actions should be mostly unaffected by React. Problems arise only if 
 Problems in JavaScript actions are not captured by the consistency checker. To validate that JavaScript actions work with the React client, the checker should be executed with the React client active. Any errors reported by the **Browser Console** (Press <kbd>F12</kbd> to access it) will help identify the problem.
 
 If you encounter problems with platform-supported JavaScript actions (for example from the [Nanoflow Commons](/appstore/modules/nanoflow-commons/) module) make sure to update the module containing the action from the Marketplace. In most cases, this will resolve the issue. If it is not resolved, reach out to the maintainer of the module and let them know of the issue.
+
+### Batch Conversion{#batch-conversion}
+
+We are working on a batch conversion component that lets you convert all incompatible widgets in your project with a few clicks. We will announce the release in our [Release Notes](/releasenotes/studio-pro/10/).
