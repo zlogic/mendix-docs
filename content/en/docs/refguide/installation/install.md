@@ -77,7 +77,7 @@ The prerequisites are the following:
 
     | Studio Pro 10.0.0 - 10.9.0 | Studio Pro 10.10.0 and above |
     | --- | --- |
-    | Gradle 7.6.X (7.6.3 or above) | Gradle 8.5  |
+    | Gradle 7.6.3 or above | Gradle 8.5  |
 
 Depending on the error message you get from the installer, you can choose to install a single prerequisite, or you can install them all.
 
