@@ -78,7 +78,7 @@ To configure the Feedback widget, double-click it to open the **Edit Feedback** 
 
 * **Configuration** tab
     * **Model pop-up type** – This controls what happens once you click the **Feedback** button. By default, it opens the **Share Feedback** page. If you select **Custom**, you can select a different **On click** action.
-    * **App ID** – This is the unique identifier of your app. You can find it in your app’s [General Settings](/developerportal/collaborate/general-settings/) in Apps.
+    * **App ID** – This is the unique identifier of your app. You can find it under **Project ID** in your app’s [General Settings](/developerportal/collaborate/general-settings/) in Apps.
     
         {{% alert color="info" %}}The original value of **App ID** is *1*, but this value should automatically change to your correct app ID. If it does not change automatically, see [Updating App ID](#update-app-id) below.
         {{% /alert %}}
@@ -155,7 +155,7 @@ If you see the following error, click **close** and then remove the duplicate ol
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/mendix-feedback/widget-error.png" width="600px" class="no-border" >}}
 
-### Feedback Button isn't visible in Design Mode / Hiding the Feedback Button
+### Feedback Button Isn't visible in Design Mode / Hiding the Feedback Button
 
 After you add the Feedback widget to a page of your app in Studio Pro, you can hide or show the **Feedback** button in Design mode.
 
@@ -173,6 +173,15 @@ To show the Feedback button, do as follows:
 3. Go to the **Customize button** tab.
 4. Set **Show in Design mode** to **Yes**.
 5. Click **OK** to save the change.
+
+### Users Do not See Their Image Afte Uploading a File from Their Computer
+
+1. In [Apps](https://sprintr.home.mendix.com/link/myapps), open your app.
+2. In your **Apps** [navigation pane](/developerportal/#navigation-pane), go to **Environments**.
+3. Go to the environment where you want to fix this issue and click **Details** ({{% icon name="notes-paper-edit" %}}) by the environment you want to view.
+4. Go to the **Network** tab.
+5. Under **HTTP Headers**, select **Content-Secutiry-Policy** and click **Edit**.
+6. Add the following code: `img-src: blob:;`.
 
 ## Legacy Feedback Widget Docs {#legacy-feedback-docs}
 
@@ -211,7 +220,7 @@ The Mendix Feedback widget is easy to set up and automatically attaches addition
 You can configure the widget for certain actions in your app. All the configuration properties are explained on the various tabs of the properties dialog box for the widget. The feedback feature requires the following properties to be set:
 
 * **Project** tab
-    * **App ID** – the unique identifier of your app, which you can find in your app’s [Settings](/developerportal/collaborate/general-settings/) in [Apps](https://sprintr.home.mendix.com/)l
+    * **App ID** – the unique identifier of your app, which you can find under **Project ID** in your app’s [Settings](/developerportal/collaborate/general-settings/) in [Apps](https://sprintr.home.mendix.com/)l
 
         {{% alert color="info" %}}The original value of **App ID** is 1, but this value should automatically change to your correct app ID. If it does not change automatically, see [Updating App ID](#legacy-update-app-id) below.
         {{% /alert %}}
