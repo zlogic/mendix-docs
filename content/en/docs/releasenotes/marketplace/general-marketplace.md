@@ -14,7 +14,7 @@ These release notes cover changes made to the [Mendix Marketplace](/appstore/).
 
 ## 2024
 
-### December 05, 2024
+### December 12, 2024
 
 #### Improvements
 
