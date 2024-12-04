@@ -124,27 +124,30 @@ For Private Mendix Platform, the Marketplace is also private and hosted entirely
 
 In this tab, you can configure whether contents that users publish to the private Marketplace requires administrator approval before publishing.
 
-### Content Import {#import}
+### Import Content {#import}
 
 You can populate your private Marketplace with contents by importing a zip file that contains the content packages along with a *package.json* file. You can upload the file from a Content Delivery Network, or manually from your local machine.
 
-#### Manully Importing Marketplace Content
+{{< figure src="/attachments/private-platform/pmp-admin9.png" class="no-border" >}}
+
+#### Manually Importing Marketplace Content
 
 To manually upload a content bundle from your own computer, perform the following steps:
 
 1. Download the Marketplace Bundle with contents available in a zip file. If you do not have access to the bundle, contact your Mendix point of contact.
-2. In the **Content Import** > **Upload Markeplace Bundle** tab, drag and drop the file that you want to upload.
+2. In the **Import Content** > **Upload Marketplace Bundle** tab, drag and drop the file that you want to upload.
 
-    {{% alert color="info" %}}<ul><li>The file must be in *zip* format.</li><li>The file must not be larger than 2048 MB.</li><li>Your infrastructure must support the upload of large files (up to 2048MB).</li><li>You should also have at least 40 GB available disk space to account for temporary files.</li></ul>
-    {{% /alert %}}
+    * The file must be in *zip* format.
+    * The file must not be larger than 2048 MB.
+    * Your infrastructure must support the upload of large files (up to 2048MB).
+    * You should also have at least 40 GB available disk space to account for temporary files.
+    
 
 3. Click **Import Marketplace Bundle components**.
 
     {{< figure src="/attachments/private-platform/pmp-config1.png" class="no-border" >}}
 
-4. To view the progress of your upload, click **Open Task Queue**.
-
-    {{< figure src="/attachments/private-platform/pmp-config2.png" class="no-border" >}}
+4. To view the progress of your upload, click **View Task Queue**.
 
 {{% alert color="info" %}}
 If you are experiencing high latency during manual uploads, you can increase the timeouts. For example, for nginx, you can perform the following commands:
@@ -165,7 +168,7 @@ To enable content import from a Content Delivery Network, follow these steps:
 1. Download the Marketplace Bundle with contents available in a zip file. If you do not have access to the bundle, contact your Mendix point of contact.
 2. Unzip the files to an internal location which Private Mendix Platform can access via HTTP or HTTPS. Do not change the directory structure.
 3. If using a self-signed certificate for your internal locations, configure Mendix Operator to trust your private Certificate Authorities. For more information, see [Creating a Private Cloud Cluster](/developerportal/deploy/standard-operator/#custom-tls).
-4. In the **Content Import** tab, in the **Marketplace import bundle URL** field, enter the root URL of the *package.json* file included in the Marketplace download. 
+4. In the **Import Content** tab, in the **Marketplace import bundle URL** field, enter the root URL of the *package.json* file included in the Marketplace download. 
 
     For example, if the *package.json* can be accessed at the URL `https://<your domain>/release/marketplace/Marketplace-1.0/package.json`, enter the following URL: `https://<your domain>/release/marketplace/Marketplace-1.0/`.
 
@@ -173,7 +176,7 @@ To enable content import from a Content Delivery Network, follow these steps:
 
 5. Set the toggle **Enable content import with external source** to **ON**.
 6. Click **Save** to enable content import from this bundle.
-7. In the **Content Import** > **Import from CDN** tab, you can now view the available downloads.
+7. In the **Import Content** > **Import from CDN** tab, you can now view the available downloads.
 
 ## Mx Version Settings
 
