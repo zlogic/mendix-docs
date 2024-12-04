@@ -16,6 +16,12 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2024
 
+### December 1, 2024
+
+#### API Retirement
+
+* We retired the Team Server API. You will now have to use the [App Repository API](/apidocs-mxsdk/apidocs/app-repository-api/) instead.
+
 ### November 29, 2024
 
 #### New Features
