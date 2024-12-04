@@ -15,6 +15,8 @@ aliases:
 An access provider application can offer a Single Sign-On (SSO) experience for end-users of connected applications Additionally, it can issue Access Tokens for API consumption when APIs are secured with OAuth bearer tokens.
 The service supports responsive browser-based applications and has been tested with applications that use the OIDC SSO module.
 
+For successful implementation of the OIDC Provider module, [Advanced](https://academy.mendix.com/link/certifications/6/advanced) or [Expert](https://academy.mendix.com/link/certifications/24/expert) Mendix certification is recommended. Customers with limited low-code experience may consider partnering with Mendix Implementation Partner.
+
 There are below versions of the OIDC Provider module, compatible with Mendix versions.
 
 | Mendix Version | OIDC Provider Version |
