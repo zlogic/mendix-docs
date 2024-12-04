@@ -51,10 +51,6 @@ Collaborating within one app on MPRv1 and MPRv2 branches is possible. To limit r
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-[Merging and diffing commands](/refguide/mx-command-line-tool/#merging-and-diffing-commands) on the command line through *mx.exe* are not yet supported for MPRv2.
-{{% /alert %}}
-
-{{% alert color="warning" %}}
 Merging on the command line with `git merge`, or by using third-party tooling, is not yet supported for MPRv2.
 {{% /alert %}}
 
