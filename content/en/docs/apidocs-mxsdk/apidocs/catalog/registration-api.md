@@ -4,7 +4,7 @@ linktitle: "Registration API"
 url: /apidocs-mxsdk/apidocs/registration-api/
 description: "The Registration API allows you to register and update services to the organization's Catalog."
 weight: 50
-restapi: true
+type: swagger
 ---
 
 ## Introduction

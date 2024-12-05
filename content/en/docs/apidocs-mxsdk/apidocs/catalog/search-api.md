@@ -4,7 +4,7 @@ linktitle: "Search API"
 url: /apidocs-mxsdk/apidocs/search-api/
 description: "The Search API allows you to search and retrieve information on registered assets that can be used in your app development."
 weight: 50
-restapi: true
+type: swagger
 ---
 
 ## Introduction
