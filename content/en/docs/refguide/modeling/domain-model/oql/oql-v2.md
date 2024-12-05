@@ -124,7 +124,7 @@ FROM Module.City
 This requirement only applies to attributes in the main `SELECT` query. `SELECT` clauses inside subqueries are not affected, as are columns that are used for comparisons like in a `WHERE` clause.
 {{% /alert %}}
 
-### Duplicate Columns in ‘SELECT’
+### Duplicate Columns in `SELECT`
 
 #### Specify Entity Name
 
@@ -237,7 +237,7 @@ When handling numeric types in OQL v2 (Integer, Long, and Decimal), the result o
 
 If any side of the operation is of a non-numeric type, no casting is performed, and the result is handled by the , as in OQL v1. See [Expression syntax](/refguide/oql-expression-syntax/#type-coercion) for more information.
 
-### The Result Type of ‘ROUND’ Is Now ‘Decimal’
+### The Result Type of `ROUND` Is Now `Decimal`
 
 In OQL v1, `ROUND` would return a `Float` result. 'Float' is no-longer supported by Studio Pro. In OQL v2, it always returns `Decimal`.
 
@@ -264,9 +264,9 @@ SELECT *
 FROM Module.Person, Module.City
 ```
 
-### ‘JOIN’ an Entity to Its Own Generalization
+### `JOIN` an Entity to Its Own Generalization
 
-In OQL v1 there was a bug which meant that when you ‘JOIN’ed an entity to its own generalization it would generate unexpected specialization columns. This has been fixed.
+In OQL v1 there was a bug which meant that when you `JOIN`ed an entity to its own generalization it would generate unexpected specialization columns. This has been fixed.
 
 For example, say entity `Module.Vehicle` has two specializations: `Module.Car` and `Module.Bike`. The query below would previously  generate unexpected duplicate columns for entity `Vehicle`. This no longer happens.
 

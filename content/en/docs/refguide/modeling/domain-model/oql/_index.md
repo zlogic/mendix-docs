@@ -71,3 +71,7 @@ Here is a list of all OQL reserved words:
 `WEEK`, `WEEKDAY`, `WHEN`, `WHERE`
 
 `YEAR`
+
+{{% alert color="info" %}}
+Mendix does not support Float data type since version 8. In OQL, `FLOAT` is a reserved word for legacy reasons. It should not be used.
+{{% /alert %}}
