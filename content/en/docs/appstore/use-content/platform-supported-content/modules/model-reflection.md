@@ -69,7 +69,7 @@ All the patterns use the locale from the context. Based on the user's language, 
 
 ## Troubleshooting
 
-### Set On Click Action to "Do Nothing"
+### Error Message: Set On Click Action to "Do Nothing"
 
 You get the following error:
 
