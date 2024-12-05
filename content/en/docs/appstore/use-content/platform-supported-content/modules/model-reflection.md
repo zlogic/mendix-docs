@@ -11,18 +11,20 @@ The [Mx Model Reflection](https://marketplace.mendix.com/link/component/69/) mod
 
 ### Dependencies
 
+The Mx Model Reflection module has the following dependencies:
+
 * [Atlas Core](https://marketplace.mendix.com/link/component/117187)
 * [Combo Box](https://marketplace.mendix.com/link/component/219304)
 * [Data Widgets](https://marketplace.mendix.com/link/component/116540)
 
 {{% alert color="info" %}}
-Before importing Mx Model Reflection, latest versions of [Data Widgets](https://marketplace.mendix.com/link/component/116540) and
-[Combo Box](https://marketplace.mendix.com/link/component/219304) should be imported.
+Before importing the Mx Model Reflection module, import the latest versions of the [Data Widgets](https://marketplace.mendix.com/link/component/116540) and
+[Combo Box](https://marketplace.mendix.com/link/component/219304) modules.
 {{% /alert %}}
 
 ### React Readiness
 
-Versions 8.0.3 and above are compatible with [React client](https://docs.mendix.com/refguide/mendix-client/react/). For backwards compatibility we left the select pages inside the **\_USE_ME** > **\_DEPRECATED** > **ModelInformationSelectPages**. Those select pages are not used by the module anymore. When React client is enabled these pages should be removed.
+Versions 8.0.3 and above of the module are compatible with the [Mendix React Client](/refguide/mendix-client/react/). For backwards compatibility, the select pages are still available inside the **\_USE_ME** > **\_DEPRECATED** > **ModelInformationSelectPages** folder. Those select pages are not used by the module anymore. When the React client is enabled, these pages should be removed.
 
 ### Typical Use Cases
 
@@ -67,8 +69,19 @@ All the patterns use the locale from the context. Based on the user's language, 
 
 ## Troubleshooting
 
-* Getting the following error: On click action must be set to "Do nothing" when "Selection" is enabled"  
-*Solution*: Update the "Data Widgets" module to latest version then re-import Mx Model Reflection.
+### Set On Click Action to "Do Nothing"
+
+You get the following error:
+
+* "On click action must be set to "Do nothing" when "Selection" is enabled"
+
+#### Cause
+
+You have an older version of the Data Widgets module.
+
+#### Solution
+
+Update the "Data Widgets" module to latest version then re-import Mx Model Reflection.
 
 ## Read More
 
