@@ -40,51 +40,55 @@ For the technical details of each cloud resource pack, see the [Cloud Resource P
 
 The tables below show how many cloud tokens each cloud resource pack costs:
 
-| Standard Resource Packs    | Cloud Tokens |
-| ------------------------------ | ------------- |
-| XS21                           | 10            |
-| S21                            | 20            |
-| M21                            | 40            |
-| L21                            | 80            |
-| XL21                           | 160           |
-| 2XL21                         | 320           |
-| 3XL21                      | 640           |
-| 4XL21                       | 1280          |
+| Standard Resource Packs | Cloud Tokens |
+| --- | --: |
+| XS21 | 10 |
+| S21 | 20 |
+| M21 | 40 |
+| L21 | 80 |
+| XL21 | 160 |
+| 2XL21 | 320 |
+| 3XL21 | 640 |
+| 4XL21 | 1280 |
 | 4XL-5XLDB | 2240 |
 
-|Premium Resource Packs                  | Cloud Tokens |
-| ------------------------------ | ------------- |
-| S21 Premium                    | 30            |
-| M21 Premium                    | 60            |
-| L21 Premium                    | 120           |
-| XL21 Premium                   | 240           |
-| 2XL21 Premium                 | 480           |
-| 3XL21 Premium                | 960           |
-| 4XL21 Premium               | 1920          |
-| XL21 Premium Plus              | 400           |
-| 2XL21 Premium Plus            | 800           |
-| 3XL21 Premium Plus           | 1600          |
-| 4XL21 Premium Plus          | 3200          |
-| 4XL-5XLDB Premium Plus | 5600 |
+|Premium Resource Packs | Cloud Tokens |
+| --- | --: |
+| S21 | 30 |
+| M21 | 60 |
+| L21 | 120 |
+| XL21 | 240 |
+| 2XL21 | 480 |
+| 3XL21 | 960 |
+| 4XL21 | 1920 |
+| 4XL-5XLDB | 3360 |
+
+|Premium Plus Resource Packs | Cloud Tokens |
+| --- | --: |
+| XL21 | 400 |
+| 2XL21 | 800 |
+| 3XL21 | 1600 |
+| 4XL21 | 3200 |
+| 4XL-5XLDB | 5600 |
 
 | Legacy Resource Packs | Cloud Tokens |
-| ------------------------------ | ------------- |
-| XS20    | 10            |
-| S20     | 20           |
-| M20     | 40            |
-| L20     | 80            |
-| XL20    | 160           |
-| 2XL20  | 320           |
-| Strato  | 12           |
-| Meso    | 47          |
-| Iono    | 67          |
-| Magneto | 147         |
-| S       | 8           |
-| M       | 16           |
-| L       | 37          |
-| XL      | 73          |
-| 2XL   | 167         |
-| 3XL   | 640           |
+| --- | --: |
+| XS20 | 10 |
+| S20 | 20 |
+| M20 | 40 |
+| L20 | 80 |
+| XL20 | 160 |
+| 2XL20 | 320 |
+| Strato | 12 |
+| Meso | 47 |
+| Iono | 67 |
+| Magneto | 147 |
+| S | 8 |
+| M | 16 |
+| L | 37 |
+| XL | 73 |
+| 2XL | 167 |
+| 3XL | 640 |
 
 ## Transition from Cloud Credits to Cloud Tokens{#cloud-tokens-faq}
 
