@@ -291,8 +291,8 @@ These are example commands:
 | Example | Result |
 | --- | --- |
 | `mx translate --help` | Displays the help text for the translate command. |
-| `mx translate -i -t po -s en_US C:\MxProjects\App-main\App-main.mpr C:\MxProjects\App-main\translations` | Imports `.po` files from *C:\MxProjects\App-main\translations* in to the app at *C:\MxProjects\App-main\App-main.mpr* with *en_US* as the source language code. |
-| `mx translate -e -t xlsx -s en_US C:\MxProjects\App-main\App-main.mpr C:\MxProjects\App-main\translations` | Exports `.xlsx` files from the app at *C:\MxProjects\App-main\App-main.mpr* in to the directory at *C:\MxProjects\App-main\translations* with *en_US* as the source language code. |
+| `mx translate -i -t po -s en_US C:\MxProjects\App-main\App-main.mpr C:\MxProjects\App-main\translations` | Imports *.po* files from *C:\MxProjects\App-main\translations* in to the app at *C:\MxProjects\App-main\App-main.mpr* with *en_US* as the source language code. |
+| `mx translate -e -t xlsx -s en_US C:\MxProjects\App-main\App-main.mpr C:\MxProjects\App-main\translations` | Exports *.xlsx* files from the app at *C:\MxProjects\App-main\App-main.mpr* in to the directory at *C:\MxProjects\App-main\translations* with *en_US* as the source language code. |
 
 ### Return Codes
 
