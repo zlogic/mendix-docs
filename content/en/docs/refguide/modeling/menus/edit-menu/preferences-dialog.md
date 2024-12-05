@@ -218,7 +218,7 @@ Hardware and driver issues may cause performance problems when running Studio Pr
 
 ### Editor Tabs Closing Policy
 
-It is recommended to limit the number of open tabs (working areas) to improve the performance of Studio Pro. This option is enabled by default & set to a limit of 15 tabs (the user can disable this behaviour completely or change the limit value). The closing policy is not applied to tabs with unsaved changes.
+It is recommended to limit the number of open tabs (working areas) to improve the performance of Studio Pro. This option is enabled by default and set to a limit of 15 tabs. However, you can disable this behavior completely or change the limit value. The closing policy is not applied to tabs with unsaved changes.
 
 ## Advanced Tab
 
