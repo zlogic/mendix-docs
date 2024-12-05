@@ -95,7 +95,7 @@ In the **Marketplace** section, administrators can manage various settings relat
 
 As the administrator, you can perform the following actions:
 
-#### Content Management
+#### Content Management {#content}
 
 In the **Content Management** tab, you can view the Marketplace content that your users have already published, as well as any items which are pending approval, or which have been rejected.
 
@@ -133,7 +133,7 @@ You can populate your private Marketplace with contents by importing a zip file 
 
 {{< figure src="/attachments/private-platform/pmp-admin9.png" class="no-border" >}}
 
-#### Upload Marketplace Bundle
+#### Upload Marketplace Bundle {#manual-upload}
 
 To manually upload a content bundle from your own computer, perform the following steps:
 
@@ -145,7 +145,6 @@ To manually upload a content bundle from your own computer, perform the followin
     * Your infrastructure must support the upload of large files (up to 2048MB).
     * You should also have at least 40 GB available disk space to account for temporary files.
     
-
 3. Click **Import Marketplace Bundle components**.
 
     {{< figure src="/attachments/private-platform/pmp-config1.png" class="no-border" >}}
@@ -166,20 +165,10 @@ nginx.ingress.kubernetes.io/proxy-send-timeout: "300"
 
 #### Import from CDN
 
-To enable content import from a Content Delivery Network, follow these steps:
+To import content from a Content Delivery Network, follow these steps:
 
-1. Download the Marketplace Bundle with contents available in a zip file. If you do not have access to the bundle, contact your Mendix point of contact.
-2. Unzip the files to an internal location which Private Mendix Platform can access via HTTP or HTTPS. Do not change the directory structure.
-3. If using a self-signed certificate for your internal locations, configure Mendix Operator to trust your private Certificate Authorities. For more information, see [Creating a Private Cloud Cluster](/developerportal/deploy/standard-operator/#custom-tls).
-4. In the **Import Content** tab, in the **Marketplace import bundle URL** field, enter the root URL of the *package.json* file included in the Marketplace download. 
-
-    For example, if the *package.json* can be accessed at the URL `https://<your domain>/release/marketplace/Marketplace-1.0/package.json`, enter the following URL: `https://<your domain>/release/marketplace/Marketplace-1.0/`.
-
-    {{< figure src="/attachments/private-platform/pmp-config3.png" class="no-border" >}}
-
-5. Set the toggle **Enable content import with external source** to **ON**.
-6. Click **Save** to enable content import from this bundle.
-7. In the **Import Content** > **Import from CDN** tab, you can now view the available downloads.
+1. Ensure that your system administrator has [configured the Marketplace import bundle URL](/private-mendix-platform/reference-guide/admin/system/#configure-import).
+2. In the **Import Content** > **Import from CDN** tab, view and download the available content items.
 
 ### Deployment
 
@@ -210,6 +199,12 @@ The **Cluster Manager** page allows administrators to configure clusters to be u
     Namespaces without any storage plan are skipped. This step requires the Mendix Operator to be installed and configured. You can repeat this step as required to retrieve additional namespaces.
 
 5. After the cluster is registered, create environments with the cluster, namespace and plans.
+
+##### Configuring CI/CD Pipelines with Manual Approval {#manual-deployment}
+
+If your production and development environments must be fully air-gapped and separated from each other, and you want to limit the ability to deploy packages to either selected users or an automated pipeline with manual approval, you can configure your cluster type to be **Manual Production Deployment**.
+
+Selecting this option allows you to specify an S3 bucket. This bucket is then used as the destination where the deployment package is uploaded at the end of the pipeline, instead of being deployed to the production environment. Designated approvers can then retrieve the package from the S3 bucket and manually deploy it to the target environment.
 
 ### Users {#users}
 
