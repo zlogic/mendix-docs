@@ -52,7 +52,7 @@ The prerequisites are the following:
 
     | Studio Pro 10.0.0 - 10.10.0 | Studio Pro 10.11.0 and above |
     | --- | --- |
-    | [.NET Desktop Runtime 6.0.x](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) <br/> Mendix recommends using version 6.0.6 or above | [.NET Desktop Runtime 8.0.x](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) |
+    | [.NET Desktop Runtime 6.0.x (x64 or ARM64)](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) <br/> Mendix recommends using version 6.0.35 or above | [.NET Desktop Runtime 8.0.x (x64 or ARM64)](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) <br/> Mendix recommends using version 8.0.10 or above |
 
 * Eclipse Temurin JDK (x64) (see [JDK Installation](/refguide/jdk-installation/) if you want to install another version of the JDK). Mendix version 10.8.0 and 10.0.9 supports JDK 11 and 17. Mendix version 10.10.0 supports JDK 11, 17, and 21, but installer still installs JDK 11.
 
@@ -77,7 +77,7 @@ The prerequisites are the following:
 
     | Studio Pro 10.0.0 - 10.9.0 | Studio Pro 10.10.0 and above |
     | --- | --- |
-    | Gradle 7.6 or above | Gradle 8.5 or above |
+    | Gradle 7.6.3 or above | Gradle 8.5  |
 
 Depending on the error message you get from the installer, you can choose to install a single prerequisite, or you can install them all.
 
@@ -85,22 +85,41 @@ Then, try installing Studio Pro again.
 
 ## Installing Mendix Studio Pro Offline {#offline}
 
-The Mendix Studio Pro installation experience includes all the tools and frameworks required to run the application. If any of the prerequisites are not found at the moment of installation, the Studio Pro setup process will attempt to download and install the missing elements automatically. The Mendix Studio Pro installer does not include all dependencies and relies on internet connectivity to obtain them if any of the required pieces of software are missing. 
+The Mendix Studio Pro installation experience includes all the tools and frameworks required to run the application. If any of the prerequisites are not already installed, the Studio Pro setup process will automatically download and install the missing components. The Mendix Studio Pro installer does not include all dependencies and relies on internet connectivity to obtain them if any of the required pieces of software are missing. 
 
 It is possible to prepare the prerequisite installers beforehand so the setup process can pick them up instead of downloading them from the remote location. Follow these steps to prepare the installers:
 
+1. Create a folder for the Mendix Studio Pro installer.
+2. Download the latest **[Mendix Studio Pro installer](https://marketplace.mendix.com/link/studiopro/)** and move it into the folder created.
+3. Create a folder in the same location where the Mendix Studio Pro installer was moved. Name this folder *Dependencies*.
+4. Download the prerequisites listed in the **[Troubleshooting](https://docs.mendix.com/refguide9/install/#troubleshooting)** section above and move them into the **Dependencies** folder.
 5. Rename the following dependencies:
-    * Rename the Visual C++ Redistributable for Visual Studio 2019 (x64) executable (for example, *VC_redist.x64.exe*) to*vcredist2019_x64.exe*
-    * Rename the `latest` executable to *mendix_native_mobile_builder.exe*
-    * Rename the *Git-{version}-64-bit.exe* executable to *git_for_windows_installer.exe*
-    * For Studio Pro versions 10.0.0 through 10.9.0, rename the Gradle zip file to *gradle-7.6.3-bin.zip*
-    * For Studio Pro versions 10.0.0 through 10.10.0, rename the Microsoft .NET Desktop Runtime 6.0.x executable (*dotnet.exe*) to *windowsdesktop-runtime-6.0-x64.exe*
-    * For Studio Pro versions 10.0.0 through 10.10.0, rename the Java Development Kit 11 (x64) *msi* (for example, *OpenJDK11U-jdk_x64_windows_hotspot_11.0.3_7.msi*) to *adoptiumjdk_11_x64.msi*
-    * For Studio Pro versions 10.10.0 and above, rename the Gradle zip file to *gradle-8.5-bin.zip*
-    * For Studio Pro versions 10.11.0 and above, rename the Microsoft .NET Desktop Runtime 8.0.x executable (*dotnet.exe*) to *windowsdesktop-runtime-8.0-x64.exe*
-    * For Studio Pro versions 10.11.0 and above, rename the Java Development Kit 21 (x64) *msi* (for example, *OpenJDK21U-jdk_x64_windows_hotspot_21.0.4_7.msi*) to *adoptiumjdk_21_x64.msi*
-    * Do not rename the Microsoft Edge WebView2 Evergreen Runtime installer *MicrosoftEdgeWebview2Setup.exe*; keep it as is
-    
+   1. Microsoft .NET Desktop Runtime
+      * For Studio Pro versions 10.0.0 through 10.10.0, rename the Microsoft .NET Desktop Runtime 6.0.x
+        * On x64, rename *windowsdesktop-runtime-6.0.35-win-x64.exe* to *windowsdesktop-runtime-6.0-x64.exe*
+        * On ARM64, rename *windowsdesktop-runtime-6.0.35-win-arm64.exe* to *windowsdesktop-runtime-6.0-arm64.exe*
+      * For Studio Pro versions 10.11.0 and above, rename the Microsoft .NET Desktop Runtime 8.0.x
+        * On x64, rename *windowsdesktop-runtime-8.0.10-win-x64.exe* to *windowsdesktop-runtime-8.0-x64.exe*
+        * On ARM64, rename *windowsdesktop-runtime-8.0.10-win-arm64.exe* to *windowsdesktop-runtime-8.0-arm64.exe*
+   2. Eclipse Temurin JDK (x64)
+      * For Studio Pro versions 10.0.0 through 10.10.0, rename the Java Development Kit 11 (x64) *msi* 
+        * For example, *OpenJDK11U-jdk_x64_windows_hotspot_11.0.20.1_1.msi* to *adoptiumjdk_11_x64.msi*
+      * For Studio Pro versions 10.11.0 and above, rename the Java Development Kit 21 (x64) *msi* 
+        * For example, *OpenJDK21U-jdk_x64_windows_hotspot_21.0.4_7.msi* to *adoptiumjdk_21_x64.msi*
+   3. Visual C++ Redistributable for Visual Studio 2019 (x64)
+      * Rename the executable 
+        * For example, *VC_redist.x64.exe* to *vcredist2019_x64.exe*
+   4. Mendix Native Mobile Builder one-click installer
+      * Rename the *latest.exe* executable to *mendix_native_mobile_builder.exe*
+   5. Git for Windows (x64)
+      * For Studio Pro versions 10.0.0 and 10.1.0, rename the *Git-2.37.1-64-bit.exe* executable to *git_for_windows_installer.exe*
+      * For Studio Pro versions 10.2.0, 10.6.10 (or 10.6 MTS above 10.6.10), and 10.9.0, rename the *Git-2.41.0.3-64-bit.exe* executable to *git_for_windows_installer.exe*
+      * For Studio Pro versions 10.10.0 and above, rename the *Git-2.43.0-64-bit.exe* executable to *git_for_windows_installer.exe*
+   6. Microsoft Edge WebView2 Evergreen Runtime (x64 or ARM64)
+      * The *MicrosoftEdgeWebview2Setup.exe* does not need to be renamed
+   7. Gradle
+      * For Studio Pro versions 10.0.0 through 10.9.0, rename the Gradle zip file *gradle-7.6.3-bin.zip* to *gradle-7.6-bin.zip*
+      * For Studio Pro versions 10.10.0 and above, rename the Gradle zip file to *gradle-8.5-bin.zip*
 6. Run the installer as described in the [Installing Mendix Studio Pro](#install) section above.
 
 If an error occurs during JDK installation, try the following:

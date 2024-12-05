@@ -16,6 +16,12 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2024
 
+### December 5, 2024
+
+#### Improvements
+
+* We introduced cloud tokens for your cloud resource pack purchases! Starting now, you will use [cloud tokens](/control-center/entitlements/#cloud-tokens) instead of cloud credits to complete your cloud resource purchases. With the transitioning from cloud credits to cloud tokens, Mendix is paving the way for a more streamlined and flexible approach to purchasing and switching between Mendix Cloud products.
+
 ### December 1, 2024
 
 #### API Retirement
