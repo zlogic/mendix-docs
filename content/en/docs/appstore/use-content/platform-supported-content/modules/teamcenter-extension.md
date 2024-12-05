@@ -92,6 +92,10 @@ The `Search Datasets` allows you to generate the domain model and microflow to s
 
 The `Get Datasets from Item Revision` action allows you to generate the domain model and microflow to retrieve datasets for an Item Revision and subsequently download files inside the dataset.
 
+#### Attach Datasets to Item Revision {#attachdatasetstoitemrevision}
+
+The 'Attach Datasets to Item Revision' action allows you to generate a domain model and microflow which creates and attaches a Teamcenter dataset (or its specializations) with a file document to an Item Revision in Teamcenter. The resulting microflow implements the Upload file, Create relation, and Get properties actions from the `TcConnector` module.
+
 #### Get Workspace Objects {#getworkspaceobjects}
 
 The `Get Workspace Objects` action allows you to configure and generate the domain model and microflow to search for and retrieve Workspace Objects or their specialization from Teamcenter. This action implements the saved query `General..` from Teamcenter.
