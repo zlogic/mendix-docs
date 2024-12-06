@@ -1,0 +1,63 @@
+---
+title: "Native Template 10"
+url: /releasenotes/mobile/nt-10-rn/
+weight: 7
+description: "Native Template 10 release notes."
+---
+## 10.0.0 {#1000}
+
+**Release date: November 27, 2024**
+
+### Improvements
+
+* We upgraded our React Native version to 0.75.4. This significant update improves performance and increases compatibility with React Native's latest features.
+
+#### Important Notes:
+
+* Projects created with Mendix 10.17 or higher will automatically use the latest React Native version without additional configuration.
+* For projects upgrading from Mendix versions below 10.17 to 10.17 or higher, follow the steps in the Upgrade Instructions section below.
+
+---
+
+### Breaking Changes
+
+#### Library Migration
+
+* @react-native-community/async-storage has been replaced by @react-native-async-storage/async-storage. Ensure your imports and project dependencies reflect this change.
+* @react-native-community/masked-view has been replaced by @react-native-masked-view/masked-view. Update your references accordingly.
+
+> **Note:** These library changes will only affect projects using custom modules that explicitly depend on the affected packages. If your project does not use custom modules or does not include these specific dependencies, no action is required.
+
+#### PopupMenu Component
+
+* The PopupMenu component in the updated Native Mobile Resources module includes a breaking change.
+* This issue only affects projects that are:
+    * Upgrading from Mendix versions below 10.17 to 10.17 or higher, and
+    * Updating the Native Mobile Resources module to its latest version.
+
+What You Need to Do
+
+After updating the Native Mobile Resources module, you will encounter the following warning in Studio Pro:
+
+> *"The definition of this widget has changed. Update this widget by right-clicking it and selecting 'Update widget,' or select 'Update all widgets' to update all widgets in the app."*
+
+1. Right-click on the warning in Studio Pro.
+1. Select Update All Widgets to apply the necessary updates.
+
+---
+
+### Upgrade Instructions
+
+If you are upgrading from Mendix versions below 10.17, please follow these steps to use the new React Native version:
+
+1. Update Required Modules:
+    * Native Mobile Resources: Ensure you update this module to the latest version available in the Mendix Marketplace.
+    * Nanoflow Commons: Update this module to its latest version as well.
+1. Update Widgets in Studio Pro:
+    * After updating the Native Mobile Resources module, right-click the warning in Studio Pro and select Update All Widgets to complete the process.
+1. Test Your Application:
+    * Thoroughly test your application to ensure that all features are working as expected after the updates.
+
+---
+
+For more details and the complete release notes, please visit our [GitHub Releases page](https://github.com/mendix/native-template/releases/tag/v10.0.0).
