@@ -103,17 +103,17 @@ In **Design mode**, you can add elements through the Toolbox and UI Recommender.
 2. Through the **UI Recommender**:
     1. Opening the Dialog
 
-        1. When hovering over an element on the page, a blue plus/dot will appear:
-            1. The blue dot will appear at the closest border of the widget (top/bottom or left/right for inline widgets).
-            1. **Widgets** can be inserted before or after an element: top/left for before, bottom/right for after.
-            1. Click on the dot/plus to open the dialog.
+        1. When hovering over an element on the page, a blue indicator (plus/dot) will appear:
+            1. The indicator will appear at the closest border of the widget (top/bottom or left/right for inline widgets).
+            1. The position of the indicator relates to where an element will be inserted, i.e. selecting the indicator at the top or left will insert an element before the current widget.
+            1. Click on the indicator to open the dialog.
         
             {{< figure src="/attachments/refguide/modeling/pages/page/ui-recommender-dot.png" alt="UI Recommender dot" class="no-border" >}}
 
         2. Alternatively, you can open the dialog using keyboard shortcuts:
             1. Highlight/select an element on the page.
-            1. Press <kbd>Ctrl</kbd> + <kbd>,</kbd> to insert the widget before the element.
-            1. Press <kbd>Ctrl</kbd> + <kbd>.</kbd> to insert the widget after the element.
+            1. Press <kbd>Ctrl</kbd> + <kbd>,</kbd> on Windows or <kbd>Command</kbd> + <kbd>,</kbd> on Mac to insert the widget before the element.
+            1. Press <kbd>Ctrl</kbd> + <kbd>.</kbd> on Windows or <kbd>Command</kbd> + <kbd>.</kbd> on Mac to insert the widget after the element.
 
     2. Selecting and Inserting the Widget
 
@@ -125,7 +125,7 @@ In **Design mode**, you can add elements through the Toolbox and UI Recommender.
 
             {{< figure src="/attachments/refguide/modeling/pages/page/ui-recommender-dialog.png" alt="UI Recommender dialog" class="no-border" >}}
 
-    By default, the UI Recommender is enabled. If you prefer to disable it, you can do so in the **Preferences** (**Edit > Preferences > New Features > Page editor Enable UI Recommender**).
+    By default, the UI Recommender is enabled. If you prefer to disable it, you can do so in the **Preferences** (**Edit > Preferences > Maia > In-Editor Recommender > Enable for Page Editor**).
 
 ### Viewing Element Properties {#view-properties}
 
