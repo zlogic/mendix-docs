@@ -107,12 +107,12 @@ At present, the Snowflake REST SQL Connector does not provide any out of the box
 To set this up:
 
 1. Locate the **POST_v1_ExecuteStatement** microflow.
-2. Open the **Call REST (POST)** action within this microflow and examine the `Location` field. Here, you’ll notice a query parameter named `async` set to `false`.
-3. Duplicate the **Call REST (POST)** action, modify the query parameter `async` to `true`, and use this as a basis to build your custom asynchronous microflows.
+2. Open the **Call REST (POST)** action within this microflow and examine the **Location** field. Note a query parameter named **async** that is set to **false**.
+3. Duplicate the **Call REST (POST)** action, modify the **async** query parameter to **true**, and use this as a basis to build your custom asynchronous microflows.
 
-Your custom microflows should consist of:
-- **A request call microflow**: Sends the request and returns the request ID.
-- **A polling microflow**: Uses the request ID to check if the response is available, and then returns the response once it is ready.
+Your custom microflows should consist of the following:
+* **A request call microflow** - Sends the request and returns the request ID.
+* **A polling microflow** - Uses the request ID to check if the response is available, and then returns the response once it is ready.
 
 This approach allows you to achieve asynchronous behavior while leveraging the Snowflake REST SQL Connector.
 
