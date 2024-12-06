@@ -45,20 +45,18 @@ The definition of this widget has changed. Update this widget by right-clicking 
 After reading this, do the following:
 
 1. Right-click the warning in Studio Pro.
-1. Select **Update All Widgets** to apply the necessary updates.
+1. Click **Update All Widgets** to apply the necessary updates.
 
 ### Upgrade Instructions {#upgrade-instructions}
 
 If you are upgrading from Mendix versions below 10.17, please follow these steps to use the new React Native version:
 
 1. Update Required Modules:
-    * Native Mobile Resources: Ensure you update this module to the latest version available in the Mendix Marketplace.
-    * Nanoflow Commons: Update this module to its latest version as well.
+    1. Native Mobile Resources: ensure you update this module to the latest version available in the Mendix Marketplace.
+    1. Nanoflow Commons: update this module to its latest version.
 1. Update Widgets in Studio Pro:
-    * After updating the Native Mobile Resources module, right-click the warning in Studio Pro and select Update All Widgets to complete the process.
+    1. After updating the Native Mobile Resources module, right-click the warning in Studio Pro and click **Update All Widgets** to complete the process.
 1. Test Your Application:
-    * Thoroughly test your application to ensure that all features are working as expected after the updates.
+    1. Thoroughly test your application to ensure that all features work as expected after the updates.
 
----
-
-For more details and the complete release notes, please visit our [GitHub Releases page](https://github.com/mendix/native-template/releases/tag/v10.0.0).
+For the most direct information on the Native Template, visit our [GitHub Releases page](https://github.com/mendix/native-template/releases/tag/v10.0.0).
