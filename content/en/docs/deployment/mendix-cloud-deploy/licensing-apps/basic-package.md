@@ -94,8 +94,8 @@ For automatic orders, payment occurs when the package is ordered. For manual ord
 
 ## Renewing Your Payment Method
 
-Your plan automatically renews 12 months from the date of provision. You can opt out of auto-renewal 60 days before the period ends.
+Your plan automatically renews 12 months from the date of provision. You can opt out of auto-renewal via the [MyCommerce](https://account.mycommerce.com/) site up to 60 days before the period ends.
 
 Before renewing the licenses for your company, Mendix checks if your company's payment method is still valid. If it is expired, you will receive an email that asks you to update your company's payment method.
 
-You can update these details on the **Account Information** page of the [MyCommerce](https://account.mycommerce.com/) site.
+You can update your payment details on the **Account Information** page of the [MyCommerce](https://account.mycommerce.com/) site.
