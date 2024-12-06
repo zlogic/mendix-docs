@@ -1,9 +1,10 @@
 ---
 title: "Native Template 10"
 url: /releasenotes/mobile/nt-10-rn/
-weight: 7
+weight: 6
 description: "Native Template 10 release notes."
 ---
+
 ## 10.0.0 {#1000}
 
 **Release date: November 27, 2024**
@@ -12,41 +13,41 @@ description: "Native Template 10 release notes."
 
 * We upgraded our React Native version to 0.75.4. This significant update improves performance and increases compatibility with React Native's latest features.
 
-#### Important Notes:
+#### Important Notes
 
-* Projects created with Mendix 10.17 or higher will automatically use the latest React Native version without additional configuration.
-* For projects upgrading from Mendix versions below 10.17 to 10.17 or higher, follow the steps in the Upgrade Instructions section below.
-
----
+* Projects created in Studio Pro 10.17 and above will automatically use the latest React Native version without additional configuration.
+* For projects upgrading from Mendix versions below 10.17 to 10.17 and above, follow the steps in [Upgrade Instructions](#upgrade-instructions) below to migrate your project.
 
 ### Breaking Changes
 
 #### Library Migration
 
-* @react-native-community/async-storage has been replaced by @react-native-async-storage/async-storage. Ensure your imports and project dependencies reflect this change.
-* @react-native-community/masked-view has been replaced by @react-native-masked-view/masked-view. Update your references accordingly.
+* `@react-native-community/async-storage` has been replaced by `@react-native-async-storage/async-storage`. Ensure your imports and project dependencies reflect this change.
+* `@react-native-community/masked-view` has been replaced by `@react-native-masked-view/masked-view`. Update your references accordingly.
 
-> **Note:** These library changes will only affect projects using custom modules that explicitly depend on the affected packages. If your project does not use custom modules or does not include these specific dependencies, no action is required.
+{{% alert color="info" %}}
+These library changes will only affect projects using custom modules that explicitly depend on the affected packages. If your project does not use custom modules or does not include these specific dependencies, no action is required.
+{{% /alert %}}
 
 #### PopupMenu Component
 
 * The PopupMenu component in the updated Native Mobile Resources module includes a breaking change.
-* This issue only affects projects that are:
-    * Upgrading from Mendix versions below 10.17 to 10.17 or higher, and
-    * Updating the Native Mobile Resources module to its latest version.
+* This issue only affects projects doing both of the following at the same time:
+    * Upgrading from Mendix versions below 10.17 to 10.17 or above
+    * Updating the Native Mobile Resources module to its latest version
 
-What You Need to Do
+To fix the issue, do the following. After updating the Native Mobile Resources module, you will encounter the following warning in Studio Pro:
 
-After updating the Native Mobile Resources module, you will encounter the following warning in Studio Pro:
+```
+The definition of this widget has changed. Update this widget by right-clicking it and selecting 'Update widget,' or select 'Update all widgets' to update all widgets in the app.
+```
 
-> *"The definition of this widget has changed. Update this widget by right-clicking it and selecting 'Update widget,' or select 'Update all widgets' to update all widgets in the app."*
+After reading this, do the following:
 
-1. Right-click on the warning in Studio Pro.
-1. Select Update All Widgets to apply the necessary updates.
+1. Right-click the warning in Studio Pro.
+1. Select **Update All Widgets** to apply the necessary updates.
 
----
-
-### Upgrade Instructions
+### Upgrade Instructions {#upgrade-instructions}
 
 If you are upgrading from Mendix versions below 10.17, please follow these steps to use the new React Native version:
 
