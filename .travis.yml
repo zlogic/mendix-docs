@@ -61,9 +61,9 @@ install:
   # ------------------------
   -  ./node_modules/.bin/hugo config --environment $TRAVIS_BRANCH # report the config we are using
   # Output header in yellow on red
-  - printf '\033[34;42m' > $TRAVIS_BUILD_DIR/hugo.log
+  - printf '\033[34;42;1m' > $TRAVIS_BUILD_DIR/hugo.log
   - echo "HUGO was run for environment $TRAVIS_BRANCH" >> $TRAVIS_BUILD_DIR/hugo.log
-  - printf '\033[0m' >> $TRAVIS_BUILD_DIR/hugo.log
+  - printf '\033[0;22mm' >> $TRAVIS_BUILD_DIR/hugo.log
   # Set pipefail so that if Hugo fails the whole job fails
   - set -o pipefail
   # put the flags in different config files controlled by environment matching $TRAVIS_BRANCH
@@ -76,9 +76,9 @@ install:
   # NB - Set pipefail so that Travis CI sees the return code from `tee` and not from `htmltest` so it will always build.
   - set +o pipefail
   # Additional info  in yellow on red
-  - printf '\033[34;42m' >> $TRAVIS_BUILD_DIR/hugo.log
+  - printf '\033[34;42;1m' >> $TRAVIS_BUILD_DIR/hugo.log
   - echo "Any errors from HTMLTEST will be treated as warnings - the build will continue." >> $TRAVIS_BUILD_DIR/hugo.log 
-  - printf '\033[0m' >> $TRAVIS_BUILD_DIR/hugo.log
+  - printf '\033[0;22m' >> $TRAVIS_BUILD_DIR/hugo.log
   - chmod +x ./htmltest/htmltest
   # Run htmltest - convert red (91) and green (92) aixterm colors with 8-bit versions (31 and 32).
 
