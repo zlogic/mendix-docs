@@ -17,6 +17,12 @@ If you are using Studio Pro 10.12, make sure to use the latest version 3.0.0 [Ex
 
 This document provides instructions on how to configure and use the External Database Connector. For information on the database wizard and how to connect using the External Database Connection document, see [External Database Connection](/refguide/external-database-connection/). For information on how to create and validate SQL queries, see [Use the External Database Connector](/refguide/use-the-external-database-connector/).
 
+{{% alert color="info" %}}
+For Studio Pro 10.18, External Database Connector uses a different approach for connecting to databases during design time. This functionality enhances consistency between design-time and runtime environments.
+To enable this beta feature, use the flag: --enable-live-preview.
+For information on how to connect using the External Database Connection document with feature flag, see [External Database Connection](/refguide/external-database-connection/enable-live-preview)
+{{% /alert %}}
+
 ### Typical Use Cases
 
 Use this module if you need to connect to databases and select data to use in your app. This connector allows you to directly test connections and queries during configuration in Studio Pro (design time). 
