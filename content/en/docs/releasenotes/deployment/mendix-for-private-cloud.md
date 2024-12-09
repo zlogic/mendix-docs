@@ -12,9 +12,16 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2024
 
+### December 12, 2024
+
+#### Portal Improvements
+
+* You can now add/update the Technical contact for an application. For further information, see [Technical Contact](/developerportal/deploy/private-cloud-deploy/#application-settings).
+* Updating or setting a technical contact is now logged in the activity logs.
+
 ### November 14, 2024
 
-#### Private Cloud Portal
+#### Portal Improvements
 
 * You can now enable the custom deployment strategy directly from the **Application Configuration** section of the **Namespace Details** page. This feature allows for application or configuration updates with minimized downtime in certain scenarios. For further information, see [Reduced Downtime Deployment](/developerportal/deploy/private-cloud-reduced-downtime/).
 * The **Environment Overview** page now supports reordering environments.
