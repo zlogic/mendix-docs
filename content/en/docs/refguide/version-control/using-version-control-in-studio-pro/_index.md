@@ -69,13 +69,13 @@ The **App Explorer** shows an icon in front of items (such as documents, folders
 In the **App Explorer**, there is only room for one icon for each item. If an item is both modified and moved, it is shown as modified with a yellow icon.
 {{% /alert %}}
 
-For example, say that the microflow **ChangePassword** has been modified. Also a new folder called **Flows** was added and all microflows, including the modified microflow, were moved into this folder. The new folder gets a green icon, and the module containing those changes is depicted with a yellow icon. The microflows which were moved but had not been modified get a blue icon. The modified microflow **ChangePassword** gets a yellow icon. This helps you to quickly see where in the app the changes are.
+For example, the microflow **ChangePassword** has been modified. Also a new folder called **Flows** was added and all microflows, including the modified microflow, were moved into this folder. The new folder gets a green icon, and the module containing those changes is depicted with a yellow icon. The microflows which were moved but had not been modified get a blue icon. The modified microflow **ChangePassword** gets a yellow icon. This helps you to quickly see where in the app the changes are.
 
 In the **Changes** pane, you can find more detailed information. There is an entry for each change to an item. If a document is both modified and moved, there are two lines for that document. The pane also shows items that were deleted, something the app explorer cannot do. For more information, see [Changes Pane](/refguide/changes-pane/).
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/changes-pane.png" max-width=80% >}}
 
-If you also changed Java source code, added widgets, or made other changes that affect files other than the app file, you will see entry for each changed file.You can right click on the entry and click **Open containing folder** to open the folder with the file on disk. For files with the **Modified** status, you can use **Compare with original** that opens an external tool to show the differences.
+If you also changed Java source code, added widgets, or made other changes that affect files other than the app file, you will see entry for each changed file. You can right-click the entry and click **Open containing folder** to open the folder with the file on disk. For files with the **Modified** status, you can use **Compare with original** that opens an external tool to show the differences.
 
 {{< figure src="/attachments/refguide/version-control/using-version-control-in-studio-pro/changes-pane-file-changes.png" >}}
 
