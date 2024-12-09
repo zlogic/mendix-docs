@@ -103,7 +103,7 @@ aip init https://cdn.mendix.com/mendix-for-private-cloud/airgapped-image-package
 aip pull
 ```
 
-Add build and runtime images for a specific Mendix version, and a base OS with a speicific Java version, or for a range of versions:
+Add build and runtime images for a specific Mendix version, and a base OS with a specific Java version, or for a range of versions:
 
 ```bash
 # add one specific version (in this example 8.18.11.27969)

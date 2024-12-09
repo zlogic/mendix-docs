@@ -12,7 +12,7 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2024
 
-### December ???, 2024
+### December 11th, 2024
 
 #### CI/CD with Tekton pipeline v1.0.5
 
