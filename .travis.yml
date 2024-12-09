@@ -60,7 +60,7 @@ install:
   - mkdir public  # This because <Maybe> the process of syncing to public is probably deadlocked behind waiting for the public folder to be made, and is never signalled that the folder is created, which ends up stalling the build on Travis CI.
   # ------------------------
   -  ./node_modules/.bin/hugo config --environment $TRAVIS_BRANCH # report the config we are using
-  # Output header in yellow on red
+  # Output header in bold white on green
   - printf '\033[37;42;1m' > $TRAVIS_BUILD_DIR/hugo.log
   - echo "HUGO was run for environment $TRAVIS_BRANCH" >> $TRAVIS_BUILD_DIR/hugo.log
   - printf '\033[0;22mm' >> $TRAVIS_BUILD_DIR/hugo.log
@@ -75,7 +75,7 @@ install:
   # normal htmltest takes too much memory - using a modified version which strips <aside> tag content
   # NB - Set pipefail so that Travis CI sees the return code from `tee` and not from `htmltest` so it will always build.
   - set +o pipefail
-  # Additional info  in yellow on red
+  # Additional info  in bold white on green
   - printf '\033[37;42;1m' >> $TRAVIS_BUILD_DIR/hugo.log
   - echo "Any errors from HTMLTEST will be treated as warnings - the build will continue." >> $TRAVIS_BUILD_DIR/hugo.log 
   - printf '\033[0;22m' >> $TRAVIS_BUILD_DIR/hugo.log
