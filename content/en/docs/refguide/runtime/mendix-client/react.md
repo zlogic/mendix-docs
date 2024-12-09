@@ -89,73 +89,33 @@ Not all Mendix Marketplace components are ready for the React client. Refer to [
 
 Mendix recommends refreshing all Marketplace components in your app before enabling the React client.
 
-### Dynamic & Static Image{#dynamic-static}
+### Widgets{#widgets}
+
+Not all Widgets are supported by the React client. Mendix recommends migrating your old widgets using the automatic conversions in Studio Pro. For a list of unsupported configuration options in automatic conversions, see [Widget Conversion Limitations](/refguide/mendix-client/widget-conversion-limitations/).
+
+#### Dynamic & Static Image{#dynamic-static}
 
 The [Dynamic Image](/refguide/image-viewer/) and [Static Image](/refguide/image/) widgets are not supported in the React client. To use React, replace them with the universal [Image](/appstore/widgets/image/) widget. You can [download the Image widget from the Mendix Marketplace](https://marketplace.mendix.com/link/component/118579).
 
 To automatically convert a dynamic image or a static image, right-click the widget (or the error message) and select **Convert to Image**.
 
-Note that the configuration options on the table below are not supported in the universal Image widget and will be skipped during the automatic conversion: 
-
-| Unsupported Configuration Options |
-|-----------------------------------|
-| Height in Percentage              |
-
-### Reference Selectors & Drop-down{#reference-selectors-drop-down}
+#### Reference Selectors & Drop-down{#reference-selectors-drop-down}
 
 The reference selector widgets ([Reference Selector](/refguide/reference-selector/), [Reference Set Selector](/refguide/reference-set-selector/), and [Input Reference Set Selector](/refguide/input-reference-set-selector/)) and the [Drop-down](/refguide/drop-down/) are not supported in the React client. To leverage React, replace them with the [Combo Box](/appstore/widgets/combobox/) widget. The combo box widget can be [downloaded from the Mendix Marketplace](https://marketplace.mendix.com/link/component/219304).
 
 To automatically convert a reference selector widget or a drop-down to a combo box, right-click on the widget (or the consistency error message) and select **Convert to combo box**.
 
-Note that the configuration options on the table below are not supported in the Combo box widget and will be skipped during the automatic conversion:
-
-| Unsupported Configuration Options |
-|-----------------------------------|
-| Go to Page                        |
-| Screen Reader Caption             |
-| 'Text' Read-only Style            |
-| 'Required' Validation             |
-| 'Custom' Validation               |
-| Constrained By                    |
-| Decimal Precision Formatting      |
-| Group Digits Formatting           |
-
 {{% alert color="warning" %}}
 Since the Reference Set Selector widget is technically a grid while Combo box is a drop-down, only the applicable configuration options will be transferred to the resulting Combo box during conversion.
 {{% /alert %}}
 
-### Data Grid{#data-grid}
+#### Data Grid{#data-grid}
 
 The data grid widget is not supported in the React client. To leverage React, replace it with the [Data Grid 2](/appstore/modules/data-grid-2/) widget. The data grid 2 widget is part of the [Data Widgets Module](https://marketplace.mendix.com/link/component/116540) in the Mendix Marketplace.
 
 To automatically convert a data grid widget to a data grid 2, right-click the widget (or the error message) and select **Convert to Data Grid 2**.
 
-Note that the configuration options on the table below are not supported in the Data grid 2 widget and will be skipped during the automatic conversion:
-
-| Unsupported Configuration Options               |
-|-------------------------------------------------|
-| Data Source Wait for Search                     |
-| Server Side Paging                              |
-| Show Empty Rows                                 |
-| Column Size in Pixels                           |
-| Tooltip Page                                    |
-| Paging Bar Without Total Count                  |
-| Single and Maintain Selection                   |
-| Select First                                    |
-| All Rows Variable                               |
-| Select All Button                               |
-| Export to CSV Button                            |
-| Inline Editing                                  |
-| Range Search Field                              |
-| Search Field for a Invisible Column             |
-| Search Field for Read-only Type                 |
-| Search Field for Hidden Type with Default Value |
-| Reference Set Columns                           |
-| Editable Columns                                |
-| Aggregate Functions and Column Captions         |
-| Multiple Search Fields for an Attribute         |
-
-### Template Grid{#template-grid}
+#### Template Grid{#template-grid}
 
 The template grid widget is not supported in the React client. It should be replaced with the [Gallery widget](/appstore/modules/gallery/). The gallery widget is part of the [Data Widgets Module](https://marketplace.mendix.com/link/component/116540) in the Mendix Marketplace.
 
@@ -167,7 +127,7 @@ To replace a template grid widget, follow these steps:
 1. Add any actions that items from your original widget as icon buttons to the content area.
 1. Add any actions that do not affect rows as buttons to the gallery widget's header.
 
-### Custom Widgets{#custom-widgets}
+#### Custom Widgets{#custom-widgets}
 
 Dojo widgets are no longer supported in the React client. They should be replaced with a pluggable widget based on React. 
 
