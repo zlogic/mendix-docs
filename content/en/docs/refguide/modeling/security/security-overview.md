@@ -30,14 +30,6 @@ The Entity access tab shows the combined access rules for all entities within th
 
 Multiple columns per entity can be shown when XPath constrains apply. Access rules with the same XPath contraint are also combined here so each XPath in this list is unique.
 
-## Page access
+## Page, Microflow, and Nanoflow access
 
-Coming soon.
-
-## Microflow access
-
-Coming soon.
-
-## Nanoflow access
-
-Coming soon.
+These tabs display tab a "Coming soon!" message.
