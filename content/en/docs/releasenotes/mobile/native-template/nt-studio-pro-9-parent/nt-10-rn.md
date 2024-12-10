@@ -38,9 +38,7 @@ These library changes will only affect projects using custom modules that explic
 
 To fix the issue, do the following. After updating the Native Mobile Resources module, you will encounter the following warning in Studio Pro:
 
-```
-The definition of this widget has changed. Update this widget by right-clicking it and selecting 'Update widget,' or select 'Update all widgets' to update all widgets in the app.
-```
+`The definition of this widget has changed. Update this widget by right-clicking it and selecting 'Update widget,' or select 'Update all widgets' to update all widgets in the app.`
 
 After reading this, do the following:
 
