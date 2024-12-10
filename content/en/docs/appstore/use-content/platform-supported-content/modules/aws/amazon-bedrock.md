@@ -256,17 +256,18 @@ The request object passed to this operation must include a KnowledgeBaseTool obj
  
 A prompt template is an orchestration mechanism that allows you to customize how Amazon Bedrock generates responses when querying a knowledge base. By leveraging prompt templates, you can influence the tone, structure, and content of responses, enabling more nuanced and context-appropriate interactions with your knowledge.
 
-###### Prompt Templates vs. System Prompts {#prompt-templates-versus-systems-prompts}
-While prompt templates may contain instructions similar to system prompts, they serve a distinct purpose in the query process. System prompts typically provide overall behavioral guidance to a model, whereas prompt templates specifically orchestrate how retrieved information should be incorporated into responses. Prompt templates are particularly crucial in Amazon Bedrock's retrieve operations, where system prompts are not supported. This constraint can make it challenging to:
+###### Prompt Templates and System Prompts {#prompt-templates-versus-systems-prompts}
 
-- Adopt specific tones or personas in responses
-- Provide tailored advice based on search results
-- Handle edge cases (such as when no relevant information is found)
-- Maintain consistent response formatting
+While prompt templates may contain instructions similar to system prompts, they serve a distinct purpose in the query process. System prompts typically provide overall behavioral guidance to a model, whereas prompt templates orchestrate specifically how the retrieved information should be incorporated into responses. Prompt templates are particularly crucial in Amazon Bedrock's Retrieve operations, where system prompts are not supported. This constraint can make it challenging to do the following tasks:
 
-Prompt templates addresses this constraint by allowing you to include orchestration instructions alongside your retrieve operations. When creating a prompt template, you can use various tokens to customize the output. The *$searchresult$* token is mandatory in every prompt template, as it indicates where the retrieved information should be inserted.
+* Adopt specific tones or personas in responses
+* Provide tailored advice based on search results
+* Handle edge cases (such as when no relevant information is found)
+* Maintain consistent response formatting
 
-For a deeper understanding of prompt templates and their implementation, refer to the [Amazon documentation on prompt templates](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt), which provides comprehensive guidance on their usage and best practices. .
+Prompt templates address this constraint by allowing you to include orchestration instructions alongside your Retrieve operations. When creating a prompt template, you can use various tokens to customize the output. The *$searchresult$* token is mandatory in every prompt template, as it indicates where the retrieved information should be inserted.
+
+For a deeper understanding of prompt templates and their implementation, refer to the [Amazon documentation on prompt templates](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt), which provides comprehensive guidance on their usage and best practices.
 
 For more information about how to structure your prompts, see [Prompt engineering](https://docs.mendix.com/appstore/modules/genai/prompt-engineering/).
 
