@@ -10,7 +10,7 @@ The Security Overview is currently a Beta feature introduced in Studio Pro 10.18
 
 ## Introduction
 
-The Security Overview provides you with a clear and unified overview of your application's security.
+The Security Overview provides you with a clear and unified overview of your application's security. This overview can be used to review the security of your application. The overview can be access via **App** > **Show Security Overview (Beta)**.
 
 ## The Security Overview layout: User roles and Modules
 
@@ -21,6 +21,8 @@ In the sidebar of the overview the current module can be selected. This selectio
 ## The tabs within the Security Overview
 
 The Security Overview is split in four tabs: "Entity access", "Page access", "Microflow access" and "Nanoflow access". As of Mendix 10.18.0 only the "Entity access" tab is available. The other tabs will display a "Coming soon!" message.
+
+{{< figure src="/attachments/refguide/modeling/security/app-security/user-roles/security-overview.png" class="no-border" >}}
 
 ## Entity access
 
