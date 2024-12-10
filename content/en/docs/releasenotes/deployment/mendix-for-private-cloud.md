@@ -16,8 +16,8 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 #### Portal Improvements
 
-* You can now add/update the Technical contact for an application. For further information, see [Technical Contact](/developerportal/deploy/private-cloud-deploy/#application-settings).
-* Updating or setting a technical contact is now logged in the activity logs.
+* You can now add or update the Technical Contact for an application. For more information, see [Technical Contact](/developerportal/deploy/private-cloud-deploy/#application-settings).
+* Updating or setting a Technical Contact is now logged in the activity logs.
 
 ### November 14, 2024
 
