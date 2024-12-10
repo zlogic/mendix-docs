@@ -26,9 +26,11 @@ The Security Overview is split in four tabs: "Entity access", "Page access", "Mi
 
 ## Entity access
 
-The Entity access tab shows the combined access rules for all entities within the application for the currently selected user role. Individual access rules and module roles are here all combined into the concrete access the runtime will give an user with this user role. When combining different access rules the Security Overview followes the same behaviour as the runtime does, meaning that if any access rule defines that a user has been granted access, that user has access.
+The Entity access tab shows the combined access rules for all entities within the application for the currently selected user role. Individual access rules and module roles are here all combined into the concrete access the runtime will give an user with the selected user role. An access rule does apply to an user roles when any of the module roles of the access rule are part of the module roles of the user role. 
 
-Multiple columns per entity can be shown when XPath constrains apply. Access rules with the same XPath contraint are also combined here so each XPath in this list is unique.
+When combining different access rules the Security Overview followes the same behaviour as the runtime does, meaning that if any access rule defines that a user has been granted access, that user has access. Multiple columns per entity can be shown when XPath constrains apply. Access rules with the same XPath contraint are also combined here so each XPath in this list is unique.
+
+See [User Roles](/refguide/user-roles/) for more information on how user roles work in Mendix.
 
 ## Page, Microflow, and Nanoflow access
 
