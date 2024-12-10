@@ -25,7 +25,7 @@ The [PDF Document Generation](https://marketplace.mendix.com/link/component/2115
     {{% alert color="info" %}}For all deployment types except for on-premises, we only support apps that allow bi-directional communication with the PDF Service in Mendix Cloud.{{% /alert %}}
 
 * The maximum file size is 25 MB per document. If your document exceeds this limit, the action will result in an exception. We recommend compressing high-resolution images to reduce their file size.
-* When you deploy your app, it needs to be accessible to our cloud service. This requires the restriction type in the Cloud Portal to be set to *Allow all access* for the top-level path (`/`) and the DocGen request handler (`/docgen/`). If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/), for example using IP whitelisting and/or client certificates, our cloud service will not be able to reach your app and the module will not work properly.
+If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using client certificates, our cloud service will not be able to reach your app and the module will not work properly.
 * We use a fixed 30 second timeout for the page to finish loading and rendering. A timeout exception is thrown if the page content did not finish loading within 30 seconds.
 * Widgets or add-ons for your `index.html` file that perform long polling network requests are not supported. The document generation service waits until there are no more pending network requests.
 * Some widgets, such as the [Charts](/appstore/widgets/charts/) widget, might be rendered inconsistently in the generated PDF due to factors like animation.
@@ -99,6 +99,8 @@ To allow the module to send and receive document generation requests on your Men
 
 2. Register your app environments.
 
+3. [Optional] Allow DocGen service IP addresses
+
 The steps for each procedure are described in the sections below. 
 
 #### Enabling the DocGen Request Handler for Licensed Apps {#enable-docgen}
@@ -148,6 +150,10 @@ The steps for each procedure are described in the sections below.
 
 {{% alert color="info" %}}Each of your app environments needs to be registered separately. A successful app registration is limited to the app URL that was provided during the registration. Note that a change in the app URL, or restoring a database backup from one environment to another, will require you to register the affected app environments again.{{% /alert %}}
 
+#### [Optional] Allowing the Document Generation service IP addresses
+
+If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using IP whitelisting, you must allow the outbound IP addresses of the DocGen service, listed [here](developerportal/deploy/mendix-ip-addresses/#global-platform-outbound).
+
 ### Running On-Premises {#run-on-premises}
 
 To configure the module to generate documents on your on-premises environments, you need to perform the following steps:
@@ -190,6 +196,10 @@ Rule | Name | Pattern | Rewrite URL
 2 | docgen | `^(docgen/)(.*)` | `http://localhost:8080/{R:1}{R:2}`
 
 {{% alert color="info" %}}Rule 1 is based on the default URL prefix (`p`) for page/microflow URLs. If you configured a different prefix in the runtime settings of your app, adjust the rule accordingly.{{% /alert %}}
+
+#### [Optional] Allowing the Document Generation service IP addresses
+
+If you have set up inbound and/or outbound IP whitelisting rules, you must allow the IP addresses of the DocGen service, listed [here](developerportal/deploy/mendix-ip-addresses/#global-platform-ips).
 
 ## Usage
 
