@@ -503,7 +503,7 @@ The OIDC SSO module supports multiple IdPs. Since each provider can provide user
 #### Deploy-time User Provisioning Configuration{#custom-provisioning-dep}
 
 {{% alert color="info" %}}
-This feature is available in version 2.4.0 and above
+This feature is available in version 3.0.0 and above
 {{% /alert %}}
 
 You can set up custom user provisioning by setting constants when you deploy your app. This has the following limitations compared to setting up provisioning using a microflow or changing the settings at runtime:
