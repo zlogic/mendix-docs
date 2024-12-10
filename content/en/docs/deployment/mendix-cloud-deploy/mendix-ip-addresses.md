@@ -70,7 +70,7 @@ If you apply IP restrictions to your AWS IAM user or role, you must ensure that 
 
 ### Global platform {#global-platform-ips}
 
-Services running on our global platform infrastructure (such as the PDF Document Generation service) use the following sets of IP addresses. If you use these services and you apply IP restrictions to your app, you must ensure that the following IP addresses are allowed in your policy:
+Some services running on our global platform infrastructure (such as the PDF Document Generation service) use a fixed set of inbound/outbound IP addresses. If you use these services and you apply IP restrictions to your app, you must ensure that the following IP addresses are allowed in your policy:
 
 #### Outgoing IP {#global-platform-ips-outbound}
 
