@@ -69,53 +69,53 @@ The way you can add an element on a page depends on a mode you are editing your 
 
 In **Structure mode**, there are several ways to add an element on a page:
 
-1. Through the **Toolbox**:
+* Through the **Toolbox**:
 
     1. Open the **Toolbox** and select **Widgets** or **Building blocks** tab there.   
     2. Select an element you would like to add and drag this element onto your page.
 
-2. Through the menu at the top of the page:
+* Through the menu at the top of the page:
 
     1. Do one of the following:
 
         1. Select frequently-used widgets (a data view, a data grid, a template grid, or a list view).
-        1. Click **Add widget**  or **Add building block**, find an element in a list and click **Select**.
+        1. Click **Add widget**  or **Add building block**, find an element in a list and click **Select**:
 
         {{< figure src="/attachments/refguide/modeling/pages/page/top-menu.png" class="no-border" >}}
 
     2. Click a drop-zone on a page to position an element.
 
-3. By right-clicking a drop-zone:<br/>
+* By right-clicking a drop-zone:<br/>
 
-    1. Right-click a drop-zone you want to insert an element in.<br/>
-    1. Select between adding a widget or a building block.<br/>
+    1. Right-click a drop-zone you want to insert an element into.<br/>
+    1. Select between adding a **widget** or a **building block**:<br/>
 
         {{< figure src="/attachments/refguide/modeling/pages/page/adding-widget-in-drop-zone.png"   width="400"  class="no-border" >}}<br/>
 
-    1. Select an element you would like to add and confirm your choice by clicking **Select**.
+    1. Select an element you would like to add, and confirm your choice by clicking **Select**.
 
-In **Design mode**, you can add elements through the Toolbox and UI Recommender. Do the following:
+* In **Design mode**, you can add elements through the Toolbox and UI Recommender. Do the following:
 
-1. Through the **Toolbox**:
-   1. Open the **Toolbox** and select **Widgets** or **Building blocks** tab there. 
+1. Open **Toolbox**
+   1. Select the **Widgets** or **Building blocks** tab there. 
    1. Select an element you would like to add and drag this element onto your page.
 
 2. Through the **UI Recommender**:
-    1. Opening the Dialog
+    1. Opening the dialog.
 
         1. When hovering over an element on the page, a blue indicator (plus/dot) will appear:
             1. The indicator will appear at the closest border of the widget (top/bottom or left/right for inline widgets).
-            1. The position of the indicator relates to where an element will be inserted, i.e. selecting the indicator at the top or left will insert an element before the current widget.
-            1. Click on the indicator to open the dialog.
+            1. The position of the indicator relates to where an element will be inserted, (for example selecting the indicator at the top or left will insert an element before the current widget).
+            1. Click on the indicator to open the dialog:
         
             {{< figure src="/attachments/refguide/modeling/pages/page/ui-recommender-dot.png" alt="UI Recommender dot" class="no-border" >}}
 
         2. Alternatively, you can open the dialog using keyboard shortcuts:
-            1. Highlight/select an element on the page.
-            1. Press <kbd>Ctrl</kbd> + <kbd>,</kbd> on Windows or <kbd>Command</kbd> + <kbd>,</kbd> on Mac to insert the widget before the element.
-            1. Press <kbd>Ctrl</kbd> + <kbd>.</kbd> on Windows or <kbd>Command</kbd> + <kbd>.</kbd> on Mac to insert the widget after the element.
+            1. Highlight or select an element on the page.
+            1. Press <kbd>Ctrl</kbd> + <kbd>,</kbd> on Windows, or <kbd>Command</kbd> + <kbd>,</kbd> on Mac to insert the widget before the element.
+            1. Press <kbd>Ctrl</kbd> + <kbd>.</kbd> on Windows, or <kbd>Command</kbd> + <kbd>.</kbd> on Mac to insert the widget after the element.
 
-    2. Selecting and Inserting the Widget
+    2. Selecting and inserting the widget
 
         1. In the dialog, search for the element you would like to add.
         1. Navigate the list using the up or down arrow keys.
