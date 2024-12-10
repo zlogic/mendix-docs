@@ -125,7 +125,7 @@ In **Structure mode**, there are several ways to add an element on a page:
 
             {{< figure src="/attachments/refguide/modeling/pages/page/ui-recommender-dialog.png" alt="UI Recommender dialog" class="no-border" >}}
 
-    By default, the UI Recommender is enabled. If you prefer to disable it, you can do so in the **Preferences** (**Edit > Preferences > Maia > In-Editor Recommender > Enable for Page Editor**).
+    By default, the UI Recommender is enabled. If you prefer to disable it, you can do so in **Edit** > **Preferences** > **Maia** > **In-Editor Recommender** > **Enable for Page Editor**.
 
 ### Viewing Element Properties {#view-properties}
 
