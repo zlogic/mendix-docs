@@ -108,7 +108,7 @@ In **Structure mode**, there are several ways to add an element on a page:
             1. The position of the indicator relates to where an element will be inserted, (for example selecting the indicator at the top or left will insert an element before the current widget).
             1. Click on the indicator to open the dialog:
         
-            {{< figure src="/attachments/refguide/modeling/pages/page/ui-recommender-dot.png" alt="UI Recommender dot" class="no-border" >}}
+                {{< figure src="/attachments/refguide/modeling/pages/page/ui-recommender-dot.png" alt="UI Recommender dot" class="no-border" >}}
 
         2. Alternatively, you can open the dialog using keyboard shortcuts:
             1. Highlight or select an element on the page.
@@ -131,9 +131,9 @@ In **Structure mode**, there are several ways to add an element on a page:
 
 To view properties of an element, do one of the following:
 
-1. Select an element and open **Properties** pane to view its properties.
-2. Right-click an element and select **Properties** from the list of options that opens.
-3. Double-click an element.
+* Select an element and open **Properties** pane to view its properties
+* Right-click an element and select **Properties** from the list of options that opens
+* Double-click an element
 
 ### Arranging Elements on a Page {#arrange-elements}
 
