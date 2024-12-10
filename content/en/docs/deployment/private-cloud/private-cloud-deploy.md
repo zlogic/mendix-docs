@@ -365,7 +365,7 @@ This button contains a list of actions which you can perform quickly on the envi
 
 ### Activity Log
 
-This section shows all the activities, such as creating environments, changing Technical contact and deploying apps, which have taken place in this environment. You can sort the activities in either descending or ascending date and time order.
+This section shows all the activities which have taken place in this environment, for example, creating environments, changing the Technical Contact, or deploying apps. You can sort the activities in either descending or ascending date and time order.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/image20.png" class="no-border" >}}
 
@@ -375,17 +375,17 @@ This section allows you to designate the Technical Contact for the application. 
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/technicalContact.png" class="no-border" >}}
 
-For applications created before December 12, the Technical Contact field will be empty by default. It can be set by a user with cloud access permissions for the application.
+For applications created before December 12, the Technical Contact field is empty by default. It can be set by a user with cloud access permissions for the application.
 
-{{% alert color="warning" %}}  
-Once a Technical Contact is assigned, they automatically receive administrative permissions for all namespaces associated with environments in the application.  
+{{% alert color="info" %}}  
+Once a Technical Contact is assigned, they automatically receive administrative permissions for all namespaces associated with environments in the application.
 {{% /alert %}}
 
-For applications created on or after December 12, the Technical Contact is automatically set to the application's creator. In such cases, whenever a new environment is added, the Technical Contact will receive administrative permissions for the namespaces associated with that environment.
+For applications created on or after December 12, the Technical Contact is automatically set to the application's creator. In such cases, whenever a new environment is added, the Technical Contact receives administrative permissions for the namespaces associated with that environment.
 
-The Technical Contact can be updated later, but only by the current Technical Contact.
+The Technical Contact can be changed later, but only by the current Technical Contact.
 
-## Managing Your Environments from the Environment Details Page{#environment-details}
+## Managing Your Environments from the Environment Details Page {#environment-details}
 
 Each environment you create has an **Environment Details** page which allows you to monitor and manage your environments. You can reach this by clicking the **Details** button next to the environment you want to manage.
 
