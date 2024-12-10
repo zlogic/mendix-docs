@@ -228,7 +228,7 @@ This statement returns data from a Snowflake table with the columns named as spe
 
 ## Configuring Snowflake Cortex Analyst {#cortex-analyst}
 
-Cortex Analyst is a fully-managed, LLM-powered Snowflake Cortex feature that helps you create applications capable of reliably answering business questions based on your structured data in Snowflake.
+[Snowflake Cortex Analyst](/appstore/modules/genai/snowflake-cortex/) is a fully-managed, LLM-powered Snowflake Cortex feature that helps you create applications capable of reliably answering business questions based on your structured data in Snowflake.
 
 {{% alert color="info" %}}
 Snowflake Cortex Analyst is currently in open preview. For more information, refer to the [Snowflake Cortex Analyst documentation](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst).
