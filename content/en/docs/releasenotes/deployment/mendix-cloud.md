@@ -21,7 +21,7 @@ For information on the current status of deployment to Mendix Cloud and any plan
 #### Improvements
 
 * We improved the layout and display of the Alerts page. The new layout allows sorting and filtering of alerts based on the severity and date together with a free text search. 
-* You can now manage everything related to the alerts subscription in a single tab. For more information, see [Alerts](/developerportal/operate/monitoring-application-health/).
+* You can now subscribe to alerts emails in the settings tab. For more information, see [Alerts](/developerportal/operate/monitoring-application-health/).
 
 ### December 5, 2024
 
