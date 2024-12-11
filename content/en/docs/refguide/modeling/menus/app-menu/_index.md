@@ -83,6 +83,10 @@ The [Mendix Studios Target](/developerportal/deploy/studio-deployment-settings/#
 
 For more information on using this option, see [Deploy to the Cloud](/refguide/deploy-to-the-cloud-dialog/).
 
+## Show Security Overview (Beta)
+
+Show Security Overview (Beta) opens the [Security Overview](/refguide/security-overview/) that provides you with a clear and unified overview of your app's security. 
+
 ## Read More
 
 * [Studio Pro Overview](/refguide/studio-pro-overview/)
