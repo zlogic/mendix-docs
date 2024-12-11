@@ -30,7 +30,7 @@ The **Security Overview** is split into four tabs: **Entity access**, **Page acc
 
 {{< figure src="/attachments/refguide/modeling/security/app-security/user-roles/security-overview.png" class="no-border" >}}
 
-## Entity access
+## Entity Access
 
 The **Entity Access** tab shows a summarized view of the permissions that will be applied during runtime for all entities in the selected module for each user role. This helps developers and reviewers easily understand what an end user can or cannot access within the application.
 
@@ -41,6 +41,6 @@ When the selected user role has no access to an attribute or an association, it 
 
 For more information on how user and module roles work in Studio Pro, see [User Roles](/refguide/user-roles/) . For more information on how access rules work in Studio Pro, see [Access Rules](/refguide/access-rules/).
 
-## Page, Microflow, and Nanoflow access
+## Page, Microflow, and Nanoflow Access
 
 These tabs are not yet available and will be released in the future, they display a *Coming soon!* message.
