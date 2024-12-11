@@ -296,6 +296,55 @@ tags:
     description: 'Project roles'
 components:
   schemas:
+    Account:
+      type: object
+      description: 'Account (or company) that owns the resource'
+      properties:
+        accountId: 
+          type: string
+          description: 'Unique identifier of the account'
+          maxLength: 200
+        accountName:
+          type: string
+          description: 'Name of the account'
+          maxLength: 100
+    Page:
+      type: object
+      description: 'Contains information about the current page, and total elements to be retrieved'
+      properties:
+        totalElements:
+          type: integer
+          description: 'Total number of items to be expected'
+        offset:
+          type: integer
+          description: 'Offset used by the current request'
+        elements:
+          type: integer
+          description: 'Number of items in this current page'
+    Project:
+      type: object
+      description: 'The organization of a team and resources to achieve a goal within a time.'
+      properties:
+        projectId:
+          type: string
+          description: 'Unique identifier for the project.'
+        name:
+          type: string
+          description: 'Name of the project.'
+        description:
+          type: string
+          description: 'Description of the project.'
+        logo:
+          type: string
+          description: 'URL of the project image/logo.'
+        targetCloud:
+          type: string
+          description: 'URL of the cloud portal the project is hosted on.'
+        active:
+          type: boolean
+          description: 'Indicates whether a project is active and can be maintained by a team. Inactive projects will only be returned to Mendix administrators. Note this attribute does not indicate whether the project is actively deployed or running in the cloud.'
+        account:
+          $ref: "#/components/schemas/Account"
     ProjectRole:
       type: object
       properties:
@@ -315,17 +364,7 @@ components:
           description: 'Description of the role.'
           maxLength: 400
         account:
-          type: object
-          description: 'Account (or company) that owns the role'
-          properties:
-            accountId: 
-              type: string
-              description: 'Unique identifier of the account'
-              maxLength: 200
-            accountName:
-              type: string
-              description: 'Name of the account'
-              maxLength: 100
+          $ref: "#/components/schemas/Account"
         isAdministrator:
           type: boolean
           description: 'Indicates whether the role is a project administrator.'
@@ -505,18 +544,7 @@ components:
             type: object
             properties:
               page:
-                type: object
-                description: 'Contains information about the current page, and total elements to be retrieved'
-                properties:
-                  totalElements:
-                    type: integer
-                    description: 'Total number of items to be expected'
-                  offset:
-                    type: integer
-                    description: 'Offset used by the current request'
-                  elements:
-                    type: integer
-                    description: 'Number of items in this current page'
+                $ref: "#/components/schemas/Page"
               items:
                 type: array
                 description: 'Array of projects.'
@@ -592,18 +620,7 @@ components:
             type: object
             properties:
               page:
-                type: object
-                description: 'Contains information about the current page, and total elements to be retrieved'
-                properties:
-                  totalElements:
-                    type: integer
-                    description: 'Total number of items to be expected'
-                  offset:
-                    type: integer
-                    description: 'Offset used by the current request'
-                  elements:
-                    type: integer
-                    description: 'Number of items in this current page'
+                $ref: "#/components/schemas/Page"
               items:
                 type: array
                 description: Array of members that match path and query parameters and authorization access
@@ -716,116 +733,69 @@ components:
             type: object
             properties:
               page:
-                type: object
-                description: 'Contains information about the current page, and total elements to be retrieved'
-                properties:
-                  totalElements:
-                    type: integer
-                    description: 'Total number of items to be expected'
-                  offset:
-                    type: integer
-                    description: 'Offset used by the current request'
-                  elements:
-                    type: integer
-                    description: 'Number of items in this current page'
+                $ref: "#/components/schemas/Page"
               items:
                 type: array
                 description: 'Array of projects.'
                 items:
+                  $ref: "#/components/schemas/Project"
                   type: object
                   properties:
-                    projectId:
-                      type: string
-                      description: 'Unique identifier for apps on the Mendix platform.'
-                    name:
-                      type: string
-                      description: 'Name of the app.'
-                    description:
-                      type: string
-                      description: 'Description of the app.'
-                    logo:
-                      type: string
-                      description: 'URL of the project image/logo.'
-                    cloudTarget:
-                      type: string
-                      description: 'URL of the cloud portal the project is hosted on.'
-                    active:
-                      type: boolean
-                      description: 'Indicates whether a project is active and can be maintained by a team. Inactive projects will only be returned to Mendix administrators. Note this attribute does not indicate whether the project is actively deployed or running in the cloud.'
                     isPinnedByUser:
                       type: boolean
                       description: 'Indicates whether the project was pinned as a favorite.'
                     role:
                       type: object
-                      description: 'The set of permissions the team member has within the project team.'
+                      description: 'The set of project permissions the user has within the project team.'
                       properties:
                         name:
                           type: string
                           description: 'Name of the role.'
                         isAdministrator:
                           type: boolean
-                          description: 'Indicates whether the team member is a project administrator.'
+                          description: 'Indicates whether the user is a project administrator.'
                         isTechnicalContact:
                           type: boolean
-                          description: 'Indicates whether the team member is the technical contact of the app.'
+                          description: 'Indicates whether the user is the technical contact of the project.'
                         hasRepositoryAccess:
                           type: boolean
-                          description: 'Indicates whether the team member is allowed to make changes to the app''s model.'
+                          description: 'Indicates whether the user is allowed to make changes to the project''s model.'
                         hasCloudAccess:
                           type: boolean
-                          description: 'Indicates whether the team member has access to the cloud environments.'
+                          description: 'Indicates whether the user has access to the cloud environments.'
                         hasStoryAccess:
                           type: boolean
-                          description: 'Indicates whether the team member has access to Stories and Feedback of the app.'
+                          description: 'Indicates whether the user has access to Stories and Feedback of the project.'
                         hasInvitationRights:
                           type: boolean
-                          description: 'Indicates whether the team member is allowed to invite other users to the project team.'
-            x-examples:
-              Example 1:
+                          description: 'Indicates whether the user is allowed to invite other users to the project team.'
+          examples:
+            user-project:
+              value:
                 page:
-                  totalElements: 101
+                  totalElements: 1
                   offset: 0
-                  elements: 100
+                  elements: 1
                 items:
-                  - projectId: Unique UUID
-                    name: Project Name
-                    description: Project with a lovely description
+                  - projectId: '647966c7-7152-466a-9d51-f834ea883dcc'
+                    name: 'My Project'
+                    description: 'My awesome project'
                     logo: 'https://etcetera/lovely-photograph.jpg'
-                    cloudTarget: 'https://etcetera/cloud'
-                    active: true
+                    targetCloud: 'https://etcetera/cloud'
+                    active: true,
+                    account:
+                      accountId: '0a69e0e7-50c9-437d-83f8-83f0367df4db'
+                      accountName: 'My Company Account'
                     isPinnedByUser: true
                     role:
-                      name: Scrum master
+                      name: 'Scrum Master'
                       isAdministrator: true
-                      sTechnicalContact: false
+                      isTechnicalContact: false
                       hasRepositoryAccess: true
                       hasCloudAccess: true
                       hasStoryAccess: true
                       hasInvitationRights: true
-          examples:
-            Example 1:
-              value:
-                page:
-                  totalElements: 0
-                  offset: 0
-                  elements: 0
-                items:
-                  - projectId: string
-                    name: string
-                    description: string
-                    logo: string
-                    cloudTarget: string
-                    createdOn: string
-                    active: boolean
-                    isPinnedByUser: boolean
-                    role:
-                      name: string
-                      isAdministrator: boolean
-                      isTechnicalContact: boolean
-                      hasRepositoryAccess: boolean
-                      hasCloudAccess: boolean
-                      hasStoryAccess: boolean
-                      hasInvitationRights: boolean
+
     AccountRolesResponse:
       description: OK
       content:
@@ -834,18 +804,7 @@ components:
             type: object
             properties:
               page:
-                type: object
-                description: 'Contains information about the current page, and total elements to be retrieved'
-                properties:
-                  totalElements:
-                    type: integer
-                    description: 'Total number of items to be expected'
-                  offset:
-                    type: integer
-                    description: 'Offset used by the current request'
-                  elements:
-                    type: integer
-                    description: 'Number of items in this current page'
+                $ref: "#/components/schemas/Page"
               items:
                 type: array
                 description: 'Array of roles.'

@@ -93,7 +93,7 @@ The **Free Apps** tab shows all the apps deployed to Mendix Free Cloud.
 The list shows the following information:
 
 * **App Name** – This is the name of the app.
-* **App ID** – This shows the app ID.
+* **App ID** – This shows the app/project ID.
 * **Technical Contact** – This shows the registered email address for sending license keys to. If the Technical Contact is not correct, you can change it by clicking the edit icon ({{% icon name="pencil" %}}) next to the email address. Every app can only have one Technical Contact. After you change the Technical Contact, both the new and the old contact receive a notification email about the change.
 
 * **Status** – This shows whether app is active or not.

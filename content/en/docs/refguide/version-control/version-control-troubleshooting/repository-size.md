@@ -205,6 +205,6 @@ We recommend doing the following:
   
 When reaching out to Mendix Support, please include:
 
-* App ID for your app
+* App/Projects ID for your app
 * Log file (you can find its location in the command line output)
 * Version of the tool, for example, `git-fixer v1.16.5.essentials` (you can find the version number in the command line output)
