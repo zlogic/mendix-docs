@@ -26,7 +26,7 @@ The rows in the table are CDs. The type of the two rows is *CD* and this is the 
 
 ## Types of Entities {#entity-types}
 
-The entity type defines how the data is handled and there are three types:
+The entity type defines how the data is handled and there are four types:
 
 * Persistable entity
     * When an entity is declared persistable, a database table is created for the entity. These type of entities are colored *blue* in the domain model.
@@ -34,10 +34,16 @@ The entity type defines how the data is handled and there are three types:
     * Non-persistable entities are stored in the runtime memory and never get committed to the database. These type of entities are colored *orange* in the domain model.
 * External entity
     * External entities represent the link to datasets that are made available through shared data sources registered in Mendix Catalog. These type of entities are colored *purple* in the domain model. 
+* View entity `experimental`
+    * View entities represent the result sets of stored OQL queries on one or more entities, similar to database views, and are read-only. These entities are colored *green* in the domain model.
 
 {{< figure src="/attachments/refguide/modeling/domain-model/entities/type-of-entities.jpg" class="no-border" >}}
 
-The structure of Persistable and Non-persistable entities are defined within your app. This page describes how to add and update Persistable and Non-persistable entities. For more information on persistable entities, see [Persistability](/refguide/persistability/).
+The structure of Persistable, Non-persistable and view entities are defined within your app. This page describes how to add and update Persistable and Non-persistable entities. For more information on persistable entities, see [Persistability](/refguide/persistability/). View entities are defined by their underlying OQL queries, which run on one or more persistable entities or other view entities. For more information, see [View Entities](/refguide/view-entities).
+
+{{% alert color="info" %}}
+**View entities** were introduced in Mendix 10.15 as an experimental feature. You can enable this for your app in Studio Pro via [TODO]]. 
+{{% /alert %}}
 
 The structure of an External entity is defined in the source system where the underlying data (objects) is stored. For more information on external entities and how to add them to your app, see [External Entities](/refguide/external-entities/).
 
