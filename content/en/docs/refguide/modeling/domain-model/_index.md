@@ -21,7 +21,7 @@ A domain model consists of [entities](/refguide/entities/) with their relationsh
 * View (green) – entities which are the result of a stored OQL query on persistable entities or other view entities (experimental)
 
 {{% alert color="info" %}}
-[View entities](/refguide/view-entities) were introduced in Mendix 10.15 as an experimental feature. You can enable this for your app in Studio Pro via **App** > **Settings** > **Runtime**. [TODO]
+[View entities](/refguide/view-entities) were introduced in Mendix 10.19 as a beta feature. In order to enable this for your app, the used OQL version needs to be set to version 2.You can do this in Studio Pro via **App** > **Settings** > **Runtime**.
 {{% /alert %}}
 
 You can also add [annotations](/refguide/annotations/) to your domain model to remind yourself, and other team members, how it is to be used.
