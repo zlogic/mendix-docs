@@ -15,7 +15,7 @@
 <script>
   const images = Array.from(document.querySelectorAll(".td-content img"));
   images.forEach(img => {
-    // Check if the image is inside a link
+    // Check if the image has the <a> tag
     if (!img.closest('a')) {
       mediumZoom(img, {
         margin: 10, /* The space outside the zoomed image */
