@@ -85,7 +85,7 @@ For more information on using this option, see [Deploy to the Cloud](/refguide/d
 
 ## Show Security Overview (Beta)
 
-Show Security Overview (Beta) opens the [Security Overview](/refguide/security-overview/) that provides you with a clear and unified overview of your app's security. 
+The **Show Security Overview (Beta)** option opens the [Security Overview](/refguide/security-overview/), where you can view a unified overview of your app's security. 
 
 ## Read More
 
