@@ -46,7 +46,7 @@ You may be able to use this information to resolve the issue yourself; otherwise
 
 Any status that could cause your app to stop functioning results in an alert. For example, the monitoring information from the image above shows that one of the status indicators was **Critical**. If this happens to one of your nodes, all users who are subscribed to alerts receive an email alert.
 
-## Mendix Cloud Alerting Categories and Thresholds
+## Mendix Cloud Alerting Categories and Thresholds{#categories-thresholds}
 
 The status overview has several categories, which are related to various technical parts of your application environment. Each category indicates a different part of the app infrastructure that is monitored.
 
