@@ -85,4 +85,8 @@ If you want to invite your colleagues to build your app, you can manage the **Te
 
 ## The Security Overview (Beta)
 
-The Security Overview (Beta) provides you with a clear and unified overview of your application's security. Go to **App** > **Show Security Overview (Beta)** to access this overview. The Security Overview was introduced as a Beta feature in Mendix 10.18.
+The [Security Overview (Beta)](/refguide/security-overview/) provides you with a clear and unified overview of your app's security. Go to **App** menu > **Show Security Overview (Beta)** to access this overview. 
+
+{{% alert color="info" %}}
+The Security Overview is currently a Beta feature introduced in Studio Pro 10.18.0. For more information on beta features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+{{% /alert %}}
