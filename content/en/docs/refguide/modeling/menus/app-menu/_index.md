@@ -35,10 +35,9 @@ The **Check Widgets** option checks that the widgets you have implemented in the
 
 The **Convert classes to design properties** option allows you to convert classes in widgets into design properties to assist in changing the widget styling. See [Native Styling](/refguide/mobile/designing-mobile-user-interfaces/native-styling/) for more information.
 
-### Generate Bill of Materials
+### Generate Bill of Materials {#generate-bill-of-materials}
 
 The **Generate Bill of Materials** option allows you to generate bill of materials for the current project.
-
 
 ## Synchronize App Directory {#synchronize}
 
