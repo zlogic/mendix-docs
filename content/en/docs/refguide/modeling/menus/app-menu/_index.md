@@ -37,7 +37,7 @@ The **Convert classes to design properties** option allows you to convert classe
 
 ### Generate Bill of Materials {#generate-bill-of-materials}
 
-The **Generate Bill of Materials** option allows you to generate bill of materials for the current project.
+The **Generate Bill of Materials** option allows you to generate a bill of materials for the current project. See [SBOM Generation](/refguide/sbom-generation/) for more information.
 
 ## Synchronize App Directory {#synchronize}
 
