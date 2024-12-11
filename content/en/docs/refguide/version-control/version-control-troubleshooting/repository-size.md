@@ -78,7 +78,7 @@ As the Mendix model is stored in a single file, this threshold can be exceeded b
 
 When cloning an app, the default behavior of Git is to download the full history. As Mendix uses different folders on disk for different branches, downloading full history is done for each branch. To mitigate that, Mendix uses local cloning for subsequent branch downloads. When cloning a new branch, data from a local branch you already have is used to reduce data that needs to be downloaded. 
 
-Starting from Studio Pro10.12 it is possible to prevent downloading the full history, by changing the [Clone type](/refguide/clone-type/) to use partial clones. A partial clone downloads all data for a specific revision without downloading the contents of all historical commits.
+Starting from Studio Pro 10.12 it is possible to prevent downloading the full history, by changing the [Clone type](/refguide/clone-type/) to use partial clones. A partial clone downloads all data for a specific revision without downloading the contents of all historical commits.
 
 ### Mitigating Large Repository Size
 
