@@ -16,6 +16,18 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 ## 2024
 
+### December 5, 2024
+
+#### Improvements
+
+* We introduced cloud tokens for your cloud resource pack purchases! Starting now, you will use [cloud tokens](/control-center/entitlements/#cloud-tokens) instead of cloud credits to complete your cloud resource purchases. With the transitioning from cloud credits to cloud tokens, Mendix is paving the way for a more streamlined and flexible approach to purchasing and switching between Mendix Cloud products.
+
+### December 1, 2024
+
+#### API Retirement
+
+* We retired the Team Server API. You will now have to use the [App Repository API](/apidocs-mxsdk/apidocs/app-repository-api/) instead.
+
 ### November 29, 2024
 
 #### New Features
@@ -808,7 +820,7 @@ In connected environments, this usage information will be sent back to Mendix au
 
 ### March 3, 2021
 
-* We updated the [deploy API](/apidocs-mxsdk/apidocs/deploy-api/), [Build API](/apidocs-mxsdk/apidocs/build-api/), [Team Server API](/apidocs-mxsdk/apidocs/team-server-api/), [Backups API v2](/apidocs-mxsdk/apidocs/backups-api/), and [Backups API v1](/apidocs-mxsdk/apidocs/backups-api-v1/) to:
+* We updated the [deploy API](/apidocs-mxsdk/apidocs/deploy-api/), [Build API](/apidocs-mxsdk/apidocs/build-api/), Team Server API, [Backups API v2](/apidocs-mxsdk/apidocs/backups-api/), and [Backups API v1](/apidocs-mxsdk/apidocs/backups-api-v1/) to:
     * add json validation
     * add stricter API path validation (for example, a trailing `/` on the API path will result in `API not found`)
     * return differently formatted error messages for unhandled or unexpected errors
