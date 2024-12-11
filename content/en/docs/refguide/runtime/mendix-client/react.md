@@ -156,7 +156,3 @@ JavaScript actions should be mostly unaffected by React. Problems arise only if 
 Problems in JavaScript actions are not captured by the consistency checker. To validate that JavaScript actions work with the React client, the checker should be executed with the React client active. Any errors reported by the **Browser Console** (Press <kbd>F12</kbd> to access it) will help identify the problem.
 
 If you encounter problems with platform-supported JavaScript actions (for example from the [Nanoflow Commons](/appstore/modules/nanoflow-commons/) module) make sure to update the module containing the action from the Marketplace. In most cases, this will resolve the issue. If it is not resolved, reach out to the maintainer of the module and let them know of the issue.
-
-### Batch Conversion{#batch-conversion}
-
-We are working on a batch conversion component that lets you convert all incompatible widgets in your project with a few clicks. We will announce the release in our [Release Notes](/releasenotes/studio-pro/10/).

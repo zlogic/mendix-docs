@@ -9,10 +9,6 @@ weight: 20
 
 Studio Pro, provides a quick and automatic method to easily migrate the widgets that are unsupported by the React client. However, not all the configuration options are currently supported by the replacement React client-ready widgets.
 
-{{% alert color="info" %}}
-We are working on a batch conversion component that lets you convert all incompatible widgets in your project with a few clicks. We will announce the release in our [Release Notes](/releasenotes/studio-pro/10/).
-{{% /alert %}}
-
 ## Automatic Widget Conversion Limitations
 
 The following sections list the unsupported widget configuration options.
