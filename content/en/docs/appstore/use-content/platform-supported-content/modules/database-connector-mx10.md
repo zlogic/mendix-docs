@@ -87,9 +87,10 @@ After [installing](#installation) the connector, get started by doing the follow
 
 4. Click **Save** to open the external database document for this database.
 
-{{% alert color="info" %}}
-Connection details are stored as constants, their values are stored in the Active configuration of the user, the password is stored as a private value.
-{{% /alert %}}
+{{% alert color="info" %}} Values for these constants are stored in the active configuration of the user. The password is stored as a private value. For more information on refer [constants](https://docs.mendix.com/refguide/configuration/#constants){{% /alert %}}
+
+{{% alert color="info" %}}Constants are Environment variable whose values can differ per Environment, When we deploy an App on cloud, values for constant are not added.
+For free apps make sure to add the default values to the constant in Studio Pro. For more information refer [Deploying a Free App](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/#deploy-free-app) {{% /alert %}}
 
 Now you can start [querying the database](#query-database) to select data to use in your app.
 

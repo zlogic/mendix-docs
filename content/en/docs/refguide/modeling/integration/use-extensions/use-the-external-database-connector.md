@@ -72,7 +72,10 @@ Click **Save** to save the connection details, which are stored in 3 constants:
 
 For example: `*Database*_DBsource.`
 
-{{% alert color="info" %}} Values for these constants are stored in the active configuration of the user. The password is stored as a private value.{{% /alert %}}
+{{% alert color="info" %}} Values for these constants are stored in the active configuration of the user. The password is stored as a private value. For more information on refer [constants](https://docs.mendix.com/refguide/configuration/#constants){{% /alert %}}
+
+{{% alert color="info" %}}Constants are Environment variable whose values can differ per Environment, When we deploy an App on cloud, values for constant are not added.
+For free apps make sure to add the default values to the constant in Studio Pro. For more information refer [Deploying a Free App](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/#deploy-free-app) {{% /alert %}}
 
 ### Explore Schemas of a Connected Database
 
