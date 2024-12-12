@@ -19,7 +19,7 @@ For information on the current status of deployment to Mendix for Private Cloud 
 * You can now add or update the Technical Contact for an application. For more information, see [Technical Contact](/developerportal/deploy/private-cloud-deploy/#application-settings).
 * Updating or setting a Technical Contact is now logged in the activity logs.
 
-### December 11th, 2024
+### December 11, 2024
 
 #### CI/CD with Tekton Pipeline v1.0.5
 
