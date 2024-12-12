@@ -196,7 +196,7 @@ Rule | Name | Pattern | Rewrite URL
 
 #### Allowing the Document Generation Service IP Addresses
 
-If you have set up inbound or outbound IP restriction rules, you must allow the [IP addresses of the DocGen service](developerportal/deploy/mendix-ip-addresses/#global-platform-ips).
+If you have set up inbound or outbound IP restriction rules, you must allow the [IP addresses of the DocGen service.](developerportal/deploy/mendix-ip-addresses/#global-platform-ips)
 
 ## Usage
 
