@@ -19,6 +19,15 @@ For information on the current status of deployment to Mendix for Private Cloud 
 * You can now add or update the Technical Contact for an application. For more information, see [Technical Contact](/developerportal/deploy/private-cloud-deploy/#application-settings).
 * Updating or setting a Technical Contact is now logged in the activity logs.
 
+### December 11th, 2024
+
+#### CI/CD with Tekton pipeline v1.0.5
+
+* We have updated the [CI/CD with Tekton pipeline](/developerportal/deploy/private-cloud-tekton/) to support Java 17 and 21.
+* We have updated Mendix images and components to the latest version [Unsafe repository error](https://github.com/tektoncd/pipeline/issues/4966).
+* To use the updated pipeline, the latest version of the `pipeline` Helm chart will need to be installed.
+* We updated the pipeline to be compatible with Mendix Operator v2.20.0. (**Ticket 235777**)
+
 ### November 14, 2024
 
 #### Portal Improvements
