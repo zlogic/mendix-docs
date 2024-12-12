@@ -21,7 +21,7 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ### December 11th, 2024
 
-#### CI/CD with Tekton pipeline v1.0.5
+#### CI/CD with Tekton Pipeline v1.0.5
 
 * We have updated the [CI/CD with Tekton pipeline](/developerportal/deploy/private-cloud-tekton/) to support Java 17 and 21.
 * We have updated Mendix images and components to the latest version [Unsafe repository error](https://github.com/tektoncd/pipeline/issues/4966).
