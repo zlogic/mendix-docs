@@ -39,7 +39,7 @@ To deploy an app to your private cloud platform, you need the following:
 
 ### Selecting Mendix for Private Cloud
 
-When you first create your app, it will be set to deploy to Mendix Cloud. You need to change the target to be private cloud.
+When you first [create your app](/developerportal/#create-app), it will be set to deploy to Mendix Cloud. You need to change the target to be private cloud.
 
 1. Open your app in [Apps](https://sprintr.home.mendix.com/).
 
