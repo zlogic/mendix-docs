@@ -93,15 +93,12 @@ Configure the path to the *chrome.exe* executable in the **CustomChromePath** co
 
 To allow the module to send and receive document generation requests on your Mendix Cloud environments, you need to perform the following steps:
 
-1. Enable the DocGen request handler.
+1. If your app is deployed on Mendix Cloud or Mendix Cloud Dedicated, [enable the DocGen request handler.]{#enable-docgen}
 
-   {{% alert color="info" %}}This step is only for licensed apps on Mendix Cloud or Mendix Cloud Dedicated. If your app is deployed on [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/), skip this step and make sure that the */docgen/* path is accessible.{{% /alert %}}
+   {{% alert color="info" %}}This step is required only for licensed apps on Mendix Cloud or Mendix Cloud Dedicated. If your app is deployed on [Mendix for Private Cloud Connected](/developerportal/deploy/private-cloud/), skip this step and make sure that the */docgen/* path is accessible.{{% /alert %}}
 
-2. Register your app environments.
-
-3. [Optional] Allow DocGen service IP addresses
-
-The steps for each procedure are described in the sections below. 
+2. [Register your app environments.](#register-app)
+3. If your app is configured to restrict access based on IP address, [add the IP addresses used by the DocGen service to the list of allowed addresses.](#allow-ip)
 
 #### Enabling the DocGen Request Handler for Licensed Apps {#enable-docgen}
 
@@ -118,7 +115,7 @@ The steps for each procedure are described in the sections below.
        * Go to the [Nodes](https://cloud.home.mendix.com/) page, then in the **My Nodes** list, find the desired app, and then click **Environments**.
        * Alternatively, go to [Apps](https://sprintr.home.mendix.com), then in the **My Apps** list, find the desired app, and then click **Environments**.
 
-        The app’s environments page opens. The **Deploy** tab shows a list of available environments for your app.
+        The app's **Environments** page opens. The **Deploy** tab shows a list of available environments for your app.
     
     2. On the **Deploy** tab, click **Details** for the respective environment.
     
@@ -150,7 +147,7 @@ The steps for each procedure are described in the sections below.
 
 {{% alert color="info" %}}Each of your app environments needs to be registered separately. A successful app registration is limited to the app URL that was provided during the registration. Note that a change in the app URL, or restoring a database backup from one environment to another, will require you to register the affected app environments again.{{% /alert %}}
 
-#### [Optional] Allowing the Document Generation service IP addresses
+#### [Optional] Allowing the Document Generation service IP addresses {#allow-ip}
 
 If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using IP whitelisting, you must allow the outbound IP addresses of the DocGen service, listed [here](developerportal/deploy/mendix-ip-addresses/#global-platform-outbound).
 
