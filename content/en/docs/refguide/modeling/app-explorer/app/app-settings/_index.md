@@ -206,7 +206,7 @@ This table presents the results of rounding the input to one digit with the give
 
 ### OQL version 2 {#oql-version-2}
 
-If this option is set to Yes, your app will use version 2 of the OQL syntax. In order to use view entities, this setting must be enabled. However, make sure your app is ready to use the new syntax before making the switch. You can read more about the differences [here](/refguide/oql-v2/).
+If this option is set to *Yes*, your app will use version 2 of the OQL syntax. In order to use view entities, this setting must be enabled. However, make sure your app is ready to use the new syntax before making the switch. You can read more about the differences [here](/refguide/oql-v2/).
 
 Default: *No*
 
