@@ -23,7 +23,7 @@ The learning interface appears at the right side of Studio Pro under the **Maia*
 
 Click **Mendix Core Concepts**, you can start your learning journey with Maia Learn and learn all the basics about domain models, pages, logic, security, and integrations, including how you can apply these core concepts in Studio Pro.
 
-If you have any questions during the learning journey, you can always click **Ask Maia** and ask Maia Chat for further assistance. 
+If you have any questions during the learning journey, you can always click **Ask Maia** and ask [Maia Chat](/refguide/maia-chat/) for further assistance. 
 
 ## Read More
 
