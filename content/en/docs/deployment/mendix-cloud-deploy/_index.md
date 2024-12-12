@@ -53,14 +53,33 @@ If, after a couple of minutes, your app does not wake up, contact [Mendix Suppor
 
 You can upgrade a Free App to a licensed app running on a node in Mendix Cloud. For more information, see [Licensing Mendix Cloud Apps](/developerportal/deploy/licensing-apps/).
 
-#### Free Apps Archiving {#free-apps-archival}
+#### Archiving of Free Apps {#free-apps-archival}
 
-If a Free App has been in sleep mode for three months or longer, it may be archived. For Free Apps that are going to be archived, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) is informed two weeks beforehand. Upon archiving, the project and model are retained, but the running app, database, files, and backups for the Free App are deleted.
+If a Free App has been in sleep mode for three months or longer, it may be archived. For Free Apps that are going to be archived, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) is informed two weeks beforehand. Upon archiving, the project and model are retained and will remain active and accessible, but the running app, database, files, and backups for the Free App are deleted.
 
 There are two ways to prevent your Free App from being archived:
 
 * Visit the Free App
 * Deploy a new version of your app to your Free App environment
+
+#### Deletion of Unused Free Apps
+
+If a Free App has never seen any activity since it was created, it is kept on the [Team Server](/developerportal/general/team-server/) for a maximum of one year. After this, the app, its repository, and any cloud resources will be permanently deleted.
+
+The system uses the following criteria when determining if an app is unused:
+
+* Free App (i.e. unlicensed)
+* Deployed to the Public Mendix Cloud
+* Unpinned
+* A project team with only 1 team member
+* The app was created more than a year ago
+* No commits since the app was created
+
+You can prevent this clean up by performing one of the following actions:
+
+* Make changes and commit them to the Team Server
+* [Pin your app](/developerportal/#app-tiles)
+* [Invite someone](/developerportal/general/team/#inviting) to collaborate with you on your app
 
 ### Licensed App
 
@@ -100,6 +119,10 @@ Mendix apps cannot use custom ports. They communicate on the standard HTTP and H
 
 The number of end-users supported for your licensed app depends on your [pricing plan](#plans). End-users of your app are classified as either internal or external. You need to report this for licensing purposes, using either the [USAGE_METRICS_EMAIL_FIELDS custom variable](/developerportal/deploy/environments-details/#custom-environment-variables) (if you are using email domains to distinguish between end-users) or by [populating the user type](/howto/monitoring-troubleshooting/populate-user-type/) for each end-user of your app. Only end-users whose Mendix accounts are marked as **Active** are counted towards the number of end-users of the app.
 
+### Supported Mendix Versions {#mendix-cloud-supported-versions}
+
+Mendix Cloud supports deploying and running all [supported major versions](/releasenotes/studio-pro/lts-mts/#major-version) of Mendix. This includes major versions that are supported via the Extended Support product. It is not possible to deploy unsupported versions to Mendix Cloud.
+
 ## Mendix Pricing Plans {#plans}
 
 Mendix licenses are sold as part of plans. Plans consist of the following items:
@@ -124,7 +147,7 @@ For more information, see [Pricing](https://www.mendix.com/pricing/).
 
 Mendix environments are sized by reference to cloud resource packs. These resources are used for application runtime as well as anything else required to run your application, such as agents for any third-party integrations that you have added. The table below shows the current cloud resource packs for Standard, Premium, and Premium Plus plans. Resources for the Basic plan are fixed as described in [Mendix Basic Package](/developerportal/deploy/basic-package/).
 
-If you have a Standard, Premium, or Premium Plus plan, you can redeem virtual credits known as cloud credits to purchase cloud resource packs on the Mendix Platform. For more information about how this works, see [Entitlements](/control-center/entitlements/).
+If you have a Standard, Premium, or Premium Plus plan, you can redeem virtual credits known as cloud tokens to purchase cloud resource packs on the Mendix Platform. For more information about how this works, see [Entitlements](/control-center/entitlements/).
 
 The technical details for the cloud resource packs are listed below.
 

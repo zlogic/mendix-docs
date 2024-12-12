@@ -166,25 +166,38 @@ The best way to fix this error is to either change the microflow to accept *Phot
 
 ## Input Widget Consistency Errors
 
-The most common errors for input elements, their causes, and ways to fix them are described in the table below. For more information on input elements, see [Input Elements](/refguide/input-widgets/). 
+The most common errors for input elements, their causes, and ways to fix them are described in the following sub-sections. For more information on input elements, see [Input Elements](/refguide/input-widgets/). 
 
-| Error Code | Message in the Error Pane                                    | Cause of the Error                                           | Way to Fix                                                   |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| CE0544     | This widget can only function inside a data container. Move it into a data view, list view or template grid. | You have added an input widget to a page, but it is not inside a data container. Input elements need to refer to an attribute of a specific entity type. And entities are only available via data containers. For more information about input elements, see [Input Elements](/refguide/input-widgets/). | Place this widget into a data container: a data view, list view, or template grid. |
-| CE0545     | Select an attribute for this {widget name}.                  | You have added an input widget, and it is inside a data container, but an attribute is not selected for it. | Right-click the widget, click **Select Attribute** in the drop-down list, and set an attribute; or open widget's properties > the **Data source** section and set an attribute in the **Attribute (path)** field. |
-|            | Association {Name} must be a reference (not a reference set) | You have added a reference selector, and then you changed the association from reference type to reference set (from one-to-many or one-to-one to many-to-many). | Open your domain model, find the association you have selected for the reference selector, and change it to a one-to-many association. Note that changing the domain model can result in other errors. To avoid changing the domain model, you might want to use another widget instead of the reference selector.<br />For more information on how to fix this error for the reference selector, see the [Incorrect Multiplicity for a Reference Selector](#incorrect-multiplicity-reference) section |
-|            | Association {Name} must be a reference set (not a reference) | You have added an input reference set selector, and then you changed the association from reference set type to reference (from many-to-many to one-to-many or one-to-one). | Open your domain model, find the association you have selected for the input reference set selector, and change it to a many-to-many association. Note that changing the domain model can result in other errors. To avoid changing the domain model, you might want to use another widget instead of the reference set selector. <br />For more information on how to fix the consistency error for the reference set selector and input reference set selector, see the [Incorrect Multiplicity for a Reference Set Selector and an Input Reference Set Selector](#incorrect-multiplicity-reference-set) section. |
-|            | The reference set selector expects an association of type reference set that starts in the data view entity. | You have added a reference set selector, and then you changed the association from reference set type to reference (from many-to-many to one-to-many or one-to-one). | Open your domain model, find the association you have selected for the reference set selector, and change it to a many-to-many association. Note that changing the domain model can result in other errors. To avoid changing the domain model, you might want to use another widget instead of the input reference set selector. <br />For more information on how to fix the consistency error for the reference set selector and input reference set selector, see the [Incorrect Multiplicity for a Reference Set Selector and an Input Reference Set Selector](#incorrect-multiplicity-reference-set) section. |
+### Error Code: CE0544
+
+CE0544 error message: *This widget can only function inside a data container. Move it into a data view, list view or template grid.*
+
+You will get CE0544 if you have added an input widget to a page but it is not inside a data container. Input elements need to refer to an attribute of a specific entity type and entities are only available via data containers. 
+
+To fix CE0544, place this widget into a data container: a data view, list view, or template grid.
+
+### Error Code: CE0545
+
+CE0545 error message: *Select an attribute for this {widget name}.*
+
+You will get CE0545 if you have added an input widget and it is inside a data container, but an attribute is not selected for it.
+
+To fix CE0545, do one of the following:
+
+* Right-click the widget, click **Select Attribute** in the drop-down list, and set an attribute. 
+* Or open widget's properties > the **Data source** section, and set an attribute in the **Attribute (path)** field.
 
 ### Incorrect Multiplicity for a Reference Selector {#incorrect-multiplicity-reference}
 
+Error message: *Association {Name} must be a reference (not a reference set).*
+
+You will get this error message if you have added a reference selector and then you changed the association from reference type to reference set (from one-to-many or one-to-one to many-to-many).
+
 A reference selector is a widget that is used to display and edit one-to-many or one-to-one associations. For more information on the widget, see [Reference Selector](/refguide/reference-selector/).  
 
-For example, you have several employees who are associated with one city where they work. This is a one-to-many association: multiple *Employees* objects are associated with one *City* object.  Associations that refer to a single object in this manner are *references*, as opposed to *reference sets*, in which multiple objects can refer to multiple other objects. In a reference, the "single object" side of the association is always the association's owner. For more information on associations and their types, see [Associations](/refguide/associations/).
+For example, you have several employees who are associated with one city where they work. This is a one-to-many association: multiple *Employees* objects are associated with one *City* object. Associations that refer to a single object in this manner are *references*, as opposed to *reference sets*, in which multiple objects can refer to multiple other objects. In a reference, the "single object" side of the association is always the association's owner. For more information on associations and their types, see [Associations](/refguide/associations/).
 
 {{< figure src="/attachments/refguide/modeling/consistency-errors/consistency-errors-pages/many-to-one-association.png" alt="One-to-many Association" class="no-border" >}}
-
-If you have the wrong type of association, you will get a consistency error: *Association {Name} must be a reference (not a reference set)*.
 
 To fix this error, do the following:
 
@@ -197,11 +210,18 @@ To fix this error, do the following:
 
 You have changed the association multiplicity and fixed the error. 
 
-{{% alert color="info" %}}
-Сhanging the domain model can result in other errors. To avoid changing the domain model, you might want to use another widget instead of the reference selector, for example, a reference set selector or input reference set selector. 
+{{% alert color="warning" %}}
+Changing the domain model can result in other errors. To avoid changing the domain model, you might want to use another widget instead of the reference selector, for example, a reference set selector or input reference set selector. 
 {{% /alert %}}
 
 ### Incorrect Multiplicity for a Reference Set Selector and an Input Reference Set Selector {#incorrect-multiplicity-reference-set}
+
+Error messages:
+
+* *Association {Name} must be a reference set (not a reference)* – for an input reference set selector
+* *The reference set selector expects an association of type reference set that starts in the data view entity* – for a reference set selector
+
+You will get the above error messages if you have added an input reference set selector and then you changed the association from reference set type to reference (from many-to-many to one-to-many or one-to-one).
 
 Reference set selector and input set selector are widgets that are used to display and edit many-to-many associations. For more information on these widgets, see [Reference Set Selector](/refguide/reference-set-selector/) and [Input Reference Set Selector](/refguide/input-reference-set-selector/). 
 
@@ -209,12 +229,7 @@ For example, you have several employees who can visit customers in different cit
 
 {{< figure src="/attachments/refguide/modeling/consistency-errors/consistency-errors-pages/many-to-many-association.png" alt="Many-to-many Association" class="no-border" >}}
 
-If you have a wrong type of association, you will get the following errors:
-
-* *Association {Name} must be a reference set (not a reference)* – for an input reference set selector
-* *The reference set selector expects an association of type reference set that starts in the data view entity* – for a reference set selector
-
-To fix the error, do the following:
+To fix the errors, do the following:
 
 1. Open your domain model and double-click the association that you are using for the reference set selector or the input reference set selector and do the following: <br/>
 2. In **Properties of Association** dialog box, change **Multiplicity** to many-to-many (in our example, multiple 'Employee' objects are associated with multiple 'City' objects).
@@ -223,10 +238,10 @@ To fix the error, do the following:
 
 3. Click **OK** to save changes.
 
-You have changed the association multiplicity and fixed the error. 
+You have changed the association multiplicity and fixed the errors. 
 
-{{% alert color="info" %}}
-Сhanging the domain model can result in other errors. To avoid changing the domain model, you might want to use another widget instead of the reference set selector or input reference set selector, for example, a reference selector. 
+{{% alert color="warning" %}}
+Changing the domain model can result in other errors. To avoid changing the domain model, you might want to use another widget instead of the reference set selector or input reference set selector, for example, a reference selector. 
 {{% /alert %}}
 
 ## Images, Videos and Files Consistency Errors

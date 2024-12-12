@@ -218,9 +218,13 @@ To clearly identify a [sub-microflow](/refguide/extracting-and-using-sub-microfl
 
 Microflows containing unit tests should have the prefix **TEST_** or **UT_** (case-insensitive). For more information about the Unit Testing module, see [Unit Testing](/appstore/modules/unit-testing/).
 
+[//]: # (<!-- markdownlint-disable no-space-in-emphasis -->)
+
 | Event Type | Prefix       |
 | ---------- | ------------ |
 | Unit Test  | TEST_ or UT_ |
+
+[//]: # (<!-- markdownlint-enable no-space-in-emphasis -->)
 
 #### Integration Microflows
 
@@ -261,7 +265,7 @@ Guidelines below can help you choose a short yet meaningful name for your workfl
 
 #### Enumerations
 
-[Enumerations](/refguide/enumerations/) should be identified with a prefix.
+[Enumerations](/refguide/enumerations/) should be identified with a prefix. The name of the enumeration should reflect its business context, for example, *ENUM_ShippingStatus*.
 
 | Document Type | Prefix |
 | ------------- |------- |
