@@ -8,7 +8,7 @@ description: "Describes the features in Maia Learn."
 
 ## Introduction 
 
-Maia Learn helps you to quickly learn Mendix core concepts and get started with Studio Pro. It is a platform where you can navigate to different learning materials while providing you a holistic learning experience.
+Maia Learn helps you to quickly learn Mendix core concepts and get started with Studio Pro. It is a tab within the **Maia** pane where you can navigate to different learning materials while providing you a holistic learning experience.
 
 ## Using Maia Learn
 
