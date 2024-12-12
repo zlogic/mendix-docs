@@ -147,9 +147,9 @@ To allow the module to send and receive document generation requests on your Men
 
 {{% alert color="info" %}}Each of your app environments needs to be registered separately. A successful app registration is limited to the app URL that was provided during the registration. Note that a change in the app URL, or restoring a database backup from one environment to another, will require you to register the affected app environments again.{{% /alert %}}
 
-#### [Optional] Allowing the Document Generation service IP addresses {#allow-ip}
+#### Allowing the Document Generation Service IP Addresses {#allow-ip}
 
-If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using IP whitelisting, you must allow the outbound IP addresses of the DocGen service, listed [here](developerportal/deploy/mendix-ip-addresses/#global-platform-outbound).
+If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using IP restrictions, you must add the [outbound IP addresses of the DocGen service](/developerportal/deploy/mendix-ip-addresses/#global-platform-outbound) to the list of allowed addresses.
 
 ### Running On-Premises {#run-on-premises}
 
@@ -194,9 +194,9 @@ Rule | Name | Pattern | Rewrite URL
 
 {{% alert color="info" %}}Rule 1 is based on the default URL prefix (`p`) for page/microflow URLs. If you configured a different prefix in the runtime settings of your app, adjust the rule accordingly.{{% /alert %}}
 
-#### [Optional] Allowing the Document Generation service IP addresses
+#### Allowing the Document Generation Service IP Addresses
 
-If you have set up inbound and/or outbound IP whitelisting rules, you must allow the IP addresses of the DocGen service, listed [here](developerportal/deploy/mendix-ip-addresses/#global-platform-ips).
+If you have set up inbound or outbound IP restriction rules, you must allow the [IP addresses of the DocGen service](developerportal/deploy/mendix-ip-addresses/#global-platform-ips).
 
 ## Usage
 
