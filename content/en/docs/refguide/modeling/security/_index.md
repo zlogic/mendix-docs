@@ -85,7 +85,7 @@ If you want to invite your colleagues to build your app, you can manage the **Te
 
 ## The Security Overview (Beta)
 
-The [Security Overview (Beta)](/refguide/security-overview/) provides you with a clear and unified overview of your app's security. To access the overview, open the **App** menu, and then click **Show Security Overview (Beta)**. 
+The [Security Overview (Beta)](/refguide/security-overview/) provides you with an overview of your app's security. To access the overview, open the **App** menu, and then click **Show Security Overview (Beta)**. 
 
 {{% alert color="info" %}}
 This feature is currently in beta. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
