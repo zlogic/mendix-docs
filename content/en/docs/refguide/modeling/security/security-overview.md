@@ -5,14 +5,18 @@ weight: 20
 ---
 
 {{% alert color="info" %}}
-The Security Overview is currently a Beta feature introduced in Studio Pro 10.18.0. For more information on beta features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+This feature is currently in beta. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
 {{% /alert %}}
 
 ## Introduction
 
-The **Security Overview** provides you with a clear and unified overview of your app's security. This overview can be used to review the security of your app. The overview can be accessed via **App** menu > **Show Security Overview (Beta)**.
+The **Security Overview** page provides you with a clear and unified overview of your app's security. This overview can be used to review the security of your app. 
 
-## The Security Overview Layout: User Roles and Modules
+## Accessing the Security Overview
+
+To access the **Security Overview** page, open the **App** menu, and then click **Show Security Overview (Beta)**.
+
+## Using the Security Overview
 
 The **Security Overview** summarizes the app's security for a selected user role. This user role can be selected in the dropdown at the top of the overview with the **Show access for user role** label.
 
@@ -24,7 +28,7 @@ The list of modules does not show the System module or any protected modules.
 
 {{% /alert %}}
 
-## The Tabs Within the Security Overview
+## Security Overview Tabs
 
 The **Security Overview** is split into four tabs: **Entity access**, **Page access**, **Microflow access** and **Nanoflow access**. As of Studio Pro 10.18.0, only the **Entity access** tab is available. The other tabs will display a *Coming soon!* message.
 
