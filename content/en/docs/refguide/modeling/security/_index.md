@@ -88,5 +88,5 @@ If you want to invite your colleagues to build your app, you can manage the **Te
 The [Security Overview (Beta)](/refguide/security-overview/) provides you with a clear and unified overview of your app's security. To access the overview, open the **App** menu, and then click **Show Security Overview (Beta)**. 
 
 {{% alert color="info" %}}
-The Security Overview is currently a Beta feature introduced in Studio Pro 10.18.0. For more information on beta features, see [Beta and Experimental Releases](/releasenotes/beta-features/).
+This feature is currently in beta. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/).
 {{% /alert %}}
