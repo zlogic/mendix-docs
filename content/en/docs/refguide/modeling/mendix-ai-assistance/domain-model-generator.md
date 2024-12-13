@@ -54,9 +54,9 @@ Below are some examples you can use as a starting point:
 
 As an experimental feature, Domain Model Generator has some limitations.
 
-### Enumeration Generation Not Supported
+### Enumeration Generation
 
-Currently, it cannot generate [enumerations](/refguide/enumerations/). So, it is not possible to generate an attribute of type Enumeration.
+In Studio Pro 10.17 and below, it is not possible to generate [enumerations](/refguide/enumerations/). In Studio Pro 10.18, it can generate an attribute of type Enumeration if there is an existing enumeration in the module to refer to.
 
 ### Generalization Not Supported
 
