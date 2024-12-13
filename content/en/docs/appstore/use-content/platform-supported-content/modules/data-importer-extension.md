@@ -253,49 +253,55 @@ Create the import mapping using the Data Importer document created in the step a
 
 ### Import With Mapping Activity in a Microflow {#import-with-mapping-MF}
 
-As the **Data Importer Document** contains a structure that is used as a source for **Import mapping**, we can leverage the **Import with mapping** microflow activity to import data from input file(s). 
+As the Data Importer document contains a structure that is used as a source for import mapping, you can leverage the **Import with mapping** microflow activity to import data from input file(s). 
 
-Instructions below show how to import data from an Excel file. The same steps are applicable to import data from CSV files. Do the following:
+The instructions below show how to import data from an Excel (or CSV) file. 
 
 1. Create a new microflow with a parameter (FileDocument) and drag the **Import with mapping** activity into it.
-2. Double-click the activity and in the **Input** section > **Variable** field, select an input file (Excel or CSV).
-3. Select the **Mapping** in the **Import Mapping** section. Select **Range** and **Commit** options if needed.
-4. In the **Output** section, you can choose **Store in variable** and click **OK**.
+2. Double-click the activity.
+3. In the **Input** section, in the **Variable** field, select an input file (Excel or CSV).
+4. Select the mapping in the **Import Mapping** section. 
+5. Select **Range** and **Commit** options, if needed.
+6. In the **Output** section, you can choose **Store in variable**, then click **OK**.
+   
     {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/import-with-mapping-params.png" class="no-border" >}}
 
 ### Before Running Your App {#data-import-with-mapping-app}
 
 Before you can run your app, do the following:
 
-1. Complete the microflow to show a page containing Entities committed after the Import activity.
-2. Call this microflow from a button on another page where a FileDocument object is created and has a provision to upload an input file.
-3. Run your app locally and provide a file which is exactly like the sample file you have uploaded while creating this **Data Importer** document and trigger the microflow.
-4. You should see the data from the file being imported and shown on the page's data grid.
-​    {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/data-imported-from-input-file.png" class="no-border" >}}
+1. Complete the microflow to show a page containing the entities committed after the import activity.
+2. Call this microflow from a button on another page where a *FileDocument* object is created and has a provision to upload an input file.
+3. Run your app locally and provide a file which is exactly like the sample file you have uploaded while creating this Data Importer document, then trigger the microflow.
 
+You should see the data from the file being imported and shown on the page's data grid.
+
+​    {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/data-imported-from-input-file.png" class="no-border" >}}
 
 ## Edit Data Importer Document
 
-You can **Edit** the **Data Importer** document, by uploading a new sample file. 
+You can edit the Data Importer document by uploading a new sample file. 
 
-{{% alert color="warning" %}}This action will erase the existing mapping or structure elements created for this document and will replace it with new mapping / structure elements.{{% /alert %}}
+{{% alert color="warning" %}}This action will erase the existing mapping or structure elements created for this document, and will replace it with new mapping and structure elements.{{% /alert %}}
 
 ### Upload a New File {#edit-DI-document-using-new-file}
 
-To edit the Data Importer Document, do the following:
-1. Double-click the DI document that you want to **Edit**, it opens it in read-only mode.
-2. Click the **Update File** button in the top-right corner. It will inform you that when a new file is uploaded and changes are saved, existing mapping/structure elements will be erased and will be replaced by new mapping/structure.
+To edit the Data Importer document, do the following:
+
+1. Double-click the Data Importer document that you want to **Edit**. The document opens in read-only mode.
+2. Click **Update File** in the top-right corner. You will receive notification that when a new file is uploaded and changes are saved, existing mapping/structure elements will be erased and will be replaced by new mapping/structure.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/update-data-importer-doc-confirmation.png" class="no-border" >}}
 
-3. Click **Update** on the pop-up and then upload the new file. Change the configuration like **Sheet Name**, **Header Row** etc.
-5. Click  **Create Structure** to update the DI Document.
+3. Click **Update**, then upload the new file. 
+4. Change the configuration, such as **Sheet Name** and **Header Row**.
+5. Click  **Create Structure** to update the document.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/data-importer-doc-updated.png" class="no-border" >}}
 
-Similar steps can be followed to update the DI document which was created with **Implicit Mapping** in the [Creating a Data Importer Document](#create-document-with-imm) section.
+Similar steps can be followed to update the Data Importer document, which was created with **Implicit Mapping** in the [Creating a Data Importer Document](#create-document-with-imm) section.
 
-You can now update the domain model entities, microflows,, pages and, any other  documents used or referenced by this Data Importer document to reflect these changes in your app. 
+You can now update the domain model entities, microflows, pages, and any other documents used or referenced by this Data Importer document to reflect the changes in your app. 
 
 ## Known Issues
 
