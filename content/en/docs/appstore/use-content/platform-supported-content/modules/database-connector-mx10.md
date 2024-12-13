@@ -89,7 +89,7 @@ After [installing](#installation) the connector, get started by doing the follow
 
 {{% alert color="info" %}} Values for these constants are stored in the active configuration of the user. The password is stored as a private value.
 
-Constants are an environment variable whose values can differ per environment, When you deploy an app on Mendix Cloud, values for constant are not added. For more information, see [constants](https://docs.mendix.com/refguide/configuration/#constants){{% /alert %}}
+Constants are an environment variable whose values can differ per environment, When you deploy an app on Mendix Cloud, values for constants are not added. For more information, see [Constants](https://docs.mendix.com/refguide/configuration/#constants){{% /alert %}}
 
 {{% alert color="info" %}}
 For free apps, make sure to add the default values to the constant in Studio Pro. For more information, see the [Deploying a Free App](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/#deploy-free-app) section below. {{% /alert %}}

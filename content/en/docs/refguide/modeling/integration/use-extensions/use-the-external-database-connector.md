@@ -44,9 +44,9 @@ Download the [External Database Connector](https://marketplace.mendix.com/link/c
 
 If additional connection properties are required to connect, you can alternatively use **JDBC Connection String**.
 
-### If using the flag: --enable-live-preview(availabe for Studio-pro 10.18).{#enable-live-preview}
+### If Using the Flag: `--enable-live-preview` (available for Studio Pro 10.18){#enable-live-preview}
 
-* Download the [External Database Connector](https://marketplace.mendix.com/link/component/219862) into your app.
+* Download the [External Database Connector](https://marketplace.mendix.com/link/component/219862).
 * If certificate-based authentication is required for PostgreSQL connections, ensure that all necessary certificates are added before running the app.
 * To test the connection and execute queries during design time, run your app locally.
 
@@ -72,10 +72,12 @@ Click **Save** to save the connection details, which are stored in 3 constants:
 
 For example: `*Database*_DBsource.`
 
-{{% alert color="info" %}} Values for these constants are stored in the active configuration of the user. The password is stored as a private value. For more information on refer [constants](https://docs.mendix.com/refguide/configuration/#constants){{% /alert %}}
+{{% alert color="info" %}} Values for these constants are stored in the active configuration of the user. The password is stored as a private value.
 
-{{% alert color="info" %}}Constants are Environment variable whose values can differ per Environment, When we deploy an App on cloud, values for constant are not added.
-For free apps make sure to add the default values to the constant in Studio Pro. For more information refer [Deploying a Free App](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/#deploy-free-app) {{% /alert %}}
+Constants are an environment variable whose values can differ per environment, When you deploy an app on Mendix Cloud, values for constants are not added. For more information, see [Constants](https://docs.mendix.com/refguide/configuration/#constants){{% /alert %}}
+
+{{% alert color="info" %}}
+For free apps, make sure to add the default values to the constant in Studio Pro. For more information, see the [Deploying a Free App](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/#deploy-free-app) section below. {{% /alert %}}
 
 ### Explore Schemas of a Connected Database
 
