@@ -8,16 +8,16 @@ aliases:
 
 ## Introduction
 
-The [Data Importer](https://marketplace.mendix.com/link/component/219833) allows you to import data from an Excel or comma-separated value (CSV) file. You can choose which sheet and columns to import, preview the data, and create a non-persistable entity (NPE) in your domain model that corresponds to your input. Then, you can import data into your app using the [Import Data from File](/refguide/import-data-from-file/) activity.
-
 {{% alert color="info" %}}
 The Data Importer is available in [Studio Pro 10.6](/releasenotes/studio-pro/10.6/) and above.
 {{% /alert %}}
 
-The Data Importer Document can also be used as a source for creating [Import Mapping] (/refguide/import-mappings/). This Import Mapping can import data from Excel/CSV file using the  [Import with Mapping](/refguide/import-mapping-action/) activity.
+The [Data Importer](https://marketplace.mendix.com/link/component/219833) allows you to import data from an Excel or comma-separated value (CSV) file. You can choose which sheet and columns to import, preview the data, and create a non-persistable entity (NPE) in your domain model that corresponds to your input. Then, you can import data into your app using the [Import Data from File](/refguide/import-data-from-file/) activity.
+
+The Data Importer Document can also be used as a source for creating [Import Mapping](/refguide/import-mappings/). This import mapping can import data from Excel/CSV file using the  [Import with Mapping](/refguide/import-mapping-action/) activity.
 
 {{% alert color="info" %}}
-This Data Importer Document as a source for Import Mapping is available from [Studio Pro 10.18.0](/releasenotes/studio-pro/10.18/) and above.
+The Data Importer document as a source for import mapping is available from [Studio Pro 10.18.0](/releasenotes/studio-pro/10.18/) and above.
 {{% /alert %}}
 
 ### Typical Use Cases
@@ -195,15 +195,16 @@ To perform testing, you can do the following actions:
 
 ## Data Importer Document (as a Source for Import Mapping)
 
-The [Import Mapping](/refguide/import-mappings/) document and the [Import with Mapping](/refguide/import-mapping-action/) activity provide lot of inherent advantages like controlling the commit of objects, flexibility to find or create an object. This new feature of the Data Importer document leverages these capabilities by creating a source structure which can be used to create Import Mapping. Developers who are comfortable working with [Mapping Documents](/refguide/mapping-documents/) can use this feature to address advanced use-cases of importing data into Mendix. The section below describes how you can create a structure and an Import Mapping using this structure and finally leveraging the **Import with Mapping** microflow activity to import data into Mendix.
+The [Import Mapping](/refguide/import-mappings/) document and the [Import with Mapping](/refguide/import-mapping-action/) activity provide inherent advantages, like controlling the commit of objects, and the flexibility to find or create an object. This new feature of the Data Importer document leverages these capabilities by creating a source structure, which can be used to create import mappings. If you are comfortable working with [Mapping Documents](/refguide/mapping-documents/), you can use this feature to address advanced use cases of importing data into Studio Pro. The section below describes how to create a structure, an import mapping using this structure, and leveraging the **Import with Mapping** microflow activity to import data into Studio Pro.
 
 ### Creating a Data Importer Document {#create-document-with-imm}
 
 To import data, do the following:
 
 1. Right-click the module and click **Add other** > **Data Importer**. 
-2. Name the document and enable the **Use with Import mapping** checkbox. 
+2. Name the document and enable the **Use with Import Mapping** checkbox. 
 3. Click **OK** and the new Data Importer document opens. 
+   
     {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/create-DI-doc-with-import-mapping.png" class="no-border" >}}
 
 ### Previewing Structure {#preview-structure}
@@ -212,13 +213,13 @@ Once you have [created the Data Importer document](#create-document-with-imm), c
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/select-file-for-structure-preview.png" class="no-border" >}}
 
-You can choose which sheet to import data from and specify the header row and starting data row.
+You can choose which sheet to import data from, and specify the header row and starting data row.
 
-* **Sheet Name** – name of the worksheet from where data needs to be imported; if the Excel has multiple worksheets, the sheet name appears in the drop-down
-* **Header Row No.** – row number of the file header; the default is *1*
-* **Read Data From Row No.** – starting line for reading data; the default is *2*
+* **Sheet Name** – name of the worksheet from where data needs to be imported; if the file has multiple worksheets, the sheet name appears in the drop-down
+* **Header Row No.** – row number of the file header; the default is **1**
+* **Read Data From Row No.** – starting line for reading data; the default is **2**
 
-Click **Preview Structure Elements** to view the structure of data from the file. The data from first row of the source file is shown in the **schema elements** section. Click **Create Structure** and you will be notified that a new structure is generated successfully.
+Click **Preview Structure Elements** to view the data structure from the file. The data from the first row of the source file is shown in the **Schema elements** section. Click **Create Structure** and you will be notified that a new structure is generated successfully.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/preview-data-structure.png" class="no-border" >}}
 
@@ -226,23 +227,27 @@ Click **Preview Structure Elements** to view the structure of data from the file
 
 ### Create Import Mapping {#DI-import-mapping}
 
-You can proceed to create **Import Mapping** using the **Data Importer Document** created in the step above. Do the following:
+Create the import mapping using the Data Importer document created in the step above by doing the following:
 
-1. Right-click your module or folder > **Add other** > **Import mapping**. 
-2. Give a proper name to the Import mapping document and Click **OK**.
-3.  You are now routed to **Select a schema element for Import mapping**. From the **Schema source**, choose the last radio button **Excel/CSV structure**.
-4. Select the sheet from the Excel file which has been uploaded as sample as shown in the figure below:
+1. Right-click your module or folder and select **Add other** > **Import mapping**. 
+2. Name the import mapping document, then click **OK**. You are then routed to **Select a schema element for import mapping**. 
+3. From the **Schema source**, choose **Excel/CSV structure**.
+4. Select the sheet from the Excel file that has been uploaded as a sample, as shown in the image below:
+   
     {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/select-schema-elements-for-imm.png" class="no-border" >}}
 
-5. You can either select all the columns by choosing **Check all** or selectively choose the columns that you want to import from the input file. After the selection of columns is completed, you can click **OK** to create **Import Mapping**. 
+5. Select the columns you want to import. You can either select all the columns by choosing **Check all** or select individual columns. 
+6. Click **OK** to create the **Import Mapping**. 
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/create-import-mapping.png" class="no-border" >}}
 
-6. You can now either choose to map an existing entity by dragging and dropping an existing entity from your domain model via the **Connector** tab or you can choose to press **Map automatically** to create a new NPE in your domain model:
+7. You can now choose to:
+   1. Map an existing entity by dragging and dropping an entity from your domain model via the **Connector** tab
+   2. Click **Map automatically** to create a new NPE in your domain model:
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/map-automatically.png" class="no-border" >}}
 
-7. If you choose **Map automatically**, then you can go to your Domain Model and change the Entity's name and persistence as per your requirement.
+8. If you choose **Map automatically**, you can open the domain model and change the entity's name and persistence, as per your requirement.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/entity-name-persist-change.png" class="no-border" >}}
 
