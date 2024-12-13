@@ -159,7 +159,11 @@ When using JDK versions 17 or 21 (or any version above 16), you may encounter co
 The Snowflake JDBC Driver uses Arrow as the default result format for query execution to improve performance. However, you can override this default setting by switching the result format to JSON.
 
 To set the result format at the Snowflake session or user level, use the following SQL statement:
-```**ALTER USER <user_name> SET JDBC_QUERY_RESULT_FORMAT='JSON';**```
+
+```sql
+**ALTER USER <user_name> SET JDBC_QUERY_RESULT_FORMAT='JSON';**
+```
+
 This approach ensures compatibility with JDK 16+.
 
 ## Configuring a Query to Display Data as a Chart
