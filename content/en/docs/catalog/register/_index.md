@@ -17,4 +17,4 @@ Common tasks for registering services include the following:
 * Manually uploading a metadata contract with the [Catalog UI form](/catalog/register/register-data/#registration-form)
 * Using the [Registration API](/apidocs-mxsdk/apidocs/registration-api/) (for any deployment method)
 
-For an overview of registering OData sources, see [Register OData Resources in the Catalog](/catalog/register/register-data/). You can also [Register Non-OData Resources in the Catalog](/catalog/register-non-odata-resources/). 
+For an overview of registering OData sources, see [Register OData Resources in the Catalog](/catalog/register/register-data/). You can also [Register Non-OData Resources in the Catalog](/catalog/register/register-odata-wrapped-services/). 
