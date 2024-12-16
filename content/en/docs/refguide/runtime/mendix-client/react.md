@@ -91,22 +91,22 @@ Mendix recommends refreshing all Marketplace components in your app before enabl
 
 ### Widgets{#widgets}
 
-Not all Widgets are supported by the React client. Mendix recommends migrating your old widgets using the automatic conversions in Studio Pro. For a list of unsupported configuration options in automatic conversions, see [Widget Conversion Limitations](/refguide/mendix-client/widget-conversion-limitations/).
+Not all widgets are supported by the React client. Mendix recommends migrating widgets in apps below [10.18](/releasenotes/studio-pro/10.18/) using the automatic conversion capabilities in Studio Pro (right-click a widget and select **Convert in-place**). For a list of configuration options unsupported by automatic conversions, see [Widget Conversion Limitations](/refguide/mendix-client/widget-conversion-limitations/).
 
 #### Dynamic & Static Image{#dynamic-static}
 
-The [Dynamic Image](/refguide/image-viewer/) and [Static Image](/refguide/image/) widgets are not supported in the React client. To use React, replace them with the universal [Image](/appstore/widgets/image/) widget. You can [download the Image widget from the Mendix Marketplace](https://marketplace.mendix.com/link/component/118579).
+The [Dynamic Image](/refguide/image-viewer/) and [Static Image](/refguide/image/) widgets are not supported in the React client. To use a React version of these widgets, replace them with the universal Image widget; it is documented [here](/appstore/widgets/image/), and downloadable [here](https://marketplace.mendix.com/link/component/118579). 
 
 To automatically convert a dynamic image or a static image, right-click the widget (or the error message) and select **Convert to Image**.
 
 #### Reference Selectors & Drop-down{#reference-selectors-drop-down}
 
-The reference selector widgets ([Reference Selector](/refguide/reference-selector/), [Reference Set Selector](/refguide/reference-set-selector/), and [Input Reference Set Selector](/refguide/input-reference-set-selector/)) and the [Drop-down](/refguide/drop-down/) are not supported in the React client. To leverage React, replace them with the [Combo Box](/appstore/widgets/combobox/) widget. The combo box widget can be [downloaded from the Mendix Marketplace](https://marketplace.mendix.com/link/component/219304).
+The reference selector widgets ([Reference Selector](/refguide/reference-selector/), [Reference Set Selector](/refguide/reference-set-selector/), and [Input Reference Set Selector](/refguide/input-reference-set-selector/)) and the [Drop-down](/refguide/drop-down/) widget are not supported in the React client. To leverage React, replace unsupported widgets with the combo box widget; it is documented [here](/appstore/widgets/combobox/), and downloadable [here](https://marketplace.mendix.com/link/component/219304). 
 
-To automatically convert a reference selector widget or a drop-down to a combo box, right-click on the widget (or the consistency error message) and select **Convert to combo box**.
+To automatically convert a reference selector widget or a drop-down to a combo box, right-click on the widget (or consistency error message) and select **Convert to combo box**.
 
 {{% alert color="warning" %}}
-Since the Reference Set Selector widget is technically a grid while Combo box is a drop-down, only the applicable configuration options will be transferred to the resulting Combo box during conversion.
+Because the reference set selector widget is technically a grid, while combo box is a drop-down, only the applicable configuration options will be transferred to the resulting combo box during conversion.
 {{% /alert %}}
 
 #### Data Grid{#data-grid}
