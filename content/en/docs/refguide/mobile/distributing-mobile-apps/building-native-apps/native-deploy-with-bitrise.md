@@ -50,51 +50,48 @@ workflows:
       Next steps:
       - Set up an [Apple service with API key](https://devcenter.bitrise.io/en/accounts/connecting-to-services/connecting-to-an-apple-service-with-api-key.html).
     steps:
-      - activate-ssh-key@4:
-          run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
-      - git-clone@8: {}
-      - restore-npm-cache@2.3.1: {}
-      - nvm@1.3.3:
-          inputs:
-          - node_version: '18'
-      - npm@1.1.6:
-          inputs:
-          - command: ci
-      - npm@1.1.6:
-          inputs:
-          - command: run configure
-      - save-npm-cache@1.2.0: {}
-      - file-downloader@1:
-          inputs:
-          - source: "$BITRISEIO_ANDROID_KEYSTORE_URL"
-          - destination: "$BITRISE_SOURCE_DIR/android/app/my-release-key.keystore"
-      - install-missing-android-tools@3:
-          inputs:
-          - gradlew_path: "$PROJECT_LOCATION/gradlew"
-      - android-build@1:
-          inputs:
-          - project_location: "$PROJECT_LOCATION"
-          - module: "$MODULE"
-          - variant: "$VARIANT"
-      - sign-apk@2: {}
-      - manage-ios-code-signing@2.0.1: {}
-      - cocoapods-install@2.4.2:
-          inputs:
-          - source_root_path: "$BITRISE_SOURCE_DIR/ios"
-      - xcode-archive@5:
-          inputs:
-          - project_path: "$BITRISE_PROJECT_PATH"
-          - scheme: "$BITRISE_SCHEME"
-          - distribution_method: "$BITRISE_DISTRIBUTION_METHOD"
-          - configuration: Release
-          - automatic_code_signing: api-key
-      - deploy-to-bitrise-io@2: {}
+    - activate-ssh-key@4:
+        run_if: '{{getenv "SSH_RSA_PRIVATE_KEY" | ne ""}}'
+    - git-clone@8: {}
+    - restore-npm-cache@2.3.1: {}
+    - nvm@1.3.3:
+        inputs:
+        - node_version: '18'
+    - npm@1.1.6:
+        inputs:
+        - command: i
+    - npm@1.1.6:
+        inputs:
+        - command: run configure
+    - save-npm-cache@1.2.0: {}
+    - install-missing-android-tools@3:
+        inputs:
+        - gradlew_path: "$PROJECT_LOCATION/gradlew"
+    - android-build@1:
+        inputs:
+        - project_location: "$PROJECT_LOCATION"
+        - module: "$MODULE"
+        - variant: "$VARIANT"
+    - sign-apk@2: {}
+    - manage-ios-code-signing@2.0.1: {}
+    - restore-cocoapods-cache@2: {}
+    - cocoapods-install@2.4.2:
+        inputs:
+        - source_root_path: "$BITRISE_SOURCE_DIR/ios"
+    - save-cocoapods-cache@1: {}
+    - xcode-archive@5:
+        inputs:
+        - project_path: "$BITRISE_PROJECT_PATH"
+        - scheme: "$BITRISE_SCHEME"
+        - distribution_method: "$BITRISE_DISTRIBUTION_METHOD"
+        - configuration: Release
+        - automatic_code_signing: api-key
+    - deploy-to-bitrise-io@2: {}
 
 meta:
   bitrise.io:
     stack: osx-xcode-16.0.x
     machine_type_id: g2-m1.4core
-
 app:
   envs:
   - opts:
@@ -115,6 +112,11 @@ app:
   - opts:
       is_expand: false
     BITRISE_DISTRIBUTION_METHOD: development
+trigger_map:
+- push_branch: main
+  workflow: primary
+- pull_request_source_branch: "*"
+  workflow: primary
 ```
 
 ## Adding Environment Variables and Secrets in Bitrise
