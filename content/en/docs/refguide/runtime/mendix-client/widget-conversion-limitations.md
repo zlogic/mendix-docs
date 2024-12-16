@@ -7,7 +7,7 @@ weight: 20
 
 ## Introduction
 
-Studio Pro, provides a quick and automatic method to easily migrate the widgets that are unsupported by the React client. However, not all the configuration options are currently supported by the replacement React client-ready widgets.
+Mendix Studio Pro provides a quick and automatic method to easily migrate the widgets that are unsupported by the React client. However, not all configuration options are currently supported by the replacement (React ready) widgets. To better understand which configuration options cannot be used as expected, see the sections below. This document will be updated we make as more widgets and configuration options React ready.
 
 ## Automatic Widget Conversion Limitations
 
@@ -41,7 +41,7 @@ The following sections list the unsupported widget configuration options.
 | Group Digits Formatting      |
 
 {{% alert color="warning" %}}
-Since the Reference Set Selector widget is technically a grid while Combo box is a drop-down, only the applicable configuration options will be transferred to the resulting Combo box during conversion.
+Because the reference set selector widget is technically a grid, while combo box is a drop-down, only the applicable configuration options will be transferred to the resulting combo box during conversion.
 {{% /alert %}}
 
 ### Input Reference Set Selector
