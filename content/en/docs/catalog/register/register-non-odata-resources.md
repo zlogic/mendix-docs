@@ -5,7 +5,7 @@ url: /catalog/register/register-odata-wrapped-services/
 description: "Describes how to convert non-OData resources into OData and register them in the Catalog."
 weight: 30
 aliases:
-    - /catalog/register-non-odata-resources/
+    - /catalog/register/register-non-odata-resources/
 ---
 
 ## Introduction
