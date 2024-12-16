@@ -206,7 +206,7 @@ If your app requires Google services, such as Firebase or Google Play, you need 
 1. In Bitrise, go to **Workflow** > **Secrets** and add a new secret for the JSON key, such as `GOOGLE_SERVICE_ACCOUNT_KEY`.
 1. Follow the Bitrise guide on [Connecting a Google Service Account](https://devcenter.bitrise.io/en/connectivity/connecting-a-google-service-account-to-bitrise.html) for more details.
 
-### You Are Finished!
+## You Are Finished!
 
 By completing the setup of your keystore, Apple service connection, iOS code signing, and optional Google service account you enable Bitrise to handle code signing and integration with necessary services, ensuring smooth builds and deployments for both iOS and Android.
 
