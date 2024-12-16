@@ -15,6 +15,6 @@ Common tasks for registering services include the following:
 * [Registering services on-premises or on a Private Cloud](/catalog/register/data-sources-without-mendix-cloud/)
 * [Automating registration in a pipeline on a Private Cloud](/catalog/automate-registration/)
 * Manually uploading a metadata contract with the [Catalog UI form](/catalog/register/register-data/#registration-form)
-* [Using the Registration API](/catalog/register/register-data/#register-services) (for any deployment method)
+* Using the [Registration API](/apidocs-mxsdk/apidocs/registration-api/) (for any deployment method)
 
-For an overview of registering OData sources, see [Register OData Resources in the Catalog](/catalog/register/register-data/). You can also [Register Non-OData Resources in the Catalog](/catalog/register-non-odata-resources/). 
+For an overview of registering OData sources, see [Register OData Resources in the Catalog](/catalog/register/register-data/). You can also [Register Non-OData Resources in the Catalog](/catalog/register/register-odata-wrapped-services/). 
