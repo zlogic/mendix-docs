@@ -84,7 +84,7 @@ The empty rows before the start of actual header and data row(s) are trimmed in 
 
 For example, the below file will result in a confusing preview if **Header Row No.** is 2 and **Read Data From** is 3. In this scenario, the first row (which is empty) should be removed from the input Excel file. Then, **Header Row No.** should be set as 1 and **Read Data From** as 2. Otherwise, a static test should be given in any column of first row to continue with **Header Row No.** as 2.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/empty-row-before-header.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/empty-row-before-header.png" class="no-border" width="400" >}}
 
 #### Previewing CSV Data {#preview-data-csv}
 
@@ -159,7 +159,7 @@ When you are done editing the entity, click **Create Entity** > **OK**. This wil
 
 When the entity is created, you can view the mapping of the source columns to the target entity attributes. 
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/source-to-target-mapping.png" class="no-border" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/source-to-target-mapping.png" class="no-border" width="500" >}}
 
 The Data Importer document creation is complete and can be used to [import data in a microflow](#import-microflow).
 
@@ -205,7 +205,7 @@ To import data, do the following:
 2. Name the document and enable the **Use with Import Mapping** checkbox. 
 3. Click **OK** and the new Data Importer document opens. 
    
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/create-DI-doc-with-import-mapping.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/create-DI-doc-with-import-mapping.png" class="no-border" width="400" >}}
 
 ### Previewing Structure {#preview-structure}
 
@@ -264,7 +264,7 @@ The instructions below show how to import data from an Excel (or CSV) file.
 5. Select **Range** and **Commit** options, if needed.
 6. In the **Output** section, you can choose **Store in variable**, then click **OK**.
    
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/import-with-mapping-params.png" class="no-border" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/data-importer-extension/import-with-mapping-params.png" class="no-border" width="500" >}}
 
 ### Before Running Your App {#data-import-with-mapping-app}
 
