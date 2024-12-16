@@ -8,7 +8,7 @@ weight: 15
 
 ## Consumed REST Services
 
-The Consumed REST Service document allows you to interact with any REST API. You can build, test, and create data structures to store your REST requests. 
+Mendix offers different features which allow you to interact with any REST API. You can use them to build and test your REST requests or create data structures in your project.
 
 ## Documents in This Category
 

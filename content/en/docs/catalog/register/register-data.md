@@ -34,7 +34,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 ## Registering a Service Through Mendix Cloud {#mendix-cloud}
 
-If you have a published service that is deployed to [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), then your service is already registered in the [Catalog](/catalog/).
+If you have a published service that is deployed to [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), then your service is already [registered in the Catalog](/catalog/register/automatically-registered-services/).
 
 ## Registering a Service Without Mendix Cloud {#without-mendix-cloud}
 
@@ -45,22 +45,32 @@ If you are not using Mendix Cloud to deploy your Mendix application, there are t
 
 The Catalog collects metadata about the application and environment where your application is deployed, so you can distinguish services from one another. To register your service, you need to provide details about both the application and the environment where the service is deployed.
 
-For details on working with external entities and the Catalog without Mendix Cloud, see [Register Data Sources without Mendix Cloud](/catalog/data-sources-without-mendix-cloud/).
+For details on working with external entities and the Catalog without Mendix Cloud, see [Register Services without Mendix Cloud](/catalog/data-sources-without-mendix-cloud/).
 
 ### Registering a Service Through the Catalog UI Form {#registration-form}
 
 The Catalog has a UI form where you can register a single exposed service. Make sure you have collected the following details before you begin:
 
-* Metadata contract file as an XML, or ZIP if it is multiple files
-* Data Source details: `Name`, `Version`, `Path`
+* Metadata contract file as an *.xml*, *.json*, *.yaml* or *.wsdl*, depending on the service you want to register, or a *.zip* if there are multiple files
+* Service details: `Name`, `Version`, `Path`
 * Application `Name`
 * Environment details: `Name`, `Location` (URL), `Type`
 
 Follow the steps below:
 
 1. Open the [Catalog home page](https://catalog.mendix.com).
-2. On the **Contract** screen, upload your XML or ZIP file. For more information on the contract, see the [Contract Structure](#contract-structure) section below.
-3. On the **Data Source** screen, select the type of service you want to register and specify the following Data Source details: **Data Source Name**, **Data Source Version**, and **Data Source Relative Path**. The **Data Source Relative Path** is the path of the service contract relative to the environment URL of the application. For more advice on versioning, see [Semantic numbering](/refguide/consumed-odata-service/#semantic). The other fields on the form are optional.
+2. On the **Contract** screen, select what type of service you would like to register. Upload a valid contract file corresponding to the service type that is selected, such as: 
+    * *.xml* for OData
+    * *.yaml* or *.json* for REST
+    * *.wsdl* or *.xml* for Web Service
+
+    For more information on the contract, see the [Contract Structure](#contract-structure) section below.
+3. On the **Service Details** screen, select the type of service you want to register and specify the following details: 
+   1. Service Name
+   2. Service Version
+   3. Service Relative Path. 
+   
+   The Service Relative Path is the path of the service contract relative to the environment URL of the application. For more information on versioning, see [Semantic numbering](/refguide/consumed-odata-service/#semantic). The other fields on the form are optional.
 
     {{% alert color="warning" %}}Once a version is released to production, any updated contracts should be given a new version. This applies even if you are only registering for a non-production environment.<br/><br/>This is because changes to a particular version of a published service are reflected in the entities and attributes available through the Catalog for every environment for which the service is published. For example, if you have version 1.0.0 published to both non-production and production environments, any changes you make to version 1.0.0 of the service in the non-production environment are also reflected in the service in production.{{% /alert %}}
 
@@ -74,7 +84,7 @@ Follow the steps below:
     * **Non-production** – hosting is paid for, but data is not of production quality
 
 8. Select your **Authentication** method. For details on supported authentication types, see the [Authentication](#authentication) section below. Curators can also [add or change authentication methods](/catalog/manage/curate/#authentication) later.
-9. Select **Done!** to complete the registration.
+9.  Select **Done!** to complete the registration.
 
 Congratulations! Your service is registered in the Catalog. 
 
@@ -82,13 +92,13 @@ The discoverable status of the service defaults to the value set by the Mendix A
 
 #### Selecting an Authentication Method {#authentication}
 
-Publishers of a data source can determine how consuming developers will need to identify themselves when consuming the data source.
+Publishers of a service can determine how consuming developers will need to identify themselves when consuming the service.
 
 The Catalog supports the following methods:
 
 * **Basic authentication** – Authenticate from a username and password
-* **Active session** – For Mendix data sources, authenticate from the open and active browser session
-* **Mendix SSO** – For Mendix data sources, authenticate from single sign-on using the [Mendix SSO](/appstore/modules/mendix-sso/) module
+* **Active session** – For Mendix services, authenticate from the open and active browser session
+* **Mendix SSO** – For Mendix services, authenticate from single sign-on using the [Mendix SSO](/appstore/modules/mendix-sso/) module
 * **OAuth** – Authenticate with [OAuth](https://oauth.net/)
 * **OpenID Connect** – Authenticate with [OpenID Connect](https://openid.net/connect/), built on top of [OAuth 2.0](https://oauth.net/2/) and used with the [OIDC SSO](/appstore/modules/oidc/) module
 * **Other** – Specify other ways to authenticate, including custom modules

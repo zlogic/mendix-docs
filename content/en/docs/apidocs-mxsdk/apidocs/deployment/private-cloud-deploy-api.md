@@ -62,7 +62,7 @@ Store the `{GENERATED_PAT}` value in a safe location, so you can use it to autho
 | Get namespace manifest           | `mx:deployment:read`  or `mx:deployment:write`   |
 | Get namespaces manifest          | `mx:deployment:read`  or `mx:deployment:write`   |
 | Get cluster manifest             | `mx:deployment:read`  or `mx:deployment:write`   |
-| Get clusters manifest       	   | `mx:deployment:read`  or `mx:deployment:write`   |
+| Get clusters manifest            | `mx:deployment:read`  or `mx:deployment:write`   |
 | Create cluster                   | `mx:deployment:write`                            |
 | Update cluster                   | `mx:deployment:write`                            |
 | Delete cluster                   | `mx:deployment:write`                            |

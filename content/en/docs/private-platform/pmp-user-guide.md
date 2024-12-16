@@ -115,8 +115,8 @@ In the **Deploy** section, you can configure the environment to which your app w
     * **Display Name** - The name that will be displayed in the UI. You can have several environments for your app, for example *test*, *acceptance*, and *production*.
     * **Cluster** and **Namespace** - An existing cluster and its namespace.
 
-3. Click **Next**.
-4. After the environment is created, you can use the **Details** menu to perform additional actions such as deleting the environment, or starting and stopping the app.
+5. Click **Next**.
+6. After the environment is created, you can use the **Details** menu to perform additional actions such as deleting the environment, or starting and stopping the app.
 
 ## Managing Marketplace Content
 

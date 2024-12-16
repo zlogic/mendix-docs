@@ -1,7 +1,7 @@
 ---
 title: "Search in the Catalog"
 url: /catalog/manage/search/
-description: "Describes how to find data sources and datasets in the Catalog."
+description: "Describes how to find services and datasets in the Catalog."
 aliases:
     - /data-hub/data-hub-catalog/search/
     - /data-hub/data-hub-catalog/manage-data-sources/search/
@@ -16,21 +16,21 @@ Finding the right data to use in your app development is made easier using the s
 
 ### Details of Registered Assets
 
-You can start searching from the [Home](#data-hub-home) page, or click the [Catalog](#search-tab) tab to go to the **Search** pane and **Asset Details** screen. This section describes important properties of registered assets: data sources, datasets, and attributes.
+You can start searching from the [Home](#data-hub-home) page, or click the [Catalog](#search-tab) tab to go to the **Search** pane and **Asset Details** screen. This section describes important properties of registered assets: services, datasets, and attributes.
 
 {{% alert color="info" %}}The **Dataset** is the name of the **Entity set** of a published **Entity** in Mendix Studio Pro, which by default, is the entity name with an "s" appended to it. For example, if an entity named `Customer` is published in an OData service, the **Dataset** name in the **Search Details** will be `Customers`.{{% /alert %}}
 
 #### Versions
 
-Every published service (or data source) has a version number. Apps that consume a data source will consume from a specific version. Updates and changes to a service will be indicated by a change in the version number. Several versions of a registered data source may be available in the Catalog. The data source version is displayed in the [Asset Details](#search-details).
+Every published service has a version number. Apps that consume a service will consume from a specific version. Updates and changes to a service will be indicated by a change in the version number. Several versions of a registered service may be available in the Catalog. The service version is displayed in the [Asset Details](#search-details).
 
 #### Environments
 
-The Catalog is a register of published services (or data sources) that are deployed to a particular environment. You can have multiple versions of a service for each environment by giving them different version numbers.
+The Catalog is a register of published services that are deployed to a particular environment. You can have multiple versions of a service for each environment by giving them different version numbers.
 
 The environment also provides an indication of the quality of the dataset that is available. Shared datasets that are available from a *production environment* will have production-level data, while those in non-production environments (*acceptance*, *development*) could be populated with data that may not be reliable for building stable apps but be useful for development work.
 
-Search results show the data source endpoints. If a version of a service is deployed on both a test and acceptance environment, two endpoints are shown in the search results.
+Search results show the service endpoints. If a version of a service is deployed on both a test and acceptance environment, two endpoints are shown in the search results.
 
 {{% alert color="info" %}}
 By default, search results in the Catalog are filtered to show only hits in the **Production** environments. You can extend the search to **Non-production** or **Mendix Free App (Sandbox)** environments by checking them in the search pane **Add Filter** list. For more details, see the [Filters](#filter) section below.
@@ -38,7 +38,7 @@ By default, search results in the Catalog are filtered to show only hits in the 
 
 #### Asset Description
 
-The description that is included as part of the published service metadata. This description can be edited at the data source, dataset, and attribute level by owners and curators.
+The description that is included as part of the published service metadata. This description can be edited at the service, dataset, and attribute level by owners and curators.
 
 {{% alert color="info" %}}
 In Studio Pro, when publishing a service, it is possible to specify a summary of the service and a description. Only the description is included in the service contract document and registered in the Catalog.
@@ -48,7 +48,7 @@ In Studio Pro, when publishing a service, it is possible to specify a summary of
 
 When searching in the Catalog, the following fields are searched:
 
-* Data source or service endpoint: Name, Description, Tags
+* Service endpoint: Name, Description, Tags
 * Application: Name
 * Dataset: Name, Description
 * Attribute: Name, Description
@@ -59,7 +59,7 @@ From the **Catalog** home page, you can search the Catalog in the following ways
 * Type a search term in the search box and click **Search** (search strings must be at least 3 alphanumeric characters)
 * Click one of the tags provided in the search suggestions
 * Click one of the services under **Most Recent Changes**
-* Click one of the services under **Popular Data Sources**
+* Click one of the services under **Popular Services**
 * Click the **Catalog** tab
 
 Any of the above actions will take you to the **Search** screen.
@@ -105,30 +105,30 @@ When an item in the search results is selected, the **Landscape** tab shows the 
 
 When you click a search result, the details are displayed in this panel.
 
-#### Details of a Selected Data Source {#service-details}
+#### Details of a Selected Service {#service-details}
 
 The contract of the published service (the *$metadata* document) contains the details of what is exposed in the service. This includes the metadata of the exposed datasets (or entity sets in Mendix Studio Pro) and their exposed attributes, associations, and types. The contract metadata is displayed, along with any Catalog-curated metadata.
 
-When a data source is selected in the search results, the following details are displayed:
+When a service is selected in the search results, the following details are displayed:
 
 * Application icon
-* Name of the data source
-* **Non-discoverable** icon – if the data source has been set to non-discoverable (by default, data sources are discoverable to all users in your company and no icon appears)
+* Name of the Service
+* **Non-discoverable** icon – if the service has been set to non-discoverable (by default, services are discoverable to all users in your company and no icon appears)
 * **Validated** icon – if it has been set for the asset
 * **Environment Name** – where the app is deployed
 * **Version** – version number of the service
 * **Connections** – number of apps that consume the service
 * **Authentication** – authentication information, and the option to **Request access** if available
-* A description of the data source
-* All **Datasets** that are exposed in the data source (you can expand each one to see details of the attributes and associations)
+* A description of the service
+* All **Datasets** that are exposed in the service (you can expand each one to see details of the attributes and associations)
 
 {{% alert color="info" %}}In Mendix Studio Pro, the **Dataset** is the name of the **Entity set** of a published **Entity**. This defaults to the entity name with an "s" appended to it. For example, if an entity named `Customer` is published in an OData service, the **Dataset** name in the **Search Details** will be `Customers`.{{% /alert %}}
 
 You can perform the following actions from this screen:
 
 * **Share** – click to copy the link to this asset detail page to the clipboard so that you can share it with others.
-* **[Download Contract](#download-contract)** – retrieve and save the OData contract from the data source endpoint to your computer. You can upload this in the Catalog to register it manually.
-* **Copy URI** – click to copy the URI of the data source contract to the clipboard. This URI can be used to integrate the data source in other enterprise applications.
+* **[Download Contract](#download-contract)** – retrieve and save the OData contract from the service endpoint to your computer. You can upload this in the Catalog to register it manually.
+* **Copy URI** – click to copy the URI of the service contract to the clipboard. This URI can be used to integrate the service in other enterprise applications.
 * **Copy Dataset URI** – click to copy the URI of the dataset to the clipboard for use in other business applications.
 
 #### Details for a Selected Dataset {#entity-details}
@@ -142,8 +142,8 @@ The source and endpoint details of the dataset are displayed:
 {{< figure src="/attachments/catalog/search/dataset-details.png" alt="associations info" >}}
 
 * Dataset name
-* **Part of** – a link to the data source details page that the dataset is exposed in
-* **Version** number of the data source that the dataset is exposed in
+* **Part of** – a link to the service details page that the dataset is exposed in
+* **Version** number of the service that the dataset is exposed in
 * **Connections** – the number of apps that consume this dataset
 * A description of the dataset
 * [Authentication method](/catalog/register/register-data/#authentication)
@@ -174,11 +174,11 @@ The metadata panel at the right of the asset details screen displays details fro
 
 #### Tags
 
-These are the tags that have been assigned to the data source in the Catalog (for more information, see the [Adding or Editing Tags to a Service](/catalog/manage/curate/#tags) section of *How to Curate Registered Assets*). Tags assigned at a data source-level propagate down to the datasets and attributes exposed in the service.
+These are the tags that have been assigned to the service in the Catalog (for more information, see the [Adding or Editing Tags to a Service](/catalog/manage/curate/#tags) section of *How to Curate Registered Assets*). Tags assigned at a service-level propagate down to the datasets and attributes exposed in the service.
 
 #### Business Owner {#business-owner}
 
-This is a link to the business owner of the data exposed in the data source. For more information, see the [Changing Owners of an App](/catalog/manage/curate/#changing-owners) section of *How to Curate Registered Assets*.
+This is a link to the business owner of the data exposed in the service. For more information, see the [Changing Owners of an App](/catalog/manage/curate/#changing-owners) section of *How to Curate Registered Assets*.
 
 #### Technical Owner
 
@@ -190,9 +190,9 @@ Technical owners can be [changed](/catalog/manage/curate/#changing-owners).
 
 #### Discoverability {#discoverability-metadata}
 
-When a data source is registered, by default, it is **Discoverable** in the Catalog. When this is set, all users in your company can find it, view the details, and consume it. The owners of an asset and curators can set a data source as **Non-discoverable**, which means it is not visible to users unless they are the owner or a curator.
+When a service is registered, by default, it is **Discoverable** in the Catalog. When this is set, all users in your company can find it, view the details, and consume it. The owners of an asset and curators can set a service as **Non-discoverable**, which means it is not visible to users unless they are the owner or a curator.
 
-See the [Curation Bar](#curation-option) section below for changing **Discoverability** as the owner of the data source or curator.
+See the [Curation Bar](#curation-option) section below for changing **Discoverability** as the owner of the service or curator.
 
 The following discoverability values can be set:
 
@@ -201,11 +201,11 @@ The following discoverability values can be set:
 
 #### Validated
 
-This indicates if the data source has been **Validated**. For details on changing **Validated** as an owner or curator, see the [Curation Bar](#curation-option) section below. See the [Validated](/catalog/manage/curate/#validated) section of *Curate Registered Assets* to learn about what this means.
+This indicates if the service has been **Validated**. For details on changing **Validated** as an owner or curator, see the [Curation Bar](#curation-option) section below. See the [Validated](/catalog/manage/curate/#validated) section of *Curate Registered Assets* to learn about what this means.
 
 #### Application
 
-A link to the application from which the data source was published in the given environment.
+A link to the application from which the service was published in the given environment.
 
 #### Environment Type
 
@@ -221,17 +221,17 @@ The **Curation Option** is displayed in the asset detail screen if you are the o
 
 {{< figure src="/attachments/catalog/search/curation-option.png" alt="curation option"   width="300"  >}}
 
-* For the selected data source, you can edit [Application Details](/catalog/manage/curate/#curate-application), [Data Source Details](/catalog/manage/curate/#service-details), and Authentication
+* For the selected service, you can edit [Application Details](/catalog/manage/curate/#curate-application), [Service Details](/catalog/manage/curate/#service-details), and Authentication
 
 For further details, see the [Discoverable and Validated](/catalog/manage/curate/#discoverability) section of *Curate Registered Assets*.
 
-### Data Source and Dataset URIs
+### Service and Dataset URIs
 
-The data source URI is the location of the service contract of the data source, also known as the service endpoint. The endpoints of all exposed datasets (entity sets) are defined in the contract. From the details screen of the data source and dataset, you can copy the URIs to the clipboard by clicking the **Copy Data Source URI** and **Copy Dataset URI** respectively. These URIs can be used for directly accessing the contract and resource in BI applications.
+The service URI is the location of the service contract of the service, also known as the service endpoint. The endpoints of all exposed datasets (entity sets) are defined in the contract. From the details screen of the service and dataset, you can copy the URIs to the clipboard by clicking the **Copy URI**. These URIs can be used for directly accessing the contract and resource in BI applications.
 
-### Download the Contract of a Data Source {#download-contract}
+### Download the Contract of a Service {#download-contract}
 
-For a selected data source, you can click **Download** to download the service contract that is located at the data source endpoint. A ZIP file that includes the all the files that make up the full contract is generated and downloaded.
+For a selected service, you can click **Download** to download the service contract that is located at the service endpoint. A ZIP file that includes the all the files that make up the full contract is generated and downloaded.
 
 The resulting ZIP file is named `DataHub_<service_name>_<service_version>_<technology>.zip` where the string `<technology>` identifies the service protocol.
 

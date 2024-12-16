@@ -57,16 +57,14 @@ Mendix uses the following static IP addresses. If you need more information, fil
 
 ##### Accessing AWS Services in Mendix Cloud
 
-Mendix Cloud uses [VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html) to privately access AWS services.
+Mendix Cloud uses [VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html) to privately access AWS services. The [aws:VpcSourceIp](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-vpcsourceip) condition
+key can be used in a policy to allow principals (Mendix apps and end-users) to make requests only from within a specified IP range.
 
-AWS API requests can, therefore, originate from the following IP ranges:
+If you apply IP restrictions to your AWS IAM user or role, you must ensure that the following IP ranges for API requests are allowed in your policy:
 
 * `10.10.128.0/21`
 * `10.10.136.0/21`
 * `10.10.144.0/21`
-
-The [aws:VpcSourceIp](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-vpcsourceip) condition
-key can be used in a policy to allow principals (Mendix apps and end-users) to make requests only from within a specified IP range. If you apply IP restrictions to your AWS IAM user or role, make sure that the IP ranges for AWS API requests (above) are allowed in your policy.
 
 ## Frequently Asked Questions
 

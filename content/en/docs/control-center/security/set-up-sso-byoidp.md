@@ -1,7 +1,7 @@
 ---
 title: "Set Up an SSO (BYOIDP)"
 url: /control-center/security/set-up-sso-byoidp/
-weight: 5
+weight: 30
 description: "Describes how you can use your company IdP to authenticate to Mendix."
 aliases:
     - /developerportal/control-center/set-up-sso-byoidp/

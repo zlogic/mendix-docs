@@ -82,6 +82,10 @@ With non-interrupting boundary events, the parent activity remains active/in pro
 
 ## Boundary Event Variables
 
+{{% alert color="info" %}}
+Boundary event variables are available starting from Studio Pro version 10.16.
+{{% /alert %}}
+
 Boundary events have dedicated variables that can be used to get direct access to the values of the parent activity if it is either a user task or Call workflow activity. You can get information such as the parent activity's `DueDate`, which can be used in the boundary event flow and its expressions. For instance, you can use the expression `addDays($ParentTask/DueDate, -2)` to configure a timer boundary event so that it is triggered two days before the due date of its parent user task.
 
 The list of variables is described below: 

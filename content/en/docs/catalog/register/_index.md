@@ -1,5 +1,5 @@
 ---
-title: "Register Data Sources"
+title: "Register Services"
 url: /catalog/register/
 weight: 10
 aliases:
@@ -9,10 +9,10 @@ aliases:
 
 Publishing developers can register services in the Catalog in different ways depending on how their apps are deployed.
 
-Common tasks for registering data sources include the following:
+Common tasks for registering services include the following:
 
 * [Registering services automatically on Mendix Cloud](/catalog/register/register-data/#mendix-cloud)
-* [Registering data sources on-premises or on a Private Cloud](/catalog/register/data-sources-without-mendix-cloud/)
+* [Registering services on-premises or on a Private Cloud](/catalog/register/data-sources-without-mendix-cloud/)
 * [Automating registration in a pipeline on a Private Cloud](/catalog/automate-registration/)
 * Manually uploading a metadata contract with the [Catalog UI form](/catalog/register/register-data/#registration-form)
 * Using the [Registration API](/apidocs-mxsdk/apidocs/registration-api/) (for any deployment method)
