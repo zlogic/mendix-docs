@@ -1,7 +1,7 @@
 ---
-title: "Build a Mendix Native App in the Cloud with Bitrise"
+title: "Build a Mendix Native App with Bitrise"
 linktitle: "Deploy Mendix Native Mobile App with Bitrise"
-url: /refguide/mobile/distributing-mobile-apps/building-native-apps/native-deploy-with-bitrise/
+url: /refguide/mobile/distributing-mobile-apps/building-native-apps/bitrise/
 weight: 30
 description: Describes how to itegrate with Bitrise to build a Mendix native app in the cloud.
 ---
