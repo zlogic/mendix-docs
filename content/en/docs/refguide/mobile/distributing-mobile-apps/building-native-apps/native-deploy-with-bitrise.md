@@ -8,7 +8,7 @@ description: Describes how to itegrate with Bitrise to build a Mendix native app
 
 ## Introduction
 
-{{% alert color="warn" %}}
+{{% alert color="warning" %}}
 Microsoft announced that Visual Studio App Center will be retired on March 31, 2025 ([Find the announcement here](https://learn.microsoft.com/en-us/appcenter/retirement)). This guide introduces an alternative approach using [Bitrise](https://bitrise.io) for building and deploying Mendix Native apps in the cloud. This guide provides steps for transitioning to Bitrise.
 {{% /alert %}}
 
