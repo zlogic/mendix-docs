@@ -18,8 +18,6 @@ description: "Native Template 10 release notes."
 * Projects created in Studio Pro 10.17 and above will automatically use the latest React Native version without additional configuration.
 * For projects upgrading from Mendix versions below 10.17 to 10.17 and above, follow the steps in [Upgrade Instructions](#upgrade-instructions) below to migrate your project.
 
-### Breaking Changes
-
 #### Library Updates and Improvements
 
 - **@react-native-async-storage/async-storage:** 2.0.0  
@@ -35,6 +33,8 @@ description: "Native Template 10 release notes."
 - **react-native-svg:** 15.7.1  
 - **react-native-tab-view:** 3.5.2  
 - **react-native-vector-icons:** 10.2.0  
+
+### Breaking Changes
 
 #### Library Migration
 
