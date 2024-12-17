@@ -12,24 +12,25 @@ description: "Describes the Snowflake Cortex service."
 
 ## Integrating Your Mendix App with Snowflake Cortex
 
-To allow your Mendix app to use Snowflake Cortex functionalities, install and configure the [Snowflake REST SQL connector](/appstore/connectors/snowflake/snowflake-rest-sql/).
+To allow your Mendix app to use Snowflake Cortex GenAI functionalities, install and configure the [Snowflake REST SQL connector](/appstore/connectors/snowflake/snowflake-rest-sql/).
 
 Mendix also offers a [Snowflake showcase app](https://marketplace.mendix.com/link/component/225845), which you can use as an example of how to implement the Cortex functionalities in your own app.
 
 ### Available Functionalities
 
-The integration between Mendix and Snowflake Cortex supports the following functionalities:
+The integration between Mendix and Snowflake Cortex supports the following GenAI functionalities:
 
 * [Analyst](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst)
-* [ANOMALY DETECTION](https://docs.snowflake.com/en/user-guide/ml-functions/anomaly-detection)
 * [COMPLETE](https://docs.snowflake.com/en/user-guide/snowflake-cortex/llm-functions#label-cortex-llm-complete)
 * [TRANSLATE](https://docs.snowflake.com/en/user-guide/snowflake-cortex/llm-functions#label-cortex-llm-translate)
+
+In addition to the above, the integration also supports the [ANOMALY DETECTION](https://docs.snowflake.com/en/user-guide/ml-functions/anomaly-detection) ML functionality. All functionalities are implemented by calling them from microflows which you can use as examples to implement the functions in your own app.
 
 #### Implementing the Analyst Functionality
 
 For more information about configuring the integration between Mendix and Snowflake Cortex Analyst, see [Configuring Snowflake Cortex Analyst](/appstore/connectors/snowflake/snowflake-rest-sql/#cortex-analyst).
 
-#### Implementing Other Functionalities
+#### Implementing Other Functionalities {#functionalities}
 
 The [Snowflake showcase app](https://marketplace.mendix.com/link/component/225845) contains example implementations of the Analyst, ANOMALY DETECTION, COMPLETE and TRANSLATE functionalities. To examine these examples, perform the following steps:
 
