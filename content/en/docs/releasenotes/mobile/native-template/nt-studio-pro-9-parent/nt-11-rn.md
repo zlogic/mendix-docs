@@ -33,4 +33,4 @@ If you are upgrading from Mendix versions below 10.17, please follow these steps
 1. Test your application:
     1. Thoroughly test your application to ensure that all features work as expected after the updates.
 
-For the most direct information on the Native Template, visit our [GitHub Releases page](https://github.com/mendix/native-template/releases/tag/v10.0.0).
+For the most direct information on the Native Template, visit our [GitHub Releases page](https://github.com/mendix/native-template/releases/tag/v11.0.0).
