@@ -149,7 +149,7 @@ To allow the module to send and receive document generation requests on your Men
 
 #### Allowing the Document Generation Service IP Addresses {#allow-ip}
 
-If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using IP restrictions, you must add the [outbound IP addresses of the DocGen service](/developerportal/deploy/mendix-ip-addresses/#global-platform-outbound) to the list of allowed addresses.
+If your app is configured to [restrict access for incoming requests](/developerportal/deploy/access-restrictions/) using IP restrictions, you must add the [outbound IP addresses of the DocGen service](/developerportal/deploy/mendix-ip-addresses/#global-platform-ips-outbound) to the list of allowed addresses.
 
 ### Running On-Premises {#run-on-premises}
 
@@ -196,7 +196,7 @@ Rule | Name | Pattern | Rewrite URL
 
 #### Allowing the Document Generation Service IP Addresses
 
-If you have set up inbound or outbound IP restriction rules, you must allow the [IP addresses of the DocGen service.](developerportal/deploy/mendix-ip-addresses/#global-platform-ips)
+If you have set up inbound or outbound IP restriction rules, you must allow the [IP addresses of the DocGen service.](/developerportal/deploy/mendix-ip-addresses/#global-platform-ips)
 
 ## Usage
 
