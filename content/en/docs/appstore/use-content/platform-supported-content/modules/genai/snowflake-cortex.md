@@ -16,21 +16,30 @@ To allow your Mendix app to use Snowflake Cortex GenAI functionalities, install 
 
 Mendix also offers a [Snowflake showcase app](https://marketplace.mendix.com/link/component/225845), which you can use as an example of how to implement the Cortex functionalities in your own app.
 
-### Available Functionalities
+## Functionalities Available in the Snowflake Showcase App
 
-The integration between Mendix and Snowflake Cortex supports the following GenAI functionalities:
+The Snowflake showcase app shows an example implementation of the following GenAI functionalities:
 
 * [Analyst](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst)
 * [COMPLETE](https://docs.snowflake.com/en/user-guide/snowflake-cortex/llm-functions#label-cortex-llm-complete)
 * [TRANSLATE](https://docs.snowflake.com/en/user-guide/snowflake-cortex/llm-functions#label-cortex-llm-translate)
 
-In addition to the above, the integration also supports the [ANOMALY DETECTION](https://docs.snowflake.com/en/user-guide/ml-functions/anomaly-detection) ML functionality. All functionalities are implemented by calling them from microflows which you can use as examples to implement the functions in your own app.
+In addition to the above, the integration also supports the [ANOMALY DETECTION](https://docs.snowflake.com/en/user-guide/ml-functions/anomaly-detection) ML functionality.
 
-#### Implementing the Analyst Functionality
+The showcase app has the following pages:
+
+* **Introduction** - Information about Snowflake AI and the necessary prerequisites to use it.
+* **Machine Learning** - Sample implementation of the ANOMALY DETECTION machine learning functionality.
+* **Large Language Models** - Information about the available LLM functions, as well as a sample implementation of COMPLETE and TRANSLATE.
+* **Cortex Analyst** - Sample implementation of Snowflake Cortex Analyst, including a chat feature that can take the SQL answer returned by Cortex Analyst, and convert it to natural language.
+
+Under the hood, the functionalities are implemented by calling them from microflows which you can use as examples to implement the functions in your own app. For more information, refer to the following sections.
+
+### Implementing the Analyst Functionality
 
 For more information about configuring the integration between Mendix and Snowflake Cortex Analyst, see [Configuring Snowflake Cortex Analyst](/appstore/connectors/snowflake/snowflake-rest-sql/#cortex-analyst).
 
-#### Implementing Other Functionalities {#functionalities}
+### Implementing Other Functionalities {#functionalities}
 
 The [Snowflake showcase app](https://marketplace.mendix.com/link/component/225845) contains example implementations of the Analyst, ANOMALY DETECTION, COMPLETE and TRANSLATE functionalities. To examine these examples, perform the following steps:
 
@@ -43,9 +52,9 @@ The [Snowflake showcase app](https://marketplace.mendix.com/link/component/22584
     This section contains the following pages:
 
         1. Introduction
-        2. ANOMALY DETECTION
-        3. COMPLETE and TRANSLATE
-        4. Analyst
+        2. ANOMALY DETECTION (Machine Learning)
+        3. COMPLETE and TRANSLATE (Large Language Models)
+        4. Analyst (Cortex Analyst)
 
 3. To see how a Snowflake function is called, right-click on the corresponding **SQLStatement** field, and then click **Go to data source microflow**.
 
