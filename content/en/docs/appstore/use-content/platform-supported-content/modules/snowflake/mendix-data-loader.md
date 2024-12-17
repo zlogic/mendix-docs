@@ -96,6 +96,38 @@ To view all ingestion jobs associated with a specific data source in Snowflake, 
 SELECT * FROM core.ingestion_job WHERE DATASOURCE_ID = '1234abcd' ORDER BY CREATED_DATE_TIME DESC;
 ```
 
+## Programmatically Trigger an Ingestion From a Mendix App
+
+Programmatically triggering an ingestion job can meet data ingestion requirements where a scheduled task may not. This includes cases such as waiting for a last submission to be submitted to a Mendix app before data ingestion occurs. Another example case is to start data ingestion when the load on the Mendix app is the lowest.
+
+### Prerequisites
+- A fully configured data source in the Mendix Data Loader
+- A Mendix app equipped with the Snowflake REST SQL connector
+- An authenticated user that is allowed to trigger stored procedures
+
+To trigger an ingestion job programmatically, use the `ExecuteStatement` operation available in the Snowflake REST SQL connector. The statement to be executed has the following syntax.
+
+```sql
+CALL {NAME_OF_THE_MENDIX_DATA_LOADER}.MX_FUNCTIONS.RUN_INGESTION_JOB('{DATASOURCE_ID}','{TASK_ID}');
+```
+
+- The default name for the Mendix Data Loader is `MENDIX_DATA_LOADER`
+- Data source ID is a required parameter
+- Task ID is an optional parameter
+
+To find the data source ID for a given data source:
+1. Navigate to the Snowflake environment
+2. Open the Mendix Data Loader; Data Products -> Apps -> Mendix Data Loader
+3. Open the application by clicking the `MENDIX_DATA_LOADER` tab
+4. Click *View* on the configured data source
+5. Copy the value for the `ID` key
+
+For a data source with the ID *40FJYP9D*, the resulting statement will be.
+
+```sql
+CALL MENDIX_DATA_LOADER.MX_FUNCTIONS.RUN_INGESTION_JOB('40FJYP9D','');
+```
+
 ## Verifying the Access Token
 
 When using OAuth authentication with the Mendix Data Loader, it is crucial to verify the access token received by your Mendix application. This verification process ensures the token's authenticity and integrity, protecting your application from unauthorized access attempts.
