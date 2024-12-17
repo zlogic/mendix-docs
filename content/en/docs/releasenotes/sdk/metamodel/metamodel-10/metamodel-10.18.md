@@ -8,6 +8,5 @@ parent: "metamodel-10"
 ### Navigation
 
 #### NativeNavigationProfile (Element)
-* We deleted the `hermesEnabled` property. 
 
-This page has been generated automatically.
+* We deleted the `hermesEnabled` property. 
