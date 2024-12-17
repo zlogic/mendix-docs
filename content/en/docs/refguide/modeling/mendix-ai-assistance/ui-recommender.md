@@ -22,7 +22,7 @@ UI Recommender is only available in **Design Mode**. It is displayed as a small 
 1. Open the UI Recommender dialog box in the following way:
 
     1. Go to **Design Mode** if you are not in this mode.
-    1. Hover over an element on the page, a blue plus sign that represents UI Recommender appears:
+    1. Hover over an element on the page and a blue plus sign that represents UI Recommender appears:
 
         {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/ui-recommender/blue-plus-sign.png" alt="UI Recommender sign">}}
 
@@ -44,6 +44,7 @@ UI Recommender is only available in **Design Mode**. It is displayed as a small 
     1. In the UI Recommender dialog box, search for the element you would like to add:
 
         {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/ui-recommender/search-in-dialog.png" alt="Search in UI Recommender" >}}
+        
     1. Navigate the list using the <kbd>↑</kbd> or <kbd>↓</kbd> arrow keys.
     1. Add the selected element by pressing <kbd>Enter</kbd> or by clicking on the element from the list.
     1. The added element is highlighted and selected, and the dialog closes automatically. When no element is added, the dialog can also be closed by pressing <kbd>Esc</kbd>.
