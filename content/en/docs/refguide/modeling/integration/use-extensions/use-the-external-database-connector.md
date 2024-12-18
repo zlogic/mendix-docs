@@ -44,7 +44,7 @@ Download the [External Database Connector](https://marketplace.mendix.com/link/c
 
 If additional connection properties are required to connect, you can alternatively use **JDBC Connection String**.
 
-### If Using the Flag: `--enable-live-preview` (available for Studio Pro 10.18){#enable-live-preview}
+### If Using the Flag: `--enable-live-preview` (available for Studio Pro 10.18) {#enable-live-preview}
 
 * Download the [External Database Connector](https://marketplace.mendix.com/link/component/219862).
 * If certificate-based authentication is required for PostgreSQL connections, ensure that all necessary certificates are added before running the app.
