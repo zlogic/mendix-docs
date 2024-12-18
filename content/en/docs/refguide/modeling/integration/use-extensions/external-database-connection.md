@@ -18,7 +18,7 @@ You must have the [External Database Connector](https://marketplace.mendix.com/l
 {{% alert color="info" %}}
 For Studio Pro 10.18, the External Database Connector uses a different approach to connect to databases during design time. This functionality enhances consistency between design time and runtime environments. To enable this beta feature, use the flag: `--enable-live-preview`
 
-For information on how to connect using the External Database Connection document with a feature flag, see [External Database Connection](/refguide/external-database-connection/#enable-live-preview).
+For information on how to connect using the External Database Connection document with a feature flag, see [External Database Connection](/refguide/use-the-external-database-connector/#enable-live-preview).
 {{% /alert %}}
 
 ## Connect to Database Wizard {#wizard}
