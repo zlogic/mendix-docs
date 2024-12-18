@@ -48,7 +48,7 @@ Literals represent values that are constant and are part of the query itself. Th
 | 's*'   | 'my_string'     | `STRING`             | String literal                                |
 | d+     | 5               | `INTEGER` and `LONG` | Natural number literal                        |
 | d+.d+  | 5.3             | `DECIMAL`            | Real number literal                           |
-|        | `NULL`          | N/A                  | NULL literal to represent non-existent values |
+|        | `NULL`          | N/A                  | NULL literal to represent non-existent values. Note that OQL does not support keyword `empty`. In XPath, it has identical purpose as `NULL`. |
 
 Where `d` is a number, `s` is any character, * indicates that the pattern can contain zero or more characters, and + indicates that the pattern can contain one or more characters.
 
@@ -58,13 +58,15 @@ There is no direct support for `DATETIME` literals. For functions that take `DAT
 
 ## System variables
 
-XPath [system variables](/refguide/xpath-keywords-and-system-variables/) can be used in OQL with the format:
+Most XPath [system variables](/refguide/xpath-keywords-and-system-variables/#system-variables) can be used in OQL with the format:
 
 ```sql
 '[%SystemVariable%]'
 ```
 
 These variables can be used the same way as other expressions.
+
+The only XPath system variable that is not supported by OQL is `[%CurrentObject%]`.
 
 For example, this query gets the names of all `Person` objects that are associated with the current user:
 
