@@ -152,7 +152,19 @@ To execute and test the query in Studio Pro, follow these steps:
     10. Click **OK**.
 11. Configure a nanoflow with the [Refresh entity](/appstore/modules/nanoflow-commons/) action to refresh the data grid if a user changes one of the filter values.
 
-{{% alert color="info" %}}When using JDK version above 16, set JVM Parameter **--add-opens=java.base/java.nio=ALL-UNNAMED** in the App configuration.{{% /alert %}}
+### Resolving Snowflake Dependency Issues with Apache Arrow on JDK 17 or 21
+
+When using JDK versions 17 or 21 (or any version above 16), you may encounter compatibility issues with the Snowflake dependency, Apache Arrow. 
+
+The Snowflake JDBC Driver uses Arrow as the default result format for query execution to improve performance. However, you can override this default setting by switching the result format to JSON.
+
+To set the result format at the Snowflake session or user level, use the following SQL statement:
+
+```sql
+**ALTER USER <user_name> SET JDBC_QUERY_RESULT_FORMAT='JSON';**
+```
+
+This approach ensures compatibility with JDK 16+.
 
 ## Configuring a Query to Display Data as a Chart
 
