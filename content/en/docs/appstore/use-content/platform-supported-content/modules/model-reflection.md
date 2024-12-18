@@ -9,6 +9,10 @@ description: "Describes the configuration and usage of the Mx Model Reflection m
 
 The [Mx Model Reflection](https://marketplace.mendix.com/link/component/69/) module allows you to access information about the domain model and about microflows of your app from your app. For example, you can loop through all the attribute names of an entity type in a microflow.
 
+{{% alert color="info" %}}
+If you want to use MxModel Reflection with the React Client, please remove the folder `_USE_ME/_DEPRECATED`. The assets in this folder are only there for backwards compatiblity and not necessary to make full use of MxModel Reflection.
+{{% /alert %}}
+
 ### Dependencies
 
 The Mx Model Reflection module has the following dependencies:
