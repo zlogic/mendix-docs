@@ -216,6 +216,14 @@ This option sets the default page editor mode that your page opens in: **Structu
 
 Hardware and driver issues may cause performance problems when running Studio Pro. These issues can appear in form of dialog boxes opening and closing much more slowly than expected, and general slowness of the UI. In case the hardware problems cannot be solved, it is possible to mitigate these issues by turning the **Enable software rendering mode** setting on. Enabling this setting requires a restart of Studio Pro to take effect. Running the application with this setting on may increase the CPU usage.
 
+### Editor Tabs Closing Policy {#closing-policy}
+
+It is recommended to limit the number of open tabs (open documents) to improve the performance of Studio Pro. This option is enabled by default and set to a limit of 15 tabs. However, you can disable this behavior completely or change the limit value.
+
+{{% alert color="info" %}}
+The closing policy is not applied to tabs with unsaved changes.
+{{% /alert %}}
+
 ## Advanced Tab
 
 ### Proxy Server
