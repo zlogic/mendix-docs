@@ -114,7 +114,9 @@ The **Committing** state of the **IMendixObject** is deprecated.
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-The **Delete object(s)** activity also removes the variable from the microflow. Be careful not to use the variable anymore after using it in a **Delete object(s)** activity. An exception on this applies to the usage of list variables in loops since Studio Pro 10.17. From that version onwards, variables are not removed, but only emptied when the **Delete object(s)** activity is executed on it. List variables are now continuously useful in loops to add new objects again and following activities can act on the objects of these lists.
+The **Delete object(s)** activity also removes the object or list reference from the microflow. Be careful not to use the object or list anymore after using it in a **Delete object(s)** activity.
+
+Since Mendix 10.17 there is an exception to this in the case of lists in loops. In Mendix 10.17.0 and above, when **Delete object(s)** is used on a list in a loop, the reference is not removed, but is changed to an empty list. This means that you can add new objects to the list within the loop and the following activities can act on the objects in these lists. You can temporarily revert to the earlier behavior using the [Microflows.<wbr>RemoveVariableOnDeleteObjectsActivity](/refguide/custom-settings/#MicroflowsRemoveVariableOnDeleteObjectsActivity) runtime setting.
 {{% /alert %}}
 
 * Events:
