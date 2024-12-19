@@ -26,11 +26,11 @@ In the following sections, the term "context entity" refers to the entity of the
 For a simple setup, the context entity needs to be a specialization of the **FileUploader.FileUploadContext** entity. This allows you to use the nanoflows and entities provided with the module:
 
 * **In your domain model**: 
-    * Set the generalization of the context entity to **FileUploader.FileUploadContext**.
+    1. Set the generalization of the context entity to **FileUploader.FileUploadContext**.
 * **On your page**: 
-    * Place the **FileUploader** widget.
-    * Set the **Associated files** property to **FileUploader.UploadedFile** or **FileUploader.UploadedImage**, depending on the upload mode.
-    * Set the **Action to create new files** property to one of the nanoflows shipped with the module, depending on the upload mode.
+    1. Place the **FileUploader** widget.
+    1. Set the **Associated files** property to **FileUploader.UploadedFile** or **FileUploader.UploadedImage**, depending on the upload mode.
+    1. Set the **Action to create new files** property to one of the nanoflows shipped with the module, depending on the upload mode.
 
 {{% alert color="info" %}}
 Starting with File Uploader 2.0, the widget properties will be set automatically.
@@ -41,14 +41,14 @@ Starting with File Uploader 2.0, the widget properties will be set automatically
 For an advanced setup, useful when modifying the context entity is not possible, follow these steps:
 
 * **In your domain model**: 
-    * Create a new specialized image/file entity by setting its generalization to **System.FileDocument** or **System.Image**, depending on the upload mode.
-    * Create a **\*-1** association from this image/file entity to your context entity.
-* **In the App explorer / Logic editor**:
-    * Copy one of the two Nanoflows (depending on the upload mode) from the module and modify it to use your context entity and the newly created file/image entity.
+    1. Create a new specialized image/file entity by setting its generalization to **System.FileDocument** or **System.Image**, depending on the upload mode.
+    1. Create a `**\*-1**` association from this image/file entity to your context entity.
+* **In the App Explorer / Logic Editor**:
+    1. Copy one of the two nanoflows (depending on the upload mode) from the module and modify it to use your context entity and the newly created file/image entity.
 * **On your page**: 
-    * Place the **FileUploader** widget.
-    * Set the widget property **Associated files** to the newly created file/image entity.
-    * Set the widget property **Action to create new files** to the modified nanoflow.
+    1. Place the **FileUploader** widget.
+    1. Set the widget property **Associated files** to the newly created file/image entity.
+    1. Set the widget property **Action to create new files** to the modified nanoflow.
 
 ### Widget Configuration
 
@@ -65,7 +65,7 @@ For an advanced setup, useful when modifying the context entity is not possible,
 * By default, use **FileUploader.UploadedFile** for upload mode Files and **FileUploader.UploadedImage** for upload mode Images.
 
 {{% alert color="info" %}}
-Note: Starting with File Uploader v2.0, the widget properties will be set automatically.
+Starting with File Uploader 2.0, the widget properties will be set automatically.
 {{% /alert %}}
 
 ##### Action to Create New Files
@@ -74,7 +74,7 @@ Note: Starting with File Uploader v2.0, the widget properties will be set automa
 * By default, call **Nanoflow ACT_CreateUploadedFileDocument** for upload mode Files and **ACT_CreateUploadedImageDocument** for upload mode Images.
 
 {{% alert color="info" %}}
-Note: Starting with File Uploader v2.0, the widget properties will be set automatically.
+Starting with File Uploader 2.0, the widget properties will be set automatically.
 {{% /alert %}}
 
 ##### Action to Create New Files
@@ -93,20 +93,16 @@ This configuration is to sets a maximum limit on the file size of uploaded files
 
 Configure the displayed text used in **File Uploader**.
 
-
 ### Nanoflows
 
 This module includes two predefined nanoflows:
 
 #### ACT_CreateUploadedFileDocument
 
-This nanoflow will attaches an uploaded file to the context object.
+This nanoflow will attach an uploaded file to the context object.
 
 #### ACT_CreateUploadedImageDocument
 
-This nanoflow will attaches an uploaded image to the context object.
-
-
-
+This nanoflow will attach an uploaded image to the context object.
 
 
