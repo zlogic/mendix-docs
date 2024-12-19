@@ -24,6 +24,14 @@ For information on the current status of deployment to Mendix for Private Cloud 
 * We have addressed a rare deadlock situation which could prevent a failing environment from restarting.
 * Upgrading to Mendix Operator v2.20.0 from a previous version will restart environments managed by that version of the Operator. Environments with 2 or more replicas and a **PreferRolling** update strategy will be restarted without downtime.
 
+#### Known Limitations
+
+At present, a Technical Contact can only be assigned to one application at a time instead of multiple applications. If an individual who is already a Technical Contact for an existing application creates another application, they are automatically assigned as the Technical Contact for the new application. However, this results in their removal as the Technical Contact for the previous application. 
+
+Additionally, being assigned as a Technical Contact grants the individual administrator-level access across all namespaces where environments are created. Consequently, in this scenario, the individual gaina administrator access to the namespaces for both applications with created environments.
+
+We are working on a fix, which is expected to be available in next release. Once the fix is available, make sure to check your applications and assign the Technical Contact accordingly.
+
 ### December 12, 2024
 
 #### Portal Improvements
