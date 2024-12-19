@@ -1,6 +1,6 @@
 ---
 title: "Build a Mendix Native App with Bitrise"
-url: /refguide/mobile/distributing-mobile-apps/building-native-apps/bitrise/
+url: /refguide/mobile/distributing-mobile-apps/building-native-appsbitrise/
 weight: 60
 description: Describes how to integrate with Bitrise to build a Mendix native app in the cloud.
 ---
@@ -140,4 +140,4 @@ To set up automatic builds after running **Build Native App**, follow these step
 1. Select **Push branch** for **Condition 1** and change the **Push** branch to `master`.
 1. Select the **deploy** workflow and confirm.
 
-Now, every time some runs Build Native App to update the application bundle, a new build will be triggered in Bitrise.
+Now, every time some runs **Build Native App** to update the application bundle, a new build will be triggered in Bitrise.
