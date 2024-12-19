@@ -77,13 +77,13 @@ The default workflow (**deploy**) needs to be extended to work for Mendix native
 
 Any additional workflows that may have been created can be removed. Select the workflow from the dropdown and click **Properties** > **Delete workflow**.
 
-### Add missing npm command
+### Add Missing npm Command
 
 Add a missing npm command by doing the following:
 
 1. Add a new step after the step "Run npm command".
 1. Choose **Run npm command** from the list of steps.
-1. Set the npm command with arguemtns to run to `run configure`.
+1. Set the npm command with arguments to run to `run configure`.
 1. Save changes.
 
 ### Remove Unneeded Operating System Targets
@@ -115,29 +115,29 @@ This step will install the dependencies required for iOS.
 
 ### Add iOS Code Signing (iOS Only)
 
-1. Add a new step before the step **Xcode Archive** "(after Run CocoaPods install).
+1. Add a new step before the step **Xcode Archive** (after Run CocoaPods install).
 1. Choose **Manage iOS Code Singing** from the list of steps.
 1. Save changes.
 
 Bitrise will use the provided iOS Signing information to sign the iOS app.
 
-After the changes above, your workflow should look like this (if you target both operating systems):
+After these changes, your workflow should look like this (if you target both operating systems):
 
-   {{< figure src="/attachments/refguide/mobile/distributing-mobile-apps/building-native-apps/bitrise/select-repository.png" alt="Completed workflow" width="350" class="no-border" >}}
+{{< figure src="/attachments/refguide/mobile/distributing-mobile-apps/building-native-apps/bitrise/select-repository.png" alt="Completed workflow" width="350" class="no-border" >}}
 
 
 ## Build Your App
 
-Builds can be started manually or automatically. To start a build manually, open the build project and click Start build and confirm the dialog. A typical build will take around 20 minutes but can take longer for complex applications with many dependencies.
+Builds can be started manually or automatically. To start a build manually, open the build project and click **Start build** and confirm the dialog. A typical build will take approximately 20 minutes, but can take longer for complex applications with many dependencies.
 
 When building, you can follow the build output and watch for progress and potential problems being reported there.
 
-To set up automatic builds after running Build Native App, follow these steps:
+To set up automatic builds after running **Build Native App**, follow these steps:
 
 1. Open the **Workflow Editor** of your build project.
 1. Open the **Triggers** page.
 1. Click **Add push trigger**.
 1. Select **Push branch** for **Condition 1** and change the **Push** branch to `master`.
-1. Select the "deploy" workflow and confirm.
+1. Select the **deploy** workflow and confirm.
 
 Now, every time some runs Build Native App to update the application bundle, a new build will be triggered in Bitrise.
