@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction
 
-{{% alert color="warn" %}}
+{{% alert color="warning" %}}
 Microsoft announced that Visual Studio App Center will be retired on March 31, 2025 ([Find the announcement here](https://learn.microsoft.com/en-us/appcenter/retirement)). This guide relies on App Center to build the Mendix native app in the cloud and will no longer work after that date.
 
 If you are looking for a drop-in replacement of AppCenter, please consult the guide to [Build a Mendix Native App with Bitrise](/refguide/mobile/distributing-mobile-apps/building-native-apps/bitrise/)
