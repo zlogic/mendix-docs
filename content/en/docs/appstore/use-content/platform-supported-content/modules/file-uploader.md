@@ -9,7 +9,7 @@ description: "Describes the configuration and usage of the File Uploader module,
 
 The [File Uploader](https://marketplace.mendix.com/link/component/235351) enables you to upload files or images by dragging and dropping them onto the widget, or by using the file selection dialog box. 
 
-It supports multi-file uploading, and includes an image-only mode that previews thumbnails of the uploaded images. The module comes with a domain model containing the entities and nanoflows it needs to function properly:
+It supports multi-file uploading, and includes an image-only mode that previews thumbnails of the uploaded images. The module comes with a domain model containing the entities and nanoflows it needs to function properly.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/file-uploader/fileuploader.png" class="no-border" >}}
 
