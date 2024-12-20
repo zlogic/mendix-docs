@@ -42,7 +42,7 @@ For an advanced setup, useful when modifying the context entity is not possible,
 
 * **In your domain model**: 
     1. Create a new specialized image/file entity by setting its generalization to **System.FileDocument** or **System.Image**, depending on the upload mode.
-    1. Create a `**\*-1**` association from this image/file entity to your context entity.
+    1. Create a many-to-one association from this image/file entity to your context entity.
 * **In the App Explorer / Logic Editor**:
     1. Copy one of the two nanoflows (depending on the upload mode) from the module and modify it to use your context entity and the newly created file/image entity.
 * **On your page**: 
@@ -56,7 +56,7 @@ For an advanced setup, useful when modifying the context entity is not possible,
 
 ##### Upload mode
 
-* **Files** – Manually specify allowed file types.
+* **Files** - Manually specifies allowed file types.
 * **Images** - Limits uploads to images and shows a preview thumbnail.
 
 ##### Associated Files / Associated Images
@@ -64,34 +64,26 @@ For an advanced setup, useful when modifying the context entity is not possible,
 * Defines the entity which is used to store the files or images. Needs to be a specialization of **System.FileDocument** or **System.Image**.
 * By default, use **FileUploader.UploadedFile** for upload mode Files and **FileUploader.UploadedImage** for upload mode Images.
 
-{{% alert color="info" %}}
-Starting with File Uploader 2.0, the widget properties will be set automatically.
-{{% /alert %}}
+##### Action to Create New Files
+
+* Configuration to set up the nanoflow which creates an associated file object and commits it.
+* By default, calls **Nanoflow ACT_CreateUploadedFileDocument** for a **Files** upload mode and **ACT_CreateUploadedImageDocument** for an **Images** upload mode.
 
 ##### Action to Create New Files
 
-* Configuration to setup the nanoflow which creates an associated file object and commits it.
-* By default, call **Nanoflow ACT_CreateUploadedFileDocument** for upload mode Files and **ACT_CreateUploadedImageDocument** for upload mode Images.
-
-{{% alert color="info" %}}
-Starting with File Uploader 2.0, the widget properties will be set automatically.
-{{% /alert %}}
-
-##### Action to Create New Files
-
-This configuration only shown for upload mode **Files**. User can manually set restriction on the allowed file types.
+This configuration is only shown for the **Files** upload mode. Users can manually set restrictions on the allowed file types.
 
 ##### Maximum Number of Files
 
-This configuration is to sets a limit on how many files can be uploaded at once.
+This configuration sets a limit on how many files can be uploaded at once.
 
 ##### Maximum File Size (MB)
 
-This configuration is to sets a maximum limit on the file size of uploaded files.
+This configuration sets a maximum limit on the file size of uploaded files.
 
 #### Text Tab {#general}
 
-Configure the displayed text used in **File Uploader**.
+Configures the displayed text used in **File Uploader**.
 
 ### Nanoflows
 
