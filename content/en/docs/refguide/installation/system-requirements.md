@@ -227,7 +227,7 @@ The Mendix Docker buildpack supports the following Kubernetes versions:
 When running Mendix on a server, you will need Java Runtime Environment (JRE) 11, 17, or 21. To download an Eclipse Temurin OpenJDK distribution from Adoptium, see [Eclipse Temurin™ Latest Releases](https://adoptium.net/temurin/releases). To download a commercial Oracle distribution, see [Java SE Downloads](https://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
 {{% alert color="warning" %}}
-Compatibility with JDK 17 has been released with Studio Pro version 10.8. Compatibility with Java 21 has been released with Studio Pro version 10.11. Mendix recommends switching to a Studio Pro version compatible with Java 21.
+Compatibility with JDK 17 has been released with Studio Pro version 10.8. Java 21 is compatible with Studio Pro 9.24 LTS from 9.24.3, Studio Pro 10.6 MTS from 10.6.9, and Studio Pro 10.11 and above. Mendix recommends switching to a Studio Pro version compatible with Java 21.
 {{% /alert %}}
 
 ## Databases {#databases}
