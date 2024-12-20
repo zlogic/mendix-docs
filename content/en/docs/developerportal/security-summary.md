@@ -1,6 +1,6 @@
 ---
 title: "Security"
-url: /security/
+url: /developerportal/security/
 weight: 10
 description: "An overview of the security options available when building, running, and governing your apps."
 ---
