@@ -24,14 +24,40 @@ The scheme below shows that the data source of the list view has been set to **D
 
 {{< figure src="/attachments/refguide/modeling/consistency-errors/consistency-errors-pages/list-view-error.png" alt="Data Source Consistency Error Scheme" class="no-border" >}}
 
-The table below describes the most common errors which can occur when configuring a list view, the causes of these errors, and ways to fix them. 
+### Error Code: CE0488
 
-| Error Code | Message in the Error Pane                                    | Cause of the Error                                           | Way to Fix                                                   |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| CE0488     | No entity configured for the data source of this list view. Select an entity or change the data source. | The **Database/XPath/Association** option is selected as a data source for a list view, but no entity is specified. | Do one of the following: <ul><li>Open the list view's properties > **Data source** and select an entity in the **Entity (path)** field</li><li>Change the type of the data source</li></ul> |
-|            | No microflow configured for the data source of this list view. Select a microflow or change the data source. | The data source is set to **Microflow**, but no microflow is specified. | Do one of the following: <ul><li>Open the list view's properties > **Data source** and select a microflow in the **Microflow** field</li><li>Change the type of the data source</li></ul> |
-|            | No nanoflow configured for the data source of this list view. Select a nanoflow or change the data source. | The data source is set to **Nanoflow**, but no nanoflow is specified. | Do one of the following: <ul><li>Open the list view's properties > **Data source** and select a nanoflow in the **Nanoflow** field</li><li>Change the type of the data source</li></ul> |
-| CE0595     | Attribute {AttributeName} is not an attribute of entity {EntityName}. | You have changed the target entity of a list view without updating its contents. The list view is filled with attributes of another entity. | Open the widget's properties > **Data source** and select another attribute for **Attribute (path)**. |
+CE0488 error message: *No entity configured for the data source of this list view. Select an entity or change the data source.*
+
+You will get CE0488 if the **Database/XPath/Association** option is selected as a data source for a list view, but no entity is specified. 
+
+To fix CE0488, do one of the following:
+
+* Open the list view's properties > **Data source** and select an entity in the **Entity (path)** field.
+* Change the type of the data source.
+
+### Error Code: CE2633
+
+CE2633 error message can be one of the following:
+
+* *No microflow configured for the data source of this list view. Select a microflow or change the data source.*
+    * You will get this error is if the data source is set to **Microflow**, but no microflow is specified.
+    * To fix this error, do one of the following:
+        * Open the list view's properties > **Data source** and select a microflow in the **Microflow** field.
+        * Change the type of the data source.
+
+* *No nanoflow configured for the data source of this list view. Select a nanoflow or change the data source.*
+    * You will get this error is if the data source is set to **Nanoflow**, but no nanoflow is specified.
+    * To fix this error, do one of the following:
+        * Open the list view's properties > **Data source** and select a nanoflow in the **Nanoflow** field.
+        * Change the type of the data source.
+
+### Error Code: CE0595
+
+CE0595 error message: *Attribute {AttributeName} is not an attribute of entity {EntityName}.*
+
+You will get CE0595 if you have changed the target entity of a list view without updating its contents. The list view is filled with attributes of another entity.
+
+To fix CE0595, open the widget's properties > **Data source** and select another attribute for **Attribute (path)**.
 
 ## Data View Consistency Errors 
 
@@ -41,16 +67,65 @@ For example, you have selected **Listen to widget** as the data source, but you 
 
 {{< figure src="/attachments/refguide/modeling/consistency-errors/consistency-errors-pages/data-view-no-list-widget.png" alt="Data View With no List Widget Configured" class="no-border" >}}
 
-The table below describes the most common errors you can come across when configuring a data view, causes of these errors, and ways to fix them. 
+### Error Code: CE0488
 
-| Error Code | Message in the Error Pane                                    | Cause of the Error                                           | Way to Fix                                                   |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| CE0488     | No entity configured for the data source of this data view. Select an entity or change the data source. | **Context** is selected as a data source for a data view, but no entity is specified. | Do one of the following: <ul><li>Open the data view's properties > **Data Source** and select an entity in the **Entity** field</li><li>Change the type of the data source</li></ul> |
-|            | No microflow configured for the data source of this data view. Select a microflow or change the data source | A microflow is selected as a data source, but no microflow is specified. | Do one of the following: <ul><li>Open the data view's properties > **Data Source** and select a microflow in the **Microflow** field</li><li>Change the type of the data source</li></ul> |
-|            | No nanoflow configured for the data source of this data view. Select a nanoflow or change the data source | A nanoflow is selected as a data source, but no nanoflow is specified. | Do one of the following: <ul><li>Open the data view's properties > **Data Source** and select a nanoflow in the **Nanoflow** field</li><li>Change the type of the data source</li></ul> |
-| CE0536     | No list widget configured for the data source of this data view. Select a widget or change the data source. | A **Listen to widget** is configured as a data source for a data view, but the list view widget specified does not exist anymore on the same page. | Do one of the following: <ul><li>Create a list view on the same page, configure it, and select it as the list widget for the data view</li><li>Change the type of the data source</li></ul> |
-| CE8115     | The selected entity X should match the entity Y of the page parameter {Name of the page parameter}. | You have changed the data type of a page parameter which was selected as the entity of the **Context** data source for a data view. | Do one of the following: <ul><li>Select the entity of the **Context** data source again</li><li>Change the data type of the page parameter back to match the entity of the data view</li></ul> |
-| CE8116     | The selected entity x should match the entity y of the snippet parameter {Name of the snippet parameter}. | You have changed the data type of a snippet parameter which was selected as the entity of the **Context** data source for a data view. | Do one of the following: <ul><li>Select the entity of the **Context** data source again</li><li>Change the data type of the snippet parameter back to match the entity of the data view</li></ul> |
+CE0488 error message: *No entity configured for the data source of this data view. Select an entity or change the data source.*
+
+You will get CE0488 if **Context** is selected as a data source for a data view, but no entity is specified.
+
+To fix CE0488, do one of the following:
+
+* Open the data view's properties > **Data Source** and select an entity in the **Entity** field.
+* Change the type of the data source.
+
+### Error Code: CE2633
+
+CE2633 error message can be one of the following:
+
+* *No microflow configured for the data source of this data view. Select a microflow or change the data source.*
+    * You will get this error is if the data source is set to **Microflow**, but no microflow is specified.
+    * To fix this error, do one of the following:
+        * Open the data view's properties > **Data source** and select a microflow in the **Microflow** field.
+        * Change the type of the data source.
+
+* *No nanoflow configured for the data source of this data view. Select a nanoflow or change the data source.*
+    * You will get this error is if the data source is set to **Nanoflow**, but no nanoflow is specified.
+    * To fix this error, do one of the following:
+        * Open the data view's properties > **Data source** and select a nanoflow in the **Nanoflow** field.
+        * Change the type of the data source.
+
+### Error Code: CE0536
+
+CE0536 error message: *No list widget configured for the data source of this data view. Select a widget or change the data source.*
+
+You will get CE0536 if a **Listen to widget** is configured as a data source for a data view, but the list view widget specified does not exist anymore on the same page.
+
+To fix CE0536, do one of the following:
+
+* Create a list view on the same page, configure it, and select it as the list widget for the data view.
+* Change the type of the data source.
+
+### Error Code: CE8115
+
+CE8115 error message: *The selected entity X should match the entity Y of the page parameter {Name of the page parameter}.*
+
+You will get CE8115 if you have changed the data type of a page parameter which was selected as the entity of the **Context** data source for a data view.
+
+To fix CE8115, do one of the following:
+
+* Select the entity of the **Context** data source again.
+* Change the data type of the page parameter back to match the entity of the data view.
+
+### Error Code: CE8116
+
+CE8116 error message: *The selected entity x should match the entity y of the snippet parameter {Name of the snippet parameter}.*
+
+You will get CE8116 if you have changed the data type of a snippet parameter which was selected as the entity of the **Context** data source for a data view.
+
+To fix CE8116, do one of the following:
+
+* Select the entity of the **Context** data source again.
+* Change the data type of the snippet parameter back to match the entity of the data view.
 
 ## Context Not Available Consistency Errors
 
