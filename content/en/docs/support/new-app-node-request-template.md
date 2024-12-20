@@ -25,9 +25,10 @@ These functions, listed below, are described in this document.
 
 If you want to deploy your app to a new licensed node in Mendix Cloud, Mendix Cloud Dedicated, or on-premises/virtual private cloud, you can request one from Mendix Support.
 
-Fill in all the required details for this new licensed app node in the [Request New App Node](https://newnode.mendix.com/) app.
+Fill in all the required details for this new licensed app node in the [Request New App Node](https://newnode.mendix.com/) app. If your request matches your entitlements, your Mendix Cloud node will be created automatically. Mendix Support will contact you via a ticket in the [Mendix Support Portal](https://support.mendix.com/) if more information is needed or to send you the requested keys.
 
-Mendix Support will contact the [Technical Contact](/developerportal/general/app-roles/#technical-contact) for the app via a ticket in the [Mendix Support Portal](https://support.mendix.com), and provide the app details. Mendix Support will also check if your request matches your entitlement to resources (number of apps, cloud resources).
+By default, all developers in your organization can create node requests. There is an option to limit this to Mendix Admins only. Please contact your Customer Success Manager or create a support ticket to enable this option.
+
 
 If you have an app deployed to **SAP** and need a *Subscription Secret*, you need to choose the **Hosting type** *Virtual Private Cloud* and then, on the subsequent screen choose **Hosting type** *Cloud Foundry* and **Virtual Private Cloud Name** *SAP BTP*.  
 
