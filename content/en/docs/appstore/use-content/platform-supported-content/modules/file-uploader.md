@@ -56,7 +56,7 @@ For an advanced setup, useful when modifying the context entity is not possible,
 
 ##### Upload mode
 
-* **Files** - Manually specifies allowed file types.
+* **Files** - Allows all file types by default, and adds a configuration option to specify a custom set of allowed file types.
 * **Images** - Limits uploads to images and shows a preview thumbnail.
 
 ##### Associated Files / Associated Images
@@ -69,7 +69,7 @@ For an advanced setup, useful when modifying the context entity is not possible,
 * Configuration to set up the nanoflow which creates an associated file object and commits it.
 * By default, calls **Nanoflow ACT_CreateUploadedFileDocument** for a **Files** upload mode and **ACT_CreateUploadedImageDocument** for an **Images** upload mode.
 
-##### Action to Create New Files
+##### Allowed File Format
 
 This configuration is only shown for the **Files** upload mode. Users can manually set restrictions on the allowed file types.
 
