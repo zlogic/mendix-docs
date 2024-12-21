@@ -12,7 +12,7 @@ This feature is in Public Beta. For more information, see [Beta Releases](/relea
 ## Introduction
 
 Starting in version 10.18.0, Mendix now supports tracing via OpenTelemetry. When tracing is enabled the runtime will generate traces that will help you analyze errors and performance.
-These traces can be sent to observability tools like [Jaeger](https://www.jaegertracing.io/) or [Datadog](https://www.datadoghq.com/).
+These traces can be sent to observability tools like [Jaeger](https://www.jaegertracing.io/), [Dash0](https://www.dash0.com/) or [Datadog](https://www.datadoghq.com/).
 
 ## Generated spans
 
@@ -36,7 +36,7 @@ This will enable tracing. The traces will be sent to http://localhost:4317.
 
 To test you can use [Jaeger](https://www.jaegertracing.io/), for example the all-in-one binary or docker image. Jaeger will listen to the above endpoint by default.
 
-Alternatively you can set up the [OpenTelemetry collector](https://opentelemetry.io/docs/collector/), which will also listen to the default endpoint and can be configured to send to backends such as Datadog.
+Alternatively you can set up the [OpenTelemetry collector](https://opentelemetry.io/docs/collector/), which will also listen to the default endpoint and can be configured to send to backends such as Datadog. The free online [Collector configuration tool OTelBin](https://www.otelbin.io) can help with collector configuration.
 
 ### All settings
 
