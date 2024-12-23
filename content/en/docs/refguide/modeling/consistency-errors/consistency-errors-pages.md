@@ -24,6 +24,8 @@ The scheme below shows that the data source of the list view has been set to **D
 
 {{< figure src="/attachments/refguide/modeling/consistency-errors/consistency-errors-pages/list-view-error.png" alt="Data Source Consistency Error Scheme" class="no-border" >}}
 
+The most common errors which can occur when configuring a list view, the causes of these errors, and ways to fix them are described in the following sub-sections.
+
 ### Error Code: CE0488
 
 CE0488 error message in a list view : *No entity configured for the data source of this list view. Select an entity or change the data source.*
@@ -66,6 +68,8 @@ If you do not configure a [data source](/refguide/data-sources/) for a [data vie
 For example, you have selected **Listen to widget** as the data source, but you have not selected the specific **List widget** you are listening to.
 
 {{< figure src="/attachments/refguide/modeling/consistency-errors/consistency-errors-pages/data-view-no-list-widget.png" alt="Data View With no List Widget Configured" class="no-border" >}}
+
+The most common errors which can occur when configuring a data view, the causes of these errors, and ways to fix them are described in the following sub-sections.
 
 ### Error Code: CE0488
 
@@ -129,7 +133,7 @@ To fix CE8116, do one of the following:
 
 ## Context Not Available Consistency Errors
 
-The errors that you can get when a page or snippet is expecting a context that is unavailable are described in the sections below. 
+The errors that you can get when a page or snippet is expecting a context that is unavailable are described in the sub-sections below. 
 
 ### Error Code: CE1568
 
