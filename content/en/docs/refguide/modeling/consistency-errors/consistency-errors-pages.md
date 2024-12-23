@@ -26,9 +26,9 @@ The scheme below shows that the data source of the list view has been set to **D
 
 ### Error Code: CE0488
 
-CE0488 error message: *No entity configured for the data source of this list view. Select an entity or change the data source.*
+CE0488 error message in a list view : *No entity configured for the data source of this list view. Select an entity or change the data source.*
 
-You will get CE0488 if the **Database/XPath/Association** option is selected as a data source for a list view, but no entity is specified. 
+You will get CE0488 in a list view if the **Database/XPath/Association** option is selected as a data source for a list view, but no entity is specified. 
 
 To fix CE0488, do one of the following:
 
@@ -37,7 +37,7 @@ To fix CE0488, do one of the following:
 
 ### Error Code: CE2633
 
-CE2633 error message can be one of the following:
+CE2633 error message in a list view can be one of the following:
 
 * *No microflow configured for the data source of this list view. Select a microflow or change the data source.*
     * You will get this error is if the data source is set to **Microflow**, but no microflow is specified.
@@ -69,18 +69,18 @@ For example, you have selected **Listen to widget** as the data source, but you 
 
 ### Error Code: CE0488
 
-CE0488 error message: *No entity configured for the data source of this data view. Select an entity or change the data source.*
+CE0488 error message in a data view: *No entity configured for the data source of this data view. Select an entity or change the data source.*
 
-You will get CE0488 if **Context** is selected as a data source for a data view, but no entity is specified.
+You will get CE0488 in a data view if **Context** is selected as a data source for a data view, but no entity is specified.
 
 To fix CE0488, do one of the following:
 
 * Open the data view's properties > **Data Source** and select an entity in the **Entity** field.
 * Change the type of the data source.
 
-### Error Code: CE2633
+### Error Code: CE2633 
 
-CE2633 error message can be one of the following:
+CE2633 error message in a data view can be one of the following:
 
 * *No microflow configured for the data source of this data view. Select a microflow or change the data source.*
     * You will get this error is if the data source is set to **Microflow**, but no microflow is specified.
@@ -129,18 +129,17 @@ To fix CE8116, do one of the following:
 
 ## Context Not Available Consistency Errors
 
-The errors that you can get when a page or snippet is expecting a context that is unavailable are described in the table below. 
+The errors that you can get when a page or snippet is expecting a context that is unavailable are described in the sections below. 
 
-| Error Code | Message in the Error Pane                                    | Cause of the Error                                           | Way to Fix                                                   |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| CE1568     | The selected page {Name of the page} expects an object of type {type of object}, which is not available here. | The page has a page parameter that expects an object of a particular type to be passed to it. This error occurs when the page is called from another page, which does not have this object available. For a more detailed example, see the [Error Fix Example for CE1568](#error-example-1). | Make sure that the object is passed to the page that has a configured data view on it. For more information, see the [Error Fix Example for CE1568](#error-example-1). |
-| CE7410    | The selected page {Name of the page} should accept a parameter of type {type of object}. | You have a widget (for example, the create button of a data grid) that opens a page which must use the available object. However, the selected page does not have any parameters. | Do one of the following: <ul><li>Select a page which has a page parameter of the correct type</li><li>Change the parameters of the page</li></ul> |
-| CE7411     | The selected page {Name of the page} should accept a parameter of type X, but expects a parameter of type Y instead. | You have a widget (for example, the create button of a data grid) that opens a page which must use the available object. However, the parameter of the selected page expects an object of a different type. | Do one of the following: <ul><li>Select a page which has a page parameter of the correct type</li><li>Change the type of the available object (if possible)</li><li>Change the parameters of the page</li></ul> |
-| CE7412     | The selected page {Name of the page} should accept a parameter of type X, but expects parameters of type A, B, and C instead. | You have a widget (for example, the create button of a data grid) that opens a page which must use the available object. However, none of the parameters of the selected page expect an object of that type. | Do one of the following: <ul><li>Select a page which has a page parameter of the correct type</li><li>Change the type of the available object (if possible)</li><li>Change the parameters of the page</li></ul> |
-| CE1154     | The selected snippet {Name of the snippet} has parameters. Move this snippet call into a data container like a data view, list view, or template grid. | The snippet has a snippet parameter and the snippet call is not placed inside a data container. | Make sure that the snippet call is placed in a data container which passes the correct type of object to the snippet call. |
-| CE1570     | The selected snippet {Name of the snippet} expects an object of type {type of object}, which is not available here. | The snippet has a snippet parameter that expects an object of a particular type to be passed to it. This error occurs when the snippet is called from another page, layout, or snippet which does not have this object available. | Make sure that the object is passed correctly in the snippet settings of the snippet call. |
+### Error Code: CE1568
 
-### Error Fix Example for CE1568 {#error-example-1}
+CE1568 error message: *The selected page {Name of the page} expects an object of type {type of object}, which is not available here.*
+
+You will get CE1568 if the page has a page parameter that expects an object of a particular type to be passed to it. This error occurs when the page is called from another page, which does not have this object available. 
+
+To fix CE1568, make sure that the object is passed to the page that has a configured data view on it. For a detailed example on how to fix CE1568, see the [Error Fix Example for CE1568](#error-example-1) below.
+
+#### Error Fix Example for CE1568 {#error-example-1}
 
 When a page expects a context that is not passed to it from a calling page or a microflow, you will get consistency errors. 
 
@@ -159,7 +158,7 @@ As the **Details** button to the **Customers** page is outside a data container,
 * You want to pass a specific *Customer* object from the Customer list to the **Customer Details** page, in other words, the details of a particular customer will be displayed on the **Customer Details** page (for more information, see the [Passing a Specific Object to the Page](#passing-specific-object) section)
 * You want to create a new object of the *Customer* type and pass it to the **Customer Details** page, this means that a new customer will be created (for more information, see the [Creating a New Object and Passing it to the Page](#creating-new-object) section)
 
-#### Passing a Specific Object to the Page {#passing-specific-object}
+##### Passing a Specific Object to the Page {#passing-specific-object}
 
 If you want the **Customer Details** page to open the details of a specific customer, this means you want to pass a specific object to the page. As we already have a list view with the customers list on the **Customer** page, we can fix this error the following way:
 
@@ -170,7 +169,7 @@ If you want the **Customer Details** page to open the details of a specific cust
 
 Now the button gets the object of type *Customer* from the list view on the **Customers** page, and it will be passed to the **Customer Details** page. As a result, the details of a particular customer is displayed on the **Customer Details** page. 
 
-#### Creating a New Object and Passing it to the Page {#creating-new-object}
+##### Creating a New Object and Passing it to the Page {#creating-new-object}
 
 If you want to create a new customer and fill in the customer's details on the **Customers Details** page, you can do the following:
 
@@ -184,6 +183,57 @@ If you want to create a new customer and fill in the customer's details on the *
 5. Change the button's caption from **Details** to **Add**, as this button will now create a new customer instead of showing the details of an existing customer.
 
 Now when a user clicks this button, the **Customer Details** page will open, and the new *Customer* object will be created. 
+
+### Error Code: CE7410
+
+CE7410 error message: *The selected page {Name of the page} should accept a parameter of type {type of object}.*
+
+You will get CE7410 if you have a widget (for example, the create button of a data grid) that opens a page which must use the available object. However, the selected page does not have any parameters. 
+
+To fix CE7410, do one of the following:
+
+* Select a page which has a page parameter of the correct type.
+* Change the parameters of the page.
+
+### Error Code: CE7411
+
+CE7411 error message: *The selected page {Name of the page} should accept a parameter of type X, but expects a parameter of type Y instead.*
+
+You will get CE7411 if you have a widget (for example, the create button of a data grid) that opens a page which must use the available object. However, the parameter of the selected page expects an object of a different type. 
+
+To fix CE7411, do one of the following:
+
+* Select a page which has a page parameter of the correct type.
+* Change the type of the available object (if possible).
+* Change the parameters of the page.
+
+### Error Code: CE7412
+
+CE7412 error message: *The selected page {Name of the page} should accept a parameter of type X, but expects parameters of type A, B, and C instead.*
+
+You will get CE7412 if you have a widget (for example, the create button of a data grid) that opens a page which must use the available object. However, none of the parameters of the selected page expect an object of that type.
+
+To fix CE7412, do one of the following:
+
+* Select a page which has a page parameter of the correct type.
+* Change the type of the available object (if possible).
+* Change the parameters of the page.
+
+### Error Code: CE1154
+
+CE1154 error message: *The selected snippet {Name of the snippet} has parameters. Move this snippet call into a data container like a data view, list view, or template grid.*
+
+You will get CE1154 if the snippet has a snippet parameter and the snippet call is not placed inside a data container.
+
+To fix CE1154, make sure that the snippet call is placed in a data container which passes the correct type of object to the snippet call.
+
+### Error Code: CE1570
+
+CE1570 error message: *The selected snippet {Name of the snippet} expects an object of type {type of object}, which is not available here.*
+
+You will get CE1570 if the snippet has a snippet parameter that expects an object of a particular type to be passed to it. This error occurs when the snippet is called from another page, layout, or snippet which does not have this object available.
+
+To fix CE1570, make sure that the object is passed correctly in the snippet settings of the snippet call.
 
 ## Data Consistency Errors
 
