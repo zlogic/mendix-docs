@@ -141,8 +141,8 @@ If you are migrating from the community edition of the module ([OpenIDConnect Si
 
 ### Installing Mx Model Reflection{#mxmodelreflection}
 
-{{% alert color="warning" %}}
-The Mx Model Reflection module is no longer required for the OIDC SSO module starting from version 4.0.0. However, it is still included temporarily for backward compatibility and will be removed in future versions.
+{{% alert color="info" %}}
+The dependency on the Mx Model Reflection module has been deprecated from the OIDC SSO module version 4.0.0 and above. It will be maintained for backward compatibility but will be removed in future versions.
 {{% /alert %}}
 
 Once the Mx Model Reflection module has been imported into your app, you need to configure it.
@@ -194,10 +194,10 @@ This section provides an overview of updates for the OIDC SSO module across diff
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information|
 | --- | --- | --- | --- |
 | 10.12.10 and above | 4.0.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | -From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values. <br> -Deprecated Mx Model Reflection module; maintained for compatibility but will be removed in future versions. <br> -Default user roles in UserProvisioning will be assigned along with roles from the access token.|
-| 9.24.2 and above | 3.0.0 (migrating to 3.0.0 and above) | -Include [UserCommons](https://marketplace.mendix.com/link/component/223053) module as a dependency <br> -Set `OIDC.Startup` microflow as part of the after-startup microflow | -New UserCommons module <br> -Assign UserProvisioning for existing IdP configurations |
-| 9.24.2 and above | 3.0.1 | Use `Snip_Login_Button` snippet instead of `Snip_Login_Automatic` | `Snip_Login_Automatic` snippet removed from the module |
-| 9.24.2 and above | 3.1.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | `OIDC.Startup` microflow renamed to `OIDC.ASU_OIDC_Startup` |
 | 9.24.18 and above | 3.2.0 | Select and refresh the Administration and System modules manually in the `MxModelReflection.MxObjects_Overview` page| Added a new heading for selected scopes: *Your app will request the following scopes at IdP*. |
+| 9.24.2 and above | 3.1.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | `OIDC.Startup` microflow renamed to `OIDC.ASU_OIDC_Startup` |
+| 9.24.2 and above | 3.0.1 | Use `Snip_Login_Button` snippet instead of `Snip_Login_Automatic` | `Snip_Login_Automatic` snippet removed from the module |
+| 9.24.2 and above | 3.0.0 (migrating to 3.0.0 and above) | -Include [UserCommons](https://marketplace.mendix.com/link/component/223053) module as a dependency <br> -Set `OIDC.Startup` microflow as part of the after-startup microflow | -New UserCommons module <br> -Assign UserProvisioning for existing IdP configurations |
 
 ## Design-time App Configuration{#app-configuration}
 
@@ -749,10 +749,6 @@ To parse access tokens, you need to do the following:
 1. Configure the client information in the OIDC Client configuration screen.
 1. Check **Enable Access Token Parsing** to parse access tokens when performing [Runtime Configuration of Your IdP at Your App](#runtime-idp-app).
 1. Select the appropriate microflow to parse the access token as described in the relevant section below. If you have added a new microflow, you will need to refresh the module containing your microflow as described in [Installing Mx Model Reflection](#mxmodelreflection).
-
-{{% alert color="info" %}}
-In version 2.0.0 and above of the OIDC SSO module you will also find a microflow for parsing PIB tokens. This feature will be released publicly in the future and documented at that time.
-{{% /alert %}}
 
 {{% alert color="info" %}}Starting from version 4.0.0, the default user roles in UserProvisioning will be assigned alongside the roles parsed from the access token.{{% /alert %}}
 
