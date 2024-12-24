@@ -10,9 +10,13 @@ aliases:
 ## Introduction 
 
 {{% alert color="info" %}}
-Logic Bot was rebranded to Logic Recommender in Studio Pro 10.12.0.
+Logic Bot was rebranded to Logic Recommender in Studio Pro 10.12.0. It is also available for [rules](/refguide/rules/) in Studio Pro 10.6 and above.
+{{% /alert %}}
 
-It is also available for [rules](/refguide/rules/).
+{{% alert color="info" %}}
+In Studio Pro 10.6 and above, it works both online and offline. However, to get better AI recommendations, you need to be signed in to Studio Pro.
+
+In Studio Pro 10.5 and below, to use the [older version of Logic Recommender](#older-version), internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
 Logic Recommender is an AI-powered virtual co-developer that helps you to model and configure your application logic in Mendix Studio Pro. It gives you contextualized recommendations on the next best activity in your logic based on the already designed activities, parameters, and other context-related information. It is built using the machine learning analysis of over twelve million anonymized application logics built with Mendix to detect and learn the best practice patterns in Mendix.
@@ -30,15 +34,7 @@ The key features of Logic Recommender are the following:
 
 ### Studio Pro 10.6 and Above
 
-{{% alert color="info" %}}
-It is available for use when you are not signed in to Studio Pro, but you need to sign in to get better AI recommendations.
-{{% /alert %}}
-
-{{% alert color="info" %}}
-In Studio Pro 10.12 and above, it is enabled by default. You can disable it via **Edit** > **Preferences** > **Maia** > **In-Editor Recommender**.
-
-In Studio Pro versions from 10.6 to 10.11, it is enabled by default. You cannot switch it off.
-{{% /alert %}}
+In Studio Pro 10.12 and above, it is enabled by default. You can disable it via **Edit** > **Preferences** > **Maia** > **In-Editor Recommender**. From Studio Pro 10.6 to 10.11, it is enabled by default and you cannot switch it off.
 
 Logic Recommender is displayed as a blue plus in the flow. When you want to view recommendations on a particular flow, you can hover the mouse over that flow and click on the blue plus, or navigate to it with the keyboard and press <kbd>Enter</kbd>.
 
@@ -66,11 +62,7 @@ Choose a suggestion and click it to accept it. You can also choose a suggestion 
 
 To open the properties dialog box after adding a suggested element, accept the suggestion with <kbd>Shift</kbd> + <kbd>Enter</kbd> (or <kbd>Shift</kbd> + mouse click). After closing the properties dialog box, the Recommender will open on the next flow.
 
-### Studio Pro 10.5 and Below
-
-{{% alert color="info" %}}
-In Studio Pro 10.5 and below, you need to sign in to Studio Pro to use it.
-{{% /alert %}}
+### Studio Pro 10.5 and Below {#older-version}
 
 In Studio Pro 10.5 and below, an older version of Logic Recommender is available. It is enabled by default. You can switch it on and off using the **On-Off** toggle in the top right corner of the editor. You can also enable or disable it through the **Enable MxAssist Logic Bot** setting under the **Mendix Assist** tab in Studio Pro Preferences.
 
