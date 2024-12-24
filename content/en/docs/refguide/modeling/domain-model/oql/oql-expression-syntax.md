@@ -66,12 +66,54 @@ Most XPath [system variables](/refguide/xpath-keywords-and-system-variables/#sys
 
 These variables can be used the same way as other expressions.
 
-The only XPath system variable that is not supported by OQL is `[%CurrentObject%]`.
+### Variables related to entities in System module
 
-For example, this query gets the names of all `Person` objects that are associated with the current user:
+`[%CurrentUser%]` system variable contains an association to the `System.User` object.
+
+`[%UserRole_<role name>%]` variable contains an association to the object of entity `System.UserRole` that corresponds to role `<role name>`.
+
+`[%CurrentObject%]` is not supported in OQL.
+
+Both `[%CurrentUser%]` and `[%UserRole_<role name>%]` can be used only as references. They cannot be cast to other data types.
+
+For example, this query gets the names of all `Sales.Person` objects that are owned by current user:
 
 ```sql
-select Name from Person where Person_USER = '[%CurrentUser%]'
+SELECT
+	Name
+FROM
+	Sales.Person
+WHERE
+	System.owner = '[%CurrentUser%]'
+```
+
+This query returns names of all `Sales.Person` objects that are owned by users with role `Manager`:
+
+```sql
+SELECT
+	Name
+FROM
+	Sales.Person
+WHERE
+	System.owner/System.User/System.UserRoles = '[%UserRole_Manager%]'
+```
+
+### Time-related variables
+
+All time-related variables and expressions that are supported in XPath are also supported in OQL. See section [Time-Related](https://docs.mendix.com/refguide/xpath-keywords-and-system-variables/#time-related) in XPath Keywords and System Variables.
+
+Return type of all time-related variables and expressions is Date and time. They can be used the same way as values of type Date and time.
+
+For example:
+
+```sql
+SELECT
+	BirthDate,
+	DATEPART(YEAR, '[%BeginOfCurrentYear%]') AS CurrentYear,
+	DATEDIFF(YEAR, BirthDate, '[%CurrentDateTime%]') AS Age,
+	'[%BeginOfCurrentDay%] - 3 * [%YearLength%]' AS TodayThreeYearsAgo
+FROM
+	Sales.Person
 ```
 
 ## Operators
