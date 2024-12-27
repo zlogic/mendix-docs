@@ -10,6 +10,16 @@ These release notes cover changes to deployment to [Mendix for Private Cloud](/d
 
 For information on the current status of deployment to Mendix for Private Cloud and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
+## 2025
+
+### January 02, 2025
+
+#### Portal Improvements
+
+* We have fixed the issue where a Technical contact can't be assigned to multiple applications at a time.
+* We have included a documentation link to the application creation process for Private Cloud applications on the application overview page.
+
+
 ## 2024
 
 ### December 16, 2024
