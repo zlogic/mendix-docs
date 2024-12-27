@@ -127,6 +127,8 @@ This section provides clarity on the extent to which the OIDC Provider module su
     * [`jwks_uri`](https://openid.net/specs/openid-connect-core-1_0.html#RotateSigKeys)
     * `/register` endpoint, based on [RFC 7591: OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591) and [Final: OpenID Connect Dynamic Client Registration](https://openid.net/specs/openid-connect-registration-1_0.html). Only the specified client attributes are supported. The `/register` endpoint is secured with a registration access token using a mechanism that deviates from specifications. For more details, see the [Automatic Client Registration](#automatic-client-registration) section below.
 
+3. Additionally, the OIDC Provider module specifies the token validity for Refresh and Access tokens. For more information, see the [Configuring Token Validity](#token_validity) section below.
+
 ## Installation
 
 To install the OIDC Provider service in your IAM broker app, you need to import the following into your app:
@@ -534,7 +536,7 @@ In versions of OIDC Provider below 1.1.0, the following values are not included 
 
 In versions of the OIDC Provider above 2.0.0, the sub value was changed from an `Autonumber` to a `UUID`.
 
-## Configuring Token Validity
+## Configuring Token Validity{#token_validity}
 
 * Refresh Token: The validity period for the refresh token is set to 15 days by default. To modify this, update the `RefreshTokenLifetimeInDays` constant available in the module. Ensure to keep the value in *days*.
 * Access Token: The default validity for Access token is changing from 24 hours to one hour.  To adjust this, modify the `AccessTokenLifetimeInSecs` constant. Ensure to keep the value in *seconds*.
