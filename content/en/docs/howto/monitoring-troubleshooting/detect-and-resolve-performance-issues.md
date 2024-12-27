@@ -27,7 +27,7 @@ All performance issues are extremely context-sensitive, which means there is no 
 
 ## Slow UI
 
-If your user interface is slow, you will need to figure out whether this is due to slow microflows called by the page or to a large number of calls made by the UI. To determine this, you need to use a web browser with developer tools (a console, debugger, performance tools, etc.) like [Firefox Developer Edition](https://www.mozilla.org/nl/firefox/developer/).
+If your user interface is slow, you will need to figure out whether this is due to slow microflows called by the page or to a large number of calls made by the UI. To determine this, you need to use a web browser with developer tools (a console, debugger, network, performance tools, etc.), such as [Chrome for Developers](https://developer.chrome.com/) and [Firefox Developer Edition](https://www.mozilla.org/nl/firefox/developer/).
 
 In an example scenario, you run tests on your app and find that you have 26 XPath retrieves for a single page load. You may be able to see the run times for each step and how long each step waited before starting. Some retrieves may take longer than others, but the fact that you have such a large amount of retrieves occurring is also a potential issue.
 
