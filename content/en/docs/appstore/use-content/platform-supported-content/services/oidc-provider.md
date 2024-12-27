@@ -21,8 +21,8 @@ There are below versions of the OIDC Provider module, compatible with Mendix ver
 
 | Mendix Version | OIDC Provider Version |
 | --- | --- |
-| 10.12.10 and above | 4.0.0 |
-| 9.24.18 and above | 3.2.0 |
+| 10.12.10 and above | 4.0.0 and above |
+| 9.24.18 and above | 3.2.0 and above |
 
 ### Typical Usage Scenarios
 
@@ -484,11 +484,17 @@ The format of non-custom claims in the access token is as follows:
     "name": "test",
     "exp": 1682056126,
     "iat": 1681969726,
-    "client_id": "d99a49b9-95d7-410e-b79a"
+    "client_id": "d99a49b9-95d7-410e-b79a",
+    "jti": "ab86f730-c116-45c6-9b68-842190f7d8b1"
 }
 ```
 
 In the version 3.0.0 and above of the OIDC Provider module, a new `client_id` attribute has been added.
+
+In the following versions of the OIDC Provider module, a new `jti` attribute has been added:
+
+* Version 4.1.0 for Mendix version 10.12.10 and above
+* Version 3.3.0 for Mendix version 9.24.18 and above
 
 ### Non-custom Claims in ID-token
 
@@ -526,7 +532,12 @@ In versions of OIDC Provider below 1.1.0, the following values are not included 
 * "name"
 * "username"
 
-In versions of the OIDC Provider above 2.0.0, the sub value was changed from an Autonumber to a UUID.
+In versions of the OIDC Provider above 2.0.0, the sub value was changed from an `Autonumber` to a `UUID`.
+
+## Configuring Token Validity
+
+* Refresh Token: The validity period for the refresh token is set to 15 days by default. To modify this, update the `RefreshTokenLifetimeInDays` constant available in the module. Ensure to keep the value in *days*.
+* Access Token: The default validity for Access token is changing from 24 hours to one hour.  To adjust this, modify the `AccessTokenLifetimeInSecs` constant. Ensure to keep the value in *seconds*.
 
 ## Deleting Expired Access Tokens
 
@@ -601,4 +612,3 @@ For situations where the Centralized Authorization concept is used (see [Central
 These are set up in [Configuration of the OIDC Provider for Centralized Authorization with Scopes](#configure-scopes). Multiple scopes will be separated by spaces.
 
 For example: `mx:app:userrole:53f5d6fa-6da9-4a71-b011-454ec052cce8 mx:app:userrole:6c5ea333-799c-4438-96fc-2528ced788e4`
-
