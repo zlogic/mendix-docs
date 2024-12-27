@@ -84,6 +84,7 @@ On the **Import Apps** page, administrators can import existing Mendix apps that
 * GitLab
 * GitHub
 * Bitbucket
+* Azure DevOps
 
 {{< figure src="/attachments/private-platform/pmp-admin6.png" class="no-border" >}}
 
