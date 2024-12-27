@@ -133,7 +133,7 @@ To fix CE8116, do one of the following:
 
 ## Context Not Available Consistency Errors
 
-The errors that you can get when a page or snippet is expecting a context that is unavailable are described in the sub-sections below. 
+The errors that you can get when a page or snippet is expecting a context that is unavailable are described in the following sub-sections. 
 
 ### Error Code: CE1568
 
@@ -241,18 +241,33 @@ To fix CE1570, make sure that the object is passed correctly in the snippet sett
 
 ## Data Consistency Errors
 
-When a widget that expects as object from its data source does not get it or gets an object from a different entity type, it causes errors in data consistency. 
+When a widget that expects as object from its data source does not get it or gets an object from a different entity type, it causes errors in data consistency. Some of the most common errors of this type are described in the following sub-sections.
 
-Some of the most common errors of this type are described in the table below:
+### Error Code: CE0552
 
-| Error Code | Message in the Error Pane                                    | Cause of the Error                                           | Way to Fix                                                   |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| CE0552     | Microflow {name of the microflow} does not return an object. | The data source of a widget (for example, a data view) is set to **Microflow**, but the microflow does not return any object. | Open the microflow and configure a return value of the end event for it. |
-| CE0551     | Microflow {name of the microflow} does not return a list.    | The data source of a list view is set to **Microflow**, but the microflow does not return a list. | Open the microflow and configure its end event to return a list. |
-| CE1573     | Parameter {Name of the parameter} of the selected microflow/nanoflow does not match available arguments. No arguments available to {Name of the widget}. | You selected a microflow or a nanoflow as an on-click event of a widget (for example, of a button) and the microflow/nanoflow contains a parameter, but no argument (for example, an object) is available for the widget to pass to the microflow. | Place the widget in a data container and make sure that the data source of the data container matches the entity selected in **Data type** property of the microflow/nanoflow parameter. For a detailed example and a fix for it, see the [Error Fix Example for CE1573](#error-fix-example-3) section. |
-| CE1574     | Parameter {Name of the parameter} of the selected microflow/nanoflow does not match available arguments. Arguments available to {Name of the widget} are {list of available arguments}. | You selected a microflow or nanoflow as the data source of a widget, but the argument (or arguments) available for this widget does not match the parameter (or parameters) of the microflow. | Make sure that an argument (for example, an object) available for the widget matches the entity selected in the **Data type** property of the microflow/nanoflow parameter. For a detailed example and a fix for it, see the [Error Fix Example for CE1574](#error-fix-example-4) section. |
+CE0552 error message: *Microflow {name of the microflow} does not return an object.*
 
-### Error Fix Example for CE1573 {#error-fix-example-3}
+You will get CE0552 if the data source of a widget (for example, a data view) is set to **Microflow**, but the microflow does not return any object.
+
+To fix CE0552, open the microflow and configure a return value of the end event for it.
+
+### Error Code: CE0551
+
+CE0551 error message: *Microflow {name of the microflow} does not return a list.*
+
+You will get CE0551 if the data source of a list view is set to **Microflow**, but the microflow does not return a list.
+
+To fix CE0551, open the microflow and configure its end event to return a list.
+
+### Error Code: CE1573
+
+CE1573 error message: *Parameter {Name of the parameter} of the selected microflow/nanoflow does not match available arguments. No arguments available to {Name of the widget}.*
+
+You will get CE1573 if you selected a microflow or a nanoflow as an on-click event of a widget (for example, of a button) and the microflow/nanoflow contains a parameter, but no argument (for example, an object) is available for the widget to pass to the microflow.
+
+To fix CE1573, place the widget in a data container and make sure that the data source of the data container matches the entity selected in **Data type** property of the microflow/nanoflow parameter. For a detailed example and a fix for it, see the [Error Fix Example for CE1573](#error-fix-example-3) section below.
+
+#### Error Fix Example for CE1573 {#error-fix-example-3}
 
 When you set a microflow or a nanoflow as an on-click event for a widget, and this microflow expects an argument (for example, an object) that is not available, this will result in an error. 
 
@@ -275,7 +290,15 @@ To fix it, do the following:
 
 Now the *Customer* object is available on the page and it matches the microflow parameter *Customer*. 
 
-### Error Fix Example for CE1574 {#error-fix-example-4}
+### Error Code: CE1574
+
+CE1574 error message: *Parameter {Name of the parameter} of the selected microflow/nanoflow does not match available arguments. Arguments available to {Name of the widget} are {list of available arguments}.*
+
+You will get CE1574 if you selected a microflow or nanoflow as the data source of a widget, but the argument (or arguments) available for this widget does not match the parameter (or parameters) of the microflow.  a parameter, but no argument (for example, an object) is available for the widget to pass to the microflow.
+
+To fix CE1574, make sure that an argument (for example, an object) available for the widget matches the entity selected in the **Data type** property of the microflow/nanoflow parameter. For a detailed example and a fix for it, see the [Error Fix Example for CE1574](#error-fix-example-4) section below.
+
+#### Error Fix Example for CE1574 {#error-fix-example-4}
 
 When you set a microflow or nanoflow as an on-click event for a widget, and this microflow/nanoflow expects a certain argument, but a different argument is available to the widget, this will result in an error. 
 
@@ -377,36 +400,69 @@ Changing the domain model can result in other errors. To avoid changing the doma
 
 Images, videos and files should be placed in a data container, otherwise you will get consistency errors. Another way to fix consistency errors is to place these widgets in a snippet and configure the snippet. For more information on images, videos, and files, see [Images, Videos, and Files](/refguide/image-and-file-widgets/). 
 
-| Error code | Message in the Error Pane                                    | Cause of the Error                                           | Way to Fix                                                   |
-| ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-|            | A [file manager](/refguide/file-manager/) must be placed in a data view or snippet that is connected to the entity ‘System.FileDocument’ or a specialization. | You have added a file manager to a page, but it is not inside a data view or a snippet that is configured properly. | Place this widget into a data container. If you want to place it into a snippet, mind that you need to configure it properly: either set System.FileDocument (or its specialization) as an entity for this snippet or place the snippet in a data container. |
-|            | An [image uploader](/refguide/image-uploader/) must be placed in a data view or snippet that is connected to the entity ‘System.Image’ or a specialization. | You have added an image uploader to a page, but it is not inside a data view or a snippet that is configured properly. | Place this widget into a data container. If you want to place it into a snippet, mind that you need to configure it properly: set System.Image (or its specialization) as an entity for this snippet or place the snippet in a data container. |
-|            | Move this widget into a data container, for example a data view or list view. | You have added a [dynamic image](/refguide/image-viewer/) to your page, but it is not inside a data view or a list view. | Place this widget inside a data view or a list view.         |
-| CE0489     | Select an entity for the data source of this [dynamic image](/refguide/image-viewer/). | You have added a dynamic image to a page, it is placed inside a data view or a list view, but an entity for the dynamic image is not specified. | Open dynamic image properties > the **Data source** section and select an entity in the **Entity (path)** field. |
+The images, videos and files consistency errors are described in the following sub-sections.
+
+### Error Code: CE6810
+
+CE6810 error message: *A [file manager](/refguide/file-manager/) must be placed in a data view or snippet that is connected to the entity ‘System.FileDocument’ or a specialization.*
+
+You will get CE6810 if you have added a file manager to a page, but it is not inside a data view or a snippet that is configured properly.
+
+To fix CE6810, place this widget into a data container. If you want to place it into a snippet, mind that you need to configure it properly: either set System.FileDocument (or its specialization) as an entity for this snippet or place the snippet in a data container.
+
+### Error Code: CE6811
+
+CE6811 error message: *An [image uploader](/refguide/image-uploader/) must be placed in a data view or snippet that is connected to the entity ‘System.Image’ or a specialization.*
+
+You will get CE6811 if you have added an image uploader to a page, but it is not inside a data view or a snippet that is configured properly.
+
+To fix CE6811, place this widget into a data container. If you want to place it into a snippet, mind that you need to configure it properly: set System.Image (or its specialization) as an entity for this snippet or place the snippet in a data container.
+
+### Error Code: CE7950
+
+CE7950 error message: *Move this widget into a data container, for example a data view or list view.*
+
+You will get CE7950 if you have added a [dynamic image](/refguide/image-viewer/) to your page, but it is not inside a data view or a list view.
+
+To fix CE7950, place this widget inside a data view or a list view.
+
+### Error Code: CE0489
+
+CE0489 error message: *Select an entity for the data source of this [dynamic image](/refguide/image-viewer/).*
+
+You will get CE0489 if you have added a dynamic image to a page, it is placed inside a data view or a list view, but an entity for the dynamic image is not specified.
+
+To fix CE0489, open dynamic image properties > the **Data source** section and select an entity in the **Entity (path)** field.
 
 ## Image Widget Consistency Errors
 
-A consistency error for an image widget is described in the table below:
+A consistency error for an image widget is described below:
 
-| Error code | Message in the Error Pane | Cause of the Error                                           | Way to Fix                                                   |
-| ---------- | ------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-|            | No image selected         | You have added an image widget to a page, but do not select an image itself. | Open the image properties >**General** > **Image** and select an image. For more information on an image widget, see [Image](/refguide/image/). |
+Error message: *No image selected.*
+
+You will get this error message if you have added an image widget to a page, but do not select an image itself. 
+
+To fix this error, open the image properties > **General** > **Image** and select an image. For more information on an image widget, see [Image](/refguide/image/).
 
 ## On Click Event Consistency Errors 
 
 You can specify an [On click event](/refguide/on-click-event/) for different widgets, for example, for buttons or images. 
 
-The most common consistency errors are connected with not configuring the on click event. 
+The most common on click event consistency errors are connected with not configuring the on click event. 
 
-To fix the consistency errors, finish configuring the on click event (for example, for an on click event **Show a page**, select a particular page that should open), or change the on click event. 
+To fix the on-click event consistency errors, finish configuring the on click event (for example, for an on click event **Show a page**, select a particular page that should open), or change the on click event. 
 
 ## Icon Collection Consistency Errors
 
-Icon collections have configurable class names, icon prefixes, and icon names. These properties are used to generate the CSS code for your pages. You can come across the following consistency errors that prevent you from generating invalid CSS:
+Icon collections have configurable class names, icon prefixes, and icon names. These properties are used to generate the CSS code for your pages. You can come across the following consistency errors that prevent you from generating invalid CSS.
 
-| Error code | Message in the Error Pane | Cause of the Error | Way to Fix |
-| ---------- | ------------------------- | ------------------ | ---------- |
-|   CE1616   | You cannot duplicate the icon collection class name {icon collection class name}. | There is more than one icon collection configured with the same class name. | Change the class name for one of the icon collections. |
+### Error code: CE1616
+
+CE1616 error message: *You cannot duplicate the icon collection class name {icon collection class name}.*
+
+You will get CE1616 if there is more than one icon collection configured with the same class name.
+
+To fix CE1616, change the class name for one of the icon collections.
 
 ## Read More
 
