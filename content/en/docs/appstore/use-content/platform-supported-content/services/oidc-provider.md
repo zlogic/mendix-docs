@@ -536,7 +536,7 @@ In versions of OIDC Provider below 1.1.0, the following values are not included 
 
 In versions of the OIDC Provider above 2.0.0, the sub value was changed from an `Autonumber` to a `UUID`.
 
-## Configuring Token Validity{token_validity}
+## Configuring Token Validity{#token_validity}
 
 * Refresh Token: The validity period for the refresh token is set to 15 days by default. To modify this, update the `RefreshTokenLifetimeInDays` constant available in the module. Ensure to keep the value in *days*.
 * Access Token: The default validity for Access token is changing from 24 hours to one hour.  To adjust this, modify the `AccessTokenLifetimeInSecs` constant. Ensure to keep the value in *seconds*.
