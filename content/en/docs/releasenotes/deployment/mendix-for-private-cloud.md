@@ -16,9 +16,8 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 #### Portal Improvements
 
-* We have fixed the issue where a Technical contact can't be assigned to multiple applications at a time.
-* We have included a documentation link to the application creation process for Private Cloud applications on the application overview page.
-
+* We have fixed the issue where a Technical contact cannot be assigned to multiple applications at a time.
+* We have included a documentation link to the application creation process for Private Cloud applications on the **Application Overview** page.
 
 ## 2024
 
