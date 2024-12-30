@@ -440,7 +440,7 @@ You can get the following consistency error for an image widget:
 
 Error message: *No image selected.*
 
-You will get this error message if you have added an image widget to a page, but do not select an image itself. 
+You get this error message if you have added an image widget to a page, but do not select an image itself. 
 
 To fix this error, open the image properties > **General** > **Image** and select an image. For more information on an image widget, see [Image](/refguide/image/).
 
