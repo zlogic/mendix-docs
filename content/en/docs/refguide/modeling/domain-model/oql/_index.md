@@ -73,5 +73,5 @@ Here is a list of all OQL reserved words:
 `YEAR`
 
 {{% alert color="info" %}}
-Mendix does not support Float data type since version 8. In OQL, `FLOAT` is a reserved word for legacy reasons. It should not be used.
+In OQL, `FLOAT` is a reserved word for legacy reasons. Mendix no longer supports a Float data type. It should not be used.
 {{% /alert %}}

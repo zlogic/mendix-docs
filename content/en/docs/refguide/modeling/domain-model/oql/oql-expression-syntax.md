@@ -48,7 +48,7 @@ Literals represent values that are constant and are part of the query itself. Th
 | 's*'   | 'my_string'     | `STRING`             | String literal                                |
 | d+     | 5               | `INTEGER` and `LONG` | Natural number literal                        |
 | d+.d+  | 5.3             | `DECIMAL`            | Real number literal                           |
-|        | `NULL`          | N/A                  | NULL literal to represent non-existent values. Note that OQL does not support keyword `empty`. In XPath, it has identical purpose as `NULL`. |
+|        | `NULL`          | N/A                  | NULL literal to represent non-existent values. OQL does not support the keyword `empty`. In XPath, it has identical purpose as `NULL`. |
 
 Where `d` is a number, `s` is any character, * indicates that the pattern can contain zero or more characters, and + indicates that the pattern can contain one or more characters.
 
@@ -56,7 +56,7 @@ Where `d` is a number, `s` is any character, * indicates that the pattern can co
 
 There is no direct support for `DATETIME` literals. For functions that take `DATETIME` as input, it can be represented with a `STRING` in a ISO date time format or a `LONG` value representing Unix seconds.
 
-## System variables
+## System Variables
 
 Most XPath [system variables](/refguide/xpath-keywords-and-system-variables/#system-variables) can be used in OQL with the format:
 
@@ -66,17 +66,17 @@ Most XPath [system variables](/refguide/xpath-keywords-and-system-variables/#sys
 
 These variables can be used the same way as other expressions.
 
-### Variables related to entities in System module
+### Variables Related to Entities in System Module
 
-`[%CurrentUser%]` system variable contains an association to the `System.User` object.
+There are a couple of things to note about using system variables in OQL:
 
-`[%UserRole_<role name>%]` variable contains an association to the object of entity `System.UserRole` that corresponds to role `<role name>`.
-
-`[%CurrentObject%]` is not supported in OQL.
+* `[%CurrentObject%]` is not supported in OQL.
+* The `[%CurrentUser%]` system variable contains an association with the `System.User` object.
+* The `[%UserRole_<role name>%]` variable contains an association with the object of entity `System.UserRole` that corresponds to role `<role name>`.
 
 Both `[%CurrentUser%]` and `[%UserRole_<role name>%]` can be used only as references. They cannot be cast to other data types.
 
-For example, this query gets the names of all `Sales.Person` objects that are owned by current user:
+For example, this query gets the Name from all `Sales.Person` objects that are owned by current user:
 
 ```sql
 SELECT
@@ -87,7 +87,7 @@ WHERE
 	System.owner = '[%CurrentUser%]'
 ```
 
-This query returns names of all `Sales.Person` objects that are owned by users with role `Manager`:
+This query returns the Name from all `Sales.Person` objects that are owned by users with role `Manager`:
 
 ```sql
 SELECT
@@ -98,11 +98,11 @@ WHERE
 	System.owner/System.User/System.UserRoles = '[%UserRole_Manager%]'
 ```
 
-### Time-related variables
+### Time-Related Variables
 
-All time-related variables and expressions that are supported in XPath are also supported in OQL. See section [Time-Related](https://docs.mendix.com/refguide/xpath-keywords-and-system-variables/#time-related) in XPath Keywords and System Variables.
+All time-related variables and expressions that are supported in XPath are also supported in OQL. See section [Time-Related](/refguide/xpath-keywords-and-system-variables/#time-related) of *XPath Keywords and System Variables*.
 
-Return type of all time-related variables and expressions is Date and time. They can be used the same way as values of type Date and time.
+The return type of all time-related variables and expressions is Date and time. They can be used the same way as values of type Date and time.
 
 For example:
 
@@ -123,7 +123,7 @@ Operators perform common operations and, unlike functions, do not put their para
 Supported operators are split into binary, unary, and other operators based on their syntax.
 These are further subdivided into logical and arithmetic operators, depending on their return type. Logical operators always return a `BOOLEAN` type. The return type of arithmetic operators depends on the datatypes of the expressions being operated on. `CASE` is detailed separately.
 
-### Binary operators
+### Binary Operators
 
 These are the supported binary operators:
 
@@ -368,7 +368,7 @@ Negates a numeric value. The return type is the same as the input `expression`.
 
 Reverses Boolean `TRUE` values into `FALSE` and vice versa.
 
-### Other operators {#other-operators}
+### Other Operators {#other-operators}
 
 The operators in this section do not match the general unary or binary syntax. They are all logical operators:
 

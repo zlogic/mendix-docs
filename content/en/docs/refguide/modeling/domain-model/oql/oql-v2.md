@@ -264,7 +264,7 @@ SELECT *
 FROM Module.Person, Module.City
 ```
 
-### `JOIN` an Entity to Its Own Generalization
+### `join` an Entity to Its Own Generalization
 
 In OQL v1 there was a bug which meant that when you `JOIN`ed an entity to its own generalization it would generate unexpected specialization columns. This has been fixed.
 
