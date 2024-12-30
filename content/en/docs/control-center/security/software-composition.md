@@ -40,11 +40,14 @@ To be able to see the software composition information, make sure that you meet 
 
 ### Software Composition Generation {#software-composition-generation}
 
-Components are identified in the following manner:
+a software bill of material (SBOM) is generated in the following circumstances:
 
-First, when a new deployment package is created via the Mendix Portal with the compatible Mendix Runtime version, a software bill of material (SBOM) is generated along with it. The log details can be viewed by clicking **View build output** in the deployment package details in the Mendix Portal. For details on SBOM generation, see [SBOM Generation](/refguide/sbom-generation/).
+* when a new deployment package with the compatible Mendix Runtime version is created via the Mendix Portal
+* using menu option **App -> Tools -> Generate Bill of Materials** in Studio Pro 10.18 and above
 
-The component dependencies for each non-expired, deployment package are available in the [Software Composition](/developerportal/deploy/software-composition/) page in **Apps**. 
+Click **View build output** in the deployment package details in the Mendix Portal to see the log details. For details of SBOM generation, see [SBOM Generation](/refguide/sbom-generation/).
+
+You can find the component dependencies for each non-expired, deployment package in the [Software Composition](/developerportal/deploy/software-composition/) page of **Apps** in the Mendix Portal. 
 
 ## Overview {#overview}
 
@@ -113,11 +116,11 @@ The list shows the following information about the component:
 
 * **License** – This shows the end-user license for the component.
 
-* **Marketplace** – This shows whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Compnay Content](/appstore/home-page/#company-content) page.
+* **Marketplace** – This shows whether the component is **Public** or **Private**. A public component is available to the whole Mendix community in the Marketplace, while a private component is available only via your [Company Content](/appstore/home-page/#company-content) page.
 
 * **Apps using component** – This shows the number of apps where the component is used.
 
-* **Latest version** – This shows the lastest version of the component.
+* **Latest version** – This shows the latest version of the component.
 
 * **Publisher** – This shows the name of the organization that published the component.
 

@@ -15,6 +15,15 @@ aliases:
 An access provider application can offer a Single Sign-On (SSO) experience for end-users of connected applications Additionally, it can issue Access Tokens for API consumption when APIs are secured with OAuth bearer tokens.
 The service supports responsive browser-based applications and has been tested with applications that use the OIDC SSO module.
 
+For successful implementation of the OIDC Provider module, [Advanced](https://academy.mendix.com/link/certifications/6/advanced) or [Expert](https://academy.mendix.com/link/certifications/24/expert) Mendix certification is recommended. Customers with limited low-code experience may consider partnering with a Mendix Implementation Partner.
+
+There are below versions of the OIDC Provider module, compatible with Mendix versions.
+
+| Mendix Version | OIDC Provider Version |
+| --- | --- |
+| 10.12.10 and above | 4.0.0 and above |
+| 9.24.18 and above | 3.2.0 and above |
+
 ### Typical Usage Scenarios
 
 The following are usage scenarios that would be achievable with the OIDC Provider module.
@@ -117,6 +126,8 @@ This section provides clarity on the extent to which the OIDC Provider module su
     * [`issuer`](https://openid.net/specs/openid-connect-core-1_0.html#IssuerIdentifier)
     * [`jwks_uri`](https://openid.net/specs/openid-connect-core-1_0.html#RotateSigKeys)
     * `/register` endpoint, based on [RFC 7591: OAuth 2.0 Dynamic Client Registration Protocol](https://datatracker.ietf.org/doc/html/rfc7591) and [Final: OpenID Connect Dynamic Client Registration](https://openid.net/specs/openid-connect-registration-1_0.html). Only the specified client attributes are supported. The `/register` endpoint is secured with a registration access token using a mechanism that deviates from specifications. For more details, see the [Automatic Client Registration](#automatic-client-registration) section below.
+
+3. Additionally, the OIDC Provider module specifies the token validity for Refresh and Access tokens. For more information, see the [Configuring Token Validity](#token_validity) section below.
 
 ## Installation
 
@@ -475,11 +486,17 @@ The format of non-custom claims in the access token is as follows:
     "name": "test",
     "exp": 1682056126,
     "iat": 1681969726,
-    "client_id": "d99a49b9-95d7-410e-b79a"
+    "client_id": "d99a49b9-95d7-410e-b79a",
+    "jti": "ab86f730-c116-45c6-9b68-842190f7d8b1"
 }
 ```
 
 In the version 3.0.0 and above of the OIDC Provider module, a new `client_id` attribute has been added.
+
+In the following versions of the OIDC Provider module, a new `jti` attribute has been added:
+
+* Version 4.1.0 for Mendix version 10.12.10 and above
+* Version 3.3.0 for Mendix version 9.24.18 and above
 
 ### Non-custom Claims in ID-token
 
@@ -517,7 +534,12 @@ In versions of OIDC Provider below 1.1.0, the following values are not included 
 * "name"
 * "username"
 
-In versions of the OIDC Provider above 2.0.0, the sub value was changed from an Autonumber to a UUID.
+In versions of the OIDC Provider above 2.0.0, the sub value was changed from an `Autonumber` to a `UUID`.
+
+## Configuring Token Validity{#token_validity}
+
+* Refresh Token: The validity period for the refresh token is set to 15 days by default. To modify this, update the `RefreshTokenLifetimeInDays` constant available in the module. Ensure to keep the value in *days*.
+* Access Token: For version 4.1.0 and above, the validity for access tokens is one hour. Older versions of the Provider module issue access tokens with a validity of 24 hours. To adjust this, modify the `AccessTokenLifetimeInSecs` constant. Ensure to keep the value in *seconds*.
 
 ## Deleting Expired Access Tokens
 
