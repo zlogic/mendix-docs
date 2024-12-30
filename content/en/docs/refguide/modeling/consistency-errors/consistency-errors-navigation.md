@@ -87,7 +87,7 @@ Now the new object of type *Customer* will be created and passed to the home pag
 
 CE0548 error message: *Items with subitems cannot have an action themselves.*
 
-You will get CE0548 if you have assigned an [on-click event](/refguide/on-click-event/) to a menu item that has a sub-item, when menu items with have sub-items cannot have on-click events assigned to them.
+You get CE0548 if you have assigned an [on-click event](/refguide/on-click-event/) to a menu item that has a sub-item, when menu items with have sub-items cannot have on-click events assigned to them.
 
 To fix CE0548, you need to either set the on-click event of the menu item to *Nothing*, or delete/move the sub-item.
 
