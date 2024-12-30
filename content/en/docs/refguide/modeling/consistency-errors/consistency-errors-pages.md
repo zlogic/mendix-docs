@@ -75,7 +75,7 @@ The most common errors which can occur when configuring a data view, the causes 
 
 CE0488 error message in a data view: *No entity configured for the data source of this data view. Select an entity or change the data source.*
 
-You will get CE0488 in a data view if **Context** is selected as a data source for a data view, but no entity is specified.
+You get CE0488 in a data view if **Context** is selected as a data source for a data view, but no entity is specified.
 
 To fix CE0488, do one of the following:
 
