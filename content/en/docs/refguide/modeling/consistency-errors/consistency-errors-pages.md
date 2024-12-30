@@ -422,7 +422,7 @@ To fix CE6811, place this widget into a data container. If you want to place it 
 
 CE7950 error message: *Move this widget into a data container, for example a data view or list view.*
 
-You will get CE7950 if you have added a [dynamic image](/refguide/image-viewer/) to your page, but it is not inside a data view or a list view.
+You get CE7950 if you have added a [dynamic image](/refguide/image-viewer/) to your page, but it is not inside a data view or a list view.
 
 To fix CE7950, place this widget inside a data view or a list view.
 
