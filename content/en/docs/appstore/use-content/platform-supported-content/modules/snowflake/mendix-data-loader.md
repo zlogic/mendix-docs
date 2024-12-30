@@ -48,15 +48,21 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 5. To view the status of your data source, check the **Details**.
 6. To view the configuration status, click the **Authentication Configuration** tab.
 7. To set up authentication, click **Edit**, and then provide the required information based on the selected authentication type:
-        * For basic authentication, enter the following information:
-            * **Username** – A username for basic authentication into the OData resource in your Mendix application
-            * **Password** – A password for basic authentication into the OData resource in your Mendix application
-        * For OAuth authentication, enter the following information:
-            * **Client ID** – A client ID from your OAuth provider
-            * **Client Secret** – A secret associated with the client from your OAuth provider
-            * **Token Endpoint** – An endpoint at which the token will be validated by your OAuth provider
-            * **Allowed Scopes** – Allowed and custom scopes configured on the client from your OAuth provider
-            * **Access Token Validity** – Duration (in seconds) for which the access token is valid
+
+    [//]: # (<!-- markdownlint-disable no-space-in-emphasis -->)
+
+    * For basic authentication, enter the following information:
+        * **Username** – A username for basic authentication into the OData resource in your Mendix application
+        * **Password** – A password for basic authentication into the OData resource in your Mendix application
+    * For OAuth authentication, enter the following information:
+        * **Client ID** – A client ID from your OAuth provider
+        * **Client Secret** – A secret associated with the client from your OAuth provider
+        * **Token Endpoint** – An endpoint at which the token will be validated by your OAuth provider
+        * **Allowed Scopes** – Allowed and custom scopes configured on the client from your OAuth provider
+        * **Access Token Validity** – Duration (in seconds) for which the access token is valid
+
+    [//]: # (<!-- markdownlint-enable no-space-in-emphasis -->)
+
 8. Click **Generate Script**.
 9. Click **Back** to return to the **Details** page.
 10. Click the **Ingestion Configuration** tab to set up your ingestion destination table.
@@ -77,7 +83,7 @@ Once the Mendix Data Loader is deployed, follow these steps to configure and use
 16. Click **Schedule Ingestion Task**.
 17. To view the created task, go to the **Task Management** tab, where you can monitor performed ingestion jobs, suspend or enable the task, or drop it. Currently, only one ingestion task can exist at a time.
 18. Grant the application **USAGE** privilege on a warehouse to enable scheduling of data ingestions. All data ingestions use the same warehouse.
-    You are now redirected to the **Details** page, where you can see the status of the last three ingestionse.
+    You are now redirected to the **Details** page, where you can see the status of the last three ingestions.
 19. To view the ingested data, access the schema specified in the target database within your Snowflake environment.
 
 The ingested data is stored in the target schema of the specified target database, created by the Mendix Data Loader application. This target schema serves as a staging area. After each ingestion, copy the tables from the target schema to the desired database and schema that you want to use to store the ingested data.
@@ -125,7 +131,7 @@ Additionally, you may need to verify custom claims specific to your OAuth provid
 
 ## Setting up the App Client in your OAuth Provider
 
-When setting up the OAuth provider to be able to use it with the Mendix Data Loader, you must specify aredirect URL in order for the authorization server to redirect the user back to the application. The redirect URL from your Snowflake environment has the following format:
+When setting up the OAuth provider to be able to use it with the Mendix Data Loader, you must specify a redirect URL in order for the authorization server to redirect the user back to the application. The redirect URL from your Snowflake environment has the following format:
 
 ```
 https://apps-api.c1.<cloud_region_id>.<cloud>.app.snowflake.com/oauth/complete-secret
