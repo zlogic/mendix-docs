@@ -227,7 +227,7 @@ To fix CE7412, do one of the following:
 
 CE1154 error message: *The selected snippet {Name of the snippet} has parameters. Move this snippet call into a data container like a data view, list view, or template grid.*
 
-You will get CE1154 if the snippet has a snippet parameter and the snippet call is not placed inside a data container.
+You get CE1154 if the snippet has a snippet parameter and the snippet call is not placed inside a data container.
 
 To fix CE1154, make sure that the snippet call is placed in a data container which passes the correct type of object to the snippet call.
 
