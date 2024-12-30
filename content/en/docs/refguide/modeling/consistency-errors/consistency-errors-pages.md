@@ -294,7 +294,7 @@ Now the *Customer* object is available on the page and it matches the microflow 
 
 CE1574 error message: *Parameter {Name of the parameter} of the selected microflow/nanoflow does not match available arguments. Arguments available to {Name of the widget} are {list of available arguments}.*
 
-You will get CE1574 if you selected a microflow or nanoflow as the data source of a widget, but the argument (or arguments) available for this widget does not match the parameter (or parameters) of the microflow.  a parameter, but no argument (for example, an object) is available for the widget to pass to the microflow.
+You get CE1574 if you selected a microflow or nanoflow as the data source of a widget, but the argument (or arguments) available for this widget does not match the parameter (or parameters) of the microflow.  a parameter, but no argument (for example, an object) is available for the widget to pass to the microflow.
 
 To fix CE1574, make sure that an argument (for example, an object) available for the widget matches the entity selected in the **Data type** property of the microflow/nanoflow parameter. For a detailed example and a fix for it, see the [Error Fix Example for CE1574](#error-fix-example-4) section below.
 
