@@ -460,7 +460,7 @@ Icon collections have configurable class names, icon prefixes, and icon names. T
 
 CE1616 error message: *You cannot duplicate the icon collection class name {icon collection class name}.*
 
-You will get CE1616 if there is more than one icon collection configured with the same class name.
+You get CE1616 if there is more than one icon collection configured with the same class name.
 
 To fix CE1616, change the class name for one of the icon collections.
 
