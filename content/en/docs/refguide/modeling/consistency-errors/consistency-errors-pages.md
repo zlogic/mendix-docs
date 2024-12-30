@@ -93,7 +93,7 @@ CE2633 error message in a data view can be one of the following:
         * Change the type of the data source.
 
 * *No nanoflow configured for the data source of this data view. Select a nanoflow or change the data source.*
-    * You will get this error is if the data source is set to **Nanoflow**, but no nanoflow is specified.
+    * You get this error is if the data source is set to **Nanoflow**, but no nanoflow is specified.
     * To fix this error, do one of the following:
         * Open the data view's properties > **Data source** and select a nanoflow in the **Nanoflow** field.
         * Change the type of the data source.
