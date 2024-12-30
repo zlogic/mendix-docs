@@ -408,7 +408,7 @@ CE6810 error message: *A [file manager](/refguide/file-manager/) must be placed 
 
 You get CE6810 if you have added a file manager to a page, but it is not inside a data view or a snippet that is configured properly.
 
-To fix CE6810, place this widget into a data container. If you want to place it into a snippet, mind that you need to configure it properly: either set System.FileDocument (or its specialization) as an entity for this snippet or place the snippet in a data container.
+To fix CE6810, place this widget into a data container. If you want to place it into a snippet, mind that you need to either set System.FileDocument (or its specialization) as an entity for this snippet or place the snippet in a data container.
 
 ### Error Code: CE6811
 
