@@ -235,7 +235,7 @@ To fix CE1154, make sure that the snippet call is placed in a data container whi
 
 CE1570 error message: *The selected snippet {Name of the snippet} expects an object of type {type of object}, which is not available here.*
 
-You will get CE1570 if the snippet has a snippet parameter that expects an object of a particular type to be passed to it. This error occurs when the snippet is called from another page, layout, or snippet which does not have this object available.
+You get CE1570 if the snippet has a snippet parameter that expects an object of a particular type to be passed to it. This error occurs when the snippet is called from another page, layout, or snippet which does not have this object available.
 
 To fix CE1570, make sure that the object is passed correctly in the snippet settings of the snippet call.
 
