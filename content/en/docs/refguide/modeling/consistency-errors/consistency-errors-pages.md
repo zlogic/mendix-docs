@@ -203,7 +203,7 @@ To fix CE7410, do one of the following:
 
 CE7411 error message: *The selected page {Name of the page} should accept a parameter of type X, but expects a parameter of type Y instead.*
 
-You will get CE7411 if you have a widget (for example, the create button of a data grid) that opens a page which must use the available object. However, the parameter of the selected page expects an object of a different type. 
+You get CE7411 if you have a widget (for example, the create button of a data grid) that opens a page which must use the available object. However, the parameter of the selected page expects an object of a different type. 
 
 To fix CE7411, do one of the following:
 
