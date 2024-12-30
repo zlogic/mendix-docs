@@ -414,7 +414,7 @@ To fix CE6810, place this widget into a data container. If you want to place it 
 
 CE6811 error message: *An [image uploader](/refguide/image-uploader/) must be placed in a data view or snippet that is connected to the entity ‘System.Image’ or a specialization.*
 
-You will get CE6811 if you have added an image uploader to a page, but it is not inside a data view or a snippet that is configured properly.
+You get CE6811 if you have added an image uploader to a page, but it is not inside a data view or a snippet that is configured properly.
 
 To fix CE6811, place this widget into a data container. If you want to place it into a snippet, mind that you need to configure it properly: set System.Image (or its specialization) as an entity for this snippet or place the snippet in a data container.
 
