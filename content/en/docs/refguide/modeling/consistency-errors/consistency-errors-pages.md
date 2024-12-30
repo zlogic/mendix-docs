@@ -57,7 +57,7 @@ CE2633 error message in a list view can be one of the following:
 
 CE0595 error message: *Attribute {AttributeName} is not an attribute of entity {EntityName}.*
 
-You will get CE0595 if you have changed the target entity of a list view without updating its contents. The list view is filled with attributes of another entity.
+You get CE0595 if you have changed the target entity of a list view without updating its contents. The list view is filled with attributes of another entity.
 
 To fix CE0595, open the widget's properties > **Data source** and select another attribute for **Attribute (path)**.
 
