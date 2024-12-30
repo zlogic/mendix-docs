@@ -247,7 +247,7 @@ When a widget that expects as object from its data source does not get it or get
 
 CE0552 error message: *Microflow {name of the microflow} does not return an object.*
 
-You will get CE0552 if the data source of a widget (for example, a data view) is set to **Microflow**, but the microflow does not return any object.
+You get CE0552 if the data source of a widget (for example, a data view) is set to **Microflow**, but the microflow does not return any object.
 
 To fix CE0552, open the microflow and configure a return value of the end event for it.
 
