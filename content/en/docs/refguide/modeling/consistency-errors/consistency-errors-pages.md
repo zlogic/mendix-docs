@@ -436,7 +436,7 @@ To fix CE0489, open dynamic image properties > the **Data source** section and s
 
 ## Image Widget Consistency Errors
 
-A consistency error for an image widget is described below:
+You can get the following consistency error for an image widget:
 
 Error message: *No image selected.*
 
