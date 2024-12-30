@@ -17,7 +17,7 @@ Mendix Studio Pro is a tool for creating, viewing, and editing your Mendix appli
 One Studio Pro instance can have only one app open at a time, but you can open two Studio Pro instances when necessary.
 
 {{% alert color="info" %}}
-When Studio Pro is open, press <kbd>F1</kbd> to quickly jump to documentation.
+When Studio Pro is open, press <kbd>F1</kbd> to open the relevant documentation.
 {{% /alert %}}
 
 This document describes the user interface of Mendix Studio Pro:
@@ -34,9 +34,9 @@ The Studio Pro top bar contains the following items:
 
 ### Menus {#menus}
 
-In the Studio Pro top bar, you can see several menus, such as **Switch-to** menu, [Edit](/refguide/edit-menu/), [View](/refguide/view-menu/), and [Version Control](/refguide/version-control-menu/). Each menu contains menu items that allow you to perform various actions, such as to [create a deployment package](/refguide/create-deployment-package-dialog/), set [preferences](/refguide/preferences-dialog/), or view the [**Errors**](/refguide/errors-pane/) pane. 
+In the Studio Pro top bar, you can see several menus, such as [Edit](/refguide/edit-menu/), [View](/refguide/view-menu/), and [Version Control](/refguide/version-control-menu/). Each menu contains items that allow you to perform various actions, such as to [create a deployment package](/refguide/create-deployment-package-dialog/), set [preferences](/refguide/preferences-dialog/), or view the [**Errors**](/refguide/errors-pane/) pane. 
 
-For more information on menus, see [Menus](/refguide/menus/). 
+For more information, see [Menus](/refguide/menus/). 
 
 ### Run and View App {#run-and-view}
 
@@ -52,35 +52,35 @@ For more information on deploying and versioning your app, see the [Versioning a
 
 You can find links to the [Mendix Portal](/developerportal/) and [Marketplace](/appstore/) in the upper-right corner of Studio Pro.
 
-Your profile picture is displayed next to them if you are signed in. When you click the profile picture, the drop-down menu is displayed with your full name and email, as well as links to your user profile, My Apps screen, and the **Sign Out** option. 
+Your profile picture is displayed next to these links if you are signed in. When you click the profile picture, the drop-down menu is displays your full name and email, a link to your user profile, and the **Sign Out** option. 
 
-## App Structure (App Explorer)
+## App Explorer
 
-An app consists of individual files (documents) and settings that are grouped in folders and [modules](/refguide/modules/). The complete structure of your app can be viewed in the [App Explorer](/refguide/app-explorer/). 
+An app consists of individual files (also known as documents) and settings that are grouped in folders and [modules](/refguide/modules/). The complete structure of your app can be viewed in the [App Explorer](/refguide/app-explorer/).
 
-## Working Area {#working-area}
+## Workspace {#working-area}
 
-A working area is a current document tab that you work in. The working area and its settings differs depending on the editor (for example, pages, microflows, domain model editors) and the type of document. 
+A workspace is a current document tab that you work in. The working area and its settings differs depending on the editor (for example, pages, microflows, domain model editors) and the type of document. 
 
 ### Document Tabs {#documents}
 
-The documents you view and edit are shown in tabs. 
-
 {{% alert color="info" %}}
-This section describes documents in the working area, not panes that you can open and position around the working area. For more information on behavior of panes, see the [Layout of Panes](/refguide/view-menu/#layout-of-panes) section in *View Menu*.
+This section describes documents in the working area, not panes that you can open and position around the working area. For more information on pane behavior, see the [Layout of Panes](/refguide/view-menu/#layout-of-panes) section in *View Menu*.
 {{% /alert %}}
 
-You can have a number of tabs open, just like in a modern web browser. They can be closed, reordered, and shown side by side. 
+The documents you view and edit are shown in tabs. 
+
+You can have multiple tabs open, similar to a modern web browser. These tabs can be closed, reordered, and shown side-by-side. 
 
 Each document has its own save state, history, and future, so undo and redo actions are unlimited.
 
 ## Dockable Panes {#panes}
 
-Dockable panes can be positioned around the working area and contain various elements and settings:
+Dockable panes can be positioned around the working area and contain various elements and settings.
 
 {{< figure src="/attachments/refguide/studio-pro-overview/pane-example.png" alt="Properties Pane Example" width="300" class="no-border" >}}
 
-For example, you can view [list of errors](/refguide/errors-pane/), run [Best Practice Recommender](/refguide/best-practice-recommender/), configure properties of a specific document or an element, or view toolbox. For more information on panes and their layout, see [View Menu](/refguide/view-menu/).
+For example, you can view the [list of errors](/refguide/errors-pane/), run the [Best Practice Recommender](/refguide/best-practice-recommender/), configure properties of a specific document or an element, or view the toolbox. For more information on panes and their layout, see [View Menu](/refguide/view-menu/).
 
 ## Status Bar {#status-bar}
 
