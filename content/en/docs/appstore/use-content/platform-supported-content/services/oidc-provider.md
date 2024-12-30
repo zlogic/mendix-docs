@@ -539,7 +539,7 @@ In versions of the OIDC Provider above 2.0.0, the sub value was changed from an 
 ## Configuring Token Validity{#token_validity}
 
 * Refresh Token: The validity period for the refresh token is set to 15 days by default. To modify this, update the `RefreshTokenLifetimeInDays` constant available in the module. Ensure to keep the value in *days*.
-* Access Token: The default validity for Access token is changing from 24 hours to one hour.  To adjust this, modify the `AccessTokenLifetimeInSecs` constant. Ensure to keep the value in *seconds*.
+* Access Token: For version 4.1.0 and above, the validity for access tokens is one hour. Older versions of the Provider module issue access tokens with a validity of 24 hours. To adjust this, modify the `AccessTokenLifetimeInSecs` constant. Ensure to keep the value in *seconds*.
 
 ## Deleting Expired Access Tokens
 
