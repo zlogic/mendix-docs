@@ -23,7 +23,7 @@ The most common errors you can come across when configuring a navigation item ar
 
 CE1568 error message: *The selected page {Name of the page} expects an object of type {type of object}, which is not available here.*
 
-You will get CE1568 if the page has a page parameter that expects an object of a particular type to be passed to it.
+You get CE1568 if the page has a page parameter that expects an object of a particular type to be passed to it.
 
 To fix CE1568, pass an object to the page by changing the **On click** property of the menu item from **Show a page** to **Create object**. For more information, see the [Error Fix Example for CE1568](#page-expects-an-object) section below.
 
