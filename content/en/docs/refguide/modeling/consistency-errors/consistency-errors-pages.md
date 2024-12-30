@@ -139,7 +139,7 @@ The errors that you can get when a page or snippet is expecting a context that i
 
 CE1568 error message: *The selected page {Name of the page} expects an object of type {type of object}, which is not available here.*
 
-You will get CE1568 if the page has a page parameter that expects an object of a particular type to be passed to it. This error occurs when the page is called from another page, which does not have this object available. 
+You get CE1568 if the page has a page parameter that expects an object of a particular type to be passed to it. This error occurs when the page is called from another page, which does not have this object available. 
 
 To fix CE1568, make sure that the object is passed to the page that has a configured data view on it. For a detailed example on how to fix CE1568, see the [Error Fix Example for CE1568](#error-example-1) below.
 
