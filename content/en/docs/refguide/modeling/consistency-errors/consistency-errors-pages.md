@@ -113,7 +113,7 @@ To fix CE0536, do one of the following:
 
 CE8115 error message: *The selected entity X should match the entity Y of the page parameter {Name of the page parameter}.*
 
-You will get CE8115 if you have changed the data type of a page parameter which was selected as the entity of the **Context** data source for a data view.
+You get CE8115 if you have changed the data type of a page parameter which was selected as the entity of the **Context** data source for a data view.
 
 To fix CE8115, do one of the following:
 
