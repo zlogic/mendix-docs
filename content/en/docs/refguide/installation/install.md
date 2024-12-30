@@ -89,7 +89,7 @@ The Mendix Studio Pro installation experience includes all the tools and framewo
 
 It is possible to prepare the prerequisite installers beforehand so the setup process can pick them up instead of downloading them from the remote location. Follow these steps to prepare the installers:
 
-5. Rename the following dependencies:
+1. Rename the following dependencies:
     * Rename the Visual C++ Redistributable for Visual Studio 2019 (x64) executable (for example, *VC_redist.x64.exe*) to*vcredist2019_x64.exe*
     * Rename the `latest` executable to *mendix_native_mobile_builder.exe*
     * Rename the *Git-{version}-64-bit.exe* executable to *git_for_windows_installer.exe*
@@ -101,7 +101,7 @@ It is possible to prepare the prerequisite installers beforehand so the setup pr
     * For Studio Pro versions 10.11.0 and above, rename the Java Development Kit 21 (x64) *msi* (for example, *OpenJDK21U-jdk_x64_windows_hotspot_21.0.4_7.msi*) to *adoptiumjdk_21_x64.msi*
     * Do not rename the Microsoft Edge WebView2 Evergreen Runtime installer *MicrosoftEdgeWebview2Setup.exe*; keep it as is
     
-6. Run the installer as described in the [Installing Mendix Studio Pro](#install) section above.
+2. Run the installer as described in the [Installing Mendix Studio Pro](#install) section above.
 
 If an error occurs during JDK installation, try the following:
 
