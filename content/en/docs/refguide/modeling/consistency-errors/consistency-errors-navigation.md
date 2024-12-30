@@ -48,7 +48,7 @@ Now when an end-user clicks the menu item, a new *ProgramItem* object will be cr
 
 CE0529 error message: *The selected {Name of the page} expects an object of type {type of object} and cannot be used as a home page. Change the page or use a microflow to provide the page with an object.*
 
-You will get CE0529 if you have set a page that expects an object to be passed to it (for example, a page with a data view) as a home page. But the home page has no object that is passed to it, because it is the starting point of a flow.
+You get CE0529 if you have set a page that expects an object to be passed to it (for example, a page with a data view) as a home page. But the home page has no object that is passed to it, because it is the starting point of a flow.
 
 To fix CE0529, you can use a microflow as the home page that will open the preferred page and pass a specific object to the home page. For more information, see the [Error Fix Example for CE0529](#home-page-expects-an-object) section below.
 
