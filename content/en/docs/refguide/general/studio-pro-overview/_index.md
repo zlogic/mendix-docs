@@ -22,7 +22,7 @@ When Studio Pro is open, press <kbd>F1</kbd> to open the relevant documentation.
 
 This document describes the user interface of Mendix Studio Pro:
 
-{{< figure src="/attachments/refguide/studio-pro-overview/studio-pro-diagram.png" alt="Studio Pro Diagram" class="no-border" >}}
+{{< figure src="/attachments/refguide/studio-pro-overview/studio-pro-diagram.png" alt="Diagram of the home page of Studio Pro, which labels each section of the home page layout." class="no-border" >}}
 
 ## Top Bar {#top-bar}
 
