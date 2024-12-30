@@ -124,7 +124,7 @@ To fix CE8115, do one of the following:
 
 CE8116 error message: *The selected entity x should match the entity y of the snippet parameter {Name of the snippet parameter}.*
 
-You will get CE8116 if you have changed the data type of a snippet parameter which was selected as the entity of the **Context** data source for a data view.
+You get CE8116 if you have changed the data type of a snippet parameter which was selected as the entity of the **Context** data source for a data view.
 
 To fix CE8116, do one of the following:
 
