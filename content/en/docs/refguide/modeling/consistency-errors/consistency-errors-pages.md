@@ -87,7 +87,7 @@ To fix CE0488, do one of the following:
 CE2633 error message in a data view can be one of the following:
 
 * *No microflow configured for the data source of this data view. Select a microflow or change the data source.*
-    * You will get this error is if the data source is set to **Microflow**, but no microflow is specified.
+    * You get this error is if the data source is set to **Microflow**, but no microflow is specified.
     * To fix this error, do one of the following:
         * Open the data view's properties > **Data source** and select a microflow in the **Microflow** field.
         * Change the type of the data source.
