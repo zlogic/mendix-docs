@@ -430,7 +430,7 @@ To fix CE7950, place this widget inside a data view or a list view.
 
 CE0489 error message: *Select an entity for the data source of this [dynamic image](/refguide/image-viewer/).*
 
-You will get CE0489 if you have added a dynamic image to a page, it is placed inside a data view or a list view, but an entity for the dynamic image is not specified.
+You get CE0489 if you have added a dynamic image to a page, it is placed inside a data view or a list view, but an entity for the dynamic image is not specified.
 
 To fix CE0489, open dynamic image properties > the **Data source** section and select an entity in the **Entity (path)** field.
 
