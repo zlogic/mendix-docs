@@ -255,7 +255,7 @@ To fix CE0552, open the microflow and configure a return value of the end event 
 
 CE0551 error message: *Microflow {name of the microflow} does not return a list.*
 
-You will get CE0551 if the data source of a list view is set to **Microflow**, but the microflow does not return a list.
+You get CE0551 if the data source of a list view is set to **Microflow**, but the microflow does not return a list.
 
 To fix CE0551, open the microflow and configure its end event to return a list.
 
