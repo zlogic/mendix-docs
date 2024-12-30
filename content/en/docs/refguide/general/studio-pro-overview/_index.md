@@ -84,11 +84,11 @@ For example, you can view the [list of errors](/refguide/errors-pane/), run the 
 
 ## Status Bar {#status-bar}
 
-At the bottom of the Studio Pro main window pane is a status bar. On the left is the current status of Studio Pro:
+At the bottom-right of the Studio Pro main window pane is a status bar.
 
-{{< figure src="/attachments/refguide/studio-pro-overview/status-bar.png" alt="Status Bar Example" class="no-border" >}}
+On the left is the version control buttons (Branch Status, Incoming Commits, Outgoing Commits). You can use these buttons manage the Branch Line Manager, as well as your commit history. For more information, see [Version Control](/refguide/version-control/).
 
-On the right is the currently selected language. If you have set up multiple languages in your app, you can change the currently selected language by clicking here. For more information, see [Language Menu](/refguide/translatable-texts/).
+On the right is the currently selected language. If you have set up multiple languages in your app, you can use the drop-down to change the language you are currently using. For more information, see [Language Menu](/refguide/translatable-texts/).
 
 ## Read More
 
