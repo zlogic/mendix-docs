@@ -18,7 +18,7 @@ Some errors have error codes and if these errors are described in documentation,
 
 ## List View Consistency Errors 
 
-If you do not configure a [data source](/refguide/data-sources/) for a [list view](/refguide/list-view/) properly, you will get consistency errors. 
+If you do not configure a [data source](/refguide/data-sources/) for a [list view](/refguide/list-view/) properly, you get consistency errors. 
 
 The scheme below shows that the data source of the list view has been set to **Database**, but the entity that needs to be retrieved from the database has not been specified. This results in a consistency error. 
 
@@ -39,19 +39,29 @@ To fix CE0488, do one of the following:
 
 ### Error Code: CE2633
 
-CE2633 error message in a list view can be one of the following:
+You get CE2633 in a list view in the following cases.
 
-* *No microflow configured for the data source of this list view. Select a microflow or change the data source.*
-    * You get this error if the data source is set to **Microflow**, but no microflow is specified.
-    * To fix this error, do one of the following:
-        * Open the list view's properties > **Data source** and select a microflow in the **Microflow** field.
-        * Change the type of the data source.
+#### No Microflow Configured for the Data Source of a List View
 
-* *No nanoflow configured for the data source of this list view. Select a nanoflow or change the data source.*
-    * You get this error if the data source is set to **Nanoflow**, but no nanoflow is specified.
-    * To fix this error, do one of the following:
-        * Open the list view's properties > **Data source** and select a nanoflow in the **Nanoflow** field.
-        * Change the type of the data source.
+Error message: *No microflow configured for the data source of this list view. Select a microflow or change the data source.*
+
+You get this error if the data source is set to **Microflow**, but no microflow is specified.
+
+To fix this error, do one of the following:
+
+* Open the list view's properties > **Data source** and select a microflow in the **Microflow** field.
+* Change the type of the data source.
+
+#### No Nanoflow Configured for the Data Source of a List View
+
+Error message: *No nanoflow configured for the data source of this list view. Select a nanoflow or change the data source.*
+
+You get this error if the data source is set to **Nanoflow**, but no nanoflow is specified.
+
+To fix this error, do one of the following:
+
+* Open the list view's properties > **Data source** and select a nanoflow in the **Nanoflow** field.
+* Change the type of the data source.
 
 ### Error Code: CE0595
 
@@ -63,7 +73,7 @@ To fix CE0595, open the widget's properties > **Data source** and select another
 
 ## Data View Consistency Errors 
 
-If you do not configure a [data source](/refguide/data-sources/) for a [data view](/refguide/data-view/) properly, you will get consistency errors.
+If you do not configure a [data source](/refguide/data-sources/) for a [data view](/refguide/data-view/) properly, you get consistency errors.
 
 For example, you have selected **Listen to widget** as the data source, but you have not selected the specific **List widget** you are listening to.
 
@@ -84,25 +94,35 @@ To fix CE0488, do one of the following:
 
 ### Error Code: CE2633 
 
-CE2633 error message in a data view can be one of the following:
+You get CE2633 in a data view in the following cases.
 
-* *No microflow configured for the data source of this data view. Select a microflow or change the data source.*
-    * You get this error is if the data source is set to **Microflow**, but no microflow is specified.
-    * To fix this error, do one of the following:
-        * Open the data view's properties > **Data source** and select a microflow in the **Microflow** field.
-        * Change the type of the data source.
+#### No Microflow Configured for the Data Source of a Data View
 
-* *No nanoflow configured for the data source of this data view. Select a nanoflow or change the data source.*
-    * You get this error is if the data source is set to **Nanoflow**, but no nanoflow is specified.
-    * To fix this error, do one of the following:
-        * Open the data view's properties > **Data source** and select a nanoflow in the **Nanoflow** field.
-        * Change the type of the data source.
+Error message: *No microflow configured for the data source of this data view. Select a microflow or change the data source.*
+
+You get this error if the data source is set to **Microflow**, but no microflow is specified.
+
+To fix this error, do one of the following:
+
+* Open the data view's properties > **Data source** and select a microflow in the **Microflow** field.
+* Change the type of the data source.
+
+#### No Nanoflow Configured for the Data Source of a Data View
+
+Error message: *No nanoflow configured for the data source of this data view. Select a nanoflow or change the data source.*
+
+You get this error if the data source is set to **Nanoflow**, but no nanoflow is specified.
+
+To fix this error, do one of the following:
+
+* Open the data view's properties > **Data source** and select a nanoflow in the **Nanoflow** field.
+* Change the type of the data source.
 
 ### Error Code: CE0536
 
 CE0536 error message: *No list widget configured for the data source of this data view. Select a widget or change the data source.*
 
-You will get CE0536 if a **Listen to widget** is configured as a data source for a data view, but the list view widget specified does not exist anymore on the same page.
+You get CE0536 if a **Listen to widget** is configured as a data source for a data view, but the list view widget specified does not exist anymore on the same page.
 
 To fix CE0536, do one of the following:
 
@@ -145,7 +165,7 @@ To fix CE1568, make sure that the object is passed to the page that has a config
 
 #### Error Fix Example for CE1568 {#error-example-1}
 
-When a page expects a context that is not passed to it from a calling page or a microflow, you will get consistency errors. 
+When a page expects a context that is not passed to it from a calling page or a microflow, you get consistency errors. 
 
 For example, the **Customers** page contains a list view with a list of all customer names (**Customer** is set as **Entity** in the **Data Source** properties), and a **Details** button outside of the list view (placed in a [container](/refguide/container/) only). The **Details** button opens a **Customer Details** page when a user clicks it (the **On Click Action** for the button is set to **Page**). 
 
@@ -159,8 +179,8 @@ As this object is not passed to it from the **Customers** page, you get a consis
 
 As the **Details** button to the **Customers** page is outside a data container, it does not know which object to pass. The way of fixing this error depends on the following:
 
-* You want to pass a specific *Customer* object from the Customer list to the **Customer Details** page, in other words, the details of a particular customer will be displayed on the **Customer Details** page (for more information, see the [Passing a Specific Object to the Page](#passing-specific-object) section)
-* You want to create a new object of the *Customer* type and pass it to the **Customer Details** page, this means that a new customer will be created (for more information, see the [Creating a New Object and Passing it to the Page](#creating-new-object) section)
+* You want to pass a specific *Customer* object from the Customer list to the **Customer Details** page. In other words, the details of a particular customer are displayed on the **Customer Details** page. For more information, see the [Passing a Specific Object to the Page](#passing-specific-object) section.
+* You want to create a new object of the *Customer* type and pass it to the **Customer Details** page. This means that a new customer is created. For more information, see the [Creating a New Object and Passing it to the Page](#creating-new-object) section.
 
 ##### Passing a Specific Object to the Page {#passing-specific-object}
 
@@ -171,7 +191,7 @@ If you want the **Customer Details** page to open the details of a specific cust
 
     {{< figure src="/attachments/refguide/modeling/consistency-errors/consistency-errors-pages/details-button-inside-the-list-view.png" alt="The Details Button Example" class="no-border" >}}
 
-Now the button gets the object of type *Customer* from the list view on the **Customers** page, and it will be passed to the **Customer Details** page. As a result, the details of a particular customer is displayed on the **Customer Details** page. 
+Now the button gets the object of type *Customer* from the list view on the **Customers** page, and it is passed to the **Customer Details** page. As a result, the details of a particular customer is displayed on the **Customer Details** page. 
 
 ##### Creating a New Object and Passing it to the Page {#creating-new-object}
 
@@ -184,9 +204,9 @@ If you want to create a new customer and fill in the customer's details on the *
 
     {{< figure src="/attachments/refguide/modeling/consistency-errors/consistency-errors-pages/button-create-object.png" alt="On Click Event Example" class="no-border" >}}
 
-5. Change the button's caption from **Details** to **Add**, as this button will now create a new customer instead of showing the details of an existing customer.
+5. Change the button's caption from **Details** to **Add**, as this button now creates a new customer instead of showing the details of an existing customer.
 
-Now when a user clicks this button, the **Customer Details** page will open, and the new *Customer* object will be created. 
+Now when a user clicks this button, the **Customer Details** page opens, and the new *Customer* object is be created. 
 
 ### Error Code: CE7410
 
@@ -269,7 +289,7 @@ To fix CE1573, place the widget in a data container and make sure that the data 
 
 #### Error Fix Example for CE1573 {#error-fix-example-3}
 
-When you set a microflow or a nanoflow as an on-click event for a widget, and this microflow expects an argument (for example, an object) that is not available, this will result in an error. 
+When you set a microflow or a nanoflow as an on-click event for a widget, and this microflow expects an argument (for example, an object) that is not available, this results in an error. 
 
 For example, on a page named *Customers* you have a button that calls a microflow (that is an [On click event](/refguide/on-click-event/) of the button is set to *Microflow*).
 
@@ -300,7 +320,7 @@ To fix CE1574, make sure that an argument (for example, an object) available for
 
 #### Error Fix Example for CE1574 {#error-fix-example-4}
 
-When you set a microflow or nanoflow as an on-click event for a widget, and this microflow/nanoflow expects a certain argument, but a different argument is available to the widget, this will result in an error. 
+When you set a microflow or nanoflow as an on-click event for a widget, and this microflow/nanoflow expects a certain argument, but a different argument is available to the widget, this results in an error. 
 
 For example, on a page named *Customers* you have a button that calls a microflow (that is an [On click event](/refguide/on-click-event/) of the button is set to *Microflow*).
 
@@ -324,7 +344,7 @@ The most common errors for input elements, their causes, and ways to fix them ar
 
 CE0544 error message: *This widget can only function inside a data container. Move it into a data view, list view or template grid.*
 
-You will get CE0544 if you have added an input widget to a page but it is not inside a data container. Input elements need to refer to an attribute of a specific entity type and entities are only available via data containers. 
+You get CE0544 if you have added an input widget to a page but it is not inside a data container. Input elements need to refer to an attribute of a specific entity type and entities are only available via data containers. 
 
 To fix CE0544, place this widget into a data container: a data view, list view, or template grid.
 
@@ -332,7 +352,7 @@ To fix CE0544, place this widget into a data container: a data view, list view, 
 
 CE0545 error message: *Select an attribute for this {widget name}.*
 
-You will get CE0545 if you have added an input widget and it is inside a data container, but an attribute is not selected for it.
+You get CE0545 if you have added an input widget and it is inside a data container, but an attribute is not selected for it.
 
 To fix CE0545, do one of the following:
 
@@ -343,7 +363,7 @@ To fix CE0545, do one of the following:
 
 Error message: *Association {Name} must be a reference (not a reference set).*
 
-You will get this error message if you have added a reference selector and then you changed the association from reference type to reference set (from one-to-many or one-to-one to many-to-many).
+You get this error message if you have added a reference selector and then you changed the association from reference type to reference set (from one-to-many or one-to-one to many-to-many).
 
 A reference selector is a widget that is used to display and edit one-to-many or one-to-one associations. For more information on the widget, see [Reference Selector](/refguide/reference-selector/).  
 
@@ -373,7 +393,7 @@ Error messages:
 * *Association {Name} must be a reference set (not a reference)* – for an input reference set selector
 * *The reference set selector expects an association of type reference set that starts in the data view entity* – for a reference set selector
 
-You will get the above error messages if you have added an input reference set selector and then you changed the association from reference set type to reference (from many-to-many to one-to-many or one-to-one).
+You get the above error messages if you have added an input reference set selector and then you changed the association from reference set type to reference (from many-to-many to one-to-many or one-to-one).
 
 Reference set selector and input set selector are widgets that are used to display and edit many-to-many associations. For more information on these widgets, see [Reference Set Selector](/refguide/reference-set-selector/) and [Input Reference Set Selector](/refguide/input-reference-set-selector/). 
 
@@ -398,7 +418,7 @@ Changing the domain model can result in other errors. To avoid changing the doma
 
 ## Images, Videos and Files Consistency Errors
 
-Images, videos and files should be placed in a data container, otherwise you will get consistency errors. Another way to fix consistency errors is to place these widgets in a snippet and configure the snippet. For more information on images, videos, and files, see [Images, Videos, and Files](/refguide/image-and-file-widgets/). 
+Images, videos and files should be placed in a data container, otherwise you get consistency errors. Another way to fix consistency errors is to place these widgets in a snippet and configure the snippet. For more information on images, videos, and files, see [Images, Videos, and Files](/refguide/image-and-file-widgets/). 
 
 The images, videos and files consistency errors are described in the following sub-sections.
 
@@ -408,7 +428,7 @@ CE6810 error message: *A [file manager](/refguide/file-manager/) must be placed 
 
 You get CE6810 if you have added a file manager to a page, but it is not inside a data view or a snippet that is configured properly.
 
-To fix CE6810, place this widget into a data container. If you want to place it into a snippet, mind that you need to either set System.FileDocument (or its specialization) as an entity for this snippet or place the snippet in a data container.
+To fix CE6810, place this widget into a data container. If you want to place it into a snippet, mind that you need to configure it properly: either set System.FileDocument (or its specialization) as an entity for this snippet or place the snippet in a data container.
 
 ### Error Code: CE6811
 
