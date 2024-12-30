@@ -248,7 +248,6 @@ You may need to use the following classes when building a more complex custom pa
 | `layoutgrid--full-height` | To be added to any layoutgrid (1 row is supported) around the chat UI components |
 | `dataview--display-contents` | To be added to any dataview around chat components to prevent it from breaking the flex-flow on the page | 
 
-
 ### Token Monitor Snippets {#snippet-token-monitor}
 
 A separate set of snippets has been made available to display and export token usage information in the running application. This is applicable for LLM connectors that follow the principles of [GenAI Commons](/appstore/modules/genai/commons/#token-usage) and as a result store token usage information. The following snippets can be added to (admin) pages independently from the conversation logic described in earlier sections. 

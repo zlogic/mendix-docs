@@ -232,6 +232,7 @@ The settings in this section configure the storage for build output artifacts.
             annotations:
                 azure.workload.identity/client-id: {client-id-pmp}
         ```
+
     6. Add **customPodLabels** to the Mendix Operator to label the Private Mendix Platform pod with the proper configuration. This configuration allows Private Mendix Platform to get build artifacts from Azure Storage Blob.
 
         ```text
@@ -244,6 +245,7 @@ The settings in this section configure the storage for build output artifacts.
             general:
                 azure.workload.identity/use: "true"
         ```
+        
     7. Restart Private Mendix Platform to ensure that the label is applied.
 
 * **S3 Endpoint** - For example, `https://s3.ap-southeast-1.amazonaws.com`.

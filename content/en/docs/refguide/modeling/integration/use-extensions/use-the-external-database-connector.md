@@ -164,7 +164,7 @@ Do the following:
 
    b. If **Update Entity** is selected, you can see changes that will be made to the existing entity. Click **Update Entity** to save the query and the changes made to the entity in the domain model.
 
-        {{< figure src="/attachments/refguide/modeling/integration/use-the-external-database-connector/5b.png" width="600" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/use-the-external-database-connector/5b.png" width="600" >}}
 
 ## Call Stored Procedure
 

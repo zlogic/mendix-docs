@@ -94,7 +94,6 @@ The following headers are considered special and are handled a bit differently f
 
 * `Content-Security-Policy`, this is only returned for HTML responses and responses for which it is added using `response.addContentSecurityPolicyHeader()`. Additionally, a `{{ NONCE }}` template variable can be used, which be replaced when the response is sent back by the value returned from `response.getNonce`.
 
-
 ## An Example
 
 Say you have an app which calls an API. In the `GetData` module of your app you have a constant `API_ENDPOINT` which points to this endpoint and has the default value `https://example.com/usefulendpoint`.
