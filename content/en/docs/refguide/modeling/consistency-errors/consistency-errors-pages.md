@@ -192,7 +192,7 @@ Now when a user clicks this button, the **Customer Details** page will open, and
 
 CE7410 error message: *The selected page {Name of the page} should accept a parameter of type {type of object}.*
 
-You will get CE7410 if you have a widget (for example, the create button of a data grid) that opens a page which must use the available object. However, the selected page does not have any parameters. 
+You get CE7410 if you have a widget (for example, the create button of a data grid) that opens a page which must use the available object. However, the selected page does not have any parameters. 
 
 To fix CE7410, do one of the following:
 
