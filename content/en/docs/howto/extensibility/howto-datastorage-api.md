@@ -131,7 +131,36 @@ The Java action illustrated below does the following:
 
 Note that in this case, as show in the domain model screenshot and the OQL screenshot above, the names of the attributes and columns match exactly.
 
-{{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image021.png" class="no-border" >}}
+```java
+ßOverride
+public java.util.List<IMendixObject> executeAction() throws Exception
+{
+    // BEGIN USER CODE
+    List<IMendixObject> resultList = new ArrayList<~>();
+    IDataTable resultDT = Core.retrieveOQLDataTable(getContext(), this.OqlQuery);
+    int colCount = resultDT.getSchema().getColumnCount();
+    // Loop through records, add to mendix object list
+    resultDT.forEach(row -> {
+        // instantiate mendix object as specified by ResultEnititg parameter
+        IMendixObject obj = Core.instantiate(getContext(), this.ResultEntity);
+        for (int i = 0; i < colCount; i++) {
+            // get column name
+            String colName = resultDT.getSchema().getColumnSchema(i).getName();
+            // get column value
+            Object colValue = row.getValue(getContext(), i);
+            if(obj.hasMember(colName)) {
+                // set result object value
+                obj.setValue(getContext(), colName, colValue);
+            } else {
+                logger.info(String,format("Target entity does not have attribute named %s",colName));
+            }
+        }
+        resultList.add(obj);
+    });
+    return resultList;
+    // END USER CODE
+}
+```
 
 The result is a generic OQL action that you can use in your microflows as follows:
 
@@ -167,16 +196,45 @@ The Java implementation below implements the following steps:
 
 * Use *Core.dataStorage().executeWithConnection()* to execute some Java statements that receive a JDBC connection from the internal connection pool. This API is constructed to enable the Mendix Platform to guarantee that connections are returned to the pool after usage.
 
-{{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image026.png" class="no-border" >}}
+```java
+@Override
+public java.util.List<IMendixObject> executeAction() throws Exception
+{
+    // BEGIN USER CODE
+    logger.info("executeAction: " + this.Sql);
+    List<IMendixObject> resultList = null;
+    resultList = Core.dataStorage().executeWithConnection(connection -> {...});
+    return resultList;
+    // END USER CODE
+}
+```
 
 * With the JDBC connection you can now implement your Java as you would with a regular JDBC connection. 
 * A prepared statement is created, executed and the resulting records are made available through a `ResultSet`.
 
-    {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image027.png" class="no-border" >}}
+    ```java
+    resultList = Core.dataStorage().executeWithConnection(connection -> {
+         List <IMendixObject> result = new ArrayList<IMendixObject>();
+        try {
+            PreparedStatement stmt = connection.prepareStatement(this.Sql);
+            ResultSet rset = stmt.executeQuery();
+            ResultSetMetaData rmd = rset.getMetaData();
+            int colCount = rmd.getColumnCount();
+    ```
 
 * Next you loop through all the records in the `ResultSet` and create a Mendix object as specified by the user via ResultEntity.
 
-{{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image028.png" class="no-border" >}}
+    ```java
+    while(rset.next()){
+        IMendixObject obj = Core.instantiate(getContext(),this.ResultEntity);
+        result.add(obj);
+        for(int colIdx=1' colIdx <= colCount ; colIdx++){
+            String colName = rmd.getColumnName (colIndx);
+            onj.setValue(getContext(), colName,rset.getObject(colIdx));
+        }
+        logger.debug(String.format("Created object %s", obj));
+    }
+    ```
 
 You can find the complete Java source code on GitHub: [RetrieveAdvancedSQL](https://github.com/ako/QueryApiBlogPost/blob/master/javasource/hr/actions/RetrieveAdvancedSql.java).
 
