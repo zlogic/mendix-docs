@@ -538,6 +538,7 @@ Returns feedback about the Mendix Runtime.
 
 Log subscriber is what renders logs. By changing log subscribers it is possible to configure the logs format. 
 For that you need to make three steps:
+
 1. Get the name of your current log subscriber
 2. Delete your current log subscriber
 3. Create new log subscriber

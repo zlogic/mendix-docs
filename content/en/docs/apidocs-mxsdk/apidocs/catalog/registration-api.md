@@ -239,7 +239,6 @@ Completing the `PUT` operation call more than once overwrites the details for al
 
 It is possible (although uncommon) to update the URL of a hosted environment. The root URLs update upon redeployment, and endpoints that are registered under that environment get updated endpoint locations.
 
-
 ### Preparing Your Service Details Using the Transform API {#transform-api}
 
 The Transform API is an endpoint in the Registration API. It converts the *dependencies.json* file that your Mendix app generates into the structure the Registration API requires to register services.

@@ -111,6 +111,7 @@ To set this up:
 3. Duplicate the **Call REST (POST)** action, modify the **async** query parameter to **true**, and use this as a basis to build your custom asynchronous microflows.
 
 Your custom microflows should consist of the following:
+
 * **A request call microflow** - Sends the request and returns the request ID.
 * **A polling microflow** - Uses the request ID to check if the response is available, and then returns the response once it is ready.
 
@@ -268,6 +269,6 @@ To configure your Mendix app for Snowflake Cortex Analyst, perform the following
    
  {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/CortexAnalystRequestExample.png" >}}
 
- ### Example Implementation
+### Example Implementation
 
  The [Snowflake showcase app](https://marketplace.mendix.com/link/component/225845) contains example implementations of the Analyst, ANOMALY DETECTION, COMPLETE and TRANSLATE functionalities. For more information, see [Snowflake Cortex Analyst](/appstore/modules/genai/snowflake-cortex/#functionalities).

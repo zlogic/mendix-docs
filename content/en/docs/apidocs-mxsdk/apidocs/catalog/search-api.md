@@ -13,7 +13,6 @@ The Search API enables users to search and retrieve assets that are registered i
 
 You can paginate through search results with an offset, which allows you to limit the number of results and specify how many to skip.
 
-
 ## Authentication and Access Rights
 
 To use the Catalog Search API, you need the following:

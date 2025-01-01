@@ -69,6 +69,7 @@ Before converting the MPR format it is recommended to commit your local work to 
 When a file exceeds the Git compression threshold, 512 MB by default, Git will store a full copy of the file with each new revision instead of only storing the delta. This results in extremely rapid repository growth with both client and server-side consequences.
 
 As the Mendix model is stored in a single file, this threshold can be exceeded by the *.mpr* file. To decrease the MPR file size, consider doing the following:
+
 * [Convert to MPRv2](#convert) – By splitting the single binary file into multiple files, your file size will drop below the compression threshold.
 * Remove [excluded and unused documents](/refguide/dev-best-practices/#excluded-and-unused-documents) – If you have a large number of unnecessary documents in your app model, this can significantly increase the size of the MPR file.
 * Decrease duplication in pages – If you have a number of pages featuring the same content, such as an advanced datagrid, consider extracting this piece of logic to a widget. Reusing a widget on multiple pages prevents the data from being saved several times and can have a large impact on the size of the MPR file.
@@ -119,7 +120,6 @@ To conclude whether the situation is acceptable for you, follow these steps:
 * Ensure the Git app you are downloading is not yet on your machine
 * Download the branch through Studio Pro, while manually measuring how long the download takes
   
-
 The first download of a branch on a device is a good indication of the maximum waiting time you or your team member can experience. Subsequent branch downloads use data that is already available locally and will, therefore, be a lot faster.
 
 If the download time was acceptable, or if you have a process where team members do not change often and they do not have to download an app for the first time, you can skip the cleanup.
@@ -215,7 +215,6 @@ We recommend doing the following:
 * Check your git config settings, especially any setting that involves encoding or text conversions: run `git config --list --show-origin`.
 * Consider moving your local repo, so that its folder has a shorter name
   
-
 When reaching out to Mendix Support, please include:
 
 * App/Projects ID for your app
