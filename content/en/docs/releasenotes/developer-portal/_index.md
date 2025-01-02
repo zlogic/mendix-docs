@@ -23,7 +23,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### Deprecations
 
-* We have deprecated the GET projects endpoint in our [Projects API](/apidocs-mxsdk/apidocs/projects-api/) and replaced it with the new GET company projects endpoint.
+* We have removed the GET projects endpoint in our [Projects API](/apidocs-mxsdk/apidocs/projects-api/) and replaced it with the new GET company projects endpoint.
 
 #### Fixes
 
