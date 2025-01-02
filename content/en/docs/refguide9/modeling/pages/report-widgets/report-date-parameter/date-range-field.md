@@ -1,33 +1,32 @@
 ---
 title: "Date Range Field"
 url: /refguide9/date-range-field/
-tags: ["studio pro"]
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-## 1 Introduction
+## Introduction
 
 A **Date range field** can be placed inside a [Report date parameter](/refguide9/report-date-parameter/) to make it easier for an end-user to select a date range, rather than having to specify a from and to date. The report date parameter is then updated with the from and to dates of the selected period.
 
 To add a date range field, right-click the widget and choose **Add field** from the pop-up menu.
 
-{{< figure src="/attachments/refguide9/modeling/pages/report-widgets/report-date-parameter/date-range-field/add-field.png" alt="Add a date range field to a report date parameter" >}}
+{{< figure src="/attachments/refguide9/modeling/pages/report-widgets/report-date-parameter/date-range-field/add-field.png" alt="Add a date range field to a report date parameter" class="no-border" >}}
 
-## 2 Date Range Field Properties
+## Date Range Field Properties
 
 An example of date range field properties is represented in the image below:
 
-{{< figure src="/attachments/refguide9/modeling/pages/report-widgets/report-date-parameter/date-range-field/date-range-field-properties.png" alt="Date range field in structure mode"   width="300"  >}}
+{{< figure src="/attachments/refguide9/modeling/pages/report-widgets/report-date-parameter/date-range-field/date-range-field-properties.png" alt="Date range field in structure mode"   width="300"  class="no-border" >}}
 
 Date range field properties have only a [General](#general) section.
 
-### 2.1 General Section{#general}
+### General Section{#general}
 
-#### 2.1.1 Label
+#### Label
 
 The **Label** property specifies the text that is displayed beside the date range field.
 
-#### 2.1.2 Type
+#### Type
 
 **Type** determines the sort of range which the end-user can select.
 

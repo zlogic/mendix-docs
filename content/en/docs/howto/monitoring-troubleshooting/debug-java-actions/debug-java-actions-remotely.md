@@ -1,10 +1,9 @@
 ---
 title: "Debug Java Actions Remotely"
 url: /howto/monitoring-troubleshooting/debug-java-actions-remotely/
-tags: ["monitoring", "troubleshooting", "java action", "debug"]
 ---
 
-## 1 Introduction
+## Introduction
 
 {{% alert color = "warning" %}}
 It is not possible to debug Java actions remotely in Eclipse for applications that are hosted by Mendix Cloud.
@@ -17,9 +16,7 @@ This how-to teaches you how to do the following:
 * Edit the server configuration
 * Configure remote debugging
 
-## 2 Editing the Server Configuration with Extra JVM Parameters
-
-In this section, you will learn how to configure the security at the [Prototype / demo](/howto/security/create-a-secure-app/#prototype) level. Be aware that this level of security is only applicable for development/demo purposes. This level is available for the quick development of demo applications. It simulates security without the more complex configuration of data access. When deploying to the [Mendix Cloud](/developerportal/deploy/mendix-cloud-deploy/), setting [Production](/howto/security/create-a-secure-app/#production) security is mandatory.
+## Editing the Server Configuration with Extra JVM Parameters
 
 To edit the server configuration with extra JVM parameters, follow these steps:
 
@@ -29,21 +26,15 @@ To edit the server configuration with extra JVM parameters, follow these steps:
 
     `-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005`
 
-    {{< figure src="/attachments/howto/monitoring-troubleshooting/debug-java-actions/debug-java-actions-remotely/18580063.png" >}}
+    {{< figure src="/attachments/howto/monitoring-troubleshooting/debug-java-actions/debug-java-actions-remotely/18580063.png" class="no-border" >}}
 
 4. Run your application.
 
-## 3 Configuring Remote Debugging
+## Configuring Remote Debugging
 
 In your Java IDE, you need to configure remote debugging.
 
-To configure IntelliJ, follow these steps:
-
-1. Start the **Debugger**.
-2. Place some breakpoints in your Java code.
-3. Start debugging.
-
-{{< figure src="/attachments/howto/monitoring-troubleshooting/debug-java-actions/debug-java-actions-remotely/intellij_rundebug_configurations.png" >}}
+{{< figure src="/attachments/howto/monitoring-troubleshooting/debug-java-actions/debug-java-actions-remotely/eclipse-debug.png" class="no-border" >}}
 
 To configure Eclipse, follow these steps:
 
@@ -55,7 +46,7 @@ To configure Eclipse, follow these steps:
 6. Be sure your current app is under **App**, and change the port to 5005 (view the JVM parameters).
 7. Click **Debug**.
 
-## 4 Read More
+## Read More
 
 * [Find the Root Cause of Runtime Errors](/howto/monitoring-troubleshooting/finding-the-root-cause-of-runtime-errors/)
 * [Clear Warning Messages in Mendix](/howto/monitoring-troubleshooting/clear-warning-messages/)

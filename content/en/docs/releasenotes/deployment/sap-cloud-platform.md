@@ -1,17 +1,45 @@
 ---
-title: "SAP BTP"
+title: "SAP BTP Release Notes"
+linktitle: "SAP BTP"
 url: /releasenotes/developer-portal/sap-cloud-platform/
-category: "Deployment"
 weight: 30
 description: "Release notes for deployment to SAP Business Technology Platform"
-tags: ["release notes", "deployment", "cloud environment", "SAP", "SAP Cloud"]
 ---
 
 These release notes cover changes to deployment to [SAP Business Technology Platform](/developerportal/deploy/sap-cloud-platform/) (SAP BTP).
 
-SAP Business Technology Platform deployments are also dependent on the latest version of the [Mendix Cloud Foundry Buildpack](https://github.com/mendix/cf-mendix-buildpack). The [Mendix Cloud Foundry Buildpack release notes](https://github.com/mendix/cf-mendix-buildpack/releases) are published separately as other deployment targets are also dependent on the buildpack.
+SAP Business Technology Platform deployments also depend on the latest version of the [Mendix Cloud Foundry Buildpack](https://github.com/mendix/cf-mendix-buildpack). The [Mendix Cloud Foundry Buildpack release notes](https://github.com/mendix/cf-mendix-buildpack/releases) are published separately because other deployment targets are also dependent on the buildpack.
 
-For information on the current status of deployment to SAP BTP and any planned releases see [Mendix Status](https://status.mendix.com/).
+For information on the current status of deployment to SAP BTP and any planned releases, see [Mendix Status](https://status.mendix.com/).
+
+## 2024
+
+### August 27, 2024
+
+#### Bug Fixes
+
+* Fixed updating the buildpack version to the latest while re-deploying the application on SAP BTP.
+
+### August 25, 2024
+
+#### Portal Improvements
+
+* Deployment package creation and deployment for Mendix version 7 and below is no longer supported.
+
+#### Bug Fixes
+
+* We have solved an issue where the tag description for a deployment package was missing.
+
+### July 14, 2024
+
+#### Portal Improvements
+
+* We upgraded the CF calls to API v3. This includes the deployment and management of the environment.
+* We renamed the Portal to **Deployment**.
+
+#### Bug Fixes
+
+* We fixed an MxDock login issue.
 
 ## 2022
 
@@ -40,7 +68,7 @@ For information on the current status of deployment to SAP BTP and any planned r
 
 #### BAPI Connector
 
-* We added the new BAPI Connector for SAP solutions, which allows Mendix apps to integrate using the SAP Business API (SAP BAPI) available with SAP Business Suite, SAP S/4HANA, and SAP S/4HANA Cloud. For more information, see [BAPI Connector for SAP Solutions](/appstore/connectors/sap/sap-bapi-connector/).
+* We added the new BAPI Connector for SAP solutions, which allows Mendix apps to integrate using the SAP Business API (SAP BAPI) available with SAP Business Suite, SAP S/4HANA, and SAP S/4HANA Cloud. For more information, see [BAPI Connector for SAP Solutions](/appstore/modules/sap/sap-bapi-connector/).
 
 ## 2021
 
@@ -48,7 +76,7 @@ For information on the current status of deployment to SAP BTP and any planned r
 
 #### Improvements
 
-* We added a configurator to help you create a custom *xs-security-json* file to configure an XSUAA service. For more information, see [XSUAA Connector for SAP Business Technology Platform](/appstore/connectors/sap/sap-xsuaa-connector/).
+* We added a configurator to help you create a custom *xs-security-json* file to configure an XSUAA service. For more information, see [XSUAA Connector for SAP Business Technology Platform](/appstore/modules/sap/sap-xsuaa-connector/).
 
 ### October 14, 2021
 
@@ -72,9 +100,9 @@ For information on the current status of deployment to SAP BTP and any planned r
 
 #### Improvements
 
-* We released version 2.1.1 of the [XSUAA Connector for SAP Business Technology Platform](/appstore/connectors/sap/sap-xsuaa-connector/).
+* We released version 2.1.1 of the [XSUAA Connector for SAP Business Technology Platform](/appstore/modules/sap/sap-xsuaa-connector/).
 
-    {{% alert color="info" %}}This version uses a new user administration module called **SapAuthentication** and customers using *XSUAA Connector for SAP Business Technology Platform* version 2.0.0 or below will need to migrate their existing users from **Administration.Account** to **SapAuthentication.SapUser** using the [User Migration](/appstore/modules/user-migration-module/) Marketplace module.{{% /alert %}}
+    {{% alert color="info" %}}This version uses a new user administration module called **SapAuthentication** and customers using *XSUAA Connector for SAP Business Technology Platform* version 2.0.0 or below will need to migrate their existing users from **Administration.Account** to **SapAuthentication.SapUser** using the community supported [User Migration](https://marketplace.mendix.com/link/component/118015) Marketplace module.{{% /alert %}}
 
 ### July 14, 2021
 
@@ -86,7 +114,7 @@ For information on the current status of deployment to SAP BTP and any planned r
 
 #### Improvements
 
-* We released a new version of the [OData Model Creator for SAP Solutions](/appstore/connectors/sap/use-sap-model-creator/) and [OData Connector for SAP Solutions](/appstore/connectors/sap/sap-odata-connector/) which support read-only access to SAP OData Gateway Services which use OData v4. This is in addition to the existing support for OData v2 and v3.
+* We released a new version of the [OData Model Creator for SAP Solutions](/appstore/services/use-sap-model-creator/) and [OData Connector for SAP Solutions](/appstore/modules/sap/sap-odata-connector/) which support read-only access to SAP OData Gateway Services which use OData v4. This is in addition to the existing support for OData v2 and v3.
 
 #### Fix
 
@@ -159,7 +187,7 @@ For more information see [SAP Business Technology Platform - deploy](/developerp
 #### Improvements
 
 * We have added support for deploying to the Azure Netherlands region of SAP Cloud Platform.
-    * Object storage is only supported in the Azure Netherlands region for  Mendix 8.7.0 and above.
+    * Object storage is only supported in the Azure Netherlands region for Mendix 8.7.0 and above.
 * We have added a log of all deployment activities which are carried out on your SAP environments to the environments page of apps which are deployed to SAP Cloud Platform.
 * We have added the ability to specify a custom URL (for example, `appname.subdomain.domain.com`) where the user will be redirected after signing on using XSUAA, instead of being redirected to the generated URL (for example, `appname.cfapps.eu10.hana.ondemand.com`) of the app.
 
