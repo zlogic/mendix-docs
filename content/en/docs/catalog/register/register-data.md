@@ -84,7 +84,7 @@ Follow the steps below:
     * **Non-production** – hosting is paid for, but data is not of production quality
 
 8. Select your **Authentication** method. For details on supported authentication types, see the [Authentication](#authentication) section below. Curators can also [add or change authentication methods](/catalog/manage/curate/#authentication) later.
-9.  Select **Done!** to complete the registration.
+9. Select **Done!** to complete the registration.
 
 Congratulations! Your service is registered in the Catalog. 
 
