@@ -536,18 +536,20 @@ Returns feedback about the Mendix Runtime.
 
 ## Logging
 
-Log subscriber is what renders logs. By changing log subscribers it is possible to configure the logs format. 
-For that you need to make three steps:
+A log subscriber renders logs. By changing log subscribers it is possible to configure the log format. 
+For that you need to do three things:
 
 1. Get the name of your current log subscriber
 2. Delete your current log subscriber
 3. Create new log subscriber
 
-### Request to get the name of your current log subscriber
+### Request to Get the Name of Your Current Log Subscriber
 
 ```json
 {"action": "get_log_settings", "params": {"sort": "subscriber"}}
 ```
+
+ [//]: # (<!-- markdownlint-disable no-duplicate-heading -->)
 
 ### Example Response
 
@@ -569,7 +571,7 @@ For that you need to make three steps:
 
 If the `feedback` is not empty use the name of your current log subscriber in the next request. In this example the name is `"ConsoleLogSubscriber"`.
 
-### Request to delete your current log subscriber
+### Request to Delete Your Current Log Subscriber
 
 ```json
 {"action": "remove_log_subscriber", "params": {"name": "ConsoleLogSubscriber"}}
@@ -586,7 +588,7 @@ If the `feedback` is not empty use the name of your current log subscriber in th
 
 It is possible to have multiple log subscribers running simultaneously, if several log subscribers were created then each of them will be writing the same log lines. 
 
-### Request to create new log subscriber in Json format
+### Request to Create New Log Subscriber in Json Format
 
 ```json
 {
@@ -620,7 +622,7 @@ This configuration will produce logs similar to these:
 {"node":"Core","level":"INFO","ddtags":"env:test","service":"my-application-name","message":"Mendix Runtime is now shut down.","timestamp":1734629114260}
 ```
 
-### Request to create new log subscriber in simple text format
+### Request to Create New Log Subscriber in Simple Text Format
 
 ```json
 {
@@ -643,3 +645,5 @@ This configuration will produce logs similar to these:
 ```
 
 This will write logs to standard output in simple text format.
+
+[//]: # (<!-- markdownlint-enable no-duplicate-heading -->)

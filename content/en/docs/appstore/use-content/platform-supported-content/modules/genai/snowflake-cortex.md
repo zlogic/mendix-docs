@@ -51,10 +51,10 @@ The [Snowflake showcase app](https://marketplace.mendix.com/link/component/22584
 
     This section contains the following pages:
 
-        1. Introduction
-        2. ANOMALY DETECTION (Machine Learning)
-        3. COMPLETE and TRANSLATE (Large Language Models)
-        4. Analyst (Cortex Analyst)
+    1. Introduction
+    2. ANOMALY DETECTION (Machine Learning)
+    3. COMPLETE and TRANSLATE (Large Language Models)
+    4. Analyst (Cortex Analyst)
 
 3. To see how a Snowflake function is called, right-click on the corresponding **SQLStatement** field, and then click **Go to data source microflow**.
 

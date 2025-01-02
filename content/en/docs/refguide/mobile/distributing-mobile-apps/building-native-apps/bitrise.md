@@ -53,7 +53,7 @@ To set up your build project, do the following:
    * Project or Workspace path: `ios/NativeTempalte.xcworkspace`
    * Scheme name: `nativeTemplate`
    * Distribution method: [Choose the distribution method you want to use](https://developer.apple.com/videos/play/wwdc2019/304/)
-   * Build stack: Choose the altest Xcode version compatible with your Mendix version
+   * Build stack: Choose the latest Xcode version compatible with your Mendix version
 1. Finish creating the project.
 1. Abort the build if one starts automatically (you first need to setup code signing and adjust the workflow).
 
@@ -90,7 +90,7 @@ Add a missing npm command by doing the following:
 
 By default, Bitrise targets both Android and iOS. If you do not need to build for both operating systems (OS), remove all actions related to that OS and skip all steps below related to it as well.
 
-For example, if you only target iOS, you can remove the actions **Install missing Androide SDK components** and **Android Build**. This will significantly speed up your builds and save credits.
+For example, if you only target iOS, you can remove the actions **Install missing Android SDK components** and **Android Build**. This will significantly speed up your builds and save credits.
 
 ### Add Android Code Signing (Android only)
 

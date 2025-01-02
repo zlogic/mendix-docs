@@ -44,8 +44,7 @@ Below we list the supported tracing-related runtime settings. See [Configure the
 
 | Name | Description | Default |
 |------|-------------|---------|
-| `OpenTelemetry.Enabled` | Can be set to `true` or `false` in order to disable or enable tracing.<br/> {{% alert color="info" %}}
-We support dynamically enabling/disabling tracing using this setting, but the other settings will only be applied the first time you enable tracing.{{% /alert %}} | `false` |
+| `OpenTelemetry.Enabled` | Can be set to `true` or `false` in order to disable or enable tracing.<br/> {{% alert color="info" %}} We support dynamically enabling/disabling tracing using this setting, but the other settings will only be applied the first time you enable tracing.{{% /alert %}} | `false` |
 | `otel.service.name` | The name of the service. | `unknown_service:java` |
 | `otel.resource.attributes` | The resource attributes to include in every span. Example: `attribute1=value1,attribute2=value2` | |
 | `otel.traces.exporter` | Comma-separated list of span exporters. Supported values are: `otlp`, `console`, `logging-otlp`, and `none`. | `otlp` |
