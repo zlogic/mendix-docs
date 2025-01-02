@@ -27,10 +27,9 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### Fixes
 
-* We fixed a bug where the name of the revision author was not shown when removed from the project
+* We fixed a bug where the name of the revision author was not shown when the author was no longer part of the project
 * We fixed a small UI bug on the Company Roles overview page where the badges were not properly displayed
 * We fixed a bug in the self service migration to Company Roles
-
 
 ## 2024
 
