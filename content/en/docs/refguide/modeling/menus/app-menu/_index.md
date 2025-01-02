@@ -23,13 +23,13 @@ The **Batch Update Button Icons** option allows you to update many button icons 
 
 The **Batch Update Layouts** option allows you to update the layouts of many pages in a single batch process.
 
-### Update Widgets {#update-widgets}
-
-The **Update Widgets** option presents the current versions of the widgets you are using in your app, what the latest versions of the widgets are, and an update option.
-
 ### Check Widgets
 
 The **Check Widgets** option checks that the widgets you have implemented in the app have been built correctly.
+
+### Update Widgets {#update-widgets}
+
+The **Update Widgets** option presents the current versions of the widgets you are using in your app, what the latest versions of the widgets are, and an update option
 
 ### Convert Classes to Design Properties
 
@@ -86,6 +86,10 @@ The [Mendix Studios Target](/developerportal/deploy/studio-deployment-settings/#
 {{% /alert %}}
 
 For more information on using this option, see [Deploy to the Cloud](/refguide/deploy-to-the-cloud-dialog/).
+
+## Build Native Mobile App
+
+## Synchronize Dependencies 
 
 ## Show Security Overview (Beta)
 
