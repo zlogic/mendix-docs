@@ -132,7 +132,7 @@ The Java action illustrated below does the following:
 Note that in this case, as show in the domain model screenshot and the OQL screenshot above, the names of the attributes and columns match exactly.
 
 ```java
-ßOverride
+@Override
 public java.util.List<IMendixObject> executeAction() throws Exception
 {
     // BEGIN USER CODE
