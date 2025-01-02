@@ -182,7 +182,37 @@ The microflow to execute the Java action is similar to the previous example, but
 
 Below is the Java code to get the Dataset OQL, execute the OQL, and retrieve the Objects. You use the [Core.createOQLTextGetRequestFromDataSet](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/core/Core.html#createOQLTextGetRequestFromDataSet(java.lang.String)) method to get the OQL query of the Dataset specified.
 
-{{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image043.png" class="no-border" >}}
+```java
+
+@Override
+public java.util.List<IMendixObject> executeAction() throws Exception
+{
+    // BEGIN USER CODE
+    ILogNode logger = Core.getLogger( s:"RetrieveDatasetOql");
+    List<IMendixObject> resultList = new ArrayList<IMendixObject>();
+    IOQLTextGetRequest oqlGetRequest = Core.createOQLTextGetRequestFromDataSet(this.DataSetName);
+    String oqlQuery = oqlGetRequest.getQuery();
+    logger.info(o:"OQL: " + oqlQuery);
+    IDataTable resultDT Core.retrieveOQLDataTable(getContext(), oqlQuery);
+    int colCount = resultDT.getSchema().getColumnCount();
+    resultDT.forEach(row → {
+        logger.info(o:"Row: " + row.getValue(getContext(), i:0));
+        IMendixObject obj = Core.instantiate(getContext(), this.ResultEntity); 
+        for (int i = 0; i < colCount; i++) {
+            String colName = resultDT.getSchema().getColumnSchema(i).getName(); 
+            Object colValue = row.getValue(getContext(), i);
+            if (obj.hasMember(colName)) {
+                obj.setValue(getContext(), colName, colValue);
+            } else {
+                logger.info(String.format("Target entity %s does not have attribute named %s", this.ResultEntity, colName));
+            }
+        resultList.add(obj);
+        }
+    });
+    return resultList;
+    //END USER CODE
+}
+```
 
 ## Retrieving Objects Using SQL
 
@@ -270,7 +300,26 @@ In Postgres you can query a list of the dates of all Mondays between these dates
 
 For example:
 
-{{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image032.png" class="no-border" >}}
+```sql
+with first_day_of_month as (
+    SELECT *
+    FROM generate_series
+        ( date_trunc('month', '2017-01-24 00:00'::timestamp)
+        , '2017-11-05 12:00', '1 months'
+        ) as firstday
+),
+firstmonday as (
+    select fdom.firstday::date +
+        ((8 - extract(dow from fdom.firstday))::integer % 7)
+        as first_monday_date
+    from first_day_of_month as fdom
+)
+select fm.first_monday_date
+from firstmonday as fm
+where fm.first_monday_date >= '2017-01-24 00:00'::timestamp
+and fm.first_monday_date <= '2017-11-05 12:00'::timestamp
+;
+```
 
 ### Creating the Java Action
 
@@ -282,14 +331,71 @@ You create a Java action with parameters for the start date and the end date. Yo
 
 1. Specify the required SQL statement in the Java method. JDBC queries expect the parameters to be specified by question marks (?) in the SQL statement.
 
-    {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image034.png" class="no-border" >}}
+    ```java
+    @Override
+    public java.util.List<IMendixObject> executeAction() throws Exception
+    {
+        // BEGIN USER CODE
+        String sql=
+            "with first_day_of_month as ( \n" +
+            "    SELECT * \n" +
+            "    FROM generate_series \n" +
+            "        ( date_trunc('month', ?::timestamp) \n" +
+            "        , ?, '1 months' \n" +
+            "        ) as firstday \n" +
+            "), \n" +
+            "firstmonday as ( \n" +
+            "    select fdom.firstday::date + \n" +
+            "        ((8 - extract(dow from fdom.firstday))::integer % 7) \n" +
+            "        as first_monday_date \n" +
+            "    from first_day_of_month as fdom \n" +
+            ") \n" +
+            "select fm.first_monday_date \n" +
+            "from firstmonday as fm \n" +
+            "where fm.first_monday_date >= ?::timestamp \n" +
+            "and fm.first_monday_date <= ?::timestamp \n" +
+            ";"
+            ;
+        logger.info("executeAction: " + sql);
+    ```
 
 2. Next, use the Mendix API to execute some statements using the JDBC connection. Here you create a prepared statement, define the JDBC parameter values, and execute the SQL query.
 
-    {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image035.png" class="no-border" >}}
+    ```java
+        List<IMendixObject> resultList = null;
+        resultList = Core.dataStorage().executeWithConnection(connection -> [
+            List<IMendixObject> result = new ArrayList<IMendixObject>();
+            try {
+                PreparedStatement stmt = connection.prepareStatement (sql);
+                // bind start and end date variables
+                stmt.setDate(1, new java.sql.Date(this.StartDate.getTime()));
+                stmt.setDate(2, new java.sql.Date(this.EndDate.getTime()));
+                stmt.setDate(3, new java.sql.Date(this.StartDate.getTime()));
+                stmt.setDate(4, new java.sql.Date(this.EndDate.getTime()));
+                ResultSet rset = stmt.executeQuery();
+                ResultSetMetaData rmd = rset.getMetaData();
+    ```
 
 3. Using the `FirstMondayDate` Java proxy, instantiate a new Mendix object and set the date attribute. 
 4. Finally, return the created list of dates.
+
+    ```java
+            while (rset.next()) {
+                // create FirstMondayData Mendix entity and add to list
+                FirstMondayDate dateObj = new hr.proxies.FirstMondayDate(getContext());
+                result.add(dateObj.getMendixObject());
+                dateObj.setDate(rset.getDate(1));
+                logger.debug(String.format("Created object %s", dateObj));
+            }
+        } catch (SQLException e) {
+            logger.error("Failed to execute sql statement: " + e.getMessage());
+            throw new MendixRuntimeException (e);
+        }
+        return result;
+    });
+    return resultList;
+    // END USER CODE
+    ```
 
     {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image036.png" class="no-border" >}}
 
