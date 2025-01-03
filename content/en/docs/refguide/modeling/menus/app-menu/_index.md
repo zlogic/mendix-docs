@@ -91,6 +91,12 @@ For more information on using this option, see [Deploy to the Cloud](/refguide/d
 
 ## Synchronize Dependencies 
 
+Dependency synchronization runs automatically in the background whenever changes are made to a specific dependency. It also occurs when you open your app in Studio Pro.
+
+You can trigger manual synchronization by opening the **App** menu and selecting **Synchronize Dependencies**. 
+
+For more information, see the [Dependency Sychronization](/refguide/managed-dependencies/#dependency-synchronization) section of *Managed Dependencies*.
+
 ## Show Security Overview (Beta)
 
 The **Show Security Overview (Beta)** option opens the [Security Overview](/refguide/security-overview/), where you can view a unified overview of your app's security. 
