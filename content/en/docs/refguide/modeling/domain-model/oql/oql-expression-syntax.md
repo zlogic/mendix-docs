@@ -48,7 +48,7 @@ Literals represent values that are constant and are part of the query itself. Th
 | 's*'   | 'my_string'     | `STRING`             | String literal                                |
 | d+     | 5               | `INTEGER` and `LONG` | Natural number literal                        |
 | d+.d+  | 5.3             | `DECIMAL`            | Real number literal                           |
-|        | `NULL`          | N/A                  | NULL literal to represent non-existent values. OQL does not support the keyword `empty`. In XPath, it has identical purpose as `NULL`. |
+|        | `NULL`          | N/A                  | NULL literal to represent non-existent values. OQL only uses `NULL` where the equivalent XPath expression can also use `empty`. |
 
 Where `d` is a number, `s` is any character, * indicates that the pattern can contain zero or more characters, and + indicates that the pattern can contain one or more characters.
 
