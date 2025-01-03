@@ -259,6 +259,10 @@ In Studio Pro version 10.6 a new access rule editor was introduced in Beta. Enab
 
 For more information, see [Defining Access Rules Using the New Editor](/refguide/access-rules/#new-editor) section of *Access Rules*.
 
+### App Explorer
+
+### Errors Pane
+
 ### Expression Editor
 
 The expression editor is modernized since Studio Pro 10.6. This setting is enabled by default. The editor allows the user to write rich text statements and get instant feedback on their validity. In Studio Pro, it is often used to write an expression for a decision or to write an XPath expression for data filtering.
@@ -280,6 +284,8 @@ In Studio Pro 10.12.0, Translation Generator was introduced as an experimental f
 ### Mapping Editor
 
 This setting allows you to set the beta version as the default editor.
+
+### Navigation
 
 ### System Texts Editor
 
