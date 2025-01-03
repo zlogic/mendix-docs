@@ -100,7 +100,9 @@ Enabling this option allows you to specify which repositories should be used by 
 
 #### Repositories
 
-Here you can specify which repositories to use for Gradle. The content of this field should be specified using Groovy syntax and is what is inside the `repositories { }` section in a Gradle build file. By default, this field contains: `mavenCentral()`.
+This option becomes available if **Use custom repositiories** is set to **Yes**. 
+
+You can specify which repositories to use for Gradle. The content of this field should be specified using Groovy syntax and is what is inside the `repositories { }` section in a Gradle build file. By default, this field contains: `mavenCentral()`. 
 
 ## Maia Tab
 
@@ -110,6 +112,7 @@ The **In-Editor Recommender** section contains the following settings:
 
 * **Enable for microflow, nanoflow, and rule editors** – this allows you to enable and disable [Logic Recommender](/refguide/logic-recommender/) in the microflow, nanoflow, and rule editors. 
 * **Enable for workflow editor** – this allows you to enable and disable [Workflow Recommender](/refguide/workflow-recommender/) in the workflow editor.
+* **Enable for page editor** - this allows you to enable and disable the [UI Recommendor](/refguide/ui-recommender/). This feature is enabled by default. 
 
 ### Best Practice Recommender
 
@@ -258,6 +261,14 @@ In Studio Pro version 10.6 a new access rule editor was introduced in Beta. Enab
 
 For more information, see [Defining Access Rules Using the New Editor](/refguide/access-rules/#new-editor) section of *Access Rules*.
 
+### App Explorer
+
+Select this option to use the modernized version of the App Explorer. You must restart Studio Pro to use this feature.
+
+### Errors Pane
+
+Select this option to use the modernized version of the Errors Pane. You must restart Studio Pro to use this feature.
+
 ### Expression Editor
 
 The expression editor is modernized since Studio Pro 10.6. This setting is enabled by default. The editor allows the user to write rich text statements and get instant feedback on their validity. In Studio Pro, it is often used to write an expression for a decision or to write an XPath expression for data filtering.
@@ -279,6 +290,10 @@ In Studio Pro 10.12.0, Translation Generator was introduced as an experimental f
 ### Mapping Editor
 
 This setting allows you to set the beta version as the default editor.
+
+### Navigation
+
+This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. You must restart Studio Pro to use this feature.
 
 ### System Texts Editor
 
