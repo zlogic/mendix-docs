@@ -166,7 +166,7 @@ The result is a generic OQL action that you can use in your microflows as follow
 
 ## Retrieving Objects Using OQL Specified in a Dataset
 
-Instead of coding the OQL statement in a string parameter, you can also use a Dataset. This has the benefit the that Mendix Studio Pro will validate your OQL query.
+Instead of coding the OQL statement in a string parameter, you can also use a Dataset. This has the benefit that Mendix Studio Pro will validate your OQL query.
 
 {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image040.png" class="no-border" >}}
 
@@ -209,36 +209,35 @@ Below is the Java code to get the Dataset OQL, execute the OQL, and retrieve the
 		return resultList;
 		// END USER CODE
 	}
-
 ```
 
 ## Retrieving Objects Using SQL
 
-An API is available to allow you to execute SQL queries on the application database (this feature is currently in beta). Using this API, you can create a microflow action to execute SQL: similar to the action for OQL in the previous sections.
+You can use an API call to execute SQL queries on the application database (this feature is currently in beta). Using this call, you can create a microflow action to execute SQL: similar to the action for OQL in the previous sections.
 
 The definition of the Java action resembles the OQL action, but instead of an OQL parameter you have an SQL parameter.
 
 {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image025.png" class="no-border" >}}
 
-The Java implementation below implements the following steps:
+The Java code below implements the following steps:
 
-* Use *Core.dataStorage().executeWithConnection()* to execute some Java statements that receive a JDBC connection from the internal connection pool. This API is constructed to enable the Mendix Platform to guarantee that connections are returned to the pool after usage.
+* Use *Core.dataStorage().executeWithConnection()* to execute some Java statements that receive a JDBC connection from the internal connection pool. Using this call enables the Mendix Platform to guarantee that connections are returned to the pool after use.
 
-```java
-    @Override
-    public java.util.List<IMendixObject> executeAction() throws Exception
-    {
-        // BEGIN USER CODE
-        logger.info("executeAction: " + this.Sql);
-        List<IMendixObject> resultList = null;
-        resultList = Core.dataStorage().executeWithConnection(connection -> {...});
-        return resultList;
-        // END USER CODE
-    }
-```
+    ```java
+        @Override
+        public java.util.List<IMendixObject> executeAction() throws Exception
+        {
+            // BEGIN USER CODE
+            logger.info("executeAction: " + this.Sql);
+            List<IMendixObject> resultList = null;
+            resultList = Core.dataStorage().executeWithConnection(connection -> {...});
+            return resultList;
+            // END USER CODE
+        }
+    ```
 
-* With the JDBC connection you can now implement your Java as you would with a regular JDBC connection. 
-* A prepared statement is created, executed and the resulting records are made available through a `ResultSet`.
+* With the JDBC connection you can now write your Java as you would with a regular JDBC connection. 
+* A prepared statement is created, executed, and the resulting records are made available through a `ResultSet`.
 
     ```java
         resultList = Core.dataStorage().executeWithConnection(connection ->
@@ -250,7 +249,7 @@ The Java implementation below implements the following steps:
                 ResultSetMetaData rmd = rset.getMetaData();
                 int colCount = rmd.getColumnCount();    ```
 
-* Next you loop through all the records in the `ResultSet` and create a Mendix object as specified by the user via ResultEntity.
+* Next you loop through all the records in the `ResultSet` and, for each record, create a Mendix object as specified by the user via ResultEntity.
 
     ```java
                 while(rset.next()){
@@ -265,12 +264,12 @@ The Java implementation below implements the following steps:
 
 You can find the complete Java source code in the *QueryApiBlogPost* GitHub repo on GitHub: [RetrieveAdvancedSQL](https://github.com/ako/QueryApiBlogPost/blob/master/javasource/hr/actions/RetrieveAdvancedSql.java).
 
-You now have a generic SQL action that can be used in microflows to retrieve data from your application database. The query in this example returns the same data as the OQL earlier, so you can reuse the non-persistable entity DepartmentSummary as defined previously.
+You now have a generic SQL action that can be used in microflows to retrieve data from your application database. The query in this example returns the same data as the OQL earlier, so you can reuse the non-persistable entity **DepartmentSummary** as defined previously.
 
 {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image029.png" class="no-border" >}}
 
-{{% alert color="info" %}}
-Note that in case of SQL statements you need to implement security constraints yourself.
+{{% alert color="warning" %}}
+If you use SQL statements you need to implement security constraints yourself.
 {{% /alert %}}
 
 ## PostgreSQL-specific SQL
@@ -281,11 +280,11 @@ Using the JDBC connection you can benefit from vendor specific database extensio
 If you use vendor specific database functionality you will not be able to deploy your application seamlessly on other platforms and databases. Therefore, we advise you to use SQL only if you have no alternative way of implementing your requirements. In most cases you should be able to use OQL to achieve the same result, whilst keeping your application database independent.
 {{% /alert %}}
 
-The following example illustrates the use of PostgreSQL-specific functionality. It serves as an example of how you can do this, but in this specific case an alternative solution, either using microflows or Java actions, is better as it would keep your application database independent.
+The following example illustrates the use of PostgreSQL-specific functionality. It serves as an example of how you can do this, but in this specific case an alternative solution, either using microflows or Java actions, would be better as it would keep your application database independent.
 
-The requirement for this example is to generate a list of dates for all first Mondays of the month between a range specified by the user.
+The requirement for this example is to generate a list of dates for all the first Mondays of the month within a range specified by the user.
 
-This example has a page where a user can enter a start and end date. The microflow triggered by the **Generate first Mondays of the month** button will print all the respective dates.
+This example has a page where an end-user can enter a start and end date. The microflow triggered by the **Generate first Mondays of the month** button will write all the respective dates to the log.
 
 {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image031.png" class="no-border" >}}
 
@@ -399,7 +398,7 @@ All the code is also available in [CreateDateRangeList.java](https://github.com/
     		// END USER CODE
     ```
 
-When you use this in a microflow, you just need to specify the start and end dates, and the name of the resulting list. This example iterates through all the data objects in the list and prints the date of that object.
+When you use this in a microflow, you just need to specify the start and end dates, and the name of the resulting list. This example iterates through all the data objects in the list and writes the date of that object to the log.
 
 {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image037.png" class="no-border" >}}
 
