@@ -261,7 +261,11 @@ For more information, see [Defining Access Rules Using the New Editor](/refguide
 
 ### App Explorer
 
+Select this option to use the modernized version of the App Explorer. You must restart Studio Pro to use this feature.
+
 ### Errors Pane
+
+Select this option to use the modernized version of the Errors Pane. You must restart Studio Pro to use this feature.
 
 ### Expression Editor
 
