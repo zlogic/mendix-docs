@@ -129,37 +129,37 @@ The Java action illustrated below does the following:
 * Loops through all columns of a record and copies the column value to an attribute with the same name. If an attribute with a column name does not exist, a message is printed, and the loop continues
 * The Mendix object created is added to the list to be returned
 
-Note that in this case, as show in the domain model screenshot and the OQL screenshot above, the names of the attributes and columns match exactly.
+Note that in this case, as show in the domain model screenshot and the OQL screenshot above, the names of the attributes and columns match exactly. (See [RetrieveAdvancedOql.java](https://github.com/ako/QueryApiBlogPost/blob/master/javasource/hr/actions/RetrieveAdvancedOql.java) in the *QueryApiBlogPost* GitHub repo for the full source code).
 
 ```java
-@Override
-public java.util.List<IMendixObject> executeAction() throws Exception
-{
-    // BEGIN USER CODE
-    List<IMendixObject> resultList = new ArrayList<~>();
-    IDataTable resultDT = Core.retrieveOQLDataTable(getContext(), this.OqlQuery);
-    int colCount = resultDT.getSchema().getColumnCount();
-    // Loop through records, add to mendix object list
-    resultDT.forEach(row -> {
-        // instantiate mendix object as specified by ResultEnititg parameter
-        IMendixObject obj = Core.instantiate(getContext(), this.ResultEntity);
-        for (int i = 0; i < colCount; i++) {
-            // get column name
-            String colName = resultDT.getSchema().getColumnSchema(i).getName();
-            // get column value
-            Object colValue = row.getValue(getContext(), i);
-            if(obj.hasMember(colName)) {
-                // set result object value
-                obj.setValue(getContext(), colName, colValue);
-            } else {
-                logger.info(String,format("Target entity does not have attribute named %s",colName));
+	@Override
+	public java.util.List<IMendixObject> executeAction() throws Exception
+	{
+	// BEGIN USER CODE
+        List<IMendixObject> resultList = new ArrayList<IMendixObject>();
+        IDataTable resultDT = Core.retrieveOQLDataTable(getContext(), this.OqlQuery);
+        int colCount = resultDT.getSchema().getColumnCount();
+        // Loop through records, add to mendix object list
+        resultDT.forEach(row -> {
+            // instantiate mendix object as specified by ResultEnitity parameter
+            IMendixObject obj = Core.instantiate(getContext(), this.ResultEntity);
+            for (int i = 0; i < colCount; i++) {
+                // get column name
+                String colName = resultDT.getSchema().getColumnSchema(i).getName();
+                // get column value
+                Object colValue = row.getValue(getContext(), i);
+                if(obj.hasMember(colName)) {
+                    // set result object value
+                    obj.setValue(getContext(), colName, colValue);
+                } else {
+                    logger.info(String.format("Target entity does not have attribute named %s",colName));
+                }
             }
-        }
-        resultList.add(obj);
-    });
-    return resultList;
-    // END USER CODE
-}
+            resultList.add(obj);
+        });
+        return resultList;
+	// END USER CODE
+	}
 ```
 
 The result is a generic OQL action that you can use in your microflows as follows:
@@ -180,38 +180,38 @@ The microflow to execute the Java action is similar to the previous example, but
 
 {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image042.png" class="no-border" >}}
 
-Below is the Java code to get the Dataset OQL, execute the OQL, and retrieve the Objects. You use the [Core.createOQLTextGetRequestFromDataSet](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/core/Core.html#createOQLTextGetRequestFromDataSet(java.lang.String)) method to get the OQL query of the Dataset specified.
+Below is the Java code to get the Dataset OQL, execute the OQL, and retrieve the Objects. You use the [Core.createOQLTextGetRequestFromDataSet](https://apidocs.rnd.mendix.com/10/runtime/com/mendix/core/Core.html#createOQLTextGetRequestFromDataSet(java.lang.String)) method to get the OQL query of the Dataset specified. (See [RetrieveDatasetOql.java](https://github.com/ako/QueryApiBlogPost/blob/master/javasource/hr/actions/RetrieveDatasetOql.java) in the *QueryApiBlogPost* GitHub repo for the full source code).
 
 ```java
+	@Override
+	public java.util.List<IMendixObject> executeAction() throws Exception
+	{
+		// BEGIN USER CODE
+		ILogNode logger = Core.getLogger("RetrieveDatasetOql");
+		List<IMendixObject> resultList = new ArrayList<IMendixObject>();
+		IOQLTextGetRequest oqlGetRequest = Core.createOQLTextGetRequestFromDataSet(this.DataSetName);
+		String oqlQuery = oqlGetRequest.getQuery();
+		logger.info("OQL: " + oqlQuery);
+		IDataTable resultDT = Core.retrieveOQLDataTable(getContext(), oqlQuery);
+		int colCount = resultDT.getSchema().getColumnCount();
+		resultDT.forEach(row -> {
+			logger.info("Row: " + row.getValue(getContext(), 0));
+			IMendixObject obj = Core.instantiate(getContext(), this.ResultEntity);
+			for (int i = 0; i < colCount; i++) {
+				String colName = resultDT.getSchema().getColumnSchema(i).getName();
+				Object colValue = row.getValue(getContext(), i);
+				if (obj.hasMember(colName)) {
+					obj.setValue(getContext(), colName, colValue);
+				} else {
+					logger.info(String.format("Target entity %s does not have attribute named %s", this.ResultEntity, colName));
+				}
+			}
+			resultList.add(obj);
+		});
+		return resultList;
+		// END USER CODE
+	}
 
-@Override
-public java.util.List<IMendixObject> executeAction() throws Exception
-{
-    // BEGIN USER CODE
-    ILogNode logger = Core.getLogger( s:"RetrieveDatasetOql");
-    List<IMendixObject> resultList = new ArrayList<IMendixObject>();
-    IOQLTextGetRequest oqlGetRequest = Core.createOQLTextGetRequestFromDataSet(this.DataSetName);
-    String oqlQuery = oqlGetRequest.getQuery();
-    logger.info(o:"OQL: " + oqlQuery);
-    IDataTable resultDT Core.retrieveOQLDataTable(getContext(), oqlQuery);
-    int colCount = resultDT.getSchema().getColumnCount();
-    resultDT.forEach(row → {
-        logger.info(o:"Row: " + row.getValue(getContext(), i:0));
-        IMendixObject obj = Core.instantiate(getContext(), this.ResultEntity); 
-        for (int i = 0; i < colCount; i++) {
-            String colName = resultDT.getSchema().getColumnSchema(i).getName(); 
-            Object colValue = row.getValue(getContext(), i);
-            if (obj.hasMember(colName)) {
-                obj.setValue(getContext(), colName, colValue);
-            } else {
-                logger.info(String.format("Target entity %s does not have attribute named %s", this.ResultEntity, colName));
-            }
-        resultList.add(obj);
-        }
-    });
-    return resultList;
-    //END USER CODE
-}
 ```
 
 ## Retrieving Objects Using SQL
@@ -227,46 +227,45 @@ The Java implementation below implements the following steps:
 * Use *Core.dataStorage().executeWithConnection()* to execute some Java statements that receive a JDBC connection from the internal connection pool. This API is constructed to enable the Mendix Platform to guarantee that connections are returned to the pool after usage.
 
 ```java
-@Override
-public java.util.List<IMendixObject> executeAction() throws Exception
-{
-    // BEGIN USER CODE
-    logger.info("executeAction: " + this.Sql);
-    List<IMendixObject> resultList = null;
-    resultList = Core.dataStorage().executeWithConnection(connection -> {...});
-    return resultList;
-    // END USER CODE
-}
+    @Override
+    public java.util.List<IMendixObject> executeAction() throws Exception
+    {
+        // BEGIN USER CODE
+        logger.info("executeAction: " + this.Sql);
+        List<IMendixObject> resultList = null;
+        resultList = Core.dataStorage().executeWithConnection(connection -> {...});
+        return resultList;
+        // END USER CODE
+    }
 ```
 
 * With the JDBC connection you can now implement your Java as you would with a regular JDBC connection. 
 * A prepared statement is created, executed and the resulting records are made available through a `ResultSet`.
 
     ```java
-    resultList = Core.dataStorage().executeWithConnection(connection -> {
-         List <IMendixObject> result = new ArrayList<IMendixObject>();
-        try {
-            PreparedStatement stmt = connection.prepareStatement(this.Sql);
-            ResultSet rset = stmt.executeQuery();
-            ResultSetMetaData rmd = rset.getMetaData();
-            int colCount = rmd.getColumnCount();
-    ```
+        resultList = Core.dataStorage().executeWithConnection(connection ->
+        {
+            List<IMendixObject> result = new ArrayList<IMendixObject>();
+            try {
+                PreparedStatement stmt = connection.prepareStatement(this.Sql);
+                ResultSet rset = stmt.executeQuery();
+                ResultSetMetaData rmd = rset.getMetaData();
+                int colCount = rmd.getColumnCount();    ```
 
 * Next you loop through all the records in the `ResultSet` and create a Mendix object as specified by the user via ResultEntity.
 
     ```java
-    while(rset.next()){
-        IMendixObject obj = Core.instantiate(getContext(),this.ResultEntity);
-        result.add(obj);
-        for(int colIdx=1' colIdx <= colCount ; colIdx++){
-            String colName = rmd.getColumnName (colIndx);
-            onj.setValue(getContext(), colName,rset.getObject(colIdx));
-        }
-        logger.debug(String.format("Created object %s", obj));
-    }
-    ```
+                while(rset.next()){
+                    IMendixObject obj = Core.instantiate(getContext(),this.ResultEntity);
+                    result.add(obj);
+                    for(int colIdx=1; colIdx <= colCount ; colIdx++){
+                        String colName = rmd.getColumnName(colIdx);
+                        obj.setValue(getContext(),colName,rset.getObject(colIdx));
+                    }
+                    logger.debug(String.format("Created object %s", obj));
+                }    ```
 
-You can find the complete Java source code on GitHub: [RetrieveAdvancedSQL](https://github.com/ako/QueryApiBlogPost/blob/master/javasource/hr/actions/RetrieveAdvancedSql.java).
+You can find the complete Java source code in the *QueryApiBlogPost* GitHub repo on GitHub: [RetrieveAdvancedSQL](https://github.com/ako/QueryApiBlogPost/blob/master/javasource/hr/actions/RetrieveAdvancedSql.java).
 
 You now have a generic SQL action that can be used in microflows to retrieve data from your application database. The query in this example returns the same data as the OQL earlier, so you can reuse the non-persistable entity DepartmentSummary as defined previously.
 
@@ -329,75 +328,78 @@ You create a Java action with parameters for the start date and the end date. Yo
 
 ### Creating the Java Code
 
+{{% alert color="info" %}}
+All the code is also available in [CreateDateRangeList.java](https://github.com/ako/QueryApiBlogPost/blob/master/javasource/hr/actions/CreateDateRangeList.java) in the *QueryApiBlogPost* GitHub repo.
+{{% /alert %}}
+
 1. Specify the required SQL statement in the Java method. JDBC queries expect the parameters to be specified by question marks (?) in the SQL statement.
 
     ```java
-    @Override
-    public java.util.List<IMendixObject> executeAction() throws Exception
-    {
-        // BEGIN USER CODE
-        String sql=
-            "with first_day_of_month as ( \n" +
-            "    SELECT * \n" +
-            "    FROM generate_series \n" +
-            "        ( date_trunc('month', ?::timestamp) \n" +
-            "        , ?, '1 months' \n" +
-            "        ) as firstday \n" +
-            "), \n" +
-            "firstmonday as ( \n" +
-            "    select fdom.firstday::date + \n" +
-            "        ((8 - extract(dow from fdom.firstday))::integer % 7) \n" +
-            "        as first_monday_date \n" +
-            "    from first_day_of_month as fdom \n" +
-            ") \n" +
-            "select fm.first_monday_date \n" +
-            "from firstmonday as fm \n" +
-            "where fm.first_monday_date >= ?::timestamp \n" +
-            "and fm.first_monday_date <= ?::timestamp \n" +
-            ";"
-            ;
-        logger.info("executeAction: " + sql);
+        @Override
+    	public java.util.List<IMendixObject> executeAction() throws Exception
+    	{
+    		// BEGIN USER CODE
+    		String sql =
+    				"with first_day_of_month as (\n " +
+    		        "  SELECT * \n" +
+    				"  FROM   generate_series\n" +
+    				"         ( date_trunc('month', ?::timestamp)\n" +
+    				"         , ?, '1 months'\n" +
+    				"         ) as firstday\n" +
+    				"),\n" +
+    				"firstmonday as (\n" +
+    				"  select fdom.firstday::date + \n" +
+    				"           ((8 - extract(dow from fdom.firstday))::integer % 7) \n" +
+    				"           as first_monday_date\n" +
+    				"  from   first_day_of_month as fdom\n" +
+    				")\n" +
+    				"select fm.first_monday_date\n" +
+    				"from   firstmonday  as fm\n" +
+    				"where  fm.first_monday_date >= ?::timestamp\n" +
+    				"and    fm.first_monday_date <= ?::timestamp\n" +
+    				";"
+    				;
+    		logger.info("executeAction: " + sql);
     ```
 
 2. Next, use the Mendix API to execute some statements using the JDBC connection. Here you create a prepared statement, define the JDBC parameter values, and execute the SQL query.
 
     ```java
-        List<IMendixObject> resultList = null;
-        resultList = Core.dataStorage().executeWithConnection(connection -> [
-            List<IMendixObject> result = new ArrayList<IMendixObject>();
-            try {
-                PreparedStatement stmt = connection.prepareStatement (sql);
-                // bind start and end date variables
-                stmt.setDate(1, new java.sql.Date(this.StartDate.getTime()));
-                stmt.setDate(2, new java.sql.Date(this.EndDate.getTime()));
-                stmt.setDate(3, new java.sql.Date(this.StartDate.getTime()));
-                stmt.setDate(4, new java.sql.Date(this.EndDate.getTime()));
-                ResultSet rset = stmt.executeQuery();
-                ResultSetMetaData rmd = rset.getMetaData();
+    		List<IMendixObject> resultList = null;
+    		resultList = Core.dataStorage().executeWithConnection(connection -> {
+    			List<IMendixObject> result = new ArrayList<IMendixObject>();
+    			try {
+    				PreparedStatement stmt = connection.prepareStatement(sql);
+    				// bind start and end date variables
+    				stmt.setDate(1,new java.sql.Date(this.StartDate.getTime()));
+    				stmt.setDate(2, new java.sql.Date(this.EndDate.getTime()));
+    				stmt.setDate(3,new java.sql.Date(this.StartDate.getTime()));
+    				stmt.setDate(4, new java.sql.Date(this.EndDate.getTime()));
+    				ResultSet rset = stmt.executeQuery();
+    				ResultSetMetaData rmd = rset.getMetaData();
     ```
 
 3. Using the `FirstMondayDate` Java proxy, instantiate a new Mendix object and set the date attribute. 
 4. Finally, return the created list of dates.
 
     ```java
-            while (rset.next()) {
-                // create FirstMondayData Mendix entity and add to list
-                FirstMondayDate dateObj = new hr.proxies.FirstMondayDate(getContext());
-                result.add(dateObj.getMendixObject());
-                dateObj.setDate(rset.getDate(1));
-                logger.debug(String.format("Created object %s", dateObj));
-            }
-        } catch (SQLException e) {
-            logger.error("Failed to execute sql statement: " + e.getMessage());
-            throw new MendixRuntimeException (e);
-        }
-        return result;
-    });
-    return resultList;
-    // END USER CODE
+    				// loop through first monday records
+    				while(rset.next()){
+    					// create FirstMondayDate mendix entity and add to list
+    					FirstMondayDate dateObj = new hr.proxies.FirstMondayDate(getContext());
+    					result.add(dateObj.getMendixObject());
+    					dateObj.setDate(rset.getDate(1));
+    					logger.debug(String.format("Created object %s", dateObj));
+    				}
+    			} catch (SQLException e) {
+    				logger.error("Failed to execute sql statement: " + e.getMessage());
+    				throw new MendixRuntimeException(e);
+    			}
+    			return result;
+    		});
+    		return resultList;
+    		// END USER CODE
     ```
-
-    {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image036.png" class="no-border" >}}
 
 When you use this in a microflow, you just need to specify the start and end dates, and the name of the resulting list. This example iterates through all the data objects in the list and prints the date of that object.
 
