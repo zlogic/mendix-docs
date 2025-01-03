@@ -13,7 +13,7 @@ Mendix Studio Pro supports two query languages to retrieve data:
 * XPath as an easy to use query language to retrieve objects
 * OQL is a SQL based language, more focused on powerful reporting facilities
 
-You can use these query languages in Mendix Studio Pro, but both languages are also available through the [Mendix Runtime Java API](/apidocs-mxsdk/apidocs/runtime-api/). You can use these APIs to implement powerful reusable microflow actions. In addition to XPath and OQL, the Mendix APIs also enable you to use standard SQL on your Mendix database.
+You can use these query languages in Mendix Studio Pro, but both languages are also available through the [Mendix Runtime Java API](/apidocs-mxsdk/apidocs/runtime-api/). You can use this API to implement powerful reusable microflow actions. In addition to XPath and OQL, the Mendix API also enables you to use standard SQL on your Mendix database.
 
 This how to describes how you can build the following microflow actions:
 
@@ -24,23 +24,21 @@ This how to describes how you can build the following microflow actions:
 * Create first Monday of month list - returns a list of dates of the first Monday of every month in a specified range
 * Register global entity listeners - run custom Java code for every object change
 
-    {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image001.png" alt="Microflow actions toolbox" class="no-border" >}}
-
 For more information on Java programming for Mendix, see [Java Programming](/refguide/java-programming/).
 
 For more information on calling Java actions from a microflow, see [Java Actions](/refguide/java-actions/).
 
-## Retrieving Advanced XPath
+## Retrieving Objects Using Advanced XPath
 
-The goal is to create a microflow action where a user can specify an XPath expression and which result entities are expected. The action will execute the XPath statement and return the resulting list of objects.
+In this section you will create a microflow action where a user can specify an XPath expression and the result entities which are expected. The action will execute the XPath statement and return the resulting list of objects.
 
-In practice, this is not a very useful microflow action as you can already do this with the standard retrieve action in Mendix Studio Pro. The goal, however, is to illustrate how you can use the XPath Java API.
+In practice, this is not a very useful microflow action as you can already do this with the standard retrieve action in Mendix Studio Pro. It is used to illustrate how you can use the XPath Java API.
 
 The Java action needs the following parameters:
 
 * A string where the user can specify the XPath expression to be executed
 * A result entity where the user specifies which entity is to be returned
-* A return type which specifies that the action returns a list of the entities specified in the previous parameter.
+* A return type which specifies that the action returns a list of the entities specified in the previous parameter
 
     {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image003.png" class="no-border" >}}
 
@@ -57,24 +55,24 @@ The implementation of this Java action is pretty straightforward; you can use th
 The implementation also validates that the list returned contains objects of the entity specified.
 
 ```java
-@Override
-public java.util.List<IMendixObject> executeAction() throws Exception
-{
-    //BEGIN USER CODE
-    List<IMendixObject> result = null;
-    result = Core.createXPathQuery(this.XPath).execute(getContext());
-    if (!result.isEmpty() && !result.get(0).isInstanceOf(this.ResultEntity)) {
-        throw new MendixRuntimeException(String.format("Unexpected result entity: %s vs %s",
-            result.get(0).getMetaObject().getName(), this.ResultEntity));
+    @Override
+    public java.util.List<IMendixObject> executeAction() throws Exception
+    {
+        //BEGIN USER CODE
+        List<IMendixObject> result = null;
+        result = Core.createXPathQuery(this.XPath).execute(getContext());
+        if (!result.isEmpty() && !result.get(0).isInstanceOf(this.ResultEntity)) {
+            throw new MendixRuntimeException(String.format("Unexpected result entity: %s vs %s",
+                result.get(0).getMetaObject().getName(), this.ResultEntity));
+        }
+        return result;
+        // END USER CODE
     }
-    return result;
-    // END USER CODE
-}
 ```
 
 Now you have a new microflow action in the toolbox that you can use in your microflows.
 
-Here’s an example domain model with two entities: Department and Employee.
+Here is an example domain model with two entities: Department and Employee.
 
 {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image011.png" class="no-border" >}}
 
@@ -86,7 +84,7 @@ You can drag the Java action created above from the toolbox into a microflow. In
 
 The following example illustrates how you can use the OQL APIs for reporting purposes. OQL is the general-purpose Mendix query language, very much resembling SQL. The biggest differences between OQL and SQL are:
 
-* OQL is expressed in entity and attribute names instead of table names and column names. This makes it easier to use, as you do not have to know the technical data model as stored in the database
+* OQL is expressed in entity and attribute names instead of table names and column names. This makes it easier to use, as you do not have to know the technical details of the data model as stored in the database
 * OQL is database vendor independent, so you can run the same OQL statement on all databases supported by Mendix
 
 The following non-persistable entity shows what data you are interested in for your report:
@@ -111,22 +109,22 @@ You can create a generic microflow action to execute OQL queries and return a li
 
 * **OqlQuery** – a string containing the OQL query
 * **ResultEntity** – which entity will hold the retrieved data
-* A list of the **ResultEntity** specified as a return type.
+* A list of the **ResultEntity** specified as the return type
 
 As in the XPath example above, a **Type parameter** is defined to specify that the return list uses the type specified in ResultEntity.
 
-Additionally, you need to expose the Java action as a microflow action, provide a caption and an icon.
+Additionally, you need to expose the Java action as a microflow action, so provide a caption and an icon.
 
 {{< figure src="/attachments/howto/extensibility/howto-datastorage-api/image020.png" class="no-border" >}}
 
 The Java action illustrated below does the following:
 
 * Retrieves all data using the Mendix API `Core.retrieveOQLDataTable()`
-* Loops through all the rows, creates a new object of the type specified by ResultEntity.
+* Loops through all the rows, creates a new object of the type specified by **ResultEntity**
 
     {{% alert color="info" %}}Setting a Java action parameter of type **Entity of type parameter...** (*ResultEntity* in the example above) creates a Java string in the action which contains the name of the entity type. This string can be passed to Core.instantiate to create a new object.{{% /alert %}}
 
-* Loops through all columns of a record and copies the column value to an attribute with the same name. If an attribute with a column name does not exist, a message is printed, and the loop continues
+* Loops through all columns of a record and copies the column value to an attribute with the same name. If an attribute with the specified column name does not exist, a message is printed and the loop continues
 * The Mendix object created is added to the list to be returned
 
 Note that in this case, as show in the domain model screenshot and the OQL screenshot above, the names of the attributes and columns match exactly. (See [RetrieveAdvancedOql.java](https://github.com/ako/QueryApiBlogPost/blob/master/javasource/hr/actions/RetrieveAdvancedOql.java) in the *QueryApiBlogPost* GitHub repo for the full source code).
@@ -413,7 +411,7 @@ You will see the list of dates in the console.
 
 Global entity event listeners enable you to define generic event handlers on all entities. This enables you to build generic validations or create a real-time data export to a central datastore. You can use a Java action to register any desired event handler, most likely in the *After App Startup Microflow*.
 
-### Example code to Register the Event Listener.
+### Example code to Register the Event Listener
 
 This code will log old and new attribute value for all changes to attributes before making changes in the database:
 
