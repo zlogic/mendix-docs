@@ -291,6 +291,8 @@ This setting allows you to set the beta version as the default editor.
 
 ### Navigation
 
+This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. You must restart Studio Pro to use this feature.
+
 ### System Texts Editor
 
 In Studio Pro 10.14.0, the web version of the system texts editor was released as an experimental feature. Enable this option to use the web version of the editor. 
