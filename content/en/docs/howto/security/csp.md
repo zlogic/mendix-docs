@@ -3,6 +3,8 @@ title: "Content Security Policy"
 url: /howto/security/csp/
 weight: 80
 description: By employing a content security policy (CSP) in your app, you can protect it from malicious content which might try to take advantage of the app's trusted web page context.
+aliases:
+    - /howto/security/using-mobile-capabilities/csp/
 ---
 
 ## Introduction
