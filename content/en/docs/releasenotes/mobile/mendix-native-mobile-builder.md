@@ -9,6 +9,16 @@ description: "Mendix Native Mobile Builder release notes."
 
 The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Studio Pro, which helps you build your Mendix native mobile app. After the Mendix Native Mobile Builder simplifies your build process, you can do what you want most: test and publish your app. The Mendix Native Mobile Builder uses MxBuild, GitHub, and App Center to simplify the app building process and is directly accessible via Mendix Studio Pro. 
 
+## 2025
+
+### Release 1.1.0
+
+**Release date: January --, 2025**
+
+* We've resolved an issue where remote JavaScript debugging failed in custom-built Mendix Native Developer Apps due to improper initialization of Firebase services during the build process. This fix ensures Firebase dependencies are only included when explicitly required by the application.
+
+{{% alert color="warning" %}}Please note that this is a breaking change and a mandatory update: you must use the latest Native Template version to implement this fix, as older versions may cause errors in your application. Failure to update could lead to potential app instability and functionality issues.{{% /alert %}}
+
 ## 2024
 
 ### Release 1.0.131
