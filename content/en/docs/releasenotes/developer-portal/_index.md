@@ -17,16 +17,47 @@ For release notes on Mendix Cloud and deployment options, see [Deployment](/rele
 
 To see the current status of the Mendix Portal, see [Mendix Status](https://status.mendix.com/). Here you can also see planned maintenance and past incidents.
 
+## 2025
+
+### January 5, 2025
+
+#### Deprecations
+
+* We have removed the GET projects endpoint in our [Projects API](/apidocs-mxsdk/apidocs/projects-api/) and replaced it with the new GET company projects endpoint.
+
+#### Fixes
+
+* We fixed a bug where the name of the revision author was not shown when the author was no longer part of the project
+* We fixed a small UI bug on the Company Roles overview page where the badges were not properly displayed
+* We fixed a bug in the self service migration to Company Roles
+
 ## 2024
+
+### December 1, 2024
+
+#### Improvements
+
+* We expanded the response of our [Projects API](/apidocs-mxsdk/apidocs/projects-api/) to include details on the company owning a particular app.
+
+#### Fixes
+
+* We fixed an issue where revisions on the **Team Server** page would not redirect to stories associated with a commit.
+* We fixed a tiny but annoying issue where the description of a new app would not accept special characters properly.
+
+### November 28, 2024
+
+#### New Features
+
+* In Mini Surveys, now you can [add multiple survey locations](/developerportal/app-insights/mini-surveys/#survey-locations) to your app.
 
 ### November 14, 2024
 
 #### Improvements
 
 * We have improved [Mini Surveys](/developerportal/app-insights/mini-surveys/) as follows:
-  * Mini Surveys now features an updated onboarding flow that guides you step by step through the installation process.
-  * You no longer need to restart your application to switch surveys, as we have changed the module to use the survey location instead of linking it to a survey ID. 
-  * We have simplified the process of creating a new survey by introducing a wizard that walks you through each step.
+    * Mini Surveys now features an updated onboarding flow that guides you step by step through the installation process.
+    * You no longer need to restart your application to switch surveys, as we have changed the module to use the survey location instead of linking it to a survey ID. 
+    * We have simplified the process of creating a new survey by introducing a wizard that walks you through each step.
 
 ### November 7, 2024
 
@@ -184,7 +215,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 * In Feedback, we have fixed an issue where the reporter's name appeared empty on the **Contact Reporter** tab. Now if there is no reporter's name available, their email address will be shown instead.
 * We released the following improvements for [Mini surveys](/developerportal/app-insights/mini-surveys/):
-    * We improved your experience of copying the generated API key by implementing a new widget on the [Settings](/developerportal/app-insights/mini-surveys/#settings) tab of the **Survey Overview** page.
+    * We improved your experience of copying the generated API key by implementing a new widget on the **Settings** tab of the **Survey Overview** page.
     * We improved our error messages by providing more details.
 
 ### March 28, 2024

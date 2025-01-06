@@ -185,6 +185,17 @@ To invoke a Bedrock agent for your Mendix app, do the following steps:
 7. Select a microflow that takes an **AmazonBedrockConnector.InvokeAgentResponse** object as an input and handles that response.
     This is necessary because InvokeAgent is an asynchronous operation which means that it will not necessarily finish when the process that it was invoked from finishes. By giving the operation a handler microflow, the response can be handled as soon as it arrives. For an example handler microflow, see **AmazonBedrockConnector.InvokeAgentResponse_Handle** in the connector module. This microflow logs the response, so you can also use it just to investigate the response.
 
+### Token Usage {#tokenusage}
+ 
+[Token usage](/appstore/modules/genai/commons/#token-usage) monitoring is now possible for the following operations: 
+
+* Chat Completions with History
+* Chat Completion without History
+* Embeddings with Cohere Embed
+* Embeddings with Amazon Titan Embeddings
+
+For more information about using this feature, refer to the [GenAI commons documentation](/appstore/modules/genai/commons/#token-usage).
+
 ## Technical Reference {#technical-reference}
 
 The module includes technical reference documentation for the available entities, enumerations, activities, and other items that you can use in your application. You can view the information about each object in context by using the **Documentation** pane in Studio Pro.
@@ -251,6 +262,25 @@ The input and output for this service are shown in the table below:
 | `GenAICommons.Request`, `AmazonBedrockConnection`| `GenAICommons.Response`|
 
 The request object passed to this operation must include a KnowledgeBaseTool object, which can be added to the request using the [Request: Add Knowledge Base Tool to Collection](#add-knowledge-base-tool) operation.
+
+##### Prompt Template {#prompt-template} 
+ 
+A prompt template is an orchestration mechanism that allows you to customize how Amazon Bedrock generates responses when querying a knowledge base. By leveraging prompt templates, you can influence the tone, structure, and content of responses, enabling more nuanced and context-appropriate interactions with your knowledge.
+
+###### Prompt Templates and System Prompts {#prompt-templates-versus-systems-prompts}
+
+While prompt templates may contain instructions similar to system prompts, they serve a distinct purpose in the query process. System prompts typically provide overall behavioral guidance to a model, whereas prompt templates orchestrate specifically how the retrieved information should be incorporated into responses. Prompt templates are particularly crucial in Amazon Bedrock's Retrieve operations, where system prompts are not supported. This constraint can make it challenging to do the following tasks:
+
+* Adopt specific tones or personas in responses
+* Provide tailored advice based on search results
+* Handle edge cases (such as when no relevant information is found)
+* Maintain consistent response formatting
+
+Prompt templates address this constraint by allowing you to include orchestration instructions alongside your Retrieve operations. When creating a prompt template, you can use various tokens to customize the output. The *$searchresult$* token is mandatory in every prompt template, as it indicates where the retrieved information should be inserted.
+
+For a deeper understanding of prompt templates and their implementation, refer to the [Amazon documentation on prompt templates](https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html#kb-test-config-sysprompt), which provides comprehensive guidance on their usage and best practices.
+
+For more information about how to structure your prompts, see [Prompt engineering](https://docs.mendix.com/appstore/modules/genai/prompt-engineering/).
 
 #### Chatting with History {#retrieve-and-generate-with-history}
 
