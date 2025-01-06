@@ -192,11 +192,13 @@ Toolbox actions need clear naming, consistent categorization, and documentation,
 Consider doing the following for all entity attributes:
 
 * Set all string values to unlimited.
-{{% alert color="info" %}}
-Attributes that are used for sorting or group by operations should not be set to unlimited as databases like SAP HANA, Oracle do NOT support CLOBs for order by or group by clauses.
-{{% /alert %}}
 * Check all date values. If the service only returns a date (no time), then set **localize** to *No*.
 * Check all number values (decimal, integer, long), and remove the default value of 0.
+
+{{% alert color="info" %}}
+
+Databases like SAP HANA and Oracle do not support CLOBs for order by or group by clauses. Because of this, attributes that are used for sorting or group by operations should not be set to unlimited.
+{{% /alert %}}
 
 ### Dependencies
 
