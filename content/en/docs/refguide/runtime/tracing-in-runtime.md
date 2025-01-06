@@ -36,7 +36,7 @@ This will enable tracing. The traces will be sent to http://localhost:4317.
 
 To test you can use [Jaeger](https://www.jaegertracing.io/), for example the all-in-one binary or docker image. Jaeger will listen to the above endpoint by default.
 
-Alternatively you can set up the [OpenTelemetry collector](https://opentelemetry.io/docs/collector/), which will also listen to the default endpoint and can be configured to send to backends such as Datadog. The free online collector configuration tool [OTelBin](https://github.com/dash0hq/otelbin) can help with collector configuration.
+Alternatively you can set up the [OpenTelemetry collector](https://opentelemetry.io/docs/collector/), which will also listen to the default endpoint and can be configured to send to backends which support open telemetry. Check with your APM vendor to confirm that open telemetry is supported. The free online collector configuration tool [OTelBin](https://github.com/dash0hq/otelbin) can help with collector configuration.
 
 ### All settings
 
