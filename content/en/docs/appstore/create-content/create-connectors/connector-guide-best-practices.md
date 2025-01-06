@@ -195,6 +195,11 @@ Consider doing the following for all entity attributes:
 * Check all date values. If the service only returns a date (no time), then set **localize** to *No*.
 * Check all number values (decimal, integer, long), and remove the default value of 0.
 
+{{% alert color="info" %}}
+
+Databases like SAP HANA and Oracle do not support CLOBs for order by or group by clauses. Because of this, attributes that are used for sorting or group by operations should not be set to unlimited.
+{{% /alert %}}
+
 ### Dependencies
 
 Given that there is no dependency management between Mendix modules, try to minimize the number of dependencies your module has on other modules. If you do have to depend on other modules, make sure those modules are well-maintained by you or by Mendix themselves. Introducing another community-supported module as a dependent module might be too much of a risk for developers wanting to use your module.
