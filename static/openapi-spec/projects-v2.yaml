@@ -17,7 +17,7 @@ paths:
         - Projects
       summary: 'Get a list of company-owned projects'
       deprecated: true
-      description: 'This operation has been deprecated. Clients are redirected to `GET /accounts/:account-id/projects`.'
+      description: 'This operation has been deprecated. Clients are redirected to `GET /accounts/{account-id}/projects`.'
       operationId: get-projects
       parameters:
         - name: createdSince
