@@ -10,7 +10,7 @@ description: "A tutorial that describes how to get started building a smart app 
 
 This document guides on building a smart app using a starter template. Alternatively, you can create your smart app from scratch using a blank GenAI app template. For more details, see [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/).
 
-### Pre-requisites
+### Prerequisites
 
 Before starting this guide, make sure you have completed the following prerequisites:
 

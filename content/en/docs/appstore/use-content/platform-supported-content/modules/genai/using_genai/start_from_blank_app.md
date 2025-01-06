@@ -10,7 +10,7 @@ description: "A tutorial that describes how to get started building a smart app 
 
 This document guides you on building a smart app from scratch using a blank GenAI app template. Alternatively, you can use a starter app template to begin your build. For more details, see [Build a Smart App Using a Starter Template](/appstore/modules/genai/using-genai/starter-template/).
 
-### Pre-requisites
+### Prerequisites
 
 Before starting this guide, make sure you have completed the following prerequisites:
 
@@ -82,7 +82,7 @@ Since the **ConversationalUI_FullScreenChat** page contains a **Data View** usin
 
 #### Customizing the System Prompt (Optional)
 
-To tailor your application's behavior, you can customize the [**system prompt**](/appstore/modules/genai/prompt-engineering/#system-prompt) to make it more specific to your use case:
+To tailor your application's behavior, you can customize the [System Prompt](/appstore/modules/genai/prompt-engineering/#system-prompt) to make it more specific to your use case:
 
 ##### Copying or Duplicating the Microflow
 
