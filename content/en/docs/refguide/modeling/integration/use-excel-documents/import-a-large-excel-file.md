@@ -106,17 +106,13 @@ You have used some of Excel's basic functionalities to create the first part of 
 
 The XSD file is ready to be imported into your app. To import it, follow these steps:
 
-1. Open your app and create a new XSD schema:
+1. Open your app and create a new XSD schema. Do this by right-clicking the module and selecting **Add other** > **XML schema**.
 
-    {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/19398893.png" class="no-border" >}}
+    {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/create.png" class="no-border" width="600" >}}
 
-    {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/create.png" class="no-border" >}}
+2. With the new XSD schema, create the XML-to-domain mapping by right-clicking the module > **Add other** > **Import mapping**.
 
-2. With the new XSD schema, create the XML-to-domain mapping. Do this by right-clicking the module > **Add other** > **Import mapping**.
-
-    {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/19398895.png" class="no-border" >}}
-
-    {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/19398896.png" class="no-border" >}}
+    {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/19398896.png" class="no-border" width="600" >}}
 
 3. Check all the attributes listed. After clicking **OK**, you see a mapping entity with all your countries.
 
