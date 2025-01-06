@@ -118,13 +118,13 @@ The XSD file is ready to be imported into your app. To import it, follow these s
 
 4. You will now generate a real entity from it that you can use as an import table for your Excel sheet. Click **Map automatically**:
 
-    {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/19398897.png" class="no-border" >}}
+    {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/map-automatically.png" class="no-border" width="400" >}}
 
-    There’s your entity!
+    Your entity is created:
 
     {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/19398898.png" class="no-border" >}}
 
-5. Go to your domain model and set the entity’s **Persistable** property to **Yes**. 
+5. Open your domain model and set the entity’s **Persistable** property to **Yes**. 
 
     {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/19398899.png" class="no-border" >}}
 
