@@ -24,7 +24,7 @@ Before starting this how-to, make sure you have completed the following prerequi
 
 The Excel sheet you receive in this scenario contains almost every country in the world, as well as some supporting data. This data has to be imported into your application.
 
-You can find the Excel sheet here: [Countries](/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/Countries.xlsx).
+You can find the Excel sheet here: [Countries](/attachments/refguide/modeling/integration/import-a-large-excel-file/Countries.xlsx).
 
 You are going to make an XSD schema from the headers in the Excel sheet so you can import the data into the model.
 
@@ -33,9 +33,9 @@ To modify your Excel sheet, follow these steps:
 1. Select the header row with all the country names.
 2. Copy and paste them in a new sheet using the transpose function:
 
-    {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/transpose.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/import-a-large-excel-file/transpose.png" class="no-border" >}}
 
-    Your headers should be listed vertically and your sheet should look like this: [Countries Transposed](/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/CountriesTransposed.xlsx).
+    Your headers should be listed vertically and your sheet should look like this: [Countries Transposed](/attachments/refguide/modeling/integration/import-a-large-excel-file/CountriesTransposed.xlsx).
 
     You are now ready to add some tags around the column.
 
@@ -48,7 +48,7 @@ To modify your Excel sheet, follow these steps:
 
 5. Drag the string all the way down to the last country.
 
-    {{< figure src="/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/country-sheet.png" class="no-border" >}}
+    {{< figure src="/attachments/refguide/modeling/integration/import-a-large-excel-file/country-sheet.png" class="no-border" >}}
 
 6. In cell **C1**, enter the following string:
 
