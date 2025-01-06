@@ -17,6 +17,20 @@ For release notes on Mendix Cloud and deployment options, see [Deployment](/rele
 
 To see the current status of the Mendix Portal, see [Mendix Status](https://status.mendix.com/). Here you can also see planned maintenance and past incidents.
 
+## 2025
+
+### January 5, 2025
+
+#### Deprecations
+
+* We have removed the GET projects endpoint in our [Projects API](/apidocs-mxsdk/apidocs/projects-api/) and replaced it with the new GET company projects endpoint.
+
+#### Fixes
+
+* We fixed a bug where the name of the revision author was not shown when the author was no longer part of the project
+* We fixed a small UI bug on the Company Roles overview page where the badges were not properly displayed
+* We fixed a bug in the self service migration to Company Roles
+
 ## 2024
 
 ### December 1, 2024
