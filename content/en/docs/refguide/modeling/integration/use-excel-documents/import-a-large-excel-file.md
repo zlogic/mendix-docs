@@ -56,7 +56,7 @@ To modify your Excel sheet, follow these steps:
     "/>
     ```
 
-7. Like you did with the previous string, drag it down to the last country. The Excel sheet should now look like this: [Countries with Tags](/attachments/howto/integration/importing-excel-documents/import-a-large-excel-file/CountriesWithTags.xlsx).
+7. Like you did with the previous string, drag it down to the last country. The Excel sheet should now look like this: [Countries with Tags](/attachments/refguide/modeling/integration/import-a-large-excel-file/CountriesWithTags.xlsx).
 
     {{< figure src="/attachments/refguide/modeling/integration/import-a-large-excel-file/countries-with-tags.png" class="no-border" >}}
 
