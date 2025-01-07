@@ -1,7 +1,7 @@
 ---
-title: "Build Smarter Apps Using GenAI"
+title: "How to Build Smarter Apps Using GenAI"
 url: /appstore/modules/genai/using-genai/
-linktitle: "Use GenAI to Build Smarter Apps"
+linktitle: "How to Build Smarter Apps using GenAI"
 weight: 10
 description: "Tutorial on how to get started with GenAI for Smarter Apps"
 no_list: false

@@ -1,8 +1,8 @@
 ---
-title: "Build a Smart App from a Blank GenAI App"
+title: "Build a Chatbot from Scratch Using the Blank GenAI App"
 url: /appstore/modules/genai/using-genai/blank-app
-linktitle: "Use a Blank GenAI App to Build a Smart App"
-weight: 10
+linktitle: "Build a Chatbot Using the Blank GenAI App"
+weight: 20
 description: "A tutorial that describes how to get started building a smart app from a Blank GenAI App"
 ---
 

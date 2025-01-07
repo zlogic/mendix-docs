@@ -1,7 +1,7 @@
 ---
-title: "Build a Smart App using a Starter Template"
+title: "Build a Chatbot Using the AI Bot Starter App"
 url: /appstore/modules/genai/using-genai/starter-template
-linktitle: "Use a Starter Template to Build a Smart App"
+linktitle: "Build a Chatbot Using the AI Bot Starter App"
 weight: 10
 description: "A tutorial that describes how to get started building a smart app with a starter template"
 ---
