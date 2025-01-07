@@ -98,7 +98,7 @@ To view all ingestion jobs associated with a specific data source in Snowflake, 
 SELECT * FROM core.ingestion_job WHERE DATASOURCE_ID = '1234abcd' ORDER BY CREATED_DATE_TIME DESC;
 ```
 
-## Programmatically Triggering an Ingestion Job From a Mendix App
+## Programmatically Triggering an Ingestion Job From a Mendix App {#trigering-jobs}
 
 Programmatically triggering an ingestion job can meet data ingestion requirements where a scheduled task may not, for example in the following use cases:
 
