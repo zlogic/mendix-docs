@@ -17,7 +17,7 @@ The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Stu
 
 #### Improvements
 
-* Building mobile apps with App Center is deprecated and will be removed on March 2025. We now show the deprecation warning when the cloud build option is enabled.
+* Building mobile apps with App Center is [deprecated](https://learn.microsoft.com/en-us/appcenter/retirement) and will be removed on March 2025. We now show the deprecation warning when the cloud build option is enabled.
 
 #### Fixes
 
