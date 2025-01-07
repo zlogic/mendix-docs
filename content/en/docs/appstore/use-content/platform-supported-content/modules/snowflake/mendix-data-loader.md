@@ -98,33 +98,43 @@ To view all ingestion jobs associated with a specific data source in Snowflake, 
 SELECT * FROM core.ingestion_job WHERE DATASOURCE_ID = '1234abcd' ORDER BY CREATED_DATE_TIME DESC;
 ```
 
-## Programmatically Trigger an Ingestion From a Mendix App
+## Programmatically Triggering an Ingestion Job From a Mendix App
 
-Programmatically triggering an ingestion job can meet data ingestion requirements where a scheduled task may not. This includes cases such as waiting for a last submission to be submitted to a Mendix app before data ingestion occurs. Another example case is to start data ingestion when the load on the Mendix app is the lowest.
+Programmatically triggering an ingestion job can meet data ingestion requirements where a scheduled task may not, for example in the following use cases:
+
+* Waiting for a last submission to be submitted to a Mendix app before data ingestion occurs.
+* Starting data ingestion when the load on the Mendix app is the lowest.
 
 ### Prerequisites
-- A fully configured data source in the Mendix Data Loader
-- A Mendix app equipped with the Snowflake REST SQL connector
-- An authenticated user that is allowed to trigger stored procedures
 
-To trigger an ingestion job programmatically, use the `ExecuteStatement` operation available in the Snowflake REST SQL connector. The statement to be executed has the following syntax.
+* A fully configured data source in the Mendix Data Loader
+* A Mendix app equipped with the Snowflake REST SQL connector
+* An authenticated user that is allowed to trigger stored procedures
+
+### Triggering the Ingestion
+
+To trigger an ingestion job programmatically, use the `ExecuteStatement` operation available in the Snowflake REST SQL connector.
+
+1. Obtain the Snowflake data source ID by performing the following steps:
+
+    1. In the Snowflake environment, open the Mendix Data Loader by clicking **Data Products** > **Apps** > **Mendix Data Loader**.
+    2. Open the application by clicking the `MENDIX_DATA_LOADER` tab.
+    3. Click **View** by the configured data source.
+    4. Copy the value for the `ID` key.
+
+2. In the Snowflake REST SQL connector, use the `ExecuteStatement` operation to execute the following statement:
 
 ```sql
 CALL {NAME_OF_THE_MENDIX_DATA_LOADER}.MX_FUNCTIONS.RUN_INGESTION_JOB('{DATASOURCE_ID}','{TASK_ID}');
 ```
 
-- The default name for the Mendix Data Loader is `MENDIX_DATA_LOADER`
-- Data source ID is a required parameter
-- Task ID is an optional parameter
+where you must specify the following variables:
 
-To find the data source ID for a given data source:
-1. Navigate to the Snowflake environment
-2. Open the Mendix Data Loader; Data Products -> Apps -> Mendix Data Loader
-3. Open the application by clicking the `MENDIX_DATA_LOADER` tab
-4. Click *View* on the configured data source
-5. Copy the value for the `ID` key
+* `{NAME_OF_THE_MENDIX_DATA_LOADER}` - The default name for the Mendix Data Loader is `MENDIX_DATA_LOADER`
+* `{DATASOURCE_ID}` - Required; the data source ID that you obtained in step 1
+* `{TASK_ID}` - Optional
 
-For a data source with the ID *40FJYP9D*, the resulting statement will be.
+For example, for a data source with the ID *40FJYP9D*, the resulting statement would be:
 
 ```sql
 CALL MENDIX_DATA_LOADER.MX_FUNCTIONS.RUN_INGESTION_JOB('40FJYP9D','');
