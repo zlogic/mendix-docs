@@ -279,7 +279,7 @@ If you create a **PolicyDoc** with *no* associations to **Policy** objects, you 
 {{% /alert %}}
 
 {{% alert color="warning" %}}
-If the microflow that calls the Java Action *XLSReport.GenerateExcelDoc* has *Apply entity access* set to **true** and if you do not have permission to access one of the Entity or Association which is being extracted by your template, then you will get a *CoreRuntimeException* or *SecurityRuntimeException* as this module internally uses OQL to retrieve data and that data is evaluated against the access grants the user has.
+If the microflow that calls the Java action *XLSReport.GenerateExcelDoc* has **Apply entity access** set to **True**, and if you do not have permission to access one of the entities or associations that is being extracted by your template, you will get a **CoreRuntimeException** or **SecurityRuntimeException**. This occours because this module uses OQL to retrieve data, which is evaluated against the access grants the user has.
 {{% /alert %}}
 
 ## Read More
