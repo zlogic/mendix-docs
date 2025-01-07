@@ -13,13 +13,19 @@ The Mendix Native Mobile Builder is a UI-based tool, complimentary to Mendix Stu
 
 ### Release 1.0.132
 
-**Release date: January 07, 2025**
+**Release date: January 7, 2025**
 
-* Building mobile apps with App Center is deprecated and will be removed on March 2025. We now show the deprecation warning when could build option is enabled.
+#### Improvements
 
-* We've resolved an issue where remote JavaScript debugging failed in custom-built Mendix Native Developer Apps due to improper initialization of Firebase services during the build process. This fix ensures Firebase dependencies are only included when explicitly required by the application.
+* Building mobile apps with App Center is deprecated and will be removed on March 2025. We now show the deprecation warning when the cloud build option is enabled.
 
-{{% alert color="warning" %}}Please note that this is a breaking change and a mandatory update: you must use the latest Native Template version to implement this fix, as older versions may cause errors in your application. Failure to update could lead to potential app instability and functionality issues.{{% /alert %}}
+#### Fixes
+
+* We have resolved an issue where remote JavaScript debugging failed in custom-built Mendix Native Developer Apps. This happened in cases of improper initialization of Firebase services during the build process. Our fix ensures Firebase dependencies are only included when explicitly required by the application.
+  
+{{% alert color="warning" %}}
+Please note that this is a breaking change, and thus, requires a mandatory update. You must use the latest Native Template version to implement this fix, as older versions may cause errors in your application. Failure to update could lead to potential app instability and functionality issues.
+{{% /alert %}}
 
 ## 2024
 
