@@ -45,7 +45,7 @@ By default, Mendix provides premium customers with an SLA which includes high-av
 
 Secondary regions are, wherever possible, in the same political region as the primary region. However this is not always possible.You can find which secondary regions are used for each primary region in the [Data Location](/developerportal/operate/backups/#data-location) section of *Backups*.
 
-If you want your data to remain in the primary region and not be replicated to a secondary region, click **Deactivate** to deactivate application data replication. You will have to confirm that you accept the impact this has on the service level agreement you have with Mendix regarding disaster recovery and SOC2 compliance.
+If you want your data to remain in the primary region and not be replicated to a secondary region, click **Deactivate** to deactivate application data replication. You will have to confirm that you accept the impact this has on the service level agreement you have with Mendix regarding disaster recovery and SOC2 compliance. Once you have made this change, all new environments which are provisioned will not replicate data to other regions.
 
 You can turn application data replication back on by clicking **Activate**. 
 
