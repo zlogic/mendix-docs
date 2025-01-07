@@ -278,6 +278,10 @@ Your new microflow should look similar to this:
 If you create a **PolicyDoc** with *no* associations to **Policy** objects, you will export an empty spreadsheet with the structure defined in the template.
 {{% /alert %}}
 
+{{% alert color="warning" %}}
+If the microflow that calls the Java Action *XLSReport.GenerateExcelDoc* has *Apply entity access* set to **true** and if you do not have permission to access one of the Entity or Association which is being extracted by your template, then you will get a *CoreRuntimeException* or *SecurityRuntimeException* as this module internally uses OQL to retrieve data and that data is evaluated against the access grants the user has.
+{{% /alert %}}
+
 ## Read More
 
 * [Import Excel Documents](/howto/integration/importing-excel-documents/)
