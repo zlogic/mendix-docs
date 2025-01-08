@@ -25,7 +25,7 @@ These changes, listed below, are described in this document.
 
 If you want to deploy your app to a new licensed node in Mendix Cloud, Mendix Cloud Dedicated, or on-premises/virtual private cloud, you can request one from Mendix Support.
 
-Fill in the required details for the new licensed app node on the [Request New App Node](https://newnode.mendix.com/) page. If your request matches your entitlements, your Mendix Cloud node will be created automatically. Mendix Support will contact you via a ticket in the [Mendix Support Portal](https://support.mendix.com/) if more information is needed or to send you the requested keys.
+Fill in the required details for the new licensed app node on the [Request New App Node](https://newnode.mendix.com/) page. If your request matches your entitlements, your Mendix Cloud node will be created automatically. Mendix Support will contact you via a ticket in the [Mendix Support Portal](https://support.mendix.com/) if more information is needed or to send you keys for apps deployed on-premises or to a virtual private cloud.
 
 By default, all developers in your organization can create node requests. You can limit this to Mendix Admins only by contacting your Customer Success Manager or requesting it via a support ticket.
 
