@@ -66,9 +66,24 @@ In the current version, Mendix supports text generation (including function/tool
 
 To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the developer portal or ask someone with access to either generate them for you or be added to the team to generate keys yourself. For questions, reach out to `david.hartveld@mendix.com` for details.
 
-### Dependencies
+### Dependencies {#dependencies}
 
 * Mendix Studio Pro version [9.24.2](/releasenotes/studio-pro/9.24/#9242) or above
 * [GenAI Commons](https://marketplace.mendix.com/link/component/227933)
 * [Encryption](https://marketplace.mendix.com/link/component/1011)
 * [Community Commons](https://marketplace.mendix.com/link/component/170)
+
+## Installation
+
+Add the [Dependencies](#dependencies) listed above from the Marketplace. To import the [MxGenAIConnector](marketplace link) into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
+
+## Configuration
+
+After installing the MxGenAIConnector, you can find it in the **App Explorer** under the **Add-ons** section. The connector includes a domain model and several activities to help integrate your app with the Mendix Cloud GenAI service. To implement the connector, simply use its actions in a microflow. You can find the Mendix GenAI actions in the microflow toolbox. Note that the module is protected, meaning it cannot be modified and the microflow logic is not visible. For details about each exposed operation, see the [Operations](#operations) section below or refer to the documentation provided within the module. For more information on Add-on modules, see [Consuming Add-on Modules and Solutions](/refguide/consume-add-on-modules-and-solutions/).
+
+Follow the steps below to get started:
+
+* Make sure to configure the [Encryption module](/appstore/modules/encryption/#configuration) before you connect your app to Mendix Cloud GenAI.
+* Add the module role `MxGenAIConnector.Administrator` to your Administrator **User roles** in the **Security** settings of your app. 
+* Add the `NAV_ConfigurationOverview_Open` microflow (**USE_ME** > **Configuration**) to your **Navigation** or register your key using the `Configuration_RegisterByString` microflow.
+* Complete the runtime setup of Mendix Cloud GenAI configuration by navigating to the page through the microflow mentioned above. Import a key generated in the portal or provided to you and click **Test Key** to validate its functionality.
