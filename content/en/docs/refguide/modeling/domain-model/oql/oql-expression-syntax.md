@@ -121,7 +121,7 @@ FROM
 Operators perform common operations and, unlike functions, do not put their parameters in parentheses. They take `expression` as input, which can be other operator results, functions, columns and literals.
 
 Supported operators are split into binary, unary, and other operators based on their syntax.
-These are further subdivided into logical and arithmetic operators, depending on their return type. Logical operators always return a `BOOLEAN` type. The return type of arithmetic operators depends on the datatypes of the expressions being operated on. `CASE` is detailed separately.
+These are further subdivided into logical and arithmetic operators, depending on their return type. Logical operators always return a `BOOLEAN` type. The return type of arithmetic operators depends on the data types of the expressions being operated on. `CASE` is detailed separately.
 
 ### Binary Operators
 
@@ -441,7 +441,7 @@ Select PropertyType FROM RealEstate.Properties WHERE PropertyType LIKE '%a%t'
 Matches a value in a subquery or a list of expression values. Each value in the list or subquery is compared to a specified expression with the operator `=`(Equal to), returning `TRUE` if any of the comparisons return `TRUE`. `NULL` value handling is the same as the `=`(Equal to) operator.
 
 {{% alert color="info" %}}
-HSQLDB and PostgreSQL do not support matching of different datatypes.
+HSQLDB and PostgreSQL do not support matching of different data types.
 {{% /alert %}}
 
 ##### Syntax

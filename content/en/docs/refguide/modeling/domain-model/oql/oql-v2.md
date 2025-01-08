@@ -276,3 +276,19 @@ FROM Module.Car
 JOIN Module.Vehicle
 ON True
 ```
+
+### UNION of different types
+
+In OQL v1 support for `UNION` of different types like INTEGER and STRING was determined by the database. The result data type was determined only by the first query of a `UNION`. 
+
+For example, this query would return a result of type `INTEGER`:
+
+```sql
+SELECT IntegerAttribute FROM Module.Entity
+UNION
+SELECT DecimalAttribute FROM Module.Entity
+```
+
+In OQL v2 support of different data types is consistent across databases and is more limited. The result data type is determined by all `UNION` queries, merged according to precedence. See [UNION documentation](/refguide/oql-clauses/#oql-union-type) for data type specifics. 
+
+The example query above now returns a result of type `DECIMAL`, as it has higher precedence than `INTEGER`.
