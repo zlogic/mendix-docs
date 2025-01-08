@@ -125,14 +125,13 @@ To trigger an ingestion job programmatically, use the `ExecuteStatement` operati
 2. In the Snowflake REST SQL connector, use the `ExecuteStatement` operation to execute the following statement:
 
 ```sql
-CALL {NAME_OF_THE_MENDIX_DATA_LOADER}.MX_FUNCTIONS.RUN_INGESTION_JOB('{DATASOURCE_ID}','{TASK_ID}');
+CALL {NAME_OF_THE_MENDIX_DATA_LOADER}.MX_FUNCTIONS.RUN_INGESTION_JOB('{DATASOURCE_ID}','');
 ```
 
 where you must specify the following variables:
 
 * `{NAME_OF_THE_MENDIX_DATA_LOADER}` - The default name for the Mendix Data Loader is `MENDIX_DATA_LOADER`
 * `{DATASOURCE_ID}` - Required; the data source ID that you obtained in step 1
-* `{TASK_ID}` - Optional
 
 For example, for a data source with the ID *40FJYP9D*, the resulting statement would be:
 
