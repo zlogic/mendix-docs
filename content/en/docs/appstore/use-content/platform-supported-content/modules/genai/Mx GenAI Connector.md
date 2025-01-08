@@ -58,3 +58,17 @@ Combine embeddings with text generation capabilities and leverage specific sourc
 MxGenAIConnector module generates embeddings internally when interacting with the knowledge base. Pure embedding operations are only required if additional processes, such as using the generated vectors instead of text, are needed. For example, a similar search algorithm could use vector distances to calculate relatedness.
 {{% /alert %}}
 
+### Features
+
+In the current version, Mendix supports text generation (including function/tool calling, chat with images, and chat with documents), vector embedding generation, knowledge base storage, and retrieval.
+
+### Prerequisites
+
+To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the developer portal or ask someone with access to either generate them for you or be added to the team to generate keys yourself. For questions, reach out to `david.hartveld@mendix.com` for details.
+
+### Dependencies
+
+* Mendix Studio Pro version [9.24.2](/releasenotes/studio-pro/9.24/#9242) or above
+* [GenAI Commons](https://marketplace.mendix.com/link/component/227933)
+* [Encryption](https://marketplace.mendix.com/link/component/1011)
+* [Community Commons](https://marketplace.mendix.com/link/component/170)
