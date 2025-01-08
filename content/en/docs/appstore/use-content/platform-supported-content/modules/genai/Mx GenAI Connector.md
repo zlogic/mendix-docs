@@ -169,3 +169,77 @@ When adding a document to the `FileCollection`, you can optionally use the `Text
 
 Note that the model uses the file name when analyzing documents, which could make it vulnerable to prompt injection. Depending on your use case, you may choose to modify the string or not to pass it at all.
 {{% /alert %}}
+
+### Knowledge Base Operations
+
+To implement knowledge base logic into your Mendix application, you can use the actions in the **USE_ME** > **Knowledge Base** folder or under the **Synthia (Knowledge Bases)** category in the **Toolbox**. These actions require a specialized [Connection](/appstore/modules/genai/commons/#connection) of type SynthiaConnection that determines the model and endpoint to use. Additionally, the knowledge base name must be passed when creating the object and it must be associated with a `ConfigurationKnowledgeBase` object.
+
+Dealing with knowledge bases involves two main stages:
+
+1. [Insertion of knowledge](#knowledge-base-insertion)
+2. [Retrieval of knowledge (Nearest neighbor)](#knowledge-base-retrieval)
+
+You do not need to manually add embeddings to a chunk, as the connector handles this internally. To see all existing knowledge bases for a configuration, go to the **Knowledge Base** tab on the [Mendix Cloud GenAI Configuration] page and update the knowledge bases. Alternatively, use the `Get Knowledge Base List` action to retrieve a synchronized list of knowledge bases to include in your module. Lastly, you can delete a knowledge base using the `Delete Knowledge Base` action.
+
+#### Knowledge Base Insertion{#knowledge-base-insertion}
+
+##### Data chunks
+
+To add data to the knowledge base, you need discrete pieces of information and create knowledge base chunks for each one. Using the `GenAICommons` operations, first, [create a ChunkCollection object](/appstore/modules/genai/commons/#chunkcollection-create), then [add a KnowlegdebaseChunk](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) object to it for each piece of information.
+
+##### Chunking strategy
+
+Dividing data into chunks is crucial for model accuracy, as it helps optimize the relevance of the content. The best chunking strategy is to keep a balance between reducing noise by keeping chunks small and retaining enough content within a chunk to get relevant results. Creating overlapping chunks can help preserve more context while maintaining a fixed chunk size. It is recommended to experiment with different chunking strategies to decide the best strategy for your data. In general, if chunks are logical and meaningful to humans, they will also make sense to the model. A chunk size of approximately 1500 characters with overlapping chunks has been proven to be effective for longer texts in the past.
+
+The chunk collection can then be stored in the knowledge base using one of the following operations:
+
+##### Add data chunks to your knowledge base
+
+Use the following toolbox actions to populate knowledge data into the knowledge base:
+
+1. `Embed & Insert` embeds a list of chunks (passed via a [ChunkCollection](/appstore/modules/genai/commons/#chunkcollection)) and inserts them into the knowledge base.
+2. `Embed & (Re)populate Knowledge Base` is similar to the `Embed & Insert`, but deletes all existing chunks from the knowledge base before inserting the new chunks.
+3. `Embed & Replace` replaces existing chunks in the knowledge base that match the associated Mendix object which was passed via [Add KnowledgeBaseChunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) action at the insertion stage.
+
+Additionally, use the following toolbox actions to delete chunks:
+
+* `Delete for Object` deletes all chunks (and related metadata) from the knowledge base that were associated with a passed Mendix object at the insertion stage.
+* `Delete for List` is similar to the `Delete for Object` , but a list of Mendix objects is passed instead.
+
+When data in your Mendix app that is relevant to the knowledge base changes, it is usually necessary to keep the knowledge base chunks in sync. Whenever a Mendix Object changes, the affected chunks must be updated. Depending on your use case, the `Replace` and `Delete for Objects` can be conveniently used in event handler microflows.
+
+The example below shows how to repopulate a knowledge base using a list of Mendix objects:
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/knowledgebase-using-mendix-object.png" >}}
+
+##### Knowledge Base Retrieval{#knowledge-base-retrieval}
+
+The following toolbox actions can be used to retrieve knowledge data from the knowledge base (and associate with your Mendix data):
+
+1. `Retrieve` retrieves knowledge base chunks from the knowledge base. You can use pagination via the `Offset` and `MaxNumberOfResults` parameters or apply filtering via a `MetadataCollection` or `MxObject`.
+2. `Retrieve & Associate` is similar to the `Retrieve` but associates the returned chunks with a Mendix object if they were linked at the insertion stage. 
+
+    {{% alert color="info" %}}
+    You must define your entity specialized from `KnowledgeBaseChunk`, which refers to another entity used during the insertion stage.
+{   {% /alert %}}
+
+3. `Embed & Retrieve Nearest Neighbors` retrieves a list of type [KnowledgeBaseChunk](/appstore/modules/genai/commons/#knowledgebasechunk-entity) from the knowledge base that are most similar to a given `Content` by calculating the cosine similarity of its vectors.
+4. `Embed & Retrieve Nearest Neighbors & Associate` combines the above actions `Retrieve & Associate` and `Embed & Retrieve Nearest Neighbors`.
+
+### Embeddings Operations
+
+If you are working directly with embedding vectors for specific use cases that do not include KnowledgeBase interaction, such as clustering or classification, the below operations are relevant. For practical examples and guidance, consider referring to the [GenAI Showcase Application](https://marketplace.mendix.com/link/component/220475) showcase to see how these embedding-only operations can be used.
+
+To implement embeddings into your Mendix application, you can use the microflows in the **USE_ME** > **Operations** > **Embeddings** folder. Currently, two microflows for embeddings are exposed as microflow actions under the **Synthia (Embeddings)** category in the **Toolbox** in Mendix Studio Pro.
+
+These microflows require a specialized [Connection](/appstore/modules/genai/commons/#connection) of type SynthiaConnection that determines the model and endpoint to use. Depending on the selected operation, an `InputText` String or a [ChunkCollection](/appstore/modules/genai/commons/#chunkcollection) needs to be provided.
+
+#### Embeddings (String)
+
+The microflow activity `Embeddings (String)` supports scenarios where the vector embedding of a single string must be generated. This input string can be passed directly as the `TextInput` parameter of this microflow. Note that the parameter [EmbeddingsOptions](/appstore/modules/genai/commons/#embeddingsoptions-entity) is optional. Use the exposed microflow [Embeddings: Get First Vector from Response](/appstore/modules/genai/commons/#embeddings-get-first-vector) to retrieve the generated embeddings vector.
+
+#### Embeddings (ChunkCollection)
+
+The microflow activity `Embeddings (ChunkCollection)` supports the more complex scenario where a collection of [Chunk](/appstore/modules/genai/commons/#chunkcollection) objects is vectorized in a single API call, such as when converting a collection of text strings (chunks) from a private knowledge base into embeddings. Instead of calling the API for each string, executing a single call for a list of strings can significantly reduce HTTP overhead. The embedding vectors returned after a successful API call will be stored as an `EmbeddingVector` attribute in the same `Chunk` object. Use the exposed microflows of GenAI Commons [Chunks: Initialize ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-create), [Chunks: Add Chunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-chunk), or [Chunks: Add KnowledgeBaseChunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) to construct the input.
+
+To create embeddings, it does not matter whether the ChunkCollection contains Chunks or its specialization KnowledgeBaseChunks. Note that the knowledge base operations handle the embedding generation themselves internally.
