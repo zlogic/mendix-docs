@@ -107,3 +107,65 @@ In chat completions, system prompts and user prompts are two key components that
 All chat completion operations within the connector expect to *Retrieve and Generate* support [Function Calling](#function-calling), [Vision](#vision), and [Document Chat](#document-chat).
 
 For more inspiration or guidance on how to use the above-mentioned microflows in your logic, Mendix recommends downloading our [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples.
+
+#### Chat Completions (without History)
+
+The microflow activity `Chat Completions (without history)` supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request. The operation requires a specialized [Connection](/appstore/modules/genai/commons/#connection) of type SynthiaConnection and a `UserPrompt` as a string. Additional parameters, such as system prompt, can be passed via the optional [Request](/appstore/modules/genai/commons/#request) object.
+Functionally, the prompt strings can be written in a specific way and can be tailored to get the desired result and behavior. For more information on prompt engineering, see the [Read More]({#readmore}) section.
+
+Optionally, you can also use [Function Calling](#function-calling) by adding a [ToolCollection](/appstore/modules/genai/commons/#toolcollection) to the request or you can send [images](#vision) or [documents](#document-chat) along with the user prompt by passing a [FileCollection](/appstore/modules/genai/commons/#filecollection).
+
+#### Chat Completions (with History)
+
+The microflow activity `Chat completions (with history)` supports more complex use cases where a list of (historical) messages (for example, the conversation or context so far) is sent as part of the request to the LLM. The operation requires a specialized [Connection](/appstore/modules/genai/commons/#connection) of type SynthiaConnection, a [Request](/appstore/modules/genai/commons/#request) object containing messages, optional attributes, or an optional `ToolCollection`.
+
+Optionally, you can use [Function Calling](#function-calling) by adding a [ToolCollection](/appstore/modules/genai/commons/#toolcollection) to the request or you can send [images](#vision) or [documents](#document-chat) along with the user prompt by passing a [FileCollection](/appstore/modules/genai/commons/#filecollection).
+
+#### Chat Completions (Retrieve & Generate)
+
+The microflow activity `Chat Completions Retrieve & Generate` simplifies `Retrieve and Generate` use cases without history. By providing a user prompt, the knowledge base is searched for similar knowledge chunks, which are then passed to the model. The model is instructed to base its response on the retrieved knowledge while referring to the source used to generate the response. This operation requires two specialized [Connection](/appstore/modules/genai/commons/#connection) of type SynthiaConnection, each linked to a `ConfigurationTextGeneration` and a `ConfigurationKnowledgeBase`, respectively.
+
+Optionally, a [Request](/appstore/modules/genai/commons/#request) object can be provided to include additional parameters or to pass instructions via the `SystemPrompt`. Additionally, adding an extension to the `Request` through the `Configure Retrieve & Generate` action enables other filter options, making the `Request` object mandatory in such cases.
+
+The returned `Response` includes [References](/appstore/modules/genai/commons/#reference) if the model used them to generate its response. In some cases, a knowledge chunk consists of two texts: one for the semantic search step and another for the generation step. For example, when solving a problem based on historical solutions, the semantic search identifies similar problems using their descriptions, while the generation step produces a solution based on the corresponding historical solutions. In those cases, you can add [MetaData](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) with the key `knowledge` to the chunks during the insertion stage, allowing the model to base its response on the specified metadata rather than the input text.
+
+Additionally, to utilize the `Source` attribute of the references, you can include `MetaData` with the key `sourceUrl`. Finally, the `HumanReadableId` of a chunk is used to display the reference's title in the response.
+
+#### Function Calling{#function-calling}
+
+Function calling enables LLMs to connect with external tools to gather information, execute actions, convert natural language into structured data, and much more. Function calling thus enables the model to intelligently decide when to let the Mendix app call one or more predefined function microflows to gather additional information to include in the assistant's response.
+
+The model does not call the function but rather returns a tool called JSON structure that is used to build the input of the function (or functions) so that they can be executed as part of the chat completions operation. Functions in Mendix are essentially microflows that can be registered within the request to the LLM​. The connector takes care of handling the tool call response and executing the function microflows until the API returns the assistant's final response.
+
+Function microflows take a single input parameter of type string or no input parameter and must return a string. Currently, adding a [ToolChoice](/appstore/modules/genai/commons/#set-toolchoice) for function calling is not supported by the MxGenAIConnector.
+
+{{% alert color="warning" %}}
+Function calling is a highly effective capability and should be used with caution. Function microflows run in the context of the current user, without enforcing entity access. You can use `$currentUser` in XPath queries to ensure that you retrieve and return only information that the end-user is allowed to view; otherwise, confidential information may become visible to the current end-user in the assistant's response.
+
+Mendix also strongly advises that you build user confirmation logic into function microflows that have a potential impact on the world on behalf of the end-user. Some examples of such microflows include sending an email, posting online, or making a purchase.
+{{% /alert %}}
+
+You can use function calling in all chat completions operations by adding a `ToolCollection` with a `Function` via the [Tools: Add Function to Request](/appstore/modules/genai/commons/#add-function-to-request) operation.
+For more information, see [Function Calling](/appstore/modules/genai/function-calling/).
+
+#### Vision{#vision}
+
+Vision enables the model to interpret and analyze images, allowing them to answer questions and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To ensure the vision inside the connector, an optional [FileCollection](/appstore/modules/genai/commons/#filecollection) containing one or multiple images must be sent with a single message.
+
+For `Chat Completions without History`, `FileCollection` is an optional input parameter. For `Chat Completions with History`, `FileCollection` can optionally be added to individual user messages using [Chat: Add Message to Request](/appstore/modules/genai/commons/#chat-add-message-to-request).
+
+In the entire conversation, you can pass up to 20 images that are smaller than 3.75 MB each and with a height and width of maximum 8000 pixels. The following types are accepted: PNG, JPEG, JPG , GIF, and WebP.
+
+#### Document Chat{#document-chat}
+
+Document chat enables the model to interpret and analyze documents, such as PDFs or Excel files, allowing them to answer questions and perform tasks related to the content. To use document chat, an optional [FileCollection](/appstore/modules/genai/commons/#filecollection) containing one or multiple documents must be sent along with a single message.
+
+For `Chat Completions without History`, `FileCollection` is an optional input parameter. For `Chat Completions with History`, `FileCollection` can optionally be added to individual user messages using [Chat: Add Message to Request](/appstore/modules/genai/commons/#chat-add-message-to-request).
+
+In the entire conversation, you can pass up to five documents that are smaller than 4.5 MB each. The following file types are accepted: PDF, CSV, DOC, DOCX, XLS, XLSX, HTML, TXT,and MD.
+
+{{% alert color="info" %}}
+When adding a document to the `FileCollection`, you can optionally use the `TextContent` parameter to pass the file name. Ensure the file name excludes its extension before passing it to the file collection.
+
+Note that the model uses the file name when analyzing documents, which could make it vulnerable to prompt injection. Depending on your use case, you may choose to modify the string or not to pass it at all.
+{{% /alert %}}
