@@ -882,9 +882,9 @@ The Deep Link module does not have full support for multiple IdPs, so it can onl
 
 ### Logging Out
 
-A standard logout action will end an end-user's Mendix session, but will not end their SSO session. If you want to allow your app's end-users to perform Single Log Out (SLO), you can add a menu item or button that call the nanoflow `ACT_Logout`. This nanoflow will end the local session in your app and, if applicable, request the connected IdP to terminate the user's session there as well.
+A standard log out action will end an end-user's Mendix session, but will not end their SSO session. If you want to allow your app's end-users to log out, you can add a menu item or button that call the nanoflow `ACT_Logout`. This nanoflow will end the local session in your app and, if applicable, request the connected IdP to terminate the user's session there as well.
 
-During this process, the user's browser will be redirected to the IdP, logging them out of the app. Optionally, you can configure the IdP to redirect the user to the `post_logout_redirect_uri` after logout, allowing the user to return to your app. 
+During this process, the user's browser will be redirected to the IdP, logging them out of both your Mendix app and the IdP. Optionally, you can configure the IdP to redirect the user to the `post_logout_redirect_uri` after log out, allowing the user to return to your app. 
 
 ### Using ACR to Request Authentication Method
 
