@@ -87,3 +87,23 @@ Follow the steps below to get started:
 * Add the module role `MxGenAIConnector.Administrator` to your Administrator **User roles** in the **Security** settings of your app. 
 * Add the `NAV_ConfigurationOverview_Open` microflow (**USE_ME** > **Configuration**) to your **Navigation** or register your key using the `Configuration_RegisterByString` microflow.
 * Complete the runtime setup of Mendix Cloud GenAI configuration by navigating to the page through the microflow mentioned above. Import a key generated in the portal or provided to you and click **Test Key** to validate its functionality.
+
+## Operations
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/synthia-domain-model.png" >}}
+
+Configuration keys are stored persistently after they are imported (either via the UI or the exposed microflow). The three different types of configurations reflect the use cases this service supports. The specific operations are described below.
+
+To use the operations, a `SynthiaConnection` must always be passed that refers to a Configuration. Use the `Create Synthia Connection` toolbox action to create the object. A `KnowledgeBaseName` must only be passed for knowledge base operations.
+
+### Chat Completions Operations
+
+After following the general setup above, you are ready to use the microflows in the **USE_ME > ChatCompletions** folder in your logic. Currently, three microflows for chat completions are exposed as microflow actions under the **Synthia (Text & Files)** category in the **Toolbox**.
+
+These microflows expect a `SynthiaConnection` object that refers to a `ConfigurationTextGeneration`. 
+
+In chat completions, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on prompt engineering, see the [Read More]{#readmore} section. Different exposed microflow activities may require different prompts and logic for how the prompts must be passed, as described in the following sections. For more information on message roles, see the [ENUM_MessageRole](/appstore/modules/genai/commons/#enum-messagerole) enumeration in the *GenAI Commons*.
+
+All chat completion operations within the connector expect to *Retrieve and Generate* support [Function Calling](#function-calling), [Vision](#vision), and [Document Chat](#document-chat).
+
+For more inspiration or guidance on how to use the above-mentioned microflows in your logic, Mendix recommends downloading our [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples.
