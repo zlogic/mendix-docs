@@ -5,6 +5,10 @@ description: "Describes the configuration and usage of the SAML module, which is
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
+{{% alert color="warning" %}}
+This document explains the configuration and usage of the SAML module for versions 3.6.15 and below. Documentation for version 4.0.0 will be available soon.
+{{% /alert %}}
+
 ## Introduction
 
 The [SAML](https://marketplace.mendix.com/link/component/1174/) module can be used to give end-users access to your Mendix application based on their identity in your Identity Provider (IdP). A Mendix application that uses the SAML SSO module will delegate user login to your Identity Provider using SAML 2.0.
