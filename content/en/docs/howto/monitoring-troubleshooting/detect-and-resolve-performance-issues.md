@@ -124,7 +124,7 @@ Slow retrieves can occur for a number of different reasons, such as:
 Additionally, for details on how denormalization can improve your app performance in some cases, review [How to Denormalize Data to Improve Performance](/howto/data-models/denormalize-data-to-improve-performance/).
 
 {{% alert color="info" %}}
-You can set up the [LogMinDurationQuery](/refguide/custom-settings/#LogMinDurationQuery) for debugging slow database connections or XPaths. For debugging purposes, you can set the value to `500` milliseconds to see all the retrieves or commits that take longer than `500` milliseconds.
+You can set up the [LogMinDurationQuery](/refguide/custom-settings/#LogMinDurationQuery) for debugging slow database queries (OQL and XPath). For debugging purposes, you can set the value to `500` milliseconds to see all the retrieves or commits that take longer than `500` milliseconds.
 {{% /alert %}}
 
 ### Slow Database Commits
