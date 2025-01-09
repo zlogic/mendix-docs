@@ -134,10 +134,6 @@ The following inputs are required for the Azure OpenAI configuration:
 | Key type       | This is the type of token that is entered in the API key field. For Azure OpenAI, two types of keys are currently supported: Microsoft Entra token and API key. <br />For details on how to generate a Microsoft Entra access token, see [How to Configure Azure OpenAI Service with Managed Identities](https://learn.microsoft.com/en-gb/azure/ai-services/openai/how-to/managed-identity). Alternatively, if your organization allows it, you could use the Azure `api-key` authentication mechanism. For details on how to obtain an API key, see the [Obtaining Azure OpenAI API keys](#azure-api-keys) section below. For more information, see the [Technical Reference](#technical-reference) section. |
 | Token / API key        | This is the access token to authorize your API call.         |
 
-{{% alert color="info" %}}
-For the Azure OpenAI configuration, each model needs a separate deployment so that it can be used. In order to benefit from multiple supported operations in your Mendix app, you need to create multiple configuration objects—one for every deployed model. For details, see the [Azure OpenAI Service REST API reference](https://learn.microsoft.com/en-gb/azure/ai-services/openai/reference).
-{{% /alert %}}
-
 ##### Obtaining the Azure OpenAI Resource Name {#azure-resource-name}
 
 1. Go to the [Azure OpenAI portal](https://oai.azure.com/) and sign in.
@@ -154,9 +150,9 @@ For the Azure OpenAI configuration, each model needs a separate deployment so th
 4. Go to **Current resource** and click **JSON view**.
 5. Use the value of the **key1** or **key2** field as your API key while setting up the configuration. Note that these keys might not be available, depending on your organization's security settings. 
 
-#### Configuring the Deployed Models
+#### Configuring the OpenAI Deployed Models
 
-A [Deployed Model](/appstore/modules/genai/commons/#deployed-model) represents a GenAI model instance that can be used by the app to generate text, embeddings or images. For every model you want to invoke from your app, you need to create a record. For OpenAI a set of common models will be prepopulated automatically on saving the configuration. For Azure OpenAI the technical model names depend on the deployment names that were chosen while deploying the models in the [Azure Portal](https://oai.azure.com/resource/deployments). That is why you need to configure the models manually in your Mendix app.
+A [Deployed Model](/appstore/modules/genai/commons/#deployed-model) represents a GenAI model instance that can be used by the app to generate text, embeddings or images. For every model you want to invoke from your app, you need to create a `OpenAIDeployedModel` record, a specialization of `DeployedModel`. In addition to the model display name and a technical name/identifier, an OpenAI deployed model contains a referebce to the additional connection details as configured in the previous step. For OpenAI a set of common models will be prepopulated automatically on saving the configuration. If you want to use additional models that are made available by OpenAI you need to configure additional OpenAI deployed models in your Mendix app. For Azure OpenAI no deployed models are created by default. The technical model names depend on the deployment names that were chosen while deploying the models in the [Azure Portal](https://oai.azure.com/resource/deployments). Therefore in this case you always need to configure the deployed models manually in your Mendix app.
 
 1. If needed, click the three dots for an OpenAI configuration to open the "Manage Deployed Models" pop-up.
 2. For every additional model, add a record. The following fields are required:
@@ -168,38 +164,24 @@ A [Deployed Model](/appstore/modules/genai/commons/#deployed-model) represents a
 | Output modality| Describes what the output of the model is. This connector currently supports Text, Embeddings and Image.
 | Azure API version    | Azure OpenAI only. This is the API version to use for this operation. It follows the `yyyy-MM-dd` format. For supported versions, see [Azure OpenAI documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference). The supported versions can vary depending on the type of model, so make sure to look for the right section (such as Chat Completions, Image Generation, or Embeddings) on that page. |
 
-### Chat Completions Configuration {#chat-completions-configuration} 
+3. Close the popup and test the configuration with the newly created deployed models.
 
-After following the general setup above, you are all set to use the microflows in the **USE_ME > Operations > ChatCompletions** folder in your logic. Currently, two microflows for chat completions are exposed as microflow actions under the **OpenAI (Operations)** category in the **Toolbox** in Mendix Studio Pro. 
+### Using GenAI Commons Operations {#genai-commons-operations} 
 
-These microflows expect an `OpenAIConnection` object that refers to a `Configuration`. Additionally, a model or deployment needs to be passed:
+After following the general setup above, you are all set to use the microflow actions under the **GenAI (Generate)** category from the toolbox. These operations are part of GenAI Commons. Since OpenAI is compatible with the principles of GenAI Commons, you can pass an `OpenAIDeployedModel` to all GenAI Commons operations that expect the generalization `DeployedModel`. All actions under **GenAI (Generate)** will take care of executing the right provider-specific logic, based on the type of specialization passed, in this case OpenAI. From implementation perspective it is not needed to inspect the inner workings of this operation. The input, output and behavior are as described in the [GenAICommons documentation](/appstore/modules/genai/#microflows). We will list the applicable operations and address some OpenAI-specific aspects below.
 
-* For the OpenAI API configuration, the desired model must be specified for every call in the `Model` attribute of the `OpenAIConnection`.
-* For the Azure OpenAI configuration, the model is already determined by the deployment in the [Azure OpenAI portal](https://oai.azure.com/portal) that was set on the referenced `Configuration`. Any model explicitly specified will be ignored and hence can be left empty. 
+For more inspiration or guidance on how to use the upcoming microflow actions in your logic, Mendix recommends downloading our [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples that covers all the operations mentioned.
 
-In the context of chat completions, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on prompt engineering, see the [Read More](#read-more) section. Different exposed microflow activities may require different prompts and logic for how the prompts must be passed, as described in the following sections. For more information on message roles, see the ENUM_MessageRole enumeration in [GenAI Commons](/appstore/modules/genai/commons/).
+#### Chat Completions
 
-All chat completions operations within the OpenAI connector support `JSON mode`, [function calling](#chatcompletions-functioncalling), and [vision](#chatcompletions-vision).
+Operations for chat completions focus on the generation of text based on a certain input. In this context, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on the type of prompts and message roles, see the ENUM_MessageRole enumeration in [GenAI Commons](/appstore/modules/genai/commons/). To learn more about how to create the right prompts for your use case, see the prompt engineering links in the [Read More](#read-more) section.
 
-For more inspiration or guidance on how to use the above-mentioned microflows in your logic, Mendix recommends downloading our [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples. 
+The `OpenAIDeployedModel` is compatible with the two [Chat Completions operations from GenAI Commons](/appstore/modules/genai/#chat-completions). While developing your custom microflow, you can drag and drop the following operations from the toolbox in Studio Pro, see category **GenAI (Generate)**: 
 
-#### Chat Completions (without History) {#chatcompletions-without-history}
+- Chat Completions (with history)
+- Chat Completions (without history)
 
-The microflow activity `Chat Completions (without history)` supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request. The operation requires a specialized [Connection](/appstore/modules/genai/commons/) of type `OpenAIConnection` and a `UserPrompt` as a string. Additional parameters, such as system prompt, can be passed via the optional [Request](/appstore/modules/genai/commons/) object and the optionally referenced `OpenAIRequest_Extension` for OpenAI-specific optional attributes.
-
-Functionally, the prompt strings can be written in a specific way and can be tailored to get the desired result and behavior. For more information on prompt engineering, see the [Read More](#read-more) section.
-
-Optionally, you can also use [function calling](#chatcompletions-functioncalling) by adding a [ToolCollection](/appstore/modules/genai/commons/) to the Request. Or you can [send images](#chatcompletions-vision) along with the user prompt by passing a [FileCollection](#initialize-filecollection).
-
-For technical details, see the [Technical Reference](#technical-reference) section.
-
-#### Chat Completions (with History) {#chatcompletions-with-with-history}
-
-The microflow activity `Chat completions (with history)` supports more complex use cases where a list of (historical) messages (for example, the conversation or context so far) is sent as part of the request to the LLM. The operation requires a specialized [Connection](/appstore/modules/genai/commons/) of type `OpenAIConnection`, a [Request](/appstore/modules/genai/commons/) object containing messages, optional attributes, an optional `ToolCollection`, and the optionally referenced `OpenAIRequest_Extension` for OpenAI-specific optional attributes.
-
-Optionally, you can use [function calling](#chatcompletions-functioncalling) by adding a [ToolCollection](/appstore/modules/genai/commons/) to the Request. Or you can [send images](#chatcompletions-vision) along with the user prompt by passing a [FileCollection](#initialize-filecollection).
-
-For technical details, see the [Technical Reference](#technical-reference) section.
+The internal chat completion microflows within the OpenAI connector support `JSON mode`, [function calling](#chatcompletions-functioncalling), and [vision](#chatcompletions-vision). Make sure to check the actual compatibility of the available models with these functionalities, as this changes over time. 
 
 #### Function Calling {#chatcompletions-functioncalling}
 
