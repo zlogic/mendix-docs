@@ -324,7 +324,7 @@ The `Chat Completions (without history)` operation supports scenarios where ther
 | --- | --- | --- |
 | `Response` | [Response](#response) | A `Response` object that contains the assistant's response.|
 
-##### Chat Completions (with history)
+##### Chat Completions (with history) {#chat-completions-with-history}
 
 The `Chat Completions (with history)` operation supports more complex use cases where a list of (historical) messages (for example, comprising the conversation or context so far) is sent as part of the request to the LLM.
 
