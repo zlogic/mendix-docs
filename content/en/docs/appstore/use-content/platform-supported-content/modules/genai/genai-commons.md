@@ -18,7 +18,7 @@ Developers who want to connect to another LLM provider or their own service are 
 
 ### Limitations {#limitations}
 
-The current scope of the module is focused on text and image generation, as well as embeddings and knowledgebase use cases.
+The current scope of the module is focused on text and image generation, as well as embeddings and knowledge base use cases.
 
 ### Dependencies {#dependencies}
 
@@ -28,13 +28,13 @@ You must also download the [Community Commons](/appstore/modules/community-commo
 
 ## Installation {#installation}
 
-If you are starting from the [Blank GenAI app](https://marketplace.mendix.com/link/component/227934), or the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), the GenAI Commons module is included and does not need to be downloaded manually.
+If you are starting from the [Blank GenAI app](https://marketplace.mendix.com/link/component/227934), or the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), the GenAI Commons module is already included and does not need to be downloaded manually.
 
 If you start from a blank app, or have an existing project where you want to include a connector for which the GenAI Commons module is a required module, you must install GenAI Commons manually. First, install the [Community commons](/appstore/modules/community-commons-function-library/) module, and then follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the GenAI Commons module into your app.
 
 ## Implementation {#implementation}
 
-GenAI Commons is the foundation of chat completion implementations within the [OpenAI connector](/appstore/modules/genai/openai/) and the [Amazon Bedrock connector](/appstore/modules/genai/bedrock/), but may also be used to build other GenAI service implementations on top of it by reusing the provided domain model and exposed microflows.
+GenAI Commons is the foundation of large language model implementations within the [Mx GenAI connector](/appstore/modules/genai/MxGenAI/),  [OpenAI connector](/appstore/modules/genai/openai/) and the [Amazon Bedrock connector](/appstore/modules/genai/bedrock/), but may also be used to build other GenAI service implementations on top of it by reusing the provided domain model and exposed actions.
 
 Although GenAI Commons technically defines additional capabilities typically found in chat completion APIs, such as image processing (vision) and tools (function calling), it depends on the connector module of choice for whether these are actually implemented and supported by the LLM. To learn which additional capabilities a connector supports and for which models these can be used, refer to the documentation of that connector.
 
@@ -50,7 +50,7 @@ Lasty, the [Conversational UI module](/appstore/modules/genai/conversational-ui/
 
 ## Technical Reference {#technical-reference}
 
-The technical purpose of GenAI Commons module is to define a common domain model for generative AI use cases in Mendix applications. To help you work with the **GenAI Commons** module, the following sections list the available [entities](#domain-model), [enumerations](#enumerations), and [microflows](#microflows) that you can use in your application. 
+The technical purpose of the GenAI Commons module is to define a common domain model for generative AI use cases in Mendix applications. To help you work with the **GenAI Commons** module, the following sections list the available [entities](#domain-model), [enumerations](#enumerations), and [microflows](#microflows) that you can use in your application. 
 
 ### Domain Model {#domain-model} 
 
@@ -58,13 +58,52 @@ The domain model in Mendix is a data model that describes the information in you
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genaicommons/genai-commons-domain-model.png" alt="" >}}
 
-#### `Connection` {#connection}
+#### `DeployedModel` {#deployed-model}
 
-The `Connection` entity contains specifications to interact with an AI provider.
+The `DeployedModel` represents a GenAI model that can be invoked by the Mendix app. It contains a display name and a technical name/identifier. It also contains the name of the microflow to be executed for the specified model and other information relevant to connect to a model.
+
+The `DeployedModel` entity replaces the capabilities that were coverd by the `Connection` entity in earlier versions of GenAI Commons.
 
 | Attribute | Description |
 | --- | --- |
-| `Model` | The name of the model to be used for an operation. |
+| `DisplayName` | The display name of the deployed model. |
+| `Architecture` | The architecture of the deployed model; e.g. OpenAI or Amazon Bedrock. |
+| `Model` | The model identifier of the LLM provider. |
+| `OutputModality` | The type of information the model returns. |
+| `SupportsSystemPrompt` | An enum to specify if the model supports system prompts. |
+| `SupportsConversationsWithHistory` | An enum to specify if the model supports conversation with history. |
+| `SupportsFunctionCalling` | An enum to specify if the model supports function calling. |
+| `IsActive` | A boolean to specify if the model is active/usable with the current authentication settings and user preference. |
+
+#### `InputModality` {#Usage}
+
+Accepted input modality of the associated deployed model.
+
+| Attribute | Description |
+| --- | --- |
+| `ModelModality` | The type of information the model accepts as input. |
+
+#### `Usage` {#Usage}
+
+This entity represents usage statistics of a call to an LLM. It refers to a complete LLM interaction; in case there are several iterations (e.g. recursive procesisng of function calls), everything should be aggregated into one Usage record.
+
+Following the principles of GenAI Commons it must be stored based on the response for every successful call to a system of an LLM provider. This is only applicable for text & files operations and embeddings operations. It is the responsibility of connector developers implementing the GenAI principles in their GenAI operations to include the right microflows to ensure storage of Usage details after successful calls.
+
+The data stored in this entity is to be used later on for monitoring purposes.
+
+| Attribute | Description |
+| --- | --- |
+| `Architecture` | The architecture of the used deployed model; e.g. OpenAI or Amazon Bedrock. |
+| `DeployedModelDisplayName` | DisplayName of the DeployedModel. |
+| `InputTokens` | The amount of tokens consumed by an LLM call that is related to the input. |
+| `OutputTokens` | The amount of tokens consumed by an LLM call that is related to the output. |
+| `TotalTokens` | The total amount of tokens consumed by an LLM call. |
+| `DurationMilliseconds` | The duration in milliseconds of the technical part of the call to the system of the LLM provider. This excludes custom pre and postprocessing but corresponds to a complete LLM interaction. |
+| `_DeploymentIdentifier` | Internal object used to identify the DeployedModel used. |
+
+#### `Connection` {#connection}
+
+The Connection entity used to be an input parameter for Chat completions, Embeddings and Image Generation operations but got replaced by DeployedModel. It is currently only used as a general connection entity for KnowledgeBase interactions.
 
 #### `Request` {#request} 
 
@@ -148,7 +187,9 @@ The response returned by the model contains usage metrics as well as a response 
 | `RequestTokens` | Number of tokens in the request. | 
 | `ResponseTokens` | Number of tokens in the generated response. |
 | `TotalTokens` | Total number of tokens (request + response). |
+| `DurationMilliseconds` | Duration in milliseconds for the call to the LLM to be finished. |
 | `StopReason` | The reason why the model stopped to generate further content. See AI provider documentation for possible values. | 
+| `ResponseText` | The text content of the response message. | 
 
 #### `ToolCall` {#toolcall}
 
