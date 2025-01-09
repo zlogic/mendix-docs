@@ -82,15 +82,15 @@ To use this connector, you need to either sign up for an [OpenAI account](https:
 ### Dependencies {#dependencies}
 
 * Mendix Studio Pro version [9.24.2](/releasenotes/studio-pro/9.24/#9242) or higher
-* [GenAI Commons](/appstore/modules/genai/commons/)
-* [Encryption](/appstore/modules/encryption/)
-* [Community Commons](/appstore/modules/community-commons-function-library/)
+* [GenAI Commons module](/appstore/modules/genai/commons/)
+* [Encryption module](/appstore/modules/encryption/)
+* [Community Commons module](/appstore/modules/community-commons-function-library/)
 
 ## Installation {#installation}
 
  The following modules from the Marketplace need to be installed:
 
-* [GenAI Commons](https://marketplace.mendix.com/link/component/227933) module
+* GenAI Commons module, available in the [GenAI for Mendix](https://marketplace.mendix.com/link/component/mxgenaiid) marketplace listing.
 * [Encryption](https://marketplace.mendix.com/link/component/1011) module
 * [Community Commons](https://marketplace.mendix.com/link/component/170) module
 
@@ -105,6 +105,7 @@ After you install the OpenAI Connector, you can find it in the **App Explorer**,
 1. Add the module role **OpenAIConnector.Administrator** to your Administrator user role in the security settings of your app. 
 2. Add the **Configuration_Overview** page (**USE_ME > Configuration**) to your navigation, or add the **Snippet_Configurations** to a page that is already part of your navigation. 
 3. Continue setting up your OpenAI configuration at runtime. Follow the instructions in either [OpenAI Configuration](#openai-configuration) or [Azure OpenAI Configuration](#azure-openai-configuration), depending on which platform you are using.
+4. Configure the models you need to use for your use case.
 
 #### OpenAI Configuration {#openai-configuration} 
 
@@ -115,7 +116,7 @@ The following inputs are required for the OpenAI configuration:
 | DisplayName | This is the name identifier of a configuration (for example, *MyConfiguration*). |
 | API type    | Select `OpenAI`.<br />For more information, see the [Technical Reference](#technical-reference) section. |
 | Endpoint    | This is the API endpoint (for example, `https://api.openai.com/v1`)   |
-| API key     | This is the access token to authorize your API call. <br />To get an API, follow these steps:<ol><li>Create an account and sign in at [OpenAI](https://platform.openai.com/).</li><li> Go to the [API key page](https://platform.openai.com/account/api-keys) to create a new secret key. </li><li>Copy the API key and save this somewhere safe.</li></ol> |
+| Token     | This is the access token to authorize your API call. <br />To get an API, follow these steps:<ol><li>Create an account and sign in at [OpenAI](https://platform.openai.com/).</li><li> Go to the [API key page](https://platform.openai.com/account/api-keys) to create a new secret key. </li><li>Copy the API key and save this somewhere safe.</li></ol> |
 
 {{% alert color="info" %}}
 If you have signed up for an OpenAI account and are using free trial credits, note that the credits are only valid for three months after the account is created (not after the API key is created). To continue using the OpenAI API with an account that is more than three months old, you must top up your account balance with credit and create a new API key. For more details, see the [OpenAI API reference](https://platform.openai.com/docs/api-reference/authentication).
@@ -130,10 +131,8 @@ The following inputs are required for the Azure OpenAI configuration:
 | DisplayName    | This is the name identifier of a configuration (for example, *MyConfiguration*). |
 | API type       | Select `AzureOpenAI`.<br />For more information, see the [Technical Reference](#technical-reference) section. |
 | Endpoint       | This is the API endpoint (for example, `https://your-resource-name.openai.azure.com/openai/deployments/`).<br />For details on how to obtain `your-resource-name`, see the [Obtaining Azure OpenAI Resource Name](#azure-resource-name) section below. |
-| DeploymentName | This is the deployment name you chose when you deployed the model. Deployments provide endpoints to the Azure OpenAI base models or your fine-tuned models.<br />To check the deployment name, go to [Azure OpenAI](https://oai.azure.com/) and check the deployment name under **Deployments**. |
-| API version    | This is the API version to use for this operation. It follows the `yyyy-MM-dd` format. For supported versions, see [Azure OpenAI documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference). The supported versions can vary depending on the type of model, so make sure to look for the right section (such as Chat Completions, Image Generation, or Embeddings) on that page. |
-| API key        | This is the access token to authorize your API call.         |
 | Key type       | This is the type of token that is entered in the API key field. For Azure OpenAI, two types of keys are currently supported: Microsoft Entra token and API key. <br />For details on how to generate a Microsoft Entra access token, see [How to Configure Azure OpenAI Service with Managed Identities](https://learn.microsoft.com/en-gb/azure/ai-services/openai/how-to/managed-identity). Alternatively, if your organization allows it, you could use the Azure `api-key` authentication mechanism. For details on how to obtain an API key, see the [Obtaining Azure OpenAI API keys](#azure-api-keys) section below. For more information, see the [Technical Reference](#technical-reference) section. |
+| Token / API key        | This is the access token to authorize your API call.         |
 
 {{% alert color="info" %}}
 For the Azure OpenAI configuration, each model needs a separate deployment so that it can be used. In order to benefit from multiple supported operations in your Mendix app, you need to create multiple configuration objects—one for every deployed model. For details, see the [Azure OpenAI Service REST API reference](https://learn.microsoft.com/en-gb/azure/ai-services/openai/reference).
@@ -154,6 +153,20 @@ For the Azure OpenAI configuration, each model needs a separate deployment so th
 3. Go to the **Resource** tab.
 4. Go to **Current resource** and click **JSON view**.
 5. Use the value of the **key1** or **key2** field as your API key while setting up the configuration. Note that these keys might not be available, depending on your organization's security settings. 
+
+#### Configuring the Deployed Models
+
+A [Deployed Model](/appstore/modules/genai/commons/#deployed-model) represents a GenAI model instance that can be used by the app to generate text, embeddings or images. For every model you want to invoke from your app, you need to create a record. For OpenAI a set of common models will be prepopulated automatically on saving the configuration. For Azure OpenAI the technical model names depend on the deployment names that were chosen while deploying the models in the [Azure Portal](https://oai.azure.com/resource/deployments). That is why you need to configure the models manually in your Mendix app.
+
+1. If needed, click the three dots for an OpenAI configuration to open the "Manage Deployed Models" pop-up.
+2. For every additional model, add a record. The following fields are required:
+
+| Field      | Meaning                                                        |
+| -------------- | ------------------------------------------------------------ |
+| Display name | This is the reference to the model for app users in case they have to select which one is to be used. |
+| Deployment name | This is the technical reference for the model. For OpenAI this is equal to the [model aliases](https://platform.openai.com/docs/models#current-model-aliases). For Azure OpenAI this is the deployment name from the [Azure Portal](https://oai.azure.com/resource/deployments).
+| Output modality| Describes what the output of the model is. This connector currently supports Text, Embeddings and Image.
+| Azure API version    | Azure OpenAI only. This is the API version to use for this operation. It follows the `yyyy-MM-dd` format. For supported versions, see [Azure OpenAI documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference). The supported versions can vary depending on the type of model, so make sure to look for the right section (such as Chat Completions, Image Generation, or Embeddings) on that page. |
 
 ### Chat Completions Configuration {#chat-completions-configuration} 
 
