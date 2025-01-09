@@ -221,6 +221,8 @@ Ensure that only legitimate SCIM clients can interact with your app via the SCIM
 
 Another option is to generate an API key yourself and submit it to the SCIM module via a SCIM constant. To do this, set the constant `SCIM.Default_APIKey_Value` in the **Acceptance Environment Details** of the Mendix application environment. This approach enables you to manage API security without requiring a local administrator to log in to your application. It provides the flexibility to use the same API key for multiple applications using the SCIM module.
 
+{{% alert color="info" %}}Starting from UserCommons version 2.0.0, If the IdP does not specify the time zone and language, these settings will be set according to default **App Settings** of your app. If no default is available, they remain unset. Existing users retain their previously set values.{{% /alert %}}
+
 #### User Provisioning
 
 In the **Provisioning** tab of the SCIM server configuration, you need to configure the following fields:
@@ -247,7 +249,7 @@ The custom microflow name must begin with the string `UC_CustomProvisioning` and
 1. **UserInfoParameter(UserCommons.UserInfoParam)**: A Mendix object containing user claims information through its associated objects. You can use this  parameter to retrieve user provisioning configuration information.
 2. **User(System.User)**: A Mendix object representing the user to be provisioned. Ensure that the selected microflow matches this parameter signature.
 
- It will be executed after user creation or update of user. If you have added a new microflow, you need to refresh the module containing your microflow as described in the [Mx Model Reflection](/appstore/modules/model-reflection/).
+ The microflow must return a **System.User** object to ensure proper user provisioning and updates. It will be executed after user creation or update of user. However, starting from version 2.0.0 of the UserCommons module, this is no longer mandatory. If you have added a new microflow, you need to refresh the module containing your microflow as described in the [Mx Model Reflection](/appstore/modules/model-reflection/).
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/scim/user_commons.png" class="no-border" >}}
 

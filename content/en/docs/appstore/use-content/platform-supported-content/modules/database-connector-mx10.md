@@ -17,6 +17,12 @@ If you are using Studio Pro 10.12, make sure to use the latest version 3.0.0 [Ex
 
 This document provides instructions on how to configure and use the External Database Connector. For information on the database wizard and how to connect using the External Database Connection document, see [External Database Connection](/refguide/external-database-connection/). For information on how to create and validate SQL queries, see [Use the External Database Connector](/refguide/use-the-external-database-connector/).
 
+{{% alert color="info" %}}
+For Studio Pro 10.18, the External Database Connector uses a different approach to connect to databases during design time. This functionality enhances consistency between design time and runtime environments. To enable this beta feature, use the flag: `--enable-live-preview`
+
+For information on how to connect using the External Database Connection document with a feature flag, see [External Database Connection](/refguide/use-the-external-database-connector/#enable-live-preview).
+{{% /alert %}}
+
 ### Typical Use Cases
 
 Use this module if you need to connect to databases and select data to use in your app. This connector allows you to directly test connections and queries during configuration in Studio Pro (design time). 
@@ -81,11 +87,14 @@ After [installing](#installation) the connector, get started by doing the follow
 
 4. Click **Save** to open the external database document for this database.
 
-{{% alert color="info" %}}
-Connection details are stored as constants, their values are stored in the Active configuration of the user, the password is stored as a private value.
-{{% /alert %}}
+{{% alert color="info" %}} Values for these constants are stored in the active configuration of the user. The password is stored as a private value.
 
-Now you can start [querying the database](#query-database) to select data to use in your app.
+Constants are an environment variable whose values can differ per environment, When you deploy an app on Mendix Cloud, values for constants are not added. For more information, see [Constants](https://docs.mendix.com/refguide/configuration/#constants){{% /alert %}}
+
+{{% alert color="info" %}}
+For free apps, make sure to add the default values to the constant in Studio Pro. For more information, see the [Deploying a Free App](https://docs.mendix.com/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/#deploy-free-app) section below. {{% /alert %}}
+
+Now, you can [query the database](#query-database) to select data to use in your app.
 
 ### Querying a Database {#query-database}
 
