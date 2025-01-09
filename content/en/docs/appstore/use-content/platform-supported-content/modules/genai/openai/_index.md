@@ -181,15 +181,21 @@ The `OpenAIDeployedModel` is compatible with the two [Chat Completions operation
 - Chat Completions (with history)
 - Chat Completions (without history)
 
-The internal chat completion microflows within the OpenAI connector support `JSON mode`, [function calling](#chatcompletions-functioncalling), and [vision](#chatcompletions-vision). Make sure to check the actual compatibility of the available models with these functionalities, as this changes over time. 
+The internal chat completion logic within the OpenAI connector supports `JSON mode`, [function calling](#chatcompletions-functioncalling), and [vision](#chatcompletions-vision). Make sure to check the actual compatibility of the available models with these functionalities, as this changes over time. We will list any specific OpenAI microflow actions from the toolbox below.
+
+#### JSON mode {#json-mode}
+
+When JSON mode is used, the model is programmatically instructed to return valid JSON. For OpenAI you have to explicitly mention the necessity of a JSON structure in a message in the conversation, e.g. the system prompt. Additionally after creating the request, but before passing it to the chat completions operation, you use the toolbox action `Set Response Format` to set the required response format to JSON. 
 
 #### Function Calling {#chatcompletions-functioncalling}
 
 Function calling enables LLMs to connect with external tools to gather information, execute actions, convert natural language into structured data, and much more. Function calling thus enables the model to intelligently decide when to let the Mendix app call one or more predefined function microflows to gather additional information to include in the assistant's response.
 
-OpenAI does not call the function. The model returns a tool called JSON structure that is used to build the input of the function (or functions) so that they can be executed as part of the chat completions operation. Functions in Mendix are essentially microflows that can be registered within the request to the LLM​. The OpenAI connector takes care of handling the tool call response as well as executing the function microflows until the API returns the assistant's final response.
+OpenAI does not call the function. The model returns a tool called JSON structure that is used to build the input of the function (or functions) so that they can be executed as part of the chat completions operation. Functions in Mendix are essentially microflows that can be registered within the request to the LLM​. The OpenAI connector takes care of handling the tool call response as well as executing the function microflows until the API returns the assistant's final response. 
 
-Function microflows take a single input parameter of type string or no input parameter and must return a string.
+This is all part of the implementation that is executed by the GenAI Commons chat completions operations mentioned before. As a developer you have to make the system aware of your functions and what these do by registering the function(s) to the request. This is done using the GenAI Commons operation [Tools: Add Function to Request](#add-function-to-request) once per function before passing the request to the chat completions operation.
+
+Currently, the connector supports the calling of Function microflows that take a single input parameter of type string or no input parameter and return a string.
 
 {{% alert color="warning" %}}
 Function calling is a very powerful capability and should be used with caution. Function microflows run in the context of the current user, without enforcing entity access. You can use `$currentUser` in XPath queries to ensure that you retrieve and return only information that the end-user is allowed to view; otherwise, confidential information may become visible to the current end-user in the assistant's response.
@@ -197,20 +203,18 @@ Function calling is a very powerful capability and should be used with caution. 
 Mendix also strongly advises that you build user confirmation logic into function microflows that have a potential impact on the world on behalf of the end-user. Some examples of such microflows include sending an email, posting online, or making a purchase.
 {{% /alert %}}
 
-You can use function calling in all chat completions operations by adding a `ToolCollection` with a `Function` via the [Tools: Add Function to Request](/appstore/modules/genai/commons/) operation.
-
 For more information, see [Function Calling](/appstore/modules/genai/function-calling/).
 
 #### Vision {#chatcompletions-vision}
 
-Vision enables models like GPT-4o and GPT-4 Turbo to interpret and analyze images, allowing them to answer questions and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To make use of vision inside the OpenAI connector, an optional [FileCollection](/appstore/modules/genai/commons/) containing one or multiple images must be sent along with a single message.
+Vision enables models like GPT-4o and GPT-4 Turbo to interpret and analyze images, allowing them to answer questions and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To make use of vision inside the OpenAI connector, an optional [FileCollection](/appstore/modules/genai/commons/#filecollection) containing one or multiple images must be sent along with a single message.
 
-For `Chat Completions without History`, `FileCollection` is an optional input parameter. For `Chat Completions with History`, `FileCollection` can optionally be added to individual user messages using [Chat: Add Message to Request](/appstore/modules/genai/commons/).
+For `Chat Completions without History`, `FileCollection` is an optional input parameter. For `Chat Completions with History`, `FileCollection` can optionally be added to individual user messages using [Chat: Add Message to Request](/appstore/modules/genai/commons/#chat-add-message-to-request).
 
-Use the two exposed microflows [Files: Initialize Collection with OpenAI File](#initialize-filecollection) and [Files: Add OpenAIFile to Collection](#add-file) to construct the input with either `FileDocuments` (for vision, it needs to be of type `Image`) or `URLs`. The same file operations exposed by the GenAI commons module can be used for vision requests with the OpenAIConnector; however, they do not support the optional `Detail` attribute of the `OpenAIFileContent` entity.
+Use the two OpenAI specific microflow actions from the toolbox [Files: Initialize Collection with OpenAI File](#initialize-filecollection) and [Files: Add OpenAIFile to Collection](#add-file) to construct the input with either `FileDocuments` (for vision, it needs to be of type `Image`) or `URLs`. There are similar file operations exposed by the GenAI commons module that can be used for vision requests with the OpenAIConnector; however, these generic operations do not support the optional OpenAI-specific `Detail` attribute.
 
 {{% alert color="info" %}}
-OpenAI and Azure OpenAI for vision do not yet provide feature parity when it comes to combining functionalities. In other words, Azure OpenAI does not support the use of JSON mode and function calling in combination with image (vision) input.
+OpenAI and Azure OpenAI for vision do not necessarily for all models provide feature parity when it comes to combining functionalities. In other words, Azure OpenAI does not support the use of JSON mode and function calling in combination with image (vision) input for certain models, so make sure to check the [Azure Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models).
 
 When you use Azure OpenAI, it is recommended to set the optional `MaxTokens` input parameter; otherwise, the return output may be cut off.
 {{% /alert %}}
@@ -219,14 +223,17 @@ For more information on vision, see [OpenAI](https://platform.openai.com/docs/gu
 
 ### Image Generations Configuration {#image-generations-configuration}
 
-In order to implement image generations into your Mendix application, you can use the microflows in the **USE_ME > Operations > ImageGenerations** folder. Currently, one microflow for image generations is exposed as a microflow action under the **OpenAI (Operations)** category in the **Toolbox** in Mendix Studio Pro.
+OpenAI also provides image generation capabilities which can be invoked using this connector module. The `OpenAIDeployedModel` entity is compatible with the image generation operation from GenAI Commons.
 
-The microflow requires a specialized [Connection](/appstore/modules/genai/commons/) of type `OpenAIConnection` that determines the model and endpoint to use, and it also requires optional [ImageOptions](/appstore/modules/genai/commons/) to determine optional attributes like the height and width of the image. The `Response` for a single image can be processed using [Get Generated Image (Single)](/appstore/modules/genai/commons/) to store the image in your custom `Image` entity.
+In order to implement image generations into your Mendix application, you can use the Image generation microflow actions from GenAI Commons directly. When developing your microflow, you can drag and drop it from the toolbox: find it under the **GenAI (Generates)** category in the **Toolbox** in Mendix Studio Pro:
 
-For technical details, see the [Technical Reference](#technical-reference) section.
+- Generate Image
 
-* For an OpenAI API configuration, the desired model must be specified for every call with the `Model` attribute in the [Connection](/appstore/modules/genai/commons/).
-* For the Azure OpenAI configuration, the model is already determined by the deployment in the [Azure OpenAI portal](https://oai.azure.com/portal). Any model explicitly specified will be ignored and hence can be left empty. 
+When you drag this operation into your app microflow logic, you use the `user prompt` to describe the desired image, and for the `DeployedModel` you pass the relevant `OpenAIDeployedModel` that supports image generation. Additional parameters like the height and the width can be configured using `Image Generation: Create ImageOptions`, see [documentation](/appstore/modules/genai/commons/#imageoptions-create). To add OpenAI-specific options, like quality and style an extension to the ImageOptions can be added using `Image Generation: Set ImageOptions Extension`. 
+
+A generated image need to be stored in a custom entity that inherits from the `System.Image` entity. The `Response` from the single image operation can be processed using [Get Generated Image (Single)](/appstore/modules/genai/commons/#image-get-single) to store the image in your custom `Image` entity.
+
+More technical details are provided by the in-model documentation in annotations and the documentation fields for microflows, parameters, and the domain model. See the [Technical Reference](#technical-reference) section for guidance on how to find it.
 
 ### Embeddings Configuration {#embeddings-configuration}
 
