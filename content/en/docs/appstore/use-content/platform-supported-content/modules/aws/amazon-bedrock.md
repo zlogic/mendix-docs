@@ -105,7 +105,7 @@ You can follow a similar approach to implement any of the other operations in **
 
 ### Chatting with Large Language Models using the ChatCompletions Operation
 
-A common use case of the Amazon Bedrock Connector is the development of chatbots and chat solutions. The **ChatCompletions (without history / with history)** operations offer an easy way to connect to most of the text-generation models available on Amazon Bedrock. The ChatCompletions operations are built on top of Bedrock's Converse API, allowing you to talk to different models without the need of a model-specific implementation. 
+A common use case of the Amazon Bedrock Connector is the development of chatbots and chat solutions. The **ChatCompletions (without history / with history)** operations offer an easy way to connect to most of the text-generation models available on Amazon Bedrock. The ChatCompletions operations are built on top of Bedrock's Converse API, allowing you to talk to different models without the need of a model-specific implementation. For more information on the ChatCompletion operations, check out the [GenAI documentation](/appstore/modules/genai/commons/#chat-completions).
 
 For an overview of supported models and model-specific capabilities and limitations, see [Amazon Bedrock Converse API](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features) in the AWS documentation.
 
@@ -208,33 +208,9 @@ For additional information about available operations, refer to the sections bel
 
 ### GenAICommons-Based Operations
 
-#### ChatCompletions (Without History) {#chat-completions-without-history}
-
-The `ChatCompletions (without history)` activity can be used for any conversations with a variety of supported LLMs. There is no option to keep the conversation history in mind. 
-
-This operation leverages the Amazon Bedrock Converse API. For a full overview of supported models and model capabilities, please refer to the [AWS Documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features).
-
-The input and output for this service are shown in the table below:
-
-| Input | Output |
-| --- | --- |
-| `UserPrompt (string)`, `GenAICommons.DeployedModel (object)`, `GenAICommons.Request (object)`, `FileCollection (object)`| `GenAICommons.Response (object)`|
-
-`GenAICommons.Request` and `FileCollection` can be empty, in which case they are not sent to the Bedrock API.
-
 #### ChatCompletions (With History) {#chat-completions-with-history}
 
-The `ChatCompletions (with history)` activity can be used for any conversations with a variety of supported LLMs. It is possible for it to keep the conversation history in mind. 
-
-This operation leverages the Amazon Bedrock Converse API. For a full overview of supported models and model capabilities, please refer to the [AWS Documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features).
-
-The input and output for this service are shown in the table below:
-
-| Input | Output |
-| --- | --- |
-| `GenAICommons.Request (object)`, `GenAICommons.DeployedModel (object)`| `GenAICommons.Response (object)`|
-
-In order to pass a conversation history to the flow, the list of previous messages must be associated to the input request. 
+The `ChatCompletions (with history)` activity can be used for any conversations with a variety of supported LLMs. More information can be found about the operation [here](/appstore/modules/genai/commons/#chat-completions-with-history).
 
 Some capabilities of the chat completions operations are currently only available for specific models:
 
