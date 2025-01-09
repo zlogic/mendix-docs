@@ -341,7 +341,7 @@ The `Chat Completions (with history)` operation supports more complex use cases 
 | --- | --- | --- |
 | `Response` | [Response](#response) | A `Response` object that contains the assistant's response. |
 
-##### Generate Image
+##### Generate Image {#generate-image}
 
 The `Generate Image` operation supports the generation of images based on a `UserPrompt` passed as string. The returned `Response` contains a `FileContent` via `FileCollection` and `Message`. See microflows in the `Handle Response` folder to construct the output.
 
