@@ -221,7 +221,7 @@ The following toolbox actions can be used to retrieve knowledge data from the kn
 
     {{% alert color="info" %}}
     You must define your entity specialized from `KnowledgeBaseChunk`, which refers to another entity used during the insertion stage.
-{   {% /alert %}}
+    {{% /alert %}}
 
 3. `Embed & Retrieve Nearest Neighbors` retrieves a list of type [KnowledgeBaseChunk](/appstore/modules/genai/commons/#knowledgebasechunk-entity) from the knowledge base that are most similar to a given `Content` by calculating the cosine similarity of its vectors.
 4. `Embed & Retrieve Nearest Neighbors & Associate` combines the above actions `Retrieve & Associate` and `Embed & Retrieve Nearest Neighbors`.
