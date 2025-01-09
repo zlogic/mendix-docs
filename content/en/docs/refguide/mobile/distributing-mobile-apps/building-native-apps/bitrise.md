@@ -144,4 +144,4 @@ Now, every time some runs **Build Native App** to update the application bundle,
 
 ## Additional Considerations
 
-Our MVP Marcel Groeneweg has posted a blog post about optimizing Mendix native mobile builds with Bitrise even further. Check it out on [Medium](https://marcel-groeneweg.medium.com/mendix-native-builds-with-bitrise-6ce56f0bb8fc) (we cannot take responsibility for third-party recommendations).
+Our MVP Marcel Groeneweg has written a blog post about optimizing Mendix native mobile builds with Bitrise. Check it out on [Medium](https://marcel-groeneweg.medium.com/mendix-native-builds-with-bitrise-6ce56f0bb8fc) (Mendix cannot take responsibility for third-party recommendations).
