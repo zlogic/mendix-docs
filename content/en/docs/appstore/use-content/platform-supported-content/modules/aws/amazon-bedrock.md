@@ -210,7 +210,7 @@ For additional information about available operations, refer to the sections bel
 
 #### ChatCompletions (With History) {#chat-completions-with-history}
 
-The `ChatCompletions (with history)` activity can be used for any conversations with a variety of supported LLMs. More information can be found about the operation [here](/appstore/modules/genai/commons/#chat-completions-with-history).
+The `ChatCompletions (with history)` and `ChatCompletions (without history)` activities can be used with a variety of supported LLMs. More information can be found about the operations [here](/appstore/modules/genai/commons/#chat-completions).
 
 Some capabilities of the chat completions operations are currently only available for specific models:
 
@@ -267,45 +267,25 @@ The history can be enabled using the `SessionId` parameter on the RetrieveAndGen
 This activity was introduced in Amazon Bedrock Connector version 3.1.0.
 {{% /alert %}}
 
-The `Generate Image` operation can be used to generate one or more images. Currently *Amazon Titan Image Generator G1* is the only supported model for image generation of the Amazon Bedrock Connector. 
+The `Generate Image` operation can be used to generate one or more images. More information can be found about the operations [here](/appstore/modules/genai/commons/#generate-image). Currently *Amazon Titan Image Generator G1* is the only supported model for image generation of the Amazon Bedrock Connector. 
 
-The input and output for this service are shown in the table below:
-
-| Input | Output |
-| --- | --- |
-| `UserPrompt (string)`, `GenAICommons.DeployedModel (object)`, `GenAICommons.ImageOptions (object)`| `GenAICommons.Response (object)`|
-
-`GenAICommons.ImageOptions` can be an empty object. If provided, it allows you to set additional options for Image Generation. 
-
-`GenAICommons.ImageOptions` can be created by using the `Image: Create Options` operation of GenAI Commons.
+`GenAICommons.ImageOptions` can be an empty object. If provided, it allows you to set additional options for Image Generation and can be created by using the `Image: Create Options` operation of GenAI Commons.
 
 To retrieve actual image objects from the response, the `Image: Get Generated Image (Single)` or `Image: Get Generated Images (List)` helper operations from GenAICommons can be used. 
 
 For Titan Image models, the `Image Generation: Add Titan Image Extension` operation can be used to configure Titan image-specific values (currently only *NegativeText*). 
 
-#### Embeddings (single string) {#embeddings-single-string}
+#### Generate Embeddings (String) {#embeddings-single-string}
 
-The `Generate Embeddings (String)` activity can be used to generate an embedding vector for a given input string with one of the Cohere Embed models or Titan Embeddings v2. 
-
-The input and output for this service are shown in the table below:
-
-| Input | Output |
-| --- | --- |
-| `InputText (string)`, `GenAICommons.DeployedModel (object)`, `GenAICommons.EmbeddingsOptions (object)` | `GenAICommons.EmbeddingsResponse (object)`|
+The `Generate Embeddings (String)` activity can be used to generate an embedding vector for a given input string with one of the Cohere Embed models or Titan Embeddings v2. More information can be found about the operations [here](/appstore/modules/genai/commons/#embeddings-string).
 
 For Cohere Embed and Titan Embeddings, the request can be associated to their respective EmbeddingsOptions extension object which can be created with the [Embeddings Options: Add Cohere Embed Extension](#add-cohere-embed-extension) or [Embeddings Options: Add Titan Embeddings Extension](#add-titan-embeddings-extension) operation. Through this extension, it is possible to tailor the operation to more specific needs. This operation can easily be replaced or combined with the Embeddings (single string) operation inside of the [OpenAI connector](https://marketplace.mendix.com/link/component/220472). 
 
 Currently, embeddings are available for the Cohere Embed family and or Titan Embeddings v2.
 
-#### Embeddings (chunk collection) {#embeddings-chunk-collection}
+#### Generate Embeddings (Chunk Collection) {#embeddings-chunk-collection}
 
-The `Generate Embeddings (Chunk Collection)` activity can be used to generate a collection of embedding vectors for a given collection of text chunks with one of the Cohere Embed models or Titan Embeddings v2. 
-
-The input and output for this service are shown in the table below:
-
-| Input | Output |
-| --- | --- |
-| `GenAICommons.ChunkCollection (object)`, `GenAICommons.DeployedModel (object)`, `GenAICommons.EmbeddingsOptions (object)` | `GenAICommons.EmbeddingsResponse (object)`|
+The `Generate Embeddings (Chunk Collection)` activity can be used to generate a collection of embedding vectors for a given collection of text chunks with one of the Cohere Embed models or Titan Embeddings v2. More information can be found about the operations [here](/appstore/modules/genai/commons/#embeddings-chunk-collection).
 
 For each model family, the request can be associated to an extension of the EmbeddingsOptions object which can be created with either the [Embeddings Options: Add Cohere Embed Extension](#add-cohere-embed-extension) or the [Embeddings Options: Add Titan Embeddings Extension](#add-titan-embeddings-extension) operation. Through this extension, it is possible to tailor the operation to more specific needs. This operation can easily be replaced or combined with the Embeddings (chunk collection) operation inside of the [OpenAI connector](https://marketplace.mendix.com/link/component/220472). 
 
