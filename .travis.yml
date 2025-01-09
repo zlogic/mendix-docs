@@ -63,7 +63,7 @@ install:
   # Output header in bold white on green
   - printf '\033[37;42;1m' > $TRAVIS_BUILD_DIR/hugo.log
   - echo "HUGO was run for environment $TRAVIS_BRANCH" >> $TRAVIS_BUILD_DIR/hugo.log
-  - printf '\033[0;22mm' >> $TRAVIS_BUILD_DIR/hugo.log
+  - printf '\033[0;22m' >> $TRAVIS_BUILD_DIR/hugo.log
   # Set pipefail so that if Hugo fails the whole job fails
   - set -o pipefail
   # put the flags in different config files controlled by environment matching $TRAVIS_BRANCH

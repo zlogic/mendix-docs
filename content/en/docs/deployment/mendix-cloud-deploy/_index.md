@@ -151,16 +151,17 @@ If you have a Standard, Premium, or Premium Plus plan, you can redeem virtual cr
 
 The technical details for the cloud resource packs are listed below.
 
-| Pack                                                 | App RAM | App vCPU | DB RAM  | DB vCPU | DB Storage | File Storage |
-| ---------------------------------------------------- | ------- | -------- | ------- | ------- | ---------- | ------------ |
-| XS21                                                 | 1 GiB   | 0.25     | 1 GiB   | 2       | 5 GiB      | 10 GiB       |
-| S21,<br>S21 Premium                                  | 2 GiB   | 0.5      | 2 GiB   | 2       | 10 GiB     | 20 GiB       |
-| M21,<br>M21 Premium                                  | 4 GiB   | 1        | 4 GiB   | 2       | 20 GiB     | 40 GiB       |
-| L21,<br>L21 Premium                                  | 8 GiB   | 2        | 8 GiB   | 2       | 40 GiB     | 80 GiB       |
-| XL21,<br>XL21 Premium,<br>XL21 Premium Plus          | 16 GiB  | 4        | 16 GiB  | 4       | 80 GiB     | 160 GiB      |
-| XXL21,<br>XXL21 Premium,<br>XXL21 Premium Plus       | 32 GiB  | 8        | 32 GiB  | 4       | 160 GiB    | 320 GiB      |
-| XXXL21,<br>XXXL21 Premium,<br>XXXL21 Premium Plus    | 64 GiB  | 16       | 64 GiB  | 8       | 320 GiB    | 640 GiB      |
-| XXXXL21,<br>XXXXL21 Premium,<br>XXXXL21 Premium Plus | 128 GiB | 32       | 128 GiB | 16      | 640 GiB    | 1280 GiB     |
+| Pack                                                                   | App RAM | App vCPU | DB RAM  | DB vCPU | DB Storage | File Storage |
+| ---------------------------------------------------------------------- | ------- | -------- | ------- | ------- | ---------- | ------------ |
+| XS21                                                                   | 1 GiB   | 0.25     | 1 GiB   | 2       | 5 GiB      | 10 GiB       |
+| S21,<br>S21 Premium                                                    | 2 GiB   | 0.5      | 2 GiB   | 2       | 10 GiB     | 20 GiB       |
+| M21,<br>M21 Premium                                                    | 4 GiB   | 1        | 4 GiB   | 2       | 20 GiB     | 40 GiB       |
+| L21,<br>L21 Premium                                                    | 8 GiB   | 2        | 8 GiB   | 2       | 40 GiB     | 80 GiB       |
+| XL21,<br>XL21 Premium,<br>XL21 Premium Plus                            | 16 GiB  | 4        | 16 GiB  | 4       | 80 GiB     | 160 GiB      |
+| XXL21,<br>XXL21 Premium,<br>XXL21 Premium Plus                         | 32 GiB  | 8        | 32 GiB  | 4       | 160 GiB    | 320 GiB      |
+| XXXL21,<br>XXXL21 Premium,<br>XXXL21 Premium Plus                      | 64 GiB  | 16       | 64 GiB  | 8       | 320 GiB    | 640 GiB      |
+| XXXXL21,<br>XXXXL21 Premium,<br>XXXXL21 Premium Plus                   | 128 GiB | 32       | 128 GiB | 16      | 640 GiB    | 1280 GiB     |
+| XXXXL21-5XLDB,<br>XXXXL21-5XLDB Premium,<br>XXXXL21-5XLDB Premium Plus | 128 GiB | 32       | 256 GiB | 32      | 1280 GiB   | 1280 GiB     |
 
 {{% alert color="info" %}}Premium plans provide multi-AZ fallback, and Premium Plus plans provide multi-region fallback. For more details, see [Additional Resources](#additional-resources), below.{{% /alert %}}
 
@@ -201,6 +202,10 @@ With a Premium plan, your app can be [horizontally scaled](/developerportal/depl
 Fallback ensures that the data in your database is automatically copied to a database in a second AZ. This ensures that all your data is still available to your app if there is an issue with the primary availability zone and app instances have to be started in the second AZ. 
 
 The connections between AZs are low latency. However, the implementation of these features means that your monitoring may indicate that apps deployed to Mendix Cloud under a Premium plan suffer an additional latency of a few milliseconds compared with apps deployed using a Standard plan. For a well-designed app, this difference is not noticeable to end-users. 
+
+#### Application Data Replication
+
+With a premium plan, you can replicate application data in Mendix Cloud to another region for security and disaster recovery purposes. For more information, see the [Application Data Replication](/control-center/security-settings/#application-data-replication) section in *Security Settings in Control Center*.
 
 #### Regional Fallback{#regional-fallback}
 

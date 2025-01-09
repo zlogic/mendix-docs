@@ -185,7 +185,6 @@ To invoke a Bedrock agent for your Mendix app, do the following steps:
 7. Select a microflow that takes an **AmazonBedrockConnector.InvokeAgentResponse** object as an input and handles that response.
     This is necessary because InvokeAgent is an asynchronous operation which means that it will not necessarily finish when the process that it was invoked from finishes. By giving the operation a handler microflow, the response can be handled as soon as it arrives. For an example handler microflow, see **AmazonBedrockConnector.InvokeAgentResponse_Handle** in the connector module. This microflow logs the response, so you can also use it just to investigate the response.
 
-
 ### Token Usage {#tokenusage}
  
 [Token usage](/appstore/modules/genai/commons/#token-usage) monitoring is now possible for the following operations: 

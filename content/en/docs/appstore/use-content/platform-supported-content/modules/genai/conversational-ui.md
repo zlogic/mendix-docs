@@ -19,7 +19,7 @@ Typical use cases for Conversational UI include the following:
 * Create a chat interface for users to chat with Large Language Models (LLM). 
 * Allow users to switch between different implementations by switching providers. 
 * Include advanced capabilities to control the model's behavior, for example, by setting the temperature parameter.
-* Easily extend the chat interface with advanced concepts, such as RAG or the ReAct pattern. For more information, see [Using Generative AI](/appstore/modules/genai/using-gen-ai/).
+* Easily extend the chat interface with advanced concepts, such as RAG or the ReAct pattern. For more information, see [Get Started with Generative AI](/appstore/modules/genai/get-started/).
 
 ### Features {#features}
 
@@ -247,7 +247,6 @@ You may need to use the following classes when building a more complex custom pa
 | `card--full-height` | To be added to a `card` container, in case the chat interface snippet needs to be displayed as a card | 
 | `layoutgrid--full-height` | To be added to any layoutgrid (1 row is supported) around the chat UI components |
 | `dataview--display-contents` | To be added to any dataview around chat components to prevent it from breaking the flex-flow on the page | 
-
 
 ### Token Monitor Snippets {#snippet-token-monitor}
 
