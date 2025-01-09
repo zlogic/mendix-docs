@@ -235,7 +235,7 @@ When handling numeric types in OQL v2 (Integer, Long, and Decimal), the result o
 * Long
 * Integer
 
-If any side of the operation is of a non-numeric type, no casting is performed, and the result is handled by the , as in OQL v1. See [Expression syntax](/refguide/oql-expression-syntax/#type-coercion) for more information.
+If any side of the operation is of a non-numeric type, no casting is performed, and the result is handled by the database, as in OQL v1. See [Expression syntax](/refguide/oql-expression-syntax/#type-coercion) for more information.
 
 ### The Result Type of `ROUND` Is Now `Decimal`
 
