@@ -149,7 +149,7 @@ If you find that you have a slow sub-microflow, begin the process of identifying
 
 ### Big Operations and Memory Issue
 
-If you notice that with bigger operations, a microflow becomes slower, it might be that there is something kept in memory. For instance, a commit list that grows over 10k objects might affect the application's memory performance.
+If you notice that with bigger operations, a microflow becomes slower, it might be that there is something kept in memory. For instance, a commit list that grows over 10k objects might affect the application's memory performance. To solve such issues, consider running the task asynchronously and adding batching.
 
 ### General Slow Microflow (No Specific Activity Identified)
 
