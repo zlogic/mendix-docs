@@ -1040,7 +1040,7 @@ OFFSET 2
 The clause takes multiple select queries and combines their results into a single result set.
 The resulting set by default only includes distinct rows. The `ALL` keyword can be used to include all rows. Rows are considered distinct if the combination of the column values is distinct from all other rows. Comparison logic of values is the same as the `DISTINCT` keyword of a `SELECT` clause.
 
-All select queries must define the same number of columns in the same order and their datatypes should match. The resulting column names will be those used in the very first `SELECT` clause.
+All select queries must define the same number of columns in the same order and their data types should be compatible. The resulting column names will be those used in the very first `SELECT` clause.
 
 ### Syntax
 
@@ -1056,7 +1056,17 @@ The syntax is as follows:
     [ OFFSET number ]
 ```
 
-{{% todo %}} Document data type behavior when corresponding oql v2 issue is finished {{% /todo %}}
+### Result data type {#oql-union-type}
+
+The data types used in `select_query` statements are considered when determining the final return type of the `UNION` clause. All data types used in `select_query` statements must be compatible. All data types are compatible with themselves. Differing types are only compatible in these cases:
+- `UNION` of numeric types `INTEGER`, `LONG` and `DECIMAL`. The return type is the numeric type found in the `select_query` statements with the highest precedence (see [Type Precedence](/refguide/oql-expression-syntax/#type-coercion) for more information). 
+- `UNION` of limited and unlimited `STRING`. The return type is determined by the largest length of `STRING` attributes in the `select_query` statements.
+- `UNION` of any known type and a `NULL` literal. The result type is the known type.
+
+{{% alert color="warning" %}}
+Oracle Database and SAP HANA databases do not support `UNION` containing unlimited `STRING`
+{{% /alert %}}
+
 
 ### Examples
 
@@ -1156,6 +1166,45 @@ SELECT LastName AS Name FROM Sales.Customer
 | Jane   |
 | Doe    |
 | Moose  |
+
+#### Union of different types
+
+Presume two entities that have columns of types `INTEGER` and `DECIMAL`:
+
+```sql
+SELECT Sale
+FROM Sales.BulkSales
+```
+
+| Sale |
+|------|
+| 350  |
+| 200  |
+
+```sql
+SELECT Sale
+FROM Sales.Sales
+```
+
+| Sale  |
+|-------|
+| 42.25 |
+| 15.5  |
+
+Performing a `UNION` of the entities will result in a column of type `DECIMAL`:
+```sql
+SELECT Sale as CombinedSale FROM Sales.BulkSales
+UNION
+SELECT Sale FROM Sales.Sales
+```
+
+| CombinedSale |
+|--------------|
+| 350          |
+| 200          |
+| 42.25        |
+| 15.5         |
+
 
 #### Union of associations
 
