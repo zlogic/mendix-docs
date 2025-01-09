@@ -111,7 +111,7 @@ For more inspiration or guidance on how to use the above-mentioned microflows in
 #### Chat Completions (without History)
 
 The microflow activity `Chat Completions (without history)` supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request. The operation requires a specialized [Connection](/appstore/modules/genai/commons/#connection) of type SynthiaConnection and a `UserPrompt` as a string. Additional parameters, such as system prompt, can be passed via the optional [Request](/appstore/modules/genai/commons/#request) object.
-Functionally, the prompt strings can be written in a specific way and can be tailored to get the desired result and behavior. For more information on prompt engineering, see the [Read More]({#readmore}) section.
+Functionally, the prompt strings can be written in a specific way and can be tailored to get the desired result and behavior. For more information on prompt engineering, see the [Read More](#readmore) section.
 
 Optionally, you can also use [Function Calling](#function-calling) by adding a [ToolCollection](/appstore/modules/genai/commons/#toolcollection) to the request or you can send [images](#vision) or [documents](#document-chat) along with the user prompt by passing a [FileCollection](/appstore/modules/genai/commons/#filecollection).
 
@@ -243,3 +243,26 @@ The microflow activity `Embeddings (String)` supports scenarios where the vector
 The microflow activity `Embeddings (ChunkCollection)` supports the more complex scenario where a collection of [Chunk](/appstore/modules/genai/commons/#chunkcollection) objects is vectorized in a single API call, such as when converting a collection of text strings (chunks) from a private knowledge base into embeddings. Instead of calling the API for each string, executing a single call for a list of strings can significantly reduce HTTP overhead. The embedding vectors returned after a successful API call will be stored as an `EmbeddingVector` attribute in the same `Chunk` object. Use the exposed microflows of GenAI Commons [Chunks: Initialize ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-create), [Chunks: Add Chunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-chunk), or [Chunks: Add KnowledgeBaseChunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) to construct the input.
 
 To create embeddings, it does not matter whether the ChunkCollection contains Chunks or its specialization KnowledgeBaseChunks. Note that the knowledge base operations handle the embedding generation themselves internally.
+
+## Technical Reference 
+
+The module includes technical reference documentation for the available entities, enumerations, activities, and other items you can use in your application. You can view the information about each object in context by using the **Documentation** pane in Studio Pro.
+
+The **Documentation** pane displays the documentation for the currently selected element. To view it, perform the following steps:
+
+1. In the [View menu](/refguide/view-menu/) of Studio Pro, select **Documentation**.
+2. Click the element for which you want to view the documentation.
+
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/technical-reference/doc-pane.png" >}}
+
+## Implementing GenAI with the Showcase App
+
+For more inspiration or guidance on how to use microflows in your logic, Mendix recommends downloading the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of example use cases and applies almost all of the Mendix Cloud GenAI operations. The starter apps in the [Mendix Components](/appstore/modules/genai/#mendix-components) list can also be used as inspiration or simply adapted for a specific use case.
+
+## Read More{#readmore}
+
+For Anthropic Claude-specific documentation, refer to:
+
+* [Prompt Engineering Guide](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
+* [Tool Use / Function Calling](https://docs.anthropic.com/en/docs/build-with-claude/tool-use)
+* [Vision / Chat with Images](https://docs.anthropic.com/en/docs/build-with-claude/vision)
