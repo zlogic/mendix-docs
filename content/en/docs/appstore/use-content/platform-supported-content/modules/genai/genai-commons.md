@@ -305,7 +305,7 @@ Chat completions operations can be used by passing a [DeployedModel](#deployed-m
 
 We recommend that you adapt to the same interface when developing custom chat completions or image generations operations, such as integration with different AI providers. The generic interfaces are described below. For more detailed information, refer to the documentation of the connector that you want to use, since it may expect specializations of the generic GenAI common entities as an input.
 
-##### Chat Completions (Without History)
+##### Chat Completions (without history)
 
 The `Chat Completions (without history)` operation supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request.
 
@@ -324,9 +324,9 @@ The `Chat Completions (without history)` operation supports scenarios where ther
 | --- | --- | --- |
 | `Response` | [Response](#response) | A `Response` object that contains the assistant's response.|
 
-##### Chat Completions (With History)
+##### Chat Completions (with history) {#chat-completions-with-history}
 
-The `Chat Completions (with history)` operation interface supports more complex use cases where a list of (historical) messages (for example, comprising the conversation or context so far) is sent as part of the request to the LLM.
+The `Chat Completions (with history)` operation supports more complex use cases where a list of (historical) messages (for example, comprising the conversation or context so far) is sent as part of the request to the LLM.
 
 ###### Input Parameters
 
@@ -341,15 +341,15 @@ The `Chat Completions (with history)` operation interface supports more complex 
 | --- | --- | --- |
 | `Response` | [Response](#response) | A `Response` object that contains the assistant's response. |
 
-##### Image Generations
+##### Generate Image {#generate-image}
 
-The `Image Generations` operation interface supports the generation of images based on a `UserPrompt` passed as string. The returned `Response` contains a `FileContent` via `FileCollection` and `Message`. See microflows in the `Connector Building` folder to construct the output.
+The `Generate Image` operation supports the generation of images based on a `UserPrompt` passed as string. The returned `Response` contains a `FileContent` via `FileCollection` and `Message`. See microflows in the `Handle Response` folder to construct the output.
 
 ###### Input Parameters
 
 | Name | Type | Mandatory | Description |
 | --- | --- | --- |--- |
-| `Connection` | [Connection](#connection) | mandatory | This is an object that contains specifications to interact with an AI provider. |
+| `DeployedModel` | [DeployedModel](#deployed-model) | mandatory | The DeployedModel entity replaces the Connection entity. It contains the name of the microflow to be executed for the specified model and other information relevant to connect to a model. The OutputModality needs to be Image. |
 | `UserPrompt` | String | mandatory | This is the description the image will be based on. |
 | `ImageOptions` | [ImageOptions](#imageoptions-entity) | optional | This can be used to pass optional request attributes. |
 
@@ -357,13 +357,13 @@ The `Image Generations` operation interface supports the generation of images ba
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `Response` | [Response](#response) | A `Response` object that contains the assistant's response including a `FileContent` which will be used in [Get Generated Image (Single)](#image-get-single). |
+| `Response` | [Response](#response) | A `Response` object that contains the assistant's response including a `FileContent` which needs to be used in [Get Generated Image (Single)](#image-get-single) or [Get Generated Images (List)]({#image-get-list}).|
 
 #### Text and Files: Build request {#text-build-request}
 
 The following microflows help you construct the input request structures for the operations for text and files defined in GenAI Commons.
 
-##### Chat: Create Request {#chat-create-request}
+##### Create Request {#chat-create-request}
 
 This microflow can be used to create a request for a chat completion operation. This is the request object that contains the top-level functional input for the language model to generate a response.
 
@@ -382,7 +382,7 @@ This microflow can be used to create a request for a chat completion operation. 
 |--- |--- |--- |
 | `Request` |[Request](#request) | This is the created request object. |
 
-##### Chat: Add Message to Request {#chat-add-message-to-request}
+##### Add Message to Request {#chat-add-message-to-request}
 
 This microflow can be used to add a new [Message](#message) to the [Request](#request) object. A message represents the conversation text content and optionally has a collection of files attached that need to be taken into account when generating the response (such as images for vision). Make sure to add messages chronologically so that the most recent message is added last.
 
@@ -399,7 +399,7 @@ This microflow can be used to add a new [Message](#message) to the [Request](#re
 
 This microflow does not have a return value.
 
-##### Chat: Add Stop Sequence {#chat-add-stop-sequence}
+##### Configure Stop Sequence {#chat-add-stop-sequence}
 
 This microflow can be used to add an optional [StopSequence](#stopsequence) to the request. It can be used after the request has been created. If available for the connector and model of choice, stop sequences let models know when to stop generating text.
 
@@ -451,7 +451,7 @@ Use this microflow to add a file to an existing [FileCollection](#filecollection
 
 This microflow does not have a return value.
 
-##### Image: Create ImageOptions {#imageoptions-create}
+##### Image Generation: Create ImageOptions {#imageoptions-create}
 
 This microflow creates new [ImageOptions](#imageoptions-entity).
 
@@ -512,7 +512,7 @@ This microflow does not have a return value.
 
 The following microflows handle the response processing.
 
-##### Get Model Response Text {#chat-get-model-response-text}
+##### Get Response Text {#chat-get-model-response-text}
 
 This microflow can be used to get the content from the latest assistant message over association `Response_Message`. Use this microflow to get the response text from the latest assistant response message. In many cases, this is the main value needed for further logic after the operation or is displayed to the end user.
 
@@ -580,22 +580,18 @@ This operation processes a response that was created by an image generations ope
 
 #### Knowledge Bases and Embeddings: Embeddings {#embeddings}
 
-To make use of embeddings in a Mendix app, GenAI Commons defines interfaces for embedding operations that connectors can adhere to. We recommend that you adapt to the same interface when developing custom embedding operations, such as integration with different AI providers. The generic interfaces are described below. For more detailed information, refer to the documentation of the connector that you want to use, since it may expect specializations of the generic GenAI common entities as an input.
+Embeddings operations can be used by passing a [DeployedModel](#deployed-model) object of the desired connector. The action calls the internally assigned microflow of the connector and returns the response. Operations from different connectors can be exchanged very easily without much additional development effort.
 
-{{% alert color="info" %}}
-These operations are not implemented in this module. The module only describes the interface (microflow input parameters, return value, and expected behavior), and it is up to connectors that adhere to the principles of GenAI Commons to provide an implementation. For an implementation example, see the respective sections in the [OpenAI connector](/appstore/modules/genai/openai/) or the [Amazon Bedrock Connector](/appstore/modules/genai/bedrock/), or take a look at the [showcase app](https://marketplace.mendix.com/link/component/220475) where both connectors are implemented to decide at runtime whether to call the LLM through OpenAI or Amazon Bedrock.
-{{% /alert %}}
+##### Generate Embeddings (String) {#embeddings-string}
 
-##### Embeddings (String)
-
-The `Embeddings (String)` operation interface allows the invocation of the embeddings API with a String input and returns an `EmbeddingsResponse` object with token usage statistics, if applicable. The `EmbeddingsResponse_GetFirstVector` microflow from GenAI Commons can be used to retrieve the corresponding embedding vector in a String representation. This operation supports scenarios where the vector embedding of a single string must be generated, e.g. to perform a nearest neighbor search across an existing knowledge base. 
+The `Generate Embeddings (String)` operation allows the invocation of the embeddings API with a String input and returns an `EmbeddingsResponse` object with token usage statistics, if applicable. The `EmbeddingsResponse_GetFirstVector` microflow from GenAI Commons can be used to retrieve the corresponding embedding vector in a String representation. This operation supports scenarios where the vector embedding of a single string must be generated, e.g. to perform a nearest neighbor search across an existing knowledge base. 
 
 ###### Input Parameters
 
 | Name | Type | Mandatory | Description |
 | --- | --- | ---| --- |
 | `InputText` | String | mandatory | Input text to create the embedding vector for. |
-| `Connection` | [Connection](#connection) | mandatory | Connection object that contains the required endpoint details and API credentials. Depending on the connector module, a specific specialization must be passed. |
+| `DeployedModel` | [DeployedModel](#deployed-model) | mandatory | The DeployedModel entity replaces the Connection entity. It contains the name of the microflow to be executed for the specified model and other information relevant to connect to a model. The OutputModality needs to be Embeddings. |
 | `EmbeddingOptions` | [EmbeddingsOptions](#embeddingsoptions-entity) | optional | Can be used to pass optional request attributes.|
 
 ###### Return Value
@@ -604,16 +600,16 @@ The `Embeddings (String)` operation interface allows the invocation of the embed
 | --- | --- | --- |
 | `EmbeddingsResponse` | [EmbeddingsResponse](#embeddingsresponse-entity) | A response object that contains the token usage statistics and the corresponding embedding vector as part of a ChunkCollection |
 
-##### Embeddings (ChunkCollection)
+##### Generate Embeddings (Chunk Collection) {#embeddings-chunk-collection}
 
-The `Embeddings (ChunkCollection)` operation interface allows the invocation of an embeddings API with a [ChunkCollection](#chunkcollection) and returns an [EmbeddingsResponse](#embeddingsresponse-entity) object with token usage statistics, if applicable. The response object is associated with the original [ChunkCollection](#chunkcollection) used as an input, and the [Chunk](#chunk-entity) (or [KnowledgeBaseChunk](#knowledgebasechunk-entity)) objects will be updated with their corresponding embedding vector retrieved from the Embeddings API within this microflow.
+The `Generate Embeddings (Chunk Collection)` operation allows the invocation of an embeddings API with a [ChunkCollection](#chunkcollection) and returns an [EmbeddingsResponse](#embeddingsresponse-entity) object with token usage statistics, if applicable. The response object is associated with the original [ChunkCollection](#chunkcollection) used as an input, and the [Chunk](#chunk-entity) (or [KnowledgeBaseChunk](#knowledgebasechunk-entity)) objects will be updated with their corresponding embedding vector retrieved from the Embeddings API within this microflow.
 
 ###### Input Parameters
 
 | Name | Type | Mandatory | Description |
 | --- | --- | ---| --- |
 | `ChunkCollection` | [ChunkCollection](#chunkcollection) | mandatory | A ChunkCollection with Chunks for which an embedding vector should be generated. Use operations from GenAI commons to create a ChunkCollection and add Chunks or KnowledgeBaseChunks to it. |
-| `Connection` | [Connection](#connection) | mandatory | A Connection object that contains the required endpoint details and API credentials. Depending on the connector module, a specific specialization must be passed. |
+| `DeployedModel` | [DeployedModel](#deployed-model) | mandatory | The DeployedModel entity replaces the Connection entity. It contains the name of the microflow to be executed for the specified model and other information relevant to connect to a model. The OutputModality needs to be Embeddings. |
 | `EmbeddingOptions` | [EmbeddingsOptions](#embeddingsoptions-entity) | optional | Can be used to pass optional request attributes. |
 
 ###### Return Value

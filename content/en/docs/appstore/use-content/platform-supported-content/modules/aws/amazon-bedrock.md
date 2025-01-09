@@ -27,7 +27,7 @@ The Amazon Bedrock connector requires Mendix Studio Pro version 9.24.2 or above.
 
 To authenticate with Amazon Web Service (AWS), you must also install and configure the [AWS Authentication connector version 3.0.0 or higher](https://marketplace.mendix.com/link/component/120333). It is crucial for the Amazon Bedrock connector to function correctly. For more information about installing and configuring the AWS Authentication connector, see [AWS Authentication](/appstore/modules/aws/aws-authentication/).
 
-You must also install the [GenAI Commons version 1.2.0 or higher](/appstore/modules/genai/commons/). To make integration of generative AI capabilities as easy as possible, the Amazon Bedrock connector depends on the generic domain model and operations provided by the GenAICommons module.
+You must also install the [GenAI Commons version 2.0.0 or higher](/appstore/modules/genai/commons/). To make integration of generative AI capabilities as easy as possible, the Amazon Bedrock connector depends on the generic domain model and operations provided by the GenAICommons module.
 
 ### Licensing and Cost
 
@@ -77,6 +77,7 @@ After you configure the authentication profile for Amazon Bedrock, you can imple
 * EXAMPLE_Embeddings_SingleString
 * EXAMPLE_Retrieve
 * EXAMPLE_RetrieveAndGenerate
+* EXAMPLE_RetrieveAndGenerate_PromptTemplate
 * EXAMPLE_ImageGeneration_MultipleImages
 
 You can also take a look at the [GenAI Showcase Application](https://marketplace.mendix.com/link/component/220475) to get some inspiration on what you can use these operations for.
@@ -104,7 +105,7 @@ You can follow a similar approach to implement any of the other operations in **
 
 ### Chatting with Large Language Models using the ChatCompletions Operation
 
-A common use case of the Amazon Bedrock Connector is the development of chatbots and chat solutions. The **ChatCompletions (without history / with history)** operations offer an easy way to connect to most of the text-generation models available on Amazon Bedrock. The ChatCompletions operations are built on top of Bedrock's Converse API, allowing you to talk to different models without the need of a model-specific implementation. 
+A common use case of the Amazon Bedrock Connector is the development of chatbots and chat solutions. The **ChatCompletions (without history / with history)** operations offer an easy way to connect to most of the text-generation models available on Amazon Bedrock. The ChatCompletions operations are built on top of Bedrock's Converse API, allowing you to talk to different models without the need of a model-specific implementation. For more information on the ChatCompletion operations, check out the [GenAI documentation](/appstore/modules/genai/commons/#chat-completions).
 
 For an overview of supported models and model-specific capabilities and limitations, see [Amazon Bedrock Converse API](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features) in the AWS documentation.
 
@@ -113,20 +114,16 @@ To build a simple microflow that uses the ChatCompletions operation to send a si
 1. Create a new microflow and name it, for example, *AmazonBedrockChatCompletions*.
 2. In the **Toolbox**, search for the **Chat Completions (without history)** activity in the *Amazon Bedrock (Operations)* and drag it onto your microflow.
 3. Double click on the activity to see its parameters.
-    1. The **Request** and **FileCollection** parameters are not needed for this example, so you can set them to **empty**.
+    1. The **OptionalRequest** and **FileCollection** parameters are not needed for this example, so you can set them to **empty**.
     2. For the **UserPrompt** parameter, enter a string of your choice, for example *Hi, Claude!*. 
-    3. CLick **OK**. The input for the **Connection** parameter will be created in the next step.
-4. In the **Toolbox**, search for the **Create Amazon Bedrock Connection** operation and drag it to the beginning of your microflow.
+    3. CLick **OK**. The input for the **DeployedModel** parameter will be created in the next step.
+4. Add a **Microflow call** from the **Toolbox** and choose microflow *AmazonBedrockConnector.BedrockDeployedModel_Get*
 5. Double-click it to configure its parameters.
-    1. For the **ENUM_Region** parameter, enter a value of the `AWSAuthentication.ENUM_Region` enumeration. Choose the region where you have access to Amazon Bedrock. For example, *AWSAuthentication.ENUM_Region.us_east_1*.
-    2. For the **ModelId** parameter, enter the model id of the LLM you want to send a message to. The model id of Claude 3.5 Sonnet is *anthropic.claude-3-5-sonnet-20240620-v1:0*.
-    3. For the **UseStaticCredentials** parameter, enter *true* if you have configured static AWS Credentials, and *false* if you have configured temporary AWS Credentials.
-    4. Click **OK**.
-6. Double-click the **ChatCompletion** operation and, for the **Connection** parameter, pass the newly created **AmazonBedrockConnection** object.
-7. In the **Toolbox**, search for the **Get Model Response Text** operation from the *GenAI Commons (Text & Files - Response)* category, and drag it to the end of your microflow.
-8. Double-click on it and pass the **Response** from the ChatCompletions operation as parameter. The **Get Model Response Text** will return the response from Claude as a string.
-9. Add a **Show Message** activity to the end of the microflow and configure it to show the returned response string.
-10. Add a button that calls this microflow, run your project, and verify the results.
+    1.  For the **ModelID** parameter, enter the model id of the LLM you want to send a message to. The model id of Claude 3.5 Sonnet is *anthropic.claude-3-5-sonnet-20240620-v1:0*.
+    2. Click **OK**.
+6. Double-click the **ChatCompletion** operation and, for the **DeployedModel** parameter, pass the newly retrieved **BedrockDeployedModel** object.
+7. Add a **Show Message** activity to the end of the microflow and configure it to show *$Response/ResponseText*
+8. Add a button that calls this microflow, run your project, and verify the results.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/aws-bedrock/chat-completions-mf.png" class="no-border" >}}
 
@@ -211,33 +208,9 @@ For additional information about available operations, refer to the sections bel
 
 ### GenAICommons-Based Operations
 
-#### ChatCompletions (Without History) {#chat-completions-without-history}
+#### ChatCompletions (With History) and ChatCompletions (Without History) {#chat-completions}
 
-The `ChatCompletions (without history)` activity can be used for any conversations with a variety of supported LLMs. There is no option to keep the conversation history in mind. This operation corresponds to the **ChatCompletions_WithoutHistory_AmazonBedrock** microflow.
-
-This operation leverages the Amazon Bedrock Converse API. For a full overview of supported models and model capabilities, please refer to the [AWS Documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features).
-
-The input and output for this service are shown in the table below:
-
-| Input | Output |
-| --- | --- |
-| `Userprompt (string)`, `AmazonBedrockConnection`, `GenAICommons.Request`, `FileCollection`| `GenAICommons.Response`|
-
-`GenAICommons.Request` and `FileCollection` can be empty, in which case they are not sent to the Bedrock API.
-
-#### ChatCompletions (With History) {#chat-completions-with-history}
-
-The `ChatCompletions (with history)` activity can be used for any conversations with a variety of supported LLMs. It is possible for it to keep the conversation history in mind. This operation corresponds to the **ChatCompletions_WithHistory_AmazonBedrock** microflow.
-
-This operation leverages the Amazon Bedrock Converse API. For a full overview of supported models and model capabilities, please refer to the [AWS Documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features).
-
-The input and output for this service are shown in the table below:
-
-| Input | Output |
-| --- | --- |
-| `GenAICommons.Request`, `AmazonBedrockConnection`| `GenAICommons.Response`|
-
-In order to pass a conversation history to the flow, the list of previous messages must be associated to the input request. This operation can easily be replaced or combined with the ChatCompletions (with history) operation inside of the [OpenAI connector](https://marketplace.mendix.com/link/component/220472). 
+The `ChatCompletions (with history)` and `ChatCompletions (without history)` activities can be used with a variety of supported LLMs. More information can be found about the operations [here](/appstore/modules/genai/commons/#chat-completions).
 
 Some capabilities of the chat completions operations are currently only available for specific models:
 
@@ -259,7 +232,7 @@ The input and output for this service are shown in the table below:
 
 | Input | Output |
 | --- | --- |
-| `GenAICommons.Request`, `AmazonBedrockConnection`| `GenAICommons.Response`|
+| `GenAICommons.Request (object)`, `GenAICommons.DeployedModel (object)`| `GenAICommons.Response (object)`|
 
 The request object passed to this operation must include a KnowledgeBaseTool object, which can be added to the request using the [Request: Add Knowledge Base Tool to Collection](#add-knowledge-base-tool) operation.
 
@@ -294,45 +267,25 @@ The history can be enabled using the `SessionId` parameter on the RetrieveAndGen
 This activity was introduced in Amazon Bedrock Connector version 3.1.0.
 {{% /alert %}}
 
-The `Image Generation` operation can be used to generate one or more images. This operation corresponds to the *ImageGeneration_AmazonBedrock* microflow. Currently *Amazon Titan Image Generator G1* is the only supported model for image generation of the Amazon Bedrock Connector. 
+The `Generate Image` operation can be used to generate one or more images. More information can be found about the operation [here](/appstore/modules/genai/commons/#generate-image). Currently *Amazon Titan Image Generator G1* is the only supported model for image generation of the Amazon Bedrock Connector. 
 
-The input and output for this service are shown in the table below:
-
-| Input | Output |
-| --- | --- |
-| `UserPrompt (String)`, `AmazonBedrockConnection (object)`, `GenAICommons.ImageOptions (object)`| `GenAICommons.Response (object)`|
-
-`GenAICommons.ImageOptions` can be an empty object. If provided, it allows you to set additional options for Image Generation. 
-
-`GenAICommons.ImageOptions` can be created by using the `Image: Create Options` operation of GenAI Commons.
+`GenAICommons.ImageOptions` can be an empty object. If provided, it allows you to set additional options for Image Generation and can be created by using the `Image: Create Options` operation of GenAI Commons.
 
 To retrieve actual image objects from the response, the `Image: Get Generated Image (Single)` or `Image: Get Generated Images (List)` helper operations from GenAICommons can be used. 
 
 For Titan Image models, the `Image Generation: Add Titan Image Extension` operation can be used to configure Titan image-specific values (currently only *NegativeText*). 
 
-#### Embeddings (single string) {#embeddings-single-string}
+#### Generate Embeddings (String) {#embeddings-single-string}
 
-The `Embeddings (single string)` activity can be used to generate an embedding vector for a given input string with one of the Cohere Embed models or Titan Embeddings v2. This operation corresponds to the **Embeddings_SingleString_AmazonBedrock** microflow.
-
-The input and output for this service are shown in the table below:
-
-| Input | Output |
-| --- | --- |
-| `InputText`, `AmazonBedrockConnection`, `GenAICommons.EmbeddingsOptions (optional)` | `GenAICommons.EmbeddingsResponse`|
+The `Generate Embeddings (String)` activity can be used to generate an embedding vector for a given input string with one of the Cohere Embed models or Titan Embeddings v2. More information can be found about the operation [here](/appstore/modules/genai/commons/#embeddings-string).
 
 For Cohere Embed and Titan Embeddings, the request can be associated to their respective EmbeddingsOptions extension object which can be created with the [Embeddings Options: Add Cohere Embed Extension](#add-cohere-embed-extension) or [Embeddings Options: Add Titan Embeddings Extension](#add-titan-embeddings-extension) operation. Through this extension, it is possible to tailor the operation to more specific needs. This operation can easily be replaced or combined with the Embeddings (single string) operation inside of the [OpenAI connector](https://marketplace.mendix.com/link/component/220472). 
 
 Currently, embeddings are available for the Cohere Embed family and or Titan Embeddings v2.
 
-#### Embeddings (chunk collection) {#embeddings-chunk-collection}
+#### Generate Embeddings (Chunk Collection) {#embeddings-chunk-collection}
 
-The `Embeddings (chunk collection)` activity can be used to generate a collection of embedding vectors for a given collection of text chunks with one of the Cohere Embed models or Titan Embeddings v2. This operation corresponds to the **Embeddings_ChunkCollection_AmazonBedrock** microflow.
-
-The input and output for this service are shown in the table below:
-
-| Input | Output |
-| --- | --- |
-| `GenAICommons.ChunkCollection`, `AmazonBedrockConnection`, `GenAICommons.EmbeddingsOptions (optional)` | `GenAICommons.EmbeddingsResponse`|
+The `Generate Embeddings (Chunk Collection)` activity can be used to generate a collection of embedding vectors for a given collection of text chunks with one of the Cohere Embed models or Titan Embeddings v2. More information can be found about the operation [here](/appstore/modules/genai/commons/#embeddings-chunk-collection).
 
 For each model family, the request can be associated to an extension of the EmbeddingsOptions object which can be created with either the [Embeddings Options: Add Cohere Embed Extension](#add-cohere-embed-extension) or the [Embeddings Options: Add Titan Embeddings Extension](#add-titan-embeddings-extension) operation. Through this extension, it is possible to tailor the operation to more specific needs. This operation can easily be replaced or combined with the Embeddings (chunk collection) operation inside of the [OpenAI connector](https://marketplace.mendix.com/link/component/220472). 
 
@@ -346,39 +299,31 @@ The input and output for this service are shown in the table below:
 
 | Input | Output |
 | --- | --- |
-| `GenAICommons.Request`, `AmazonBedrockConnection`| `GenAICommons.Response`|
+| `GenAICommons.Request (object)`| `GenAICommons.Response (object)`|
 
 ### GenAI Commons Helper Operations
 
-#### Create Amazon Bedrock Connection {#create-amazon-bedrock-connection}
-
-Use this microflow to create a new Amazon Bedrock Connection object.
-
-This operation corresponds to the **AmazonBedrockConnection_Create** microflow.
-
-| `ENUM_Region (enumeration)`, `UseStaticCredentials (Boolean)`, `ModelId (string)` | `AmazonBedrockConnection (object)`|
-
-#### Request: Add Knowledge Base Tool to Collection {#add-knowledge-base-tool}
+#### Add Knowledge Base Tool {#add-knowledge-base-tool}
 
 Use this microflow to add a new KnowledgeBaseTool object to your request. This is useful for adding additional parameters when using the [Retrieve And Generate](#retrieve-and-generate) operation.
-
-This operation corresponds to the **RetrieveAndGenerateRequest_Extension_Create** microflow.
-
-| Input | Output |
-| --- | --- |
-| `GenAICommons.Request (object)`, `KnowledgeBaseId (string)` | *none* |
-
-#### Request: Add Retrieve And Generate Request Extension {#add-rag-extension}
-
-Use this microflow to add a new RetrieveAndGenerateRequest_Extension object to your request. This is required in order to use the [Retrieve And Generate](#retrieve-and-generate) operation successfully.
 
 This operation corresponds to the **Request_AddKnowledgeBaseTool** microflow.
 
 | Input | Output |
 | --- | --- |
-| `GenAICommons.Request (object)`, `KmsKeyARN (string)`, `SessionId (string)`, `Enum_RetrieveAndGenerateType (enumeration)` | `RetrieveAndGenerateRequest_Extension (object)` |
+| `GenAICommons.Request (object)`, `KnowledgeBaseId (string)` | *none* |
 
-`KmsKeyARN`, `SessionId`, and `Enum_RetrieveAndGenerateType` can be empty, in which case they are not sent to the Bedrock API.
+#### Configure Bedrock Retrieve and Generate (add Knowledge Base) {#add-rag-extension}
+
+Use this microflow to add a new RetrieveAndGenerateRequest_Extension object to your request. This is required in order to use the [Retrieve And Generate](#retrieve-and-generate) operation successfully.
+
+This operation corresponds to the **RetrieveAndGenerateRequest_Extension_Create** microflow.
+
+| Input | Output |
+| --- | --- |
+| `GenAICommons.Request (object)`, `KnowledgeBaseID (string)`, `KmsKeyARN (string)`, `SessionId (string)`, `Enum_RetrieveAndGenerateType (enumeration)`, `PromptTemplate (string)` | `RetrieveAndGenerateRequest_Extension (object)` |
+
+`KmsKeyARN`, `SessionId`, `PromptTemplate` and `Enum_RetrieveAndGenerateType` can be empty, in which case they are not sent to the Bedrock API.
 
 #### Image Generation: Add Titan Image Extension {#add-titan-image-extension}
 
@@ -446,9 +391,9 @@ This operation corresponds to the **TitanEmbeddingsOptions_Extension_Create** mi
 | --- | --- |
 | `GenAICommons.EmbeddingsOptions (object)`, `Normalize (boolean)`| `TitanEmbeddingsOptions_Extension (object)`|
 
-#### Request: Add Retrieve Request Extension {#add-r-extension}
+#### Set Bedrock Retrieve Options {#add-r-extension}
 
-Use this microflow to add a new RetrieveRequest_Extension object to your request. This is required in order to use the [Retrieve](#retrieve) activity. It requires `Connection`, and `RetrieveRequest` as input parameters.
+Use this microflow to add a new RetrieveRequest_Extension object to your request. This is required in order to use the [Retrieve](#retrieve) activity.
 
 To use this activity, you must set up a knowledge base in your Amazon Bedrock Environment. For more information, see [Knowledge Base](#knowledge-base).
 
@@ -456,7 +401,7 @@ The input and output for this service are shown in the table below:
 
 | Input | Output |
 | --- | --- |
-| `ENUM_Region (enumeration)`, `Credentials (object)`, `RetrieveRequest (object)` | `RetrieveResponse (object)` |
+| `Request (object)`, `KnowledgeBaseID (string)`, `NumberOfResults (integer)`, `NextToken (string)` | `RetrieveRequest_Extension (object)` |
 
 #### Request: Add Additional Request Parameter {#add-request-parameter}
 
@@ -657,7 +602,7 @@ Currently, there are operations available to sync metadata about:
 The syncing process works the same for all of these operations. 
 
 1. The information about models / knowledge bases / agents is persistent in the mendix app's database on the initial sync.
-2. An association to the `AmazonBedrockRegion` object, that represents the AWS region used when syncing, is stored.
+2. An association to the `AmazonBedrockRegion` object, that represents the AWS region used when syncing, is stored (this is only the case for knowledge bases and agents). 
 3. On a subsequent syncing process the available data is extended and updated. No data will be removed from the app's database - even if it is no longer available on AWS. The reason is that existing usages of the object in the running application should not be removed.
 
 The available operations are described in the following sections. 
@@ -665,13 +610,13 @@ The available operations are described in the following sections.
 #### Sync Models {#sync-models}
 
 The `Sync Models` activity allows you to retrieve and store metadata about available models on Amazon Bedrock in your app's database. 
-The model information is persistent in the `AmazonBedrockModel` entity.
+The model information is persistent in the `BedrockDeployedModel` entity.
 
-Information about the models output and input modalities are stored as associations to the `ModelModality` entity. 
+Information about the model's input modalities are stored as associations to the `InputModality` entity and its output modality is stored to the `OutputModality` attribute.
 The input modality describes which form of data can be sent to the model.
 The output modality describes which form of data the model will return. 
 
-Information about the models inference type is stored as association to the `ModelInferenceType` entity.
+Information about the model's inference type is stored as association to the `ModelInferenceType` entity.
 The inference type describes how the model can be accessed. *ON Demand* models are accessible by default and charged by usage. 
 
 The input and output for this service are shown in the table below:
