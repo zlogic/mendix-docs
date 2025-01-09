@@ -12,59 +12,72 @@ The [SAML](https://marketplace.mendix.com/link/component/1174/) module can be us
 By configuring the information about all identity providers in this module, you will allow the users to sign in using the correct identity provider (IdP). There is no limit on the number of different identity providers you can configure.
 
 {{% alert color="info" %}}
-Mendix also offers an [OIDC SSO](/appstore/modules/oidc/) module if you want to authenticate your end-users using the OAuth/OpenID Connect protocol.
+For new apps built on Mx9 or Mx10 using Atlas UI V3, you need to use version 4.0.0 of the SAML module.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+Mendix also offers an [OIDC SSO](/appstore/modules/oidc/) module if you want to authenticate your end-users using the OAuth/OpenID Connect protocol. Overall, the OIDC SSO module is easier to use and customize if needed, so Mendix recommends considering [OIDC SSO](https://marketplace.mendix.com/link/component/120371).
 {{% /alert %}}
 
 ### Typical Use Cases
 
-Examples of the use of the SAML module include the following:
+The following use case are supported by both  SAML and OIDC SSO module:
 
-* Authenticating against your Microsoft Active Directory server in a secure manner utilizing the SAML capabilities of Active Directory Federation Services (ADFS) — the SAML protocol allows for the encryption of all information transferred between the two servers, so VPN connections, LDAP, or Kerberos authentication are no longer needed
-* Implementing SSO in your Mendix App through a Shibboleth identity Provider
-* Identifying the end-users of your Mendix app through SAML-enabled national identity schemes such as eHerkenning, a Dutch eID scheme for B2B or B2G scenarios, or DigiD, which gives Dutch citizens access to (semi) governmental services
-    {{% alert color="info" %}}Some of these identity schemes use optional features of SAML which are not yet supported in the SAML SSO module — see [Limitations](#limitations) for more information{{% /alert %}}
+* Your app is aimed at your company’s employees and you want these employees to sign in to your app using corporate credentials hosted by your identity provider (IdP).
+* Authenticating against your Microsoft Active Directory server in a secure manner utilizing the SAML capabilities of Active Directory Federation Services (ADFS) — the SAML protocol allows for the encryption of all information transferred between the two servers, so VPN connections, LDAP, or Kerberos authentication are no longer needed.
+
+The following use cases are supported by SAML:
+
+* Implementing SSO in your Mendix App through a Shibboleth identity Provider.
+* Identifying the end-users of your Mendix app through SAML-enabled national identity schemes such as eHerkenning, a Dutch eID scheme for B2B or B2G scenarios, or DigiD, which gives Dutch citizens access to (semi) governmental services.
+
+    {{% alert color="info" %}}Some of these identity schemes use optional features of SAML which are not yet supported in the SAML SSO module — see [Limitations](#limitations) for more information.{{% /alert %}}
+
 * Authenticating within a Mendix session — for example requiring end-users to re-authenticate shortly before they are allowed to do critical transaction in your app or having a second user authenticate within the context of the first user’s session in your Mendix app
+* Single Logout is supported.
 
 ### Features
 
 #### SAML Protocol Adherence
 
-The SAML SSO module supports the following [SAML 2.0](https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf) profiles for your Mendix app acting as a Service Provider (SP):
+This section is aimed at readers with more knowledge of the SAML protocol. You may skip this section.
 
-* Web browser SSO profile using one of the following bindings
-    * HTTP redirect
-    * HTTP POST bindings
-    * Artifact binding for SAML responses (Mendix 8 and above)
-* Single Logout profile
+1. The SAML SSO module supports the following [SAML 2.0](https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf) profiles for your Mendix app acting as a Service Provider (SP):
+
+    * Web browser SSO profile using one of the following bindings
+        * HTTP redirect
+        * HTTP POST bindings
+        * Artifact binding for SAML responses (Mendix 8 and above)
+    * Single Logout profile
+
+2. For encryption of SAML messages the following options are supported:
+
+    * No Encryption
+    * 1024 or 2048 bit encryption
+    * SHA1 or SHA256 algorithms
+
+#### Usage of SAML metadata
 
 The Mendix SAML SSO supports usage of SAML metadata in the following way:
 
 * Daily synchronization of the IdP metadata, so your Mendix app will always have the latest IdP metadata.
     * For daily synchronization of IdP metadata, configure the `SE_SynchronizeIdPMetadata` scheduled event. For local development this can be done from Studio Pro. In Mendix Cloud, you can do this on the [Environments Details](/developerportal/deploy/environments-details/#model-options) page for your app.
-* Downloading of the metadata for your Mendix application that acts as an SP in the SAML protocol
+* Downloading of the metadata for your Mendix application that acts as an SP in the SAML protocol.
 
-For encryption of SAML messages the following options are supported:
-
-* No Encryption
-* 1024 or 2048 bit encryption
-* SHA1 or SHA256 algorithms
+#### SAML Module Configuration Feature
 
 For easy configurability, the SAML module offers the following:
 
+* From the version 4.0.0 of the SAML module, if you want to connect your Mendix application with single IdP, you can do the necessary configurations at design time (using a microflow) and/or deploy-time using Application Constants. This is described in section [add the section](XXXX)
 * a SAML administration screen that allows you to configure one or multiple SAML IdP’s. IdP discovery is supported by an endpoint that returns a page listing all configured IdPs so the end-user can select the IdP where they have an account.
-* various options as per the SAML 2.0 specification and as indicated on this page
 
 #### Other Features
 
-The SAML module keeps a log/audit trail of login attempts. These can be downloaded.
+* The SAML module keeps a log/audit trail of login attempts. These can be downloaded.
+* The SAML module allows you to have an SSO connection with multiple SAML IdPs. Each IdP can have its own keypair.
+* SAML module versions 3.5.0 and above (compatible with Mendix version 9.22.0 and above) support multiple keypairs.
 
-The SAML module allows you to have an SSO connection with multiple SAML IdPs. Each IdP can have its own keypair.
-
-{{% alert color="info" %}}
-SAML module versions 3.5.0 and above (compatible with Mendix version 9.22.0 and above) support multiple keypairs.
-{{% /alert %}}
-
-### Limitations {#limitations}
+### Limitations{#limitations}
 
 The Mendix SAML SSO module does not support the following:
 
@@ -91,10 +104,13 @@ If you use both the [OIDC SSO](/appstore/modules/oidc/) module and the SAML modu
 
 The URL for downloading the SP metadata of your app is independent of the value of the EntityID that you configure for your app (see [Configuring Service Provider](#configure-sp)) and which is included in the SP metadata. Instead, the metadata URL is based on the alias for the connected IDP where the SP metadata will be used.
 
+Controlling the configuration using constants requires an app restart and it is only possible when your app is connected to a single IdP.
+
 ### Prerequisites {#dependencies}
 
 * Install and configure the [Mx Model Reflection](/appstore/modules/model-reflection/) module.
 * Install and configure the [Encryption](/appstore/modules/encryption/) module – this is needed to encrypt the key store passwords in version 3.5.0 and above of the SAML module.
+* Install and configure the [User Commons](https://marketplace.mendix.com/link/component/223053) module (for version 4.0.0 and above)
 * For apps running outside of Mendix Cloud, make sure you have [external file storage](/refguide/system-requirements/#file-storage) configured.
 
     {{% alert color="warning" %}}The SAML module writes configuration data to a file document on the file storage to read it later. Without external file storage, this configuration will be lost when you restart your app. The SAML module will not work correctly without reading the configuration data from the file storage.
