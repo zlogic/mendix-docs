@@ -33,7 +33,7 @@ Before starting this guide, make sure you have completed the following prerequis
 * Signed up as an [Android developer](https://play.google.com/console/signup)
 * Created a Keystore [with Android Studio](https://developer.android.com/studio/publish/app-signing#generate-key) or [with Java](https://docs.oracle.com/cd/E19509-01/820-3503/ggfen/index.html)
 
-## Set Up Your Build Project
+## Set Up Your Build Project {#set-up-your-build-project}
 
 To set up your build project, do the following:
 
