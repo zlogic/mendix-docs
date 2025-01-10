@@ -64,12 +64,11 @@ In the current version, Mendix supports text generation (including function/tool
 
 ### Prerequisites
 
-To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the developer portal or ask someone with access to either generate them for you or be added to the team to generate keys yourself. For questions, reach out to `david.hartveld@mendix.com` for details.
+To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the developer portal or ask someone with access to either generate them for you or be added to the team to generate keys yourself. 
 
 ### Dependencies {#dependencies}
 
 * Mendix Studio Pro version [9.24.2](/releasenotes/studio-pro/9.24/#9242) or above
-* [GenAI Commons](https://marketplace.mendix.com/link/component/227933)
 * [Encryption](https://marketplace.mendix.com/link/component/1011)
 * [Community Commons](https://marketplace.mendix.com/link/component/170)
 
@@ -90,42 +89,39 @@ Follow the steps below to get started:
 
 ## Operations
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/synthia-domain-model.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/MxGenAIConnector_Configuration.png" >}}
 
-Configuration keys are stored persistently after they are imported (either via the UI or the exposed microflow). The three different types of configurations reflect the use cases this service supports. The specific operations are described below.
+Configuration keys are stored persistently after they are imported (either via the UI or the exposed microflow). There are three different types of configurations that reflect the use cases this service supports. The specific operations are described below.
 
-To use the operations, a `SynthiaConnection` must always be passed that refers to a Configuration. Use the `Create Synthia Connection` toolbox action to create the object. A `KnowledgeBaseName` must only be passed for knowledge base operations.
+To use the operations, either a `DeployedModel` (text, embeddings) or a `MxKnowledgebaseConnection` must always be passed that refers to a Configuration. The DeployedModel will be created automatically when importing keys in runtime and only needs to retrieved from the database. To initialize a knowledge base operation, use the `Connection: Get` toolbox action to create the MxKnowledgebaseConnection object. A `CollectionName` must be passed so the right collection inside of the knowledge base resource will be used.
 
 ### Chat Completions Operations
 
-After following the general setup above, you are ready to use the microflows in the **USE_ME > ChatCompletions** folder in your logic. Currently, three microflows for chat completions are exposed as microflow actions under the **Synthia (Text & Files)** category in the **Toolbox**.
+After following the general setup above, you are ready to use the chat completions microflows in the GenAICommons module. You can find both `Chat Completions (without history)` and `Chat Completions (with history)` in the **Text & Files** folder. The chat completions microflows are also exposed as microflow actions under the **GenAI (Generate)** category inside of the **Toolbox**.
 
-These microflows expect a `SynthiaConnection` object that refers to a `ConfigurationTextGeneration`. 
+These microflows expect a `DeployedModel` as input in order to determine the connection details. 
 
 In chat completions, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on prompt engineering, see the [Read More]{#readmore} section. Different exposed microflow activities may require different prompts and logic for how the prompts must be passed, as described in the following sections. For more information on message roles, see the [ENUM_MessageRole](/appstore/modules/genai/commons/#enum-messagerole) enumeration in the *GenAI Commons*.
 
-All chat completion operations within the connector expect to *Retrieve and Generate* support [Function Calling](#function-calling), [Vision](#vision), and [Document Chat](#document-chat).
+All chat completion operations within the connector except *Retrieve and Generate* support [Function Calling](#function-calling), [Vision](#vision), and [Document Chat](#document-chat).
 
 For more inspiration or guidance on how to use the above-mentioned microflows in your logic, Mendix recommends downloading our [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples.
 
 #### Chat Completions (without History)
 
-The microflow activity `Chat Completions (without history)` supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request. The operation requires a specialized [Connection](/appstore/modules/genai/commons/#connection) of type SynthiaConnection and a `UserPrompt` as a string. Additional parameters, such as system prompt, can be passed via the optional [Request](/appstore/modules/genai/commons/#request) object.
-Functionally, the prompt strings can be written in a specific way and can be tailored to get the desired result and behavior. For more information on prompt engineering, see the [Read More](#readmore) section.
-
-Optionally, you can also use [Function Calling](#function-calling) by adding a [ToolCollection](/appstore/modules/genai/commons/#toolcollection) to the request or you can send [images](#vision) or [documents](#document-chat) along with the user prompt by passing a [FileCollection](/appstore/modules/genai/commons/#filecollection).
+The microflow activity `Chat Completions (without history)` supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request. Please see the GenAICommons module documentation for more information.
 
 #### Chat Completions (with History)
 
-The microflow activity `Chat completions (with history)` supports more complex use cases where a list of (historical) messages (for example, the conversation or context so far) is sent as part of the request to the LLM. The operation requires a specialized [Connection](/appstore/modules/genai/commons/#connection) of type SynthiaConnection, a [Request](/appstore/modules/genai/commons/#request) object containing messages, optional attributes, or an optional `ToolCollection`.
-
-Optionally, you can use [Function Calling](#function-calling) by adding a [ToolCollection](/appstore/modules/genai/commons/#toolcollection) to the request or you can send [images](#vision) or [documents](#document-chat) along with the user prompt by passing a [FileCollection](/appstore/modules/genai/commons/#filecollection).
+The microflow activity `Chat completions (with history)` supports more complex use cases where a list of (historical) messages (for example, the conversation or context so far) is sent as part of the request to the LLM. Please see the GenAICommons module documentation for more information.
 
 #### Chat Completions (Retrieve & Generate)
 
-The microflow activity `Chat Completions Retrieve & Generate` simplifies `Retrieve and Generate` use cases without history. By providing a user prompt, the knowledge base is searched for similar knowledge chunks, which are then passed to the model. The model is instructed to base its response on the retrieved knowledge while referring to the source used to generate the response. This operation requires two specialized [Connection](/appstore/modules/genai/commons/#connection) of type SynthiaConnection, each linked to a `ConfigurationTextGeneration` and a `ConfigurationKnowledgeBase`, respectively.
+The microflow activity `Retrieve and Generate (MxCloud, without history)` simplifies `Retrieve and Generate` use cases without history. By providing a user prompt, the knowledge base is searched for similar knowledge chunks, which are then passed to the model. The model is instructed to base its response on the retrieved knowledge while referring to the source used to generate the response. This operation requires a [Request](/appstore/modules/genai/commons/#request) which is associateded to a `RetrieveAndGenerateRequest_Extension` pointing to a `MxKnowledgebaseConnection` object. Simply include a flow as shown below when setting up your logic to make sure that all is implemented as required: 
 
-Optionally, a [Request](/appstore/modules/genai/commons/#request) object can be provided to include additional parameters or to pass instructions via the `SystemPrompt`. Additionally, adding an extension to the `Request` through the `Configure Retrieve & Generate` action enables other filter options, making the `Request` object mandatory in such cases.
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/MxGenAIConnector_ConfigureRAG.png" >}}
+
+A `SystemPrompt` can be provided through the `Request` and other filter options can be set when initializing the `RetrieveAndGenerateRequest_Extension` (for example through metadata). 
 
 The returned `Response` includes [References](/appstore/modules/genai/commons/#reference) if the model used them to generate its response. In some cases, a knowledge chunk consists of two texts: one for the semantic search step and another for the generation step. For example, when solving a problem based on historical solutions, the semantic search identifies similar problems using their descriptions, while the generation step produces a solution based on the corresponding historical solutions. In those cases, you can add [MetaData](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) with the key `knowledge` to the chunks during the insertion stage, allowing the model to base its response on the specified metadata rather than the input text.
 
