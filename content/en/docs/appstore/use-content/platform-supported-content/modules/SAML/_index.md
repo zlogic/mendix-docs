@@ -207,13 +207,13 @@ Configuring SAML module is crucial for setting up secure authentication within y
 
 In versions below 3.6.9 of the SAML module, configuration can be done using the app pages – see the [Using SSO Landing pages](#ssolandingpage) section above. However, in version 4.0.0 and above, you have the option to use constants or custom microflows to configure your app at deploy time.
 
-The process diagram below explains three different ways to complete the deploy-time configuration of the SAML module. The [Easy Flow configuration](#easy-flow) offers a default and straightforward setup, while the [Non-default configuration](#non-default) enables customization of the IdP configuration by implementing custom microflows. Alternatively, in the [Runtime Configuration Flow](#runtime-config), you can deploy your app first and then complete the configuration within the app interface.
-
-{{< figure src="/attachments/appstore/platform-supported-content/modules/saml/xxxxx.png" max-width=80% >}}
+This section explains three different ways to complete the deploy-time configuration of the SAML module. The [Easy Flow configuration](#easy-flow) offers a default and straightforward setup, while the [Non-default configuration](#non-default) enables customization of the IdP configuration by implementing custom microflows. Alternatively, in the [Runtime Configuration Flow](#runtime-config), you can deploy your app first and then complete the configuration within the app interface.
 
 ### Easy Default Flow{#easy-flow}
 
 This configuration offers simple and default settings. It is the ideal configuration for quickly implementing the SAML module, particularly for users aiming to kickstart their SSO application. With this approach, users can create an SSO app in the IdP without complete dependency on SP metadata. The following sub-sections guide you through the detailed configuration steps:
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/saml/Easy-default.png" >}}
 
 #### Creating SP Manually at Your IdP{#create-sp-manually}
 
@@ -274,6 +274,8 @@ In this configuration, users have the flexibility to introduce your own constant
 
 Follow the steps mentioned in the [Easy Default Flow](#easy-flow) with an additional custom configuration in Studio Pro. After [setting the eight mandatory constants](#setup-eight-constants), proceed with the [custom configuration](#custom-config).
 
+{{< figure src="/attachments/appstore/platform-supported-content/modules/saml/non-default.png" >}}
+
 #### Creating custom configuration{#custom-config}
 
 This module uses non-persistence entity names starting with `Dep_`
@@ -329,6 +331,8 @@ Deploy the application and login with the SSO. For more information, see the [De
 ### Runtime Configuration Flow{#runtime-config}
 
 This process involves configuring both the Identity Provider (IdP) and the Service Provider (SP) metadata to establish secure authentication for the user. In some IdPs, SSO app creation is not allowed without having SP metadata. This configuration method is ideal for such scenarios. The following subsections provide you detailed instructions on integrating your application with SSO:
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/saml/runtime-config.png" >}}
 
 #### Deploy Your Application and Login with Application Admin
 
