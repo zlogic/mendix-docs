@@ -103,7 +103,7 @@ The data stored in this entity is to be used later on for monitoring purposes.
 
 #### `Connection` {#connection}
 
-The Connection entity used to be an input parameter for Chat completions, Embeddings and Image Generation operations but got replaced by DeployedModel. It is currently only used as a general connection entity for KnowledgeBase interactions.
+The Connection entity used to be an input parameter for Chat completions, Embeddings and Image Generation operations but got replaced by DeployedModel. It is currently only used as a general connection entity for Knowledge Base interactions.
 
 #### `Request` {#request} 
 
@@ -299,13 +299,13 @@ An optional input object for the image generations operations to set optional re
 
 Use the exposed microflows and Java Actions to map the required information for GenAI operations from your custom app implementation to the GenAI model and vice versa. Two sets of operations are provided: one for text and files, plus a second one for embeddings and knowledge bases.
 
-#### Text and Files: Chat Completions {#chat-completions}
+#### Text and Files: Operations {#text-files-operations}
 
-Chat completions operations can be used by passing a [DeployedModel](#deployed-model) object of the desired connector. The action calls the internally assigned microflow of the connector and returns the response. Operations from different connectors can be exchanged very easily without much additional development effort.
+Chat completions and image generation operations can be used by passing a [DeployedModel](#deployed-model) object of the desired connector. The action calls the internally assigned microflow of the connector and returns the response. Operations from different connectors can be exchanged very easily without much additional development effort.
 
 We recommend that you adapt to the same interface when developing custom chat completions or image generations operations, such as integration with different AI providers. The generic interfaces are described below. For more detailed information, refer to the documentation of the connector that you want to use, since it may expect specializations of the generic GenAI common entities as an input.
 
-##### Chat Completions (without history)
+##### Chat Completions (without history) {#chat-completions-without-history}
 
 The `Chat Completions (without history)` operation supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request.
 
@@ -341,7 +341,7 @@ The `Chat Completions (with history)` operation supports more complex use cases 
 | --- | --- | --- |
 | `Response` | [Response](#response) | A `Response` object that contains the assistant's response. |
 
-##### Generate Image {#generate-image}
+##### Text and Files: Generate Image {#generate-image}
 
 The `Generate Image` operation supports the generation of images based on a `UserPrompt` passed as string. The returned `Response` contains a `FileContent` via `FileCollection` and `Message`. See microflows in the `Handle Response` folder to construct the output.
 
@@ -359,7 +359,7 @@ The `Generate Image` operation supports the generation of images based on a `Use
 | --- | --- | --- |
 | `Response` | [Response](#response) | A `Response` object that contains the assistant's response including a `FileContent` which needs to be used in [Get Generated Image (Single)](#image-get-single) or [Get Generated Images (List)]({#image-get-list}).|
 
-#### Text and Files: Build request {#text-build-request}
+#### Text and Files: Build request {#text-files-request}
 
 The following microflows help you construct the input request structures for the operations for text and files defined in GenAI Commons.
 
@@ -508,13 +508,13 @@ Use this microflow to control how the model should determine which function to l
 
 This microflow does not have a return value.
 
-#### Text and Files: Handle Response {#text-handle-response}
+#### Text and Files: Handle Response {#text-files-response}
 
 The following microflows handle the response processing.
 
 ##### Get Response Text {#chat-get-model-response-text}
 
-This microflow can be used to get the content from the latest assistant message over association `Response_Message`. Use this microflow to get the response text from the latest assistant response message. In many cases, this is the main value needed for further logic after the operation or is displayed to the end user.
+This microflow can be used to get the content from the latest assistant message over association `Response_Message`. Use this microflow to get the response text from the latest assistant response message. In many cases, this is the main value needed for further logic after the operation or is displayed to the end user. Note that the content can be directly extracted from the [Response's](#response) attribute `ResponseText`.
 
 ###### Input Parameters
 
@@ -578,7 +578,7 @@ This operation processes a response that was created by an image generations ope
 |---|---|---|
 | `GeneratedImageList` | List of type determined by `ResponseImageEntity` | The list of generated images. |
 
-#### Knowledge Bases and Embeddings: Embeddings {#embeddings}
+#### Knowledge Bases and Embeddings: Operations {#knowledge-bases-embeddings-operations}
 
 Embeddings operations can be used by passing a [DeployedModel](#deployed-model) object of the desired connector. The action calls the internally assigned microflow of the connector and returns the response. Operations from different connectors can be exchanged very easily without much additional development effort.
 
@@ -618,9 +618,9 @@ The `Generate Embeddings (Chunk Collection)` operation allows the invocation of 
 | --- | --- | --- |
 | `EmbeddingsResponse` | [EmbeddingsResponse](#embeddingsresponse-entity) | An response object that contains the token usage statistics and the corresponding embedding vector as part of a ChunkCollection. |
 
-#### Knowledge Bases and Embeddings Helpers {#knowledge-bases-embeddings}
+#### Knowledge Bases and Embeddings: Build Request {#knowledge-bases-embeddings-request}
 
-The following microflows and Java actions help you construct the input structures and handle the response object for the operations for knowledge bases and embeddings as defined in GenAI Commons.
+The following microflows and Java actions help you construct the input structures for the operations for knowledge bases and embeddings as defined in GenAI Commons.
 
 ##### Chunks: Initialize Chunkcollection{#chunkcollection-create}
 
@@ -689,22 +689,6 @@ This microflow creates new [EmbeddingsOptions](#embeddingsoptions-entity).
 |--- |--- |--- |
 | `EmbeddingsOptions` | [EmbeddingsOptions](#embeddingsoptions-entity) | The newly created EmbeddingsOptions object. |
 
-##### Embeddings: Get First Vector from Response {#embeddings-get-first-vector}
-
-This microflow gets the first embedding vector from the response of an embeddings operation.
-
-###### Input Parameters
-
-| Name | Type | Mandatory | Description |
-|--- |--- |--- |--- |
-| `EmbeddingsResponse` | [EmbeddingsResponse](#embeddingsresponse-entity) | mandatory | Response object that gets returned by the embeddings operations. |
-
-###### Return Value
-
-| Name | Type | Description |
-|--- |--- |--- |
-| `Vector` | String | The first vector from the response. |
-
 ##### Knowledge Base: Initialize MetadataCollection with Metadata {#knowledgebase-initialize-metadatacollection}
 
 This microflow creates a new [MetadataCollection](#metadatacollection-entity) and adds a new [Metadata](#metadatacollection-entity). The [MetadataCollection](#metadatacollection-entity) will be returned. To add additional Metadata, use [Add Metadata to MetadataCollection](#knowledgebase-add-metadata).
@@ -737,6 +721,26 @@ This microflow adds a new [Metadata](#metadatacollection-entity) object to a giv
 ###### Return Value
 
 This microflow does not have a return value.
+
+#### Knowledge Bases and Embeddings: Handle Response {#knowledge-bases-embeddings-response}
+
+The following microflows and Java actions help you handle the response object for the operations for embeddings as defined in GenAI Commons.
+
+##### Embeddings: Get First Vector from Response {#embeddings-get-first-vector}
+
+This microflow gets the first embedding vector from the response of an embeddings operation.
+
+###### Input Parameters
+
+| Name | Type | Mandatory | Description |
+|--- |--- |--- |--- |
+| `EmbeddingsResponse` | [EmbeddingsResponse](#embeddingsresponse-entity) | mandatory | Response object that gets returned by the embeddings operations. |
+
+###### Return Value
+
+| Name | Type | Description |
+|--- |--- |--- |
+| `Vector` | String | The first vector from the response. |
 
 ### Enumerations {#enumerations} 
 
