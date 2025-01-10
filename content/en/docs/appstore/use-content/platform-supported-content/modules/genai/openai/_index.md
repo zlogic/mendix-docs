@@ -178,7 +178,7 @@ Operations for chat completions focus on the generation of text based on a certa
 
 The `OpenAIDeployedModel` is compatible with the two [Chat Completions operations from GenAI Commons](/appstore/modules/genai/#chat-completions). While developing your custom microflow, you can drag and drop the following operations from the toolbox in Studio Pro, see category **GenAI (Generate)**: 
 
-- Chat Completions (with history)
+- Chat Completions (with history) 
 - Chat Completions (without history)
 
 The internal chat completion logic within the OpenAI connector supports `JSON mode`, [function calling](#chatcompletions-functioncalling), and [vision](#chatcompletions-vision). Make sure to check the actual compatibility of the available models with these functionalities, as this changes over time. We will list any specific OpenAI microflow actions from the toolbox below.
@@ -209,9 +209,11 @@ For more information, see [Function Calling](/appstore/modules/genai/function-ca
 
 Vision enables models like GPT-4o and GPT-4 Turbo to interpret and analyze images, allowing them to answer questions and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To make use of vision inside the OpenAI connector, an optional [FileCollection](/appstore/modules/genai/commons/#filecollection) containing one or multiple images must be sent along with a single message.
 
-For `Chat Completions without History`, `FileCollection` is an optional input parameter. For `Chat Completions with History`, `FileCollection` can optionally be added to individual user messages using [Chat: Add Message to Request](/appstore/modules/genai/commons/#chat-add-message-to-request).
+For `Chat Completions without History`, `FileCollection` is an optional input parameter. 
 
-Use the two OpenAI specific microflow actions from the toolbox [Files: Initialize Collection with OpenAI File](#initialize-filecollection) and [Files: Add OpenAIFile to Collection](#add-file) to construct the input with either `FileDocuments` (for vision, it needs to be of type `Image`) or `URLs`. There are similar file operations exposed by the GenAI commons module that can be used for vision requests with the OpenAIConnector; however, these generic operations do not support the optional OpenAI-specific `Detail` attribute.
+For `Chat Completions with History`, `FileCollection` can optionally be added to individual user messages using [Chat: Add Message to Request](/appstore/modules/genai/commons/#chat-add-message-to-request).
+
+Use the two OpenAI-specific microflow actions from the toolbox [Files: Initialize Collection with OpenAI File](#initialize-filecollection) and [Files: Add OpenAIFile to Collection](#add-file) to construct the input with either `FileDocuments` (for vision, it needs to be of type `Image`) or `URLs`. There are similar file operations exposed by the GenAI commons module that can be used for vision requests with the OpenAIConnector; however, these generic operations do not support the optional OpenAI-specific `Detail` attribute.
 
 {{% alert color="info" %}}
 OpenAI and Azure OpenAI for vision do not necessarily for all models provide feature parity when it comes to combining functionalities. In other words, Azure OpenAI does not support the use of JSON mode and function calling in combination with image (vision) input for certain models, so make sure to check the [Azure Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models).
@@ -223,7 +225,7 @@ For more information on vision, see [OpenAI](https://platform.openai.com/docs/gu
 
 ### Image Generations Configuration {#image-generations-configuration}
 
-OpenAI also provides image generation capabilities which can be invoked using this connector module. The `OpenAIDeployedModel` entity is compatible with the image generation operation from GenAI Commons.
+OpenAI also provides image generation capabilities which can be invoked using this connector module. The `OpenAIDeployedModel` entity is compatible with the [image generation operation from GenAI Commons](/appstore/modules/genai/commons/#generate-image).
 
 In order to implement image generations into your Mendix application, you can use the Image generation microflow actions from GenAI Commons directly. When developing your microflow, you can drag and drop it from the toolbox: find it under the **GenAI (Generates)** category in the **Toolbox** in Mendix Studio Pro:
 

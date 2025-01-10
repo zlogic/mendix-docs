@@ -305,7 +305,7 @@ Chat completions operations can be used by passing a [DeployedModel](#deployed-m
 
 We recommend that you adapt to the same interface when developing custom chat completions or image generations operations, such as integration with different AI providers. The generic interfaces are described below. For more detailed information, refer to the documentation of the connector that you want to use, since it may expect specializations of the generic GenAI common entities as an input.
 
-##### Chat Completions (without history)
+##### Chat Completions (without history){#chat-completions-without-history}
 
 The `Chat Completions (without history)` operation supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request.
 
