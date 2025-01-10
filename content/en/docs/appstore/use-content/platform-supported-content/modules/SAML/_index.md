@@ -104,7 +104,7 @@ Some SAML services, such as eHerkenning and DigID in the Netherlands, use option
 
 If you need any of these features, contact your Mendix CSM to discuss inclusion of these features on the Mendix roadmap or customization of the SAML SSO module.
 
-Versions of the SAML module below 3.5.0 are limited to single keypair. If you are using one of those older versions and you want to connect your app to multiple SAML IdPs, you cannot use different key pairs and certificates for each of the SSO federations. Instead, you must use a single key pair and certificate for all SAML IdPs. The certificate can be either a self-signed certificate or a certificate issued by a certificate authority (CA). For more details, see the [Use a Certificate Issued by a Certificate Authority](/appstore/modules/saml/advanced-configuration/#use-ca) section of *Advanced configuration for SAML.
+Versions of the SAML module below 3.5.0 are limited to single keypair. If you are using one of those older versions and you want to connect your app to multiple SAML IdPs, you cannot use different key pairs and certificates for each of the SSO federations. Instead, you must use a single key pair and certificate for all SAML IdPs. The certificate can be either a self-signed certificate or a certificate issued by a certificate authority (CA). For more details, see the [Use a Certificate Issued by a Certificate Authority](/appstore/modules/saml/advanced-configuration/#use-ca) section of *Advanced configuration for SAML*.
 
 If you use both the [OIDC SSO](/appstore/modules/oidc/) module and the SAML module in the same app, each end-user can only authenticate using one IdP.
 
@@ -198,7 +198,7 @@ The table below introduces you several key updates when you upgrade SAML module 
 | Feature | Changes in Version 4.0.0 |
 | --- | --- |
 | SSO Configuration | You can now perform SSO configuration during design-time and deploy-time. <br>Introduced deploy-time configuration and `Custom_Create_IdPConfiguration` microflow for customized SSO configuration. |
-| Admin Screen Restructuring | The **Mapping** tab has been removed. Equivalent configurations can now be completed on the **User Provisioning configuration** tab,|
+| Admin Screen Restructuring | The **Mapping** tab has been removed. Equivalent configurations can now be completed on the **User Provisioning configuration** tab. <br> `evaluateMultipleUserMatches` microflow is now moved to the **User Provisioning** tab.
 | User Commons Module Integration | 1. The SAML module now integrates with the User Commons module, offering a more uniform experience with the OIDC SSO module. <br>2. A new method for creating custom user provisioning microflows using User Commons simplifies development and allows you to automatically set the user-type for users <br> 3. Deprecated: SAML 3.x provisioning flows will be unsupported in future versions. It’s recommended to create new provisioning flows using User Commons after upgrading.<br> 5. From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values.|
 | InCommon Federation Support | Pre-configured support for InCommon Federation has been removed. You now need to create custom user provisioning microflows in version 4.0.0 |
 
@@ -209,6 +209,10 @@ Configuring SAML module is crucial for setting up secure authentication within y
 In versions below 3.6.9 of the SAML module, configuration can be done using the app pages – see the [Using SSO Landing pages](#ssolandingpage) section above. However, in version 4.0.0 and above, you have the option to use constants or custom microflows to configure your app at deploy time.
 
 This section explains three different ways to complete the deploy-time configuration of the SAML module. The [Easy Flow configuration](#easy-flow) offers a default and straightforward setup, while the [Non-default configuration](#non-default) enables customization of the IdP configuration by implementing custom microflows. Alternatively, in the [Runtime Configuration Flow](#runtime-config), you can deploy your app first and then complete the configuration within the app interface.
+
+{{% alert color="info" %}}
+For IdP configuration, during deploy-time ([Easy default](#easy-flow) and [Non-default flow](#non-default)), users are not allowed to edit the fields except for the Encryption Settings. This can lead to a mismatch in the fields when they run the application.
+{{% /alert %}}
 
 ### Easy Default Flow{#easy-flow}
 
