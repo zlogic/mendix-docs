@@ -62,7 +62,7 @@ The domain model in Mendix is a data model that describes the information in you
 
 The `DeployedModel` represents a GenAI model that can be invoked by the Mendix app. It contains a display name and a technical name/identifier. It also contains the name of the microflow to be executed for the specified model and other information relevant to connect to a model. The creation of Deployed Models are handled by the connectors itself (see their specializations) where admins can configure those at runtime.
 
-The `DeployedModel` entity replaces the capabilities that were coverd by the `Connection` entity in earlier versions of GenAI Commons.
+The `DeployedModel` entity replaces the capabilities that were coverd by the `Connection` entity for model invokations in earlier versions of GenAI Commons. For knowledge base interactions, the `Connection` entity is still used.
 
 | Attribute | Description |
 | --- | --- |
@@ -89,7 +89,7 @@ This entity represents usage statistics of a call to an LLM. It refers to a comp
 
 Following the principles of GenAI Commons it must be stored based on the response for every successful call to a system of an LLM provider. This is only applicable for text & files operations and embeddings operations. It is the responsibility of connector developers implementing the GenAI principles in their GenAI operations to include the right microflows to ensure storage of Usage details after successful calls.
 
-The data stored in this entity is to be used later on for monitoring purposes.
+The data stored in this entity is to be used later on for token consumption monitoring.
 
 | Attribute | Description |
 | --- | --- |
@@ -103,7 +103,7 @@ The data stored in this entity is to be used later on for monitoring purposes.
 
 #### `Connection` {#connection}
 
-The Connection entity used to be an input parameter for Chat completions, Embeddings and Image Generation operations but got replaced by DeployedModel. It is currently only used as a general connection entity for Knowledge Base interactions.
+The Connection entity used to be an input parameter for Chat completions, Embeddings and Image Generation operations but got replaced by `DeployedModel`. It is currently only used as a general connection entity for Knowledge Base interactions.
 
 #### `Request` {#request} 
 
@@ -314,7 +314,7 @@ The `Chat Completions (without history)` operation supports scenarios where ther
 | Name | Type | Mandatory | Description |
 | --- | --- | ---| --- |
 | `UserPrompt` | String | mandatory | A user message is the input from a user. |
-| `DeployedModel` | [DeployedModel](#deployed-model) | mandatory | The DeployedModel entity replaces the Connection entity. It contains the name of the microflow to be executed for the specified model and other information relevant to connect to a model. The OutputModality needs to be Text. |
+| `DeployedModel` | [DeployedModel](#deployed-model) | mandatory | The DeployedModel entity replaces the Connection entity. It contains the name of the microflow to be executed for the specified model and other information relevant to connect to a model. The OutputModality of the DeployedModel needs to be Text. |
 | `OptionalRequest` | [Request](#request) | optional | This is an optional object that contains optional attributes and an optional [ToolCollection](#toolcollection). If no Request is passed, one will be created. |
 | `OptionalFileCollection` | [FileCollection](#filecollection) | optional | This is an optional collection of files to be sent along with the request to use vision or document chat. |
 
@@ -332,7 +332,7 @@ The `Chat Completions (with history)` operation supports more complex use cases 
 
 | Name | Type | Mandatory | Description |
 | --- | --- | --- |--- |
-| `DeployedModel` | [DeployedModel](#deployed-model) | mandatory | The DeployedModel entity replaces the Connection entity. It contains the name of the microflow to be executed for the specified model and other information relevant to connect to a model. The OutputModality needs to be Text. |
+| `DeployedModel` | [DeployedModel](#deployed-model) | mandatory | The DeployedModel entity replaces the Connection entity. It contains the name of the microflow to be executed for the specified model and other information relevant to connect to a model. The OutputModality of the DeployedModel needs to be Text. |
 | `Request` | [Request](#request) | mandatory | This is an object that contains messages, optional attributes and an optional [ToolCollection](#toolcollection). |
 
 ###### Return Value
@@ -343,7 +343,7 @@ The `Chat Completions (with history)` operation supports more complex use cases 
 
 ##### Text and Files: Generate Image {#generate-image}
 
-The `Generate Image` operation supports the generation of images based on a `UserPrompt` passed as string. The returned `Response` contains a `FileContent` via `FileCollection` and `Message`. See microflows in the `Handle Response` folder to construct the output.
+The `Generate Image` operation supports the generation of images based on a `UserPrompt` passed as string. The returned `Response` contains a `FileContent` via `FileCollection` and `Message`. See microflows in the `Handle Response` folder to get the image (list).
 
 ###### Input Parameters
 
@@ -622,7 +622,7 @@ The `Generate Embeddings (Chunk Collection)` operation allows the invocation of 
 
 The following microflows and Java actions help you construct the input structures for the operations for knowledge bases and embeddings as defined in GenAI Commons.
 
-##### Chunks: Initialize Chunkcollection{#chunkcollection-create}
+##### Chunks: Initialize ChunkCollection{#chunkcollection-create}
 
 This microflow creates a new [ChunkCollection](#chunkcollection) and returns it.
 
