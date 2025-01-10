@@ -8,7 +8,7 @@ description: "Describes the list of IdP Attributes for the SAML module"
 
 ## Introduction
 
-This document provides you the detail description of each IdP attribute and their default value for deploy-time and runtime configuration. You need to use these attributes when configuring the SAML module to create the IdP configuration. For more details, see [Non-default Configuration](/appstore/modules/saml/#non-default).
+This document provides you the detail description of each IdP attribute and their default value for deploy-time configuration. You need to use these attributes when configuring the SAML module to create the IdP configuration. For more details, see [Non-default Configuration](/appstore/modules/saml/#non-default).
 
 ## Identity Configuration
 
@@ -108,9 +108,9 @@ Remember to set the new key store password in the `KeystorePassword` constant of
 
 #### Read IDP metadata from URL
 
-You can set up the module to re-import all IdP metadata files on a daily basis. Alternatively, you can import the metadata from a file.
+You can set up the module to re-import all IdP metadata files on a daily basis. Alternatively, you can import the metadata from a file, manually.
 
-If you want to import the IdP metadata files from a URL, do the following:
+If you want to manually import the IdP metadata files from a URL, do the following:
 
 * Set **Read IDP metadata from URL** to *Yes.*
 * Set the **URL:** to the location where the IdP metadata is available.

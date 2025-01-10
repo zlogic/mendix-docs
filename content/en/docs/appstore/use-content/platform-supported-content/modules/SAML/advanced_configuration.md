@@ -32,22 +32,6 @@ Remember to do the following:
 * use an alias for the certificate — this must be the name parameter that is provided when creating the certificate you are uploading. If the values do not match, the SAML module will fall back to using a self-signed certificate instead.
 * the value of the configured SP EntityID must match the alias that is included in the uploaded key store.
 
-### Custom Behavior
-
-#### evaluateMultipleUserMatches
-
-The module tries to look up the user that matches the provided user name. When multiple `System.User` records are found, this microflow is always executed.
-
-It is possible to customize this microflow to determine the correct user. Whichever user instance is returned will be signed in to the application (and passed on to any other microflow).
-
-#### CustomUserProvisioning {#customuserprovisioning}
-
-When selecting in the SSO configuration to run the `customUserProvisioning` action (previously known as `CustomLoginLogic`), you can update the new or retrieved user with additional information from the assertion. All the assertions are passed into the microflow in the parameter `AssertionAttributeList`, and these can be transformed and stored in the user record. Also, additional roles can be granted to the users based on the assertion attributes.
-
-#### CustomAfterSigninLogic
-
-After a new session is created for the user, this microflow can be called to copy any data from the previous session to the new session. This microflow behaves similarly to the platform after the sign-in microflow. By using this microflow, it is possible to copy records from the anonymous user to the newly signed-in user.
-
 ### Customizing the Login Page
 
 Mendix runtime/system module comes with a default login page. When using SAML with a single IdP, this page is not required.

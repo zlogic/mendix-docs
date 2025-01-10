@@ -469,7 +469,25 @@ You can set up custom user provisioning by selecting the **IdP Configuration** t
     * **IdP Attributes**(Claims) cannot be of type enum, autonumber, or an association.
 
 3. In the **Custom UserProvisioning**, select a microflow you want to run for [Custom User Provisioning Using a Microflow](#custom-provisioning-mf). The custom microflow name must begin with the string `UC_CustomProvisioning`. If you have added a new microflow, you will need to refresh the module containing your microflow as described in [Installing Mx Model Reflection](/appstore/modules/model-reflection/). This selection can be blank if you do not want to add custom logic.
-4. Click **Save** to save the configuration.   
+4. Click **Save** to save the configuration.
+
+### Custom Behavior
+
+This section describes the microflows that you may want to customize if needed.
+
+#### evaluateMultipleUserMatches
+
+The module tries to look up the user that matches the provided user name. When multiple `System.User` records are found, this microflow is always executed.
+
+It is possible to customize this microflow to determine the correct user. Whichever user instance is returned will be signed in to the application (and passed on to any other microflow).
+
+#### CustomUserProvisioning {#customuserprovisioning}
+
+When selecting in the SSO configuration to run the `customUserProvisioning` action (previously known as `CustomLoginLogic`), you can update the new or retrieved user with additional information from the assertion. All the assertions are passed into the microflow in the parameter `AssertionAttributeList`, and these can be transformed and stored in the user record. Also, additional roles can be granted to the users based on the assertion attributes.
+
+#### CustomAfterSigninLogic
+
+After a new session is created for the user, this microflow can be called to copy any data from the previous session to the new session. This microflow behaves similarly to the platform after the sign-in microflow. By using this microflow, it is possible to copy records from the anonymous user to the newly signed-in user.
 
 ## Using Deep Links
 
