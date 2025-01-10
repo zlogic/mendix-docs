@@ -230,7 +230,13 @@ After creating an application, you will receive an IdP metadata URL. This URL is
 
 To kickstart the SAML module with Okta, refer to the images below. Ensure to log in with [Okta Developer](https://developer.okta.com/) credentials.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/saml/saml-okta.png" max-width=80% >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/saml/saml-okta.png" >}}
+
+To connect [Azure](https://portal.azure.com/#home) with SAML, refer the below image. 
+
+{{< figure src="/attachments/appstore/platform-supported-content/modules/saml/saml-azure.png" >}}
+
+For IdP configuration, the default value for **Assertion consumer service index** is *0*. Set the corresponding value *0* for the **Index**.
 
 The setup described above, offers default configurations to start the SAML module. Any changes made to the configuration will require adjustments to other configuration details accordingly.
 
@@ -254,7 +260,7 @@ If you provide values for the above constants, the SAML module will automaticall
 
 #### Deploy the Application and Login with SSO{#deploy-application}
 
-After configuring the eight constants, you need to deploy the application. For details, see the [Deploying the App](/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/#32-deploying-the-app) section in the *Deploying an App to Mendix Cloud*. Once deployed, you can now log in to your application using SSO.
+After configuring the eight constants, you need to deploy the application. For details, see the [Deploying the App](/developerportal/deploy/mendix-cloud-deploy/deploying-an-app/) section in the *Deploying an App to Mendix Cloud*. Once deployed, you can now log in to your application using SSO.
 
 {{% alert color="info" %}}It is recommended to modify the values using constants. Any changes made from the runtime screen will be overwritten by the constant values upon restarting the app.{{% /alert %}}
 
