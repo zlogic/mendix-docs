@@ -27,7 +27,7 @@ The Amazon Bedrock connector requires Mendix Studio Pro version 9.24.2 or above.
 
 To authenticate with Amazon Web Service (AWS), you must also install and configure the [AWS Authentication connector version 3.0.0 or higher](https://marketplace.mendix.com/link/component/120333). It is crucial for the Amazon Bedrock connector to function correctly. For more information about installing and configuring the AWS Authentication connector, see [AWS Authentication](/appstore/modules/aws/aws-authentication/).
 
-You must also install the [GenAI Commons version 2.0.0 or higher](/appstore/modules/genai/commons/). To make integration of generative AI capabilities as easy as possible, the Amazon Bedrock connector depends on the generic domain model and operations provided by the GenAICommons module.
+You must also install the [GenAI Commons version 2.0.0 or higher](/appstore/modules/genai/commons/). To make integration of generative AI capabilities as easy as possible, the Amazon Bedrock connector depends on the generic domain model and operations provided by the GenAI Commons module.
 
 ### Licensing and Cost
 
@@ -67,7 +67,7 @@ The AWS Authentication Connector supports both **static credentials** and **temp
 
 ### Configuring a Microflow for an AWS Service
 
-After you configure the authentication profile for Amazon Bedrock, you can implement the functions of the connector by using the provided activities in microflows. The **USE_ME** folder contains several subfolders containing operations that depend on the GenAICommons module. The following example microflows have been created for each of these inside the **ExampleImplementations** folder:
+After you configure the authentication profile for Amazon Bedrock, you can implement the functions of the connector by using the provided activities in microflows. The **USE_ME** folder contains several subfolders containing operations that depend on the GenAI Commons module. The following example microflows have been created for each of these inside the **ExampleImplementations** folder:
 
 * EXAMPLE_ChatCompletions_FunctionCalling
 * EXAMPLE_ChatCompletions_Vision
@@ -82,7 +82,7 @@ After you configure the authentication profile for Amazon Bedrock, you can imple
 
 You can also take a look at the [GenAI Showcase Application](https://marketplace.mendix.com/link/component/220475) to get some inspiration on what you can use these operations for.
 
-For operations that do not depend on the GenAICommons, you can take a different approach. For example, to list all foundational models, implement the **List Foundation Models** activity by doing the following steps:
+For operations that do not depend on the GenAI Commons, you can take a different approach. For example, to list all foundational models, implement the **List Foundation Models** activity by doing the following steps:
 
 1. In the **App Explorer**, right-click on the name of your module, and then click **Add microflow**.
 2. Enter a name for your microflow, for example, *ACT_ListFoundationModels*, and then click **OK**.
@@ -130,9 +130,9 @@ To build a simple microflow that uses the ChatCompletions operation to send a si
 
 You can find several implementation examples for the ChatCompletions operations inside of the [GenAI showcase application](https://marketplace.mendix.com/link/component/220475).
 
-### Invoking Specific Models by Using the InvokeModel Operation
+### Invoking Specific Models by Using the InvokeModel Operation (advanced)
 
-Depending on your needs, you can reuse the operations inside the **Amazon Bedrock** sections. You can also find guidance on how to implement the required structures in the [GenAICommons](/appstore/modules/genai/) documentation. This scenario represents an advanced or exception case. In most instances, the standard procedures outlined in ‘GenAI Commons Operations’ should be sufficient to address your needs. Most text models can be used with the **ChatCompletions** operation. For an overview of the supported models and capabilities, see [Supported models and model features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features) in the AWS Bedrock documentation.
+In case you need Bedrock specific capabilities that you cannot execute through the normal [GenAI Commons](/appstore/modules/genai/) operations, you can use the operations inside the **Amazon Bedrock** sections. In most instances, the standard procedures outlined in ‘GenAI Commons Operations’ should be sufficient to address your needs. Most text models can be used with the **ChatCompletions** operation. For an overview of the supported models and capabilities, see [Supported models and model features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features) in the AWS Bedrock documentation.
 
 To invoke a specific model that is not covered by the ChatCompletions operation, you can make use of the **Invoke Model** operation by performing the following steps:
 
@@ -207,7 +207,7 @@ The **Documentation** pane displays the documentation for the currently selected
 
 For additional information about available operations, refer to the sections below.
 
-### GenAICommons-Based Operations
+### GenAI Commons-Based Operations
 
 #### ChatCompletions (With History) and ChatCompletions (Without History) {#chat-completions}
 
@@ -272,7 +272,7 @@ The [Generate Image](/appstore/modules/genai/commons/#generate-image) operation 
 
 `GenAICommons.ImageOptions` can be an empty object. If provided, it allows you to set additional options for Image Generation and can be created by using the [Image: Create Options](/appstore/modules/genai/commons/#imageoptions-create) operation of GenAI Commons.
 
-To retrieve actual image objects from the response, the [Image: Get Generated Image (Single)](/appstore/modules/genai/commons/#image-get-single) or [Image: Get Generated Images (List)](/appstore/modules/genai/commons/#image-get-list) helper operations from GenAICommons can be used. 
+To retrieve actual image objects from the response, the [Image: Get Generated Image (Single)](/appstore/modules/genai/commons/#image-get-single) or [Image: Get Generated Images (List)](/appstore/modules/genai/commons/#image-get-list) helper operations from GenAI Commons can be used. 
 
 For Titan Image models, the `Image Generation: Add Titan Image Extension` operation can be used to configure Titan image-specific values (currently only *NegativeText*). 
 
