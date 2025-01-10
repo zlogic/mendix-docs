@@ -8,7 +8,7 @@ description: "Describes the advanced configuration for the SAML module"
 
 ## Introduction
 
-This document describes the advanced configurations for the SAML module.
+This document outlines the advanced configurations for the SAML module. For basic configuration and usage, refer to the [SAML](/appstore/modules/saml/) documentation.
 
 ### Multi-tenant Behavior
 
