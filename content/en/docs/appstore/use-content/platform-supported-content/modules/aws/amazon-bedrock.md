@@ -130,9 +130,9 @@ To build a simple microflow that uses the ChatCompletions operation to send a si
 
 You can find several implementation examples for the ChatCompletions operations inside of the [GenAI showcase application](https://marketplace.mendix.com/link/component/220475).
 
-### Invoking Specific Models by Using the InvokeModel Operation (advanced)
+### Advanced: Invoking Specific Models by Using the InvokeModel Operation
 
-In case you need Bedrock specific capabilities that you cannot execute through the normal [GenAI Commons](/appstore/modules/genai/) operations, you can use the operations inside the **Amazon Bedrock** sections. In most instances, the standard procedures outlined in ‘GenAI Commons Operations’ should be sufficient to address your needs. Most text models can be used with the **ChatCompletions** operation. For an overview of the supported models and capabilities, see [Supported models and model features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features) in the AWS Bedrock documentation.
+If you need Bedrock specific capabilities that you cannot execute through the normal [GenAI Commons](/appstore/modules/genai/) operations, you can use the operations inside the **Amazon Bedrock** sections. In most cases, the standard procedures outlined in *GenAI Commons Operations* should be sufficient to address your needs. You can use most text models with the **ChatCompletions** operation. For an overview of the supported models and capabilities, see [Supported models and model features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features) in the AWS Bedrock documentation.
 
 To invoke a specific model that is not covered by the ChatCompletions operation, you can make use of the **Invoke Model** operation by performing the following steps:
 
@@ -272,7 +272,7 @@ The [Generate Image](/appstore/modules/genai/commons/#generate-image) operation 
 
 `GenAICommons.ImageOptions` can be an empty object. If provided, it allows you to set additional options for Image Generation and can be created by using the [Image: Create Options](/appstore/modules/genai/commons/#imageoptions-create) operation of GenAI Commons.
 
-To retrieve actual image objects from the response, the [Image: Get Generated Image (Single)](/appstore/modules/genai/commons/#image-get-single) or [Image: Get Generated Images (List)](/appstore/modules/genai/commons/#image-get-list) helper operations from GenAI Commons can be used. 
+To retrieve actual image objects from the response, you can use the [Image: Get Generated Image (Single)](/appstore/modules/genai/commons/#image-get-single) or [Image: Get Generated Images (List)](/appstore/modules/genai/commons/#image-get-list) helper operations from GenAI Commons. 
 
 For Titan Image models, the `Image Generation: Add Titan Image Extension` operation can be used to configure Titan image-specific values (currently only *NegativeText*). 
 
