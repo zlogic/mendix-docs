@@ -211,7 +211,7 @@ In versions below 3.6.9 of the SAML module, configuration can be done using the 
 This section explains three different ways to complete the deploy-time configuration of the SAML module. The [Easy Flow configuration](#easy-flow) offers a default and straightforward setup, while the [Non-default configuration](#non-default) enables customization of the IdP configuration by implementing custom microflows. Alternatively, in the [Runtime Configuration Flow](#runtime-config), you can deploy your app first and then complete the configuration within the app interface.
 
 {{% alert color="info" %}}
-For IdP configuration, during deploy-time ([Easy default](#easy-flow) and [Non-default flow](#non-default)), users are not allowed to edit the fields except for the Encryption Settings. This can lead to a mismatch in the fields when they run the application.
+For IdP configuration, during deploy-time ([Easy default](#easy-flow) and [Non-default flow](#non-default)), users are not allowed to edit the fields except for the **Encryption Settings**. This can lead to a mismatch in the fields when they run the application.
 {{% /alert %}}
 
 ### Easy Default Flow{#easy-flow}
