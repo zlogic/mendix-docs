@@ -25,7 +25,7 @@ SAML SSO supports 2 file formats:
 * a PKCS 12 file, which typically has extension .pfx or .p12.
 * a jks file.
 
-To use a CA-certificate, upload it as your key store file as described in [Managing the Key Store](/appstore/modules/saml/#keystore).
+To use a CA-certificate, upload it as your key store file as described in [Managing the Keys and Key Store](/appstore/modules/saml/idp-attributes/#keystore).
 Remember to do the following:
 
 * set the certificate password in the `KeystorePassword` constant of your app to be able to read the contents of the uploaded key store.
