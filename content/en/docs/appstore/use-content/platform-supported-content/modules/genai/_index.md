@@ -39,8 +39,9 @@ To help you get started, the following sections list the available GenAI compone
 |-------------------|---------------------------------------------------|----------------------------------|------------|
 | [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) | Lets you kick-start the development of enterprise-grade AI chatbot experiences. For example, you can use it to create your own private enterprise-ready ChatGPT-like app. | Starter App | 10.12 |
 | [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) | Start from scratch to create a new application with GenAI capabilities and without any dependencies. | Starter App | 10.12 |
-| [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) | Learn how to combine common GenAI patterns, such as function calling and RAG to build your own support assistant. Connect it to a model like Anthropic Claude or Amazon Titan via Amazon Bedrock or use an (Azure) OpenAI subscription.  | Starter App | 10.12 |
 | [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) | Understand what you can build with generative AI. Understand how to implement the OpenAI and Amazon Bedrock connectors and how to integrate with the Conversational UI module. |Showcase App | 9.24.2 |
+| [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | The RFP Assistant Starter App and the Questionnaire Assistanr Starter App leverage historical RFPs (or question-answer pairs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs, offering a time-saving alternative to manually finding similar responses and enhancing the knowledge management process.  | Starter App | 10.12 |
+| [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) | Learn how to combine common GenAI patterns, such as function calling and RAG to build your own support assistant. Connect it to a model like Anthropic Claude or Amazon Titan via Amazon Bedrock or use an (Azure) OpenAI subscription.  | Starter App | 10.12 |
 | [Conversational UI](/appstore/modules/genai/conversational-ui/) | Create a Conversational UI for a new or existing app. | UI Module | 9.24.2 |
 | [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to Azure OpenAI. | Connector Module | 9.24.2 |
 | [Amazon Bedrock Connector](/appstore/modules/genai/bedrock/) | Connect to Amazon Bedrock. Use Retrieve & Generate or Bedrock agents. | Connector Module | 9.24.2 |
@@ -54,8 +55,8 @@ Mendix connectors offer direct support for the following models:
 
 | Architecture | Models | Category | Input | Output | Additional capabilities |
 |--------------|---------------------|---------------------|-------------------|-----------|-------------------------|
-| Azure / OpenAI | gpt-3.5 | Chat completions | text | text | Function calling |
-| | gpt-4, gpt-4o, gpt-4o mini | Chat completions | text, image | text | Function calling |
+| Azure / OpenAI | gpt-3.5-turbo | Chat completions | text | text | Function calling |
+| | gpt-4, gpt-4-turbo, gpt-4o, gpt-4o mini | Chat completions | text, image | text | Function calling |
 | | DALL·E 2, DALL·E 3 | Image generation | text | image | |
 | | text-embedding-ada-002, text-embedding-3-small, text-embedding-3-large     | Embeddings | text | embeddings| |
 | Amazon Bedrock | Amazon Titan Text G1 - Express, Amazon Titan Text G1 - Lite, Amazon Titan Text G1 - Premier | Chat Completions | text | text | Document Chat (except Titan Premier) |
@@ -75,6 +76,8 @@ Mendix connectors offer direct support for the following models:
 | | Mistral AI Instruct | Chat Completions | text | text | Document Chat |
 | | Mistral Large, Mistral Large 2 | Chat Completions | text | text | Function calling, Document Chat |
 | | Mistral Small | Chat Completions | text | text | Function calling |
+| Mendix Cloud GenAI | Anthropic Claude v3.5 Sonnet | Chat Completions | text, image | text | Function calling, Document Chat |
+| | Cohere Embed English, Cohere Embed Multilingual | Embeddings | text | embeddings | |
 
 For more details on limitations and supported model capabilities for the Bedrock Converse API used in the ChatCompletions operations, see [Supported models and model features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features) in the AWS documentation.
 
