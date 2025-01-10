@@ -237,8 +237,6 @@ When you drag this operation into your app microflow logic, you use the `user pr
 
 A generated image need to be stored in a custom entity that inherits from the `System.Image` entity. The `Response` from the single image operation can be processed using [Get Generated Image (Single)](/appstore/modules/genai/commons/#image-get-single) to store the image in your custom `Image` entity.
 
-More technical details are provided by the in-model documentation in annotations and the documentation fields for microflows, parameters, and the domain model. See the [Technical Reference](#technical-reference) section for guidance on how to find it.
-
 #### Embeddings Generation {#embeddings-configuration}
 
 OpenAI also provides vector embedding generation capabilities which can be invoked using this connector module. The `OpenAIDeployedModel` entity is compatible with the [embeddings generation operations from GenAI Commons](/appstore/modules/genai/commons/#knowledge-bases-embeddings-operations).
