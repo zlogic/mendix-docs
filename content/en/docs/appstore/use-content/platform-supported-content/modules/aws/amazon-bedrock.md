@@ -111,19 +111,20 @@ For an overview of supported models and model-specific capabilities and limitati
 
 To build a simple microflow that uses the ChatCompletions operation to send a single message to the Anthropic Claude 3.5 Sonnet model and show the response on a page, perform the following steps:
 
+0. Make sure that you [synced models](#sync-models) before running the microflow in the app.
 1. Create a new microflow and name it, for example, *AmazonBedrockChatCompletions*.
-2. In the **Toolbox**, search for the **Chat Completions (without history)** activity in the *Amazon Bedrock (Operations)* and drag it onto your microflow.
-3. Double click on the activity to see its parameters.
-    1. The **OptionalRequest** and **FileCollection** parameters are not needed for this example, so you can set them to **empty**.
-    2. For the **UserPrompt** parameter, enter a string of your choice, for example *Hi, Claude!*. 
-    3. CLick **OK**. The input for the **DeployedModel** parameter will be created in the next step.
-4. Add a **Microflow call** from the **Toolbox** and choose microflow *AmazonBedrockConnector.BedrockDeployedModel_Get*
-5. Double-click it to configure its parameters.
+2. Add a **Microflow call** from the **Toolbox** and choose microflow *AmazonBedrockConnector.BedrockDeployedModel_Get*
+3. Double-click it to configure its parameters.
     1.  For the **ModelID** parameter, enter the model id of the LLM you want to send a message to. The model id of Claude 3.5 Sonnet is *anthropic.claude-3-5-sonnet-20240620-v1:0*.
     2. Click **OK**.
-6. Double-click the **ChatCompletion** operation and, for the **DeployedModel** parameter, pass the newly retrieved **BedrockDeployedModel** object.
-7. Add a **Show Message** activity to the end of the microflow and configure it to show *$Response/ResponseText*
-8. Add a button that calls this microflow, run your project, and verify the results.
+4. In the **Toolbox**, search for the **Chat Completions (without history)** activity in the *GenAI (Generate)* and drag it onto your microflow.
+5. Double click on the activity to see its parameters.
+    1. The **OptionalRequest** and **OptionalFileCollection** parameters are not needed for this example, so you can set them to **empty**.
+    2. For the **UserPrompt** parameter, enter a string of your choice, for example *Hi, Claude!*. 
+    3. For the **DeployedModel** parameter, pass the retrieved **BedrockDeployedModel** object
+    4. CLick **OK**.
+6. Add a **Show Message** activity to the end of the microflow and configure it to show *$Response/ResponseText*
+7. Add a button that calls this microflow, run your project, and verify the results.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/aws-bedrock/chat-completions-mf.png" class="no-border" >}}
 
@@ -210,20 +211,20 @@ For additional information about available operations, refer to the sections bel
 
 #### ChatCompletions (With History) and ChatCompletions (Without History) {#chat-completions}
 
-The `ChatCompletions (with history)` and `ChatCompletions (without history)` activities can be used with a variety of supported LLMs. More information can be found about the operations [here](/appstore/modules/genai/commons/#chat-completions).
+The [ChatCompletions (with history)](/appstore/modules/genai/commons/#chat-completions-with-history) and [ChatCompletions (without history)](/appstore/modules/genai/commons/#chat-completions-without-history) activities can be used with a variety of supported LLMs.
 
 Some capabilities of the chat completions operations are currently only available for specific models:
 
-* **Function Calling** - You can use function calling in all chat completions operations using a [supported model](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features) by adding a `ToolCollection` with a `Tool` via the [Tools: Add Function to Request](/appstore/modules/genai/commons/#add-function-to-request) operation. For more information about function calling, see the [Function Calling Documentation](/appstore/modules/genai/function-calling/).
+* **Function Calling** - You can use function calling in all chat completions operations using a [supported model](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html) by adding a `ToolCollection` with a `Tool` via the [Tools: Add Function to Request](/appstore/modules/genai/commons/#add-function-to-request) operation. For more information about function calling, see the [Function Calling Documentation](/appstore/modules/genai/function-calling/).
 
 **Function calling microflows**: A microflow used as a tool for function calling must satisfy the following conditions:
 
 1. One input parameter of type String or no input parameter.
 2. Return value of type String.
 
-* **Vision** - This operation supports the *vision* capability for [supported models](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features). With vision, you can send image prompts, in addition to the traditional text prompts. You can use vision by adding a `FileCollection` with a `File` to the `Message` using the [Files: Initialize Collection with File](/appstore/modules/genai/commons/#initialize-filecollection) or the [Files: Add to Collection](/appstore/modules/genai/commons/#add-file-to-collection) operation. Make sure to set the `FileType` attribute to **image**.
+* **Vision** - This operation supports the *vision* capability for [supported models](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html). With vision, you can send image prompts, in addition to the traditional text prompts. You can use vision by adding a `FileCollection` with a `File` to the `Message` using the [Files: Initialize Collection with File](/appstore/modules/genai/commons/#initialize-filecollection) or the [Files: Add to Collection](/appstore/modules/genai/commons/#add-file-to-collection) operation. Make sure to set the `FileType` attribute to **image**.
 
-* **Document Chat** - This operation supports the ability to chat with documents for [supported models](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features). To send a document to the model add a `FileCollection` with a `System.FileDocument` to the `Message` using the [Files: Initialize Collection with File](/appstore/modules/genai/commons/#initialize-filecollection) or the [Files: Add to Collection](/appstore/modules/genai/commons/#add-file-to-collection) operation. For Document Chat, it is not supported to create a `FileContent` from an URL using the above mentioned operations; Please use the `System.FileDocument` option. Make sure to set the `FileType` attribute to **document**.
+* **Document Chat** - This operation supports the ability to chat with documents for [supported models](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html). To send a document to the model add a `FileCollection` with a `System.FileDocument` to the `Message` using the [Files: Initialize Collection with File](/appstore/modules/genai/commons/#initialize-filecollection) or the [Files: Add to Collection](/appstore/modules/genai/commons/#add-file-to-collection) operation. For Document Chat, it is not supported to create a `FileContent` from an URL using the above mentioned operations; Please use the `System.FileDocument` option. Make sure to set the `FileType` attribute to **document**.
 
 #### RetrieveAndGenerate {#retrieve-and-generate}
 
@@ -267,27 +268,27 @@ The history can be enabled using the `SessionId` parameter on the RetrieveAndGen
 This activity was introduced in Amazon Bedrock Connector version 3.1.0.
 {{% /alert %}}
 
-The `Generate Image` operation can be used to generate one or more images. More information can be found about the operation [here](/appstore/modules/genai/commons/#generate-image). Currently *Amazon Titan Image Generator G1* is the only supported model for image generation of the Amazon Bedrock Connector. 
+The [Generate Image](/appstore/modules/genai/commons/#generate-image) operation can be used to generate one or more images. Currently *Amazon Titan Image Generator G1* is the only supported model for image generation of the Amazon Bedrock Connector. 
 
-`GenAICommons.ImageOptions` can be an empty object. If provided, it allows you to set additional options for Image Generation and can be created by using the `Image: Create Options` operation of GenAI Commons.
+`GenAICommons.ImageOptions` can be an empty object. If provided, it allows you to set additional options for Image Generation and can be created by using the [Image: Create Options](/appstore/modules/genai/commons/#imageoptions-create) operation of GenAI Commons.
 
-To retrieve actual image objects from the response, the `Image: Get Generated Image (Single)` or `Image: Get Generated Images (List)` helper operations from GenAICommons can be used. 
+To retrieve actual image objects from the response, the [Image: Get Generated Image (Single)](/appstore/modules/genai/commons/#image-get-single) or [Image: Get Generated Images (List)](/appstore/modules/genai/commons/#image-get-list) helper operations from GenAICommons can be used. 
 
 For Titan Image models, the `Image Generation: Add Titan Image Extension` operation can be used to configure Titan image-specific values (currently only *NegativeText*). 
 
 #### Generate Embeddings (String) {#embeddings-single-string}
 
-The `Generate Embeddings (String)` activity can be used to generate an embedding vector for a given input string with one of the Cohere Embed models or Titan Embeddings v2. More information can be found about the operation [here](/appstore/modules/genai/commons/#embeddings-string).
+The [Generate Embeddings (String)](/appstore/modules/genai/commons/#embeddings-string) activity can be used to generate an embedding vector for a given input string with one of the Cohere Embed models or Titan Embeddings v2.
 
-For Cohere Embed and Titan Embeddings, the request can be associated to their respective EmbeddingsOptions extension object which can be created with the [Embeddings Options: Add Cohere Embed Extension](#add-cohere-embed-extension) or [Embeddings Options: Add Titan Embeddings Extension](#add-titan-embeddings-extension) operation. Through this extension, it is possible to tailor the operation to more specific needs. This operation can easily be replaced or combined with the Embeddings (single string) operation inside of the [OpenAI connector](https://marketplace.mendix.com/link/component/220472). 
+For Cohere Embed and Titan Embeddings, the request can be associated to their respective EmbeddingsOptions extension object which can be created with the [Embeddings Options: Add Cohere Embed Extension](#add-cohere-embed-extension) or [Embeddings Options: Add Titan Embeddings Extension](#add-titan-embeddings-extension) operation. Through this extension, it is possible to tailor the operation to more specific needs.
 
 Currently, embeddings are available for the Cohere Embed family and or Titan Embeddings v2.
 
 #### Generate Embeddings (Chunk Collection) {#embeddings-chunk-collection}
 
-The `Generate Embeddings (Chunk Collection)` activity can be used to generate a collection of embedding vectors for a given collection of text chunks with one of the Cohere Embed models or Titan Embeddings v2. More information can be found about the operation [here](/appstore/modules/genai/commons/#embeddings-chunk-collection).
+The [Generate Embeddings (Chunk Collection)](/appstore/modules/genai/commons/#embeddings-chunk-collection) activity can be used to generate a collection of embedding vectors for a given collection of text chunks with one of the Cohere Embed models or Titan Embeddings v2.
 
-For each model family, the request can be associated to an extension of the EmbeddingsOptions object which can be created with either the [Embeddings Options: Add Cohere Embed Extension](#add-cohere-embed-extension) or the [Embeddings Options: Add Titan Embeddings Extension](#add-titan-embeddings-extension) operation. Through this extension, it is possible to tailor the operation to more specific needs. This operation can easily be replaced or combined with the Embeddings (chunk collection) operation inside of the [OpenAI connector](https://marketplace.mendix.com/link/component/220472). 
+For each model family, the request can be associated to an extension of the EmbeddingsOptions object which can be created with either the [Embeddings Options: Add Cohere Embed Extension](#add-cohere-embed-extension) or the [Embeddings Options: Add Titan Embeddings Extension](#add-titan-embeddings-extension) operation. Through this extension, it is possible to tailor the operation to more specific needs.
 
 Currently, embeddings are available for the Cohere Embed family and Titan Embeddings v2.
 
@@ -302,6 +303,8 @@ The input and output for this service are shown in the table below:
 | `GenAICommons.Request (object)`| `GenAICommons.Response (object)`|
 
 ### GenAI Commons Helper Operations
+
+The following operations are specific to Amazon Bedrock and helpful to configure additional settings when using operations from GenAI Commons.
 
 #### Add Knowledge Base Tool {#add-knowledge-base-tool}
 
@@ -479,7 +482,7 @@ The input and output for this service are shown in the table below:
 
 The `InvokeModel` activity allows you to invoke a model from Amazon Bedrock. This activity provides the generic parts that are equal for the invocation of every model. It requires `ENUM_Region`, `Credentials` and `InvokeModelRequest` as input parameters.
 
-The `InvokeModel` operation provides a versatile interface for integrating with Amazon Bedrock models. Each available model in Amazon Bedrock has its own set of model-specific parameters required to be passed into the `InvokeModelRequest`. The Amazon Bedrock Connector contains two example implementations to showcase how to use the `InvokeModel` operation to invoke specific models. The [Amazon Bedrock example implementation](https://marketplace.mendix.com/link/component/215751) available on the Mendix Marketplace provides a more extensive reference implementation of how to configure the model-specific parameters into the generic `InvokeModel` operation.
+The `InvokeModel` operation provides a versatile interface for integrating with Amazon Bedrock models. Each available model in Amazon Bedrock has its own set of model-specific parameters required to be passed into the `InvokeModelRequest`. The Amazon Bedrock Connector contains two example implementations to showcase how to use the `InvokeModel` operation to invoke specific models.
 
 The input and output for this service are shown in the table below:
 
@@ -610,7 +613,7 @@ The available operations are described in the following sections.
 #### Sync Models {#sync-models}
 
 The `Sync Models` activity allows you to retrieve and store metadata about available models on Amazon Bedrock in your app's database. 
-The model information is persistent in the `BedrockDeployedModel` entity.
+The model information is persistent in the `BedrockDeployedModel` entity which is mandatory for chat completions or embeddings operations from GenAI Commons.
 
 Information about the model's input modalities are stored as associations to the `InputModality` entity and its output modality is stored to the `OutputModality` attribute.
 The input modality describes which form of data can be sent to the model.
