@@ -111,20 +111,20 @@ For an overview of supported models and model-specific capabilities and limitati
 
 To build a simple microflow that uses the ChatCompletions operation to send a single message to the Anthropic Claude 3.5 Sonnet model and show the response on a page, perform the following steps:
 
-0. Make sure that you [synced models](#sync-models) before running the microflow in the app.
-1. Create a new microflow and name it, for example, *AmazonBedrockChatCompletions*.
-2. Add a **Microflow call** from the **Toolbox** and choose microflow *AmazonBedrockConnector.BedrockDeployedModel_Get*
-3. Double-click it to configure its parameters.
+1. Make sure that you [synced models](#sync-models) before running the microflow in the app.
+2. Create a new microflow and name it, for example, *AmazonBedrockChatCompletions*.
+3. Add a **Microflow call** from the **Toolbox** and choose microflow *AmazonBedrockConnector.BedrockDeployedModel_Get*
+4. Double-click it to configure its parameters.
     1.  For the **ModelID** parameter, enter the model id of the LLM you want to send a message to. The model id of Claude 3.5 Sonnet is *anthropic.claude-3-5-sonnet-20240620-v1:0*.
     2. Click **OK**.
-4. In the **Toolbox**, search for the **Chat Completions (without history)** activity in the *GenAI (Generate)* and drag it onto your microflow.
-5. Double click on the activity to see its parameters.
+5. In the **Toolbox**, search for the **Chat Completions (without history)** activity in the *GenAI (Generate)* and drag it onto your microflow.
+6. Double click on the activity to see its parameters.
     1. The **OptionalRequest** and **OptionalFileCollection** parameters are not needed for this example, so you can set them to **empty**.
     2. For the **UserPrompt** parameter, enter a string of your choice, for example *Hi, Claude!*. 
     3. For the **DeployedModel** parameter, pass the retrieved **BedrockDeployedModel** object
     4. CLick **OK**.
-6. Add a **Show Message** activity to the end of the microflow and configure it to show *$Response/ResponseText*
-7. Add a button that calls this microflow, run your project, and verify the results.
+7. Add a **Show Message** activity to the end of the microflow and configure it to show *$Response/ResponseText*
+8. Add a button that calls this microflow, run your project, and verify the results.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/aws-bedrock/chat-completions-mf.png" class="no-border" >}}
 
