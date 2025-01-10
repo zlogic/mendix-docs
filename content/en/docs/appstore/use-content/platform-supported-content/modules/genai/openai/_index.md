@@ -262,13 +262,9 @@ In order to create embeddings, it does not matter whether the ChunkCollection co
 
 For technical details, see the [Technical Reference](#technical-reference) section.
 
-### Exposed Microflows {#exposed-microflows}
+### Exposed Microflows for (Azure) OpenAI {#exposed-microflows}
 
-You can use the following OpenAI-specific exposed microflows to construct requests via drag-and-drop. These microflows can be found in the **Toolbox** in the **OpenAI (Build Request)** section. Generic exposed microflows are described in [GenAI Commons](/appstore/modules/genai/commons/).
-
-#### `Create OpenAI Connection` {#create-openai-connection}
-
-This microflow can be used to create the `OpenAIConnection` object that is required for the chat completions operations. A [Configuration](#configuration) object is required for the input. For OpenAI configurations (but not Azure OpenAI configurations), the model name is mandatory too.
+You can use the following OpenAI-specific exposed microflows to construct requests via drag-and-drop. These microflows can be found in the **Toolbox** in the **OpenAI (Build Request)** section. Note that using these flows is only required if you need to add options to the request that are specific to OpenAI. For the generic part can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/commons/#text-files-request) and [handle the Response](/appstore/modules/genai/commons/#text-files-response). 
 
 #### `Chat: Set Response Format` {#set-responseformat-chat}
 
