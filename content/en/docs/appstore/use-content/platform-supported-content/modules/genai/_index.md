@@ -62,11 +62,12 @@ Mendix connectors offer direct support for the following models:
 | Amazon Bedrock | Amazon Titan Text G1 - Express, Amazon Titan Text G1 - Lite, Amazon Titan Text G1 - Premier | Chat Completions | text | text | Document Chat (except Titan Premier) |
 | | AI21 Jamba-Instruct | Chat Completions | text | text |  |
 | | AI21 Labs Jurassic-2 (Text) | Chat Completions | text | text |  |
+| | Amazon Nova Pro, Amazon Nova Lite | Chat Completion | text | text | Function calling, Document Chat |
 | | Amazon Titan Image Generator G1 | Image generation | text | image | |
 | | Amazon Titan Embeddings Text v2 | Embeddings | text | embeddings| |
 | | Anthropic Claude v2.0, Anthropic Claude v2.1| Chat Completions | text | text | Document Chat |
 | | Anthropic Claude v3 Sonnet, Anthropic Claude v3 Haiku, Anthropic Claude v3 Opus | Chat Completions | text, image | text | Function calling, Document Chat |
-| | Anthropic Claude v3.5 Sonnet | Chat Completions | text, image | text | Function calling |
+| | Anthropic Claude v3.5 Sonnet, Anthropic Claude v3.5 Sonnet v2 | Chat Completions | text, image | text | Function calling, Document Chat |
 | | Cohere Command | Chat Completions | text | text | Document Chat |
 | | Cohere Command Light | Chat Completions | text | text | |
 | | Cohere Command R, Cohere Command R+ | Chat Completions | text | text | Function calling, Document Chat |
