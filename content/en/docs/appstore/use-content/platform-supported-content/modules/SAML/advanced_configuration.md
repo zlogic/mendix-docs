@@ -72,3 +72,8 @@ You need to customize this login page when end-users have different ways of logi
 The resources folder contains the *SAMLConfig.properties* file, and through this file, advanced settings can be configured for the module. This file contains the settings along with documentation on the settings. Through this file, it is possible to alter the URLs used as well as how the application behaves in a multi-tenant environment. The file also specifies all the default values and behavior in more detail.
 
 If you are using a custom URL, see [How Do I Get my SAML Metadata or CommunityCommons.GetApplicationUrl to Use the Custom URL?](/developerportal/deploy/custom-domains/#use-custom-url) in the *Custom Domains* documentation.
+
+## Read More
+
+* [OIDC SSO](/appstore/modules/oidc/)
+* [Reference Guide for SAML IdP Configuration](/appstore/modules/saml/idp-attributes/)

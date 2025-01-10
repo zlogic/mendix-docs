@@ -197,3 +197,8 @@ This passes the allowed authentication methods. This has to be whatever the IdP 
 ### User Provisioning
 
 For information, see the [User Provisioning](/appstore/modules/saml/#user-provisioning) section of the *SAML* document.
+
+## Read More
+
+* [SAML](/appstore/modules/saml/)
+* [Advanced configuration for SAML](/appstore/modules/saml/advanced-configuration/)
