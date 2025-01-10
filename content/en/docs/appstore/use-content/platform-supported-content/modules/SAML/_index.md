@@ -304,13 +304,13 @@ Below table shows you the different attributes and their values for the quick re
 | **InitialLoginServiceName** |  It represents the Initial login Attribute Consuming Service name | Service1 | 
 | **InitialLoginAttributeConsumingServiceIndex** | It represents the Initial login Attribute Consuming Service Index | 1 | 
 | **InitialLoginDep_SPAttribute_Dep_IdPConfiguration** | It will display the details of Value, Name, IsRequired details | | 
-| **EnableInSessionAttributeConsumingService** | To enable this feature, configureat least one request attribute for the in-session attribute consuming service. | FALSE | 
+| **EnableInSessionAttributeConsumingService** | To enable this feature, configure at least one request attribute for the in-session attribute consuming service. | FALSE | 
 | **InSessionServiceName** | It represents the In-Session Attribute Consuming Service name | Service2 |  
 | **InSessionAttributeConsumingServiceIndex** |  It represents the In-Session Attribute Consuming Service Index | 2 | 
 | **InSessionDep_SPAttribute_Dep_IdPConfiguration**| It will display the details of Value, Name, IsRequired details | | 
 | **IdPMetadataURL** (mandatory) | This represents the URL of the IdPMetadataURL | | 
-| **PreferedEntityDescriptor** | It represents the entityID of the EntityDescriptor | | 
-| **AllowIdpInitiatedAuthentication** | Authentication should start at this applciation, which generates an ID. The authenticated response should match this generated Id. If no request can be found that matches the response Id the information is rejected. If your IdP can initiate a new transaction (with a new or no Id) and you want to allow this you can check this box. | FALSE |
+| **PreferredEntityDescriptor** | It represents the entityID of the EntityDescriptor | | 
+| **AllowIdpInitiatedAuthentication** | Authentication should start at this application, which generates an ID. The authenticated response should match this generated Id. If no request can be found that matches the response Id the information is rejected. If your IdP can initiate a new transaction (with a new or no Id) and you want to allow this you can check this box. | FALSE |
 | **EnableForceAuthentication** | will force the SAML IdP to (re)authenticate end-users, even if they are already signed in at the SAML IdP. | FALSE |
 | **EnableMobileAuthToken** | If enabled, an auth token cookie will be set on login that can be used by Mendix hybrid mobile apps to log in after the app is closed. | FALSE |
 | DelegatedAuthenticationURL | This will allow you to use a SAML token and delegate the authentication through SAML. | |
@@ -319,7 +319,7 @@ Below table shows you the different attributes and their values for the quick re
 | **NameIDFormat** | This attribute represents the Description of SAML20.NameIDFormat. Disable NameID policy is true when this attribute (NameIDFormat) is invalid. | |
 | **AuthenticationContext** | It represents Authentication context comparison, contains caption value of SAML20.TypeOfAuthnContext | Exact (Default) |
 | **UserEntity** | The Mendix entity in which you will store and look up the user account. | Administration.Account |
-| **UserPrincipalAttribute** | Determines the attribute on which you want to do the lookup in Enitty atrribures. | Name |
+| **UserPrincipalAttribute** | Determines the attribute on which you want to do the lookup in Entity attributes. | Name |
 | **UserIdPPrincipalAttribute** | We need to provide the attribute which contains the user name which uniquely identifies the user. It should be Assertion Name | UseNameID |
 | **CreateUsers** | The module will always search for the user, based on the Identifying Assertion. You can allow the module to create users with a predefined user role. If you allow the module to create users, it will automatically create a new user account if the user cannot be found. If the module is not allowed to create users, it will present a message to the user stating that the login action was successful but no user has been configured. | true |
 | **UserRoleName**  | This role will be assigned to newly created users. | User |
