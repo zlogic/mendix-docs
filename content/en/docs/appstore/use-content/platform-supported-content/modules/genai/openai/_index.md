@@ -257,25 +257,25 @@ Purely for the purpose of generating embeddings, it does not matter whether the 
 
 Note that currently the OpenAI connector does not support knowledge base interaction (e.g. inserting or retrieving chunks). For more information on possible ways to work with knowledge bases when using the OpenAI Connector for embeddings generation, read more about [PgVector Knowledge Base](/appstore/modules/pgvector-knowledge-base/) and [setting up a Vector Database](/appstore/modules/genai/pgvector-setup/).
 
-### Exposed Microflows for (Azure) OpenAI {#exposed-microflows}
+### Exposed Microflow Actions for (Azure) OpenAI {#exposed-microflows}
 
-You can use the following OpenAI-specific exposed microflows to construct requests via drag-and-drop. These microflows can be found in the **Toolbox** in the **OpenAI (Build Request)** section. Note that using these flows is only required if you need to add options to the request that are specific to OpenAI. For the generic part can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/commons/#text-files-request) and [handle the Response](/appstore/modules/genai/commons/#text-files-response). 
+Here we list the OpenAI-specific exposed microflow actions to construct requests via drag-and-drop. These microflows can be found in the **Toolbox** in Studio Pro. Note that using these flows is only required if you need to add options to the request that are specific to OpenAI. For the generic part can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/commons/#text-files-request) and [handle the Response](/appstore/modules/genai/commons/#text-files-response), which can be found under the **GenAI (Request Building)** and **GenAI (Response Handling)** categories in the Toolbox.
 
-#### `Chat: Set Response Format` {#set-responseformat-chat}
+#### Set Response Format {#set-responseformat-chat}
 
-This microflow can be used to optionally change the `ResponseFormat` of the `OpenAIRequest_Extension` object, which will be created for a `Request` if not present. This describes the format that the chat completions model must output.
+This microflow changes the `ResponseFormat` of the `OpenAIRequest_Extension` object, which will be created for a `Request` if not present. This describes the format that the chat completions model must output. The default behaviour for OpenAI's models currently is `Text`. This operation must currently be used to enable JSON mode by providing value `JSONObject` as input.
 
-#### `Files: Initialize Collection with OpenAI File` {#initialize-filecollection}
+#### Files: Initialize Collection with OpenAI File {#initialize-filecollection}
 
-This microflow can be used to initialize a new `FileCollection` and add a new `FileDocument` or URL. Optionally, the `Image Detail` or a description using `TextContent` can be passed.
+This microflow initializes a new `FileCollection` and add a new `FileDocument` or URL. Optionally, the `Image Detail` or a description using `TextContent` can be passed.
 
-#### `Files: Add OpenAI File to Collection` {#add-file}
+#### Files: Add OpenAI File to Collection {#add-file}
 
-This microflow can be used to add a new `FileDocument` or URL to an existing `FileCollection`. Optionally, the `Image Detail` or a description using `TextContent` can be passed.
+This microflow adds a new `FileDocument` or URL to an existing `FileCollection`. Optionally, the `Image Detail` or a description using `TextContent` can be passed.
 
-#### `Image Generations: Set ImageOptions Extension` {#set-imageoptions-extension}
+#### Image Generation: Set ImageOptions Extension {#set-imageoptions-extension}
 
-This microflow can be used to add a new `OpenAIImageOptions_Extension` to an [ImageOptions](/appstore/modules/genai/commons/) object to specify additional configurations for the image generations operation. The object will be used inside of the image generations operation if the same `ImageOptions` are passed. The parameters are optional.
+This microflow adds a new `OpenAIImageOptions_Extension` to an [ImageOptions](/appstore/modules/genai/commons/) object in order to specify additional configurations for the image generations operation. The object will be used inside of the image generations operation if the same `ImageOptions` are passed. The parameters are optional.
 
 ## Technical Reference {#technical-reference}
 
