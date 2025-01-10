@@ -137,18 +137,18 @@ The following inputs are required for the Azure OpenAI configuration:
 ##### Obtaining the Azure OpenAI Resource Name {#azure-resource-name}
 
 1. Go to the [Azure OpenAI portal](https://oai.azure.com/) and sign in.
-2. In the upper-right corner, click **Settings** ({{% icon name="cog" %}}). 
-3. Go to the **Resource** tab.
-4. Go to **Current resource** and click **JSON view**.
-5. Use the value of the **Name** field as your resource name in the endpoint URL.
+2. In the upper-right corner, next to your Avatar, click on the scope dropdown. 
+3. The tab shows your Directory, Subscription and Azure OpenAI resource.
+4. Make sure the right Azure OpenAI resource is selected.
+5. Use the copy icon ({{% icon name="copy" %}}) and use it as your resource name in the endpoint URL.
 
 ##### Obtaining the Azure OpenAI API keys {#azure-api-keys}
 
 1. Go to the [Azure OpenAI portal](https://oai.azure.com/) and sign in.
-2. In the upper-right corner, click **Settings** ({{% icon name="cog" %}}). 
-3. Go to the **Resource** tab.
-4. Go to **Current resource** and click **JSON view**.
-5. Use the value of the **key1** or **key2** field as your API key while setting up the configuration. Note that these keys might not be available, depending on your organization's security settings. 
+2. In the upper-right corner, next to your Avatar, click on the scope dropdown. 
+3. The tab shows your Directory, Subscription and Azure OpenAI resource.
+4. Make sure the right Azure OpenAI resource is selected.
+5. You can now view ({{% icon name="view" %}}) and copy ({{% icon name="copy" %}}) the value of the **key1** or **key2** field as your API key while setting up the configuration. Note that these keys might not be visible for everyone in the Azure OpenAI Portal, depending on your organization's security settings. 
 
 #### Configuring the OpenAI Deployed Models
 
