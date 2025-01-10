@@ -73,7 +73,7 @@ With the current version, Mendix supports the Chat Completions API for [text gen
 
 ### Limitations {#limitations}
 
-The current scope of the connector focuses on text and image generation use cases, as well as embeddings. We try to release early and often, so keep your eyes open for new releases!
+The current scope of the connector focuses on text and image generation use cases, as well as embeddings. We try to release early and often, so keep an eye on this page!
 
 ### Prerequisites {#prerequisites}
 
@@ -183,9 +183,9 @@ The `OpenAIDeployedModel` is compatible with the two [Chat Completions operation
 
 You can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/commons/#text-files-request) and [handle the Response](/appstore/modules/genai/commons/#text-files-response) for you use case. 
 
-The internal chat completion logic within the OpenAI connector supports `JSON mode`, [function calling](#chatcompletions-functioncalling), and [vision](#chatcompletions-vision). Make sure to check the actual compatibility of the available models with these functionalities, as this changes over time. We will list any specific OpenAI microflow actions from the toolbox below.
+The internal chat completion logic within the OpenAI connector supports [JSON mode](#chatcompletions-json-mode), [function calling](#chatcompletions-functioncalling), and [vision](#chatcompletions-vision). Make sure to check the actual compatibility of the available models with these functionalities, as this changes over time. We will list any specific OpenAI microflow actions from the toolbox below.
 
-#### JSON mode {#json-mode}
+#### JSON mode {#chatcompletions-json-mode}
 
 When JSON mode is used, the model is programmatically instructed to return valid JSON. For OpenAI you have to explicitly mention the necessity of a JSON structure in a message in the conversation, e.g. the system prompt. Additionally after creating the request, but before passing it to the chat completions operation, you use the toolbox action `Set Response Format` to set the required response format to JSON. 
 
@@ -229,7 +229,7 @@ For more information on vision, see [OpenAI](https://platform.openai.com/docs/gu
 
 OpenAI also provides image generation capabilities which can be invoked using this connector module. The `OpenAIDeployedModel` entity is compatible with the [image generation operation from GenAI Commons](/appstore/modules/genai/commons/#generate-image).
 
-In order to implement image generations into your Mendix application, you can use the Image generation microflow actions from GenAI Commons directly. When developing your microflow, you can drag and drop it from the toolbox: find it under the **GenAI (Generates)** category in the **Toolbox** in Mendix Studio Pro:
+In order to implement image generation into your Mendix application, you can use the Image generation microflow actions from GenAI Commons directly. When developing your microflow, you can drag and drop it from the toolbox: find it under the **GenAI (Generate)** category in the **Toolbox** in Mendix Studio Pro:
 
 - Generate Image
 
@@ -241,26 +241,21 @@ More technical details are provided by the in-model documentation in annotations
 
 #### Embeddings Generation {#embeddings-configuration}
 
-In order to implement embeddings into your Mendix application, you can use the microflows in the **USE_ME > Operations > Embeddings** folder. Currently, two microflows for embeddings are exposed as microflow actions under the **OpenAI (Operations)** category in the **Toolbox** in Mendix Studio Pro.
+OpenAI also provides vector embedding generation capabilities which can be invoked using this connector module. The `OpenAIDeployedModel` entity is compatible with the [embeddings generation operations from GenAI Commons](/appstore/modules/genai/commons/#knowledge-bases-embeddings-operations).
 
-These microflows require a specialized [Connection](/appstore/modules/genai/commons/) of type `OpenAIConnection` that determines the model and endpoint to use, and they also require optional [EmbeddingsOptions](/appstore/modules/genai/commons/) to determine optional attributes like the dimensions of the embedding vectors. Depending on the selected operation, an `InputText` String or a [ChunkCollection](/appstore/modules/genai/commons/) needs to be provided. The current version of this operation only supports the float representation of the resulting vector.
+In order to implement embeddings generation into your Mendix application, you can use the Embedding generation microflows actions from GenAI Commons directly. When developing your microflow, you can drag and drop the one you need from the toolbox: find it under the **GenAI (Generate)** category in the **Toolbox** in Mendix Studio Pro:
 
-* For a OpenAI API configuration, the desired model must be specified for every call with the `Model` attribute in the [Connection](/appstore/modules/genai/commons/).
-* For the Azure OpenAI configuration, the model is already determined by the deployment in the [Azure OpenAI portal](https://oai.azure.com/portal). Any model explicitly specified will be ignored and hence can be left empty. 
+- Generate Embeddings (String)
+- Generate Embeddings (Chunk Collection)
 
-#### Embeddings (String) {#embeddings-string}
+Depending on the operation you use in the microflow, an `InputText` String or a [ChunkCollection](/appstore/modules/genai/commons/) needs to be provided. The current version of this operation only supports the float representation of the resulting vector.
 
-The microflow activity `Embeddings (String)` supports scenarios where the vector embedding of a single string must be generated, e.g. to perform a nearest neighbor search across an existing knowledge base. This input string can be passed directly as the `TextInput` parameter of this microflow. Note that the parameter [EmbeddingsOptions](/appstore/modules/genai/commons/) is optional. Use the exposed microflow [Embeddings: Get First Vector from Response](/appstore/modules/genai/commons/) to retrieve the generated embeddings vector.
+The microflow action  `Generate Embeddings (String)` supports scenarios where the vector embedding of a single string must be generated, e.g. to use for a nearest neighbor search across an existing knowledge base. This input string can be passed directly as the `TextInput` parameter of this microflow. Addtionally, [EmbeddingsOptions](/appstore/modules/genai/commons/) is optional and can be instantiated using [Embeddings: Create EmbeddingsOptions](/appstore/modules/genai/commons/#embeddingsoptions-create) from GenAI Commons. Use the GenAI Commons tooblox action [Embeddings: Get First Vector from Response](/appstore/modules/genai/commons/) to retrieve the generated embeddings vector. Both mentioned operations can be found under **GenAI Knowledge Base (Content)** in the **Toolbox** in Mendix Studio Pro.
 
-For technical details, see the [Technical Reference](#technical-reference) section.
+The microflow action `Generate Embeddings (Chunk Collection)` supports the more complex scenario where a collection of string inputs are vectorized in a single API call, such as when converting a collection of texts (chunks) into embeddings to be inserted into a knowledge base. Instead of calling the API for each string, executing a single call for a list of strings can significantly reduce HTTP overhead. Use the exposed microflows of GenAI Commons [Chunks: Initialize ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-create) to create the wrapper and [Chunks: Add Chunk to ChunkCollection](/appstore/modules/genai/commons//appstore/modules/genai/commons/), or [Chunks: Add KnowledgeBaseChunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) to construct the input. The resulting embedding vectors returned after a successful API call will be stored in the `EmbeddingVector` attribute in the same `Chunk` object. \
+Purely for the purpose of generating embeddings, it does not matter whether the ChunkCollection contains Chunks or its specialization KnowledgeBaseChunks. However, if the end goal is to store the generated emebedding vectors in a knowledge base (e.g. using the [PgVector Knowledge Base](/appstore/modules/pgvector-knowledge-base/) module), then Mendix recommends adding `KnowledgeBaseChunks` to the `ChunkCollection` and using these as an input for the embeddings operations, so they can afterwards directly be used to populate the knowledge base with.
 
-#### Embeddings (ChunkCollection) {#embeddings-chunkcollection}
-
-The microflow activity `Embeddings (ChunkCollection)` supports the more complex scenario where a collection of [Chunk](/appstore/modules/genai/commons/) objects are vectorized in a single API call, such as when converting a collection of text strings (chunks) from a private knowledge base into embeddings. Instead of calling the API for each string, executing a single call for a list of strings can significantly reduce HTTP overhead. The embedding vectors returned after a successful API call will be stored as `EmbeddingVector` attribute in the same `Chunk` object. Use the exposed microflows of [GenAI Commons](/appstore/modules/genai/commons/) Chunks: Initialize ChunkCollection, Chunks: Add Chunk to ChunkCollection, or Chunks: Add KnowledgeBaseChunk to ChunkCollection to construct the input. 
-
-In order to create embeddings, it does not matter whether the ChunkCollection contains Chunks or its specialization KnowledgeBaseChunks. However, if the end goal is to store the generated emebedding vectors in a knowledge base (e.g. using the [PgVector Knowledge Base](/appstore/modules/pgvector-knowledge-base/) module), then Mendix recommends adding `KnowledgeBaseChunks` to the `ChunkCollection` and using these as an input for the embeddings operations, so they can afterwards directly be used to populate the knowledge base with.
-
-For technical details, see the [Technical Reference](#technical-reference) section.
+Note that currently the OpenAI connector does not support knowledge base interaction (e.g. inserting or retrieving chunks). For more information on possible ways to work with knowledge bases when using the OpenAI Connector for embeddings generation, read more about [PgVector Knowledge Base](/appstore/modules/pgvector-knowledge-base/) and [setting up a Vector Database](/appstore/modules/genai/pgvector-setup/).
 
 ### Exposed Microflows for (Azure) OpenAI {#exposed-microflows}
 
