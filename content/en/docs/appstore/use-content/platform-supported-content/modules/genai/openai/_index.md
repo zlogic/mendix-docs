@@ -181,6 +181,8 @@ The `OpenAIDeployedModel` is compatible with the two [Chat Completions operation
 - Chat Completions (with history) 
 - Chat Completions (without history)
 
+You can use the GenAI Commons toolbox actions to [create the required Request](/appstore/modules/genai/commons/#text-files-request) and [handle the Response](/appstore/modules/genai/commons/#text-files-response) for you use case. 
+
 The internal chat completion logic within the OpenAI connector supports `JSON mode`, [function calling](#chatcompletions-functioncalling), and [vision](#chatcompletions-vision). Make sure to check the actual compatibility of the available models with these functionalities, as this changes over time. We will list any specific OpenAI microflow actions from the toolbox below.
 
 #### JSON mode {#json-mode}
@@ -223,7 +225,7 @@ When you use Azure OpenAI, it is recommended to set the optional `MaxTokens` inp
 
 For more information on vision, see [OpenAI](https://platform.openai.com/docs/guides/vision) and [Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/gpt-with-vision) documentation.
 
-### Image Generations Configuration {#image-generations-configuration}
+#### Image Generations {#image-generations-configuration}
 
 OpenAI also provides image generation capabilities which can be invoked using this connector module. The `OpenAIDeployedModel` entity is compatible with the [image generation operation from GenAI Commons](/appstore/modules/genai/commons/#generate-image).
 
@@ -237,7 +239,7 @@ A generated image need to be stored in a custom entity that inherits from the `S
 
 More technical details are provided by the in-model documentation in annotations and the documentation fields for microflows, parameters, and the domain model. See the [Technical Reference](#technical-reference) section for guidance on how to find it.
 
-### Embeddings Configuration {#embeddings-configuration}
+#### Embeddings Generation {#embeddings-configuration}
 
 In order to implement embeddings into your Mendix application, you can use the microflows in the **USE_ME > Operations > Embeddings** folder. Currently, two microflows for embeddings are exposed as microflow actions under the **OpenAI (Operations)** category in the **Toolbox** in Mendix Studio Pro.
 
