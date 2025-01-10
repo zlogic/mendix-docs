@@ -8,7 +8,7 @@ weight: 60
 
 ## Introduction
 
-The [MxGenAIConnector](Marketplace link) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox.
+The [MxGenAIConnector](https://marketplace.mendix.com/link/component/227931) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox.
 
 ### Typical Use Cases
 
@@ -17,7 +17,7 @@ The MxGenAIConnector is commonly used for text generation, embeddings, and knowl
 #### Text Generation
 
 * Develop interactive AI chatbots and virtual assistants that can carry out conversations naturally and engagingly.
-* Use large language models (LLMs) like Anthropic Claude 3.5 for text comprehension and analysis use cases such as summarization, synthesis, and answering questions about large amounts of text.
+* Use large language models (LLMs) like Anthropic Claude 3.5 Sonnet for text comprehension and analysis use cases such as summarization, synthesis, and answering questions about large amounts of text.
 * By using text generation models, you can build applications with features such as:
 
     * Draft documents
