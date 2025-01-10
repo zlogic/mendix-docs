@@ -312,8 +312,7 @@ Below table shows you the different attributes and their values for the quick re
 | **UserRoleName**  | This role will be assigned to newly created users. | User |
 | **UserType** | Assign usertype to the created users | Internal |
 | **CustomUserProvisioning**  | This is an optional configuration to run a microflow to persist user information in your app model using some of your own specific logic. First, you need to develop a custom microflow in your app and select it for the CustomUserProvisioning | |
-| **CustomAfterSigninLogic**  | Checking the box will execute microflow 'CustomAfterSigninLogic', you can change the default microflow by providing your own custom microflow below. This microflow is executed after the new session has been created, and you can copy or review data from the original (anonymous) session to the newly created session or user. This functionality is similar to the after sign-in microflow you can find in the Mendix project security.
-This list will show only custom microflows, starting with name "Custom". | |
+| **CustomAfterSigninLogic**  | Checking the box will execute the `CustomAfterSigninLogic microflow`. You can replace the default with your custom microflow below. This microflow runs after a new session is created, allowing you to copy or review data from the original (anonymous) session to the new session or user. This functionality is similar to the after sign-in microflow in Mendix project security. Only custom microflows starting with 'Custom' will appear in the list | |
 | **UseEncryption**  | Enable better security for app | TRUE |
 | **EncryptionMethod**  | This represents the Encryption Algorithm | SHA256 - RSA |
 | **EncryptionKeyLength**  | This constant represents the Encryption length | 2048 bits |
