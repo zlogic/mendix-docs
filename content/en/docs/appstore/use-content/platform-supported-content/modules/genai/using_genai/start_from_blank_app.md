@@ -38,7 +38,7 @@ To start building your smart app with a blank GenAI App template, download the [
 
 ### Important Modules
 
-The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) includes an essential pre-installed bundle called the [Mendix Cloud GenAI Resources Packs](https://marketplace.mendix.com/link/component/227931), which are beneficial to familiarize yourself with, as it includes:
+The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) includes an essential pre-installed bundle called the [Conversational UI & GenAI Connectivity](https://marketplace.mendix.com/link/component/229305), which are beneficial to familiarize yourself with, as it includes:
 
 * The [GenAI Commons](/appstore/modules/genai/commons/) module: provides pre-built operations and data structures for seamless integration with platform-supported GenAI connectors, such as the Mendix Cloud GenAI, OpenAI or Amazon Bedrock.
 
@@ -68,7 +68,7 @@ In this section, you can set up a conversational interface for your application 
 
 #### Creating a Page
  
-Copy the `ConversationalUI_FullScreenChat` page from the **ConversationalUI > USE_ME > Pages** into your module, which can be named as `MyFirstBot` module. Alternatively, if you do not plan to make any changes to the page, you can use it directly without copying.
+Copy the `ConversationalUI_FullScreenChat` page from the **ConversationalUI > USE_ME > > Conversational UI > Pages** into your module, which can be named as `MyFirstBot` module. Alternatively, if you do not plan to make any changes to the page, you can use it directly without copying.
 
 #### Configuring the Page Parameter and Chat Box Settings
 
@@ -76,7 +76,7 @@ Since the **ConversationalUI_FullScreenChat** page contains a **Data View** usin
 
 ##### Using a Template Microflow with OpenAI
 
-1. Locate the pre-built microflow `ACT_FullScreenChat_Open_OpenAI` in **ConversationalUI > USE_ME > Pages**. Right-click on the microflow and select **Include in project** to copy it into your `MyFirstBot` module.
+1. Locate the pre-built microflow `ACT_FullScreenChat_Open` in **ConversationalUI > USE_ME > Pages**. Right-click on the microflow and select **Include in project** to copy it into your `MyFirstBot` module.
 2. Locate the show Page action for `ConversationalUI_FullScreenChat`. Inside this action, change the page to `ConversationalUI_FullScreenChat` from your `MyFirstBot` module or the `ConversationalUI` module.
 
 ##### Using a Template Microflow with Bedrock 
@@ -112,7 +112,7 @@ Copy the `ChatContext_ChatWithHistory_ActionMicroflow_OpenAI` or the `ChatContex
 
 #### Navigation Configuration
 
-Click **Home** and select the `ACT_FullScreenChat_Open_OpenAI` or `ACT_FullScreenChat_Open_Bedrock` microflow from your `MyFirstBot` module to configure the navigation.
+Click **Home** and select the `ACT_FullScreenChat_Open_OpenAI` or `ACT_FullScreenChat_Open_Bedrock` microflow from your `MyFirstBot` module to configure the **Navigation**.
 
 {{% alert color="warning" %}}
 You may encounter an error about allowed roles. To resolve this, go to the page **Properties** and update the **Navigation > Visible for** setting to include the appropriate user roles.
