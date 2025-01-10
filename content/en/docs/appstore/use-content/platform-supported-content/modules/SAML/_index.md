@@ -68,7 +68,7 @@ The Mendix SAML SSO supports usage of SAML metadata in the following way:
 
 For easy configurability, the SAML module offers the following:
 
-* From the version 4.0.0 of the SAML module, if you want to connect your Mendix application with single IdP, you can do the necessary configurations at design time (using a microflow) and/or deploy-time using Application Constants. This is described in section [add the section](XXXX)
+* From the version 4.0.0 of the SAML module, if you want to connect your Mendix application with single IdP, you can do the necessary configurations at design time (using a microflow) and/or deploy-time using Application Constants. This is described in section [Configuring SAML Module](#config)
 * Runtime configuration by a local Admin is still available in below cases:
 
     * If you want to connect multiple IdPs with your SAML app.
@@ -103,11 +103,11 @@ Some SAML services, such as eHerkenning and DigID in the Netherlands, use option
 
 If you need any of these features, contact your Mendix CSM to discuss inclusion of these features on the Mendix roadmap or customization of the SAML SSO module.
 
-Versions of the SAML module below 3.5.0 are limited to single keypair. If you are using one of those older versions and you want to connect your app to multiple SAML IdPs, you cannot use different key pairs and certificates for each of the SSO federations. Instead, you must use a single key pair and certificate for all SAML IdPs. The certificate can be either a self-signed certificate or a certificate issued by a certificate authority (CA). For more details, see the [Use a Certificate Issued by a Certificate Authority](#use-ca) section below.
+Versions of the SAML module below 3.5.0 are limited to single keypair. If you are using one of those older versions and you want to connect your app to multiple SAML IdPs, you cannot use different key pairs and certificates for each of the SSO federations. Instead, you must use a single key pair and certificate for all SAML IdPs. The certificate can be either a self-signed certificate or a certificate issued by a certificate authority (CA). For more details, see the [Use a Certificate Issued by a Certificate Authority](/appstore/modules/saml/advanced-configuration/#use-ca) section of *Advanced configuration for SAML.
 
 If you use both the [OIDC SSO](/appstore/modules/oidc/) module and the SAML module in the same app, each end-user can only authenticate using one IdP.
 
-The URL for downloading the SP metadata of your app is independent of the value of the EntityID that you configure for your app (see [Configuring Service Provider](#configure-sp)) and which is included in the SP metadata. Instead, the metadata URL is based on the alias for the connected IDP where the SP metadata will be used.
+The URL for downloading the SP metadata of your app is independent of the value of the EntityID that you configure for your app which is included in the SP metadata. Instead, the metadata URL is based on the alias for the connected IDP where the SP metadata will be used.
 
 Controlling the configuration using constants requires an app restart and it is only possible when your app is connected to a single IdP.
 
@@ -170,7 +170,7 @@ By default, the SAML module will be installed as the **SAML20** module in your a
         * If you use the SAML module in your hybrid app, you must change the `SAML20.HybridAppLoginTimeOutInMinutes` constant to change the validity of the authentication token used by the hybrid mobile app.
         * If you use both the default login handler and the SAML module in your hybrid app, you must change both so that they match. This is because, when you use the SAML module for SSO in your Mendix app, the authentication token is not created by the Mendix runtime, which uses the custom runtime setting. Instead, the authentication token is created by the Java code in the SAML module. This Java code does not have access to the custom runtime setting value, and thus requires the constant value to be set.
 
-            Only use this setting if you are using SAML on a hybrid mobile app. Note that this functionality also requires mobile authentication tokens to be enabled in your [IdP Configuration](/appstore/modules/saml/#additional-functionality) as well as changes to the hybrid app package as described in [How To Implement SSO on a Hybrid App with Mendix and SAML](/howto8/mobile/implement-sso-on-a-hybrid-app-with-mendix-and-saml/).
+            Only use this setting if you are using SAML on a hybrid mobile app. Note that this functionality also requires mobile authentication tokens to be enabled in your IdP Configuration as well as changes to the hybrid app package as described in [How To Implement SSO on a Hybrid App with Mendix and SAML](/howto8/mobile/implement-sso-on-a-hybrid-app-with-mendix-and-saml/).
 
         {{% alert color="warning" %}}Hybrid mobile apps are not available in Mendix 10.{{% /alert %}}
 
@@ -207,7 +207,7 @@ Configuring SAML module is crucial for setting up secure authentication within y
 
 In versions below 3.6.9 of the SAML module, configuration can be done using the app pages – see the [Using SSO Landing pages](#ssolandingpage) section above. However, in version 4.0.0 and above, you have the option to use constants or custom microflows to configure your app at deploy time.
 
-The process diagram below explains three different ways to complete the deploy-time configuration of the SAML module. The [Easy Flow configuration]( add) offers a default and straightforward setup, while the [Non-default configuration]( add) enables customization of the IdP configuration by implementing custom microflows. Alternatively, in the [Runtime Configuration Flow](add), you can deploy your app first and then complete the configuration within the app interface.
+The process diagram below explains three different ways to complete the deploy-time configuration of the SAML module. The [Easy Flow configuration](#easy-flow) offers a default and straightforward setup, while the [Non-default configuration](#non-default) enables customization of the IdP configuration by implementing custom microflows. Alternatively, in the [Runtime Configuration Flow](#runtime-config), you can deploy your app first and then complete the configuration within the app interface.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/saml/xxxxx.png" max-width=80% >}}
 
@@ -279,7 +279,7 @@ Following entities are used to create IdP configurations:
 * `Dep_SAMLAuthnContext`: List of SAMLAuthnContext
 * `Dep_IdpAttributeEntityAttributeMapping`: List of Attribute Mapping
 
-Below table shows you the different attributes and their values for the quick reference. You can see the details of these attributes of above entities in the [IdP Attributes for SAML]( add) document. For more information, see the [Configuring IdP specific Settings]( add) section below.
+Below table shows you the different attributes and their values for the quick reference. You can see the details of these attributes of above entities in the [Reference Guide for SAML IdP Configuration](/appstore/modules/saml/idp-attributes/) document.
 
 | IDPConfiguration(Non-Persistable entity) | Description | Default Value |
 | --- | --- | --- |
@@ -318,9 +318,6 @@ Below table shows you the different attributes and their values for the quick re
 | **EncryptionKeyLength**  | This constant represents the Encryption length | 2048 bits |
 | Active | After completion of Idp config it will make the Toggle Active | true |
 
-
-
-
 Deploy the application and login with the SSO. For more information, see the [Deploy the Application and Login with SSO](#deploy-application) section above.
 
 ### Runtime Configuration Flow{#runtime-config}
@@ -335,14 +332,12 @@ Deploy your application and log in with the application Admin account. Click **S
 
 1. Navigate to the **Model Reflection**, select the required module from the left navigation pane, and select **Click to refresh** to synchronize entities and microflows.
 2. In the **SP Configuration** tab, provide the necessary values and click **Save**. You need to complete this step before proceeding for IdP Configuration.
-3. In the IdP Configuration tab, click **New** and provide the necessary details. For more information on IdP configuration tabs, see the [IdP Attributes for SAML]( add) document.
+3. In the IdP Configuration tab, click **New** and provide the necessary details. For more information on IdP configuration tabs, see the [Reference Guide for SAML IdP Configuration](/appstore/modules/saml/idp-attributes/) document.
 4. From version 4.0.0 of the SAML module, you have the option to download the SP Metadata from **Encryption Settings** tab, **Identity Provider Metadata** tab, and at the end of the configuration process.
 
 #### Downloading and Uploading SP Metadata Manually
 
-After completing the IdP configuration, download the SP metadata. Upload the SP metadata details to the IdP provider, either via URL or by downloading the SP metadata XML file provided.
-
-For more information, see the [Downloading SP metadata]( add) section below. This typically involves transferring the file to the IdP provider responsible for configuring authentication on the IdP server.
+After completing the IdP configuration, download the SP metadata. Upload the SP metadata details to the IdP provider, either via URL or by downloading the SP metadata XML file provided. This typically involves transferring the file to the IdP provider responsible for configuring authentication on the IdP server.
 
 {{% alert color="info" %}}
 The XML for the SP metadata is signed. If you make any changes to the metadata (even just opening it in an editor) this can mean that the signature no longer matches the content, and the metadata will be rejected.
@@ -473,7 +468,7 @@ The Deep Link module has been deprecated from Studio Pro 10.6.0 and replaced by 
 
 If end-users who use the deeplink do not yet have a session in your app, the deeplink can trigger the SSO process. If successful, the end-user will be automatically redirected back to the deeplink.
 
-For more information on using Deep Link module (with Mendix 8 and 9), see the [Using Deep Link Module]() section below.
+For more information on using Deep Link module (with Mendix 8 and 9), see the [Using Deep Link Module](#using-deeplink) section below.
 
 ### Using Page and Microflow URLs with SAML{#page-microflow-url-saml}
 
@@ -497,7 +492,7 @@ Once the above changes are applied, end users can directly navigate to the desir
 
 For more information, see the [Migrating to Page and Microflow URLs](/appstore/modules/deep-link/#migrate-page-micro) section of the *Deep Link*.
 
-### Using Deep Link Module
+### Using Deep Link Module{#using-deeplink}
 
 When using the SAML module with the Deeplink Module (for Mendix 8 and 9), you need to set the `LoginLocation` constant of the Deeplink module to `/SSO/login?f=true&cont=` in order to redirect the user to the original deep link location after a successful login.
 
@@ -527,7 +522,7 @@ When enabling the log node SSO to show trace messages, you can find detailed inf
 
 ### Troubleshooting an Endless Redirect Loop in Mendix 9 and 10
 
-When using the [SAML](/appstore/modules/saml/) module for SSO in Mendix 9 and 10, you might get stuck in an endless redirect loop. This is because the default value for SameSite cookies is `"Strict"`, and the session cookies cannot be forwarded.
+When using the [SAML](https://marketplace.mendix.com/link/component/1174) module for SSO in Mendix 9 and 10, you might get stuck in an endless redirect loop. This is because the default value for SameSite cookies is `"Strict"`, and the session cookies cannot be forwarded.
 
 To avoid this issue, make sure your IdP (identity provider) and your app are in the same domain, and thus on the same site. For example, if your app is on `app.domain.com` and you open the deep link `app.domain.com/link/test`, then you are redirected to your IdP to sign in on `idp.domain.com/SSO`. After you sign in successfully, you are sent back to `app.domain.com/SSO/assertion`. Finally, you are forwarded to `app.domain.com/link/test`. Since your requests always stay on the same site, the cookie can be forwarded each time.
 
@@ -553,8 +548,8 @@ End-users can access your app through the following endpoints when using the SAM
 * **/SSO/login/[IdP Alias]** or **/SSO/login?_idp_id=[IdP_Alias]&action=verify&on={contextname}** – For logging using a specific IdP, you have to open either of these two URLs and pass the IdP alias as a parameter in the URL.
     The (optional) parameters for this end point are as follows:
     * **idp_id** – this indicates which idp will be used to sign the end-user in if you connect your app using multiple SAML IdPs
-    * **action=verify** – indicates that in-session authentication is being requested (see [In-session Authentication](#in-session) for more information)
-    * **on={contextname}** – this gives context to the initiation of in-session authentication, (see [In-session Authentication](#in-session) for more information)
+    * **action=verify** – indicates that in-session authentication is being requested (see [In-session Authentication](/appstore/modules/saml/idp-attributes/#in-session) for more information)
+    * **on={contextname}** – this gives context to the initiation of in-session authentication, (see [In-session Authentication](/appstore/modules/saml/idp-attributes/#in-session) for more information)
 * **/SSO/login** or **/SSO/login?action=verify&on={contextname}** – If you have only one active IdP, opening these URLs will automatically try to log you in using the active IdP. In the case of multiple active IdPs and discovery enabled, the user will be redirected to the discovery page.  If discovery is not allowed, the user will receive an error message. The optional parameters work as described above.
 
 Your SAML IdP can consume the following endpoints at your app. Typically the SP-metadata is used to communicate the URLs to your SAML IdP. As a Low-Code Developer you don’t have to consider these endpoints. This information is included here for completeness and as a reference when questions arise around integration with your SAML IdP.
@@ -570,3 +565,4 @@ Your SAML IdP can consume the following endpoints at your app. Typically the SP-
     {{% alert color="info" %}}You must log into the Mendix Platform to see the lecture above.{{% /alert %}}
 * [Advanced configuration for SAML](/appstore/modules/saml/advanced-configuration/)
 * [Reference Guide for SAML IdP Configuration](/appstore/modules/saml/idp-attributes/)
+* [OIDC SSO](/appstore/modules/oidc/)
