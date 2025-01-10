@@ -16,6 +16,10 @@ cascade:
         priority: 0.3
 ---
 
+{{% alert color="warning" %}}
+Note that when Mendix 11 is released (expected in June 2025), Mendix 8 will go end-of-life.
+{{% /alert %}}
+
 ## Introduction
 
 The *Mendix Studio Pro 8 Guide* covers important topics concerning [Studio Pro](/refguide8/modeling/), the [Mendix Runtime](/refguide8/runtime/), and other components of the Mendix Platform.
