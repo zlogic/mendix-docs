@@ -17,7 +17,7 @@ The MxGenAIConnector is commonly used for text generation, embeddings, and knowl
 #### Text Generation
 
 * Develop interactive AI chatbots and virtual assistants that can carry out conversations naturally and engagingly.
-* Use large language models (LLMs) like Anthropic Claude 3.5 Sonnet for text comprehension and analysis use cases such as summarization, synthesis, and answering questions about large amounts of text.
+* Use state-of-the-art large language models (LLMs) by providers like Anthropic for text comprehension and analysis use cases such as summarization, synthesis, and answering questions about large amounts of text.
 * By using text generation models, you can build applications with features such as:
 
     * Draft documents
@@ -32,7 +32,7 @@ The MxGenAIConnector is commonly used for text generation, embeddings, and knowl
 
 #### Knowledge Base
 
-The module enables tailoring generated responses to specific contexts by grounding them in data from a knowledge base. This allows for the secure use of private company data or other non-public information when interacting with GenAI models within the Mendix app. It provides a low-code solution to store discrete data (commonly called chunks) in the knowledge base and retrieves relevant information for end-user actions or application processes.
+The module enables tailoring generated responses to specific contexts by grounding them in data inside of a collection belonging to Mendix Cloud GenAI knowledge base resource. This allows for the secure use of private company data or other non-public information when interacting with GenAI models within the Mendix app. It provides a low-code solution to store discrete data (commonly called chunks) in the knowledge base and retrieves relevant information for end-user actions or application processes.
 
 Knowledge bases are often used for:
 
@@ -60,7 +60,7 @@ MxGenAIConnector module generates embeddings internally when interacting with th
 
 ### Features
 
-In the current version, Mendix supports text generation (including function/tool calling, chat with images, and chat with documents), vector embedding generation, knowledge base storage, and retrieval.
+In the current version, Mendix supports text generation (including function/tool calling, chat with images, and chat with documents), vector embedding generation, knowledge base storage, and retrievalof knowledge base chunks.
 
 ### Prerequisites
 
@@ -74,7 +74,7 @@ To use this connector, you need configuration keys to authenticate to the Mendix
 
 ## Installation
 
-Add the [Dependencies](#dependencies) listed above from the Marketplace. To import the [MxGenAIConnector](marketplace link) into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
+Add the [Dependencies](#dependencies) listed above from the Marketplace. On marketplace, the Mendix Cloud GenAI connector is bundled inside of the [GenAI for Mendix module](https://marketplace.mendix.com/link/component/227931) which also contains GenAI commmons operations and logic. To import this module into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
 
 ## Configuration
 
@@ -93,31 +93,31 @@ Follow the steps below to get started:
 
 Configuration keys are stored persistently after they are imported (either via the UI or the exposed microflow). There are three different types of configurations that reflect the use cases this service supports. The specific operations are described below.
 
-To use the operations, either a `DeployedModel` (text, embeddings) or a `MxKnowledgebaseConnection` must always be passed that refers to a Configuration. The DeployedModel will be created automatically when importing keys in runtime and only needs to retrieved from the database. To initialize a knowledge base operation, use the `Connection: Get` toolbox action to create the MxKnowledgebaseConnection object. A `CollectionName` must be passed so the right collection inside of the knowledge base resource will be used.
+To use the operations, either a `DeployedModel` (text, embeddings) or a `MxKnowledgebaseConnection` must always be passed as input. The DeployedModel will be created automatically when importing keys in runtime and needs to be retrieved from the database only. To initialize a knowledge base operation, use the `Connection: Get` toolbox action to create the `MxKnowledgebaseConnection` object. It requires a `CollectionName` (string) in order for the right collection inside of the knowledge base resource to be used.
 
 ### Chat Completions Operations
 
-After following the general setup above, you are ready to use the chat completions microflows in the GenAICommons module. You can find both `Chat Completions (without history)` and `Chat Completions (with history)` in the **Text & Files** folder. The chat completions microflows are also exposed as microflow actions under the **GenAI (Generate)** category inside of the **Toolbox**.
+After following the general setup above, you are ready to use the chat completions microflows in the GenAICommons and MxGenAIConnector module. You can find `Chat Completions (without history)` and `Chat Completions (with history)` in the **Text & Files** folder of the GenAICommons and `Retrieve and Generate (MxCloud, without history)` inside of the **USE_ME > RetrieveAndGenerate** folder of the MxGenAIConnector module. The chat completions microflows are also exposed as microflow actions under the **GenAI (Generate)** category inside of the **Toolbox**.
 
 These microflows expect a `DeployedModel` as input in order to determine the connection details. 
 
 In chat completions, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on prompt engineering, see the [Read More]{#readmore} section. Different exposed microflow activities may require different prompts and logic for how the prompts must be passed, as described in the following sections. For more information on message roles, see the [ENUM_MessageRole](/appstore/modules/genai/commons/#enum-messagerole) enumeration in the *GenAI Commons*.
 
-All chat completion operations within the connector except *Retrieve and Generate* support [Function Calling](#function-calling), [Vision](#vision), and [Document Chat](#document-chat).
+Apart from `Retrieve and Generate (MxCloud, without history)`, the chat completion operations support [Function Calling](#function-calling), [Vision](#vision), and [Document Chat](#document-chat).
 
-For more inspiration or guidance on how to use the above-mentioned microflows in your logic, Mendix recommends downloading our [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples.
+For more inspiration or guidance on how to use the above-mentioned microflows in your logic, Mendix recommends downloading the [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475), which demonstrates a variety of examples.
 
 #### Chat Completions (without History)
 
-The microflow activity `Chat Completions (without history)` supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request. Please see the GenAICommons module documentation for more information.
+The microflow activity `Chat Completions (without history)` supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request. Please see the [GenAICommons module](https://docs.mendix.com/appstore/modules/genai/commons/) documentation for more information.
 
 #### Chat Completions (with History)
 
-The microflow activity `Chat completions (with history)` supports more complex use cases where a list of (historical) messages (for example, the conversation or context so far) is sent as part of the request to the LLM. Please see the GenAICommons module documentation for more information.
+The microflow activity `Chat completions (with history)` supports more complex use cases where a list of (historical) messages (for example, the conversation or context so far) is sent as part of the request to the LLM. Please see the [GenAICommons module](https://docs.mendix.com/appstore/modules/genai/commons/) documentation for more information.
 
 #### Chat Completions (Retrieve & Generate)
 
-The microflow activity `Retrieve and Generate (MxCloud, without history)` simplifies `Retrieve and Generate` use cases without history. By providing a user prompt, the knowledge base is searched for similar knowledge chunks, which are then passed to the model. The model is instructed to base its response on the retrieved knowledge while referring to the source used to generate the response. This operation requires a [Request](/appstore/modules/genai/commons/#request) which is associateded to a `RetrieveAndGenerateRequest_Extension` pointing to a `MxKnowledgebaseConnection` object. Simply include a flow as shown below when setting up your logic to make sure that all is implemented as required: 
+The microflow activity `Retrieve and Generate (MxCloud, without history)` simplifies `Retrieve and Generate` use cases without history. By providing a user prompt, the knowledge base is searched for similar knowledge chunks, which are then passed to the model. The model is instructed to base its response on the retrieved knowledge while referring to the source used to generate the response. This operation requires a [Request](/appstore/modules/genai/commons/#request) which is associateded to a `RetrieveAndGenerateRequest_Extension` pointing to a `MxKnowledgebaseConnection` object. Please use the flow shown below as orientation when setting up your logic to make sure that all is implemented as required: 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/MxGenAIConnector_ConfigureRAG.png" >}}
 
@@ -148,7 +148,7 @@ For more information, see [Function Calling](/appstore/modules/genai/function-ca
 
 Vision enables the model to interpret and analyze images, allowing them to answer questions and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To ensure the vision inside the connector, an optional [FileCollection](/appstore/modules/genai/commons/#filecollection) containing one or multiple images must be sent with a single message.
 
-For `Chat Completions without History`, `FileCollection` is an optional input parameter. For `Chat Completions with History`, `FileCollection` can optionally be added to individual user messages using [Chat: Add Message to Request](/appstore/modules/genai/commons/#chat-add-message-to-request).
+For `Chat Completions without History`, `FileCollection` is an optional input parameter. For `Chat Completions with History`, `FileCollection` can optionally be added to individual user messages using [Add Message to Request](/appstore/modules/genai/commons/#add-message-to-request).
 
 In the entire conversation, you can pass up to 20 images that are smaller than 3.75 MB each and with a height and width of maximum 8000 pixels. The following types are accepted: PNG, JPEG, JPG , GIF, and WebP.
 
@@ -168,20 +168,20 @@ Note that the model uses the file name when analyzing documents, which could mak
 
 ### Knowledge Base Operations
 
-To implement knowledge base logic into your Mendix application, you can use the actions in the **USE_ME** > **Knowledge Base** folder or under the **Synthia (Knowledge Bases)** category in the **Toolbox**. These actions require a specialized [Connection](/appstore/modules/genai/commons/#connection) of type SynthiaConnection that determines the model and endpoint to use. Additionally, the knowledge base name must be passed when creating the object and it must be associated with a `ConfigurationKnowledgeBase` object.
+To implement knowledge base logic into your Mendix application, you can use the actions in the **USE_ME** > **Knowledge Base** folder or under the **GenAI Knowledge Base (Content)** or **Mendix Cloud Knowledge Base** categories in the **Toolbox**. These actions require a specialized [Connection](/appstore/modules/genai/commons/#connection) of type `MxKnowledgeBaseConnection` that determines the model and endpoint to use. Additionally, the collection name must be passed when creating the object and it must be associated with a `Configuration` object. Please note that for Mendix Cloud a knowledge base resource may contain several collections (tables). 
 
 Dealing with knowledge bases involves two main stages:
 
 1. [Insertion of knowledge](#knowledge-base-insertion)
 2. [Retrieval of knowledge (Nearest neighbor)](#knowledge-base-retrieval)
 
-You do not need to manually add embeddings to a chunk, as the connector handles this internally. To see all existing knowledge bases for a configuration, go to the **Knowledge Base** tab on the [Mendix Cloud GenAI Configuration] page and update the knowledge bases. Alternatively, use the `Get Knowledge Base List` action to retrieve a synchronized list of knowledge bases to include in your module. Lastly, you can delete a knowledge base using the `Delete Knowledge Base` action.
+You do not need to manually add embeddings to a chunk, as the connector handles this internally. To see all existing knowledge bases for a configuration, go to the **Knowledge Base** tab on the [Mendix Cloud GenAI Configuration] page and refresh the view on the right. Alternatively, use the `Get Collections` action to retrieve a synchronized list of collections inside of your knowledge base resource to include in your module. Lastly, you can delete a knowledge base using the `Delete Collection` action.
 
 #### Knowledge Base Insertion{#knowledge-base-insertion}
 
 ##### Data chunks
 
-To add data to the knowledge base, you need discrete pieces of information and create knowledge base chunks for each one. Using the `GenAICommons` operations, first, [create a ChunkCollection object](/appstore/modules/genai/commons/#chunkcollection-create), then [add a KnowlegdebaseChunk](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) object to it for each piece of information.
+To add data to the knowledge base, you need discrete pieces of information and create knowledge base chunks for each one. Use the `GenAICommons` operations to first [initialize a ChunkCollection object](/appstore/modules/genai/commons/#chunkcollection-initialize), and then [add a KnowlegdebaseChunk](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) object to it for each piece of information. Both can be found in the **Toolbox** inside of the **GenAI Knowledge Base (Content)** category.
 
 ##### Chunking strategy
 
@@ -191,7 +191,7 @@ The chunk collection can then be stored in the knowledge base using one of the f
 
 ##### Add data chunks to your knowledge base
 
-Use the following toolbox actions to populate knowledge data into the knowledge base:
+Use the following toolbox actions inside the **Mendix Cloud Knowledge Base** toolbox category to populate knowledge data into the knowledge base:
 
 1. `Embed & Insert` embeds a list of chunks (passed via a [ChunkCollection](/appstore/modules/genai/commons/#chunkcollection)) and inserts them into the knowledge base.
 2. `Embed & (Re)populate Knowledge Base` is similar to the `Embed & Insert`, but deletes all existing chunks from the knowledge base before inserting the new chunks.
@@ -199,20 +199,20 @@ Use the following toolbox actions to populate knowledge data into the knowledge 
 
 Additionally, use the following toolbox actions to delete chunks:
 
-* `Delete for Object` deletes all chunks (and related metadata) from the knowledge base that were associated with a passed Mendix object at the insertion stage.
+* `Delete for Object` deletes all chunks (and related metadata) from the collection that was associated with a passed Mendix object at the insertion stage.
 * `Delete for List` is similar to the `Delete for Object` , but a list of Mendix objects is passed instead.
 
-When data in your Mendix app that is relevant to the knowledge base changes, it is usually necessary to keep the knowledge base chunks in sync. Whenever a Mendix Object changes, the affected chunks must be updated. Depending on your use case, the `Replace` and `Delete for Objects` can be conveniently used in event handler microflows.
+When data in your Mendix app that is relevant to the knowledge base changes, it is usually necessary to keep the knowledge base chunks in sync. Whenever a Mendix Object changes, the affected chunks must be updated. Depending on your use case, the `Embed & Replace` and `Delete for Objects` can be conveniently used in event handler microflows.
 
 The example below shows how to repopulate a knowledge base using a list of Mendix objects:
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/knowledgebase-using-mendix-object.png" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/knowledgebase-using-mendix-object.png" >}} (TODO LINA)
 
 ##### Knowledge Base Retrieval{#knowledge-base-retrieval}
 
 The following toolbox actions can be used to retrieve knowledge data from the knowledge base (and associate with your Mendix data):
 
-1. `Retrieve` retrieves knowledge base chunks from the knowledge base. You can use pagination via the `Offset` and `MaxNumberOfResults` parameters or apply filtering via a `MetadataCollection` or `MxObject`.
+1. `Retrieve` retrieves knowledge base chunks from the knowledge base. You can use pagination via the `Offset` and `MaxNumberOfResults` parameters or apply filtering via a `MetadataCollection` or `MxObject`. (@Lina Offset?)
 2. `Retrieve & Associate` is similar to the `Retrieve` but associates the returned chunks with a Mendix object if they were linked at the insertion stage. 
 
     {{% alert color="info" %}}You must define your entity specialized from `KnowledgeBaseChunk`, which refers to another entity used during the insertion stage.
@@ -223,19 +223,19 @@ The following toolbox actions can be used to retrieve knowledge data from the kn
 
 ### Embeddings Operations
 
-If you are working directly with embedding vectors for specific use cases that do not include KnowledgeBase interaction, such as clustering or classification, the below operations are relevant. For practical examples and guidance, consider referring to the [GenAI Showcase Application](https://marketplace.mendix.com/link/component/220475) showcase to see how these embedding-only operations can be used.
+If you are working directly with embedding vectors for specific use cases that do not include knowledge base interaction (for example clustering or classification), the below operations are relevant. For practical examples and guidance, consider referring to the [GenAI Showcase Application](https://marketplace.mendix.com/link/component/220475) showcase to see how these embedding-only operations can be used.
 
-To implement embeddings into your Mendix application, you can use the microflows in the **USE_ME** > **Operations** > **Embeddings** folder. Currently, two microflows for embeddings are exposed as microflow actions under the **Synthia (Embeddings)** category in the **Toolbox** in Mendix Studio Pro.
+To implement embeddings into your Mendix application, you can use the microflows in the **Knowledge Bases & Embeddings** folder inside of the GenAICommons module. Both microflows for embeddings are exposed as microflow actions under the **GenAI (Generate)** category in the **Toolbox** in Mendix Studio Pro.
 
-These microflows require a specialized [Connection](/appstore/modules/genai/commons/#connection) of type SynthiaConnection that determines the model and endpoint to use. Depending on the selected operation, an `InputText` String or a [ChunkCollection](/appstore/modules/genai/commons/#chunkcollection) needs to be provided.
+These microflows require a `DeployedModel`object [DeployedModel](/appstore/modules/genai/commons/#deployed-model) that determines the model and endpoint to use. Depending on the selected operation, an `InputText` String or a [ChunkCollection](/appstore/modules/genai/commons/#chunkcollection) needs to be provided.
 
 #### Embeddings (String)
 
-The microflow activity `Embeddings (String)` supports scenarios where the vector embedding of a single string must be generated. This input string can be passed directly as the `TextInput` parameter of this microflow. Note that the parameter [EmbeddingsOptions](/appstore/modules/genai/commons/#embeddingsoptions-entity) is optional. Use the exposed microflow [Embeddings: Get First Vector from Response](/appstore/modules/genai/commons/#embeddings-get-first-vector) to retrieve the generated embeddings vector.
+The microflow activity `Generate Embeddings (String)` supports scenarios where the vector embedding of a single string must be generated. This input string can be passed directly as the `TextInput` parameter of this microflow. Note that the parameter [EmbeddingsOptions](/appstore/modules/genai/commons/#embeddingsoptions-entity) is optional. Use the exposed microflow [Embeddings: Get First Vector from Response](/appstore/modules/genai/commons/#embeddings-get-first-vector) to retrieve the generated embeddings vector.
 
 #### Embeddings (ChunkCollection)
 
-The microflow activity `Embeddings (ChunkCollection)` supports the more complex scenario where a collection of [Chunk](/appstore/modules/genai/commons/#chunkcollection) objects is vectorized in a single API call, such as when converting a collection of text strings (chunks) from a private knowledge base into embeddings. Instead of calling the API for each string, executing a single call for a list of strings can significantly reduce HTTP overhead. The embedding vectors returned after a successful API call will be stored as an `EmbeddingVector` attribute in the same `Chunk` object. Use the exposed microflows of GenAI Commons [Chunks: Initialize ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-create), [Chunks: Add Chunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-chunk), or [Chunks: Add KnowledgeBaseChunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) to construct the input.
+The microflow activity `Generate Embeddings (ChunkCollection)` supports the more complex scenario where a collection of [Chunk](/appstore/modules/genai/commons/#chunkcollection) objects is vectorized in a single API call, such as when converting a collection of text strings (chunks) from a private knowledge base into embeddings. Instead of calling the API for each string, executing a single call for a list of strings can significantly reduce HTTP overhead. The embedding vectors returned after a successful API call will be stored as an `EmbeddingVector` attribute in the same `Chunk` object. Use the exposed microflows of GenAI Commons [Chunks: Initialize ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-create), [Chunks: Add Chunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-chunk), or [Chunks: Add KnowledgeBaseChunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) to construct the input.
 
 To create embeddings, it does not matter whether the ChunkCollection contains Chunks or its specialization KnowledgeBaseChunks. Note that the knowledge base operations handle the embedding generation themselves internally.
 
