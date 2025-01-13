@@ -40,11 +40,11 @@ To start building your smart app with a blank GenAI App template, download the [
 
 The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) includes an essential pre-installed bundle called the [Conversational UI & GenAI Connectivity](https://marketplace.mendix.com/link/component/229305), which are beneficial to familiarize yourself with, as it includes:
 
-* The [GenAI Commons](/appstore/modules/genai/commons/) module: provides pre-built operations and data structures for seamless integration with platform-supported GenAI connectors, such as the Mendix Cloud GenAI, OpenAI or Amazon Bedrock.
+* The [GenAI Commons](/appstore/modules/genai/commons/) module: provides pre-built operations and data structures for seamless integration with platform-supported GenAI connectors, such as the Mendix Cloud GenAI, OpenAI, or Amazon Bedrock.
 
 * The [Conversational UI](/appstore/modules/genai/conversational-ui/) module: offers UI elements for chat interfaces and usage data monitoring.
 
-* The [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/) connector: supporting the usage of LLMs in your applications.
+* The [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/) connector: supports the usage of LLMs in your applications.
 
 ### Choosing the Infrastructure
 
@@ -68,7 +68,7 @@ In this section, you can set up a conversational interface for your application 
 
 #### Creating a Page
  
-Copy the `ConversationalUI_FullScreenChat` page from the **ConversationalUI > USE_ME > > Conversational UI > Pages** into your module, which can be named as `MyFirstBot` module. Alternatively, if you do not plan to make any changes to the page, you can use it directly without copying.
+Copy the `ConversationalUI_FullScreenChat` page from the **ConversationalUI > USE_ME > > Conversational UI > Pages** into your module, which can be named `MyFirstBot` module. Alternatively, if you do not plan to make any changes to the page, you can use it directly without copying.
 
 #### Configuring the Page Parameter and Chat Box Settings
 
@@ -122,7 +122,7 @@ You may encounter an error about allowed roles. To resolve this, go to the page 
 
 #### Mendix Cloud GenAI Configuration
 
-Follow these steps to configure the Mendix Cloud GenAI Resources Packs for your application and for more background information, look at the [Mendix Cloud GenAI Configuration]() documentation:
+Follow these steps to configure the Mendix Cloud GenAI Resources Packs for your application and more background information, look at the [Mendix Cloud GenAI Configuration](/appstore/modules/genai/MxGenAI/#configuration) documentation:
 
 1. Run the application locally.
 
