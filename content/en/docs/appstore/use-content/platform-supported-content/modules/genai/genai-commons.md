@@ -357,7 +357,7 @@ The `Generate Image` operation supports the generation of images based on a `Use
 
 | Name | Type | Description |
 | --- | --- | --- |
-| `Response` | [Response](#response) | A `Response` object that contains the assistant's response including a `FileContent` which needs to be used in [Get Generated Image (Single)](#image-get-single) or [Get Generated Images (List)]({#image-get-list}).|
+| `Response` | [Response](#response) | A `Response` object that contains the assistant's response including a `FileContent` which needs to be used in [Get Generated Image (Single)](#image-get-single) or [Get Generated Images (List)](#image-get-list).|
 
 #### Text and Files: Build Request {#text-files-request}
 
