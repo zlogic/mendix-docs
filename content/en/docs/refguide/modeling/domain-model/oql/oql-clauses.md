@@ -220,6 +220,25 @@ SELECT
 FROM Sales.Customer
 ```
 
+In the case when the association [multiplicity type](/refguide/association-properties/#multiplicity) is one-to-many or many-to-many, every attribute over association will result in multiple results per object. If there are multiple attributes over association in the `FROM` clause, the result will be a cartesian product of associated objects meaning that there will be a row for every combination of associated objects. If you want to avoid that effect, consider rewriting the query using [`JOIN`](/refguide/oql-clauses/#join).
+
+For example, when a `Sales.Customer` with `LastName` "Doe" has two associated objects in `Sales.Request` with `Number` 1 and 2, the following query will return 4 rows:
+
+```sql
+SELECT
+	LastName AS CustomerName,
+	Sales.Customer/Sales.Request_Customer/Sales.Request/Number AS RequestNumber,
+	Sales.Customer/Sales.Request_Customer/Sales.Request/Number AS OrthogonalRequestNumber
+FROM Sales.Customer
+WHERE Sales.Customer/LastName = 'Doe'
+```
+| CustomerName | RequestNumber | OrthogonalRequestNumber |
+| ------------ | ------------- | ----------------------- |
+| Doe          | 1 		       | 1                       |
+| Doe          | 1 		       | 2                       |
+| Doe          | 2 		       | 1                       |
+| Doe          | 2 		       | 2                       |
+
 ## `FROM` Clause {#from}
 
 The `FROM` clause specifies the entities or other source or sources from which the data must be retrieved.
