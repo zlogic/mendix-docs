@@ -43,9 +43,11 @@ The entity type defines how the data is handled and there are four types:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/entities/type-of-entities.jpg" class="no-border" width=="300" >}}
 
-The structure of persistable, non-persistable and view entities are defined within your app. This page describes how to add and update persistable and non-persistable entities. For more information on persistable entities, see [Persistability](/refguide/persistability/). View entities are defined by their underlying OQL queries, which run on one or more persistable entities or other view entities. For more information, see [View Entities](/refguide/view-entities).
+The structure of persistable, non-persistable, and view entities are defined within your app. This page describes how to add and update persistable and non-persistable entities. For more information on persistable entities, see [Persistability](/refguide/persistability/). 
 
-The structure of an External entity is defined in the source system where the underlying data (objects) is stored. For more information on external entities and how to add them to your app, see [External Entities](/refguide/external-entities/).
+The structure of an external entity is defined in the source system where the underlying data (objects) is stored. For more information on external entities and how to add them to your app, see [External Entities](/refguide/external-entities/).
+
+View entities are defined by their underlying OQL queries, which run on one or more persistable entities or other view entities. For more information, see [View Entities](/refguide/view-entities).
 
 ## Properties {#properties}
 
