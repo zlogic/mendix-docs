@@ -141,7 +141,7 @@ Below is an example of how to retrieve in batches. You can do something quite si
 
 #### Refresh in Client {#refresh}
 
-The **Refresh in client** property of a change or commit activity is quite useful to provide updated information to your user. However, when committing large numbers of rows, this can slow you application down, as it attempts to update thousands of rows in your client's browser. Also, a refresh on one object might result in multiple refreshes down the line, for instance, with nested data views. Consider turning it off if possible.
+The **Refresh in client** property of a change or commit activity can provide updated information to your user. However, when committing large numbers of rows, this can slow your application down, as it attempts to update thousands of values in your client's browser. Also, refreshing one object might result in multiple refreshes down the line, for instance, if there are nested data views. Consider turning it off if possible.
 
 ### Slow Sub-Microflow
 
