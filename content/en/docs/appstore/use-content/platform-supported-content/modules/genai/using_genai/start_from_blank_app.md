@@ -50,7 +50,7 @@ The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227
 
 Selecting the infrastructure for integrating GenAI into your Mendix application is the first step. Depending on your use case and preferences, you can choose from the following options:
 
-* [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/): Part of the [Mendix Cloud GenAI Resources Packs](https://marketplace.mendix.com/link/component/227931), integrates LLMs by dragging and dropping common operations from its toolbox in Studio Pro.
+* [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/): Part of the [Conversational UI & GenAI Connectivity](https://marketplace.mendix.com/link/component/229305), integrates LLMs by dragging and dropping common operations from its toolbox in Studio Pro.
 
 * [OpenAI](/appstore/modules/genai/openai/): The [OpenAI Connector](https://marketplace.mendix.com/link/component/220472) supports both OpenAI’s platform and Azure’s OpenAI service.
 
@@ -72,47 +72,30 @@ Copy the `ConversationalUI_FullScreenChat` page from the **ConversationalUI > US
 
 #### Configuring the Page Parameter and Chat Box Settings
 
-Since the **ConversationalUI_FullScreenChat** page contains a **Data View** using a `ChatContext` object as a parameter, it cannot be added directly to the navigation. Depending on your preference in the infrastructure, you can select either the OpenAI or Bedrock configuration.
-
-##### Using a Template Microflow with OpenAI
+Since the **ConversationalUI_FullScreenChat** page contains a **Data View** using a `ChatContext` object as a parameter, it cannot be added directly to the navigation. Therefore, a template microflow can be used.
 
 1. Locate the pre-built microflow `ACT_FullScreenChat_Open` in **ConversationalUI > USE_ME > Pages**. Right-click on the microflow and select **Include in project** to copy it into your `MyFirstBot` module.
-2. Locate the show Page action for `ConversationalUI_FullScreenChat`. Inside this action, change the page to `ConversationalUI_FullScreenChat` from your `MyFirstBot` module or the `ConversationalUI` module.
-
-##### Using a Template Microflow with Bedrock 
-
-1. Locate the pre-built microflow `ACT_FullScreenChat_Open_Bedrock` in **ConversationalUI > USE_ME > Pages**. Right-click on the microflow and select **Include in project** to copy it into your `MyFirstBot` module.
 2. Locate the show Page action for `ConversationalUI_FullScreenChat`. Inside this action, change the page to `ConversationalUI_FullScreenChat` from your `MyFirstBot` module or the `ConversationalUI` module.
 
 #### Customizing the System Prompt (Optional)
 
 To tailor your application's behavior, you can customize the [System Prompt](/appstore/modules/genai/prompt-engineering/#system-prompt) to make it more specific to your use case:
 
-##### Copying or Duplicating the Microflow
-
-Copy the `ChatContext_ChatWithHistory_ActionMicroflow_OpenAI` or the `ChatContext_ChatWithHistory_ActionMicroflow_Bedrock` microflow to your `MyFirstBot` app from **ConversationalUI > USE_ME > Conversational UI > Action microflow examples**.
-
 ##### Changing the System Prompt
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-blankapp/blank_genai_mf.jpg" >}}
 
-1. Open the copied `ChatContext_ChatWithHistory_ActionMicroflow_OpenAI` or `ChatContext_ChatWithHistory_ActionMicroflow_Bedrock` microflow from your `MyFirstBot` module.
-2. Locate the **Create Request from ChatContext** action.
-3. Inside this action, find the `SystemPrompt` parameter, which has a default value of *"You are an assistant"*.
-4. Update the `SystemPrompt` value to reflect your desired behavior. For example:
-   * For a customer service chatbot: *"You are a helpful customer service assistant providing answers to common product questions."*
-   * For a travel advisor assistant: *"You are a travel advisor assistant providing travel tips and destination information."*
+1. Open the copied `ACT_FullScreenChat_Open` microflow from your `MyFirstBot` module.
+2. Locate the **ChatContext** action.
+3. Inside this action, find the `System prompt` parameter, which has default an emprty value.
+4. Update the `System prompt` value to reflect your desired behavior. For example:
+   * For a customer service chatbot: *'You are a helpful customer service assistant providing answers to common product questions.'*
+   * For a travel advisor assistant: *'You are a travel advisor assistant providing travel tips and destination information.'*
 5. Save the changes.
-
-##### Applying the changes
-
-1. Open the `ACT_FullScreenChat_Open_OpenAI` or `ACT_FullScreenChat_Open_Bedrock` microflow from your `MyFirstBot` module.
-2. Locate the **New Chat** action. Inside this action, change the **Action microflow** to the `ChatContext_ChatWithHistory_ActionMicroflow_OpenAI` or `ChatContext_ChatWithHistory_ActionMicroflow_Bedrock` microflow from your `MyFirstBot` module.
-3. Save the changes.
 
 #### Navigation Configuration
 
-Click **Home** and select the `ACT_FullScreenChat_Open_OpenAI` or `ACT_FullScreenChat_Open_Bedrock` microflow from your `MyFirstBot` module to configure the **Navigation**.
+Click **Home** and select the `ACT_FullScreenChat_Open` microflow from your `MyFirstBot` module to configure the **Navigation**.
 
 {{% alert color="warning" %}}
 You may encounter an error about allowed roles. To resolve this, go to the page **Properties** and update the **Navigation > Visible for** setting to include the appropriate user roles.
