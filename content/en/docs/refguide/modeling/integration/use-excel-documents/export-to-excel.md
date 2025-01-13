@@ -275,11 +275,11 @@ Your new microflow should look similar to this:
 {{< figure src="/attachments/refguide/modeling/integration/using-the-excel-exporter/associating-objects.png" class="no-border" >}}
 
 {{% alert color="info" %}}
-Take a note of the *DeleteAfterDownload* flag set for the PolicyDoc entity, which is shown to avoid having multiple PolicyDocs being associated with same set of policy entities.
+If you create a **PolicyDoc** with *no* associations to **Policy** objects, you will export an empty spreadsheet with the structure defined in the template.
 {{% /alert %}}
 
-{{% alert color="info" %}}
-If you create a **PolicyDoc** with *no* associations to **Policy** objects, you will export an empty spreadsheet with the structure defined in the template.
+{{% alert color="warning" %}}
+If the microflow that calls the Java action *XLSReport.GenerateExcelDoc* has **Apply entity access** set to **True**, and if you do not have permission to access one of the entities or associations that is being extracted by your template, you will get a **CoreRuntimeException** or **SecurityRuntimeException**. This happens because this module uses OQL to retrieve data, which is evaluated against the access grants the user has.
 {{% /alert %}}
 
 ## Read More

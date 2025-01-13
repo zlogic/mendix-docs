@@ -61,15 +61,15 @@ For some parse and format functions, there are UTC variants. Do not use these UT
 Takes a string and parses it. If it fails and a default value is specified, it returns the default value. Otherwise, an error occurs. The function `parseDateTime` uses the user's time zone and `parseDateTimeUTC` uses the UTC calendar.
 
 {{% alert color="info" %}}
-When using `yy` dateformat, the century guessing by proximity follows the rule of **50/50**. Specifically, it adjusts dates to be within 50 years before and 50 years after the time the date format instance is created:
+When using `yy` date format in microflows, the century guessing by proximity follows the rule of **80/20**. Specifically, it adjusts dates to be within 80 years before and 20 years after the time the date format instance is created:
 
-* `24` {{< icon name="arrow-narrow-right" >}} `2024`
-* `75` {{< icon name="arrow-narrow-right" >}} `1975`
-  
-The topic above applies when using the expression in Nanoflow. When using it in a Microflow then the rule will follow the rule of **80/20**:
-
-* `24` {{< icon name="arrow-narrow-right" >}} `2024`
+* `25` {{< icon name="arrow-narrow-right" >}} `2025`
 * `68` {{< icon name="arrow-narrow-right" >}} `1968`
+  
+When using it in nanoflows, it follows the rule of **50/50**:
+
+* `25` {{< icon name="arrow-narrow-right" >}} `2025`
+* `88` {{< icon name="arrow-narrow-right" >}} `1988`
   
 {{% /alert %}}
 
