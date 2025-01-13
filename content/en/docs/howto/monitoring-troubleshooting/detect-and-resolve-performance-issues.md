@@ -106,7 +106,7 @@ Here, you are calculating the number of milliseconds between when your microflow
 Add microflow timers until you find your culprit microflow, then add extra timers in that microflow to determine which activity is the slow one. When you find a slow activity, see the [Optimizing Microflow Activities](#optimizing) section below. These sections present details on how to optimize your microflow as a whole.
 
 {{% alert color="info" %}}
-Alternatively, you can also use the **TimeMeasureStart** and **TimeMeasureEnd** Java actions provided in the [Community Commons](/appstore/modules/community-commons-function-library/#logging) module. They function similarly as the microflow described in the current section. As added benefits, they can be placed in different microflows without the need to pass the start time from one microflow to another.
+Alternatively, you can also use the **TimeMeasureStart** and **TimeMeasureEnd** Java actions provided in the [Community Commons](/appstore/modules/community-commons-function-library/#logging) module. They function similarly to the microflow described in the current section. As an added benefit, they can be placed in different microflows without the need to pass the start time from one microflow to another.
 {{% /alert %}}
 
 ## Optimizing Microflow Activities {#optimizing}
