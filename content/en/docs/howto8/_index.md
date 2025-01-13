@@ -18,7 +18,7 @@ cascade:
 ---
 
 {{% alert color="warning" %}}
-Note that when Mendix 11 is released (expected in June 2025), Mendix 8 will go end-of-life.
+When Mendix 11 is released (expected in June 2025), Mendix 8 will go end-of-life. This means that Mendix 8 will no longer receive support, maintenance, or updates. To ensure continued access to the latest features and security enhancements, we recommend planning an upgrade to a more recent version of the platform.
 {{% /alert %}}
 
 ## Introduction
