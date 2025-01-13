@@ -2,17 +2,17 @@
 title: "Mx GenAI Connector"
 url: /appstore/modules/genai/MxGenAI/
 linktitle: "Mx GenAI"
-description: "Describes the configuration and usage of the MxGenAI Connector, which allows you to utilize Mendix Cloud GenAI Resource Packs directly within your Mendix application."
+description: "Describes the configuration and usage of the Mendix Cloud GenAI Connector, which allows you to utilize Mendix Cloud GenAI Resource Packs directly within your Mendix application."
 weight: 60
 ---
 
 ## Introduction
 
-The [MxGenAIConnector](link to be added) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox.
+The Mendix Cloud GenAI connector (delivered as part of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931)) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox.
 
 ### Typical Use Cases
 
-The MxGenAIConnector is commonly used for text generation, embeddings, and knowledge bases. These use cases are described in more detail below:
+The Mendix Cloud GenAI Connector is commonly used for text generation, embeddings, and knowledge bases. These use cases are described in more detail below:
 
 #### Text Generation
 
@@ -52,10 +52,10 @@ Embeddings are commonly used for the following:
 * Diversity measurement 
 * Classification 
 
-Combine embeddings with text generation capabilities and leverage specific sources of information to create a smart chat functionality tailored to your knowledge base.
+You can combine embeddings with text generation capabilities and leverage specific sources of information to create a smart chat functionality tailored to your knowledge base.
 
 {{% alert color="info" %}}
-MxGenAIConnector module generates embeddings internally when interacting with the knowledge base. Pure embedding operations are only required if additional processes, such as using the generated vectors instead of text, are needed. For example, a similar search algorithm could use vector distances to calculate relatedness.
+The Mendix Cloud GenAI Connector module generates embeddings internally when interacting with the knowledge base. Pure embedding operations are only required if additional processes, such as using the generated vectors instead of text, are needed. For example, a similar search algorithm could use vector distances to calculate relatedness.
 {{% /alert %}}
 
 ### Features
@@ -74,11 +74,11 @@ To use this connector, you need configuration keys to authenticate to the Mendix
 
 ## Installation
 
-Add the [Dependencies](#dependencies) listed above from the Marketplace. On the Marketplace, the Mendix Cloud GenAI connector is bundled inside of the [GenAI for Mendix module]( add) which also contains GenAI commons operations and logic. To import this module into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
+Add the [Dependencies](#dependencies) listed above from the Marketplace. On the Marketplace, the Mendix Cloud GenAI connector is bundled inside of the [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931) which also contains GenAI commons operations and logic. To import this module into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
 
 ## Configuration
 
-After installing the MxGenAIConnector, you can find it in the **App Explorer** under the **Add-ons** section. The connector includes a domain model and several activities to help integrate your app with the Mendix Cloud GenAI service. To implement the connector, simply use its actions in a microflow. You can find the Mendix GenAI actions in the microflow toolbox. Note that the module is protected, meaning it cannot be modified and the microflow logic is not visible. For details about each exposed operation, see the [Operations](#operations) section below or refer to the documentation provided within the module. For more information on Add-on modules, see [Consuming Add-on Modules and Solutions](/refguide/consume-add-on-modules-and-solutions/).
+After installing the Mendix Cloud GenAI connector, you can find it in the **App Explorer** insode of the **Add-ons** section. The connector includes a domain model and several activities to help integrate your app with the Mendix Cloud GenAI service. To implement the connector, simply use its actions in a microflow. You can find the Mendix GenAI actions in the microflow toolbox. Note that the module is protected, meaning it cannot be modified and the microflow logic is not visible. For details about each exposed operation, see the [Operations](#operations) section below or refer to the documentation provided within the module. For more information on Add-on modules, see [Consuming Add-on Modules and Solutions](/refguide/consume-add-on-modules-and-solutions/).
 
 Follow the steps below to get started:
 
@@ -133,7 +133,7 @@ Function calling enables LLMs to connect with external tools to gather informati
 
 The model does not call the function but rather returns a tool called JSON structure that is used to build the input of the function (or functions) so that they can be executed as part of the chat completions operation. Functions in Mendix are essentially microflows that can be registered within the request to the LLM​. The connector takes care of handling the tool call response and executing the function microflows until the API returns the assistant's final response.
 
-Function microflows take a single input parameter of type string or no input parameter and must return a string. Currently, adding a [ToolChoice](/appstore/modules/genai/commons/#set-toolchoice) for function calling is not supported by the MxGenAIConnector.
+Function microflows take a single input parameter of type string or no input parameter and must return a string. Currently, adding a [ToolChoice](/appstore/modules/genai/commons/#set-toolchoice) for function calling is not supported by the Mendix Cloaud GenAI Connector.
 
 {{% alert color="warning" %}}
 Function calling is a highly effective capability and should be used with caution. Function microflows run in the context of the current user, without enforcing entity access. You can use `$currentUser` in XPath queries to ensure that you retrieve and return only information that the end-user is allowed to view; otherwise, confidential information may become visible to the current end-user in the assistant's response.
@@ -175,7 +175,7 @@ Dealing with knowledge bases involves two main stages:
 1. [Insertion of knowledge](#knowledge-base-insertion)
 2. [Retrieval of knowledge (Nearest neighbor)](#knowledge-base-retrieval)
 
-You do not need to manually add embeddings to a chunk, as the connector handles this internally. To see all existing knowledge bases for a configuration, go to the **Knowledge Base** tab on the [Mendix Cloud GenAI Configuration] page and refresh the view on the right. Alternatively, use the `Get Collections` action to retrieve a synchronized list of collections inside of your knowledge base resource to include in your module. Lastly, you can delete a knowledge base using the `Delete Collection` action.
+You do not need to manually add embeddings to a chunk, as the connector handles this internally. To see all existing knowledge bases for a configuration, go to the **Knowledge Base** tab on the [Mendix Cloud GenAI Configuration] page and refresh the view on the right. Alternatively, use the `Get Collections` action to retrieve a synchronized list of collections inside of your knowledge base resource to include in your module. Lastly, you can delete a collection using the `Delete Collection` action.
 
 #### Knowledge Base Insertion{#knowledge-base-insertion}
 
@@ -206,13 +206,13 @@ When data in your Mendix app that is relevant to the knowledge base changes, it 
 
 The example below shows how to repopulate a knowledge base using a list of Mendix objects:
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/knowledgebase-using-mendix-object.png" >}} (TODO LINA)
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/mxgenAI-connector/PushTicketstoMxKB.png" >}} 
 
 ##### Knowledge Base Retrieval{#knowledge-base-retrieval}
 
 The following toolbox actions can be used to retrieve knowledge data from the knowledge base (and associate it with your Mendix data):
 
-1. `Retrieve` retrieves knowledge base chunks from the knowledge base. You can use pagination via the `Offset` and `MaxNumberOfResults` parameters or apply filtering via a `MetadataCollection` or `MxObject`. (@Lina Offset?)
+1. `Retrieve` retrieves knowledge base chunks from the knowledge base. You can use pagination via the `Offset` and `MaxNumberOfResults` parameters or apply filtering via a `MetadataCollection` or `MxObject`. (Scroll down to see all available input parameters of this operation)
 2. `Retrieve & Associate` is similar to the `Retrieve` but associates the returned chunks with a Mendix object if they were linked at the insertion stage. 
 
     {{% alert color="info" %}}You must define your entity specialized from `KnowledgeBaseChunk`, which refers to another entity used during the insertion stage.
