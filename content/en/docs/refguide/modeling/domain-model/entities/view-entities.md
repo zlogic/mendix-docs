@@ -37,11 +37,11 @@ The Preview data table tries to retrieve the data using your OQL query from the 
 
 ### Access Rules
 
-When the security level of the app is set to **Production**, the **Access rules** tab will become available in the view entity dialog.
+When the security level of the app is set to **Production**, the **Access rules** tab becomes available in the view entity dialog.
 
 Assigning write access to an attribute of a view entity allows the selected module role to edit the in-memory representation of the query result, but not the underlying source entity. The access level set on the view entity is the sole determining factor for whether a role can read or write to it. The access levels of underlying entities are not considered. This is crucial to prevent unintended exposure of data that is restricted at the source entity level.
 
-Although direct writing from the view entity to its source entities is unsupported, you can set up a microflow to retrieve and update the source entities to achieve this functionality.
+Direct writing from the view entity to its source entities is unsupported, but you can set up a microflow to retrieve and update the source entities to achieve this functionality.
 
 ### Documentation
 
