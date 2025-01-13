@@ -148,7 +148,7 @@ For more information, see [Function Calling](/appstore/modules/genai/function-ca
 
 Vision enables the model to interpret and analyze images, allowing them to answer questions and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To ensure the vision inside the connector, an optional [FileCollection](/appstore/modules/genai/commons/#filecollection) containing one or multiple images must be sent with a single message.
 
-For `Chat Completions without History`, `FileCollection` is an optional input parameter. For `Chat Completions with History`, `FileCollection` can optionally be added to individual user messages using [Add Message to Request](/appstore/modules/genai/commons/#add-message-to-request).
+For `Chat Completions without History`, `FileCollection` is an optional input parameter. For `Chat Completions with History`, `FileCollection` can optionally be added to individual user messages using [Add Message to Request](/appstore/modules/genai/commons/#chat-add-message-to-request).
 
 In the entire conversation, you can pass up to 20 images that are smaller than 3.75 MB each and with a height and width of a maximum 8000 pixels. The following types are accepted: PNG, JPEG, JPG, GIF, and WebP.
 
