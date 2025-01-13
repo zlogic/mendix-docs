@@ -36,6 +36,3 @@ Generative Artificial Intelligence (GenAI) transforms business applications, emp
 For any additional feedback, send a message in the #genai-connectors channel on the Mendix Community Slack. You can sign up for the Mendix Community [here](https://mendixcommunity.slack.com/join/shared_invite/zt-270ys3pwi-kgWhJUwWrKMEMuQln4bqrQ#/shared-invite/email).
 
 ## Documents in this Category
-
-* [Build a Smart App using a Starter Template](/appstore/modules/genai/using-genai/starter-template/)
-* [Build a Smart App from a Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/)
