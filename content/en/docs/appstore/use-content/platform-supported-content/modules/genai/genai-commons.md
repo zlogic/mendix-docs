@@ -56,7 +56,7 @@ The technical purpose of the GenAI Commons module is to define a common domain m
 
 The domain model in Mendix is a data model that describes the information in your application domain in an abstract way. For more general information, see the [Domain Model](/refguide/domain-model/) documentation. To learn about where the entities from the domain model are used and relevant during implementation, see the [Microflows](#microflows) section below.
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genaicommons/genai-commons-domain-model.png" alt="" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genaicommons/demain-model.png" alt="" >}}
 
 #### `DeployedModel` {#deployed-model}
 
@@ -113,8 +113,8 @@ The `Request` is an input object for the chat completions operations defined in 
 | --- | --- |
 | `SystemPrompt` | A `SystemPrompt` provides the model with context, instructions, or guidelines. |
 | `MaxTokens` | Maximum number of tokens per request. |
-| `Temperature` | `Temperature` controls the randomness of the model response. Low values generate a more predictable output, while higher values allow creativity and diversity. We recommend that you only steer temperature or `TopP`, but not both. |
-| `TopP` | `TopP` is an alternative to temperature for controlling the randomness of the model response. `TopP` defines a probability threshold so that only words with probabilities greater than or equal to the threshold will be included in the response. We recommend that you only steer temperature or `TopP`, but not both. |
+| `Temperature` | `Temperature` controls the randomness of the model response. Low values generate a more predictable output, while higher values allow creativity and diversity. It is recommended to steer either the temperature or `TopP`, but not both. |
+| `TopP` | `TopP` is an alternative to temperature for controlling the randomness of the model response. `TopP` defines a probability threshold so that only words with probabilities greater than or equal to the threshold will be included in the response. It is recommended to steer either the temperature or `TopP`, but not both. |
 | `ToolChoice` | Controls which (if any) tool is called by the model. For more information, see the [ENUM_ToolChoice](#enum-toolchoice) section containing a description of the possible values. |
 
 #### `Message` {#message}
