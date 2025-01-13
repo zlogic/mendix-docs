@@ -18,10 +18,10 @@ A domain model consists of [entities](/refguide/entities/) with their relationsh
 * Persistable (blue) – entities which hold app information which needs to be held permanently or shared with other end-users of the app (see [Implementation of Persistable Entities](#implementation), below, for information on how these are implemented)
 * Non-persistable (orange) – entities which hold app information which is needed while the end-user is using the app but can then be thrown away
 * External (purple) – entities, described in the [Mendix Catalog](/catalog/), which contain data which belongs to another app or service and is needed while the end-user is using the app but isn't stored in the database of the app
-* View (green) – entities which are the result of a stored OQL query on persistable entities or other view entities (beta)
+* View (green) – entities which are the result of a stored OQL query on persistable entities or other view entities (this feature is in beta)
 
 {{% alert color="info" %}}
-[View entities](/refguide/view-entities) were introduced in Mendix 10.19 as a beta feature. In order to enable this for your app, the used OQL version needs to be set to version 2. You can do this in Studio Pro via **App** > **Settings** > **Runtime**.
+[View entities](/refguide/view-entities/) were introduced in Studio Pro 10.19 as a beta feature. To enable this feature in your app, set the OQL version to version 2 by clicking **App** > **Settings** > **Runtime**.
 {{% /alert %}}
 
 You can also add [annotations](/refguide/annotations/) to your domain model to remind yourself, and other team members, how it is to be used.
