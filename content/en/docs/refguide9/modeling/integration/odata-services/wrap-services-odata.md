@@ -165,7 +165,7 @@ To build your app, you first need to do the following:
 * [Register as an X Developer](https://developer.x.com/en/portal)
 * Download Studio Pro [9.17](/releasenotes/studio-pro/9.17/) or above
 
-#### Building the Connector {#twitter-connector}
+#### Building the Connector {#x-connector}
 
 Set up a connector module that communicates to the X API with OData by following the steps outlined below. To ensure that your app will run, fill in your valid bearer token as the **Default value** in a **BearerToken** [constant](/refguide9/constants/). You can get one by [registering as an X Developer](https://developer.x.com/en/portal).
 
@@ -184,7 +184,7 @@ Set up a connector module that communicates to the X API with OData by following
 
 Set up an X client module that allows users to input an X ID and communicates to the X API via your [X connector](#x-connector).
 
-1. Create a consumed OData service in the client module, and import the XML file you exported in the [building the connector](#twitter-connector) section.
+1. Create a consumed OData service in the client module, and import the XML file you exported in the [building the connector](#x-connector) section.
 2. Drag the external **Users**, **Tweets**, and **Followers** entities into your client domain model.
 3. Add a non-persistable entity for the XClientInput to be able to fill in the data, handled by a **NewXInput** microflow.
 
