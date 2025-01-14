@@ -30,7 +30,8 @@ You must also download the [Community Commons](/appstore/modules/community-commo
 
 If you are starting from the [Blank GenAI app](https://marketplace.mendix.com/link/component/227934), or the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), the GenAI Commons module is already included and does not need to be downloaded manually.
 
-If you start from a blank app, or have an existing project where you want to include a connector for which the GenAI Commons module is required, you must install GenAI Commons manually. First, install the [Community Commons](/appstore/modules/community-commons-function-library/) module, and then follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the GenAI Commons module into your app.
+If you start from a blank app, or have an existing project where you want to include a connector for which the GenAI Commons module is required, you must install GenAI Commons manually. First, install the [Community Commons](/appstore/modules/community-commons-function-library/) module, and then follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle that includes the GenAI Commons, ConversationalUI and Mendix Cloud GenAI Connector modules.
+
 
 ## Implementation {#implementation}
 
@@ -70,6 +71,7 @@ The `DeployedModel` entity replaces the capabilities that were covered by the `C
 | `Architecture` | The architecture of the deployed model; e.g. OpenAI or Amazon Bedrock. |
 | `Model` | The model identifier of the LLM provider. |
 | `OutputModality` | The type of information the model returns. |
+| `Microflow` |  microflow to execute for the specified model and type. |
 | `SupportsSystemPrompt` | An enum to specify if the model supports system prompts. |
 | `SupportsConversationsWithHistory` | An enum to specify if the model supports conversation with history. |
 | `SupportsFunctionCalling` | An enum to specify if the model supports function calling. |
@@ -281,6 +283,7 @@ The response returned by the model contains token usage metrics. Not all connect
 | --- | --- |
 | `PromptTokens` | Number of tokens in the prompt. |
 | `TotalTokens` | Total number of tokens used in the request. |
+| `DurationMilliseconds` | Duration in milliseconds for the call to be finished. |
 
 #### `ImageOptions` {#imageoptions-entity}
 
@@ -341,7 +344,7 @@ The `Chat Completions (with history)` operation supports more complex use cases 
 | --- | --- | --- |
 | `Response` | [Response](#response) | A `Response` object that contains the assistant's response. |
 
-##### Text and Files: Generate Image {#generate-image}
+##### Generate Image {#generate-image}
 
 The `Generate Image` operation supports the generation of images based on a `UserPrompt` passed as a string. The returned `Response` contains a `FileContent` via `FileCollection` and `Message`. See microflows in the `Handle Response` folder to get the image (list).
 
@@ -726,7 +729,7 @@ This microflow does not have a return value.
 
 The following microflows and Java actions help you handle the response object for the operations for embeddings as defined in GenAI Commons.
 
-##### Embeddings: Get the First Vector from Response {#embeddings-get-first-vector}
+##### Embeddings: Get First Vector from Response {#embeddings-get-first-vector}
 
 This microflow gets the first embedding vector from the response of an embedding operation.
 
@@ -808,6 +811,30 @@ This microflow gets the first embedding vector from the response of an embedding
 | Name | Caption | Description |
 | --- | --- | --- |
 | `TEXT_TO_IMAGE` | **TEXT_TO_IMAGE** | The LLM will generate an image (or multiple images) based on a text description. |
+
+#### `ENUM_ModelModality` {#enum-modalmodality}
+
+`ENUM_ModelModality` describes the modalities that the model supports input or output.
+
+| Name | Caption | Description |
+| --- | --- | --- |
+| `Text` | **Text** | The model supports text. |
+| `Embeddings` | **Embeddings** | The model supports embeddings. |
+| `Image` | **Image** | The model supports image. |
+| `File` | **File** | The model supports file. |
+| `Audio` | **Audio** | The model supports audio. |
+| `Video` | **Video** | The model supports video. |
+| `Other` | **Other** | The model supports another modality. |
+
+#### `ENUM_ModelSupport` {#enum-modalsupport}
+
+`ENUM_ModelSupport` describes if the model supports certain functionality.
+
+| Name | Caption | Description |
+| --- | --- | --- |
+| `_True` | **True** | The model supports the functionality. |
+| `_False` | **False** | The model does not support the functionality. |
+| `Unknown` | **Unknown** | The support is currently unknown. |
 
 ## Troubleshooting
 
