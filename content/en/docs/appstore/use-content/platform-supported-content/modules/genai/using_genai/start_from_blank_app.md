@@ -50,7 +50,7 @@ The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227
 
 Selecting the infrastructure for integrating GenAI into your Mendix application is the first step. Depending on your use case and preferences, you can choose from the following options:
 
-* [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/): Part of the [Conversational UI & GenAI Connectivity](https://marketplace.mendix.com/link/component/227931), integrates LLMs by dragging and dropping common operations from its toolbox in Studio Pro.
+* [Mendix Cloud GenAI Resources Packs](/appstore/modules/genai/MxGenAI/): Part of the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931), integrates LLMs by dragging and dropping common operations from its toolbox in Studio Pro.
 
 * [OpenAI](/appstore/modules/genai/openai/): The [OpenAI Connector](https://marketplace.mendix.com/link/component/220472) supports both OpenAI’s platform and Azure’s OpenAI service.
 
