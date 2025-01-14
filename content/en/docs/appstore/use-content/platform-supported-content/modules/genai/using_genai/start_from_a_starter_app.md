@@ -58,7 +58,7 @@ Download the [AI Bot Starter App](https://marketplace.mendix.com/link/component/
 
 #### Mendix Cloud GenAI Configuration
 
-Follow these steps to configure the Mendix Cloud GenAI Resources Packs for your application and for more background information, look at the [Mendix Cloud GenAI Configuration]() documentation:
+Follow these steps to configure the Mendix Cloud GenAI Resources Packs for your application and for more background information, look at the [Mendix Cloud GenAI Configuration](/appstore/modules/genai/MxGenAI/#configuration) documentation:
 
 1. Run the application locally.
 
@@ -137,7 +137,7 @@ Before starting the bot configuration, ensure that the Mendix Cloud GenAI, OpenA
 
      * **Display Name**: A reference name for the bot configuration (for example, "MxCloud GenAI Configuration Bot").
      * **Is Selectable in UI**: Enable this option to allow the end user to select this configuration.
-     * **Model**: Select the  Mendix Cloud GenAI, OpenAI or Bedrock model you just created.
+     * **Model**: Select the  Mendix Cloud GenAI, OpenAI, or Bedrock model you just created.
      * **Action Microflow**: Choose the provided microflow (e.g.,  `ChatContext_ChatWithHistory_ActionMicroflow`).
 
 3. Save your changes, and optionally set it as the default bot configuration by selecting **Make Default** on the Bot Configuration page.
