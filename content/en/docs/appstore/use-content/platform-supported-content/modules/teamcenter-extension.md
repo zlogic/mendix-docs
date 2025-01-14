@@ -242,7 +242,7 @@ Once you finished import mapping, click **Generate** to create microflows for th
 
 ## Upgrading Teamcenter Extension V 1.0.0 to V 3.0.0 {#upgrade}
 
-{{% alert color="info" %}}To prevent conflicts (duplication of integrations), it is advised that one developer in a team upgrades the Teamcenter Extension and commits changes before other developers continue working with the Teamcenter Extension.{{% /alert %}}
+{{% alert color="info" %}} To prevent conflicts (such as integration duplications), it is advised that one developer in a team upgrades the Teamcenter Extension and commits changes before other developers continue working with the extension.{{% /alert %}}
 
 If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or below, and want to upgrade to Teamcenter Extension V 3.0.0 and Teamcenter Connector V 2406.3.0, perform the following procedure:
 
