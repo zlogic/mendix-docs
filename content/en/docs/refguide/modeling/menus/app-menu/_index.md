@@ -89,7 +89,9 @@ For more information on using this option, see [Deploy to the Cloud](/refguide/d
 
 ## Build Native Mobile App
 
-So long as you have an app with a native profile, launches the [Mendix Native Mobile Builder](/releasenotes/mobile/mendix-native-mobile-builder/). This wizard will guide you through the required steps for configuring and publishing your app. For the first step in your native mobile journey, see [Build a Mendix Native App Locally
+So long as you have an app with a [native profile](/refguide/navigation/#native-phone), launches the [Mendix Native Mobile Builder](/releasenotes/mobile/mendix-native-mobile-builder/). This wizard will guide you through the required steps for configuring and publishing your app. 
+
+For the first step in your native mobile journey, see [Build a Mendix Native App Locally
 ](/refguide/mobile/distributing-mobile-apps/building-native-apps/native-build-locally/).
 
 ## Synchronize Dependencies 
