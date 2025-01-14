@@ -38,7 +38,7 @@ To start building your smart app with a blank GenAI App template, download the [
 
 ### Important Modules
 
-The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) includes an essential pre-installed bundle called the [Conversational UI & GenAI Connectivity](https://marketplace.mendix.com/link/component/229305), which are beneficial to familiarize yourself with, as it includes:
+The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) includes an essential pre-installed bundle called the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931), which are beneficial to familiarize yourself with, as it includes:
 
 * The [GenAI Commons](/appstore/modules/genai/commons/) module: provides pre-built operations and data structures for seamless integration with platform-supported GenAI connectors, such as the Mendix Cloud GenAI, OpenAI or Amazon Bedrock.
 

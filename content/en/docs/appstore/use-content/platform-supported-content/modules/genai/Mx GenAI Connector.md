@@ -32,7 +32,7 @@ The Mendix Cloud GenAI Connector is commonly used for text generation, embedding
 
 #### Knowledge Base
 
-The module enables tailoring generated responses to specific contexts by grounding them in data inside of a collection belonging to Mendix Cloud GenAI knowledge base resource. This allows for the secure use of private company data or other non-public information when interacting with GenAI models within the Mendix app. It provides a low-code solution to store discrete data (commonly called chunks) in the knowledge base and retrieves relevant information for end-user actions or application processes.
+The module enables tailoring generated responses to specific contexts by grounding them in data inside of a collection belonging to a Mendix Cloud GenAI knowledge base resource. This allows for the secure use of private company data or other non-public information when interacting with GenAI models within the Mendix app. It provides a low-code solution to store discrete data (commonly called chunks) in the knowledge base and retrieves relevant information for end-user actions or application processes.
 
 Knowledge bases are often used for:
 
