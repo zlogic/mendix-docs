@@ -21,7 +21,7 @@ This how-to describes how you, as an exam admin, can manage exam seats on the [e
 
 On the [exam administration](https://academy.mendix.com/link/examadmin) page, the remaining seats per order and per product are displayed.
 
-{{% todo %}}Add an image{{% /todo %}}
+ {{< figure src="/attachments/community-tools/manage-exam-seats/overview.png" >}}
 
 To invite students, do the following steps:
 
