@@ -21,16 +21,16 @@ This how-to describes how you, as an exam admin, can manage exam seats and manag
 
 1. Go to the [Overview](https://academy.mendix.com/link/examadmin) page of the Exam Administration. In the **Available Exams** table, you can see the remaining seats per order and per exam in the **Remaining Seats** column.
 
-    {{< figure src="/attachments/community-tools/manage-exam-seats/overview.png" >}}
+    {{< figure src="/attachments/community-tools/order-exams-in-bulk/manage-exam-seats/overview.png" >}}
 
 2. Click **Invite Student**. The **Add Student** dialog box opens.
 3. Enter their email addresses and click **Add to Invite**. If you enter multiple email addresses, seperate them by commas.
 
-    {{< figure src="/attachments/community-tools/manage-exam-seats/add-student-email-addresses.png" max-width=75% >}}
+    {{< figure src="/attachments/community-tools/order-exams-in-bulk/manage-exam-seats/add-student-email-addresses.png" max-width=75% >}}
 
 4. Set an expiry date to the invitation. 
 
-   {{< figure src="/attachments/community-tools/manage-exam-seats/expiry-date.png" >}}
+   {{< figure src="/attachments/community-tools/order-exams-in-bulk/manage-exam-seats/expiry-date.png" >}}
 
    {{% alert color="info" %}}The student must register for the exam before the expiry date. If the student fails to register before the expiry day, the seat will be set back to the **Remainin Seats** and can be reassigned.{{% /alert %}}
    
@@ -52,16 +52,10 @@ In the **Invited Students** section, you can check the status of all the invitat
 
 If the student has not accepted the invitation, you can send a reminder email to encourage the student to register for the exam. To do so, click **Remind Student** in the **Invited Students** section.
 
- {{< figure src="/attachments/community-tools/manage-exam-seats/remind-student.png" >}}
+ {{< figure src="/attachments/community-tools/order-exams-in-bulk/manage-exam-seats/remind-student.png" >}}
 
 ## Withdrawing an Invitation {#withdraw-invitation}
 
 You can withdraw an invitation that has not been accepted. To do so, click **Withdraw Invite** in the **Invited Students** section.
 
- {{< figure src="/attachments/community-tools/manage-exam-seats/withdraw-invite.png" >}}
-
-## Managing Exam Admins
-
-As an exam admin, you can also manage exam admins per order. You can add, edit, or remove admins who control an exam order. To do so, go to the **Access Management** page.
-
- {{< figure src="/attachments/community-tools/manage-exam-seats/access-management.png" >}}
+ {{< figure src="/attachments/community-tools/order-exams-in-bulk/manage-exam-seats/withdraw-invite.png" >}}
