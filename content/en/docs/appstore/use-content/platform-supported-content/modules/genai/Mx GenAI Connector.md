@@ -8,7 +8,7 @@ weight: 60
 
 ## Introduction
 
-The Mendix Cloud GenAI connector (delivered as part of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931)) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. Please reach out to your CSM if you would like to learn more.
+The Mendix Cloud GenAI connector (delivered as part of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931)) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. Please reach out to `genai-resource-packs@mendix.com` if you would like to learn more.
 
 ### Typical Use Cases
 
