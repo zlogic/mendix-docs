@@ -15,19 +15,19 @@ description: "Native Template 7 release notes."
 
 **Release date: January 7, 2025**
 
-* We updated the AppCenter's Xcode version to 15.4.
+* We updated App Center's Xcode version to 15.4.
 
 ## 7.0.22 {#722}
 
 **Release date: January 3, 2025**
 
-* We updated the implementation of the registerReceiver method to align with Android SDK 34 and above.
+* We updated the implementation of the **registerReceiver** method to align with Android SDK 34 and above.
 
 ## 7.0.20 {#720}
 
 **Release date: December 23, 2024**
 
-* We updated min sdk to 23 on android.
+* We updated **min sdk** to 23 on android.
 
 ## 7.0.19 {#719}
 

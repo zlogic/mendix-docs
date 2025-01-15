@@ -51,7 +51,7 @@ Please note that this is a breaking change, and thus, requires a mandatory updat
 
 #### Improvements
 
-* We now recommend local building over using AppCenter and changed the Native Builder to reflect that.
+* We now recommend local building over using App Center and changed the Native Builder to reflect that.
 
 #### Fixes
 
@@ -113,7 +113,7 @@ This release was previously labeled as 1.0.127. Its release number has been corr
 
 #### Fixes
 
-* We fixed an issue with AppCenter not accepting periods in app names. (Ticket 153722, 154433, 154489, 154814)
+* We fixed an issue with App Center not accepting periods in app names. (Ticket 153722, 154433, 154489, 154814)
 
 ### Release 1.0.120
 
@@ -236,7 +236,7 @@ App Center's CodePush OTA page improvements:
 
 #### Fixes
 
-* We identified and fixed a bug with AppCenter's CodePush OTA not respecting the user's platform of choice. If one of the platforms was missing an App Center build configuration, the OTA build button would remain falsely disabled.
+* We identified and fixed a bug with App Center's CodePush OTA not respecting the user's platform of choice. If one of the platforms was missing an App Center build configuration, the OTA build button would remain falsely disabled.
 * We fixed an issue with missing asset files for newly created GitHub projects when building in **Advanced** mode.
 * We identified and fixed a bug with Firebase configuration's validation when changes are made to the **App Identifier**.
 

@@ -19,7 +19,7 @@ description: "Native Template 11 release notes."
 
 ### Fixes
 
-* We updated the AppCenter's Xcode version to 15.4.
+* We updated App Center's Xcode version to 15.4.
 * We added a parameter to Xcode configs to fix Bundle Identifier issues.
 
 ## 11.0.0 {#1000}

@@ -17,7 +17,7 @@ description: "Native Template 8 release notes."
 
 ### Fixes
 
-* We updated the AppCenter's Xcode version to 15.4.
+* We updated the App Center's Xcode version to 15.4.
 
 ## 8.2.8 {#828}
 
@@ -57,7 +57,7 @@ description: "Native Template 8 release notes."
 
 ### Fixes
 
-* We updated the AppCenter's Xcode version to 15.4.
+* We updated the App Center's Xcode version to 15.4.
 
 ## 8.0.15 {#815}
 
