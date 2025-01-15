@@ -5,6 +5,29 @@ weight: 5
 description: "Native Template 11 release notes."
 ---
 
+## 11.0.4 {#1003}
+
+**Release date: January 15, 2025**
+
+* We resolved an issue with the bundle identifier in Xcode's **Dev** scheme.
+
+## 11.0.2 {#1002}
+
+**Release date: January 13, 2025**
+
+### Fixes
+
+* We resolved an issue where remote JavaScript debugging failed in a custom-built Mendix Native Developer App, leading to crashes when enabling “Remote JS Debugging.” The problem was caused by Firebase services not being initialized properly during the build process. Firebase dependencies are now only included when explicitly required by the application.
+
+## 11.0.1 {#1001}
+
+**Release date: January 7, 2025**
+
+### Fixes
+
+* We updated App Center's Xcode version to 15.4.
+* We added a parameter to Xcode configs to fix Bundle Identifier issues.
+
 ## 11.0.0 {#1000}
 
 **Release date: December 17, 2024**
