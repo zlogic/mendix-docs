@@ -9,9 +9,9 @@ description_list: true
 
 ## Introduction
 
-An organization can place bulk orders for Mendix certification exam seats. When Mendix processes the order, an exam admin will be desginated. The exam admin is then responsible for overseeing the details of the order and assigning the purchased exam seats to individuals within the organization.
+An organization can place bulk orders to purchase Mendix certification exam seats. After receving the order, Mendix processes the order and designates an exam admin per order. The exam admin is then responsible for overseeing the details of the order and assigning the purchased exam seats to individuals within the organization.
 
-{{% alert color="info" %}}An organization can place a bulk order for exam seats via an order form. Contact your Customer Success Manager (CSM) for details.{{% /alert %}}
+{{% alert color="info" %}}An organization can place a bulk order to purchase exam seats via an order form. Contact your Customer Success Manager (CSM) for details.{{% /alert %}}
 
 ## Documents in This Category
 
