@@ -43,7 +43,7 @@ This module is intended to enable building chat interactions between a human use
 
 To use the Conversational UI module, your Mendix Studio Pro version must be [9.24.2](/releasenotes/studio-pro/9.24/#9242) or higher.
 
-When downloaded from the [marketplace](https://marketplace.mendix.com/link/component/227931), [GenAI Commons](/appstore/modules/genai/commons/) and the [MxGenAI Connector](/appstore/modules/genai/MxGenAI/) are downloaded as well. 
+When downloaded from the [marketplace](https://marketplace.mendix.com/link/component/227931), [GenAI Commons](/appstore/modules/genai/commons/) and the [Mendix Cloud GenAI Connector](/appstore/modules/genai/MxGenAI/) are downloaded as well. 
 
 You must also ensure you have the other prerequisite modules that Conversational UI requires. The modules are included by default in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934), the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) and the [RFP Assistant Starter App](https://marketplace.mendix.com/link/component/235917), otherwise you must install them yourself:
 
@@ -52,7 +52,7 @@ You must also ensure you have the other prerequisite modules that Conversational
 * [Nanoflow Commons](https://marketplace.mendix.com/link/component/109515)
 * [Web Actions](https://marketplace.mendix.com/link/component/114337)
 
-Finally, you must also install and configure a connector that is compatible with GenAI Commons. Mendix provides platform-supported integration with either [(Azure) OpenAI](/appstore/modules/genai/openai/) or [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/). You can also integrate with custom models by making them compatible with the [GenAI Commons](/appstore/modules/genai/commons/) Request and Response.
+Finally, you must also set-up a connector that is compatible with GenAI Commons. One option is to use the Mendix Cloud GenAI connector, which is part of this marketplace listing package. Information on how to configure this connector is available in [the documentation](/appstore/modules/genai/MxGenAI/#configuration). Additionally, Mendix provides platform-supported integration with [(Azure) OpenAI](/appstore/modules/genai/openai/) and [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/), which, if desired, need to be downloaded manually from marketplace. Alternatively, you can integrate with custom models by creating your own connactor and making its operations and object structure compatible with the [GenAI Commons](/appstore/modules/genai/commons/) Request and Response.
 
 ## Installation {#installation}
 
