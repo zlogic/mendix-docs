@@ -11,7 +11,7 @@ description: "Native Template 11 release notes."
 
 ### Fixes
 
-* We have resolved an issue where remote JavaScript debugging failed in a custom-built Mendix Native Developer App, leading to crashes when enabling “Remote JS Debugging.” The problem was caused by Firebase services not being initialized properly during the build process. We have ensured that Firebase dependencies are now only included when explicitly required by the application.
+* We resolved an issue where remote JavaScript debugging failed in a custom-built Mendix Native Developer App, leading to crashes when enabling “Remote JS Debugging.” The problem was caused by Firebase services not being initialized properly during the build process. Firebase dependencies are now only included when explicitly required by the application.
 
 ## 11.0.1 {#1001}
 
@@ -19,7 +19,7 @@ description: "Native Template 11 release notes."
 
 ### Fixes
 
-* We have updated the AppCenter's Xcode version to 15.4.
+* We updated the AppCenter's Xcode version to 15.4.
 * We added a parameter to Xcode configs to fix Bundle Identifier issues.
 
 ## 11.0.0 {#1000}
