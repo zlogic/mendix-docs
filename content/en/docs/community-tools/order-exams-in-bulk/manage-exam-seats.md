@@ -11,7 +11,7 @@ An organization can place bulk orders to purchase Mendix certification exam seat
 
 After the order is processed, the designated exam admin receives an email and notification to manage the order. The exam admin can oversee the details of the order and assign the purchased exam seats to individuals within the organization. People who are assigned exam seats will be granted free access to take the exam.
 
-This how-to describes how you can manage exam seats as an exam admin.
+This how-to explains how you can manage exam seats as an exam admin.
 
 ## Prerequisites
 
@@ -30,11 +30,11 @@ To manage exam seats, you must be an exam admin.
 
 4. Click **Add to Invite**. 
 
-5. Set an expiry date to the invitation. 
+5. Set an expiry date for the invitation. 
 
    {{< figure src="/attachments/community-tools/order-exams-in-bulk/manage-exam-seats/expiry-date.png" >}}
 
-   {{% alert color="info" %}}The student must register for the exam before the expiry date. If the student fails to register before the expiry day, the seat will be set back to the **Remainin Seats** and can be reassigned.{{% /alert %}}
+   {{% alert color="info" %}}The student must register for the exam before the expiry date. If the student fails to register before the expiry day, the seat will be set back to the **Remaining Seats** and can be reassigned.{{% /alert %}}
 
 6. Click **Send Invites**.
 

@@ -19,7 +19,7 @@ To manage exam admins, you must be an exam admin.
 
 To add an exam admin, do as follows:
 
-1. In [Mendix Academy](https://academy.mendix.com/), go to the **Access Management** page. You can see a full list of the exam admins.
+1. In [Mendix Academy](https://academy.mendix.com/), go to the **Access Management** page. You can see a full list of exam admins.
 
      {{< figure src="/attachments/community-tools/order-exams-in-bulk/manage-exam-admins/access-management.png" >}}
 
@@ -37,7 +37,7 @@ The exam admins who are added will receive an email with a link that redirects t
 
 To remove an exam admin, do as follows:
 
-1. In [Mendix Academy](https://academy.mendix.com/), go to the **Access Management** page. You can see a full list of the exam admins.
+1. In [Mendix Academy](https://academy.mendix.com/), go to the **Access Management** page. You can see a full list of exam admins.
 
     {{< figure src="/attachments/community-tools/order-exams-in-bulk/manage-exam-admins/access-management.png" >}}
 
