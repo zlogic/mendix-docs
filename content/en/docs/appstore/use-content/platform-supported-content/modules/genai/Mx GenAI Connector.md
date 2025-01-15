@@ -32,7 +32,7 @@ The Mendix Cloud GenAI Connector is commonly used for text generation, embedding
 
 #### Knowledge Base
 
-The module enables tailoring generated responses to specific contexts by grounding them in data inside of a collection belonging to Mendix Cloud GenAI knowledge base resource. This allows for the secure use of private company data or other non-public information when interacting with GenAI models within the Mendix app. It provides a low-code solution to store discrete data (commonly called chunks) in the knowledge base and retrieves relevant information for end-user actions or application processes.
+The module enables tailoring generated responses to specific contexts by grounding them in data inside of a collection belonging to a Mendix Cloud GenAI knowledge base resource. This allows for the secure use of private company data or other non-public information when interacting with GenAI models within the Mendix app. It provides a low-code solution to store discrete data (commonly called chunks) in the knowledge base and retrieves relevant information for end-user actions or application processes.
 
 Knowledge bases are often used for:
 
@@ -64,7 +64,7 @@ In the current version, Mendix supports text generation (including function/tool
 
 ### Prerequisites
 
-To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the developer portal or ask someone with access to either generate them for you or be added to the team to generate keys yourself. 
+To use this connector, you need configuration keys to authenticate to the Mendix Cloud GenAI services. You can generate keys in the [developer portal](https://genai.home.mendix.com) or ask someone with access to either generate them for you or be added to the team to generate keys yourself. 
 
 ### Dependencies {#dependencies}
 
@@ -74,18 +74,18 @@ To use this connector, you need configuration keys to authenticate to the Mendix
 
 ## Installation
 
-Add the [Dependencies](#dependencies) listed above from the Marketplace. On the Marketplace, the Mendix Cloud GenAI connector is bundled inside of the [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931) which also contains GenAI commons operations and logic. To import this module into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
+Add the [Dependencies](#dependencies) listed above from the Marketplace. On the Marketplace, the Mendix Cloud GenAI connector is bundled inside of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931) which also contains GenAI commons operations and logic. To import this module into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
 
 ## Configuration {#configuration}
 
-After installing the Mendix Cloud GenAI connector, you can find it in the **App Explorer** insode of the **Add-ons** section. The connector includes a domain model and several activities to help integrate your app with the Mendix Cloud GenAI service. To implement the connector, simply use its actions in a microflow. You can find the Mendix GenAI actions in the microflow toolbox. Note that the module is protected, meaning it cannot be modified and the microflow logic is not visible. For details about each exposed operation, see the [Operations](#operations) section below or refer to the documentation provided within the module. For more information on Add-on modules, see [Consuming Add-on Modules and Solutions](/refguide/consume-add-on-modules-and-solutions/).
+After installing the Mendix Cloud GenAI connector, you can find it in the **App Explorer** inside of the **Add-ons** section. The connector includes a domain model and several activities to help integrate your app with the Mendix Cloud GenAI service. To implement the connector, simply use its actions in a microflow. You can find the Mendix GenAI actions in the microflow toolbox. Note that the module is protected, meaning it cannot be modified and the microflow logic is not visible. For details about each exposed operation, see the [Operations](#operations) section below or refer to the documentation provided within the module. For more information on Add-on modules, see [Consuming Add-on Modules and Solutions](/refguide/consume-add-on-modules-and-solutions/).
 
 Follow the steps below to get started:
 
 * Make sure to configure the [Encryption module](/appstore/modules/encryption/#configuration) before you connect your app to Mendix Cloud GenAI.
 * Add the module role `MxGenAIConnector.Administrator` to your Administrator **User roles** in the **Security** settings of your app. 
 * Add the `NAV_ConfigurationOverview_Open` microflow (**USE_ME** > **Configuration**) to your **Navigation** or register your key using the `Configuration_RegisterByString` microflow.
-* Complete the runtime setup of Mendix Cloud GenAI configuration by navigating to the page through the microflow mentioned above. Import a key generated in the portal or provided to you and click **Test Key** to validate its functionality.
+* Complete the runtime setup of Mendix Cloud GenAI configuration by navigating to the page through the microflow mentioned above. Import a key generated in the [portal](https://genai.home.mendix.com) or provided to you and click **Test Key** to validate its functionality.
 
 ## Operations
 
@@ -93,7 +93,7 @@ Follow the steps below to get started:
 
 Configuration keys are stored persistently after they are imported (either via the UI or the exposed microflow). There are three different types of configurations that reflect the use cases this service supports. The specific operations are described below.
 
-To use the operations, either a `DeployedModel` (text, embeddings) or a `MxKnowledgebaseConnection` must always be passed as input. The DeployedModel will be created automatically when importing keys in runtime and needs to be retrieved from the database only. To initialize a knowledge base operation, use the `Connection: Get` toolbox action to create the `MxKnowledgebaseConnection` object. It requires a `CollectionName` (string) for the right collection inside of the knowledge base resource to be used.
+To use the operations, either a `DeployedModel` (text, embeddings) or a `MxKnowledgebaseConnection` must always be passed as input. The DeployedModel will be created automatically when importing keys at runtime and needs to be retrieved from the database. To initialize a knowledge base operation, use the `Connection: Get` toolbox action to create the `MxKnowledgebaseConnection` object. It requires a `CollectionName` (string) for the right collection inside of the knowledge base resource to be used.
 
 ### Chat Completions Operation
 
@@ -101,7 +101,7 @@ After following the general setup above, you are ready to use the chat completio
 
 These microflows expect a `DeployedModel` as input to determine the connection details. 
 
-In chat completions, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on prompt engineering, see the [Read More](#readmore) section. Different exposed microflow activities may require different prompts and logic for how the prompts must be passed, as described in the following sections. For more information on message roles, see the [ENUM_MessageRole](/appstore/modules/genai/commons/#enum-messagerole) enumeration in the *GenAI Commons*.
+In chat completions, system prompts and user prompts are two key components that help guide the language model in generating relevant and contextually appropriate responses. For more information on prompt engineering, see the [Read More](#readmore) section. Different exposed microflow activities may require different prompts and logic for how the prompts must be passed, as described in the following sections. For more information on message roles, see the [ENUM_MessageRole](/appstore/modules/genai/commons/#enum-messagerole) enumeration in *GenAI Commons*.
 
 Apart from `Retrieve and Generate (MxCloud, without history)`, the chat completion operations support [Function Calling](#function-calling), [Vision](#vision), and [Document Chat](#document-chat).
 
@@ -109,11 +109,11 @@ For more inspiration or guidance on how to use the above-mentioned microflows in
 
 #### Chat Completions (without History)
 
-The microflow activity `Chat Completions (without history)` supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request. Please see the [GenAICommons module](https://docs.mendix.com/appstore/modules/genai/commons/) documentation for more information.
+The microflow activity [Chat Completions (without history)](/appstore/modules/genai/commons/#chat-completions-without-history) supports scenarios where there is no need to send a list of (historic) messages comprising the conversation so far as part of the request.
 
 #### Chat Completions (with History)
 
-The microflow activity `Chat completions (with history)` supports more complex use cases where a list of (historical) messages (for example, the conversation or context so far) is sent as part of the request to the LLM. Please see the [GenAICommons module](https://docs.mendix.com/appstore/modules/genai/commons/) documentation for more information.
+The microflow activity [Chat completions (with history)](/appstore/modules/genai/commons/#chat-completions-with-history) supports more complex use cases where a list of (historical) messages (for example, the conversation or context so far) is sent as part of the request to the LLM.
 
 #### Chat Completions (Retrieve & Generate)
 
@@ -133,7 +133,7 @@ Function calling enables LLMs to connect with external tools to gather informati
 
 The model does not call the function but rather returns a tool called JSON structure that is used to build the input of the function (or functions) so that they can be executed as part of the chat completions operation. Functions in Mendix are essentially microflows that can be registered within the request to the LLM​. The connector takes care of handling the tool call response and executing the function microflows until the API returns the assistant's final response.
 
-Function microflows take a single input parameter of type string or no input parameter and must return a string. Currently, adding a [ToolChoice](/appstore/modules/genai/commons/#set-toolchoice) for function calling is not supported by the Mendix Cloaud GenAI Connector.
+Function microflows take a single input parameter of type string or no input parameter and must return a string. Currently, adding a [ToolChoice](/appstore/modules/genai/commons/#set-toolchoice) for function calling is not supported by the Mendix Cloud GenAI Connector.
 
 {{% alert color="warning" %}}
 Function calling is a highly effective capability and should be used with caution. Function microflows run in the context of the current user, without enforcing entity access. You can use `$currentUser` in XPath queries to ensure that you retrieve and return only information that the end-user is allowed to view; otherwise, confidential information may become visible to the current end-user in the assistant's response.
@@ -146,9 +146,9 @@ For more information, see [Function Calling](/appstore/modules/genai/function-ca
 
 #### Vision{#vision}
 
-Vision enables the model to interpret and analyze images, allowing them to answer questions and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To ensure the vision inside the connector, an optional [FileCollection](/appstore/modules/genai/commons/#filecollection) containing one or multiple images must be sent with a single message.
+Vision enables the model to interpret and analyze images, allowing them to answer questions and perform tasks related to visual content. This integration of computer vision and language processing enhances the model's comprehension and makes it valuable for tasks involving visual information. To ensure vision inside the connector, an optional [FileCollection](/appstore/modules/genai/commons/#filecollection) containing one or multiple images must be sent with a single message.
 
-For `Chat Completions without History`, `FileCollection` is an optional input parameter. For `Chat Completions with History`, `FileCollection` can optionally be added to individual user messages using [Add Message to Request](/appstore/modules/genai/commons/#chat-add-message-to-request).
+For [Chat Completions (without history)](/appstore/modules/genai/commons/#chat-completions-without-history), `OptionalFileCollection` is an optional input parameter. For [Chat completions (with history)](/appstore/modules/genai/commons/#chat-completions-with-history), a `FileCollection` can optionally be added to individual user messages using [Add Message to Request](/appstore/modules/genai/commons/#chat-add-message-to-request).
 
 In the entire conversation, you can pass up to 20 images that are smaller than 3.75 MB each and with a height and width of a maximum 8000 pixels. The following types are accepted: PNG, JPEG, JPG, GIF, and WebP.
 
@@ -156,14 +156,14 @@ In the entire conversation, you can pass up to 20 images that are smaller than 3
 
 Document chat enables the model to interpret and analyze documents, such as PDFs or Excel files, allowing them to answer questions and perform tasks related to the content. To use document chat, an optional [FileCollection](/appstore/modules/genai/commons/#filecollection) containing one or multiple documents must be sent along with a single message.
 
-For `Chat Completions without History`, `FileCollection` is an optional input parameter. For `Chat Completions with History`, `FileCollection` can optionally be added to individual user messages using [Chat: Add Message to Request](/appstore/modules/genai/commons/#chat-add-message-to-request).
+For [Chat Completions (without history)](/appstore/modules/genai/commons/#chat-completions-without-history), `OptionalFileCollection` is an optional input parameter. For [Chat completions (with history)](/appstore/modules/genai/commons/#chat-completions-with-history), a `FileCollection` can optionally be added to individual user messages using [Add Message to Request](/appstore/modules/genai/commons/#chat-add-message-to-request).
 
 In the entire conversation, you can pass up to five documents that are smaller than 4.5 MB each. The following file types are accepted: PDF, CSV, DOC, DOCX, XLS, XLSX, HTML, TXT, and MD.
 
 {{% alert color="info" %}}
 When adding a document to the `FileCollection`, you can optionally use the `TextContent` parameter to pass the file name. Ensure the file name excludes its extension before passing it to the file collection.
 
-Note that the model uses the file name when analyzing documents, which could make it vulnerable to prompt injection. Depending on your use case, you may choose to modify the string or not to pass it at all.
+Note that the model uses the file name when analyzing documents, which could make it vulnerable to prompt injection. Depending on your use case, you may choose to modify the string or not pass it at all.
 {{% /alert %}}
 
 ### Knowledge Base Operations
@@ -175,13 +175,13 @@ Dealing with knowledge bases involves two main stages:
 1. [Insertion of knowledge](#knowledge-base-insertion)
 2. [Retrieval of knowledge (Nearest neighbor)](#knowledge-base-retrieval)
 
-You do not need to manually add embeddings to a chunk, as the connector handles this internally. To see all existing knowledge bases for a configuration, go to the **Knowledge Base** tab on the [Mendix Cloud GenAI Configuration] page and refresh the view on the right. Alternatively, use the `Get Collections` action to retrieve a synchronized list of collections inside of your knowledge base resource to include in your module. Lastly, you can delete a collection using the `Delete Collection` action.
+You do not need to manually add embeddings to a chunk, as the connector handles this internally. To see all existing knowledge bases for a configuration, go to the **Knowledge Base** tab on the [Mendix Cloud GenAI Configuration](#configuration) page and refresh the view on the right. Alternatively, use the `Get Collections` action to retrieve a synchronized list of collections inside of your knowledge base resource to include in your module. Lastly, you can delete a collection using the `Delete Collection` action.
 
 #### Knowledge Base Insertion{#knowledge-base-insertion}
 
 ##### Data Chunks
 
-To add data to the knowledge base, you need discrete pieces of information and create knowledge base chunks for each one. Use the `GenAICommons` operations to first [initialize a ChunkCollection object](/appstore/modules/genai/commons/#chunkcollection-create), and then [add a KnowlegdebaseChunk](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) object to it for each piece of information. Both can be found in the **Toolbox** inside of the **GenAI Knowledge Base (Content)** category.
+To add data to the knowledge base, you need discrete pieces of information and create knowledge base chunks for each one. Use the GenAICommons operations to first [initialize a ChunkCollection object](/appstore/modules/genai/commons/#chunkcollection-create), and then [add a KnowlegdebaseChunk](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) object to it for each piece of information. Both can be found in the **Toolbox** inside of the **GenAI Knowledge Base (Content)** category.
 
 ##### Chunking Strategy
 
@@ -194,7 +194,7 @@ The chunk collection can then be stored in the knowledge base using one of the f
 Use the following toolbox actions inside the **Mendix Cloud Knowledge Base** toolbox category to populate knowledge data into the knowledge base:
 
 1. `Embed & Insert` embeds a list of chunks (passed via a [ChunkCollection](/appstore/modules/genai/commons/#chunkcollection)) and inserts them into the knowledge base.
-2. `Embed & (Re)populate Knowledge Base` is similar to the `Embed & Insert`, but deletes all existing chunks from the knowledge base before inserting the new chunks.
+2. `Embed & repopulate KB` is similar to the `Embed & Insert`, but deletes all existing chunks from the knowledge base before inserting the new chunks.
 3. `Embed & Replace` replaces existing chunks in the knowledge base that match the associated Mendix object which was passed via [Add KnowledgeBaseChunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) action at the insertion stage.
 
 Additionally, use the following toolbox actions to delete chunks:
@@ -215,7 +215,7 @@ The following toolbox actions can be used to retrieve knowledge data from the kn
 1. `Retrieve` retrieves knowledge base chunks from the knowledge base. You can use pagination via the `Offset` and `MaxNumberOfResults` parameters or apply filtering via a `MetadataCollection` or `MxObject`. (Scroll down to see all available input parameters of this operation)
 2. `Retrieve & Associate` is similar to the `Retrieve` but associates the returned chunks with a Mendix object if they were linked at the insertion stage. 
 
-    {{% alert color="info" %}}You must define your entity specialized from `KnowledgeBaseChunk`, which refers to another entity used during the insertion stage.
+    {{% alert color="info" %}}You must define your entity specialized from `KnowledgeBaseChunk`, which is associated to the entity that was used to pass a MendixObject during the [insertion stage](#knowledge-base-insertion).
     {{% /alert %}}
 
 3. `Embed & Retrieve Nearest Neighbors` retrieves a list of type [KnowledgeBaseChunk](/appstore/modules/genai/commons/#knowledgebasechunk-entity) from the knowledge base that are most similar to a given `Content` by calculating the cosine similarity of its vectors.
@@ -227,15 +227,15 @@ If you are working directly with embedding vectors for specific use cases that d
 
 To implement embeddings into your Mendix application, you can use the microflows in the **Knowledge Bases & Embeddings** folder inside of the GenAICommons module. Both microflows for embeddings are exposed as microflow actions under the **GenAI (Generate)** category in the **Toolbox** in Mendix Studio Pro.
 
-These microflows require a `DeployedModel`object [DeployedModel](/appstore/modules/genai/commons/#deployed-model) that determines the model and endpoint to use. Depending on the selected operation, an `InputText` String or a [ChunkCollection](/appstore/modules/genai/commons/#chunkcollection) needs to be provided.
+These microflows require a [DeployedModel](/appstore/modules/genai/commons/#deployed-model) that determines the model and endpoint to use. Depending on the selected operation, an `InputText` String or a [ChunkCollection](/appstore/modules/genai/commons/#chunkcollection) needs to be provided.
 
 #### Embeddings (String)
 
-The microflow activity `Generate Embeddings (String)` supports scenarios where the vector embedding of a single string must be generated. This input string can be passed directly as the `TextInput` parameter of this microflow. Note that the parameter [EmbeddingsOptions](/appstore/modules/genai/commons/#embeddingsoptions-entity) is optional. Use the exposed microflow [Embeddings: Get First Vector from Response](/appstore/modules/genai/commons/#embeddings-get-first-vector) to retrieve the generated embeddings vector.
+The microflow activity [Generate Embeddings (String)](/appstore/modules/genai/commons/#embeddings-string) supports scenarios where the vector embedding of a single string must be generated. This input string can be passed directly as the `TextInput` parameter of this microflow. Note that the parameter [EmbeddingsOptions](/appstore/modules/genai/commons/#embeddingsoptions-entity) is optional. Use the exposed microflow [Embeddings: Get First Vector from Response](/appstore/modules/genai/commons/#embeddings-get-first-vector) to retrieve the generated embeddings vector.
 
 #### Embeddings (ChunkCollection)
 
-The microflow activity `Generate Embeddings (ChunkCollection)` supports the more complex scenario where a collection of [Chunk](/appstore/modules/genai/commons/#chunkcollection) objects is vectorized in a single API call, such as when converting a collection of text strings (chunks) from a private knowledge base into embeddings. Instead of calling the API for each string, executing a single call for a list of strings can significantly reduce HTTP overhead. The embedding vectors returned after a successful API call will be stored as an `EmbeddingVector` attribute in the same `Chunk` object. Use the exposed microflows of GenAI Commons [Chunks: Initialize ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-create), [Chunks: Add Chunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-chunk), or [Chunks: Add KnowledgeBaseChunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) to construct the input.
+The microflow activity [Generate Embeddings (ChunkCollection)](/appstore/modules/genai/commons/#embeddings-chunk-collection) supports the more complex scenario where a collection of [Chunk](/appstore/modules/genai/commons/#chunkcollection) objects is vectorized in a single API call, such as when converting a collection of text strings (chunks) from a private knowledge base into embeddings. Instead of calling the API for each string, executing a single call for a list of strings can significantly reduce HTTP overhead. The embedding vectors returned after a successful API call will be stored as an `EmbeddingVector` attribute in the same `Chunk` object. Use the exposed microflows of GenAI Commons [Chunks: Initialize ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-create), [Chunks: Add Chunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-chunk), or [Chunks: Add KnowledgeBaseChunk to ChunkCollection](/appstore/modules/genai/commons/#chunkcollection-add-knowledgebasechunk) to construct the input.
 
 To create embeddings, it does not matter whether the ChunkCollection contains Chunks or its specialization KnowledgeBaseChunks. Note that the knowledge base operations handle the embedding generation themselves internally.
 
