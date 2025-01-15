@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction {#introduction}
 
-The [GenAI Commons](https://marketplace.mendix.com/link/component/227933) module combines common GenAI patterns found in a variety of generative AI models on the market. Platform-supported GenAI-connectors use the underlying data structures and their operations. This makes it easier to develop vendor-agnostic AI-enhanced apps with Mendix, for example by using one of the connectors or the [Conversational UI](/appstore/modules/genai/conversational-ui/) module.
+The `GenAI Commons` module found in the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle combines common GenAI patterns found in a variety of generative AI models on the market. Platform-supported GenAI-connectors use the underlying data structures and their operations. This makes it easier to develop vendor-agnostic AI-enhanced apps with Mendix, for example by using one of the connectors or the [Conversational UI](/appstore/modules/genai/conversational-ui/) module.
 
 If two different connectors both adhere to the GenAI Commons module, they can be easily swapped, which reduces dependency on the model providers. In addition, the initial implementation of AI capabilities using the connectors becomes a drag-and-drop experience, so that developers can quickly get started. The module exposes useful operations which developers can use to build a request to a large language model (LLM) and to handle the response.
 
