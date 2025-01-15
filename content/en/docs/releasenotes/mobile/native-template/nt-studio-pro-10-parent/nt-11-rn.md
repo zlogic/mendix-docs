@@ -9,7 +9,7 @@ description: "Native Template 11 release notes."
 
 **Release date: January 15, 2025**
 
-* We resolved an issue with the bundle identifier in the Dev scheme on Xcode.
+* We resolved an issue with the bundle identifier in Xcode's **Dev** scheme.
 
 ## 11.0.2 {#1002}
 
