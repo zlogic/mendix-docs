@@ -15,7 +15,7 @@ This how-to describes how you, as an exam admin, can manage exam seats and manag
 
 ## Prerequisite
 
-* To manage exam seats, you must be an exam admin.
+To manage exam seats, you must be an exam admin.
 
 ## Inviting Students to Take an Exam
 
@@ -24,17 +24,19 @@ This how-to describes how you, as an exam admin, can manage exam seats and manag
     {{< figure src="/attachments/community-tools/order-exams-in-bulk/manage-exam-seats/overview.png" >}}
 
 2. Click **Invite Student**. The **Add Student** dialog box opens.
-3. Enter their email addresses and click **Add to Invite**. If you enter multiple email addresses, seperate them by commas.
+3. Enter the email addresses of the students who you want to invite. If you enter multiple email addresses, seperate them by commas.
 
     {{< figure src="/attachments/community-tools/order-exams-in-bulk/manage-exam-seats/add-student-email-addresses.png" max-width=75% >}}
 
-4. Set an expiry date to the invitation. 
+4. Click **Add to Invite**. 
+
+5. Set an expiry date to the invitation. 
 
    {{< figure src="/attachments/community-tools/order-exams-in-bulk/manage-exam-seats/expiry-date.png" >}}
 
    {{% alert color="info" %}}The student must register for the exam before the expiry date. If the student fails to register before the expiry day, the seat will be set back to the **Remainin Seats** and can be reassigned.{{% /alert %}}
-   
-5. Click **Send Invites**.
+
+6. Click **Send Invites**.
 
 You can see this invitation now in the **Invited Student**s section. After the invitation is sent, the student will receive an email, from which they can be direted to the registration page for the exam. 
 
