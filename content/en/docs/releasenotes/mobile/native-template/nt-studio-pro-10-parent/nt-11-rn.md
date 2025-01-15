@@ -5,6 +5,12 @@ weight: 5
 description: "Native Template 11 release notes."
 ---
 
+## 11.0.4 {#1003}
+
+**Release date: January 15, 2025**
+
+* We resolved an issue with the bundle identifier in the Dev scheme on Xcode.
+
 ## 11.0.2 {#1002}
 
 **Release date: January 13, 2025**
