@@ -19,7 +19,7 @@ To manage exam seats, you must be an exam admin.
 
 ## Inviting Students to Take an Exam
 
-1. Go to the [Overview](https://academy.mendix.com/link/examadmin) page of the Exam Administration. In the **Available Exams** table, you can see the remaining seats per order and per exam in the **Remaining Seats** column.
+1. In Mendix Academy, go to the [Overview](https://academy.mendix.com/link/examadmin) page for exam administration. In the **Available Exams** table, you can see the remaining seats per order and per exam in the **Remaining Seats** column.
 
     {{< figure src="/attachments/community-tools/order-exams-in-bulk/manage-exam-seats/overview.png" >}}
 
