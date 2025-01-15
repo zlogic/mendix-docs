@@ -7,7 +7,7 @@ description: "Native Template 7 release notes."
 
 ## 7.0.24 {#724}
 
-**Release date: January 13, 2025**
+**Release date: January 15, 2025**
 
 * We have resolved an issue where remote JavaScript debugging failed in a custom-built Mendix Native Developer App, leading to crashes when enabling “Remote JS Debugging.” The problem was caused by Firebase services not being initialized properly during the build process. We have ensured that Firebase dependencies are now only included when explicitly required by the application.
 
