@@ -1,5 +1,5 @@
 ---
-title: "Order Exams in Bulk"
+title: "Order Mendix Certification Exams in Bulk"
 url: /order-exams-in-bulk/
 weight: 15
 description: "Describes how to make a bulk order for exam seats and introduce the documents in this category."
