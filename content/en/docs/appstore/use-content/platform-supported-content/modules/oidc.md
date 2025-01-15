@@ -216,16 +216,16 @@ Ensure that you have allocated the following user roles to the OIDC module and U
 | User Role | OIDC Module Role |
 | --- | --- |
 | Administrator | OIDC.Administrator, UserCommons.Administrator |
-| Anonymous | OIDC.Anonymous |
+| Anonymous | OIDC.Anonymous (for multiple IdPs only) |
 | User | OIDC.User |
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-roles.png" class="no-border" >}}
 
-{{% alert color="info" %}}
-You may have to add the *Anonymous* user role if it does not exist already.
-{{% /alert %}}
+### User Roles for Single IdP
 
-### Allowing Anonymous Users (Optional)
+If a single Identity Provider (IdP) is configured in the OIDC SSO module, end-users can be authenticated via the URL `https://<your-app-url>/oauth/v2/login` This means you do not need to configure the Anonymous user role for a single IdP.
+
+### Allowing Anonymous Users for Multiple IdPs (Optional)
 
 The OIDC module supports multiple OIDC/OAuth-compatible IdPs. Optionally, if you allow your end-users to choose from multiple IdPs, or to have the option to log back into the app after they have logged out, you will need to give them access to the app before they have signed in to the app. Therefore, you need to give anonymous users access to your app.
 
@@ -237,14 +237,14 @@ In the **Anonymous** tab of the app security settings, do the following:
 {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/anonymous-user.png" class="no-border" >}}
 
 {{% alert color="info" %}}
-If a single Identity Provider (IdP) is configured in the OIDC SSO module, end-users can be authenticated via the URL `https://<your-app-url>/oauth/v2/login`.
+For multiple IdPs, you may have to add the *Anonymous* user role if it does not exist already.
 {{% /alert %}}
 
 ### Configuring Navigation{#configure-nav}
 
 The OIDC SSO module works without a specified sign-in page. Therefore, in the navigation section of your app, set **Sign-in page** (in the **Authentication** section) to *none*.
 
-If you are configuring navigation for web/responsive apps and want to allow your end-users to choose from a number of different IdPs, or to have the option to sign in back into the app after they have signed out, set a **Role-based home page** for role **Anonymous** to **OIDC.Login_Web_Button**. When configuring navigation for PWA apps, set the **Role-based home page** for the **Anonymous** role to `OIDC.Login_PWA_Online_Button` for online apps and `Login_PWA_Offline_Button` for offline apps. See [Role-Based Home Pages](/refguide/navigation/#role-based) in *Navigation* for more information.
+If you are configuring navigation for web/responsive apps and want to allow your end-users to choose from a number of different IdPs (multiple IdPs), or to have the option to sign in back into the app after they have signed out, set a **Role-based home page** for role **Anonymous** to **OIDC.Login_Web_Button**. When configuring navigation for PWA apps, set the **Role-based home page** for the **Anonymous** role to `OIDC.Login_PWA_Online_Button` for online apps and `Login_PWA_Offline_Button` for offline apps. See [Role-Based Home Pages](/refguide/navigation/#role-based) in *Navigation* for more information.
 
 In addition, administrators will need to have access to configure OIDC and also manage end-users. You can do this by including the pages `Administration.Account_Overview` and `OIDC.OIDC_Client_Overview` into the app navigation, or a separate administration page.
 
