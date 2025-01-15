@@ -7,11 +7,11 @@ description: "Describes how an exam admin in an organization can manage exam sea
 
 ## Introduction
 
-After an organization places a bulk order for exam seats and the order is processed, the designated exam admin will receive an email and notification to manage the order through Academy. The exam admin can then oversee the details of the order and assign the purchased exam seats to individuals within the organization. People who are assigned exam seats will be granted free access to take the exam.
+An organization can place bulk orders for Mendix certification exam seats. When Mendix processes the order, an exam admin will be desginated. 
+
+After the order is processed, the designated exam admin will receive an email and notification to manage the order. The exam admin can oversee the details of the order and assign the purchased exam seats to individuals within the organization. People who are assigned exam seats will be granted free access to take the exam.
 
 This how-to describes how you, as an exam admin, can manage exam seats and manage the invitations.
-
-{{% alert color="info" %}}An organization can place a bulk order for exam seats via an order form. Contact your Customer Success Manager (CSM) for details.{{% /alert %}}
 
 ## Prerequisite
 
