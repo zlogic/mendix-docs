@@ -1,7 +1,7 @@
 ---
 title: "Manage Exam Admins"
-url: /order-exams/manage-exam-admins/
-weight: 1
+url: /order-exams-in-bulk/manage-exam-admins/
+weight: 2
 description: "Describes how to manage exam admins in an organization."
 ---
 
