@@ -128,16 +128,16 @@ In a custom error handler that is executed after an error occurs, `$latestError`
 In microflows that apply entity access, you may not be able to inspect the attributes of error objects for security reasons. You can pass the error object to a sub-microflow that does not apply entity access and inspect the attributes there.
 {{% /alert %}}
 
-{{% alert color="info" %}}
-The `$latestError` variable is a special variable that does not behave exactly like normal variables. This variable is not supposed to be returned as the result of this microflow, to either a nanoflow or a page or widget that calls it. Doing so will result in unexpected behaviour.
+{{% alert color="warning" %}}
+The `$latestError` variable is a special variable that does not behave like normal variables. This variable should not be returned as the result of a microflow to a nanoflow, page, or widget that calls it. Doing so will result in unexpected behavior.
 {{% /alert %}}
 
 ### Inspecting REST Errors
 
 If the error is a REST fault (an error that occurs as a result of a REST call), the result of the call will be stored in the `$latestHttpResponse` variable which is an object of type `HttpResponse`. This object is available in your custom error flows and you can use it to write more focused messages to the log or to make other decisions within the error flow. For more information, see the [Response Tab](/refguide9/call-rest-action/#response) section in *Call REST Service*.
 
-{{% alert color="info" %}}
-The `$latestHttpResponse` variable is a special variable that does not behave exactly like normal variables. This variable is not supposed to be returned as the result of this microflow, to either a nanoflow or a page or widget that calls it. Doing so will result in unexpected behaviour.
+{{% alert color="warning" %}}
+The `$latestHttpResponse` variable is a special variable that does not behave like normal variables. This variable should not be returned as the result of a microflow to a nanoflow, page, or widget that calls it. Doing so will result in unexpected behavior.
 {{% /alert %}}
 
 ### Inspecting SOAP Errors
@@ -160,8 +160,8 @@ The attributes of the **System.SoapFault** entity are shown below:
 
 For more information, see [SOAP Fault](https://www.w3.org/TR/soap12-part1/#soapfault).
 
-{{% alert color="info" %}}
-The `$latestSoapFault` variable is a special variable that does not behave exactly like normal variables. This variable is not supposed to be returned as the result of this microflow, to either a nanoflow or a page or widget that calls it. Doing so will result in unexpected behaviour.
+{{% alert color="warning" %}}
+The `$latestSoapFault` variable is a special variable that does not behave like normal variables. This variable should not be returned as the result of a microflow to a nanoflow, page, or widget that calls it. Doing so will result in unexpected behavior.
 {{% /alert %}}
 
 ## Best Practices
