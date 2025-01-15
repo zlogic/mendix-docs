@@ -7,7 +7,7 @@ description: "Describes how to manage exam admins in an organization."
 
 ## Introduction
 
-As an exam admin, you can also manage exam admins per order. You can add, edit, or remove admins who control an exam order. To do so, go to the **Access Management** page.
+As an exam admin, you can add or remove exam admins who do the exam administrations for an exam order.
 
 ## Presequites
 
@@ -27,11 +27,11 @@ To add an exam admin, do as follows:
 
     {{< figure src="/attachments/community-tools/order-exams-in-bulk/manage-exam-admins/add-exam-admin.png" max-width=70% >}}
 
-3. In the **User** field, enter the email addresses of the exam admins that you want to add. If you enter multiple email addresses, seperate them by commas.
+3. In the **User** field, enter the email addresses of the exam admins who you want to add. If you enter multiple email addresses, seperate them by commas.
 
 4. Click **Add**.
 
-The exam admins that you added will recieve an email, from which they can be directed to the [Overview](https://academy.mendix.com/link/examadmin) page for exam administration.
+The exam admins who who added will recieve an email, from which they can be directed to the [Overview](https://academy.mendix.com/link/examadmin) page for exam administration.
 
 ### Removing an Exam Admin
 
