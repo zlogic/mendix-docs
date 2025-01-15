@@ -76,7 +76,7 @@ The main entities are shown for reference in the diagram below. For technical do
 
 ### Configuring the Roles {#module-roles}
 
-Make sure that the module role `User` is part of the user roles that are intended to chat with the model. Optionally, you can grant the `_addOn_ReadAll` role to admin roles, so that users with that role can read all messages. A role for usage monitoring is related only to the [Token consuption monitor snippets](#snippet-token-monitor) and does not relate to the conversational snippets.
+Make sure that the module role `User` is part of the user roles that are intended to chat with the model. Optionally, you can grant the `_addOn_ReadAll` role to admin roles, so that users with that role can read all messages. A role for usage monitoring is related only to the [Token consumption monitor snippets](#snippet-token-monitor) and does not relate to the conversational snippets.
 
 | Module role | Description |
 | --- | --- |
@@ -158,7 +158,7 @@ Typical chat interfaces provide suggestions for messages that the user can click
 The `ProviderConfig` contains the selection of the model provider with which the AI Bot can chat. It also refers to an action microflow that is executed when the **Send** button is clicked for a `ChatContext` that has the `ProviderConfig` associated. 
 
 A `ProviderConfig` (or specialization) can be added directly using the aforementioned [operations](#chat-context-operations) that create a new `ChatContext`. This will be adequate in most cases.
-If the `ChatContext` however already exists and a new `ProviderConfig` needs to be added, use the **New Config for Chat** toolbox action. This action can also set the  `ProviderConfig` to be the active one for the ChatContext: if that is required set the `IsActive` parameter to true. Additionally, for this action the action you have to specify the action microflow that will be executed. 
+If the `ChatContext` however already exists and a new `ProviderConfig` needs to be added, use the **New Config for Chat** toolbox action. This action can also set the  `ProviderConfig` to be the active one for the ChatContext: if that is required set the `IsActive` parameter to true. Additionally, for this action you have to specify the action microflow that will be executed. 
 
 **ChatContext_AddProviderConfig_SetActive** is the counterpart of this flow when both the `ChatContext` and the `ProviderConfig` exist already. 
 
@@ -173,8 +173,8 @@ Add the action microflow to an existing `ProviderConfig` by using the **Set Chat
 A typical action microflow is responsible for the following:
 
 * Convert the `ChatContext` with user input to a `Request` structure for the chat completions operation. This module provides the **Default Preprocessing** toolbox action to take care of that in basic cases; for more advanced or custom cases you need to create your own logic based on this.
-* Execute the [Chat Completions (with history)](/appstore/modules/genai/commons/#chat-completions-with-history) operation. To pass a [DeployedModel](/appstore/modules/genai/commons/#deployed-model), you can use the `ProviderConfig_DeployedModel` association of te active ProviderConfig for the ChatContext.
-* Update the `ChatContext` structure based on the response so that the user can see the result in the UI. This module provides the **Update Assistant Response** microflow action in the toolbox. It is only required to execute this logic in succesful model interactions, make sure to pass the response object. In the case of an unhappy scenario, the action microflow should return false and the module logic will take care setting the applicable error statuses and no response object is needed. 
+* Execute the [Chat Completions (with history)](/appstore/modules/genai/commons/#chat-completions-with-history) operation. To pass a [DeployedModel](/appstore/modules/genai/commons/#deployed-model), you can use the `ProviderConfig_DeployedModel` association of the active ProviderConfig for the ChatContext.
+* Update the `ChatContext` structure based on the response so that the user can see the result in the UI. This module provides the **Update Assistant Response** microflow action in the toolbox. It is only required to execute this logic in succesful model interactions, make sure to pass the response object. In the case of an unhappy scenario, the action microflow should return false and the module logic will take care setting the applicable error status and no response object is needed. 
 
 The example action microflow in this module, to be found in the **USE_ME > ConversationalUI > Action microflow examples** folder follows this basic structure.
 
@@ -292,7 +292,7 @@ If needed, verify that no data view widget is breaking the flow; for example, us
 
 ### Cannot Export Usage Data for the Token Consumption Monitor
 
-The export of usage data for the token consuption monitor does not work correctly.
+The export of usage data for the token consumption monitor does not work correctly.
 
 #### Cause 
 
