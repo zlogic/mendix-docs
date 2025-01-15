@@ -28,9 +28,10 @@ The typical usage scenario is when an app/module consumes a service where a user
 
 #### EncryptionKey Constant
 
-Set the `EncryptionKey` constant located in the **Private - String en/de-cryption** folder. Make sure the key consists of 16 characters. For local run of your application, set the key in the **Default value** field.
+Set the `EncryptionKey` constant located in the **Private - String en/de-cryption** folder. In module versions 2.2.0 and above, the `EncryptionKey` constant must be 32 characters long, corresponding to the updated 256 bits key length.
+For versions below 2.2.0, ensure the key is 16 characters long to support the 128 bits key length.
 
-In version 2.2.0, the key length was increased from 128 to 256 bits. The `EncryptionKey` constant must now have a key with 32 characters. The `LegacyEncryptionKey` constant can be used for the 128 bits, in order to decrypt strings that were encrypted using an older version of the Encryption module.
+For local application runs, set the key in the **Default value** field. Additionally, the `LegacyEncryptionKey` constant supports 128 bits decryption of strings encrypted using an older version of the Encryption module.
 
 #### EncryptionPrefix Constant
 
