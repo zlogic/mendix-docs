@@ -38,7 +38,7 @@ When running the application locally, set the key as the **Default value** of th
 
 Set the `EncryptionPrefix` constant in the **Private - String en/de-cryption** folder. The value depends on the module version you are using:
 
-* For version 2.2.0 or above, set the constant to `{AES3}`
+* For version 2.2.0 and above, set the constant to `{AES3}`
 * For versions 1.4.1–2.1.3, set the constant to `{AES2}`
 
 {{% alert color="info" %}}
