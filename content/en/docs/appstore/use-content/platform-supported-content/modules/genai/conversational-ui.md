@@ -43,16 +43,16 @@ This module is intended to enable building chat interactions between a human use
 
 To use the Conversational UI module, your Mendix Studio Pro version must be [9.24.2](/releasenotes/studio-pro/9.24/#9242) or higher.
 
-When downloaded from the [marketplace](https://marketplace.mendix.com/link/component/227931), [GenAI Commons](/appstore/modules/genai/commons/) and the [Mendix Cloud GenAI Connector](/appstore/modules/genai/MxGenAI/) are downloaded as well. 
+When you download [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931) from the marketplace, [GenAI Commons](/appstore/modules/genai/commons/) and the [Mendix Cloud GenAI Connector](/appstore/modules/genai/MxGenAI/) are already included.
 
-You must also ensure you have the other prerequisite modules that Conversational UI requires. The modules are included by default in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934), the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) and the [RFP Assistant Starter App](https://marketplace.mendix.com/link/component/235917), otherwise you must install them yourself:
+You must also ensure you have the other prerequisite modules that Conversational UI requires. These modules are included by default in the [Blank GenAI App](https://marketplace.mendix.com/link/component/227934), the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), the [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) and the [RFP Assistant Starter App](https://marketplace.mendix.com/link/component/235917). If not, you need to install them manually.
 
 * [Atlas Core](https://marketplace.mendix.com/link/component/117187)
 * [Data Widgets](https://marketplace.mendix.com/link/component/116540) 
 * [Nanoflow Commons](https://marketplace.mendix.com/link/component/109515)
 * [Web Actions](https://marketplace.mendix.com/link/component/114337)
 
-Finally, you must also set-up a connector that is compatible with GenAI Commons. One option is to use the Mendix Cloud GenAI connector, which is part of this marketplace listing package. Information on how to configure this connector is available in [the documentation](/appstore/modules/genai/MxGenAI/#configuration). Additionally, Mendix provides platform-supported integration with [(Azure) OpenAI](/appstore/modules/genai/openai/) and [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/), which, if desired, need to be downloaded manually from marketplace. Alternatively, you can integrate with custom models by creating your own connector and making its operations and object structure compatible with the [GenAI Commons](/appstore/modules/genai/commons/) Request and Response.
+Finally, you must also set-up a connector that is compatible with [GenAI Commons](/appstore/modules/genai/commons/). One option is to use the Mendix Cloud GenAI connector, which is part of above Marketplace listing package. For more Information on how to configure this connector, see the [Configuration](/appstore/modules/genai/MxGenAI/#configuration) section of *Mendix Cloud GenAI connector*. Additionally, Mendix offers platform-supported integration with [(Azure) OpenAI](/appstore/modules/genai/openai/) and [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/). If desired, you need to downloaded these integrations manually from the Marketplace. Alternatively, you can integrate with custom models by creating your own connector and making its operations and object structure compatible with the [GenAI Commons](/appstore/modules/genai/commons/) `Request` and `Response`.
 
 ## Installation {#installation}
 
@@ -104,7 +104,7 @@ Drag the following snippets onto your other pages to quickly build your version 
 
 ##### Chat Interface Snippets {#snippet-chat-interface}
 
-Chat interface snippets contain the whole message history of a conversation as a list view. At the bottom there is a text area for users to enter their message, i.e. the user prompt. Some UI components show an error message when a call has failed, or that show progressing loading bots when waiting for the response. When a user clicks the **Send** button, the [action microflow](#action-microflow) is executed.
+Chat interface snippets shows the entire message history of a conversation in a list view. At the bottom, a text area allows users to enter their message, which is the user prompt. Some UI components show an error message when a call fails, or show progressing loading bots while waiting for the response. When a user clicks the **Send** button, the [action microflow](#action-microflow) is executed.
 
 The following versions are available and can be swapped as needed:
 
