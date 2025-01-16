@@ -32,7 +32,7 @@ Set the `EncryptionKey` constant in the **Private - String en/de-cryption** fold
 
 For versions below 2.2.0, ensure the key is 16 characters long to support the 128 bits key length.
 
-For local application runs, set the key in the **Default value** field. Additionally, the `LegacyEncryptionKey` constant supports 128 bits decryption of strings encrypted using an older version of the Encryption module.
+When running the application locally, set the key as the **Default value** of the `EncryptionKey` constant.
 
 #### EncryptionPrefix Constant
 
