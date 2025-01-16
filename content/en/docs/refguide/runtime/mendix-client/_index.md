@@ -270,7 +270,7 @@ When the Mendix client is running, it sets a number of technical cookies to reco
 
 ²The name of the **XASSESSIONID** can be changed by changing the value of the **com.mendix.core.SessionIdCookieName** [custom setting](/refguide/custom-settings/).
 
-³**clear_cache** cookie does not contain any sensitive information and always has value of 1. Therefore, there is no need for this cookie to be marked as **Secure** or **HttpOnly**.
+³The **clear_cache** cookie does not contain any sensitive information and always has value of 1. Therefore, there is no need for this cookie to be marked as **Secure** or **HttpOnly**.
 
 ### Launching Native Mendix Client
 
