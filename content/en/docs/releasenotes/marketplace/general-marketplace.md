@@ -11,6 +11,13 @@ aliases:
 ---
 
 These release notes cover changes made to the [Mendix Marketplace](/appstore/).
+## 2025
+
+### January 16, 2024
+
+#### Improvements
+
+* We have unpublished outdated components from our marketplace. These components were no longer supported, actively maintained, or guaranteed to work as intended. This step ensures a cleaner, more reliable experience for all users.
 
 ## 2024
 
