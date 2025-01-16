@@ -32,7 +32,7 @@ Set the `EncryptionKey` constant in the **Private - String en/de-cryption** fold
 
 For versions below 2.2.0, ensure the key is 16 characters long to support the 128 bits key length.
 
-When running the application locally, set the key as the **Default value** of the `EncryptionKey` constant.
+When running the application locally, set the **Value** for the `EncryptionKey` constant in the **App Settings** > **Configurations** tab.
 
 #### EncryptionPrefix Constant
 
