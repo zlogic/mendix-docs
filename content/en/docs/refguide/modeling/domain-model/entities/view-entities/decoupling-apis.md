@@ -10,6 +10,8 @@ Exposing view entities instead of the underlying persistent entity takes away th
 
 For this purpose of this use case, the following domain model is used:
 
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/domain-model.png" >}}
+
 ## Creating a View Entity
 In this scenario, you want to make an API that returns *Products*, and allows you to filter the results by Category. To do this, create a single view entity and expose it as an OData resource. 
 
@@ -30,6 +32,12 @@ FROM Shop.Product as p
 
 3. Right-click on this entity and select **Publish in OData service**. 
 4. Add `ProductId` as a key attribute, then click **OK**.
-5. In the attribute configuration, unselect **Can be empty**. 
-6. Run your app locally
 
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/key-attribute.png" >}}
+
+
+5. In the attribute configuration, unselect **Can be empty**. 
+   
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/key-attribute.png" >}}
+
+6. Run your app locally.
