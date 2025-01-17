@@ -53,4 +53,4 @@ Use the new view entity to create a chart.
 * Y axis - **TotalSales**
 
 4. Click **OK** to save. The outcome should look like this: 
-5. 5. Run your app locally and you should see the chart populated with your data. 
+5. Run your app locally and you should see the chart populated with your data. 
