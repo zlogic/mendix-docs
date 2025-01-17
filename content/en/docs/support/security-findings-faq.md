@@ -225,6 +225,12 @@ For example, the old version of the [LDAP Synchronization module](https://market
 
 The Mendix Client is bundled with the full dojo library. However, not all functionality of the Dojo library is used. The vulnerability is in the `deepCopy` util method of dojo; this method is not used in the Mendix Client. This vulnerability cannot be exploited in the client.
 
+#### Prototype Pollution Vulnerability - CVE-2021-23450
+
+Mendix versions 9.11.0 to 9.24.0 use Dojo 1.16.4. The `setObject` function is used in one place in our code, but this is in a deprecated function. This function is no longer used internally. Therefore, there is no opportunity for the `setObject` function to be exploited.
+
+Mendix 9.24.0 and above use Dojo 1.17.3, which does not have this vulnerability. Upgrading will prevent the vulnerability being reported by your security tool.
+
 ### BREACH Attacks
 
 The Mendix Runtime implements a number of mitigation methods which mean that the Mendix Runtime is not vulnerable to [BREACH attacks](https://www.breachattack.com/). These recommended mitigation methods protect resources by:
