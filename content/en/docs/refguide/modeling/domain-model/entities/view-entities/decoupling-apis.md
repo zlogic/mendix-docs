@@ -4,4 +4,32 @@ url: /refguide/decoupling-apis/
 
 ---
 
+## Introduction
+
+Exposing view entities instead of the underlying persistent entity takes away the complexity of the underlying schema. This helps you prevent frequent API changes in the event of data model changes. It also allows you to consolidate data from multiple tabs in a single API.
+
+For this purpose of this use case, the following domain model is used:
+
+## Creating a View Entity
+In this scenario, you want to make an API that returns *Products*, and allows you to filter the results by Category. To do this, create a single view entity and expose it as an OData resource. 
+
+1. Open your domain model and create a view entity called *ProductCategoryVE*.
+2. Use the following query for your entity:
+
+```
+SELECT
+  p.ProductId as ProductId
+  , p.ProductName as ProductName
+  , p.QuantityPerUnit as QuantityPerUnit
+  , p.Discontinued as Discontinued
+  , c.CategoryName as Category
+  , c.CategoryId as CategoryId
+FROM Shop.Product as p
+  JOIN p/Shop.Product_Category/Shop.Category as c
+```
+
+3. Right-click on this entity and select **Publish in OData service**. 
+4. Add `ProductId` as a key attribute, then click **OK**.
+5. In the attribute configuration, unselect **Can be empty**. 
+6. Run your app locally
 
