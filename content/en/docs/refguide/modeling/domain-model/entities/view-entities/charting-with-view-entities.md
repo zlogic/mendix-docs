@@ -6,13 +6,17 @@ url: /refguide/charting-with-view-entities/
 
 ## Introduction
 
-Use view entities to create charts in Studio Pro using aggredated data. 
+Use view entities to create charts in Studio Pro using aggregated data. 
 
 For this purpose of this use case, the following domain model is used:
+
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/charting-with-view-entities/domain-model.png" >}}
 
 ## Create Charts with View Entities
 
 In this scenario, imagine you own a small business. To keep track of what is being sold, you want to visualize your sales. You want to  see how much you make in sales each year, and how each product category contributes to the number. You would like your chart to look similar to the one below:
+
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/charting-with-view-entities/chart-example.png" >}}
 
 ### Create a View Entity
 
@@ -44,6 +48,9 @@ Use the new view entity to create a chart.
 
 1. Create a new page (or use any existing page) and from the Toolbox, add a Column chart to the page.
 2. Double-click the chart and in the Data Source field, click **New**. 
+
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/charting-with-view-entities/edit-column-chart.png" >}}
+
 3. Edit the chart by filling out the following:
 
 * Data set - **Multiple series**
@@ -53,4 +60,7 @@ Use the new view entity to create a chart.
 * Y axis - **TotalSales**
 
 4. Click **OK** to save. The outcome should look like this: 
-5. Run your app locally and you should see the chart populated with your data. 
+
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/charting-with-view-entities/chart-final.png" >}}
+
+1. Run your app locally and you should see the chart populated with your data. 
