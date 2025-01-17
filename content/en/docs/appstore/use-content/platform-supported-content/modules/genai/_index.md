@@ -23,7 +23,7 @@ Mendix supports a variety of generative AI tasks by integrating with tools such 
 
 ### Getting Started
 
-To familiarized yourself with the GenAI capabilities of Mendix, explore sections below based on your experience level:
+To familiarize yourself with the GenAI capabilities of Mendix, explore the sections below based on your experience level:
 
 #### Familiar with GenAI
 
