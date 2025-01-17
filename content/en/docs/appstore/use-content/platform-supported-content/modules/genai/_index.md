@@ -23,15 +23,18 @@ Mendix supports a variety of generative AI tasks by integrating with tools such 
 
 ### Getting Started
 
-To get familiarized with the GenAI capabilities of Mendix, explore the following sections based on your experience level:
+To familiarized yourself with the GenAI capabilities of Mendix, explore sections below based on your experience level:
 
 #### Familiar with GenAI
-If you are already familiar with GenAI and want to start building, check out our [How to Build Smarter Apps Using GenAI](/appstore/modules/genai/using-genai/) guide to start building your first GenAI-powered application and access further supportive resources.
+
+If you are already familiar with GenAI and want to start building, refer to [How to Build Smarter Apps Using GenAI](/appstore/modules/genai/using-genai/) guide to start building your first GenAI-powered application and access further supportive resources.
 
 #### New to GenAI
-If you are new to GenAI, we encourage you to follow these steps:
-1. Familiarize yourself with [concepts](/appstore/modules/genai/get-started/) such as prompt engineering, Retrieval Augmented Generation (RAG), and function calling (ReAct).
-2. Select the right architecture to support your use case. For a full list of possibilities, see [Architecture and Components](#architecture).
+
+If you are new to GenAI, follow the steps below:
+
+1. Familiarize yourself with the [concepts](/appstore/modules/genai/get-started/) such as prompt engineering, Retrieval Augmented Generation (RAG), and function calling (ReAct).
+2. Select the right architecture to support your use case. For a full list of possibilities, see the [Architecture and Components](#architecture) section below.
 3. Obtain the required credentials for your selected architecture.
 
 ## Architecture and Components {#architecture}
