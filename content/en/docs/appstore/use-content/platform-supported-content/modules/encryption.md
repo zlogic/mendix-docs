@@ -28,7 +28,7 @@ Currently, only AES is supported.
 
 #### EncryptionKey Constant
 
-Set the `EncryptionKey` constant in the **Private - String en/de-cryption** folder. In module versions 2.2.0 and above, the `EncryptionKey` constant must be 32 characters long, corresponding to the updated 256 bits key length. You can use the `LegacyEncryptionKey` constant to decrypt strings which were encrypted with 128 bit keys using an older version of the Encryption module.
+Set the `EncryptionKey` constant in your application, which can be found in the **Private - String en/de-cryption** folder. In module versions 2.2.0 and above, the `EncryptionKey` constant must be 32 characters long, corresponding to the updated 256 bits key length. You can use the `LegacyEncryptionKey` constant to decrypt strings which were encrypted with 128 bit keys using an older version of the Encryption module.
 
 For versions below 2.2.0, ensure the key is 16 characters long to support the 128 bits key length.
 
