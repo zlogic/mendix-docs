@@ -1,0 +1,72 @@
+---
+title: "Data Versioning with View Entities"
+url: /refguide/view-entity-data-versioning/
+
+---
+
+## Introduction
+
+View entities allow you to work with versioned data. In this example, you will implement versioned data within a domain model. 
+
+For this purpose of this use case, the following domain model is used:
+
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/domain-model.png" >}}
+
+## Use Case
+
+The domain model above is for an ordering system of a shop. The entities contain the following:
+
+* *OrderInfo* - information about an order, such as the fulfillment deadline 
+* *OrderLine* -  information about purchased items, such as price or quantity
+* *Customer* - information about the purchasing customer 
+* OrderUpdate* - information about the status of an order, such as when the order ships or is delivered; a new row is added for each update
+
+An advantage of separating *OrderUpdate* from *OrderLine* is that it is easier to keep track of the order history. You can create an entity that includes information from both entities, but it works on the assumption that the workflow remains the same with each order (Order placed > order processed > order shipped). However, this may make it difficult to see other statuses, such as the latest status, or which orders have been processed. To avoid this, use a view entity to implement data versioning.
+
+## Data Versioning
+
+To view the latest status of an order, follow the steps below:
+
+1. Create a view entity named *LastestORderStatusVE*.
+2. Add the following query to the entity:
+
+```
+SELECT
+    o.OrderId as OrderId,
+    o.RequiredDate as RequiredDate,
+    u.OrderStatus as OrderStatus,
+    u.UpdateDate as UpdateDate
+FROM Shop.OrderInfo o
+JOIN o/Shop.OrderUpdate_OrderInfo/Shop.OrderUpdate u
+JOIN (
+    SELECT
+        u.OrderId as OrderId,
+        MAX(u.UpdateDate) as UpdateDate
+    FROM Shop.OrderUpdate u
+    GROUP BY u.OrderId
+) latest ON (latest.OrderId = o.OrderId AND latest.UpdateDate = u.UpdateDate)
+```
+
+{{% alert color="info" %}}
+
+The above query is a nested query. It retrieves information from the *OrderInfo* table, then joins it with the *OrderUpdate* table. The result is a table with every update of every order. If you are only interested in the latest update of each table, retrieve the latest date an order is updated with `MAX(u.UpdateDate)` and combine it with the previous `JOIN`.
+
+{{% /alert %}}
+
+The final result is a list with only the latest update of each order.
+
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/latest-order-status-ve.png" >}}
+
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/latest-order-status-table.png" >}}
+
+## Order Status on Specific Date
+
+Another advantage is that you can take a snapshot of the order status on any given date. For example, if you want to know the status of orders on 8/17/1997, add the following line at the end of your query:
+
+```
+WHERE u.UpdateDate < CAST('1997/08/17' as DATETIME)
+```
+
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/order-status-properties.png" >}}
+
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/order-status-table.png" >}}
