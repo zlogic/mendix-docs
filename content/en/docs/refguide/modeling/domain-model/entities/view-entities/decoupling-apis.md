@@ -1,5 +1,5 @@
 ---
-title: "Decoupling APIs
+title: "Decoupling APIs"
 url: /refguide/decoupling-apis/
 
 ---
