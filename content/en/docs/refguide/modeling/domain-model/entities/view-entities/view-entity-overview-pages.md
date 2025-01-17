@@ -100,7 +100,7 @@ On the product overview page above, there is no button to add or modify a produc
 
 1. Create a microflow that takes the `ProductOverviewVE` object.
    
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/product-overview-microflow.png >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/product-overview-microflow.png" >}}
    
 * Add a [retrieve]( /refguide/retrieve/) activity. In this activity, retrieve a `Product`object with the following XPath constraint: 
 `[(ProductId = $ProductOverviewVE/ProductId)]`
@@ -151,20 +151,20 @@ SELECT
 FROM Shop.Category c
 ```
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/supplier-and-category-ve.png >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/supplier-and-category-ve.png" >}}
 
 3. On the Edit ProductOverviewVE page, add a Combo box inside the data view.
 4. In the Data source field, select **Database**, then under Selectable objects, click **Edit** > **Entity (path)** > **CategoryNames**. Then, click **Select**.  
 5. In the Attribute field, select `CategoryId` for the Value and Attribute. 
 6. In the Caption field, next to Caption, click **Select** > **CategoryName**.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/combo-box.png >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/combo-box.png" >}}
 
 7. Add another Combo box and repeat the above steps for the Supplier view entity. 
 
 Your final form should look like this:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/product-overview-page.png >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/product-overview-page.png" >}}
 
 ## Update Product Microflow
 
@@ -175,7 +175,7 @@ Once the Product page is complete, you must update the related microflow.
 3. Add another Retrieve activity for the supplier. 
 4. In the existing Change Product activity, add the Category and Supplier associations and set them to their corresponding objects. 
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/update-product-microflow.png >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/update-product-microflow.png" >}}
 
 When you run your app, you should now be able to update the product’s category and supplier. 
 
@@ -191,4 +191,4 @@ You can use a view entity to add a new product into the existing database. Follo
 6. Add a Show page activity and set it to open the Edit Product page. Use `NewProductVE` as the page parameter. 
 7. Add a button to the Product Overview page and link to the Create Product microflow. 
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-product-microflow.png >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-product-microflow.png" >}}
