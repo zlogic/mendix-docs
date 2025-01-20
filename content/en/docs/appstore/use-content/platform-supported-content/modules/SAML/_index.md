@@ -407,7 +407,7 @@ The following settings apply to the IdP configuration:
 
 Initially your app will not have any end-users. The SAML module provides so-called Just-In-Time (JIT) user provisioning. This means that an end-user will be created in your app when they log in for the first time. If you do not want JIT user provisioning, it is possible to disable it as described in the section [Custom User Provisioning at Runtime](#custom-provisioning-rt) below.
 
-By default, end-users are provisioned using the Account object in the Administration module. If you need to use a custom user entity, you can do this via [Custom User Provisioning Using a Microflow](#custom-provisioning-mf) or (in version 2.4.0 and above) [Custom User Provisioning at Deploy Time](#custom-provisioning-dep) or [Custom User Provisioning at Runtime](#custom-provisioning-rt).
+By default, end-users are provisioned using the Account object in the Administration module. If you need to use a custom user entity, you can do this via [Custom User Provisioning at Deploy Time](#custom-provisioning-dep) or [Custom User Provisioning at Runtime](#custom-provisioning-rt).
 
 ### Default User Provisioning
 
@@ -422,14 +422,6 @@ This applies the following mapping:
 If you create custom user entities as specializations of the `System.User` entity, you can store user information that is more extensive than is possible with the `System.User` or `Administration.Account` entities. You can use these specializations as target entities for end-user provisioning using one of the methods described below.
 
 If you connect multiple IdPs to your Mendix app, you can use separate custom user entities for each IdP, each with its own attribute mapping.
-
-### Custom User Provisioning Using a Microflow{#custom-provisioning-mf}
-
-Review the microflow `CUSTOM_UserProvisioning` in the **USE_ME** > 1. **Configuration** folder of the SAML module. This is where you can change the way that end-users are provisioned in your app. The OpenID token is passed to the microflow as a parameter. Use this object to find an existing, or create a new, `Administration.Account` object for the end-user. This is set as the return value of the microflow. You can find examples included in the **USE_ME** > 1. **Configuration** > **User Provisioning Examples** folder.
-
-Make a single call from `CUSTOM_UserProvisioning` to your own module where you implement the provisioning flow you need. This way, it will be easy to install new versions of the SAML module over time without overwriting your custom provisioning.
-
-The SAML module supports multiple IdPs. Since each provider can provide user data in a different format, you may want to use multiple provisioning flows. See the microflow `UserProvisioning_Sample` for an example and details on how to do this.
 
 ### Custom User Provisioning at Deploy Time{#custom-provisioning-dep}
 
