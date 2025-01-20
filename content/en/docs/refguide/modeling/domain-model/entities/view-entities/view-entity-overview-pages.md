@@ -122,7 +122,7 @@ Notice the quotation marks in `Shop.”Order”`. This is because `Order` is a r
 
 On the product overview page above, there is no button to add or modify a product. This can be added to a view entity to update its corresponding persistable entity object.
 
-1. Create a microflow and name it *ProductOverview*. This microflow takes the `ProductOverviewVE` object.
+1. Create a microflow and name it *ACT_ProductOverview*. This microflow takes the `ProductOverviewVE` object.
    
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/product-overview-microflow.png" >}}
 
