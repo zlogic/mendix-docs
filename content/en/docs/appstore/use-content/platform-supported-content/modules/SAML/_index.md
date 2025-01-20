@@ -234,17 +234,21 @@ In the new application, configure the following fields and get the IdP metadata 
 
 After creating an application, you will receive an IdP metadata URL. This URL is used in the IdP configuration to **Read IdP metadata from URL**.
 
+The setup described above, offers default configurations to start the SAML module. Any changes made to the configuration will require adjustments to other configuration details accordingly.
+
+##### Creating SP Manually at Okta
+
 To kickstart the SAML module with Okta, refer to the images below. Ensure to log in with [Okta Developer](https://developer.okta.com/) credentials.
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/saml/saml-okta.png" >}}
+
+##### Creating SP Manually at Azure
 
 To connect [Azure](https://portal.azure.com/#home) with SAML, refer the below image. 
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/saml/saml-azure.png" >}}
 
 For IdP configuration, the default value for **Assertion consumer service index** is *0*. Set the corresponding value *0* for the **Index**.
-
-The setup described above, offers default configurations to start the SAML module. Any changes made to the configuration will require adjustments to other configuration details accordingly.
 
 #### Setting up Eight Mandatory Constants{#setup-eight-constants}
 
