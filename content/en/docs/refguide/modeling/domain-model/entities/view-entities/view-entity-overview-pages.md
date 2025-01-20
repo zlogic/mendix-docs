@@ -12,6 +12,12 @@ For this purpose of this use case, the following domain model is used:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/domain-model.png" >}}
 
+{{% alert color="info" %}}
+
+You must have an existing data grid with data inputted into it prior to using a view entity. Do this by generating overview pages using the entities in the above domain model, then adding sample data into it. 
+
+{{% /alert %}}
+
 ## Create a Data Grid 
 
 In this scenario, create an overview page that lists each product in a [data grid]( /appstore/modules/data-grid-2/), including information about its category and supplier. 
@@ -20,8 +26,8 @@ With view entities, you do not have to manage associations when showing the data
 Create a view entity that combines only the relevant attributes of the entities *Product*, *Supplier*, and *Category*. To do this, follow these steps:
 
 1. Open your domain model and add a new view entity.
-2. Name the view entity *ProductOverviewVE*
-3. Add the following OQL query to the entity:
+2. Name the view entity *ProductOverviewVE*.
+3. Add the following OQL query to the OQL editor: 
 
 ```
 SELECT
@@ -41,14 +47,14 @@ FROM Shop.Product as p
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/product-overview-ve.png" >}}
 
-5. Generate an overview page by right-clicking the entity and selecting **Generate overview pages**.
-6. Run your app locally, then click **View App**. You should see the data grid populated with the information that you want to show, provided you have added data to your grid.
+5. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
+6. Run your app locally, then click **View App**. You should see the data grid populated with the information that was previously added.
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/ live-data-grid.png" >}}
 
 ## Alternative to Calculated Attributes
 
-With a view entity, you can still search and sort items. You also receive the calculated attribute (or Total Value). This is only calculated once, unlike a non-persistent entity, where it is calculated each time the object is accessed. 
+With a view entity, you can still search and sort items. You also receive the calculated attribute (or Total Value). This is only calculated once, unlike a non-persistable entity, where it is calculated each time the object is accessed. 
 
 For example, an `OrderLine` represents a single entry in an order. It has the following attributes:
 
@@ -56,7 +62,10 @@ For example, an `OrderLine` represents a single entry in an order. It has the fo
 * `Quantity`
 * `Discount`
 
-Suppose you want to get the total value information of each order line, which is given by the formula `Total = UnitPrice * Quantity* (1 – Discount)`. To do this, create a view entity named `OrderLineWithTotal` and use the following query:
+Suppose you want to get the total value of each order line, which is given by the formula `Total = UnitPrice * Quantity* (1 – Discount)`. To do this, follow these steps:
+
+1. Create a view entity and name it *OrderLineWithTotalVE*.
+2. Add the following query to the OQL editor:
 
 ```
 SELECT
@@ -72,7 +81,10 @@ You can use this view entity in a data grid and show the total.
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/total-value.png" >}}
 
-From here, you can calulate the total value of an order by joining the `OrderLine` and `Order`table. To do this, create a new view entity named *OrderWithTotalValue* with the following query: 
+From here, you can calculate the total value of an order by joining the `OrderLine` and `Order`table. To do this, follow the steps below:
+
+1. Create a new view entity and name it *OrderWithTotalValueVE*.
+2. Add the following query to the OQL editor: =
 
 ```
 SELECT
@@ -96,7 +108,7 @@ Notice the quotation marks in `Shop.”Order”`. This is because `Order` is a r
 
 ## Update Underlying Persistent Entities
 
-On the product overview page above, there is no button to add or modify a product. This can be added to a view entity to update its corresponding persistent entity object.
+On the product overview page above, there is no button to add or modify a product. This can be added to a view entity to update its corresponding persistable entity object.
 
 1. Create a microflow that takes the `ProductOverviewVE` object.
    
@@ -184,7 +196,7 @@ When you run your app, you should now be able to update the product’s category
 You can use a view entity to add a new product into the existing database. Follow the steps below:
 
 1. Create a new microflow and name it *CreateProduct*
-2. Add a Create object activity to create a *Product* (the persistent entity) object. Leave all the attributes blank.
+2. Add a Create object activity to create a *Product* (the persistable entity) object. Leave all the attributes blank.
 3. Set Commit to **Yes**.
 4. Place a Retrieve object activity right after the previous activity. 
 5. Retrieve a `ProductOverviewVE` that corresponds to the new `Product` object ( `ProductId = $NewProduct/ProductId`). 
