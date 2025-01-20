@@ -46,7 +46,7 @@ The following table shows which of the more popular platform-supported Marketpla
 | [OIDC SSO](https://marketplace.mendix.com/link/component/120371) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [OIDC Provider](https://marketplace.mendix.com/link/component/214681) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [UserCommons](https://marketplace.mendix.com/link/component/223053) | {{< icon name="checkmark-circle-filled" color="green" >}} |
-| [LDAP](https://marketplace.mendix.com/link/component/210270) | {{< icon name="remove-circle-filled" color="red" >}} |
+| [LDAP](https://marketplace.mendix.com/link/component/210270) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [SCIM](https://marketplace.mendix.com/link/component/229630) | {{< icon name="remove-circle-filled" color="red" >}} |
 | [Atlas Native Content](https://marketplace.mendix.com/link/component/117175) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [Web Actions](https://marketplace.mendix.com/link/component/114337) | {{< icon name="checkmark-circle-filled" color="green" >}} |
