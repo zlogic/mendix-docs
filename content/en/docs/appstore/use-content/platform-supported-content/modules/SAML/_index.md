@@ -199,7 +199,7 @@ The table below introduces you several key updates when you upgrade SAML module 
 | Feature | Changes in Version 4.0.0 |
 | --- | --- |
 | SSO Configuration | You can now perform SSO configuration during design-time and deploy-time. <br>Introduced deploy-time configuration and `Custom_Create_IdPConfiguration` microflow for customized SSO configuration. |
-| Admin Screen Restructuring | The **Mapping** tab has been removed. Equivalent configurations can now be completed on the **User Provisioning configuration** tab. <br> `evaluateMultipleUserMatches` microflow is now moved to the **User Provisioning** tab.
+| Admin Screen Restructuring | The **Mapping** tab has been removed. Equivalent configurations can now be completed on the **User Provisioning configuration** tab. <br> `evaluateMultipleUserMatches` microflow is now moved to the **User Commons**. |
 | User Commons Module Integration | 1. The SAML module now integrates with the User Commons module, offering a more uniform experience with the OIDC SSO module. <br>2. A new method for creating custom user provisioning microflows using User Commons simplifies development and allows you to automatically set the user-type for users <br> 3. Deprecated: SAML 3.x provisioning flows will be unsupported in future versions. It’s recommended to create new provisioning flows using User Commons after upgrading.<br> 5. From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values.|
 | InCommon Federation Support | Pre-configured support for InCommon Federation has been removed. You now need to create custom user provisioning microflows in version 4.0.0 |
 
@@ -433,7 +433,7 @@ The SAML module supports multiple IdPs. Since each provider can provide user dat
 
 ### Custom User Provisioning at Deploy Time{#custom-provisioning-dep}
 
-{{% alert color="info" %}} This feature is available in version 2.4.0 and above {{% /alert %}}
+{{% alert color="info" %}} This feature is available in version 4.0.0 and above {{% /alert %}}
 
 You can set up custom user provisioning by setting constants when you deploy your app. This has the following limitations compared to setting up provisioning using a microflow or changing the settings at runtime:
 
@@ -454,7 +454,7 @@ You can set up custom user provisioning by setting the following constants. You 
 
 ### Custom User Provisioning at Runtime{#custom-provisioning-rt}
 
-{{% alert color="info" %}} This feature is available in version 4.0.0 and above {{% /alert %}}
+{{% alert color="info" %}} This feature is available in version 4.0.0 and above. {{% /alert %}}
 
 You can set up custom user provisioning by selecting the **IdP Configuration** tab of SAML module. Select configuration and you can see the **User Provisioning** tab.
 
@@ -485,6 +485,9 @@ You can set up custom user provisioning by selecting the **IdP Configuration** t
 This section describes the microflows that you may want to customize if needed.
 
 #### evaluateMultipleUserMatches
+
+{{% alert color="info" %}}
+Starting from the version 4.0.0. of the SAML module, `evaluateMultipleUserMatches` microflow is moved to the UserCommons.{{% /alert %}}
 
 The module tries to look up the user that matches the provided user name. When multiple `System.User` records are found, this microflow is always executed.
 
