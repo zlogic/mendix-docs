@@ -27,7 +27,7 @@ Create a view entity that combines only the relevant attributes of the entities 
 
 1. Open your domain model and add a new view entity.
 2. Name the view entity *ProductOverviewVE*.
-3. Add the following OQL query to the OQL editor: 
+3. Add the following query to the OQL editor: 
 
 ```
 SELECT
@@ -51,6 +51,12 @@ FROM Shop.Product as p
 6. Run your app locally, then click **View App**. You should see the data grid populated with the information that was previously added.
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/ live-data-grid.png" >}}
+
+{{% alert color="info" %}}
+
+In the new data grid created by  *ProductOverviewVE*, the **Edit** button is not functional. You can either hide or remote this button, or follow the steps below to [update the product microflow](#update-microflow) or [add a new product](#add-product) to the grid.
+
+{{% /alert %}}
 
 ## Alternative to Calculated Attributes
 
@@ -178,7 +184,7 @@ Your final form should look like this:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/product-overview-page.png" >}}
 
-## Update Product Microflow
+## Update Product Microflow {#update-microflow}
 
 Once the Product page is complete, you must update the related microflow. 
 
@@ -191,7 +197,7 @@ Once the Product page is complete, you must update the related microflow.
 
 When you run your app, you should now be able to update the product’s category and supplier. 
 
-## Add a New Product
+## Add a New Product {#add-product}
 
 You can use a view entity to add a new product into the existing database. Follow the steps below:
 
