@@ -10,7 +10,7 @@ description: "Describes the general properties and common concepts of generative
 With the Mendix GenAI capabilities, you can create engaging, intelligent experiences with a variety of AI models and your own data.
 
 {{% alert color="info" %}}
-These pages cover modules that integrate with third-party generative AI tools. For running pre-trained Machine Learning (ML) models using the Mendix Runtime, please see the [Machine Learning Kit](/refguide/machine-learning-kit/).
+These pages cover modules that integrate with generative AI tools. For running pre-trained Machine Learning (ML) models using the Mendix Runtime, please see the [Machine Learning Kit](/refguide/machine-learning-kit/).
 {{% /alert %}}
 
 ### Typical Use Cases
@@ -42,10 +42,10 @@ To help you get started, the following sections list the available GenAI compone
 | [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) | Understand what you can build with generative AI. Understand how to implement the OpenAI and Amazon Bedrock connectors and how to integrate them with the Conversational UI module. |Showcase App | 9.24.2 |
 | [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | The RFP Assistant Starter App and the Questionnaire Assistant Starter App leverage historical RFPs (or question-answer pairs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs, offering a time-saving alternative to manually finding similar responses and enhancing the knowledge management process.  | Starter App | 9.24.2 |
 | [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) | Learn how to combine common GenAI patterns, such as function calling and RAG to build your support assistant. Connect it to a model like Anthropic Claude or Amazon Titan via Amazon Bedrock or use an (Azure) OpenAI subscription.  | Starter App | 10.12 |
-| [GenAI For Mendix]([/appstore/modules/genai/pgvector/](https://marketplace.mendix.com/link/component/227931)) | - [GenAI Commons](/appstore/modules/genai/commons/): Common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your connector based on this. | Common Module | 9.24.2 |
+| [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) | - [GenAI Commons](/appstore/modules/genai/commons/): Common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this. | Common Module | 9.24.2 |
 | | - [Conversational UI](/appstore/modules/genai/conversational-ui/): Create a Conversational UI for a new or existing app. | UI Module | 9.24.2 |
 | | - [Mendix Cloud GenAI Connector](/appstore/modules/genai/MxGenAI/): Connect to Mendix Cloud and utilize Mendix Cloud GenAI resource packs directly within your Mendix application. | Connector Module | 9.24.2 |
-| [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to Azure OpenAI. | Connector Module | 9.24.2 |
+| [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to (Azure) OpenAI. | Connector Module | 9.24.2 |
 | [Amazon Bedrock Connector](/appstore/modules/genai/bedrock/) | Connect to Amazon Bedrock. Use Retrieve & Generate or Bedrock agents. | Connector Module | 9.24.2 |
 | [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL *pgvector* Knowledge Base. | Connector Module | 9.24.2 |
 | [Snowflake Showcase App](https://marketplace.mendix.com/link/component/225845) | Learn how to implement the Cortex functionalities in your app. | Showcase App | 10.12 |
@@ -67,8 +67,7 @@ Mendix connectors offer direct support for the following models:
 | | Amazon Titan Image Generator G1 | Image generation | text | image | |
 | | Amazon Titan Embeddings Text v2 | Embeddings | text | embeddings| |
 | | Anthropic Claude v2.0, Anthropic Claude v2.1| Chat Completions | text | text | Document Chat |
-| | Anthropic Claude v3 Sonnet, Anthropic Claude v3 Haiku, Anthropic Claude v3 Opus | Chat Completions | text, image | text | Function calling, Document Chat |
-| | Anthropic Claude v3.5 Sonnet, Anthropic Claude v3.5 Sonnet v2 | Chat Completions | text, image | text | Function calling, Document Chat |
+| | Anthropic Claude v3 Sonnet, Anthropic Claude v3.5 Sonnet, Anthropic Claude v3.5 Sonnet v2, Anthropic Claude v3 Haiku, Anthropic Claude v3 Opus | Chat Completions | text, image | text | Function calling, Document Chat |
 | | Cohere Command | Chat Completions | text | text | Document Chat |
 | | Cohere Command Light | Chat Completions | text | text | |
 | | Cohere Command R, Cohere Command R+ | Chat Completions | text | text | Function calling, Document Chat |

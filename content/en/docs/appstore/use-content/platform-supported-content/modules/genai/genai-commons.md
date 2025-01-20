@@ -35,7 +35,7 @@ If you start from a blank app, or have an existing project where you want to inc
 
 ## Implementation {#implementation}
 
-GenAI Commons is the foundation of large language model implementations within the [Mx GenAI connector](/appstore/modules/genai/MxGenAI/),  [OpenAI connector](/appstore/modules/genai/openai/), and the [Amazon Bedrock connector](/appstore/modules/genai/bedrock/), but may also be used to build other GenAI service implementations on top of it by reusing the provided domain model and exposed actions.
+GenAI Commons is the foundation of large language model implementations within the [Mendix Cloud GenAI Connector](/appstore/modules/genai/MxGenAI/),  [OpenAI connector](/appstore/modules/genai/openai/), and the [Amazon Bedrock connector](/appstore/modules/genai/bedrock/), but may also be used to build other GenAI service implementations on top of it by reusing the provided domain model and exposed actions.
 
 Although GenAI Commons technically defines additional capabilities typically found in chat completion APIs, such as image processing (vision) and tools (function calling), it depends on the connector module of choice for whether these are actually implemented and supported by the LLM. To learn which additional capabilities a connector supports and for which models these can be used, refer to the documentation of that connector.
 
@@ -71,7 +71,7 @@ The `DeployedModel` entity replaces the capabilities that were covered by the `C
 | `Architecture` | The architecture of the deployed model; e.g. OpenAI or Amazon Bedrock. |
 | `Model` | The model identifier of the LLM provider. |
 | `OutputModality` | The type of information the model returns. |
-| `Microflow` |  microflow to execute for the specified model and type. |
+| `Microflow` |  The microflow to execute for the specified model and modality. |
 | `SupportsSystemPrompt` | An enum to specify if the model supports system prompts. |
 | `SupportsConversationsWithHistory` | An enum to specify if the model supports conversation with history. |
 | `SupportsFunctionCalling` | An enum to specify if the model supports function calling. |
@@ -621,11 +621,11 @@ The `Generate Embeddings (Chunk Collection)` operation allows the invocation of 
 | --- | --- | --- |
 | `EmbeddingsResponse` | [EmbeddingsResponse](#embeddingsresponse-entity) | An response object that contains the token usage statistics and the corresponding embedding vector as part of a ChunkCollection. |
 
-#### Knowledge Bases and Embeddings: Build Request {#knowledge-bases-embeddings-request}
+#### GenAI Knowledgebase (Content) {#knowledge-bases-embeddings-request}
 
 The following microflows and Java actions help you construct the input structures for the operations for knowledge bases and embeddings as defined in GenAI Commons.
 
-##### Chunks: Initialize ChunkCollection{#chunkcollection-create}
+##### Chunks: Initialize ChunkCollection {#chunkcollection-create}
 
 This microflow creates a new [ChunkCollection](#chunkcollection) and returns it.
 
