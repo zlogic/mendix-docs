@@ -195,7 +195,7 @@ FROM Shop.Category c
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/combo-box.png" >}}
 
-1. Add another Combo box and repeat the above steps for *SupplierNameVE* entity. 
+6. Add another Combo box and repeat the above steps for *SupplierNameVE* entity. 
 
 The final form should look like this:
 
@@ -203,9 +203,9 @@ The final form should look like this:
 
 ## Update Product Microflow {#update-microflow}
 
-Once the Product page is complete, you must update the related microflow. 
+Once the Product page is complete, update the related microflow. 
 
-1. Open your microflow and add a Retrieve activity after the previous Retrieve product acidity. 
+1. Open your microflow and add a Retrieve activity after the previous Retrieve product activity. 
 2. Retrieve a Category object from the database where `CategoryId = $ProductOverviewVE/CategoryId`.
 3. Add another Retrieve activity for the supplier. 
 4. In the existing Change Product activity, add the Category and Supplier associations and set them to their corresponding objects. 
