@@ -17,6 +17,8 @@ The resource folder contains a file called *SAMLConfig.properties*. In this file
 This file contains the documented properties, and example lines show the default values of these options.
 With these settings, you can configure the behavior of this module and improve the multi-tenant behavior of your application. For plain SAML authentication, it is best to leave this file unchanged.
 
+If you are using a custom URL, see [How Do I Get my SAML Metadata or CommunityCommons.GetApplicationUrl to Use the Custom URL?](/developerportal/deploy/custom-domains/#use-custom-url) in the *Custom Domains* documentation.
+
 ### Use a Certificate Issued by a Certificate Authority {#use-ca}
 
 By default the SAML SSO module will use self-signed certificates. It is, however, also possible to use certificates issued by a certificate authority (CA).
@@ -51,12 +53,6 @@ You need to customize this login page when end-users have different ways of logi
 
     1. Go to the **App** > **Show App Directory in Explorer** > **\implementation\DiscoveryHandler.java**
     2. Find the template **saml2-discovery-binding.vm** and add your customization.
-
-### Custom Settings
-
-The resources folder contains the *SAMLConfig.properties* file, and through this file, advanced settings can be configured for the module. This file contains the settings along with documentation on the settings. Through this file, it is possible to alter the URLs used as well as how the application behaves in a multi-tenant environment. The file also specifies all the default values and behavior in more detail.
-
-If you are using a custom URL, see [How Do I Get my SAML Metadata or CommunityCommons.GetApplicationUrl to Use the Custom URL?](/developerportal/deploy/custom-domains/#use-custom-url) in the *Custom Domains* documentation.
 
 ## Read More
 
