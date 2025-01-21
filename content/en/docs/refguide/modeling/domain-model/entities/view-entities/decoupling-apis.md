@@ -16,7 +16,7 @@ For this purpose of this use case, the following domain model is used:
 In this scenario, you want to make an API that returns *Products*, and allows you to filter the results by Category. To do this, create a single view entity and expose it as an OData resource. 
 
 1. Open your domain model and create a view entity called *ProductCategoryVE*.
-2. Use the following query for your entity:
+2. Add the following query to the OQL editor:
 
 ```
 SELECT
@@ -30,13 +30,14 @@ FROM Shop.Product as p
   JOIN p/Shop.Product_Category/Shop.Category as c
 ```
 
-3. Right-click on this entity and select **Publish in OData service**. 
+3. Right-click on this entity and select **Publish in OData service**. Name this service *POS_ProductCategory*.
 4. Add `ProductId` as a key attribute, then click **OK**.
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/key-attribute.png" >}}
 
 
-5. In the attribute configuration, unselect **Can be empty**. 
+1. In the Entity field, double-click the **ProductId** attribute. 
+2. Uncheck the box **Can be empty**, then click **OK**. 
    
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/key-attribute.png" >}}
 
