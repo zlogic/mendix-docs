@@ -225,6 +225,9 @@ This configuration offers simple and default settings. It is the ideal configura
 
 To enable the single sign-on (SSO) method as SAML 2.0, you need to manually create an application on the IdP server.
 
+##### Creating SP Manually at Okta
+
+To kickstart the SAML module with Okta, refer to the images below. Ensure to log in with [Okta Developer](https://developer.okta.com/) credentials.
 In the new application, configure the following fields and get the IdP metadata URL:
 
 * Single Sign-On URL: This should be your application URL.
@@ -232,15 +235,11 @@ In the new application, configure the following fields and get the IdP metadata 
 * Other Requestable SSO URLs (Callback URLs): This should be set to `<Application URL>/SSO/assertion`.
 * Index: The default value is zero. Ensure it matches the value you set for the **Assertion Consumer Service Index**.
 
+{{< figure src="/attachments/appstore/platform-supported-content/modules/saml/saml-okta.png" >}}
+
 After creating an application, you will receive an IdP metadata URL. This URL is used in the IdP configuration to **Read IdP metadata from URL**.
 
 The setup described above, offers default configurations to start the SAML module. Any changes made to the configuration will require adjustments to other configuration details accordingly.
-
-##### Creating SP Manually at Okta
-
-To kickstart the SAML module with Okta, refer to the images below. Ensure to log in with [Okta Developer](https://developer.okta.com/) credentials.
-
-{{< figure src="/attachments/appstore/platform-supported-content/modules/saml/saml-okta.png" >}}
 
 ##### Creating SP Manually at Azure
 
