@@ -9,6 +9,27 @@ description: "Describes the configuration and usage of the Mx Model Reflection m
 
 The [Mx Model Reflection](https://marketplace.mendix.com/link/component/69/) module allows you to access information about the domain model and about microflows of your app from your app. For example, you can loop through all the attribute names of an entity type in a microflow.
 
+{{% alert color="info" %}}
+To use MxModel Reflection with the React client, remove the folder **_USE_ME/_DEPRECATED**. The assets in this folder are there only for backwards compatiblity, and are not necessary to make full use of MxModel Reflection.
+{{% /alert %}}
+
+### Dependencies
+
+The Mx Model Reflection module has the following dependencies:
+
+* [Atlas Core](https://marketplace.mendix.com/link/component/117187)
+* [Combo Box](https://marketplace.mendix.com/link/component/219304)
+* [Data Widgets](https://marketplace.mendix.com/link/component/116540)
+
+{{% alert color="info" %}}
+Before importing the Mx Model Reflection module, import the latest versions of the [Data Widgets](https://marketplace.mendix.com/link/component/116540) and
+[Combo Box](https://marketplace.mendix.com/link/component/219304) modules.
+{{% /alert %}}
+
+### React Readiness
+
+Versions 8.0.3 and above of the module are compatible with the [Mendix React Client](/refguide/mendix-client/react/). For backwards compatibility, the select pages are still available inside the **\_USE_ME** > **\_DEPRECATED** > **ModelInformationSelectPages** folder. Those select pages are not used by the module anymore. When the React client is enabled, these pages should be removed.
+
 ### Typical Use Cases
 
 The typical usage scenario is selecting and showing entities from your domain model to use for another configuration. 
@@ -49,6 +70,22 @@ All the patterns use the locale from the context. Based on the user's language, 
     * Pattern: `#,##0.0`
     * Value: `12345.678`
     * Result: `12,345.7`
+
+## Troubleshooting
+
+### Error Message: Set On Click Action to "Do Nothing"
+
+You get the following error:
+
+* "On click action must be set to "Do nothing" when "Selection" is enabled"
+
+#### Cause
+
+You have an older version of the Data Widgets module.
+
+#### Solution
+
+Update the "Data Widgets" module to latest version then re-import Mx Model Reflection.
 
 ## Read More
 

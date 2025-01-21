@@ -92,6 +92,10 @@ The `Search Datasets` allows you to generate the domain model and microflow to s
 
 The `Get Datasets from Item Revision` action allows you to generate the domain model and microflow to retrieve datasets for an Item Revision and subsequently download files inside the dataset.
 
+#### Attach Datasets to Item Revision {#attachdatasetstoitemrevision}
+
+The 'Attach Datasets to Item Revision' action allows you to generate a domain model and microflow which creates and attaches a Teamcenter dataset (or its specializations) with a file document to an Item Revision in Teamcenter. The resulting microflow implements the Upload file, Create relation, and Get properties actions from the `TcConnector` module.
+
 #### Get Workspace Objects {#getworkspaceobjects}
 
 The `Get Workspace Objects` action allows you to configure and generate the domain model and microflow to search for and retrieve Workspace Objects or their specialization from Teamcenter. This action implements the saved query `General..` from Teamcenter.
@@ -237,6 +241,8 @@ Once you finished import mapping, click **Generate** to create microflows for th
 {{< figure src="/attachments/appstore/platform-supported-content/modules/teamcenter-extension/microflow.png" >}}
 
 ## Upgrading Teamcenter Extension V 1.0.0 to V 3.0.0 {#upgrade}
+
+{{% alert color="info" %}} To prevent conflicts (such as integration duplications), it is advised that one developer in a team upgrades the Teamcenter Extension and commits changes before other developers continue working with the extension.{{% /alert %}}
 
 If you use Teamcenter Extension V 1.0.0 with Teamcenter Connector V 3.6.1 or below, and want to upgrade to Teamcenter Extension V 3.0.0 and Teamcenter Connector V 2406.3.0, perform the following procedure:
 

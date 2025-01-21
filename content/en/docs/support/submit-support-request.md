@@ -90,9 +90,8 @@ To submit a request with Mendix Support, follow these steps:
 6. Fill in the other fields for the issue type you selected, including [Priority](#request-priority).
 7. Optionally, enable the check box that grants Mendix Support permission to access your logs for the purpose of diagnosing and troubleshooting the issue.
 
-{{% alert color="info" %}}
-Although not required, granting this permission is highly recommended because it greatly enhances Mendix Support's ability to assist you effectively. Without it, diagnosing and resolving any issues you encounter may be challenging, potentially impacting the level of support that Mendix Support can provide. Any logs collected are strictly used for providing help on your ticket and are handled with the utmost care. 
-{{% /alert %}}
+    {{% alert color="info" %}}Although not required, granting this permission is highly recommended because it greatly enhances Mendix Support's ability to assist you effectively. Without it, diagnosing and resolving any issues you encounter may be challenging, potentially impacting the level of support that Mendix Support can provide. Any logs collected are strictly used for providing help on your ticket and are handled with the utmost care. 
+    {{% /alert %}}
 
 8. Make sure all your attachments have finished uploading before clicking **Next**.
 
