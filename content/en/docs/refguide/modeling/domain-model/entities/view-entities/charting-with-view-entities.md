@@ -60,7 +60,7 @@ Use the new view entity to create a chart.
 * Data set - **Multiple series**
 * Data source - **YearlySalesByCategoryVE**
 * Group by - **CategoryId** 
-* X axis attribute - **Order Year**
+* X axis attribute - **OrderYear**
 * Y axis attribute - **TotalSales**
 
  The chart should be configured as seen below: 
