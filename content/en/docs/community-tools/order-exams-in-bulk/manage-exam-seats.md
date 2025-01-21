@@ -9,17 +9,17 @@ description: "Describes how an exam admin in an organization can manage exam sea
 
 Your  organization can place bulk orders to purchase Mendix certification exam seats. When Mendix processes the order, an exam admin is designated per order. 
 
-Once the order is processed, the designated exam admin receives an email and notification to manage the order. The exam admin can oversee the details of the order and assign the purchased exam seats to individuals within the organization. People who are assigned exam seats will be granted free access to take the exam.
+Once the order is processed, the designated exam admin receives an email and notification to manage the order. The exam admin can oversee the details of the order and allocate the purchased exam seats to individuals within the organization. People who are allocated exam seats will be granted free access to take the exam.
 
 This how-to explains how you can manage exam seats as an exam admin.
 
 ## Prerequisites
 
-To manage exam seats, you must be an exam admin.
+To manage exam seats, you must have a Mendix account and be an exam admin.
 
 ## Inviting Students to Take an Exam
 
-1. Go to the [Overview](https://academy.mendix.com/link/examadmin) page of Mendix Academy to administer exams.
+1. Go to the [Exam Administration Overview](https://academy.mendix.com/link/examadmin) page of Mendix Academy to administer exams.
 
     Under **Available Exams**, you can see the remaining seats for each order and exam type.
 
@@ -29,7 +29,7 @@ To manage exam seats, you must be an exam admin.
 
     The **Add Student** dialog box opens.
 
-3. Enter the email addresses of the students you want to invite. You can separate If you enter multiple email addresses, separate them by commas.
+3. Enter the email addresses of the students you want to invite. If you enter multiple email addresses, separate them with commas.
 
 4. Click **Add to Invite**.
 
@@ -61,10 +61,10 @@ An invitation can have one of the following statuses:
 - **CERTIFIED**: The student has passed the exam and is certified.
 - **FAILED**: The student has taken the exam and failed. 
 
-## Reminding Students to Accept an Invitation {#remind-student}
+### Reminding Students to Accept an Invitation {#remind-student}
 
 If a student has not accepted the invitation, you can send a reminder email to encourage the student to register for the exam. To do so, click **Remind Student**.
 
-## Withdrawing an Invitation {#withdraw-invitation}
+### Withdrawing an Invitation {#withdraw-invitation}
 
 You can withdraw an invitation that has not been accepted. To do so, click **Withdraw Invite**.
