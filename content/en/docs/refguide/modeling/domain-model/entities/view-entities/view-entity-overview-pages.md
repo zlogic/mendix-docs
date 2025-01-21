@@ -241,7 +241,7 @@ You can use a view entity to add a new product into the existing database. Follo
 * In the Range field, select **First**
 
 6. Add a Show page activity and set it to open the Edit Product page. Use `NewProductVE` as the page parameter. 
-7. Open the ProductOverviewVE_Overview page and add a new button named *Create*.
+7. Open the ProductOverviewVE_Overview page and add a new button named *New*.
 8. In the new button, under On click, select **ACT_CreateProduct**.  
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-product-microflow.png" >}}
