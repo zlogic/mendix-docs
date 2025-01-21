@@ -27,7 +27,7 @@ In Mendix 10.18.0 and above, the runtime generates spans for:
 
 Since Mendix 10.19.0, tracing configuration is handled through the [OpenTelemetry Java Agent](https://opentelemetry.io/docs/zero-code/java/agent/).
 
-### Minimal configuration
+### Minimal Configuration {#min-configuration}
 
 Follow these steps for a minimal tracing configuration:
 * Download [opentelemetry-javaagent.jar](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar) from the OpenTelemetry Java Agent Release page and save it to a location where your Mendix app can access it.
