@@ -231,12 +231,17 @@ When you run your app, you should now be able to update the product’s category
 
 You can use a view entity to add a new product into the existing database. Follow the steps below:
 
-1. Create a new microflow and name it *CreateProduct*
+1. Create a new microflow and name it *ACT_CreateProduct*
 2. Add a Create object activity to create a *Product* (the persistable entity) object. Leave all the attributes blank.
 3. Set Commit to **Yes**.
-4. Place a Retrieve object activity right after the previous activity. 
-5. Retrieve a `ProductOverviewVE` that corresponds to the new `Product` object ( `ProductId = $NewProduct/ProductId`). 
+4. Place another Retrieve object activity after the previous activity. 
+5. Retrieve `ProductOverviewVE` that corresponds to the new `Product` object. Configure it with the following details:
+
+* Use the following XPath constraint: `[(ProductId = $NewProduct/ProductId)] `
+* In the Range field, select **First**
+
 6. Add a Show page activity and set it to open the Edit Product page. Use `NewProductVE` as the page parameter. 
-7. Add a button to the Product Overview page and link to the Create Product microflow. 
+7. Open the ProductOverviewVE_Overview page and add a new button named *Create*.
+8. In the new button, under On click, select **ACT_CreateProduct**.  
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-product-microflow.png" >}}
