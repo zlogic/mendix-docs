@@ -121,7 +121,7 @@ You can configure SSO authentication with the OIDC protocol. For more informatio
 
 ##### IdP Integration (SAML)
 
-To [configure SSO authentication with the SAML protocol](/appstore/modules/saml/#configure-sp), first configure the service provider in the **SP Configuration** tab, and then create the IdP-specific settings in the **IdP Configuration** tab.
+To [configure SSO authentication with the SAML protocol](/appstore/modules/saml/), first configure the service provider in the **SP Configuration** tab, and then create the IdP-specific settings in the **IdP Configuration** tab.
 
 To debug the configuration, you can view the log files in the **Log** tab.
 
