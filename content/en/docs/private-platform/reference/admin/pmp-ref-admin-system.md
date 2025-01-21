@@ -7,7 +7,7 @@ weight: 20
 
 ## Introduction
 
-In Private Mendix Platform, system administrators primarily manage key settings which must be configured during the initial implementation, and which are rarely modified during normal operation. Settings relevant for systems admins are available in the **Settings** section of the admin navigation menu.
+In Private Mendix Platform, system administrators primarily manage key settings which must be configured during the initial implementation, and which are rarely modified during normal operation. Settings relevant for systems admins are available in the [Settings](#settings) section of the admin navigation menu.
 
 ## Accessing the Configuration Settings
 
@@ -16,7 +16,7 @@ As a user with system administrator access rights, you can access the Private Me
 1. Switch to Admin Mode by clicking the profile picture in the top right corner of the screen and selecting **Switch to Admin Mode**.
 2. In the left navigation menu, open the **Settings** section.
 
-## Settings{#settings}
+## Settings {#settings}
 
 The **Settings** section of the administrator navigation menu contains setting relevant to your day-to-day tasks as a system admin. You can use it to manage your branding, license, Marketplace settings, and version control settings.
 

@@ -18,6 +18,6 @@ This section of the Private Mendix Platform Reference Guide provides information
 Private Mendix Platform distinguishes between the following types of administrator roles:
 
 * Company admin - This role primarily manages business-as-usual tasks, for example inviting new users to an app, or approving Marketplace contents. Settings relevant for company admins are available in the [Manage](/private-mendix-platform/reference-guide/admin/company/#manage) section of the admin navigation menu.
-* Systems admin - This role primarily manages key settings which must be configured during the initial implementation, and which are rarely modified during normal operation. Settings relevant for systems admins are available in the [Settings](#settings) section of the admin navigation menu.
+* Systems admin - This role primarily manages key settings which must be configured during the initial implementation, and which are rarely modified during normal operation. Settings relevant for systems admins are available in the [Settings](/private-mendix-platform/reference-guide/admin/system/#settings) section of the admin navigation menu.
 
 {{< figure src="/attachments/private-platform/pmp-admin4.png" class="no-border" >}}
