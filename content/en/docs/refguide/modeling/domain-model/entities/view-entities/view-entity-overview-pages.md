@@ -29,23 +29,22 @@ Create a view entity that combines only the relevant attributes of the entities 
 2. Name the view entity *ProductOverviewVE*.
 3. Add the following query to the OQL editor: 
 
-```
-SELECT
-  p.ProductId as ProductId,
-  p.ProductName as ProductName,
-  p.QuantityPerUnit as QuantityPerUnit,
-  p.Discontinued as Discontinued,
-  s.CompanyName as Supplier, 
-  c.CategoryName as Category
-FROM Shop.Product as p
-  JOIN p/Shop.Product_Supplier/Shop.Supplier as s
-  JOIN p/Shop.Product_Category/Shop.Category as c
-
-```
+    ```sql
+    SELECT
+      p.ProductId as ProductId,
+      p.ProductName as ProductName,
+      p.QuantityPerUnit as QuantityPerUnit,
+      p.Discontinued as Discontinued,
+      s.CompanyName as Supplier, 
+      c.CategoryName as Category
+    FROM Shop.Product as p
+      JOIN p/Shop.Product_Supplier/Shop.Supplier as s
+      JOIN p/Shop.Product_Category/Shop.Category as c
+    ```
 
 4. Click OK. The view entity is added to your domain model.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/product-overview-ve.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/product-overview-ve.png" >}}
 
 5. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
 6. Run your app locally, then click **View App**. You should see the data grid populated with the information that was previously added.
@@ -75,15 +74,15 @@ Suppose you want to get the total value of each order line, which is given by th
 1. Create a view entity and name it *OrderLineWithTotalVE*.
 2. Add the following query to the OQL editor:
 
-```
-SELECT
-  ol.OrderLineId as OrderLineId,
-  ol.Quantity as Quantity,
-  ol.UnitPrice as UnitPrice,
-  ol.Discount as Discount,
-  (ol.Quantity * ol.UnitPrice * (1 - ol.Discount)) as Total
-FROM Shop.OrderLine ol
-```
+    ```sql
+    SELECT
+      ol.OrderLineId as OrderLineId,
+      ol.Quantity as Quantity,
+      ol.UnitPrice as UnitPrice,
+      ol.Discount as Discount,
+      (ol.Quantity * ol.UnitPrice * (1 - ol.Discount)) as Total
+    FROM Shop.OrderLine ol
+    ```
 
 3. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
 4. Run your app locally, then click **View App**. Use this view entity in a data grid to show the total value.
@@ -97,19 +96,19 @@ Calculate the total value of an order by joining the `OrderLine` and `Order`tabl
 1. Create a new view entity and name it *OrderWithTotalValueVE*.
 2. Add the following query to the OQL editor: 
 
-```
-SELECT
-  o.OrderId as OrderId,
-  o.OrderDate as OrderDate,
-  o.RequiredDate as RequiredDate,
-  o.ShippedDate as ShippedDate,
-  SUM(ol.UnitPrice * ol.Quantity * (1 - ol.Discount)) as TotalOrderValue,
-  SUM(ol.Quantity) as TotalProductCount,
-  COUNT(*) as UniqueProductCount
-FROM Shop."Order" as o
-  JOIN o/Shop.OrderLine_Order/Shop.OrderLine as ol
-GROUP BY o.OrderId, o.OrderDate, o.RequiredDate, o.ShippedDate
-```
+    ```sql
+    SELECT
+      o.OrderId as OrderId,
+      o.OrderDate as OrderDate,
+      o.RequiredDate as RequiredDate,
+      o.ShippedDate as ShippedDate,
+      SUM(ol.UnitPrice * ol.Quantity * (1 - ol.Discount)) as TotalOrderValue,
+      SUM(ol.Quantity) as TotalProductCount,
+      COUNT(*) as UniqueProductCount
+    FROM Shop."Order" as o
+      JOIN o/Shop.OrderLine_Order/Shop.OrderLine as ol
+    GROUP BY o.OrderId, o.OrderDate, o.RequiredDate, o.ShippedDate
+    ```
 
 3. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
 4. Run your app locally, then click **View App**. This results in a view entity that shows the total value of every order.
@@ -126,17 +125,21 @@ On the Product overview page above, there is no button to add or modify a produc
 2. Add a parameter and in the entity field, select *ProductOverviewVE*.
 3. Add a [retrieve]( /refguide/retrieve/) activity. In this activity, retrieve a *Product* object from the database. Configure the activity with the following details: 
 
-  * Use the following XPath constraint: 
-`[(ProductId = $ProductOverviewVE/ProductId)]`
-  * In the Options field, set Range to **First** 
+    * Use the following XPath constraint:
+
+        ```
+        [(ProductId = $ProductOverviewVE/ProductId)]
+        ```
+
+    * In the Options field, set Range to **First** 
   
 4. Add a [Change Object]( /refguide/change-object/) activity. Configure the activity with the following details: 
 
-* Add the attributes of `Product` to reflect those of `ProductOverviewVE` 
-* In the Options field, set Range to **First** 
-* In the Commit field, select **Yes**
+    * Add the attributes of `Product` to reflect those of `ProductOverviewVE` 
+    * In the Options field, set Range to **First** 
+    * In the Commit field, select **Yes**
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/product-overview-microflow.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/product-overview-microflow.png" >}}
   
 5. Open the ProductOverviewVE_NewEdit page that was generated by *ProductOverviewVE*.
 6. Remove the Product ID, Supplier, and Category fields.
@@ -157,48 +160,48 @@ Add the capability to update a product’s associated category and supplier. To 
 1. Open your domain model and double-click **ProductOverviewVE**.
 2. Add `CategoryId` and `SupplierId` by adding the following query in the OQL editor:
 
-```
-SELECT
-  p.ProductId as ProductId,
-  p.ProductName as ProductName,
-  p.QuantityPerUnit as QuantityPerUnit,
-  p.Discontinued as Discontinued,
-  s.CompanyName as Supplier,
-  c.CategoryName as Category,
-  s.SupplierId as SupplierId,
-  c.CategoryId as CategoryId
-FROM Shop.Product as p
-  JOIN p/Shop.Product_Supplier/Shop.Supplier as s
-  JOIN p/Shop.Product_Category/Shop.Category as c
-```
+    ```sql
+    SELECT
+      p.ProductId as ProductId,
+      p.ProductName as ProductName,
+      p.QuantityPerUnit as QuantityPerUnit,
+      p.Discontinued as Discontinued,
+      s.CompanyName as Supplier,
+      c.CategoryName as Category,
+      s.SupplierId as SupplierId,
+      c.CategoryId as CategoryId
+    FROM Shop.Product as p
+      JOIN p/Shop.Product_Supplier/Shop.Supplier as s
+      JOIN p/Shop.Product_Category/Shop.Category as c
+    ```
 
 3. Create two more view entities that retrieve ID and names from the Supplier and Category tables. Name these view entities *SupplierNamesVE* and *CategoryNamesVE*.
 4. Add the following queries into the OQL editor. Add one to each entity:
 
-```
-SELECT
-  s.SupplierId as SupplierId,
-  s.CompanyName as SupplierName
-FROM Shop.Supplier s
-```
+    ```sql
+    SELECT
+      s.SupplierId as SupplierId,
+      s.CompanyName as SupplierName
+    FROM Shop.Supplier s
+    ```
 
-```
-SELECT
-  c.CategoryId as CategoryId,
-  c.CategoryName as CategoryName
-FROM Shop.Category c
-```
+    ```sql
+    SELECT
+      c.CategoryId as CategoryId,
+      c.CategoryName as CategoryName
+    FROM Shop.Category c
+    ```
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/supplier-and-category-ve.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/supplier-and-category-ve.png" >}}
 
 5. On the ProductOverviewVE_NewEdit page, add a Combo box inside the data view. Include the following information:
 
-* In the Data source field, select **Database**
-* Under Selectable objects, click **Edit** > **Entity (path)** > **CategoryNamesVE** > **Select**
-* Under Target attribute, select **Category**
-* Under Caption, select **CategoryNames**
+    * In the Data source field, select **Database**
+    * Under Selectable objects, click **Edit** > **Entity (path)** > **CategoryNamesVE** > **Select**
+    * Under Target attribute, select **Category**
+    * Under Caption, select **CategoryNames**
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/combo-box.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/combo-box.png" >}}
 
 6. Add another Combo box and repeat the above steps for *SupplierNameVE* entity. 
 
@@ -214,17 +217,27 @@ Once the Product page is complete, update the related microflow. To do this, fol
 2. Add a Retrieve activity after the existing Retrieve product activity. 
 3. Retrieve a Category object from the database. Configure the activity using the following details:
    
-* Use the following XPath constraint: `[CategoryId = $ProductOverviewVE/CategoryId]`
-* In the Range field, select **First** 
+    * Use the following XPath constraint: 
+    
+        ```
+        [CategoryId = $ProductOverviewVE/CategoryId]
+        ```
+
+    * In the Range field, select **First** 
 
 4. Add another Retrieve activity to retrieve the Supplier object. Configure the activity using the following details: 
 
-* Use the following XPath constraint: `[SupplierId = $ProductOverviewVE/SupplierId]`
-* In the Range field, select **First** 
+    * Use the following XPath constraint: 
+
+        ```
+        [SupplierId = $ProductOverviewVE/SupplierId]
+        ```
+
+    * In the Range field, select **First** 
   
 5. In the existing Change Product activity, click **New** and add the Category and Supplier associations and set them to their corresponding objects. 
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/update-product-microflow.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/update-product-microflow.png" >}}
 
 When you run your app, you should now be able to update the product’s category and supplier. 
 
@@ -238,11 +251,16 @@ You can use a view entity to add a new product into the existing database. Follo
 4. Place another Retrieve object activity after the previous activity. 
 5. Retrieve `ProductOverviewVE` that corresponds to the new `Product` object. Configure it with the following details:
 
-* Use the following XPath constraint: `[(ProductId = $NewProduct/ProductId)] `
-* In the Range field, select **First**
+    * Use the following XPath constraint: 
+    
+        ```
+        [(ProductId = $NewProduct/ProductId)] 
+        ```
+
+    * In the Range field, select **First**
 
 6. Add a Show page activity and set it to open the Edit Product page. Use `NewProductVE` as the page parameter. 
 7. Open the ProductOverviewVE_Overview page and add a new button named *New*.
 8. In the new button, under On click, select **ACT_CreateProduct**.  
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-product-microflow.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-product-microflow.png" >}}
