@@ -7,7 +7,7 @@ weight: 20
 
 ## Introduction
 
-In Private Mendix Platform, system administrators primarily manage key settings which must be configured during the initial implementation, and which are rarely modified during normal operation. Settings relevant for systems admins are available in the [Settings](#settings) section of the admin navigation menu.
+In Private Mendix Platform, system administrators primarily manage key settings which must be configured during the initial implementation, and which are rarely modified during normal operation. Settings relevant for systems admins are available in the **Settings** section of the admin navigation menu.
 
 ## Accessing the Configuration Settings
 
