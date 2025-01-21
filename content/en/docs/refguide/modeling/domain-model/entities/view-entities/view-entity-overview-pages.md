@@ -209,10 +209,19 @@ The final form should look like this:
 
 Once the Product page is complete, update the related microflow. To do this, follow the steps below: 
 
-1. Open your microflow and add a Retrieve activity after the previous Retrieve product activity. 
-2. Retrieve a Category object from the database where `CategoryId = $ProductOverviewVE/CategoryId`.
-3. Add another Retrieve activity for the supplier. 
-4. In the existing Change Product activity, add the Category and Supplier associations and set them to their corresponding objects. 
+1. Open the ACT_UpdateProduct microflow.
+2. Add a Retrieve activity after the existing Retrieve product activity. 
+3. Retrieve a Category object from the database. Configure the activity using the following details:
+   
+* Use the following XPath constraint: `[CategoryId = $ProductOverviewVE/CategoryId]`
+* In the Range field, select **First** 
+
+4. Add another Retrieve activity to retrieve the Supplier object. Configure the activity using the following details: 
+
+* Use the following XPath constraint: `[SupplierId = $ProductOverviewVE/SupplierId]`
+* In the Range field, select **First** 
+  
+5. In the existing Change Product activity, click **New** and add the Category and Supplier associations and set them to their corresponding objects. 
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/update-product-microflow.png" >}}
 
