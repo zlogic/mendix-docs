@@ -18,7 +18,7 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 #### Fixes
 
-*  Fixed an issue where search results were not always showing the latest updinformation.
+* We fixed an issue where the search results were not always showing the latest information.
 
 ### December 12, 2024
 
