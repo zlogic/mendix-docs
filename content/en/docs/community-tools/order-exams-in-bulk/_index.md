@@ -1,7 +1,7 @@
 ---
 title: "Purchase Mendix Exam Seats"
 linktitle: "Mendix Exam Seats"
-url: /community-tools/order-exams-in-bulk/
+url: /community-tools/purchasing-exams/
 weight: 60
 description: "Describes how to make a bulk order for exam seats and introduces the documents in this category."
 no_list: false
@@ -15,6 +15,16 @@ In the Mendix Academy there are a number of [certifications](https://academy.men
 ### Booking Yourself a Seat
 
 You can register yourself for the certification exams online by following the **Get Certified** link for each certification.
+
+#### Free Certification 
+
+For free certification, for example the [Rapid Developer Certification](https://academy.mendix.com/link/certifications/23/rapid), you just need to agree to the terms and you will be sent an email with instructions on how to take the exam. You will also be able to continue directly to take the exam if you want to.
+
+You have 30 days to start the exam. When you start, you will be able to choose one of the supported languages. 
+
+#### Paid Certification
+
+For paid certification, for example the [Intermediate Developer Certification](https://academy.mendix.com/link/certifications/22/intermediate), you will need to 
 
 ### Booking for Other People
 
