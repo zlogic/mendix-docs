@@ -33,12 +33,12 @@ FROM Shop.Product as p
 3. Right-click on this entity and select **Publish in OData service**. Name this service *POS_ProductCategory*.
 4. Add `ProductId` as a key attribute, then click **OK**.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/key-attribute.png" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/key-attribute.png" >}}
 
 
-1. In the Entity field, double-click the **ProductId** attribute. 
-2. Uncheck the box **Can be empty**, then click **OK**. 
+5. In the Entity field, double-click the **ProductId** attribute. 
+6. Uncheck the box **Can be empty**, then click **OK**. 
    
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/key-attribute.png" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/can-be-empty.png" >}}
 
-6. Run your app locally.
+7. Run your app locally.
