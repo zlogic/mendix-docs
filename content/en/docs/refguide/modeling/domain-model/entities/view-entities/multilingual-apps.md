@@ -49,7 +49,7 @@ SELECT
     p.Description as Description
 FROM Shop.Product p
 ```
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/multilingual-apps/ all-product-translation-ve.png" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/multilingual-apps/all-product-translation-ve.png" width="200" >}}
 
 3. Filter the translation that corresponds to the user’s current language by creating a new view entity. Name this new entity *TranslatedProductVE*.
 4. Add the query below to your entity:
@@ -68,7 +68,7 @@ FROM Shop.AllProductTranslationVE pt
 WHERE (l.Code = pt.LanguageCode)
 ```
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/multilingual-apps/ translated-product-ve.png" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/multilingual-apps/translated-product-ve.png" width="200" >}}
 
 Alternatively, you could also combine the  view entities into one with a nested query:
 
