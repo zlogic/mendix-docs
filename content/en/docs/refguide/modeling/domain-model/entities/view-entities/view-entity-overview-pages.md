@@ -182,8 +182,7 @@ Add the capability to update a product’s associated category and supplier. To 
       JOIN p/Shop.Product_Category/Shop.Category as c
     ```
 
-3. Create two more view entities that retrieve ID and names from the Supplier and Category tables. Name these view entities *SupplierNamesVE* and *CategoryNamesVE*.
-4. Add the following queries into the OQL editor. Add one to each entity:
+3. Create two more view entities that retrieve ID and names from the Supplier and Category tables and name them *SupplierNamesVE* and *CategoryNamesVE*. Add the following queries into the OQL editor. Add one to each entity:
 
     ```sql
     SELECT
@@ -201,7 +200,7 @@ Add the capability to update a product’s associated category and supplier. To 
 
     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/supplier-and-category-ve.png" >}}
 
-5. On the ProductOverviewVE_NewEdit page, add a Combo box inside the data view. Include the following information:
+4. On the ProductOverviewVE_NewEdit page, add a Combo box inside the data view. Include the following information:
 
     * In the Data source field, select **Database**
     * Under Selectable objects, click **Edit** > **Entity (path)** > **CategoryNamesVE** > **Select**
@@ -210,7 +209,7 @@ Add the capability to update a product’s associated category and supplier. To 
 
     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/combo-box.png" >}}
 
-6. Add another Combo box and repeat the above steps for *SupplierNameVE* entity. 
+5. Add another Combo box and repeat the above steps for *SupplierNameVE* entity. 
 
 The final data view should look like this:
 
