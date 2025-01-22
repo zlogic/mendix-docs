@@ -13,9 +13,11 @@ This document provides you the detail description of each IdP attribute and thei
 
 ## Identity Configuration
 
-You may need to choose a different SAML binding to match your IdP. You can configure the SAML binding in the **Identity Provider Metadata** tab of the OpenConfiguration microflow.
+The **Identity Configuration** tab allows the seamless integration between your application and an Identity Provider (IdP) using SAML protocols. It provides details on key settings, including **Response Protocol Binding**, **AssertionConsumerService Concept**, and **Assertion consumer service index** enabling you to optimize SAML response handling and service provider metadata configurations.
 
 ### Response Protocol Binding{#saml-binding}
+
+You may need to choose a different SAML binding to match your IdP. You can configure the SAML binding in the **Identity Configuration** tab of the `OpenConfiguration` microflow.
 
 By default, the SAML SSO module uses `POST_BINDING` for the SAML response. In most cases (for example, when using AzureAD) you will want to stick to this default.
 Some IdPs, however, require your app to use the more secure `ARTIFACT_BINDING`.
@@ -39,15 +41,17 @@ In most cases (for example, with Entra ID), you don not want to use the Assertio
 * If **Use AssertionConsumerService Concept** is set to `Yes…` then Auth-Request contains only the ‘`AssertionConsumerServiceIndex`’ attribute.
     By default, it is `No` when using a [Easy Default Flow](/appstore/modules/saml/#easy-flow).
 
+### Assertion Consumer Service Index
+
 Set **Assertion consumer service index** to the value you want to use for `AssertionConsumerServiceIndex` in both the Auth-Request and also in the SP-Metadata.
     The configured binding will be included in the SP metadata, as indicated in the [URLs](/appstore/modules/saml/#urls) section. The default value is `0` for the deploy time configuration.
 
-### Attribute Consuming Service
+## Attribute Consuming Service
 
 In the **Attribute Consuming Service** tab, you can configure your app using the SAML protocol to request specific attributes, such as Date of Birth or Gender, from the SAML IdP. Your SAML IdP documentation will tell you what attributes can be requested. In the request you can also indicate whether you consider the attribute as mandatory or optional for your app’s logic.
 
 You can set up two sets of attributes, by adding new attributes, editing existing attributes, or removing selected attributes. These will be provided at different times. Those listed under **I want to request attribute(s) at my IDP during initial login** will be returned when the end-user initially signs in. Those listed under **I want to request attribute(s) at my IDP during in-session login** will be returned during [In-session Authentication](#in-session).
-Although the typical use case for requesting attributes is to obtain information about the user, you can request an attribute with a specific value. In this case, you can configure the optional **Attribute value that must be returned**.
+Although the typical use case for requesting attributes is to obtain information about the user, you can request an attribute with a specific value. In this case, you can configure the optional Attribute value that must be returned.
 
 When using using a [Easy Default Flow](/appstore/modules/saml/#easy-flow), disable both initial and in-session login options.
 
@@ -56,7 +60,7 @@ Requesting user attributes at the SAML IdP is only available in the following ve
 * v3.3.0/v3.3.1 and above for Mendix 9 and 10
 * v2.3.0 and above for Mendix 8
 
-### Encryption Settings{#encryption-settings}
+## Encryption Settings{#encryption-settings}
 
 * **Enable better security for app** (or *Use encryption*) – This setting controls the encryption and signing of messages being exchanged between your app (as an SP) and the IdP. This is in addition to the encryption provided by using a secure HTTPS connection. For security and privacy reasons it is enabled by default. When using the POST binding ensure the security/encryption settings remain enabled. When using the artifact binding on the responses, or if there are limitations in your IdP, it is possible to disable the security/encryption setting but we do not recommend this.
 
@@ -75,7 +79,7 @@ Requesting user attributes at the SAML IdP is only available in the following ve
 
 See [Managing the Keys and Key Store](#keystore), below, for additional information and options related to encryption and signing keys.
 
-#### Managing the Keys and Key Store{#keystore}
+### Managing the Keys and Key Store{#keystore}
 
 SAML implements encryption and signing using asymmetric keys. If encryption is enabled, all the certificates required for encryption are stored in the key store. When you choose **Enable better security for app** (or **Use encryption**) a key store is automatically created using the URL of the application, or the custom EntityID. Below version 3.5.0 it is shown as the **Key store alias**.
 
@@ -105,9 +109,9 @@ For versions below 3.5.0 only:
 Remember to set the new key store password in the `KeystorePassword` constant of your app.
 {{% /alert %}}
 
-### Identity Provider Metadata
+## Identity Provider Metadata
 
-#### Read IDP metadata from URL
+### Read IDP metadata from URL
 
 You can set up the module to re-import all IdP metadata files on a daily basis. Alternatively, you can import the metadata from a file, manually.
 
@@ -121,23 +125,23 @@ If you want to manually import the IdP metadata files from a URL, do the followi
 If you want to automatically synchronize the IdP metadata, make sure the **SE_SynchronizeIdPMetadata** [scheduled event](/refguide/scheduled-events/) is enabled. This is in the **_USE ME** > **Scheduled Events** folder of the SAML module.
 If you need to change your identity provider metadata you can find more information in the [Response Protocol Binding](#saml-binding) section.
 
-### Request Authentication Context
+## Request Authentication Context
 
 On the **Request Authn Context** tab, the following settings can be used to specify the authentication context:
 
-#### Allow IdP Initiated Authentication
+### Allow IdP Initiated Authentication
 
 By default, the module does not allow for unsolicited requests. That means that every login has to be initiated from the Mendix application, and all the messages have to be exchanged using the same RequestID and RelayState. Some IdPs do not allow for the RelayState to be passed, or the authentication could be initiated by the IdP instead of at the SP. For all situations where the RelayState is not being generated or passed from the original login action at Mendix, this option should be enabled. By default, The SAML module does not allow for unsolicited requests, because that would be considered less secure.
 
-#### Enable Force Authentication
+### Enable Force Authentication
 
 Checking this box will force the SAML IdP to (re)authenticate end-users, even if they are already signed in at the SAML IdP. Only check this box if stronger security for your app is more important than the convenience of having single sign-on for your end-users.
 
-#### Enable Mobile Authentication Token
+### Enable Mobile Authentication Token
 
 If you are using a [hybrid mobile](/refguide9/mobile/introduction-to-mobile-technologies/hybrid-mobile/) app and you enable this, you can sign in to your Mendix hybrid mobile app after the app is closed, using an authentication token cookie. Only check this if you are using SAML on a hybrid mobile app. Note that this functionality also requires changes to the hybrid app package as described in [How To Implement SSO on a Hybrid App with Mendix and SAML](/howto8/mobile/implement-sso-on-a-hybrid-app-with-mendix-and-saml/).
 
-#### ⚠ Enable Delegated Authentication {#delegated-auth}
+### ⚠ Enable Delegated Authentication {#delegated-auth}
 
 {{% alert color="warning" %}}
 This feature is deprecated.
@@ -150,7 +154,7 @@ In the SAML module, you can enable this by checking “Enable delegated authenti
 
 If you enable this, you will need to enter the **Delegated Auth URL**.
 
-#### In-session Authentication {#in-session}
+### In-session Authentication {#in-session}
 
 In-session authentication is a process that takes place within a session that was initiated by a (primary) end-user that signed in to your app or from within an anonymous session. This can be useful in the following situations:
 
@@ -169,33 +173,33 @@ This flow can be initiated by using the URL `https://{app-url}/sso/login?action=
 
 To enable in-session authentication, you need to use the `OpenConfiguration` microflow to configure two microflows in the SAML SSO module:
 
-#### Custom Prepare In-Session Authentication Microflow
+### Custom Prepare In-Session Authentication Microflow
 
 Set **Custom Prepare In-Session Authentication microflow** to `CustomPrepareInSessionAuthentication`.
 
 The `CustomPrepareInSessionAuthentication` microflow sets up specific data in the current user session so that it can be recovered after the SAML in-session authentication flow returns to the app. The microflow can use the context information that is passed via the `on` query parameter.
 
-#### Custom Evaluate In-Session Authentication Microflow
+### Custom Evaluate In-Session Authentication Microflow
 
 Set **Custom Evaluate In-Session Authentication microflow** to `CustomEvaluateInSessionAuthentication`.
 
 The `CustomEvaluateInSessionAuthentication` microflow implements the logic that handles the authentication details of the in-session authentication. The SAML SSO module comes with an empty default `EvaluateInSessionAuthentication` flow, which can be enhanced to combine information from the original session with information received in the assertion from the in-session authentication.
 
-#### Disable NameID Policy
+### Disable NameID Policy
 
 **Disable Name ID Policy** – Check this box to disable the use of a name ID policy. This means you will use another attribute or claim to identify users.
 
 If you check this box, you will not be able to set **Preferred name id**.
 
-#### Authentication Context Comparison
+### Authentication Context Comparison
 
 You can configure the comparison method used to evaluate the requested context classes or statements, one of "exact", "minimum", "maximum", or "better". See section 3.3.2.2.1 of the [Core SAML specifications](https://www.oasis-open.org/committees/download.php/56776/sstc-saml-core-errata-2.0-wd-07.pdf).
 
-#### Authentication Context Classes
+### Authentication Context Classes
 
 This passes the allowed authentication methods. This has to be whatever the IdP requests, as there are no requirements within this module and all options are available. You should only pass the options which are needed as passing all options leads to significantly bigger (and slower) message exchange.
 
-### User Provisioning
+## User Provisioning
 
 For information, see the [User Provisioning](/appstore/modules/saml/#user-provisioning) section of the *SAML* document.
 
