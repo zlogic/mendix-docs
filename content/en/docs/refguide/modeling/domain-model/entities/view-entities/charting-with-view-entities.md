@@ -14,7 +14,7 @@ For this purpose of this use case, the following domain model is used:
 
 ## Create Charts with View Entities
 
-In this scenario, imagine you own a small business. To keep track of what is being sold, you want to visualize your sales. You want to see how much you make in sales each year, and how each product category contributes to the number. You would like your chart to look similar to the one below:
+For example, you own a small business. To keep track of what is being sold, you want to visualize your sales. You want to see how much you make in sales each year, and how each product category contributes to the number. You would like your chart to look similar to the one below:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/charting-with-view-entities/chart-example.png" width="500" >}}
 
