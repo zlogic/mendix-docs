@@ -208,7 +208,7 @@ Add the capability to update a product’s associated category and supplier. To 
 
     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/combo-box.png" >}}
 
-5. Add another Combo box and repeat the above steps for *SupplierNameVE* entity. 
+5. Add another Combo box and repeat the above steps for the *SupplierNameVE* entity. 
 
 The final data view should look like this:
 
@@ -252,7 +252,7 @@ You can use a view entity to add a new product into the existing database. Follo
 
 1. Create a new microflow and name it *ACT_CreateProduct*
 2. Add a Create object activity to create a *Product* (the persistable entity) object. Leave all the attributes blank.
-3. Set Commit to **Yes**.
+3. Check the Commit checkbox*.
 4. Place another Retrieve object activity after the previous activity. 
 5. Retrieve `ProductOverviewVE` that corresponds to the new `Product` object. Configure it with the following details:
 
@@ -266,6 +266,6 @@ You can use a view entity to add a new product into the existing database. Follo
 
 6. Add a Show page activity and set it to open the Edit Product page. Use `NewProductVE` as the page parameter. 
 7. Open the ProductOverviewVE_Overview page and add a new button named *New*.
-8. In the new button, under On click, select **ACT_CreateProduct**.  
+8. In the new button, under On click, select **CreateProduct**.  
 
     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-product-microflow.png" >}}
