@@ -65,7 +65,7 @@ Use the new view entity to create a chart. Follow the steps below:
    * In the **Series name** field, click **Edit** and add **{1}** in the **Template** field. 
    * In the **Parameters** field, click **New** > **Select** > **CategoryName** > **Select** > **OK**.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/charting-with-view-entities/series-name.png" >}}
+        {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/charting-with-view-entities/series-name.png" >}}
 
  The chart should be configured as seen below: 
 
