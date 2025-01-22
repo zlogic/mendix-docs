@@ -14,13 +14,13 @@ For this purpose of this use case, the following domain model is used:
 
 {{% alert color="info" %}}
 
-You must have an existing data grid with data inputted into it prior to using a view entity. Do this by generating overview pages using the entities in the above domain model, then adding sample data into it. 
+You must have an existing database containing data prior to using a view entity. Do this by generating overview pages using the entities in the above domain model, then adding sample data. 
 
 {{% /alert %}}
 
 ## Create a Data Grid 
 
-In this scenario, create an overview page that lists each product in a [data grid]( /appstore/modules/data-grid-2/), including information about its category and supplier. 
+In this scenario, you will create an overview page that lists each product in a [data grid]( /appstore/modules/data-grid-2/), including information about its category and supplier. 
 With view entities, you do not have to manage associations when showing the data in a data grid. This means that all fields are filterable and sortable, which allows for higher performance and flexibility.
 
 Create a view entity that combines only the relevant attributes of the entities *Product*, *Supplier*, and *Category*. To do this, follow these steps:
@@ -47,19 +47,22 @@ Create a view entity that combines only the relevant attributes of the entities 
     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/product-overview-ve.png" >}}
 
 5. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
-6. Run your app locally, then click **View App**. You should see the data grid populated with the information that was previously added.
+   
+6. Add the new overview page to the navigation.
+
+7. Run your app locally, then click **View App**. You should see the data grid populated with the information that was previously added.
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/ live-data-grid.png" >}}
 
 {{% alert color="info" %}}
 
-In the new data grid created by  *ProductOverviewVE*, the **Edit** buttons is not functional. You can hide or remote this button, or follow the steps below to [update the product microflow](#update-microflow) or [add a new product](#add-product) to the grid.
+In the new data grid created by *ProductOverviewVE*, the **Edit** buttons is not functional. You can hide or remote this button, or follow the steps below to [update the product microflow](#update-microflow) or [add a new product](#add-product) to the grid.
 
 {{% /alert %}}
 
 ## Alternative to Calculated Attributes
 
-You can use view entities to search and sort items, as well as receive the calculated attribute (or Total Value). This is only calculated once, unlike a non-persistable entity, where it is calculated each time the object is accessed. 
+You can use view entities to search and sort items, as well as hold the calculated attribute (or Total Value). This is only calculated once, unlike a non-persistable entity, where it is calculated each time the object is accessed. 
 
 For example, the *OrderLine* entity represents a single entry in an order. It has the following attributes:
 
@@ -85,13 +88,14 @@ Suppose you want to get the total value of each order line, which is given by th
     ```
 
 3. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
-4. Run your app locally, then click **View App**. Use this view entity in a data grid to show the total value.
+4. Add the new overview page to the navigation.
+5. Run your app locally, then click **View App**. Use this view entity in a data grid to show the total value.
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/total-value.png" >}}
 
 ### Join OrderLine and Order Entities
 
-Calculate the total value of an order by joining the `OrderLine` and `Order`tables. To do this, follow the steps below:
+You can calculate the total value of an order by joining the `OrderLine` and `Order`tables. To do this, follow the steps below:
 
 1. Create a new view entity and name it *OrderWithTotalValueVE*.
 2. Add the following query to the OQL editor: 
@@ -109,9 +113,16 @@ Calculate the total value of an order by joining the `OrderLine` and `Order`tabl
       JOIN o/Shop.OrderLine_Order/Shop.OrderLine as ol
     GROUP BY o.OrderId, o.OrderDate, o.RequiredDate, o.ShippedDate
     ```
+ 
+This results in a view entity that shows the total value of every order.  
+
+{{% alert color="info" %}} 
+Notice the quotation marks in `Shop.”Order”`. This is because `Order` is a reserved keyword in OQL. To avoid ambiguity, quotation marks are put around the word. 
+{{% /alert %}}
 
 3. Generate an overview page by right-clicking the view entity > **Generate overview pages**.
-4. Run your app locally, then click **View App**. This results in a view entity that shows the total value of every order.
+4. Add the new overview page to the navigation.
+5. Run your app locally, then click **View App**. This results in a view entity that shows the total value of every order.
 
 {{% alert color="info" %}} 
 Notice the quotation marks in `Shop.”Order”`. This is because `Order` is a reserved keyword in OQL. To avoid ambiguity, quotation marks are put around the word. 
@@ -121,7 +132,7 @@ Notice the quotation marks in `Shop.”Order”`. This is because `Order` is a r
 
 On the Product overview page above, there is no button to add or modify a product. This can be added to a view entity to update its corresponding persistable entity object.
 
-1. Create a microflow and name it *ACT_UpdateProduct*. This microflow takes the `ProductOverviewVE` object.
+1. Create a microflow and name it *ACT_UpdateProduct*. 
 2. Add a parameter and in the entity field, select *ProductOverviewVE*.
 3. Add a [retrieve]( /refguide/retrieve/) activity. In this activity, retrieve a *Product* object from the database. Configure the activity with the following details: 
 
@@ -205,7 +216,7 @@ Add the capability to update a product’s associated category and supplier. To 
 
 6. Add another Combo box and repeat the above steps for *SupplierNameVE* entity. 
 
-The final form should look like this:
+The final data view should look like this:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/product-overview-page.png" >}}
 
