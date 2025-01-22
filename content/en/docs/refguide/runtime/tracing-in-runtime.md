@@ -25,27 +25,45 @@ In Mendix 10.18.0 and above, the runtime generates spans for:
 
 ## Configuration
 
-Since Mendix 10.19.0, tracing configuration is handled through the [OpenTelemetry Java Agent](https://opentelemetry.io/docs/zero-code/java/agent/).
+Since Mendix 10.19.0, 
 
 ### Minimal Configuration {#min-configuration}
 
-Follow these steps for a minimal tracing configuration:
-* Download [opentelemetry-javaagent.jar](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar) from the OpenTelemetry Java Agent Release page and save it to a location where your Mendix app can access it.
-* In the [Server settings](https://docs.mendix.com/refguide/configuration/#server) of Studio Pro, locate the field **Extra JVM parameters** and add the following:
-  ```
-  -javaagent:/path/to/opentelemetry-javaagent.jar -Dotel.instrumentation.common.default-enabled=false -Dotel.instrumentation.opentelemetry-api.enabled=true -Dotel.service.name="My App"
-  ```
-  Please change `/path/to/opentelemetry-javaagent.jar` to the location where you stored the agent earlier and `My App` to the name under which you want your traces to appear.
+#### Mendix 10.19.0 and Above
 
-This will enable Mendix related tracing, while silencing tracing of internals. The traces will be sent to http://localhost:4317.
+In Mendix 10.19 and above, tracing configuration is handled through the [OpenTelemetry Java Agent](https://opentelemetry.io/docs/zero-code/java/agent/). Use the following steps to set up a minimal tracing configuration:
 
-To test you can use [Jaeger](https://www.jaegertracing.io/), for example the all-in-one binary or docker image. Jaeger will listen to the above endpoint by default.
+1. Download [opentelemetry-javaagent.jar](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/latest/download/opentelemetry-javaagent.jar) from the [OpenTelemetry Java Instrumentation release page](https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases) and save it to a location where your Mendix app can access it.
+1. In the [Server settings](/refguide/configuration/#server) of Studio Pro, locate the field **Extra JVM parameters** and add the following:
+
+    ```
+    -javaagent:{/path/to/opentelemetry-javaagent.jar} -Dotel.instrumentation.common.default-enabled=false -Dotel.instrumentation.opentelemetry-api.enabled=true -Dotel.service.name="{My App}"
+    ```
+  
+1. Change `{/path/to/opentelemetry-javaagent.jar}` to the location where you stored the agent earlier and `{My App}` to the name under which you want your traces to appear.
+
+    This will enable Mendix related tracing, while silencing the tracing of internals. The traces will be sent to http://localhost:4317.
+
+#### Mendix 10.18 MTS
+
+In Mendix 10.18, the minimal configuration to enable tracing is:
+
+* Set the `OpenTelemetry.Enabled` [runtime setting](/refguide/custom-settings/) to `true`
+* Set the `otel.service.name` runtime setting to a service name
+
+    This will enable tracing. The traces will be sent to http://localhost:4317.
+
+### Testing
+
+To test the tracing you can use [Jaeger](https://www.jaegertracing.io/). For example, the all-in-one binary or docker image. Jaeger will listen to the above endpoint by default.
 
 Alternatively you can set up the [OpenTelemetry collector](https://opentelemetry.io/docs/collector/), which will also listen to the default endpoint and can be configured to send to backends which support OpenTelemetry. Check with your APM vendor to confirm that OpenTelemetry is supported. The free online collector configuration tool [OTelBin](https://github.com/dash0hq/otelbin) can help with collector configuration.
 
 ### All settings
 
-The Java Agent can be configured through system properties, which can be added to the **Extra JVM parameters** field (e.g. `-Dotel.exporter.otlp.traces.endpoint`), or environment variables. Below we list the ones that are supported by the Mendix runtime. See [Configure the SDK](https://opentelemetry.io/docs/languages/java/configuration/#environment-variables-and-system-properties) for a reference on the settings.
+Below we list the ones that are supported by the Mendix runtime. See [Configure the SDK](https://opentelemetry.io/docs/languages/java/configuration/#environment-variables-and-system-properties) for a reference on the settings that are prefixed with `otel,`.
+
+In Mendix 10.19.0 and above, the Java Agent can be configured through system properties, which can be added to the **Extra JVM parameters** field (for example, `-Dotel.exporter.otlp.traces.endpoint`), or set through environment variables. 
 
 | Name | Description | Default |
 |------|-------------|---------|
@@ -57,3 +75,4 @@ The Java Agent can be configured through system properties, which can be added t
 | `otel.exporter.otlp.traces.certificate` | The path to the file containing trusted certificates to use when verifying a trace server's TLS credentials. The file should contain one or more X.509 certificates in PEM format. | By default the host platform's trusted root certificates are used. |
 | `otel.exporter.otlp.traces.client.key` | The path to the file containing the private client key to use when verifying a trace client's TLS credentials. The file should contain one private key in PKCS8 PEM format. | By default no client key file is used. |
 | `otel.exporter.otlp.traces.client.certificate` | The path to the file containing trusted certificates to use when verifying a trace client's TLS credentials. The file should contain one or more X.509 certificates in PEM format. | By default no certificate file is used. |
+| `OpenTelemetry.Enabled` *(Mendix 10.18 only)*| Can be set to `true` or `false` in order to disable or enable tracing.<br/> {{% alert color="info" %}} We support dynamically enabling/disabling tracing using this setting, but the other settings will only be applied the first time you enable tracing.{{% /alert %}} | `false` |
