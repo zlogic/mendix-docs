@@ -34,7 +34,7 @@ FROM Shop.Product as p
 1. Right-click this entity and select **Publish in OData service**. Name this service *POS_ProductCategory*.
 2. Add `ProductId` as a key attribute, then click **OK**.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/key-attribute.png" >}}
+     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/key-attribute.png" >}}
 
 
 5. In the Entity field, double-click the **ProductId** attribute. 
