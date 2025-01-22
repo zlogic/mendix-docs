@@ -12,12 +12,13 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
-### January 02, 2025
+### January 22, 2025
 
 #### Portal Improvements
 
 * We have fixed the issue where a Technical contact cannot be assigned to multiple applications at a time.
 * We have included a documentation link to the application creation process for Private Cloud applications on the **Application Overview** page.
+* We have improved the labels for Runtime and Operator licenses to clearly indicate which licenses are applied to the app.
 
 ## 2024
 

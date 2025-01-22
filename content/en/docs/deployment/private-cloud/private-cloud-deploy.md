@@ -325,13 +325,13 @@ The word changes to **Production** if the environment is set up for production.
 
 See [Creating an Environment](#create-environment), above, for more information.
 
-##### Trial
+##### Trial Operator
 
-The word **Trial** indicates that the Operator managing that environment is unlicensed.
+The word **Trial Operator** indicates that the Operator managing that environment is unlicensed.
 
-When the Operator is running in trial mode, it will stop managing an environment ninety days (thirty days for Mendix Operator versions 1.12.0 and below) after the environment was created and the word changes to **Expired**. In this case you will be unable to stop or start your app, or deploy an app to this environment. The only action you can take is to delete the environment. You can, however, create a new environment if you have not finished your evaluation of Mendix for Private Cloud.
+When the Operator is running in trial mode, it will stop managing an environment ninety days (thirty days for Mendix Operator versions 1.12.0 and below) after the environment was created and the word changes to **Expired Operator**. In this case you will be unable to stop or start your app, or deploy an app to this environment. The only action you can take is to delete the environment. You can, however, create a new environment if you have not finished your evaluation of Mendix for Private Cloud.
 
-The word **Licensed** shows that the Operator managing that environment is licensed.
+The word **Licensed Operator** shows that the Operator managing that environment is licensed.
 
 {{% alert color="info" %}}
 The Operator license is independent from a Mendix Runtime license. The Operator license allows you to manage Mendix apps in your cluster, while the Mendix Runtime license (configured through a [Subscription Secret](#license-mendix)) removes trial restrictions from a Mendix App itself.
@@ -409,7 +409,7 @@ These tabs are described below.
 
 The general tab shows information about your running app.
 
-{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/image22.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/generalTab.png" class="no-border" >}}
 
 Most of the information is self-explanatory, but the status information gives you a quick summary of the status of the environment and the app deployed there. The **Source** field shows how the environment was created - by using the Portal or the [API](/apidocs-mxsdk/apidocs/private-cloud-deploy-api/)
 
@@ -419,7 +419,13 @@ This status shows you the following information – how many replicas are runnin
 
 In order to get more detailed information per replica in the application, you can click on **More Info** button.
 
-You can get the information related to Runtime status, License status and Sources w.r.t to Database, Storage, MxAdmin password, Debugger password, App constants and Custom Runtime settings. Along with this, from Operator version 2.15.0 onwards, you can also specifically collect information w.r.t to pods running in the application. Below is the brief explanation of the fields in the section:
+You can get the information related to Runtime status, License status and Sources w.r.t to Database, Storage, MxAdmin password, Debugger password, App constants and Custom Runtime settings. 
+
+If the runtime license is not applied on the environment, the license status will show **0/1 Licensed Runtime**, when only one replica is running for the application and the license status will be **Not licensed**
+If there are **n** number of replicas running, then the Runtime license status will be ** 0/n Licensed Runtime**
+Once the runtime license is applied on the environment, the license status will be set to ** n/n Licensed Runtime**
+
+Along with this, from Operator version 2.15.0 onwards, you can also specifically collect information w.r.t to pods running in the application. Below is the brief explanation of the fields in the section:
 
 1. **deletionInitiated**: This indicates whether the deletion of the pod has been initiated (pod is stopping). If it's `false`, it means the pod is not currently being deleted.
 

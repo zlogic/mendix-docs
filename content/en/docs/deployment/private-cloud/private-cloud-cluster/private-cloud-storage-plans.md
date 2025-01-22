@@ -391,6 +391,10 @@ The Postgres database is an automated, on-demand database. The Postgres plan off
 
 This section provides technical details on how managed identity authentication works with Postgres. If you just need instructions to get started, the [Azure Managed Identity-based storage walkthrough](#walkthrough-azure-azwi) provides a quick start guide to set the Mendix Operator to manage a Postgres database, SQL Server and Blob Storage account using managed identity authentication.
 
+{{% alert color="info" %}}
+Azure prioritizes managed identity authentication for PostgreSQL when both static authentication and Microsoft Entra authentication are selected in the Azure portal.
+{{% /alert %}}
+
 ##### Prerequisites
 
 * An Azure Postgres (Flexible Server) with Entra authentication enabled
@@ -1625,6 +1629,7 @@ In the Amazon S3 plan configuration, enter the following details:
 ### Azure Blob Storage {#blob-azure}
 
 If you would like to have Mendix Operator with automation, and have full isolation between environments, use the [Azure managed identity authentication](#blob-azure-azwi) option. This option works with apps using Mendix 10.10 (or a later version).
+
 
 If you would like to simply share a container between environments, or to manually create a container and account per environment, use the [static credentials](#blob-azure-static) option.
 
