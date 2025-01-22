@@ -44,7 +44,7 @@ In Mendix 10.19 and above, tracing configuration is handled through the [OpenTel
 
     This will enable Mendix related tracing, while silencing the tracing of internals. The traces will be sent to http://localhost:4317.
 
-#### Mendix 10.18 MTS
+#### Mendix 10.18
 
 In Mendix 10.18, the minimal configuration to enable tracing is:
 
