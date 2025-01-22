@@ -169,7 +169,7 @@ Once these steps are complete, run your app locally and test the functionality.
 Add the capability to update a product’s associated category and supplier. To do this, follow these steps:
 
 1. Open your domain model and double-click **ProductOverviewVE**.
-2. Add `CategoryId` and `SupplierId` by adding the following query in the OQL editor:
+2. Add `CategoryId` and `SupplierId` by using the following query in the OQL editor:
 
     ```sql
     SELECT
