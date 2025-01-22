@@ -56,29 +56,30 @@ Mendix connectors offer direct support for the following models:
 
 | Architecture | Models | Category | Input | Output | Additional capabilities |
 |--------------|---------------------|---------------------|-------------------|-----------|-------------------------|
+| Mendix Cloud GenAI | Anthropic Claude 3.5 Sonnet | Chat Completions | text, image, document | text | Function calling |
+| | Cohere Embed English, Cohere Embed Multilingual | Embeddings | text | embeddings | |
 | Azure / OpenAI | gpt-3.5-turbo | Chat completions | text | text | Function calling |
 | | gpt-4, gpt-4-turbo, gpt-4o, gpt-4o mini | Chat completions | text, image | text | Function calling |
 | | DALL·E 2, DALL·E 3 | Image generation | text | image | |
 | | text-embedding-ada-002, text-embedding-3-small, text-embedding-3-large     | Embeddings | text | embeddings| |
-| Amazon Bedrock | Amazon Titan Text G1 - Express, Amazon Titan Text G1 - Lite, Amazon Titan Text G1 - Premier | Chat Completions | text | text | Document Chat (except Titan Premier) |
+| Amazon Bedrock | Amazon Titan Text G1 - Express, Amazon Titan Text G1 - Lite, Amazon Titan Text G1 - Premier | Chat Completions | text, document (expect Titan Premier) | text | |
 | | AI21 Jamba-Instruct | Chat Completions | text | text |  |
 | | AI21 Labs Jurassic-2 (Text) | Chat Completions | text | text |  |
-| | Amazon Nova Pro, Amazon Nova Lite | Chat Completion | text | text | Function calling, Document Chat |
+| | Amazon Nova Pro, Amazon Nova Lite | Chat Completion | text, image, document | text | Function calling |
 | | Amazon Titan Image Generator G1 | Image generation | text | image | |
 | | Amazon Titan Embeddings Text v2 | Embeddings | text | embeddings| |
-| | Anthropic Claude v2.0, Anthropic Claude v2.1| Chat Completions | text | text | Document Chat |
-| | Anthropic Claude v3 Sonnet, Anthropic Claude v3.5 Sonnet, Anthropic Claude v3.5 Sonnet v2, Anthropic Claude v3 Haiku, Anthropic Claude v3 Opus | Chat Completions | text, image | text | Function calling, Document Chat |
-| | Cohere Command | Chat Completions | text | text | Document Chat |
+| | Anthropic Claude 2.0, Anthropic Claude 2.1| Chat Completions | text, document | text | |
+| | Anthropic Claude 3 Sonnet, Anthropic Claude 3.5 Sonnet, Anthropic Claude 3.5 Sonnet v2, Anthropic Claude 3 Haiku, Anthropic Claude 3 Opus | Chat Completions | text, image, document | text | Function calling |
+| | Cohere Command | Chat Completions | text, document | text | |
 | | Cohere Command Light | Chat Completions | text | text | |
-| | Cohere Command R, Cohere Command R+ | Chat Completions | text | text | Function calling, Document Chat |
+| | Cohere Command R, Cohere Command R+ | Chat Completions | text, document | text | Function calling |
 | | Cohere Embed English, Cohere Embed Multilingual | Embeddings | text | embeddings | |
-| | Meta Llama 2, MetaLlama 3| Chat Completions | text | text | Document Chat |
-| | Meta Llama 3.1| Chat Completions | text | text | Function calling, Document Chat |
-| | Mistral AI Instruct | Chat Completions | text | text | Document Chat |
-| | Mistral Large, Mistral Large 2 | Chat Completions | text | text | Function calling, Document Chat |
+| | Meta Llama 2, MetaLlama 3| Chat Completions | text, document | text | |
+| | Meta Llama 3.1| Chat Completions | text, document | text | Function calling |
+| | Mistral AI Instruct | Chat Completions | text. document | text | |
+| | Mistral Large, Mistral Large 2 | Chat Completions | text, document | text | Function calling |
 | | Mistral Small | Chat Completions | text | text | Function calling |
-| Mendix Cloud GenAI | Anthropic Claude v3.5 Sonnet | Chat Completions | text, image | text | Function calling, Document Chat |
-| | Cohere Embed English, Cohere Embed Multilingual | Embeddings | text | embeddings | |
+
 
 For more details on limitations and supported model capabilities for the Bedrock Converse API used in the ChatCompletions operations, see [Supported models and model features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html) in the AWS documentation.
 
