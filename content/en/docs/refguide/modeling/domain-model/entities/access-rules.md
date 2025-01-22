@@ -297,6 +297,10 @@ XPath constraints are not applied to create operations, meaning that if you enab
 
 XPath constraints are applied to delete operations, unlike create operations.
 
+#### Default member access
+
+Specifies the rights which are applied to new attributes or associations of this entity. This option was absent from the new Access Rule Editor before version 10.19.
+
 #### Attribute and Association Rights
 
 Access to the members can be set using the toggles in the column next to the member description. 
@@ -306,8 +310,6 @@ You can also click **Read** or **Write** in the **Set all to** footer to enable 
 {{% alert color="info" %}}
 You cannot set *Write* access to attributes which are calculated. This includes both attributes where the attribute value is set to **Calculated** and attributes of type *Autonumber*.
 {{% /alert %}}
-
-Attributes and associations which are added to an entity in the domain model will default to allowing no access to any module roles. This improves security by forcing you to choose who can access any new information which is added to the domain model and is a change from the old editor where you could set default rights for new members (described in [Member Read and Write Rights Section](#member-access), above).
 
 See [Attribute Changes and Security Constraints](#attribute-changes), above, for important considerations about giving access to attributes.
 
