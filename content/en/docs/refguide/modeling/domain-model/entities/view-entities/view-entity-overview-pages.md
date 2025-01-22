@@ -144,11 +144,7 @@ On the Product overview page above, there is no button to add or modify a produc
 
     * In the Options field, set Range to **First** 
   
-4. Add a [Change Object]( /refguide/change-object/) activity. Configure the activity with the following details: 
-
-    * Add the attributes of `Product` to reflect those of `ProductOverviewVE` 
-    * In the Options field, set Range to **First** 
-    * In the Commit field, select **Yes**
+4. Add a [Change Object]( /refguide/change-object/) activity. Configure the activity by adding the attributes of `Product` to reflect those of `ProductOverviewVE` 
 
     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/product-overview-microflow.png" >}}
   
