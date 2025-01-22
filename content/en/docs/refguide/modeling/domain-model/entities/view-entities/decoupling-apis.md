@@ -6,14 +6,15 @@ url: /refguide/decoupling-apis/
 
 ## Introduction
 
-Exposing view entities instead of the underlying persistent entity takes away the complexity of the underlying schema. This helps you prevent frequent API changes in the event of data model changes. It also allows you to consolidate data from multiple tabs in a single API.
+Exposing view entities instead of the underlying persistable entity takes away the complexity of the underlying schema. This helps you prevent frequent API changes in the event of data model changes. It also allows you to consolidate data from multiple tabs in a single API.
 
 For this purpose of this use case, the following domain model is used:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/domain-model.png" >}}
 
 ## Creating a View Entity
-In this scenario, you want to make an API that returns *Products*, and allows you to filter the results by Category. To do this, create a single view entity and expose it as an OData resource. 
+
+In this scenario, you want to make an API call that returns *Products*, and allows you to filter the results by Category. To do this, create a single view entity and expose it as an OData resource. 
 
 1. Open your domain model and create a view entity called *ProductCategoryVE*.
 2. Add the following query to the OQL editor:
@@ -30,8 +31,8 @@ FROM Shop.Product as p
   JOIN p/Shop.Product_Category/Shop.Category as c
 ```
 
-3. Right-click on this entity and select **Publish in OData service**. Name this service *POS_ProductCategory*.
-4. Add `ProductId` as a key attribute, then click **OK**.
+1. Right-click this entity and select **Publish in OData service**. Name this service *POS_ProductCategory*.
+2. Add `ProductId` as a key attribute, then click **OK**.
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/key-attribute.png" >}}
 
@@ -41,4 +42,4 @@ FROM Shop.Product as p
    
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/can-be-empty.png" >}}
 
-7. Run your app locally.
+7. Run your app locally and test the functionality. 
