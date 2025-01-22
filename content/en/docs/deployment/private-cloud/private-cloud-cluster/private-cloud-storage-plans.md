@@ -1630,7 +1630,6 @@ In the Amazon S3 plan configuration, enter the following details:
 
 If you would like to have Mendix Operator with automation, and have full isolation between environments, use the [Azure managed identity authentication](#blob-azure-azwi) option. This option works with apps using Mendix 10.10 (or a later version).
 
-
 If you would like to simply share a container between environments, or to manually create a container and account per environment, use the [static credentials](#blob-azure-static) option.
 
 #### Azure Blob Storage (Azure managed identity authentication){#blob-azure-azwi}
