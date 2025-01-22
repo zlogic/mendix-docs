@@ -37,7 +37,7 @@ FROM Shop.Product as p
      {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/key-attribute.png" >}}
 
 
-5. In the Entity field, double-click the **ProductId** attribute. 
+5. In the **Entity** field, double-click the **ProductId** attribute. 
 6. Uncheck the box **Can be empty**, then click **OK**. 
    
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/can-be-empty.png" >}}
