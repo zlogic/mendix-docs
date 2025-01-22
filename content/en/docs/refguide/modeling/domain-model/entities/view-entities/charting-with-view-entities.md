@@ -47,7 +47,7 @@ View entities allow you to calculate and aggregate the total sales in a single l
 
 ### Create the Chart
 
-Use the new view entity to create a chart.
+Use the new view entity to create a chart. Follow the steps below:
 
 1. Create a new page (or open any existing page).
 2. Navigate to the Toolbox and add a Column chart to the page. 
