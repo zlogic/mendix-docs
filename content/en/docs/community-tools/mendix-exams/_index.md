@@ -24,7 +24,23 @@ You have 30 days to start the exam. When you start, you will be able to choose o
 
 #### Paid Certification
 
-For paid certification, for example the [Intermediate Developer Certification](https://academy.mendix.com/link/certifications/22/intermediate), you will need to 
+For paid certification, for example the [Intermediate Developer Certification](https://academy.mendix.com/link/certifications/22/intermediate) you will need to arrange payment. Do the following:
+
+1. Review the **Payment Summary** and enter **Voucher** information if appropriate. The voucher details may be prefilled, depending on your organization.
+1. Click **Run System Test** to ensure your system is compatible with the exam platform.
+1. Confirm that you understand the terms and that your system is capable of supporting the exam.
+1. Click **Register**.
+
+    You will be taken to our payment platform.
+
+1. Enter your payment details and click **Review Your Order**.
+1. If everything is correct, check the **Terms and Conditions** and click **Buy Now**.
+
+    Alternatively, click **Edit Your Order** to amend the details.
+
+You will be taken to the start page of the exam, and will also receive a confirmation email with details of the exam you have purchased.
+
+You have 30 days to start the exam. When you start, you will be able to choose one of the supported languages.
 
 ### Booking for Other People
 
