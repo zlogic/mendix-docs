@@ -40,6 +40,6 @@ FROM Shop.Product as p
 5. In the **Entity** field, double-click the **ProductId** attribute. 
 6. Uncheck the box **Can be empty**, then click **OK**. 
    
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/can-be-empty.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/can-be-empty.png" >}}
 
 7. Run your app locally and test the functionality. 
