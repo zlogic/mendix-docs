@@ -39,14 +39,14 @@ To help you get started, the following sections list the available GenAI compone
 |-------------------|---------------------------------------------------|----------------------------------|------------|
 | [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926) | Lets you kick-start the development of enterprise-grade AI chatbot experiences. For example, you can use it to create your own private enterprise-ready ChatGPT-like app. | Starter App | 10.12 |
 | [Blank GenAI App](https://marketplace.mendix.com/link/component/227934) | Start from scratch to create a new application with GenAI capabilities and without any dependencies. | Starter App | 10.12 |
-| [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) | Understand what you can build with generative AI. Understand how to implement the OpenAI and Amazon Bedrock connectors and how to integrate them with the Conversational UI module. |Showcase App | 9.24.2 |
+| [GenAI Showcase App](https://marketplace.mendix.com/link/component/220475) | Understand what you can build with generative AI. Understand how to implement the Mendix Cloud GenAI, OpenAI and Amazon Bedrock connectors and how to integrate them with the Conversational UI module. |Showcase App | 9.24.2 |
 | [RFP Assistant Starter App / Questionnaire Assistant Starter App](https://marketplace.mendix.com/link/component/235917) | The RFP Assistant Starter App and the Questionnaire Assistant Starter App leverage historical RFPs (or question-answer pairs) and a continuously updated knowledge base to generate and assist in editing responses to RFPs, offering a time-saving alternative to manually finding similar responses and enhancing the knowledge management process.  | Starter App | 9.24.2 |
-| [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) | Learn how to combine common GenAI patterns, such as function calling and RAG to build your support assistant. Connect it to a model like Anthropic Claude or Amazon Titan via Amazon Bedrock or use an (Azure) OpenAI subscription.  | Starter App | 10.12 |
-| [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) | - [GenAI Commons](/appstore/modules/genai/commons/): Common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this. | Common Module | 9.24.2 |
-| | - [Conversational UI](/appstore/modules/genai/conversational-ui/): Create a Conversational UI for a new or existing app. | UI Module | 9.24.2 |
-| | - [Mendix Cloud GenAI Connector](/appstore/modules/genai/MxGenAI/): Connect to Mendix Cloud and utilize Mendix Cloud GenAI resource packs directly within your Mendix application. | Connector Module | 9.24.2 |
+| [Support Assistant Starter App](https://marketplace.mendix.com/link/component/231035) | Learn how to combine common GenAI patterns, such as function calling and RAG to build your support assistant. Connect it to a model like Anthropic Claude via Mendix Cloud GenAI or Amazon Bedrock or use an (Azure) OpenAI subscription.  | Starter App | 10.12 |
+| [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) |[GenAI Commons](/appstore/modules/genai/commons/): Common capabilities that allow all GenAI connectors to be integrated with the other modules. You can also implement your own connector based on this. | Common Module | 9.24.2 |
+| |[Conversational UI](/appstore/modules/genai/conversational-ui/): Create a Conversational UI for a new or existing app. | UI Module | 9.24.2 |
+| |[Mendix Cloud GenAI Connector](/appstore/modules/genai/MxGenAI/): Connect to Mendix Cloud and utilize Mendix Cloud GenAI resource packs directly within your Mendix application. | Connector Module | 9.24.2 |
 | [OpenAI Connector](/appstore/modules/genai/openai/) | Connect to (Azure) OpenAI. | Connector Module | 9.24.2 |
-| [Amazon Bedrock Connector](/appstore/modules/genai/bedrock/) | Connect to Amazon Bedrock. Use Retrieve & Generate or Bedrock agents. | Connector Module | 9.24.2 |
+| [Amazon Bedrock Connector](/appstore/modules/aws/amazon-bedrock/) | Connect to Amazon Bedrock. Use Retrieve & Generate or Bedrock agents. | Connector Module | 9.24.2 |
 | [PgVector Knowledge Base](/appstore/modules/genai/pgvector/) | Manage and interact with a PostgreSQL *pgvector* Knowledge Base. | Connector Module | 9.24.2 |
 | [Snowflake Showcase App](https://marketplace.mendix.com/link/component/225845) | Learn how to implement the Cortex functionalities in your app. | Showcase App | 10.12 |
 
@@ -80,7 +80,7 @@ Mendix connectors offer direct support for the following models:
 | Mendix Cloud GenAI | Anthropic Claude v3.5 Sonnet | Chat Completions | text, image | text | Function calling, Document Chat |
 | | Cohere Embed English, Cohere Embed Multilingual | Embeddings | text | embeddings | |
 
-For more details on limitations and supported model capabilities for the Bedrock Converse API used in the ChatCompletions operations, see [Supported models and model features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features) in the AWS documentation.
+For more details on limitations and supported model capabilities for the Bedrock Converse API used in the ChatCompletions operations, see [Supported models and model features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference-supported-models-features.html) in the AWS documentation.
 
 The available showcase applications offer implementation inspiration for many of the listed models.
 
