@@ -60,7 +60,7 @@ Use the new view entity to create a chart. Follow the steps below:
 * X axis attribute - **OrderYear**
 * Y axis attribute - **TotalSales*
 
-5. Set the series name to reflect the Category name. Do the following:
+5. Set the series name to reflect the category name. Do the following:
   
    * In the Series name field, click **Edit** and add **{1}** in the Template field. 
    * In the Parameters field, click **New** > **Select** > **CategoryName** > **Select** > **OK**.
