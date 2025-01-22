@@ -58,12 +58,19 @@ Use the new view entity to create a chart.
 * Data source - **YearlySalesByCategoryVE**
 * Group by - **CategoryId** 
 * X axis attribute - **OrderYear**
-* Y axis attribute - **TotalSales**
+* Y axis attribute - **TotalSales*
+
+5. Set the series name to reflect the Category name. Do the following:
+  
+   * In the Series name field, click **Edit** and add **{1}** in the Template field. 
+   * In the Parameters field, click **New** > **Select** > **CategoryName** > **Select** > **OK**.
+
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/charting-with-view-entities/series-name.png" >}}
 
  The chart should be configured as seen below: 
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/charting-with-view-entities/chart-final.png" >}}
 
-5. Click **OK** to save.
+6. Click **OK** to save.
 
-6. Run your app locally and you should see the chart populated with your data. 
+7. Run your app locally and you should see the chart populated with your data. 
