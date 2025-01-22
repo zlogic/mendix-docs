@@ -14,6 +14,12 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 ## 2024
 
+### January 23, 2025
+
+#### Fixes
+
+* Fixed an issue where search responses were incorrect due to a failure in endpoint reindexing, caused by an outage.
+
 ### December 12, 2024
 
 #### Features
