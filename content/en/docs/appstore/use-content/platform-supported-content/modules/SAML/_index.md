@@ -156,7 +156,7 @@ There are different versions of the SAML module, depending on which version of M
 3. To download the required release, in the **Releases** tab, find the release that is compatible with your app per the guidelines in the **Documentation** tab, and then click the **Download** button by the number of the release.
 4. Follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to import the SAML module into your app.
 
-### Post-Installation Configuration Steps
+### Post-installation Configuration Steps
 
 By default, the SAML module will be installed as the **SAML20** module in your app’s Marketplace modules. You can find all microflows and other configuration elements in this module.
 
