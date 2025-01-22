@@ -39,7 +39,7 @@ This connector supports connections to the following database types:
 * Oracle
 * Snowflake – GA support from [Studio Pro 10.12](/releasenotes/studio-pro/10.12/) (Beta versions are available from [Studio Pro 10.10](/releasenotes/studio-pro/10.10/)). For more information, see [Configure the External Database Connector for Snowflake](/appstore/modules/snowflake/external-database-connector/)
 
-If you are looking for another database type, follow the prompt to request support your database when you open the database connection wizard.
+* From Studio Pro 10.19, This connector supports connecting to any database by using the Java dependency specified by the user for the respective database in the module settings. For more information, see [Configure the External Database Connector for any other Database](#byod)
 
 This connector supports the following statements:
 
@@ -210,3 +210,55 @@ To connect to PostgreSQL when the application is running in Mendix Cloud, follow
 1. To configure SSL-based authentication in Mendix Cloud, add a CA certificate and client certificate for server configuration and the selected SSL mode. For more details, see the [Running in the Cloud](/howto/integration/use-a-client-certificate/#running-in-the-cloud) section of *Use a Client Certificate*.
 2. After the client certificate has been added, double-click the client certificate and add the value `ClientCertificateIdentifier` to `Use Client Certificate for specific services`. This must match the value provided for the constant `ClientCertificateIdentifier`.
 3. Add the required values to the constants created for DBSource, DBUsername, DBPassword, and ClientCertificateIdentifier.
+
+## Configure the External Database Connector to any other Database of your choice {#byod}
+
+### Prerequisites 
+
+* Ensure you have the appropriate JDBC (Java Database Connectivity) JAR file for connecting to your specific database.
+* Gather the external database connection details, including login credentials and the JDBC connection string.
+
+### Connect to Database
+
+1. Add the JDBC JAR File:
+* Include the required JDBC JAR file in the module settings of your working module.
+* Alternatively, place the downloaded JAR file in the userlib folder of your application.
+
+
+2. Run the App with the Latest External Database Connector:
+* Ensure the application is configured to include the latest version of the external database connector during execution.
+
+3. Create a New External Database Connection:
+* Open the connection settings and select "Other" as the database type.
+* Enter the login credentials and JDBC connection string.
+
+4. Validate the Connection:
+* Click Test Connection to ensure the database connection is successful.
+
+5. Save the Configuration:
+* Save the connection details using the "Save" option.
+
+### Configure Database Schema information 
+
+The Browse Database Schema tab might not display a comprehensive overview of all available schemas for certain databases. You can customize this behavior using the Configure option. Follow these steps:
+
+
+1. Deploy the App to Eclipse:
+* Navigate to App -> Deploy to Eclipse (F6).
+
+2. Extend the Schema Provider Class:
+* Extend the class MxQueryBasedSchemaInfoProvider.
+* Override the following methods based on your requirements:
+    * getTableMetaDataQuery
+    * getViewMetaDataQuery
+    * getProcedureMetaDataQuery
+    * getFunctionMetaDataQuery
+
+3. Refer to an Example for Guidance:
+* Use the provided example, MxDb2SchemaInfoProvider, for a better understanding of how to customize the schema information.
+
+### Running Queries and Handling Query Responses
+
+* Execute queries as you would with supported databases, and retrieve responses in the associated entity.
+* Refer to the documentation of your specific JDBC library for detailed syntax and execution options.
+Note: By default, autocommit is set to false for design-time queries.
