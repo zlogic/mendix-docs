@@ -6,7 +6,7 @@ url: /refguide/charting-with-view-entities/
 
 ## Introduction
 
-Use view entities to create charts in Studio Pro using aggregated data. 
+You can use view entities to create charts in Studio Pro using aggregated data. 
 
 For this purpose of this use case, the following domain model is used:
 
