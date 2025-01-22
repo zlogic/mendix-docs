@@ -417,25 +417,17 @@ Most of the information is self-explanatory, but the status information gives yo
 
 This status shows you the following information – how many replicas are running, whether there was a successful build, and how long since the app was last started.
 
-In order to get more detailed information per replica in the application, you can click on **More Info** button.
+In order to get more detailed information per replica in the application, you can click on **More Info** button. This shows information about the runtime status, license status and sources for the Database, Storage, MxAdmin password, Debugger password, App constants and Custom Runtime settings. 
 
-You can get the information related to Runtime status, License status and Sources w.r.t to Database, Storage, MxAdmin password, Debugger password, App constants and Custom Runtime settings. 
+If no runtime license is applied to the environment, the license status shows **0/n Licensed Runtime**, where **n** is the number of replicas running. The license status is **Not licensed**. Once a runtime license has been applied to the environment, the license status shows **n/n Licensed Runtime**, where **n/n** indicates the number of licenses applied to the number of replicas.
 
-If the runtime license is not applied on the environment, the license status will show **0/1 Licensed Runtime**, when only one replica is running for the application and the license status will be **Not licensed**
-If there are **n** number of replicas running, then the Runtime license status will be ** 0/n Licensed Runtime**
-Once the runtime license is applied on the environment, the license status will be set to ** n/n Licensed Runtime**
+Starting in Operator version 2.15.0, you can also specifically collect information about pods running in the application. Below is a brief explanation of the fields in the section:
 
-Along with this, from Operator version 2.15.0 onwards, you can also specifically collect information w.r.t to pods running in the application. Below is the brief explanation of the fields in the section:
-
-1. **deletionInitiated**: This indicates whether the deletion of the pod has been initiated (pod is stopping). If it's `false`, it means the pod is not currently being deleted.
-
-2. **ready**: This shows whether the pod is ready to serve requests. If it's `false`, it means the pod is not ready to serve requests, possibly due to containers within the pod not being ready or other issues.
-
-3. **restartCount**: This represents the number of times the containers within the pod have been restarted.
-
-4. **started**: This indicates whether the pod has started. If it's `false`, it means the pod has not yet started successfully.
-
-5. **state**: This describes the current state of the pod. In this case, it indicates that the pod is in a waiting state, which means it is not running but waiting for something to happen, such as a container to become ready or other conditions to be met before it can start running.
+* **deletionInitiated** - This indicates whether the deletion of the pod has been initiated (pod is stopping). If **false**, the pod is not currently being deleted.
+* **ready** - This shows whether the pod is ready to serve requests. If **false**, the pod is not ready to serve requests, possibly due to containers within the pod not being ready or other issues.
+* **restartCount** - This represents the number of times the containers within the pod have been restarted.
+* **started** - This indicates whether the pod has started. If**false**, the pod has not yet started successfully.
+* **state** - This describes the current state of the pod. In this case, it indicates that the pod is in a waiting state, which means it is not running but waiting for something to happen, such as a container to become ready or other conditions to be met before it can start running.
 
 #### Environment Details > Status
 
