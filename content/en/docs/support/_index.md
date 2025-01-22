@@ -154,7 +154,7 @@ The full stack is depicted in the table below. This indicates which components a
 | **Commun&shy;ity Support&shy;ed Marketplace content** | | | | | | | | |
 | **Runtime** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner² | Mendix | Mendix | Mendix |
 | **Deploy&shy;ment Pipe&shy;line** | Mendix | Mendix | Mendix | | Certified Mendix Partner²  | | | |
-| **Logs/ Metrics** | Mendix | Mendix | | | Certified Mendix Partner² | Mendix Partner¹ | | |
+| **Backups/ Logs/ Metrics** | Mendix | Mendix | | | Certified Mendix Partner² | Mendix Partner¹ | | |
 | **Appli&shy;cation Opera&shy;tion** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner² | Mendix | Mendix | |
 | **Buildpack** | Mendix | Mendix | Mendix | Mendix | Certified Mendix Partner² | Mendix | Mendix | Mendix |
 | **Contain&shy;er Platform/ OS/ Java/ Web Server** | Mendix | Mendix | | | Certified Mendix Partner² | Mendix Partner¹ | | |

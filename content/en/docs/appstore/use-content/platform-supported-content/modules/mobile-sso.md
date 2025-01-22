@@ -81,11 +81,13 @@ This guide provides the step-by-step process of integrating the Mobile Single Si
     | Anonymous | MobileSSO.Anonymous |
     | User| MobileSSO.User |
 
+    {{% alert color="info" %}} Make sure to assign *Anonymous* user role to the OIDC SSO module. For more information, see the [Configuring Roles](/appstore/modules/oidc/#configuring-roles) section of *OIDC SSO*.{{% /alert %}}
+
 ## Configuration
 
 This section shows you how to configure your app to use Mobile SSO.
 
-### Configuration Settings 
+### Configuration Settings
 
 Refer to the [OIDC SSO](/appstore/modules/oidc/) documentation for the configuration settings of the [OIDC SSO](https://marketplace.mendix.com/link/component/120371) module and ensure the **OIDC_Client_Overview** page is appropriately set up.
 
