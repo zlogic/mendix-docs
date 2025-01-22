@@ -72,7 +72,7 @@ For example, the *OrderLine* entity represents a single entry in an order. It ha
 
 ### Get Total Value
 
-Suppose you want to get the total value of each order line, which is given by the formula `Total = UnitPrice * Quantity* (1 – Discount)`. To do this, follow these steps:
+Suppose you want to get the total value of each order line, which is given by the formula `Total = UnitPrice * Quantity * (1 – Discount)`. To do this, follow these steps:
 
 1. Create a view entity and name it *OrderLineWithTotalVE*.
 2. Add the following query to the OQL editor:
