@@ -116,7 +116,7 @@ For specific use cases, see the following:
 * [Decoupling APIs from the Domain Model](/refguide/decoupling-apis/)
 * [Charting with View Entities](/refguide/charting-with-view-entities/)
 * [Multi-lingual Apps and Translations](/refguide/multilingual-apps/)
-* [View of Archived Data](/refguide/archived-data/)
+* [View Archived Data](/refguide/view-archived-data/)
 * [Creating Pivot Table with View Entities](/refguide/view-entity-pivot-table/)
 * [Data Versioning with View Entities](/refguide/view-entity-data-versioning/)
 * [Exporting Data with View Entities](/refguide/view-entity-expport-data/)
