@@ -18,10 +18,11 @@ You must have an existing database containing data prior to using a view entity.
 
 {{% /alert %}}
 
-## Create a Data Grid 
+## Use Case
 
-In this scenario, you will create an overview page that lists each product in a [data grid]( /appstore/modules/data-grid-2/), including information about its category and supplier. 
-With view entities, you do not have to manage associations when showing the data in a data grid. This means that all fields are filterable and sortable, which allows for higher performance and flexibility.
+In this scenario, you will create an overview page that lists each product in a [data grid]( /appstore/modules/data-grid-2/), including information about its category and supplier. With view entities, you do not have to manage associations when showing the data in a data grid. This means that all fields are filterable and sortable, which allows for higher performance and flexibility.
+
+## Create a Data Grid 
 
 Create a view entity that combines only the relevant attributes of the entities *Product*, *Supplier*, and *Category*. To do this, follow these steps:
 
