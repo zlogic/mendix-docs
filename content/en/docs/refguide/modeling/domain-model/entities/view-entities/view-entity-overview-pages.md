@@ -42,6 +42,11 @@ Create a view entity that combines only the relevant attributes of the entities 
       JOIN p/Shop.Product_Supplier/Shop.Supplier as s
       JOIN p/Shop.Product_Category/Shop.Category as c
     ```
+{{% alert color="info" %}}
+
+This query uses OQL to take the four attributes of each product and combines them with the associated supplier and category. If there is no supplier or category, the product will not be included. For more information, see [OQL Expressions]([/refguide/oql-expressions).
+
+{{% /alert %}}
 
 4. Click OK. The view entity is added to your domain model.
 
