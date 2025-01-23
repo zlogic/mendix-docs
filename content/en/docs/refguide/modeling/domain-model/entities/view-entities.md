@@ -23,11 +23,15 @@ Your app must use OQL version 2 to use view entities. You can change this settin
 
 ## Properties 
 
+After adding a view entity you can specify the OQL query by double clicking the entity, which shows the view entity properties dialog.
+
+{{< figure src="/attachments/refguide/modeling/domain-model/use-view-entities/customer-with-address.png" width="500" >}}
+
 ### General
 
-The **General** tab contains the OQL Query editor and the Preview data table.
+The **General** tab contains the OQL editor and the Preview data table.
 
-The **OQL Query** editor allows you to write the query that defines this view entity. While writing this query, the editor suggests names of the entities and attributes in your domain model, as well as allowed clauses, operators, and functions. If the query is not valid, a list of validation errors will be displayed underneath the editor with the line and column number of the place where the error was found.
+The **OQL editor** allows you to write the query that defines this view entity. While writing this query, the editor suggests names of the entities and attributes in your domain model, as well as allowed clauses, operators, and functions. If the query is not valid, a list of validation errors will be displayed underneath the editor with the line and column number of the place where the error was found.
 
 The resulting names and types of the attributes of your view entity will be displayed as column headers in the **Preview data** table. You can view the resulting data set of your OQL query by clicking **Run Query**. For this button to be enabled, your app must be running. When clicking **Run Query**, Studio Pro retrieves the data from the database that is configured in your app settings. The database type of the active configuration is also listed in the header of the Preview data section.
 
