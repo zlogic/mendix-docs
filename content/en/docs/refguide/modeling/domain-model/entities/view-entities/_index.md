@@ -120,5 +120,5 @@ For specific use cases, see the following:
 * [Creating Pivot Table with View Entities](/refguide/view-entity-pivot-table/)
 * [Data Versioning with View Entities](/refguide/view-entity-data-versioning/)
 * [Exporting Data with View Entities](/refguide/view-entity-expport-data/)
-* [Abstracting data of add-on modules with View Entities](/refguide/abstracting-view-entity-data/)
+* [Abstracting Data of Add-On Modules](/refguide/abstracting-view-entity-data/)
 * [Multi-Tenant Applications with View Entities](/refguide/view-entity-multitenant-apps/)
