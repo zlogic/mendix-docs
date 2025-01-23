@@ -8,6 +8,8 @@ url: /refguide/decoupling-apis/
 
 Exposing view entities instead of the underlying persistable entity takes away the complexity of the underlying schema. This helps you prevent frequent API changes if the data model changes. It also allows you to consolidate data from multiple tabs in a single API.
 
+## Use Case
+
 For this purpose of this use case, the following domain model is used:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/domain-model.png" >}}
