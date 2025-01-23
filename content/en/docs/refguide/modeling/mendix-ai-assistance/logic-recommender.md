@@ -14,7 +14,7 @@ Logic Bot was rebranded to Logic Recommender in Studio Pro 10.12.0. It is also a
 {{% /alert %}}
 
 {{% alert color="info" %}}
-In Studio Pro 10.6 and above, it works both online and offline. However, to get better AI recommendations, you need to be signed in to Studio Pro.
+In Studio Pro 10.6 and above, it works both online and offline. However, to get better AI-based recommendations, you need to be signed in to Studio Pro.
 
 In Studio Pro 10.5 and below, to use the [older version of Logic Recommender](#older-version), internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
