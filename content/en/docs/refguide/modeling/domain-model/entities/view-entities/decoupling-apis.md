@@ -14,9 +14,11 @@ For this purpose of this use case, the following domain model is used:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/decoupling-apis/domain-model.png" >}}
 
+For example, you want to make an API call that returns **Products**, and allows you to filter the results by **Category**. 
+
 ## Creating a View Entity
 
-For example, you want to make an API call that returns **Products**, and allows you to filter the results by **Category**. To do this, create a single view entity and expose it as an OData resource. 
+Create a single view entity and expose it as an OData resource. To do this, follow these steps: 
 
 1. Open your domain model and create a view entity called *ProductCategoryVE*.
 2. Add the following query to the OQL editor:
