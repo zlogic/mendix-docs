@@ -51,7 +51,7 @@ Use the new view entity to create a chart. Follow the steps below:
 
 1. Create a new page or open an existing page.
 2. Navigate to the **Toolbox** and add a **Column chart** to the page. 
-3. Double-click the chart and in the Data Source field, click **New**. 
+3. Double-click the chart and in the **Data Source** field, click **New**. 
 4. Configure the chart by filling out the following:
 
 * Data set - **Multiple series**
