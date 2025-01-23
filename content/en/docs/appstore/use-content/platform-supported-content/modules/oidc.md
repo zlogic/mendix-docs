@@ -554,7 +554,7 @@ You can set up custom user provisioning once your app is running using the `OIDC
     * **Allow the module to create users** – this enables the module to create users based on user provisioning and attribute mapping configurations. When disabled, it will still update existing users. However, for new users, it will display an exception message stating that the login action was successful but no user has been configured.
         * By default, the value is set to ***Yes***.
     * **User role** – the role which will be assigned to newly created users. You can select one default user role. If you need additional user roles, use Access Token Parsing microflow to assign multiple roles.
-    * **User Type** – this allows you to configure end-users of your application as internal or external.
+    * **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in.
         * By default, the value is set to ***Internal***.
 
 5. Under **Attribute Mapping**, for each piece of information you want to add to your custom user entity, select an **IdP Attribute** (claim) and specify the **Configured Entity Attribute** where you want to store the information.

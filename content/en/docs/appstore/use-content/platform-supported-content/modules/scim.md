@@ -245,7 +245,7 @@ In the **Provisioning** tab of the SCIM server configuration, you need to config
 * **Allow the module to create users**: this enables the module to create users based on user provisioning and attribute mapping configurations.
     * By default, the value is set to ***Yes***.
 * **Default Userrole**: the role that will be assigned to newly created users by default.
-* **User Type**: this allows you to configure end-users of your application as internal or external.
+* **User Type**: this allows you to configure end-users of your application as internal or external. It is created when the user is created and updated whenever user details, such as name, email, or active status, are changed.
     * By default, the value is set to ***Internal***.
 * **Attribute Mapping**: under **Attribute Mapping**, select an **IdP Attribute** (claim) for each piece of information you want to add to your custom user entity. Specify the **Configured Entity Attribute** where you want to store the information.
 
