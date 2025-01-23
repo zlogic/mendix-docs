@@ -23,7 +23,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### New Features
 
-* We have carried out a migration of all companies so that they now use [Centralized Roles](/control-center/roles-and-permissions/#centralized-project-roles). 
+* We have migrated all companies to use [Centralized Roles](/control-center/roles-and-permissions/#centralized-project-roles). 
 
 ### January 5, 2025
 
