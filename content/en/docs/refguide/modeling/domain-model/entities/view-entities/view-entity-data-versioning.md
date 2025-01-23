@@ -8,11 +8,11 @@ url: /refguide/view-entity-data-versioning/
 
 View entities allow you to work with versioned data. In this example, you will implement versioned data within a domain model. 
 
+## Use Case
+
 For this purpose of this use case, the following domain model is used:
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/domain-model.png" >}}
-
-## Use Case
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/domain-model.png" width="500" >}}
 
 The domain model above is for an ordering system of a shop. The entities contain the following:
 
@@ -30,22 +30,22 @@ To view the latest status of an order, follow the steps below:
 1. Create a view entity named *LastestORderStatusVE*.
 2. Add the following query to the entity:
 
-```
-SELECT
-    o.OrderId as OrderId,
-    o.RequiredDate as RequiredDate,
-    u.OrderStatus as OrderStatus,
-    u.UpdateDate as UpdateDate
-FROM Shop.OrderInfo o
-JOIN o/Shop.OrderUpdate_OrderInfo/Shop.OrderUpdate u
-JOIN (
+    ```
     SELECT
-        u.OrderId as OrderId,
-        MAX(u.UpdateDate) as UpdateDate
-    FROM Shop.OrderUpdate u
-    GROUP BY u.OrderId
-) latest ON (latest.OrderId = o.OrderId AND latest.UpdateDate = u.UpdateDate)
-```
+        o.OrderId as OrderId,
+        o.RequiredDate as RequiredDate,
+        u.OrderStatus as OrderStatus,
+        u.UpdateDate as UpdateDate
+    FROM Shop.OrderInfo o
+    JOIN o/Shop.OrderUpdate_OrderInfo/Shop.OrderUpdate u
+    JOIN (
+        SELECT
+            u.OrderId as OrderId,
+            MAX(u.UpdateDate) as UpdateDate
+        FROM Shop.OrderUpdate u
+        GROUP BY u.OrderId
+    ) latest ON (latest.OrderId = o.OrderId AND latest.UpdateDate = u.UpdateDate)
+    ```
 
 {{% alert color="info" %}}
 
@@ -55,9 +55,9 @@ The above query is a nested query. It retrieves information from the *OrderInfo*
 
 The final result is a list with only the latest update of each order.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/latest-order-status-ve.png" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/entity-properties.png" width="500" >}}
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/latest-order-status-table.png" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/data-grid.png" width="500" >}}
 
 ## Order Status on Specific Date
 
@@ -67,6 +67,6 @@ Another advantage is that you can take a snapshot of the order status on any giv
 WHERE u.UpdateDate < CAST('1997/08/17' as DATETIME)
 ```
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/order-status-properties.png" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/entity-properties-2.png" width="500" >}}
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/order-status-table.png" >}}
+{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/data-grid-2.png" width="500" >}}
