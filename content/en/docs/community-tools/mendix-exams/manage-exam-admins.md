@@ -1,6 +1,6 @@
 ---
 title: "Manage Exam Admins"
-url: /community-tools/order-exams-in-bulk/manage-exam-admins/
+url: /community-tools/purchasing-exams/manage-exam-admins/
 weight: 20
 description: "Describes how to manage exam admins in an organization."
 ---

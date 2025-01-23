@@ -1,6 +1,6 @@
 ---
 title: "Manage Exam Seats"
-url: /community-tools/order-exams-in-bulk/manage-exam-seats/
+url: /community-tools/purchasing-exams/manage-exam-seats/
 weight: 10
 description: "Describes how an exam admin in an organization can manage exam seats."
 ---
