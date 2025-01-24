@@ -214,8 +214,6 @@ Add the capability to update a product’s associated category and supplier. To 
     * Under Value, select **CategoryId**
     * Under Target attribute, select **Category**
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/combo-box.png" >}}
-
 5. Add another Combo box and repeat the above steps for the *SupplierNameVE* entity. 
 
 The final data view should look like this:
