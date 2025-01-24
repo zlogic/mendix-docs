@@ -31,6 +31,12 @@ If you need to connect to other database types, check out the [Database Connecto
 
 ### Features {#features}
 
+{{% alert color="info" %}}
+
+From [Studio Pro 10.19](/releasenotes/studio-pro/10.19/), you can connect to any database by using the Java dependency specified by the user for the respective database. For more information, see the [Configure for Any Database](#byod) section below.
+
+{{</alert>}}
+
 This connector supports connections to the following database types:
 
 * Microsoft SQL
@@ -38,8 +44,6 @@ This connector supports connections to the following database types:
 * PostgreSQL - For certificate-based authentication (available from Studio Pro 10.16), see the [Use Certificate-Based Authentication for PostgreSQL Connections](#postgres-ssl) section below
 * Oracle
 * Snowflake – GA support from [Studio Pro 10.12](/releasenotes/studio-pro/10.12/) (Beta versions are available from [Studio Pro 10.10](/releasenotes/studio-pro/10.10/)). For more information, see [Configure the External Database Connector for Snowflake](/appstore/modules/snowflake/external-database-connector/)
-
-* From Studio Pro 10.19, This connector supports connecting to any database by using the Java dependency specified by the user for the respective database in the module settings. For more information, see [Configure the External Database Connector for any other Database](#byod)
 
 This connector supports the following statements:
 
@@ -211,7 +215,7 @@ To connect to PostgreSQL when the application is running in Mendix Cloud, follow
 2. After the client certificate has been added, double-click the client certificate and add the value `ClientCertificateIdentifier` to `Use Client Certificate for specific services`. This must match the value provided for the constant `ClientCertificateIdentifier`.
 3. Add the required values to the constants created for DBSource, DBUsername, DBPassword, and ClientCertificateIdentifier.
 
-## Configure the External Database Connector to any other Database of your choice {#byod}
+## Configure for Any Database {#byod}
 
 ### Prerequisites 
 
