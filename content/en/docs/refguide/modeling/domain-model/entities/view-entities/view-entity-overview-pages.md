@@ -44,7 +44,7 @@ Create a view entity that combines only the relevant attributes of the entities 
     ```
 {{% alert color="info" %}}
 
-This query uses OQL to take the four attributes of each product and combines them with the associated supplier and category. If there is no supplier or category, the product will not be included. For more information, see [OQL Expressions]([/refguide/oql-expressions).
+This query uses OQL to take the four attributes of each product and combines them with the associated supplier and category. If there is no supplier or category, the product will not be included. For more information, see [OQL Expressions](/refguide/oql-expressions/).
 
 {{% /alert %}}
 

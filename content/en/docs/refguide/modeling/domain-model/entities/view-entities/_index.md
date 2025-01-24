@@ -53,4 +53,4 @@ You can add any local information about the view entity in this tab. This is als
 
 ## Using a View Entity
 
-After creating a view entity in the domain model, it can be used in microflows and pages like any other entity. For more information, see [Use View Entities](/refguide/use-view-entities).
+After creating a view entity in the domain model, it can be used in microflows and pages like any other entity. For more information, see [Use View Entities](/refguide/use-view-entities/).

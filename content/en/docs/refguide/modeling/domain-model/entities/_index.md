@@ -47,7 +47,7 @@ The structure of persistable, non-persistable, and view entities are defined wit
 
 The structure of an external entity is defined in the source system where the underlying data (objects) is stored. For more information on external entities and how to add them to your app, see [External Entities](/refguide/external-entities/).
 
-View entities are defined by their underlying OQL queries, which run on one or more persistable entities or other view entities. For more information, see [View Entities](/refguide/view-entities).
+View entities are defined by their underlying OQL queries, which run on one or more persistable entities or other view entities. For more information, see [View Entities](/refguide/view-entities/).
 
 ## Properties {#properties}
 
