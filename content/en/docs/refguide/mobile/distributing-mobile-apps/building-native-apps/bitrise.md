@@ -77,6 +77,14 @@ The default workflow (**deploy**) needs to be extended to work for Mendix native
 
 Any additional workflows that may have been created can be removed. Select the workflow from the dropdown and click **Properties** > **Delete workflow**.
 
+{{% alert color="info" %}}
+Building native mobile apps for Mendix 9.24 require Node v16, which is no longer included by default in Bitrise. Follow these steps to install it:
+1. Add a new step before the step "Run npm command".
+1. Choose **Node Version Manager (NVM)** from the list of steps.
+1. Set the **Node Version** property to 16 (leave the NVM version blank)
+1. Save changes.
+{{% /alert %}}
+
 ### Add Missing npm Command
 
 Add a missing npm command by doing the following:
