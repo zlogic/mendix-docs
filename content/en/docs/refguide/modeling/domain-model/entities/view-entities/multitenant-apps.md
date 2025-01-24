@@ -34,7 +34,7 @@ Create a view entity that gets the account and tenant information from the curre
     WHERE a.ID = '[%CurrentUser%]'
     ```
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/multitenant-apps/current-user-ve.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/multitenant-apps/current-user-ve.png" width="200" >}}
 
     This view entity will always contain one row that contains the information of the current user. 
 
