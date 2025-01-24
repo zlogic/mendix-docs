@@ -255,7 +255,7 @@ The Browse Database Schema tab might not display a comprehensive overview of all
     * getFunctionMetaDataQuery
 
 3. Refer to an Example for Guidance:
-* Use the provided example, MxDb2SchemaInfoProvider, for a better understanding of how to customize the schema information.
+* Use the provided example, MxDb2SchemaInfoProvider for IBM Db2, for a better understanding of how to customize the schema information.
 
 ### Running Queries and Handling Query Responses
 
