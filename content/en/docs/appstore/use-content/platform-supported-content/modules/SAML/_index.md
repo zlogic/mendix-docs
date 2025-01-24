@@ -461,8 +461,9 @@ You can set up custom user provisioning by selecting the **IdP Configuration** t
     * **Allow the module to create users** – This enables the module to create users based on user provisioning and attribute mapping configurations. When disabled, it will still update existing users. However, for new users, it will display an exception message stating that the login action was successful but no user has been configured.
         * By default, the value is set to *Yes*.
     * **User role** – the role which will be assigned to newly created users.
-    * **User Type** – this allows you to configure end-users of your application as internal or external.
-        * By default, the value is set to *Internal*.
+    * **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in.
+        * By default, the value is set to *Internal*. 
+
 2. Under **Attribute Mapping**, for each piece of information you want to add to your custom user entity, select an **IdP Attribute** (claim) and specify the **Configured Entity Attribute** where you want to store the information.
 
     Note the following:
@@ -471,7 +472,7 @@ You can set up custom user provisioning by selecting the **IdP Configuration** t
     * You can map multiple **IdP Attribute** (claims) to a **Configured Entity Attribute** but you cannot map a new **IdP Attribute** to a **Configured Entity Attribute** if it is already mapped.
     * The IdP Attribute is one of the fixed claims supported by the [OIDC SSO](/appstore/modules/oidc/) module.
     * **IdP Attributes**(Claims) cannot be of type enum, autonumber, or an association.
-
+    
 3. In the **Custom UserProvisioning**, select a microflow you want to run for [Custom User Provisioning Using a Microflow](#custom-provisioning-mf). The custom microflow name must begin with the string `UC_CustomProvisioning`. If you have added a new microflow, you will need to refresh the module containing your microflow as described in [Installing Mx Model Reflection](/appstore/modules/model-reflection/). This selection can be blank if you do not want to add custom logic.
 4. Click **Save** to save the configuration.
 
