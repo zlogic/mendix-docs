@@ -536,8 +536,8 @@ You can set up custom user provisioning by setting the following constants. You 
 | PrincipalEntityAttribute | the attribute holding the unique identifier of an authenticated user | | `Name` |
 | PrincipalIdPAttribute | the IdP claim which is the unique identifier of an authenticated user | | `sub` |
 | AllowcreateUsers | allow to create users in the application | *optional* | `True` |
-| Userrole | the role which will be assigned to newly created users | *optional* - Default Userrole is assigned only at user creation <br> - User updates do not change the default role <br> - No bulk update for existing users when the default userrole changes | `User` |
-| UserType | assign usertype to the created users | *optional* | `Internal` |
+| Userrole | the role which will be assigned to newly created users | *optional* - The Userrole is assigned only at user creation and remains unchanged even when the user's details are updated <br> - No bulk update for existing users when the default userrole changes | `User` |
+| UserType | assign user type to the created users | *optional* | `Internal` |
 | CustomUserProvisioning | a custom microflow to use for user provisioning | *optional* – in the form `modulename.microflowname` – the microflow name must begin with the string `UC_CustomProvisioning` | `Mymodule.UC_CustomProvisioning` |
 
 #### Custom User Provisioning at Runtime{#custom-provisioning-rt}
@@ -557,7 +557,7 @@ You can set up custom user provisioning once your app is running using the `OIDC
     * **The attribute where the user principal is stored** – unique identifier associated with an authenticated user.
     * **Allow the module to create users** – this enables the module to create users based on user provisioning and attribute mapping configurations. When disabled, it will still update existing users. However, for new users, it will display an exception message stating that the login action was successful but no user has been configured.
         * By default, the value is set to ***Yes***.
-    * **User role** – the role which will be assigned to newly created users. You can select one default user role. If you need additional user roles, use Access Token Parsing microflow to assign multiple roles.
+    * **Default Userrole** – the role assigned to newly created users and remains unchanged even when the user's details are updated. You can select one default user role. To assign additional roles, use the Access Token Parsing Microflow. If the Access Token Processing Microflow is selected, OIDC verifies the updated default role configuration and applies any changes to the user's role. Note that, bulk updates for existing users are not automated when the default role configuration is changed.
     * **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in.
         * By default, the value is set to ***Internal***.
 
