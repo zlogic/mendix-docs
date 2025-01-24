@@ -1,7 +1,7 @@
 ---
 title: "Data Versioning with View Entities"
 url: /refguide/view-entity-data-versioning/
-
+weight: 80
 ---
 
 ## Introduction

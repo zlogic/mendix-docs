@@ -1,7 +1,7 @@
 ---
 title: "Create a Pivot Table with View Entities"
 url: /refguide/view-entity-pivot-table/
-
+weight: 70
 ---
 
 ## Introduction
