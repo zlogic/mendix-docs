@@ -18,7 +18,7 @@ All companies use centralized project roles. This means:
 
 * Scrum Masters and team members will only be able to view the project roles established by Mendix Admins and select the appropriate one. They will not have the ability to modify the permissions of project roles. If a custom permission set is needed, they must reach out to a Mendix Admin for assistance in creating it.
 
-* Some roles will appear with the tag **Inherited from project** on the **Roles & Permissions** page in Control Center. Mendix Admin can review these custom project roles, keep the useful ones, and merge any duplicates.
+* Some roles will appear with the tag **Inherited from project** on the **Roles & Permissions** page in Control Center. A Mendix Admin can review these custom project roles, keep the useful ones, and merge any duplicates.
 
   {{% alert color="info" %}}
   When members of your company  [invite someone to an project](/developerportal/general/team/#inviting), they cannot select any role with the tag **Inherited from project** shown here, as these roles will not be shown to them.
@@ -26,7 +26,7 @@ All companies use centralized project roles. This means:
 
 ### Project Roles Overview
 
-On the **Roles & Permissions** page, you have an overview of all centralized project roles. Per role you see a brief summary of the permissions that the role has as well as in how many projects and by how many team members they are used.
+On the **Roles & Permissions** page, you have an overview of all centralized project roles. You will see a brief summary for each role of the permissions that the role has as well as in how many projects and by how many team members they are used.
 
 Clicking the number of projects that use the role opens up a pop-up window with a list of projects where the role is used.
 
@@ -34,7 +34,7 @@ From the overview page you can **Create**, **Edit**, or **Delete** a role.
 
 ### Creating a Role
 
-To create a role, do as follows:
+To create a role, do the following:
 
 1. At the upper-right corner of the page, click **Create Project Role**. A wizard opens to guide you through the steps to set up the new role.
 
@@ -55,7 +55,7 @@ To create a role, do as follows:
 
    {{< figure src="/attachments/control-center/people/roles-permissions/edit-project-role-step-3.png" alt="Project Role Step 3" >}}
 
-   Set the environment permissions for non-productive environments, such as the test or acceptance environments, as instructed below. These permissions are applied to the assigned team members on the [Permission](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
+   Set the environment permissions for non-productive environments, such as the test or acceptance environments, as described below. These permissions are applied to the assigned team members on the [Permissions](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
 
    1. Set the correct access rights.
    2. For **Permission Management**, you can select **Fixed** or **Custom**. 
@@ -66,7 +66,7 @@ To create a role, do as follows:
 
     {{< figure src="/attachments/control-center/people/roles-permissions/edit-project-role-step-4.png" alt="Project Role Step 4" >}}
 
-    Set the environment permissions for productive environments as instructed below. The permissions you set here will be fixed for this role. They cannot be altered later on the [Permission](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
+    Set the environment permissions for production environments as described below. The permissions you set here will be fixed for this role. They cannot be altered later on the [Permissions](/developerportal/deploy/environments/#permissions) page in the Cloud Portal.
 
     1. Set the correct access rights.
     2. For **Permission Management**, you can select **Fixed** or **Custom**. 
@@ -75,11 +75,11 @@ To create a role, do as follows:
         
         * If you select **Custom**, you allow anyone with Manage Permissions rights, for example, the Technical Contact, to set the permissions per environment.
 
-    {{% alert color="warning" %}}Editing and saving the productive environment permissions can only be done after a **multi-factor authentication** has taken place.{{% /alert %}}
+    {{% alert color="warning" %}}Editing and saving the production environment permissions can only be done after a **multi-factor authentication** has taken place.{{% /alert %}}
 
 ### Showing Details
 
-To show the details of a role, click **Show Details**. The **Project Role Details** pop-up window opens with detailed information of the role.
+To show the details of a role, click **Show Details**. The **Project Role Details** pop-up window opens with detailed information about the role.
 
 {{< figure src="/attachments/control-center/people/roles-permissions/project-role-details.png" alt="Project Role Details" >}}
 
@@ -89,7 +89,7 @@ In the **Project Role Details** pop-up window, you can find the role ID that can
 
 ### Editing a Role
 
-To edit a role, do as follows:
+To edit a role, do the following:
 
 1. Click **Edit Role** for the role you want to edit.
 2. Make the changes.
@@ -105,7 +105,7 @@ You cannot edit the Scrum Master role. This ensures that there is always someone
 
 ### Deleting a Role
 
-To delete a role, do as follows:
+To delete a role, do the following:
 
 1. Click **Edit Role** for the role you want to delete.
 2. Review the role.
