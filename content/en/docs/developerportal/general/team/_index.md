@@ -27,12 +27,8 @@ On the **Overview** tab, you can do the following:
 * Click **Remove** to remove a user from the team
 * Click **Invite New Member** to invite a new user to the team (for more information, see the [Inviting Team Members](#inviting) section below)
 
-Navigate to the **Role Settings** tab to view and edit permissions for the team roles as well as to **Add New Role**:
-
-{{< figure src="/attachments/developerportal/general/team/role-settings.png"   width="400"  class="no-border" >}}
-
 Navigate to the **Pending Invites** tab for an overview of all sent and unaccepted invitations. You can retract pending invitations from there.
-
+L
 ## Inviting Team Members {#inviting}
 
 Anyone with invitation permissions in their app role can invite new team members. When you invite a new team member, you can select a role with the same or less permissions as your own. The notable exception is when [Mendix Administrators](/control-center/company-settings/#mendix-admins) invite new team members. They can appoint any role to any team member.
