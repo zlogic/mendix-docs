@@ -219,50 +219,40 @@ To connect to PostgreSQL when the application is running in Mendix Cloud, follow
 
 ### Prerequisites 
 
-* Ensure you have the appropriate JDBC (Java Database Connectivity) JAR file for connecting to your specific database.
-* Gather the external database connection details, including login credentials and the JDBC connection string.
+* Ensure you have the appropriate Java Database Connectivity (JDBC) JAR file for the specific database.
+* Gather the external connection details, including login credentials and the JDBC connection string.
 
-### Connect to Database
+### Connect to the Database
 
-1. Add the JDBC JAR File:
-* Include the required JDBC JAR file in the module settings of your working module.
-* Alternatively, place the downloaded JAR file in the userlib folder of your application.
+1. Open the module settings and add the JDBC JAR File.
+   
+   * Alternatively, place the downloaded JAR file in the userlib folder of your application.
 
+2. Run the app with the latest version of the External Database Connector. 
 
-2. Run the App with the Latest External Database Connector:
-* Ensure the application is configured to include the latest version of the external database connector during execution.
+3. Create a New External Database Connection.
+4. Open the connection settings and under Database Type, select **Other**.
+5. Enter the login credentials and JDBC connection string.
+6. Click **Test Connection** to ensure the database connection is successful.
+7. Click **Save** to save the connection details. 
 
-3. Create a New External Database Connection:
-* Open the connection settings and select "Other" as the database type.
-* Enter the login credentials and JDBC connection string.
+### Configure Database Schema Information 
 
-4. Validate the Connection:
-* Click Test Connection to ensure the database connection is successful.
+The Browse Database Schema tab might not display a comprehensive overview of all available schemas for certain databases. You can customize this behavior using the Configure option. To do so, follow these steps:
 
-5. Save the Configuration:
-* Save the connection details using the "Save" option.
-
-### Configure Database Schema information 
-
-The Browse Database Schema tab might not display a comprehensive overview of all available schemas for certain databases. You can customize this behavior using the Configure option. Follow these steps:
-
-
-1. Deploy the App to Eclipse:
-* Navigate to App -> Deploy to Eclipse (F6).
-
-2. Extend the Schema Provider Class:
-* Extend the class MxQueryBasedSchemaInfoProvider.
-* Override the following methods based on your requirements:
+1. Open the **App** menu and select **Deploy for Eclipse**.
+2. Extend the class MxQueryBasedSchemaInfoProvider.
+3. Override the following methods based on your requirements:
     * getTableMetaDataQuery
     * getViewMetaDataQuery
     * getProcedureMetaDataQuery
     * getFunctionMetaDataQuery
-
-3. Refer to an Example for Guidance:
-* Use the provided example, MxDb2SchemaInfoProvider for IBM Db2, for a better understanding of how to customize the schema information.
+4. Use the provided example, MxDb2SchemaInfoProvider for IBM Db2, for a better understanding of how to customize the schema information.
 
 ### Running Queries and Handling Query Responses
 
-* Execute queries as you would with supported databases, and retrieve responses in the associated entity.
-* Refer to the documentation of your specific JDBC library for detailed syntax and execution options.
-Note: By default, autocommit is set to false for design-time queries.
+Execute queries as you would with supported databases, and retrieve responses in the associated entity. Refer to the documentation of your specific JDBC library for detailed syntax and execution options.
+
+{{% alert color="info" %}}
+By default, autocommit is set to false for design time queries.
+{{% /alert %}}
