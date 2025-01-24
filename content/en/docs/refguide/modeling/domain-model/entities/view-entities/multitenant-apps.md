@@ -1,5 +1,5 @@
 ---
-title: "Mulitenant Apps"
+title: "Multitenant Applications"
 url: /refguide/view-entity-multitenant-apps/
 weight: 110
 ---

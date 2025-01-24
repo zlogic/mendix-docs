@@ -28,7 +28,7 @@ View entities can execute aggregation and calculations required for charts, dash
 
 ### API Stability 
 
-To decouple data usage from data storage, especially for APIs, view entities allow you to expose data while keeping your domain model flexible. This ensures API stability for external applications and allows you to change your domain model as needed without affecting the API. For more information, see [Decoupling APIs from the Domain Model](/refguide/decoupling-apis/).
+To decouple data usage from data storage, especially for APIs, view entities allow you to expose data while keeping your domain model flexible. This ensures API stability for external applications and allows you to change your domain model as needed without affecting the API. For more information, see [Decoupling APIs](/refguide/decoupling-apis/).
 
 ## Creating Maintainable View Entities Using Composability
 
@@ -58,11 +58,11 @@ Alternatively, you can store the parameter value in the database, then use that 
 
 This is done by joining an entity that has all the necessary translations and filtering it by the language of the current user. Coalesce is used to return the default language in case there is no translation is available.
 
-This approach can also be useful for multi-tenant applications. If you have a multi-tenant system where every user has a tenant ID, you can ensure through view entities that any data that is tenant-specific will only return data for the tenant of the current user. For more information, see [Multi-Tenant Applications with View Entities](/refguide/view-entity-multitenant-apps/).
+This approach can also be useful for multi-tenant applications. If you have a multi-tenant system where every user has a tenant ID, you can ensure through view entities that any data that is tenant-specific will only return data for the tenant of the current user. For more information, see [Multitenant Applications](/refguide/view-entity-multitenant-apps/).
 
 ## Data Security 
 
-Use the `WHERE` [clause]( /refguide/oql-expressions/) of a view entity to ensure only data that should be available to the user is returned. This is an alternative to the access rules you can have on both persistent entities and view entities.
+Use the [`WHERE` clause]( /refguide/oql-expressions/) of a view entity to ensure only data that should be available to the user is returned. This is an alternative to the access rules you can have on both persistent entities and view entities.
 
 Persistent entity access rules are not applied when using view entities. Instead, you must specify the access rules. You can define what users have access to while still allowing access to aggregated data. For example, you may want to know how many employees are part of each department of a company. However, you should not be able to see the detailed information of each employee. View entities allow you to give a user access to specific employee data without revealing sensitive information. 
 
@@ -114,12 +114,12 @@ For more information about how to enable view entities in your app, see [View En
 For specific use cases, see the following:
 
 * [Creating Overview Pages](/refguide/view-entity-overview-pages/)
-* [Decoupling APIs from the Domain Model](/refguide/decoupling-apis/)
+* [Decoupling APIsl](/refguide/decoupling-apis/)
 * [Charting with View Entities](/refguide/charting-with-view-entities/)
-* [Multi-lingual Apps and Translations](/refguide/multilingual-apps/)
+* [Multilingual Apps and Translations](/refguide/multilingual-apps/)
 * [View Archived Data](/refguide/view-archived-data/)
-* [Creating Pivot Table with View Entities](/refguide/view-entity-pivot-table/)
+* [Create a Pivot Table with View Entities](/refguide/view-entity-pivot-table/)
 * [Data Versioning with View Entities](/refguide/view-entity-data-versioning/)
 * [Exporting Data with View Entities](/refguide/view-entity-expport-data/)
 * [Abstracting Data of Add-On Modules](/refguide/abstracting-view-entity-data/)
-* [Multi-Tenant Applications with View Entities](/refguide/view-entity-multitenant-apps/)
+* [Multitenant Applications](/refguide/view-entity-multitenant-apps/)

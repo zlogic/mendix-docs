@@ -8,6 +8,8 @@ weight: 50
 
 Use view entities to create apps that provide translations for your users.
 
+## Use Case
+
 For this purpose of this use case, the following domain model is used:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/multilingual-apps/domain-model.png" >}}

@@ -5,7 +5,7 @@ weight: 25
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
-{{% alert color="info" %}} This feature is currently in beta. For more information, see Beta and Experimental Releases. {{% /alert %}}
+{{% alert color="info" %}} This feature is currently in beta. For more information, see [Beta and Experimental Releases](/releasenotes/beta-features/). {{% /alert %}}
 
 ## Introduction
 
