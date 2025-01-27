@@ -22,11 +22,11 @@ You have a module that manages the inventory and stock of your shop products. Yo
 2. Open the module **Settings** and click the **Export** tab.
 3. Select **Add-on module** as the module type, then click **OK**. 
 
-  {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/abstracting-data/module-settings.png" width="500" >}}
+   {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/abstracting-data/module-settings.png" width="500" >}}
 
   With the add-on enabled, you should see an additional configurable property in the documents and other elements of your module called **Export level**. This is set to **Hidden** by default, which means users of your add-on cannot access them. 
 
-  {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/abstracting-data/export-level.png" width="500" >}}
+   {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/abstracting-data/export-level.png" width="500" >}}
 
 ## Create a View Entity
 
@@ -35,17 +35,17 @@ You want to make an interface that shows products where you can filter the resul
 1. Open your domain model and create a new view entity named *ProductCategoryVE*.
 2. Add the following query to the OQL editor:
 
-  ```sql
-  SELECT
-    p.ProductId as ProductId
-    , p.ProductName as ProductName
-    , p.QuantityPerUnit as QuantityPerUnit
-    , p.Discontinued as Discontinued
-    , c.CategoryName as Category
-    , c.CategoryId as CategoryId
-  FROM ShopAddOn.Product as p
-    JOIN p/ShopAddOn.Product_Category/ShopAddOn.Category as c
-  ```
+    ```sql
+    SELECT
+      p.ProductId as ProductId
+      , p.ProductName as ProductName
+      , p.QuantityPerUnit as QuantityPerUnit
+      , p.Discontinued as Discontinued
+      , c.CategoryName as Category
+      , c.CategoryId as CategoryId
+    FROM ShopAddOn.Product as p
+      JOIN p/ShopAddOn.Product_Category/ShopAddOn.Category as c
+    ```
 
 3. Double-click **ProductCategoryVE** and set the export level to **Usable**. 
 

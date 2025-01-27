@@ -41,24 +41,24 @@ Create a view entity that gets the account and tenant information from the curre
 3. Create another view entity named *ProjectVE*.
 4. Add the following query to the OQL editor:
 
-  ```sql
-  SELECT
-      p.ProjectID as ProjectID,
-      t.TenantID as TenantID,
-      p.Name as Name,
-      p.Description as Description,
-      p.StartDate as StartDate,
-      p.EndDate as EndDate,
-      p.Status as Status,
-      p.CreatedAt as CreatedAt,
-      p.UpdatedAt as UpdatedAt
-  FROM MultiTenantApp.Project as p
-  ```
+    ```sql
+    SELECT
+        p.ProjectID as ProjectID,
+        t.TenantID as TenantID,
+        p.Name as Name,
+        p.Description as Description,
+        p.StartDate as StartDate,
+        p.EndDate as EndDate,
+        p.Status as Status,
+        p.CreatedAt as CreatedAt,
+        p.UpdatedAt as UpdatedAt
+    FROM MultiTenantApp.Project as p
+    ```
 
 5. Generate an overview page by right-clicking this view entity > **Generate overview pages**.
 6. Run your app locally. The view entity shows all projects shown in the database. 
 
-    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/multitenant-apps/project-ve-grid.png" >}}
+     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/multitenant-apps/project-ve-grid.png" >}}
 
 ### Filter the View Entity
 
@@ -87,4 +87,4 @@ With these new view entities, you want to only see the projects of a specific te
 3. Generate an overview page by right-clicking this view entity > **Generate overview pages**.
 4. Run your app locally. *ProjectVE* only shows projects of the current user's tenant.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/multitenant-apps/project-ve-grid-2.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/multitenant-apps/project-ve-grid-2.png" >}}

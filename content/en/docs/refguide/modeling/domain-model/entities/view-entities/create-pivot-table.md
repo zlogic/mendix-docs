@@ -36,20 +36,20 @@ Create a view entity that shows each order together with its total value, calcul
 1. Open your domain model and add a new view entity. Name this entity *OrderVE*.
 2. Add the following query to the OQL editor:
 
-  ```sql
-  SELECT
-    o.OrderId as OrderId
-    , CAST(DATEPART(QUARTER, o.OrderDate) as INTEGER) as OrderQuarter
-    , CAST(DATEPART(YEAR, o.OrderDate) as INTEGER) as OrderYear
-    , o.RequiredDate as RequiredDate
-    , o.ShippedDate as ShippedDate
-    , SUM(ol.UnitPrice * ol.Quantity * (1 - ol.Discount)) as TotalOrderValue
-    , SUM(ol.Quantity) as TotalProductCount
-    , COUNT(*) as UniqueProductCount
-  FROM Shop."Order" as o
-    JOIN o/Shop.OrderLine_Order/Shop.OrderLine as ol
-  GROUP BY o.OrderId, o.OrderDate, o.RequiredDate, o.ShippedDate
-  ```
+    ```sql
+    SELECT
+      o.OrderId as OrderId
+      , CAST(DATEPART(QUARTER, o.OrderDate) as INTEGER) as OrderQuarter
+      , CAST(DATEPART(YEAR, o.OrderDate) as INTEGER) as OrderYear
+      , o.RequiredDate as RequiredDate
+      , o.ShippedDate as ShippedDate
+      , SUM(ol.UnitPrice * ol.Quantity * (1 - ol.Discount)) as TotalOrderValue
+      , SUM(ol.Quantity) as TotalProductCount
+      , COUNT(*) as UniqueProductCount
+    FROM Shop."Order" as o
+      JOIN o/Shop.OrderLine_Order/Shop.OrderLine as ol
+    GROUP BY o.OrderId, o.OrderDate, o.RequiredDate, o.ShippedDate
+    ```
 
 {{% alert color="info" %}}
 
@@ -60,20 +60,20 @@ With view entities, you can take the relevant component of `DateTime` as a colum
 3. Add another view entity to the domain model and name it *OrderQuarterlyPivotVE*. This entity will show a table, similar to the format above.
 4. Add the following query to the OQL editor:
 
-  ```sql
-  SELECT
-      o.OrderYear as OrderYear,
-      SUM(CASE WHEN o.OrderQuarter = 1 THEN o.TotalOrderValue ELSE 0 END) as TotalSales_Q1,
-      SUM(CASE WHEN o.OrderQuarter = 2 THEN o.TotalOrderValue ELSE 0 END) as TotalSales_Q2,
-      SUM(CASE WHEN o.OrderQuarter = 3 THEN o.TotalOrderValue ELSE 0 END) as TotalSales_Q3,
-      SUM(CASE WHEN o.OrderQuarter = 4 THEN o.TotalOrderValue ELSE 0 END) as TotalSales_Q4
-  FROM Shop.OrderVE o
-  GROUP BY o.OrderYear
-```
+    ```sql
+    SELECT
+        o.OrderYear as OrderYear,
+        SUM(CASE WHEN o.OrderQuarter = 1 THEN o.TotalOrderValue ELSE 0 END) as TotalSales_Q1,
+        SUM(CASE WHEN o.OrderQuarter = 2 THEN o.TotalOrderValue ELSE 0 END) as TotalSales_Q2,
+        SUM(CASE WHEN o.OrderQuarter = 3 THEN o.TotalOrderValue ELSE 0 END) as TotalSales_Q3,
+        SUM(CASE WHEN o.OrderQuarter = 4 THEN o.TotalOrderValue ELSE 0 END) as TotalSales_Q4
+    FROM Shop.OrderVE o
+    GROUP BY o.OrderYear
+    ```
 
 5. Click **Run Query** to preview the data.
 
-  {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/pivot-table-view-entities/orderpivotve.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/pivot-table-view-entities/orderpivotve.png" >}}
 
-6. Click **OK** save. 
+6. Click **OK** to save. 
 7. Create a page that shows the pivot table by right-clicking the new entity > **Generate overview pages**.
