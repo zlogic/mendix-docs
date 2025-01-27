@@ -5,5 +5,4 @@ parent: "metamodel-10"
 
 ## 10.19.0
 
-
-This page has been generated automatically.
+There are no changes introduced in this version of the metamodel.
