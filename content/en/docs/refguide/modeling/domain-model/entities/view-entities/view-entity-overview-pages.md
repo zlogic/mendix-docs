@@ -97,7 +97,7 @@ Suppose you want to get the total value of each order line, which is given by th
 4. Add the new overview page to the navigation.
 5. Run your app locally, then click **View App**. Use this view entity in a data grid to show the total value.
 
-{{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/total-value.png" >}}
+    {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/create-overview-pages/total-value.png" >}}
 
 ### Join OrderLine and Order Entities
 
