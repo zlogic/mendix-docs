@@ -45,7 +45,7 @@ The `SELECT` clause specifies which entity attributes or other specified data mu
 The `SELECT` clause consists of the term `SELECT` and one or more column definitions. Each column definition must be separated by a comma. Each column definition defines a column or a set of columns in the result. Each single value column definition can have an alias, which will be the name of the column in the result.
 
 {{% alert color="info" %}}
-We use terms "attributes" and "columns" for data in different contexts. Attributes are the [entity attributes](/refguide/attributes/). If data belongs to objects of an entity, we refer to that data as attributes of those objects. While columns contain the same data, they are not tied to a particular entity. In the general case, OQL does not result in an entity, and so results on an OQL query are columns. When it comes to view entities, OQL columns are mapped to attributes of a view entity, and then we can speak of attributes again.
+We use terms "attributes" and "columns" for data in different contexts. Attributes are the [entity attributes](/refguide/attributes/). If data belongs to objects of an entity, we refer to that data as attributes of those objects. While columns contain the same data, they are not tied to a particular entity. In the general case, OQL does not result in an entity, and so results on an OQL query are columns. When it comes to [view entities](/refguide/view-entities/), OQL columns are mapped to attributes of a view entity, and then we can speak of attributes again.
 
 Similarly, we use term "objects" when referring to objects of an entity, but for results of an OQL query, we use "rows" because the results are not necessarily mapped to objects of a particular entity.
 {{% /alert %}}
@@ -81,7 +81,6 @@ FROM Sales.Customer
 
 An alias is an alternative name which replaces the column name in the result. For example, when the `name` attribute is retrieved, the result column is "Name". With an alias, you can call the result column something else, like "Customer_Name". An alias cannot contain spaces.
 
-{{% todo %}}Add link to view entity documentation{{% /todo %}}
 {{% alert color="info" %}}
 Aliases are mandatory when defining a view entity.
 {{% /alert %}}

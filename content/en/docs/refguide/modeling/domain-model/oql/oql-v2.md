@@ -212,9 +212,9 @@ FROM (
 
 ### `ORDER BY` in View Entities
 
-For view entities, you must now have a `LIMIT` and `OFFSET` in all `ORDER BY` clauses, even for the top level query.
+For [view entities](/refguide/view-entities/), you must now have a `LIMIT` and `OFFSET` in all `ORDER BY` clauses, even for the top level query.
 
-This is because view entity results are not accessed directly. In the Runtime, a View entity is wrapped inside another `SELECT` query as a subquery, which allows further filtering and ordering. This makes it similar to the Subquery case, above.
+This is because view entity results are not accessed directly. In the Runtime, a view entity is wrapped inside another `SELECT` query as a subquery, which allows further filtering and ordering. This makes it similar to the Subquery case, above.
 
 ### Result Types from Arithmetic Functions
 
