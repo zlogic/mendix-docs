@@ -8,27 +8,27 @@ description: "Describes the Prompt Management functionality that assists develop
 
 ## Introduction {#introduction}
 
-Prompt management allows users to develop, test and optimize their GenAI use cases by finding the right prompts to interact with large language models. 
-Using the Conversational UI module (available as part of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931)), you can use the prompt management interface in your app to define prompts at runtime and manage multiple versions over the course of time. It also supports defining variables that serve as placeholders for data from the app session context, these are replaced by actual values when the end user interacts with the app. The module contains the needed data model, pages, snippets, to get started including the prompt management interface to your app.
+Prompt management allows users to develop, test and optimize their GenAI use cases by creating effective prompts to interact with large language models. 
+Using the Conversational UI module (available as part of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931)), you can use the prompt management interface in your app to define prompts at runtime and manage multiple versions over the course of time. It also supports defining variables that serve as placeholders for data from the app session context, these are replaced by actual values when the end user interacts with the app. The module contains the needed data model, pages, snippets, to include a prompt management interface to your app and get started.
 
 ### Typical Use Cases {#use-cases}
 
-Typical use cases for Prompt management include the following:
+Typical use cases for prompt management include the following:
 
 * The app includes one or more interactions with Large Language Models (LLM). 
-* The prompts need to be updated without changing the code of the LLM interaction. 
-* Rapid iterations on prompts, models and variable placeholders in a playground set-up, separately from app logic.
+* The prompts for the LLM interaction need to be updated or improved without changing the code of the LLM interaction. 
+* The use case benefits from rapid iterations on prompts, models and variable placeholders in a playground set-up, separately from app logic.
 
 ### Features {#features}
 
 The Prompt Management functionality provides the following:
 
 * UI components and a data structure to manage, store and rapidly iterate on prompt versions at runtime: no app deployment needed to change the prompt.
-* Support for single-call and converstaional prompts
-* Include placeholders in prompts: the values be populated in the running app based on a user/context object
-* Logic to define and execute tests, one-by-one or in bulk and compare the results
-* Export/import functionality to transport your prompts accross different environments (local, acceptance, production...)
-* Manage the active version of a prompt that will be used by the logic in the running app 
+* Support for single-call and converstaional prompts.
+* Include placeholders in prompts: the values be populated in the running app based on a user/context object.
+* Logic to define and execute tests, one-by-one or in bulk and compare the results.
+* Export/import functionality to transport your prompts accross different app environments (local, acceptance, production).
+* Manage the active version of a prompt that will be used by the logic in the running app.
 
 
 ### Prerequisites {#prerequisites}
@@ -44,11 +44,11 @@ Follow the instructions in [How to Use Marketplace Content](/appstore/use-conten
 To use the Prompt Management functinoality in your app, you must perform the following tasks in Studio Pro:
 
 1. Add the relevant [module roles](#module-roles) to the applicable user roles in the project security.
-2. Add the [UI to your app](#ui-components) by using the [pages](#pages-and-layouts) and [snippets](#snippets) as a basis.
+2. Add the [UI to your app](#ui-components) by using the pages and snippets as a basis.
 3. Make sure to have a [deployed model](#deployed-models) configured.
 4. Write and test the [first prompt](#write-prompt).
-5. Add the prompt to the logic of the actual use case.
-6. Improve and iterate on prompt versions.
+5. Add the prompt to the [logic](#app-logic) of the actual use case.
+6. Improve and [iterate on prompt versions](#improve-prompt).
 
 ### Configuring the Roles {#module-roles}
 
@@ -70,32 +70,43 @@ For an example, download and run the [GenAI Showcase App](https://marketplace.me
 
 You need at least one GenAI connector that follows the principles of GenAI commons to interact with LLMs from the Prompt Management logic. In order to test a prompt, at least one DeployedModel needs to be configured for your connector of choice. See the documntation of the specific connector for the exact details on how to set up the Deployed Model.
 
-* For [Mendix Cloud GenAI](/appstore/modules/genai/MxGenAI/), included by default, importing the **Key** from the Mendix portal automatically creates a MxCloud Deployed Model. This is part of the [configuration](/appstore/modules/genai/MxGenAI/#configuration).
+* For [Mendix Cloud GenAI](https://marketplace.mendix.com/link/component/227931), included by default, importing the **Key** from the Mendix portal automatically creates a MxCloud Deployed Model. This is part of the [configuration](/appstore/modules/genai/MxGenAI/#configuration).
 * For [Amazon Bedrock](https://marketplace.mendix.com/link/component/215042) the creation of Bedrock Deployed Models is part of the [model synchronization mechanism](/appstore/modules/aws/amazon-bedrock/#sync-models).
 * For [OpenAI](https://marketplace.mendix.com/link/component/220472), the configuration of OpenAI Deployed Models is part of the [configuration](/appstore/modules/genai/openai/#general-configuration)
 
+### Write the prompt {#write-prompt}
 
-### Write the prompt and test {#write-prompt}
-
-Run the app locally. Now a prompt user can now work on the content of the prompt, test it and improve it.
-
-### Write the prompt
-
-When the app is running, a user with the role `PromptAdmin` can set up a prompt and try it out by executing a test with a deployed model. The user can decide to create either a Conversational prompt, to be used in sitations where for example the end user would have a chat interface, or a Single-Call prompt, which is intended for isolated text generation purposes. While writing the system prompt (and for Single-Call prompt also the user prompt) the prompt engineer can include variables by enclosing them in double brackets. The acutal values off these fields are clear during runtime, based on the page context of the end-user. 
+When the app is running, a user with the role `PromptAdmin` can set up a prompt and try it out by executing a test with a deployed model. The user can decide to create either a Conversational prompt, to be used in sitations where for example the end user would have a chat interface, or a Single-Call prompt, which is intended for isolated text generation purposes. While writing the system prompt (and for Single-Call prompt also the user prompt) the prompt engineer can include variables by enclosing them in double brackets. The actual values off these fields are clear during runtime, based on the page context of the end-user. 
 
 #### Test and refine prompt
-To test the behavior of the prompts, a test can be executed. For this the prompt engineer needs to provide test values for all of the variables that are used for the test case. Additionally it is possible to define multiple sets of test values for the variables, which can be run in bulk. Based on the outcome of the test, the prompt engineer decides to add, remove or rephrase certain parts of the prompt.
+To test the behavior of the prompts, a test can be executed. For this the prompt engineer needs to provide test values for all of the variables that are used for the test case. Additionally it is possible to define multiple sets of test values for the variables, which can be run in bulk. Based on the outcome of the tests, the prompt engineer decides to add, remove or rephrase certain parts of the prompt.
 
 #### Define context object
-If the prompt contains variables, you need to have a custom entity in your app with attributes that match with the variable names. An instance of this entity functions as the context object that will contain context data and needs to be created when the end-user triggers the functionality. It contains the actual values that need to be inserted into the prompt at the places where the variables were defined in the prompt. This entity needs to be linked to the prompt in the Prompt Management UI (make sure to run the app locally first so it is visible in the list). The Prompt Version details page will show warnings if the attributes and variables don't match or if no entity was selected at all for the prompt.
+If the prompt contains variables, there needs to be a custom entity in your app with attributes that match with the variable names. An instance of this entity functions as the context object that will contain context data and needs to be created when the end-user triggers the functionality. It contains the actual values that need to be inserted into the prompt at the places where the variables were defined in the prompt. This entity needs to be linked to the prompt in the Prompt Management UI (make sure to run the app locally first so it is visible in the list). The Prompt Version details page will show warnings in the UI if the attributes and variables don't match or if no entity was selected at all for the prompt.
 
-### Use the prompt in app logic
+### Use the prompt in app logic {#app-logic}
 
-After a number of quick iterations a first version of the prompt is typically ready to be integrated into the application logic and tested from the end-user perspective. For this, you can add an operation from this module to your microflow that calls the chat completions operation.
+After a number of quick iterations a first version of the prompt is typically ready to be saved and integrated into the application logic to be tested from the end-user perspective. For this, you can add one of the operations from this module to your microflow that calls the chat completions operation.
 
-For a Single-Call type prompt, use `Get Prompt for Context Object`, which can be found in the **Tooblox** in Studio Pro while editing a microflow, under category **GenAI (Request Building)**.This operation will yield both a system prompt and a user prompt strings, on a combined `PromptToUse` object, the string attributes of which you can pass to the chat completions operation. Retrieve the prompt (e.g. by name) and pass it with your custom context object to the Tooblox Operation. An example for this pattern can be found in the [GenAI Showcase app](https://marketplace.mendix.com/link/component/220475), in the product description generation example.
+#### Create a version
+New prompts will be created in the draft status by default. This means the prompt is still worked on and can be tested using the prompt management module only. When it is ready to be integrated in the actual app (i.e. the logic that end users trigger), the prompt must be saved as a version. This will store a snapshot of the prompt texts. It then needs to be selected as the active version for the prompt: this can be done on the prompt overview, using the menu option behind the three horizontal dots that says *Select prompt in use*.
 
-For a conversational propmt, the chat context can be created based on the prompt in one operation. Use the `New Chat for Prompt` operation from the **Toolbox**, to be found under categroy **Conversational UI**. Retrieve the prompt (e.g. by name) and pass it with your custom context object to the Tooblox Operation. Note that this sets the system prompt on the chat context, and is hence applicable to the full (future) conversation. Similar to other chat context operations, an [action microflow needs to be selected](/appstore/modules/genai/conversational-ui/{#action-microflow}) for this microflow action.
+For a Single-Call type prompt, use `Get Prompt for Context Object`, which can be found in the **Toolbox** in Studio Pro while editing a microflow, under category **GenAI (Request Building)**.This operation will yield both a system prompt and a user prompt strings, on a combined `PromptToUse` object, the string attributes of which you can pass to the chat completions operation. Retrieve the prompt (e.g. by name) and pass it with your custom context object to the Toolbox Operation. An example for this pattern can be found in the [GenAI Showcase app](https://marketplace.mendix.com/link/component/220475), in the product description generation example.
+
+For a conversational prompt, the chat context can be created based on the prompt in one operation. Use the `New Chat for Prompt` operation from the **Toolbox**, to be found under categroy **Conversational UI**. Retrieve the prompt (e.g. by name) and pass it with your custom context object to the Toolbox Operation. Note that this sets the system prompt on the chat context, and is hence applicable to the full (future) conversation. Similar to other chat context operations, an [action microflow needs to be selected](/appstore/modules/genai/conversational-ui/{#action-microflow}) for this microflow action.
+
+With this microflow logic, the prompt version is ready to be tested from the end-user flow (in a local or test environment). There is export and import functionality available to transport prompts to other environemnts if needed.
+
+### Improve the prompt {#improve-prompt}
+When a prompt version is saved, there will be a button to create a new draft version. This new draft can be used as a starting point to do small changes or improvements based on feedback, either from testing or when the functionality is live for a certain amount of time and the necessity to cover additional scenarios arises.
+
+#### Create multiple versions
+
+The new draft version will initially have the exact same text as the latest version. The prompt texts can now be modified to cover for the additional scenarios. When the improved prompt is ready, it can be saved as a new version.
+
+#### Manage in-use version per environment
+
+Each time when new versions of the prompt are created, the decision needs to be made which version is to be used in the end user logic. Mendix recommendeds to evaluate the in-use version as part of the test and release process. When importing the new prompts into other environemnts, the selection of the in-use version is always a manual step and hence a conscious decision.
 
 ## Technical Reference {#technical-reference}
 
