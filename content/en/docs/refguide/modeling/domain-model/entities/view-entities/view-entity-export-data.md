@@ -25,7 +25,7 @@ Create a view entity to join the customer and address tables. To do this, follow
 1. Create a view entity and name it *CustomerVE*. 
 2. Add the following query to the OQL editor:
 
-    ```
+    ```sql
     SELECT
         c.CustomerId as CustomerID,
         c.CompanyName as Company,

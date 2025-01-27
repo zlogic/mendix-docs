@@ -23,7 +23,7 @@ Create a view entity that gets the account and tenant information from the curre
 1. Open your domain model and add a view entity named *CurrentUserVE*.
 2. Add the following query to the OQL editor:
 
-    ```
+    ```sql
     SELECT
       u.UserID as UserID,
       u.FullName as FullName,
@@ -41,7 +41,7 @@ Create a view entity that gets the account and tenant information from the curre
 3. Create another view entity named *ProjectVE*.
 4. Add the following query to the OQL editor:
 
-  ```
+  ```sql
   SELECT
       p.ProjectID as ProjectID,
       t.TenantID as TenantID,
@@ -67,7 +67,7 @@ With these new view entities, you want to only see the projects of a specific te
 1. Double-click **CurrentUserVE**.
 2. In the OQL editor, add three additional lines to the end of the query:
 
-    ```
+    ```sql
     SELECT
         p.ProjectID as ProjectID,
         t.TenantID as TenantID,

@@ -23,7 +23,7 @@ Create a single view entity and expose it as an OData resource. To do this, foll
 1. Open your domain model and create a view entity called *ProductCategoryVE*.
 2. Add the following query to the OQL editor:
 
-  ```
+  ```sql
   SELECT
     p.ProductId as ProductId
     , p.ProductName as ProductName

@@ -14,14 +14,14 @@ For this purpose of this use case, the following domain model is used:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-archived-data/domain-model.png" width="400" >}}
 
-## Create a View Entity 
-
 Create a view entity that contains the columns of the *ActiveProducts* and *DiscontinuedProducts* entities, as well as an additional column, *Archived*. The *Archived* column will indicate the origin table of each product. 
+
+## Create a View Entity 
 
 1. Open your domain model and add a new view entity named *AllProductsVE*. 
 2. Add the following query to your entity:
 
-    ```
+    ```sql
     SELECT
         ap.ProductId as ProductId,
         ap.ProductName as ProductName,

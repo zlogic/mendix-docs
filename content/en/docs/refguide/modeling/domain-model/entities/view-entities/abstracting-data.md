@@ -35,7 +35,7 @@ You want to make an interface that shows products, where you can filter the resu
 1. Open your domain model and create a new view entity named *ProductCategoryVE*.
 2. Add the following query to the OQL editor:
 
-  ```
+  ```sql
   SELECT
     p.ProductId as ProductId
     , p.ProductName as ProductName

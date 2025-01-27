@@ -30,7 +30,7 @@ To view the latest status of an order, follow the steps below:
 1. Open your domain model and add a view entity named *LatestOrderStatusVE*.
 2. Add the following query to the OQL editor:
 
-    ```
+    ```sql
     SELECT
         o.OrderId as OrderId,
         o.RequiredDate as RequiredDate,
@@ -65,7 +65,7 @@ The final result is a list with only the latest update of each order.
 
 Another advantage of data versioning is that you can take a snapshot of the order status on any given date. For example, if you want to know the status of orders on 8/17/1997, add the following line at the end of your existing query:
 
-```
+```sql
 WHERE u.UpdateDate < CAST('1997/08/17' as DATETIME)
 ```
 

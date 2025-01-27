@@ -27,7 +27,7 @@ For the chart, you want the year on the X axis, and the total sales on the Y axi
 1. Open your domain model and create a new view entity named *YearlySalesByCategoryVE*. 
 2. Add the following query to the OQL editor:
 
-```
+```sql
 SELECT
   CAST(DATEPART(YEAR, o.OrderDate) as INTEGER) as OrderYear
   , c.CategoryId as CategoryId

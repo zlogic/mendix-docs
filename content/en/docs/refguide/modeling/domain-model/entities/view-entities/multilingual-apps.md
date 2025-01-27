@@ -31,7 +31,7 @@ Combine the languages in the two entities into a single view. To do this, join t
 1. Open your domain model and add a new view entity named *AllProductTranslationVE*.
 2. Add the following query for your entity:
 
-    ```
+    ```sql
     SELECT
         p.ProductId as ProductId,
         p.ProductName as ProductName,
@@ -56,7 +56,7 @@ Combine the languages in the two entities into a single view. To do this, join t
 3. Filter the translation that corresponds to the user’s current language by creating a new view entity. Name this new entity *TranslatedProductVE*.
 4. Add the query below to your entity:
 
-    ```
+    ```sql
     SELECT
         pt.ProductId as ProductId,
         pt.ProductName as ProductName,
@@ -74,7 +74,7 @@ Combine the languages in the two entities into a single view. To do this, join t
 
 Alternatively, you can also combine the view entities into one with a nested query:
 
-    ```
+    ```sql
     SELECT
       cp.ProductId as ProductId,
       cp.ProductName as ProductName,

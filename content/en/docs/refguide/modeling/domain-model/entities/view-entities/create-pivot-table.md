@@ -36,7 +36,7 @@ Create a view entity that shows each order together with its total value, calcul
 1. Open your domain model and add a new view entity. Name this entity *OrderVE*.
 2. Add the following query to the OQL editor:
 
-  ```
+  ```sql
   SELECT
     o.OrderId as OrderId
     , CAST(DATEPART(QUARTER, o.OrderDate) as INTEGER) as OrderQuarter
@@ -60,7 +60,7 @@ With view entities, you can take the relevant component of `DateTime` as a colum
 3. Add another view entity to the domain model and name it *OrderQuarterlyPivotVE*. This entity will show a table, similar to the format above.
 4. Add the following query to the OQL editor:
 
-  ```
+  ```sql
   SELECT
       o.OrderYear as OrderYear,
       SUM(CASE WHEN o.OrderQuarter = 1 THEN o.TotalOrderValue ELSE 0 END) as TotalSales_Q1,
