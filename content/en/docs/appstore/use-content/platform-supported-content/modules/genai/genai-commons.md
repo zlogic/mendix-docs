@@ -10,7 +10,7 @@ aliases:
 
 ## Introduction {#introduction}
 
-The `GenAI Commons` module found in the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle combines common GenAI patterns found in a variety of generative AI models on the market. Platform-supported GenAI-connectors use the underlying data structures and their operations. This makes it easier to develop vendor-agnostic AI-enhanced apps with Mendix, for example by using one of the connectors or the [Conversational UI](/appstore/modules/genai/conversational-ui/) module.
+The GenAI Commons module, included in the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle, combines common generative AI patterns found across various models on the market. Platform-supported GenAI-connectors use the underlying data structures and their operations. This makes it easier to develop vendor-agnostic AI-enhanced apps with Mendix, for example by using one of the connectors or the [Conversational UI](/appstore/modules/genai/conversational-ui/) module.
 
 If two different connectors both adhere to the GenAI Commons module, they can be easily swapped, which reduces dependency on the model providers. In addition, the initial implementation of AI capabilities using the connectors becomes a drag-and-drop experience, so that developers can quickly get started. The module exposes useful operations which developers can use to build a request to a large language model (LLM) and to handle the response.
 
@@ -30,8 +30,7 @@ You must also download the [Community Commons](/appstore/modules/community-commo
 
 If you are starting from the [Blank GenAI app](https://marketplace.mendix.com/link/component/227934), or the [AI Bot Starter App](https://marketplace.mendix.com/link/component/227926), the GenAI Commons module is already included and does not need to be downloaded manually.
 
-If you start from a blank app, or have an existing project where you want to include a connector for which the GenAI Commons module is required, you must install GenAI Commons manually. First, install the [Community Commons](/appstore/modules/community-commons-function-library/) module, and then follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle that includes the GenAI Commons, ConversationalUI and Mendix Cloud GenAI Connector modules.
-
+If you start from a blank app, or have an existing project where you want to include a connector for which the GenAI Commons module is required, you must install GenAI Commons manually. First, install the [Community Commons](/appstore/modules/community-commons-function-library/) module, and then follow the instructions in [How to Use Marketplace Content](/appstore/use-content/) to install the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) bundle that includes the GenAI Commons, Conversational UI and Mendix Cloud GenAI Connector modules.
 
 ## Implementation {#implementation}
 
@@ -298,13 +297,13 @@ An optional input object for the image generation operations to set optional req
 | `CfgScale` | This can be used to influence the randomness of the generation. Adjusts the balance between adherence to the prompt and creative randomness in the image generation process. |
 | `ImageGenerationType` | This describes the type of image generation. Currently, only text to image is supported. For more information, see [ENUM_ImageGenerationType](#enum-imagegenerationtype). |
 
-### Microflow activities {#microflows}
+### Microflow Activities {#microflows}
 
 Use the exposed microflows and Java Actions to map the required information for GenAI operations from your custom app implementation to the GenAI model and vice versa. 
 
 #### GenAI (Generate) {#genai-generate}
 
-Chat completions, embeddings and image generation operations can be used by passing a [DeployedModel](#deployed-model) object of the desired connector. The action calls the internally assigned microflow of the connector and returns the response. Operations from different connectors can be exchanged very easily without much additional development effort.
+Chat completions, embeddings, and image generation operations can be used by passing a [DeployedModel](#deployed-model) object of the desired connector. The action calls the internally assigned microflow of the connector and returns the response. Operations from different connectors can be exchanged very easily without much additional development effort.
 
 It is recommended that you adapt to the same interface when developing custom chat completions or image generation operations, such as integration with different AI providers. The generic interfaces are described below. For more detailed information, refer to the documentation of the connector that you want to use, since it may expect specializations of the generic GenAI common entities as an input.
 
@@ -400,7 +399,7 @@ The `Generate Image` operation supports the generation of images based on a `Use
 
 #### GenAI (Request Building) {#genai-request-building}
 
-The following microflows help you construct the input request structures for the operations defined in GenAI Commons.
+The following microflows help you construct the input request structures for the operations defined in the GenAI Commons.
 
 ##### Add Message to Request {#chat-add-message-to-request}
 
