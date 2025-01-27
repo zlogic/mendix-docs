@@ -7,7 +7,7 @@ description: "Native Template 12 release notes."
 
 ## 12.0.0 {#1000}
 
-**Release date: January 25, 2025**
+**Release date: January , 2025**
 
 ### Breaking Changes
 
