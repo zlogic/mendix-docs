@@ -25,7 +25,7 @@ Creating offline-first apps enhances user experience by enabling mobile app usag
 
 It requires to be explicitly enabled via the "Edit" menu -> "Preferences" item -> "New features" tab -> "Offline" section.
 
-### Configuring Entities to have Online Sync Mode
+### Configuring Entities to Have Online Sync Mode
 
 Do the following to properly configure entities:
 
