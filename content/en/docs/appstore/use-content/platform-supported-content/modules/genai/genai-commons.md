@@ -480,7 +480,7 @@ Adds a new Function to a [ToolCollection](#toolcollection) that is part of a Req
 
 ###### Input Parameters
 
- Name | Type | Notes | Description |
+| Name | Type | Notes | Description |
 |---|---|---|---|
 | `Request` | [Request](#request) | mandatory | The request to add the function to. |
 | `ToolName` | String | mandatory | The name of the tool to use/call. |
