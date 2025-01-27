@@ -41,7 +41,7 @@ When the feature is enabled, the **Online** synchronization mode is available in
 
 Online entities can specialize from Offline entities and vice versa. However, when there are different synchronization modes in the generalization/specialization hierarchy, then queries on the generalization entity are prohibited. As such, queries will not only select data from the generalization, but also from the specializations.
 
-### Associations between Offline and Online Entities
+### Associations Between Offline and Online Entities
 
 Associations from offline entities to online entities are allowed. 
 
