@@ -7,9 +7,9 @@ description: "Native Template 8 release notes."
 
 ## 8.2.10 {#830}
 
-**Release date: January 13, 2025**
+**Release date: January 15, 2025**
 
-* We have resolved an issue where remote JavaScript debugging failed in a custom-built Mendix Native Developer App, leading to crashes when enabling “Remote JS Debugging.” The problem was caused by Firebase services not being initialized properly during the build process. We have ensured that Firebase dependencies are now only included when explicitly required by the application.
+* We resolved an issue where remote JavaScript debugging failed in a custom-built Mendix Native Developer App, leading to crashes when enabling “Remote JS Debugging.” The problem was caused by Firebase services not being initialized properly during the build process. Firebase dependencies are now only included when explicitly required by the application.
 
 ## 8.2.9 {#829}
 
@@ -17,7 +17,7 @@ description: "Native Template 8 release notes."
 
 ### Fixes
 
-* We have updated the AppCenter's Xcode version to 15.4.
+* We updated the App Center's Xcode version to 15.4.
 
 ## 8.2.8 {#828}
 
@@ -25,7 +25,7 @@ description: "Native Template 8 release notes."
 
 ### Fixes
 
-* We have updated min sdk to 23 on android.
+* We updated min sdk to 23 on android.
 
 ## 8.2.7 {#827}
 
@@ -45,11 +45,11 @@ description: "Native Template 8 release notes."
 
 ## 8.0.17 {#817}
 
-**Release date: January 13, 2025**
+**Release date: January 15, 2025**
 
 ### Fixes
 
-* We have resolved an issue where remote JavaScript debugging failed in a custom-built Mendix Native Developer App, leading to crashes when enabling “Remote JS Debugging.” The problem was caused by Firebase services not being initialized properly during the build process. We have ensured that Firebase dependencies are now only included when explicitly required by the application.
+* We resolved an issue where remote JavaScript debugging failed in a custom-built Mendix Native Developer App, leading to crashes when enabling “Remote JS Debugging.” The problem was caused by Firebase services not being initialized properly during the build process. Firebase dependencies are now only included when explicitly required by the application.
 
 ## 8.0.16 {#816}
 
@@ -57,7 +57,7 @@ description: "Native Template 8 release notes."
 
 ### Fixes
 
-* We have updated the AppCenter's Xcode version to 15.4.
+* We updated the App Center's Xcode version to 15.4.
 
 ## 8.0.15 {#815}
 
