@@ -20,7 +20,7 @@ The descriptions in the default language (in this example, `en_US`) are stored i
 
 ## Create an Overview Page
 
-To use a view entity that translate languages, ensure your app supports multiple languages. To do this, follow these steps:
+To use a view entity that translates languages, ensure your app supports multiple languages. Follow the steps below:
 
 1. Open your **App Settings** and click the **Languages** tab.
 2. Click **Add** and use the drop-down to select the language (or languages) you want to include in your app.
