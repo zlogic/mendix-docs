@@ -71,10 +71,6 @@ Mendix provides dual-platform support for both [OpenAI](https://platform.openai.
 
 With the current version, Mendix supports the Chat Completions API for [text generation](https://platform.openai.com/docs/guides/text-generation), the Image Generations API for [images](https://platform.openai.com/docs/guides/images), and the Embeddings API for [vector embeddings](https://platform.openai.com/docs/guides/embeddings/what-are-embeddings). 
 
-### Limitations {#limitations}
-
-The current scope of the connector focuses on text and image generation use cases, as well as embeddings. We try to release early and often, so keep an eye on this page!
-
 ### Prerequisites {#prerequisites}
 
 To use this connector, you need to either sign up for an [OpenAI account](https://platform.openai.com/) or have access to deployments at [Azure OpenAI](https://oai.azure.com/).
