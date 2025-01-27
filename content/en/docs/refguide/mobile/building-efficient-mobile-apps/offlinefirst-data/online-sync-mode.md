@@ -26,13 +26,19 @@ It requires to be explicitly enabled via the "Edit" menu -> "Preferences" item -
 
 ### Configuring Entities to have Online Sync Mode
 
-Go to the "Navigation" tree item in your App section of the "App Explorer" in Studio Pro and go to the offline navigation profile on which you want to enable the online synchronization mode. This can be the "Native mobile (tablet & phone)", or the "Response web offline" profile. In that tab, click "Configure synchronization". When the feature is enabled, the Synchronization mode "Online" is available in the drop-down next to the entity in the table.
+Do the following to properly configure entities:
+
+1. Go to the [Navigation](/refguide/navigation/) tree item Studio Pro's App Explorer. 
+1. Go to the offline navigation profile on which you want to enable the online synchronization mode. This can be the **Native mobile (tablet & phone)**, or the **Response web offline** profile. 
+1. In that tab, click **Configure synchronization**. 
+
+When the feature is enabled, the **Online** synchronization mode is available in the drop-down next to the entity in the table.
 
 ## Limitations
 
 ### Generalization/Specialization
 
-Online entities can specialize from Offline entities and vice versa. However, when there are different synchronization modes in the generalization/specialization hierarchy, then queries on the generalization entity are prohibited (as such queries will not only select data from the generalization, but also from the specializations).
+Online entities can specialize from Offline entities and vice versa. However, when there are different synchronization modes in the generalization/specialization hierarchy, then queries on the generalization entity are prohibited. As such, queries will not only select data from the generalization, but also from the specializations.
 
 ### Associations between Offline and Online Entities
 
