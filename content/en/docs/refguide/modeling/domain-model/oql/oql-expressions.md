@@ -126,7 +126,7 @@ SELECT COUNT(Stock) AS StockEntryCount FROM Sales.Product
 |:---------------:|
 |        4        |
 
-You can count just unique names with [`DISTINCT`](/refguide/oql-clauses/#Distinct):
+You can count just unique names with [`DISTINCT`](/refguide/oql-clauses/#distinct):
 
 ```sql
 SELECT COUNT(DISTINCT Name) AS DistinctNameEntryCount FROM Sales.Product

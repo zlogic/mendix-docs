@@ -1031,7 +1031,7 @@ This query can no longer take advantage of an index for `LastName` for compariso
 Range parameters are defined only in [datasets](/refguide/data-sets/).
 {{% /alert %}}
 
-`RANGEBEGIN` and `RANGEEND` can only be used with a [parameter](/refguide/oql-expressions-new/#parameters) as input.
+`RANGEBEGIN` and `RANGEEND` can only be used with a [parameter](/refguide/data-sets/#parameters) as input.
 
 #### RANGEBEGIN
 

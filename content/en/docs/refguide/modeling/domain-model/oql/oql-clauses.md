@@ -91,7 +91,7 @@ Using `*` (asterisk) in the SELECT clause specifies that the values of all attri
 
 Specifying `entity_name/*` and `from_alias/*` specify that the values of all attributes of the specified entity or expression of the `FROM` clause should be returned.
 
-`entity_name` can optionally be put in double quotes. If the entity name is a [reserved OQL word](/refguide/oql-clauses/#reserved-oql-words) (like `Order` or `Group`), double quotes are mandatory.
+`entity_name` can optionally be put in double quotes. If the entity name is a [reserved OQL word](/refguide/oql/#reserved-oql-words) (like `Order` or `Group`), double quotes are mandatory.
 
 {{% alert color="info" %}}
 Specifying all attributes will also return attributes which are normally hidden in the Domain Model, such as the `ID` of each object.
