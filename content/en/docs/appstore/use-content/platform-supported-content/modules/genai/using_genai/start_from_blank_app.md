@@ -81,7 +81,7 @@ Since the **ConversationalUI_FullScreenChat** page contains a **Data View** usin
 
 To tailor your application's behavior, you can customize the [System Prompt](/appstore/modules/genai/prompt-engineering/#system-prompt) to make it more specific to your use case:
 
-##### Changing the System Prompt
+##### Changing the System Prompt {changing-system-prompt}
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-blankapp/blank_genai_mf.jpg" >}}
 
@@ -101,7 +101,7 @@ Click **Home** and select the `ACT_FullScreenChat_Open` microflow from your `MyF
 You may encounter an error about allowed roles. To resolve this, go to the page **Properties** and update the **Navigation > Visible for** setting to include the appropriate user roles.
 {{% /alert %}}
 
-### Infrastructure Configuration
+### Infrastructure Configuration {config}
 
 #### Mendix Cloud GenAI Configuration
 
