@@ -97,12 +97,9 @@ All Scrum Masters will receive an email with a link to download the SVN backup. 
 To set up your local SVN repository, follow these steps:
 
 1. **Download and Install VisualSVN Server:** 
-   - Visit the [VisualSVN Server download page](https://www.visualsvn.com/server/download/) and install the software.
+   - Use [VisualSVN Server](https://www.visualsvn.com/server/download/) and import the existing repository from the `.dump` file. This will create a locally hosted SVN repository.
 
-2. **Import the Repository:**
-   - Open VisualSVN Server and import the existing repository from the `.dump` file. This will create a locally hosted SVN repository.
-
-3. **Access the Repository:**
+2. **Access the Repository:**
    - Use [TortoiseSVN](https://tortoisesvn.net/) to check out the repository. This will allow you to inspect the `.mpr` file or any other files within the repository.
 
 {{% alert color="info" %}}
