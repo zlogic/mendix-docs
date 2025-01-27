@@ -21,7 +21,7 @@ The domain model above is for an ordering system of a shop. The entities contain
 * *Customer* - information about the purchasing customer 
 * *OrderUpdate* - information about the status of an order, such as when the order ships or is delivered; a new row is added every time an order status changes
 
-An advantage of separating *OrderUpdate* from *OrderLine* is that it is easier to keep track of the order history. You can create an entity that includes information from both entities, but it works on the assumption that the workflow remains the same with each order (for example, order placed > order processed > order shipped). However, this may make it difficult to see other statuses, such as  which orders have been processed. To avoid this, use a view entity to implement data versioning.
+An advantage of separating *OrderUpdate* from *OrderLine* is that it is easier to keep track of the order history. You can create an entity that includes information from both entities, but it works on the assumption that the workflow remains the same with each order (for example, order placed > order processed > order shipped). However, this may make it difficult to see other statuses, such as which orders have been processed. To avoid this, use a view entity to implement data versioning.
 
 ## Data Versioning
 
@@ -49,13 +49,13 @@ To view the latest status of an order, follow the steps below:
 
 {{% alert color="info" %}}
 
-The above query is a nested query. It retrieves information from the *OrderInfo* table, then joins it with the *OrderUpdate* table. The result is a table with every update of every order. If you are only interested in the latest update of each table, retrieve the latest date an order is updated with `MAX(u.UpdateDate)` and combine it with the previous `JOIN`.
+The above query is a nested query. It retrieves information from the *OrderInfo* table, then joins it with the *OrderUpdate* table. The result is a table with every update of every order. If you are only interested in the latest update of each table, retrieve the latest date an order is updated using `MAX(u.UpdateDate)` and combine it with the previous `JOIN`.
 
 For more information on different OQL clauses, see [OQL Version 2 Features](/refguide/oql-v2/).
 
 {{% /alert %}}
 
-The final result is a list with only the latest update of each order.
+The final result is a list with only the latest update of each order: 
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/entity-properties.png" width="500" >}}
 
@@ -69,7 +69,7 @@ Another advantage of data versioning is that you can take a snapshot of the orde
 WHERE u.UpdateDate < CAST('1997/08/17' as DATETIME)
 ```
 
-This addition retrieves the order status for one specific date.
+This addition retrieves the order status for one specific date:
 
 {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/view-entity-data-versioning/entity-properties-2.png" width="500" >}}
 
