@@ -19,6 +19,12 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 ## 2025
 
+### January 26, 2025
+
+#### New Features
+
+* We have migrated all companies to use [Centralized Roles](/control-center/roles-and-permissions/#centralized-project-roles). 
+
 ### January 5, 2025
 
 #### Deprecations
