@@ -24,13 +24,13 @@ You have a module that manages the inventory and stock of your shop products. Yo
 
   {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/abstracting-data/module-settings.png" width="500" >}}
 
-  With the add-on enabled, you should see an additional configurable property in the documents and other elements of your module called **Export level**. This is set to Hidden by default, which means users of your add-on cannot access them. 
+  With the add-on enabled, you should see an additional configurable property in the documents and other elements of your module called **Export level**. This is set to **Hidden** by default, which means users of your add-on cannot access them. 
 
   {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/abstracting-data/export-level.png" width="500" >}}
 
 ## Create a View Entity
 
-You want to make an interface that shows products, where you can filter the results by category. Do this by creating a view entity what joins the Product and Category entities. Follow the steps below:
+You want to make an interface that shows products where you can filter the results by category. Do this by creating a view entity what joins the Product and Category entities. Follow the steps below:
 
 1. Open your domain model and create a new view entity named *ProductCategoryVE*.
 2. Add the following query to the OQL editor:
@@ -51,4 +51,4 @@ You want to make an interface that shows products, where you can filter the resu
 
     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/abstracting-data/usable.png" width="500" >}}
 
-4. Export the add-on module by right-clicking it > **Export add-on module package**.
+4. Export the add-on module by right-clicking it and selecting **Export add-on module package**.

@@ -39,7 +39,7 @@ Create a view entity to join the customer and address tables. To do this, follow
         LEFT JOIN c/Shop.DeliveryAddress/Shop.Address da
     ```
 
-3. Click **Run Query** to view the data.
+3. Click **Run Query** to view the data. Then, click **OK**.
 
 ### Create a JSON Structure
 
@@ -55,13 +55,13 @@ Create a JSON structure that represents the customer entity. To do this, follow 
 ### Create an Export Mapping
 
 1. Right-click your module and select **Add other** > **Export mapping**. Name this mapping *EM_Customer*.
-2. In the Schema source field, select the JSON structure you created in the previous section.
-3. In the Schema elements field, select **Check all**, then click **OK**. 
+2. In the **Schema source** field, select the JSON structure you created in the previous section.
+3. In the **Schema elements** field, select **Check all**, then click **OK**. 
 
     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/exporting-data/export-mapping-data.png" width="500" >}}
 
 4. In the Integration pane, open the **Connectors** tab.
-5. Drag *CustomerVE* to the export mapping document.
+5. Drag **CustomerVE** to the export mapping document.
 
     {{< figure src="/attachments/refguide/modeling/domain-model/view-entities/exporting-data/connectors-pane.png" width="500" >}}
 
