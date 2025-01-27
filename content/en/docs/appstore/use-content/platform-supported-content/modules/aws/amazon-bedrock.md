@@ -29,7 +29,7 @@ To authenticate with Amazon Web Service (AWS), you must install and configure th
 
 You must have the latest [GenAI Commons](/appstore/modules/genai/commons/) version, available in the [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931) bundle. To make integration of generative AI capabilities as easy as possible, the Amazon Bedrock connector depends on the generic domain model and operations provided by the GenAI Commons module.
 
-To ensure that your app can connect to Bedrock, you must also [install](https://marketplace.mendix.com/link/component/1011) and [configure the Encryption module](/appstore/modules/encryption/#configuration). 
+To ensure that your app can connect to Bedrock, you must also install and configure the [Encryption module](/appstore/modules/encryption/#configuration). 
 
 
 ### Licensing and Cost
