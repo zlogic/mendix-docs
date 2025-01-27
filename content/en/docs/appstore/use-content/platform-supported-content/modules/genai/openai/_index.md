@@ -239,7 +239,7 @@ A generated image needs to be stored in a custom entity that inherits from the `
 
 #### Embeddings Generation {#embeddings-configuration}
 
-OpenAI also provides vector embedding generation capabilities which can be invoked using this connector module. The `OpenAIDeployedModel` entity is compatible with the [knowledge base operations from GenAI Commons](/appstore/modules/genai/commons/#genai-knowledgebase-content).
+OpenAI also provides vector embedding generation capabilities which can be invoked using this connector module. The `OpenAIDeployedModel` entity is compatible with the [knowledge base operations](/appstore/modules/genai/commons/#genai-knowledgebase-content) from the GenAI Commons.
 
 In order to implement embeddings generation into your Mendix application, you can use the Embedding generation microflow actions from GenAI Commons directly. When developing your microflow, you can drag and drop the one you need from the toolbox: find it under the **GenAI (Generate)** category in the **Toolbox** in Mendix Studio Pro:
 
