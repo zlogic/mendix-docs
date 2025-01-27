@@ -195,11 +195,15 @@ This section provides an overview of updates for the OIDC SSO module across diff
 
 | Mendix Version | OIDC SSO Module Version | Important Migration Changes | Additional Information|
 | --- | --- | --- | --- |
-| 10.12.10 and above | 4.0.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | -From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values. <br> -Deprecated Mx Model Reflection module; maintained for compatibility but will be removed in future versions. <br> -Default user roles in UserProvisioning will be assigned along with roles from the access token.|
+| 10.12.10 and above | 4.0.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | From UserCommons 2.0.0, new users without IdP-specified time zone or language will use default App settings; existing users retain their previously set values. |
+| | | | Deprecated Mx Model Reflection module; maintained for compatibility but will be removed in future versions. |
+| | | | Default user roles in UserProvisioning will be assigned along with roles from the access token. |
+| | | | The `OIDC.ACT_Account_RetrieveAccount` microflow, located in the **USE_ME** folder, has been removed as it is no longer required. |
 | 9.24.18 and above | 3.2.0 | Select and refresh the Administration and System modules manually in the `MxModelReflection.MxObjects_Overview` page| Added a new heading for selected scopes: *Your app will request the following scopes at IdP*. |
 | 9.24.2 and above | 3.1.0 | Set `OIDC.ASU_OIDC_Startup` microflow as part of the after-startup microflow | `OIDC.Startup` microflow renamed to `OIDC.ASU_OIDC_Startup` |
 | 9.24.2 and above | 3.0.1 | Use `Snip_Login_Button` snippet instead of `Snip_Login_Automatic` | `Snip_Login_Automatic` snippet removed from the module |
-| 9.24.2 and above | 3.0.0 (migrating to 3.0.0 and above) | -Include [UserCommons](https://marketplace.mendix.com/link/component/223053) module as a dependency <br> -Set `OIDC.Startup` microflow as part of the after-startup microflow | -New UserCommons module <br> -Assign UserProvisioning for existing IdP configurations |
+| 9.24.2 and above | 3.0.0 (migrating to 3.0.0 and above) | Include [UserCommons](https://marketplace.mendix.com/link/component/223053) module as a dependency. | New UserCommons module |
+| | | Set `OIDC.Startup` microflow as part of the after-startup microflow. | Assign UserProvisioning for existing IdP configurations. |
 
 ## Design-time App Configuration{#app-configuration}
 
@@ -216,16 +220,16 @@ Ensure that you have allocated the following user roles to the OIDC module and U
 | User Role | OIDC Module Role |
 | --- | --- |
 | Administrator | OIDC.Administrator, UserCommons.Administrator |
-| Anonymous | OIDC.Anonymous |
+| Anonymous | OIDC.Anonymous (for multiple IdPs only) |
 | User | OIDC.User |
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/user-roles.png" class="no-border" >}}
 
-{{% alert color="info" %}}
-You may have to add the *Anonymous* user role if it does not exist already.
-{{% /alert %}}
+### User Roles for Single IdP
 
-### Allowing Anonymous Users (Optional)
+If a single Identity Provider (IdP) is configured in the OIDC SSO module, end-users can be authenticated via the URL `https://<your-app-url>/oauth/v2/login` This means you do not need to configure the *Anonymous* user role for a single IdP.
+
+### Allowing Anonymous Users for Multiple IdPs (Optional)
 
 The OIDC module supports multiple OIDC/OAuth-compatible IdPs. Optionally, if you allow your end-users to choose from multiple IdPs, or to have the option to log back into the app after they have logged out, you will need to give them access to the app before they have signed in to the app. Therefore, you need to give anonymous users access to your app.
 
@@ -237,14 +241,14 @@ In the **Anonymous** tab of the app security settings, do the following:
 {{< figure src="/attachments/appstore/platform-supported-content/modules/oidc/anonymous-user.png" class="no-border" >}}
 
 {{% alert color="info" %}}
-If a single Identity Provider (IdP) is configured in the OIDC SSO module, end-users can be authenticated via the URL `https://<your-app-url>/oauth/v2/login`.
+For multiple IdPs, you may have to add the *Anonymous* user role if it does not exist already.
 {{% /alert %}}
 
 ### Configuring Navigation{#configure-nav}
 
 The OIDC SSO module works without a specified sign-in page. Therefore, in the navigation section of your app, set **Sign-in page** (in the **Authentication** section) to *none*.
 
-If you are configuring navigation for web/responsive apps and want to allow your end-users to choose from a number of different IdPs, or to have the option to sign in back into the app after they have signed out, set a **Role-based home page** for role **Anonymous** to **OIDC.Login_Web_Button**. When configuring navigation for PWA apps, set the **Role-based home page** for the **Anonymous** role to `OIDC.Login_PWA_Online_Button` for online apps and `Login_PWA_Offline_Button` for offline apps. See [Role-Based Home Pages](/refguide/navigation/#role-based) in *Navigation* for more information.
+If you are configuring navigation for web/responsive apps and want to allow your end-users to choose from a number of different IdPs (multiple IdPs), or to have the option to sign in back into the app after they have signed out, set a **Role-based home page** for role **Anonymous** to **OIDC.Login_Web_Button**. When configuring navigation for PWA apps, set the **Role-based home page** for the **Anonymous** role to `OIDC.Login_PWA_Online_Button` for online apps and `Login_PWA_Offline_Button` for offline apps. See [Role-Based Home Pages](/refguide/navigation/#role-based) in *Navigation* for more information.
 
 In addition, administrators will need to have access to configure OIDC and also manage end-users. You can do this by including the pages `Administration.Account_Overview` and `OIDC.OIDC_Client_Overview` into the app navigation, or a separate administration page.
 
@@ -532,8 +536,8 @@ You can set up custom user provisioning by setting the following constants. You 
 | PrincipalEntityAttribute | the attribute holding the unique identifier of an authenticated user | | `Name` |
 | PrincipalIdPAttribute | the IdP claim which is the unique identifier of an authenticated user | | `sub` |
 | AllowcreateUsers | allow to create users in the application | *optional* | `True` |
-| Userrole | the role which will be assigned to newly created users | *optional* - Default Userrole is assigned only at user creation <br> - User updates do not change the default role <br> - No bulk update for existing users when the default userrole changes | `User` |
-| UserType | assign usertype to the created users | *optional* | `Internal` |
+| Userrole | the role which will be assigned to newly created users | *optional* - The Userrole is assigned only at user creation and remains unchanged even when the user's details are updated <br> - No bulk update for existing users when the default userrole changes | `User` |
+| UserType | assign user type to the created users | *optional* | `Internal` |
 | CustomUserProvisioning | a custom microflow to use for user provisioning | *optional* – in the form `modulename.microflowname` – the microflow name must begin with the string `UC_CustomProvisioning` | `Mymodule.UC_CustomProvisioning` |
 
 #### Custom User Provisioning at Runtime{#custom-provisioning-rt}
@@ -553,8 +557,8 @@ You can set up custom user provisioning once your app is running using the `OIDC
     * **The attribute where the user principal is stored** – unique identifier associated with an authenticated user.
     * **Allow the module to create users** – this enables the module to create users based on user provisioning and attribute mapping configurations. When disabled, it will still update existing users. However, for new users, it will display an exception message stating that the login action was successful but no user has been configured.
         * By default, the value is set to ***Yes***.
-    * **User role** – the role which will be assigned to newly created users. You can select one default user role. If you need additional user roles, use Access Token Parsing microflow to assign multiple roles.
-    * **User Type** – this allows you to configure end-users of your application as internal or external.
+    * **Default Userrole** – the role assigned to newly created users and remains unchanged even when the user's details are updated. You can select one default user role. To assign additional roles, use the Access Token Parsing Microflow. If the Access Token Processing Microflow is selected, OIDC verifies the updated default role configuration and applies any changes to the user's role. Note that, bulk updates for existing users are not automated when the default role configuration is changed.
+    * **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in.
         * By default, the value is set to ***Internal***.
 
 5. Under **Attribute Mapping**, for each piece of information you want to add to your custom user entity, select an **IdP Attribute** (claim) and specify the **Configured Entity Attribute** where you want to store the information.

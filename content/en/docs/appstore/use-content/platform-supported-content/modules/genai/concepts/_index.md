@@ -4,6 +4,8 @@ url: /appstore/modules/genai/get-started/
 linktitle: "Get Started with GenAI"
 weight: 10
 description: "Describes the concepts behind generative AI and what you might implement with it."
+aliases:
+    - /appstore/modules/genai/using-gen-ai/ 
 ---
 
 ## Introduction

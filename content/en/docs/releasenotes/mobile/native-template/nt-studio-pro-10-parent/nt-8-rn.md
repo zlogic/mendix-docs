@@ -5,6 +5,28 @@ weight: 8
 description: "Native Template 8 release notes."
 ---
 
+## 8.2.10 {#830}
+
+**Release date: January 15, 2025**
+
+* We resolved an issue where remote JavaScript debugging failed in a custom-built Mendix Native Developer App, leading to crashes when enabling “Remote JS Debugging.” The problem was caused by Firebase services not being initialized properly during the build process. Firebase dependencies are now only included when explicitly required by the application.
+
+## 8.2.9 {#829}
+
+**Release date: January 7, 2025**
+
+### Fixes
+
+* We updated the App Center's Xcode version to 15.4.
+
+## 8.2.8 {#828}
+
+**Release date: December 23, 2024**
+
+### Fixes
+
+* We updated min sdk to 23 on android.
+
 ## 8.2.7 {#827}
 
 **Release date: September 3, 2024**
@@ -20,6 +42,22 @@ description: "Native Template 8 release notes."
 ### Improvements
 
 * Upgraded `buildToolsVersion`, `compileSdkVersion`, and `targetSdkVersion` to 34 for Android.
+
+## 8.0.17 {#817}
+
+**Release date: January 15, 2025**
+
+### Fixes
+
+* We resolved an issue where remote JavaScript debugging failed in a custom-built Mendix Native Developer App, leading to crashes when enabling “Remote JS Debugging.” The problem was caused by Firebase services not being initialized properly during the build process. Firebase dependencies are now only included when explicitly required by the application.
+
+## 8.0.16 {#816}
+
+**Release date: January 7, 2025**
+
+### Fixes
+
+* We updated the App Center's Xcode version to 15.4.
 
 ## 8.0.15 {#815}
 
