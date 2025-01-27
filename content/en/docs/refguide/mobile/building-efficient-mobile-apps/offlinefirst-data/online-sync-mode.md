@@ -1,6 +1,7 @@
 ---
-title: "Online Synchronization Mode Beta"
+title: "Online Synchronization Mode"
 url: /refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/online-sync-mode/
+description: "Describes the online sync mode, which allows entities to be used in offline navigation profiles without requiring data. synchronization"
 no_list: false
 description_list: true 
 weight: 20
@@ -10,7 +11,7 @@ aliases:
 
 ## Introduction
 
-Introduced Mendix 10.19, the online synchronization mode allows entities to be used in offline navigation profiles without requiring data synchronization for those entities. When online entities are used in offline pages, then they require a connection to the server before the data can be shown. This allows apps to be partially offline instead of either fully offline or fully online.
+Introduced Mendix 10.19, the online synchronization mode allows entities to be used in offline navigation profiles without requiring data synchronization. When online entities are used in offline pages, then they require a connection to the server before the data can be shown. This allows apps to be partially offline instead of either fully offline or fully online.
 
 {{% alert color="warning" %}}
 This feature is currently in beta. It needs to be explicitly enabled (see below). This feature may change in the future and may not yet work completely as expected.

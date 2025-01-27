@@ -295,6 +295,10 @@ This setting allows you to set the beta version as the default editor.
 
 This setting allows you to move forward and backward through your editing history to show the documents you have recently worked on. You must restart Studio Pro to use this feature.
 
+### Online Synchronization Mode
+
+This setting, introduced in 10.19 and currently in beta, allows entities to be used in offline navigation profiles without requiring data synchronization. This enables app developers to use entity data on pages without synchronizing the data of those entities to the offline database. This mode requires an available connection to the server. For more details, see [Online Synchronization Mode](/refguide/mobile/building-efficient-mobile-apps/offlinefirst-data/online-sync-mode/).
+
 ### System Texts Editor
 
 In Studio Pro 10.14.0, the web version of the system texts editor was released as an experimental feature. Enable this option to use the web version of the editor. 
