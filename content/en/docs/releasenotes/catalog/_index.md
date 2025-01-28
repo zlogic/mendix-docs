@@ -14,6 +14,12 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 ## 2024
 
+### January 28, 2025
+
+#### Fixes
+
+* We fixed an issue where the search results were not always showing the latest information.
+
 ### December 12, 2024
 
 #### Features
