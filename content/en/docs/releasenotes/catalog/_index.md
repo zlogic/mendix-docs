@@ -14,7 +14,7 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 ## 2024
 
-### January 23, 2025
+### January 28, 2025
 
 #### Fixes
 
