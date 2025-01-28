@@ -9,7 +9,7 @@ weight: 97
 **Release date: January 22nd, 2025**
 
 * We added support for Mendix [10.19.0](/releasenotes/studio-pro/10.19/).
-* We added support for Mendix Metamodel [10.19.0](metamodel-10.19).
+* We added support for Mendix Metamodel [10.19.0](/releasenotes/sdk/metamodel-10.19/).
 
 ## 4.94.0 {#494}
 
