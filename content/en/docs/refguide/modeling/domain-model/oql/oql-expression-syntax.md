@@ -1045,7 +1045,7 @@ RANGEBEGIN ( $range )
 
 `$range` specifies the range parameter.
 
-##### Example(#oql-rangebegin-example)
+##### Example{#oql-rangebegin-example}
 
 Assume `$now` is "2024-06-15 00:00:00" and there are 3 range parameters defined in a dataset:
 
