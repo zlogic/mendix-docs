@@ -25,9 +25,12 @@ Amazon Bedrock is a fully managed service that makes foundation models (FMs) fro
 
 The Amazon Bedrock connector requires Mendix Studio Pro version 9.24.2 or above.
 
-To authenticate with Amazon Web Service (AWS), you must also install and configure the [AWS Authentication connector version 3.0.0 or higher](https://marketplace.mendix.com/link/component/120333). It is crucial for the Amazon Bedrock connector to function correctly. For more information about installing and configuring the AWS Authentication connector, see [AWS Authentication](/appstore/modules/aws/aws-authentication/).
+To authenticate with Amazon Web Service (AWS), you must install and configure the [AWS Authentication connector version 3.0.0 or higher](https://marketplace.mendix.com/link/component/120333). It is crucial for the Amazon Bedrock connector to function correctly. For more information about installing and configuring the AWS Authentication connector, see [AWS Authentication](/appstore/modules/aws/aws-authentication/).
 
-You must also install the [GenAI Commons version 2.0.0 or higher](/appstore/modules/genai/commons/). To make integration of generative AI capabilities as easy as possible, the Amazon Bedrock connector depends on the generic domain model and operations provided by the GenAI Commons module.
+You must have the latest [GenAI Commons](/appstore/modules/genai/commons/) version, available in the [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931) bundle. To make integration of generative AI capabilities as easy as possible, the Amazon Bedrock connector depends on the generic domain model and operations provided by the GenAI Commons module.
+
+To ensure that your app can connect to Bedrock, you must also install and configure the [Encryption module](/appstore/modules/encryption/#configuration). 
+
 
 ### Licensing and Cost
 
@@ -105,7 +108,7 @@ You can follow a similar approach to implement any of the other operations in **
 
 ### Chatting with Large Language Models using the ChatCompletions Operation
 
-A common use case of the Amazon Bedrock Connector is the development of chatbots and chat solutions. The **ChatCompletions (without history / with history)** operations offer an easy way to connect to most of the text-generation models available on Amazon Bedrock. The ChatCompletions operations are built on top of Bedrock's Converse API, allowing you to talk to different models without the need of a model-specific implementation. For more information on the ChatCompletion operations, see [GenAI Commons: Chat Completions](/appstore/modules/genai/commons/#text-files-operations).
+A common use case of the Amazon Bedrock Connector is the development of chatbots and chat solutions. The **ChatCompletions (without history / with history)** operations offer an easy way to connect to most of the text-generation models available on Amazon Bedrock. The ChatCompletions operations are built on top of Bedrock's Converse API, allowing you to talk to different models without the need of a model-specific implementation. For more information on the ChatCompletion operations, see [GenAI Commons: Chat Completions](/appstore/modules/genai/commons/#genai-generate).
 
 For an overview of supported models and model-specific capabilities and limitations, see [Amazon Bedrock Converse API](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features) in the AWS documentation.
 
