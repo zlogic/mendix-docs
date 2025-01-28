@@ -1,7 +1,7 @@
 ---
 title: "Datasets"
 url: /refguide/data-sets/
-weight: 50
+weight: 80
 #If moving or renaming this doc file, implement a temporary redirect and let the respective team know they should update the URL in the product. See Mapping to Products for more details.
 ---
 
@@ -33,7 +33,7 @@ GROUP BY CustomerObj/Name
 SELECT CustomerObj/Name As Name, SUM(OrderObj/TotalAmount) As TotalAmount
 ```
 
-## Parameters
+## Parameters{#parameters}
 
 A dataset can have multiple parameters. Parameters are used to filter / manipulate datasets. Security on datasets is configured based on the parameters. In a Java action, the parameters are used in the generated template.
 
