@@ -18,7 +18,7 @@ To see the current status of the Mendix Control Center, see [Mendix Status](http
 
 #### Fixes
 
-* We fixed an issue where the export to Excel from the AppsOverview was wrongly setting the DBRam value. 
+* We fixed an issue where the export to Excel from the AppsOverview was wrongly setting the DBRam value. (Ticket 239384)
 
 ## 2024
 
