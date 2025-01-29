@@ -53,5 +53,6 @@ The following table shows which of the more popular platform-supported Marketpla
 | [Image Crop](https://marketplace.mendix.com/link/component/254) | {{< icon name="remove-circle-filled" color="red" >}} |
 | [XSUAA Connector for SAP Cloud Platform](https://marketplace.mendix.com/link/component/78091) | {{< icon name="remove-circle-filled" color="red" >}} |
 | [AWS Authentication Connector](https://marketplace.mendix.com/link/component/120333) | {{< icon name="checkmark-circle-filled" color="green" >}} |
+| [Amazon Bedrock Connector](https://marketplace.mendix.com/link/component/215042) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [OpenAI Connector](https://marketplace.mendix.com/link/component/220472) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) | {{< icon name="checkmark-circle-filled" color="green" >}} |
