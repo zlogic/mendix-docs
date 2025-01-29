@@ -23,7 +23,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### Fixes
 
-* We fixed an issue where after updating a role, some companies could not edit them further.
+* We fixed an issue where, after updating a role, some companies could not edit the role further.
 
 ### January 26, 2025
 
