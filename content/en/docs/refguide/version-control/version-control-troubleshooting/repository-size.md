@@ -56,12 +56,16 @@ Merging using the command line with `git merge` or by using third-party tools is
 
 #### Converting MPR Storage Format {#convert}
 
-Upgrading to the new format is optional and can be done per branch via the [File menu](/refguide/file-menu/). To upgrade to MPRv2, open your app and select **File > Upgrade app to split MPR format (v2)**. After a confirmation the app will be converted and you will be prompted to commit.
+In Studio Pro 10.18 upgrading to the new format is optional and can be done per branch via the [File menu](/refguide/file-menu/). To upgrade to MPRv2, open your app and select **File > Upgrade app to split MPR format (v2)**. After a confirmation the app will be converted and you will be prompted to commit.
 
 You can also downgrade branches that are already on MPRv2 to MPRv1 by selecting **File > Downgrade app to combined MPR format (v1)**.
 
 {{% alert color="info" %}}
 Before converting the MPR format it is recommended to commit your local work to ensure there is an isolated commit with the conversion step for debugging, in case conversion fails.
+{{% /alert %}}
+
+{{% alert color="info" %}}
+In a future version conversion to MPRv2 will happen automatically when opening a branch.
 {{% /alert %}}
 
 ### Decreasing MPRv1 File Size
@@ -220,3 +224,12 @@ When reaching out to Mendix Support, please include:
 * App/Projects ID for your app
 * Log file (you can find its location in the command line output)
 * Version of the tool, for example, `git-fixer v1.16.5.essentials` (you can find the version number in the command line output)
+
+## Advice {#advice}
+
+In case you are still deciding whether to migrate from SVN to Git, or you are already on Git and want to get advice on what steps to take to solve or prevent Git-related performance issues, please follow the decision trees below.
+
+{{< figure src="/attachments/refguide/version-control/troubleshoot-version-control-issues/migration-advice-combined.png" class="no-border" >}}
+
+* \* MPRv2: in 10.18 MTS this feature is in beta and you can manually convert branches. With 10.24 LTS this feature will be GA and branch conversion will happen automatically. See [this section](#mprv2-format) for more information.
+* ** Partial Clone: see [this page](/refguide/clone-type/) for more information about the different clone types.
