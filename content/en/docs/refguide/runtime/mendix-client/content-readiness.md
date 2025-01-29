@@ -56,3 +56,4 @@ The following table shows which of the more popular platform-supported Marketpla
 | [Amazon Bedrock Connector](https://marketplace.mendix.com/link/component/215042) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [OpenAI Connector](https://marketplace.mendix.com/link/component/220472) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931) | {{< icon name="checkmark-circle-filled" color="green" >}} |
+| [PgVector Knowledge Base](https://marketplace.mendix.com/link/component/225063) | {{< icon name="checkmark-circle-filled" color="green" >}} |
