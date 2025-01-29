@@ -18,8 +18,8 @@ These release notes cover changes made to the [Catalog](/catalog/).
 
 #### Fixes
 
-* We fixed an issue where applications that were registered on the Mendix Cloud should have the application type set to "Mendix" instead of "other".
-* We fixed a bug where the Control center navigation layout was not collapsible on the Administration page for company admins.
+* We fixed an issue where applications that were registered on Mendix Cloud should have the application type **Mendix** instead of **Other**.
+* We fixed a bug where the Control Center navigation layout was not collapsible on the Administration page for company admins.
 
 ### January 28, 2025
 
