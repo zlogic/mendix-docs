@@ -817,6 +817,14 @@ This section lists possible solutions to known issues.
 
 Adding the GenAI Commons module to an existing project causes internal errors in hidden documents in Studio Pro.
 
+#### Cause
+
+The Java actions from the [CommunityCommons](https://marketplace.mendix.com/link/component/170) module are not compatible with the current version of the GenAI Commons module.
+
+#### Solution
+
+Update the [CommunityCommons](https://marketplace.mendix.com/link/component/170) module to the latest version.
+
 ### Outdated JDK Version Causing Errors while Calling a REST API {#outdated-jdk-version}
 
 The Java Development Kit (JDK) is a framework needed by Mendix Studio Pro to deploy and run applications. For more information, see [Studio Pro System Requirements](/refguide/system-requirements/). Usually, the correct JDK version is installed during the installation of Studio Pro, but in some cases, it may be outdated. An outdated version can cause exceptions when calling REST-based services with large data volumes, like for example embeddings operations or chat completions with vision.
@@ -836,11 +844,3 @@ To check your JDK version and update it if necessary, follow these steps:
     1. You might get an error saying `FAILURE: Build failed with an exception. The supplied javaHome seems to be invalid. I cannot find the java executable.`. In this case, verify that you have selected the correct JDK directory containing the updated JDK version.
     1. You may also need to update Gradle. To do this, go to **Edit** > **Preferences** > **Deployment** > **Gradle directory**. Click **Browse** and select the appropriate Gradle version from the Mendix folder. For Mendix 10.10 and above, use Gradle 8.5. For Mendix 10 versions below 10.10, use Gradle 7.6.3. Then save your settings by clicking **OK**.
     1. Rerun the project.
-
-#### Cause
-
-The Java actions from the [CommunityCommons](https://marketplace.mendix.com/link/component/170) module are not compatible with the current version of the GenAI Commons module.
-
-#### Solution
-
-Update the [CommunityCommons](https://marketplace.mendix.com/link/component/170) module to the latest version.
