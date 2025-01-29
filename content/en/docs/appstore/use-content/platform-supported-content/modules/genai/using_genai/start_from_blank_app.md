@@ -101,7 +101,7 @@ Click **Home** and select the `ACT_FullScreenChat_Open` microflow from your `MyF
 You may encounter an error about allowed roles. To resolve this, go to the page **Properties** and update the **Navigation > Visible for** setting to include the appropriate user roles.
 {{% /alert %}}
 
-### Infrastructure Configuration {config}
+### Infrastructure Configuration {#config}
 
 #### Mendix Cloud GenAI Configuration
 

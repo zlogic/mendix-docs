@@ -1,9 +1,9 @@
 ---
-title: "How to use Function Calling in your Mendix app"
+title: "Integrate Function Calling in your Mendix app"
 url: /appstore/modules/genai/genai-howto-functioncalling/
-linktitle: "How to use Function Calling in your Mendix app"
+linktitle: "How to integrate Function Calling in your Mendix app"
 weight: 10
-description: "A tutorial explaining how to implement function calling in your existing application."
+description: "A tutorial guiding you through integrating and implementing function calling in your Mendix application for enhanced functionality."
 ---
 
 ## Introduction
@@ -21,7 +21,7 @@ Before diving into this guide, ensure you meet the following requirements:
 
 - **Basic understanding of GenAI concepts**: Review the [Enrich Your Mendix App with GenAI Capabilities](/appstore/modules/genai/) page for foundational knowledge and familiarized yourself with the [concepts](/appstore/modules/genai/using-gen-ai/).
 
-- **Understanding Function Calling and Prompt Engineering**: Learn about [Function Calling](/appstore/modules/genai/function-calling/) and [prompt engineering](/appstore/modules/genai/using-gen-ai/#prompt-engineering) for use within the Mendix ecosystem.
+- **Understanding Function Calling and Prompt Engineering**: Learn about [Function Calling](/appstore/modules/genai/function-calling/) and [Prompt Engineering](/appstore/modules/genai/using-gen-ai/#prompt-engineering) for use within the Mendix ecosystem.
 
 
 ### Learning Goals
@@ -34,7 +34,9 @@ By following this tutorial, you will:
 
 ## Function Calling 
 
-As mentioned above, to simplify your first use case, we start building from an already setup [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) as described in the [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/) tutorial. For illustration, the two functions/tools will have the following purposes: (1) gathering the display name of the user when an email is asked in a chatbot, so that the information will automatically be filled for the end user, and (2) using an API, the bank holidays from the Netherlands are extracted.
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-functioncalling/structure_functioncalling.png" >}}
+
+As mentioned above, to simplify your first use case, we start building from an already setup [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) as described in the [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/) tutorial. For illustration, the two functions/tools will have the following purposes: (1) gathering the display name of the user when an email is requested in a chatbot, so that the information will automatically be filled for the end user, and (2) extracting the bank holidays from the Netherlands using an API.
 
 ### Choosing the Infrastructure
 
@@ -54,7 +56,7 @@ To start, you can sign up for a free trial with OpenAI and receive credits valid
 
 ### Customizing microflows
 
-To make the functions work, we need to create and adjust certain microflows as displayed below. These microflows will handle the logic required for gathering the display name of the user and extracting the bank holidays from the Netherlands using an API.
+To make the functions work, we need to create and adjust certain microflows as shown below. These microflows will handle the logic required for gathering the display name of the user and extracting the bank holidays from the Netherlands using an API.
 
 1. Locate the pre-built microflow `ChatContext_ChatWithHistory_ActionMicroflow` in **ConversationalUI > USE_ME > Conversational UI > Action microflow examples**. Right-click on the microflow and select **Include in project** to copy it into your `MyFirstBot` module.
 
@@ -64,9 +66,9 @@ In order to call a function, we need to create a microflow per function to extra
 
 #### Function: Extracting display name
 
-[PICTURE]
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-functioncalling/GetCurrentUserName_Function.jpg" >}}
 
- For this example, we will call the new microflow `GetCurrentUserName_Function`. 
+For this example, we will call the new microflow `GetCurrentUserName_Function`. 
 
 1. Start with the `Retrieve Objects` action, where you can use the following modifications as an example: 
     * Source: `From database`
@@ -76,7 +78,7 @@ In order to call a function, we need to create a microflow per function to extra
     * Object name: `Account`
 
 2. We include a decision where:
-    * Caption can be something like `Found?`
+    * Caption: e.g. `Found?`
     * Decision Type: `Expression`
     * Expression: `$Account != empty`
 
@@ -86,13 +88,13 @@ In order to call a function, we need to create a microflow per function to extra
     
 #### Function: Extracting display name
 
-[PICTURE]
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-functioncalling/GetBankHolidays_Function.jpg" >}}
 
  For this example, we will call the new microflow `GetBankHolidays_Function`. 
 
  1. Start with the `Call REST Service` action, where you can use the following modifications as an example: 
     * Location: `https://openholidaysapi.org/PublicHolidays?countryIsoCode=NL&validFrom=2025-01-01&validTo=2025-12-31&languageIsoCode=EN`
-    * HTTP metrod: `GET`
+    * HTTP method: `GET`
     * use timeout on request: `Yes`
     * Timeout (s): You can choose the value, here we set it to `300`
     * The rest can be set to default.
@@ -103,17 +105,17 @@ In order to call a function, we need to create a microflow per function to extra
 
 Now that this part is settled, the following steps will focus exclusively on the `ChatContext_ChatWithHistory_ActionMicroflow` from your `MyFirstBot` module.
 
-[PICTURE OF MICROFLOW]
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-functioncalling/CallingFunctions_Microflow.jpg" >}}
 
 As seen in the picture, there are two relevant steps that have to be done in order for the two functions to be called. 
 
 #### Addition of Tools action
 
-1. After the `true` `Request found` decision, the `Tools: Add Function to Request` is added for the first function with the following settings: 
+1. After the `true` `Request found` decision, add the `Tools: Add Function to Request` action for the first function with the following settings: 
 
     * Resquest: `$Request`
     * Tool name: `get-current-user-name`
-    * Tool description: `This function has no input, and returns a string containing the name of the user that is using the chat. It can be used to generate texts on behalf of the user, for example the signature of an email, e.g. "Best regards, a developer from Mendix"`
+    * Tool description: `This function has no input, and returns a string containing the name of the user that is using the chat. It can be used to generate texts on behalf of the user, for example the signature of an email, e.g. "Best regards, [user's name]"`
     * Function microflow: here we call the `GetCurrentUserName_Function` microflow previously done. 
     * Use return value: No
 
@@ -121,25 +123,23 @@ As seen in the picture, there are two relevant steps that have to be done in ord
 
     * Resquest: `$Request`
     * Tool name: `get-bank-holidays-2025`
-    * Tool description: `This function has no input, and returns a JSON containing the bank holidays of The Netherlands of the year 2025.`
+    * Tool description: `This function has no input, and returns a JSON containing the bank holidays in The Netherlands for the year 2025.`
     * Function microflow: here we call the `GetBankHolidays_Function` microflow previously done. 
     * Use return value: No
 
 ### Changing the system prompt
 
-It is important to remeber that a function will only be called correctly if the LLM knows when and which function to call when. Therefore, we follow a similar approached as described in the [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/#changing-system-prompt).
+It is important to remember that a function will only be called correctly if the LLM knows when and which function to call. Therefore, we follow a similar approached as described in the [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/#changing-system-prompt).
 
 1. Open the copied `ACT_FullScreenChat_Open` microflow from your `MyFirstBot` module.
 2. Locate the **ChatContext** action.
-3. Inside this action, find the `System prompt` parameter, which has default an emprty value.
-4. Update the `System prompt` value to reflect your desired behavior. For example, *`You are an assistant that supports users in a company with several requests.
-If the user talks asks to write an email, first ask if it is for internal of external person. If it is internally, ask the request, if it is for external, and be more polite. In both cases, call the function get-current-user-name as the signature.
-Always keep your answers short.`*
+3. Inside this action, find the `System prompt` parameter, which has default an empty value.
+4. Update the `System prompt` value to reflect your desired behavior. For example, *`You are an assistant that supports users in a company with various requests. When a user asks you to write an email, ensure all necessary information is provided. If any information is missing, ask the user for more details. Use the function get-current-user-name to retrieve the user's display name for the email signature. If the user asks for bank holidays in the Netherlands for the year 2025, use the function get-bank-holidays-2025 to retrieve this information. For any other requests, respond appropriately based on the context and provide helpful information. Always keep your answers short.`*
 5. Save the changes.
 
 ## Testing and Troubleshooting
 
-Assuming that you followed the steps from the [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/), especially the [Infrastructure Configuration](/appstore/modules/genai/using-genai/blank-app/#config) to be able to run your application, you should be able to have a running application by now, so make sure that before testing your app, complete the Mendix Cloud GenAI, OpenAI or Bedrock configuration.
+Before proceeding with testing, ensure that you have completed the Mendix Cloud GenAI, OpenAI, or Bedrock configuration as outlined in the [Build a Chatbot from Scratch Using the Blank GenAI App](/appstore/modules/genai/using-genai/blank-app/) tutorial, particularly the [Infrastructure Configuration](/appstore/modules/genai/using-genai/blank-app/#config) section. 
 
 To test the Chatbot, navigate to the **Home** icon to open the chatbot interface. Start interacting with your chatbot by typing in the chat box.
 
