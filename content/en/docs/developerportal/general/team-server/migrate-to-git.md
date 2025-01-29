@@ -16,9 +16,9 @@ Git is a more modern version control system that has several advantages over SVN
 
 If your main line is Studio Pro version 9.24.28 or above and your team role is Scrum Master, you see a notification on a possible migration at the top of the **Team Server** page for your app. Click **Migrate to Git** to check for migration eligibility and to start the migration.
 
-## When to migrate from SVN to Git?
+## When to Migrate from SVN to Git
 
-As a rule of thumb we recommend to combine a migration to Git with an upgrade to Mendix 10, as the advantages of Git within Mendix 9 are limited. Here you can find a more [granular advice](/refguide/troubleshoot-repository-size/#advice).
+Mendix recommends to combine a migration to Git with an upgrade to Mendix 10, as the advantages of Git in Mendix 9 are limited. For more details on this recommendation, see the [Recommendation on Avoiding Git Issues](/refguide/troubleshoot-repository-size/#recommendation) section in *Troubleshooting Repository Size*.
 
 ## Apps Eligible for Migration
 
