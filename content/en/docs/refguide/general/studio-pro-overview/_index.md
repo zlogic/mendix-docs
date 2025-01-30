@@ -58,9 +58,9 @@ Your profile picture is displayed next to these links if you are signed in. When
 
 An app consists of individual files (also known as documents) and settings that are grouped in folders and [modules](/refguide/modules/). The complete structure of your app can be viewed in the [App Explorer](/refguide/app-explorer/).
 
-## Workspace {#working-area}
+## Working Area {#working-area}
 
-A workspace is a current document tab that you work in. The working area and its settings differs depending on the editor (for example, pages, microflows, domain model editors) and the type of document. 
+A working area is a current document tab that you work in. The working area and its settings differs depending on the editor (for example, pages, microflows, domain model editors) and the type of document. 
 
 ### Document Tabs {#documents}
 
