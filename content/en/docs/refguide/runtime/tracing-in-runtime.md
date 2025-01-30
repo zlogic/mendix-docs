@@ -40,7 +40,8 @@ In Mendix 10.19 and above, tracing configuration is handled through the [OpenTel
     -javaagent:{/path/to/opentelemetry-javaagent.jar} -Dotel.instrumentation.common.default-enabled=false -Dotel.instrumentation.opentelemetry-api.enabled=true -Dotel.service.name="{My App}"
     ```
   
-1. Change `{/path/to/opentelemetry-javaagent.jar}` to the location where you downloaded the agent to earlier. Make sure it's the full absolute path to the file, e.g. `C:\Users\SomeUser\Documents\opentelemetry-javaagent.jar` (Windows) or `/Users/SomeUsers/Documents/opentelemetry-javaagent.jar`. Change `{My App}` to the name under which you want your traces to appear.
+    * Change `{/path/to/opentelemetry-javaagent.jar}` to the location where you saved the agent earlier. Make sure it is the full absolute path to the file, e.g. `C:\Users\SomeUser\Documents\opentelemetry-javaagent.jar` (Windows) or `/Users/SomeUsers/Documents/opentelemetry-javaagent.jar`.
+    * Change `{My App}` to the name under which you want your traces to appear.
 
 This will enable Mendix related tracing, while silencing the tracing of internals. The traces will be sent to http://localhost:4317.
 
