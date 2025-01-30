@@ -29,7 +29,7 @@ The following table shows which of the more popular platform-supported Marketpla
 | [Database Connector](https://marketplace.mendix.com/link/component/2888) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [DatabaseReplication](https://marketplace.mendix.com/link/component/160) | {{< icon name="remove-circle-filled" color="red" >}} |
 | [Deep Link Module](https://marketplace.mendix.com/link/component/43) | {{< icon name="checkmark-circle-filled" color="green" >}} |
-| [Email Connector](https://marketplace.mendix.com/link/component/120739) | {{< icon name="remove-circle-filled" color="red" >}} |
+| [Email Connector](https://marketplace.mendix.com/link/component/120739) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [Encryption](https://marketplace.mendix.com/link/component/1011) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [Excel Exporter](https://marketplace.mendix.com/link/component/726) | {{< icon name="remove-circle-filled" color="red" >}} |
 | [Excel Importer](https://marketplace.mendix.com/link/component/72) | {{< icon name="remove-circle-filled" color="red" >}} |
