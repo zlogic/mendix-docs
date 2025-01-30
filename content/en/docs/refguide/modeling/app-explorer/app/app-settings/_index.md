@@ -26,9 +26,9 @@ For more information on settings in a configuration, see [Configuration](/refgui
 
 These settings influence the behavior of the Runtime when running your application.
 
-### Use React Client (Beta) {#react-client}
+### Use React Client {#react-client}
 
-This setting enables the new React version of the Mendix Client. This React client was released into beta in [Mendix 10.7](/releasenotes/studio-pro/10.7/#react-client). There are three options:
+This setting enables the new React version of the Mendix Client. This React client was released into beta in [Mendix 10.7](/releasenotes/studio-pro/10.7/#react-client). As of [Mendix 10.18](/releasenotes/studio-pro/10.18/), it is in GA. There are three options:
 
 * **No**: Do not use the React client (default).
 * **Yes**: Use the React client. In this mode, you will get consistency errors for incompatible widgets.
@@ -203,6 +203,14 @@ This table presents the results of rounding the input to one digit with the give
 | -1.6 | -2 | -2 |
 | -2.5 | -3 | -2 |
 | -5.5 | -6 | -6 |
+
+### OQL version 2 {#oql-version-2}
+
+If this option is set to **Yes**, your app will use version 2 of the OQL syntax. This setting must be enabled to use [view entities](/refguide/view-entities/). Make sure your app is ready to use the new syntax before making the switch. 
+
+For more information about the differences, see [OQL Version 2 Features](/refguide/oql-v2/).
+
+Default: *No*
 
 ### Multiple Sessions per User {#multiple-sessions}
 

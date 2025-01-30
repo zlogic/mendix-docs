@@ -16,16 +16,16 @@ MendixChat was rebranded to Maia Chat and released in GA in Studio Pro 10.12.0.
 {{% /alert %}}
 
 {{% alert color="info" %}}
+To use Maia Chat, internet connection and signing in to Studio Pro are required.
+{{% /alert %}}
+
+{{% alert color="info" %}}
 Maia Chat does not use any project, customer, or company information. It only uses the data that you have entered in the Chat. Please do not enter any personal or sensitive data!
 {{% /alert %}}
 
 Maia Chat is a built-in chat interface powered by Generative AI in Studio Pro. Developers can ask questions about app development in Mendix, including how to apply concepts, best practices, and development patterns. It is built based on large language models (LLMs), using data from various resources, such as [Mendix Docs](/), [Mendix Community](https://community.mendix.com/), and [Mendix Academy](https://academy.mendix.com/).
 
 ## Using Maia Chat
-
-{{% alert color="info" %}}
-To use Maia Chat, internet connection is required and make sure you are signed in to Studio Pro.
-{{% /alert %}}
 
 There are two ways to access Maia Chat: 
 
@@ -73,3 +73,7 @@ In Studio Pro 10.8.0 and above, Maia Chat supports asking follow-up questions ba
 ## Keyboard Support
 
 For information on the supported shortcut keys in Maia Chat, see the [Maia Chat Shortcut Keys](/refguide/keyboard-shortcuts/#maia-chat-shortcuts) section in *Keyboard Shortcuts*.
+
+## Read More
+
+* [Maia Learn](/refguide/maia-learn/)

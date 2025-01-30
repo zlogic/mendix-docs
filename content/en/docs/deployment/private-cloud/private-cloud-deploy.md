@@ -39,7 +39,7 @@ To deploy an app to your private cloud platform, you need the following:
 
 ### Selecting Mendix for Private Cloud
 
-When you first create your app, it will be set to deploy to Mendix Cloud. You need to change the target to be private cloud.
+When you first [create your app](/developerportal/#create-app), it will be set to deploy to Mendix Cloud. You need to change the target to be private cloud.
 
 1. Open your app in [Apps](https://sprintr.home.mendix.com/).
 
@@ -325,13 +325,13 @@ The word changes to **Production** if the environment is set up for production.
 
 See [Creating an Environment](#create-environment), above, for more information.
 
-##### Trial
+##### Trial Operator
 
-The word **Trial** indicates that the Operator managing that environment is unlicensed.
+The word **Trial Operator** indicates that the Operator managing that environment is unlicensed.
 
-When the Operator is running in trial mode, it will stop managing an environment ninety days (thirty days for Mendix Operator versions 1.12.0 and below) after the environment was created and the word changes to **Expired**. In this case you will be unable to stop or start your app, or deploy an app to this environment. The only action you can take is to delete the environment. You can, however, create a new environment if you have not finished your evaluation of Mendix for Private Cloud.
+When the Operator is running in trial mode, it will stop managing an environment ninety days (thirty days for Mendix Operator versions 1.12.0 and below) after the environment was created and the word changes to **Expired Operator**. In this case you will be unable to stop or start your app, or deploy an app to this environment. The only action you can take is to delete the environment. You can, however, create a new environment if you have not finished your evaluation of Mendix for Private Cloud.
 
-The word **Licensed** shows that the Operator managing that environment is licensed.
+The word **Licensed Operator** shows that the Operator managing that environment is licensed.
 
 {{% alert color="info" %}}
 The Operator license is independent from a Mendix Runtime license. The Operator license allows you to manage Mendix apps in your cluster, while the Mendix Runtime license (configured through a [Subscription Secret](#license-mendix)) removes trial restrictions from a Mendix App itself.
@@ -363,13 +363,29 @@ This button contains a list of actions which you can perform quickly on the envi
 * **Delete Environment** – allows you to delete the environment (see [Current Limitations](#limitations) for additional details about what is deleted); if you select this action, you must confirm your choice before the environment is deleted
 * **Set as Studio Pro Deployment target** – allows you to select the default target environment for Studio Pro deployment
 
-### Activity
+### Activity Log
 
-This section shows all the activities, such as creating environments and deploying apps, which have taken place in this environment. You can sort the activities in either descending or ascending date and time order.
+This section shows all the activities which have taken place in this environment, for example, creating environments, changing the Technical Contact, or deploying apps. You can sort the activities in either descending or ascending date and time order.
 
 {{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/image20.png" class="no-border" >}}
 
-## Managing Your Environments from the Environment Details Page{#environment-details}
+### Application Settings
+
+This section allows you to designate the Technical Contact for the application. The Technical Contact serves as the point of contact for any app-related inquiries and should have the capability to manage all environments within the app.
+
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/technicalContact.png" class="no-border" >}}
+
+For applications created before December 12, the Technical Contact field is empty by default. It can be set by a user with cloud access permissions for the application.
+
+{{% alert color="info" %}}  
+Once a Technical Contact is assigned, they automatically receive administrative permissions for all namespaces associated with environments in the application.
+{{% /alert %}}
+
+For applications created on or after December 12, the Technical Contact is automatically set to the application's creator. In such cases, whenever a new environment is added, the Technical Contact receives administrative permissions for the namespaces associated with that environment.
+
+The Technical Contact can be changed later, but only by the current Technical Contact.
+
+## Managing Your Environments from the Environment Details Page {#environment-details}
 
 Each environment you create has an **Environment Details** page which allows you to monitor and manage your environments. You can reach this by clicking the **Details** button next to the environment you want to manage.
 
@@ -393,7 +409,7 @@ These tabs are described below.
 
 The general tab shows information about your running app.
 
-{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/image22.png" class="no-border" >}}
+{{< figure src="/attachments/deployment/private-cloud/private-cloud-deploy/generalTab.png" class="no-border" >}}
 
 Most of the information is self-explanatory, but the status information gives you a quick summary of the status of the environment and the app deployed there. The **Source** field shows how the environment was created - by using the Portal or the [API](/apidocs-mxsdk/apidocs/private-cloud-deploy-api/)
 
@@ -401,19 +417,17 @@ Most of the information is self-explanatory, but the status information gives yo
 
 This status shows you the following information – how many replicas are running, whether there was a successful build, and how long since the app was last started.
 
-In order to get more detailed information per replica in the application, you can click on **More Info** button.
+In order to get more detailed information per replica in the application, you can click on **More Info** button. This shows information about the runtime status, license status and sources for the Database, Storage, MxAdmin password, Debugger password, App constants and Custom Runtime settings. 
 
-You can get the information related to Runtime status, License status and Sources w.r.t to Database, Storage, MxAdmin password, Debugger password, App constants and Custom Runtime settings. Along with this, from Operator version 2.15.0 onwards, you can also specifically collect information w.r.t to pods running in the application. Below is the brief explanation of the fields in the section:
+If no runtime license is applied to the environment, the license status shows **0/n Licensed Runtime**, where **n** is the number of replicas running. The license status is **Not licensed**. Once a runtime license has been applied to the environment, the license status shows **n/n Licensed Runtime**, where **n/n** indicates the number of licenses applied to the number of replicas.
 
-1. **deletionInitiated**: This indicates whether the deletion of the pod has been initiated (pod is stopping). If it's `false`, it means the pod is not currently being deleted.
+Starting in Operator version 2.15.0, you can also specifically collect information about pods running in the application. Below is a brief explanation of the fields in the section:
 
-2. **ready**: This shows whether the pod is ready to serve requests. If it's `false`, it means the pod is not ready to serve requests, possibly due to containers within the pod not being ready or other issues.
-
-3. **restartCount**: This represents the number of times the containers within the pod have been restarted.
-
-4. **started**: This indicates whether the pod has started. If it's `false`, it means the pod has not yet started successfully.
-
-5. **state**: This describes the current state of the pod. In this case, it indicates that the pod is in a waiting state, which means it is not running but waiting for something to happen, such as a container to become ready or other conditions to be met before it can start running.
+* **deletionInitiated** - This indicates whether the deletion of the pod has been initiated (pod is stopping). If **false**, the pod is not currently being deleted.
+* **ready** - This shows whether the pod is ready to serve requests. If **false**, the pod is not ready to serve requests, possibly due to containers within the pod not being ready or other issues.
+* **restartCount** - This represents the number of times the containers within the pod have been restarted.
+* **started** - This indicates whether the pod has started. If**false**, the pod has not yet started successfully.
+* **state** - This describes the current state of the pod. In this case, it indicates that the pod is in a waiting state, which means it is not running but waiting for something to happen, such as a container to become ready or other conditions to be met before it can start running.
 
 #### Environment Details > Status
 
