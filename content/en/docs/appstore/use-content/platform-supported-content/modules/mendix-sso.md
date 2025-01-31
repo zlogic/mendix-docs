@@ -130,9 +130,7 @@ To enable Mendix SSO in your app, follow these steps:
     1. Go to **App** > **Show App Directory in Explorer** in Studio Pro to open the app directory in your file explorer.
     2. Go to the **theme/web** folder (for Mendix versions below 9.0.0, this is the **theme** folder).
     3. Rename *login.html* to *login-without-sso.html*.
-    4. Rename *login-with-mendixsso-button.html* or *login-with-mendixsso-automatically.html* to *login.html*. The differences between the two versions of the files which you can use to replace *login.html* are as follows:
-        * *login-with-mendixsso-button.html* – adds a button to the standard sign-in page which the end-user can click to initiate the single sign-on process; this gives the end-user the possibility to sign in using a user name and password if desired
-        * *login-with-mendixsso-automatically.html* – automatically initiates the single sign-on process without needing to click a button
+    4. Rename *login-with-mendixsso-automatically.html* to *login.html* in order to automatically initiate the single sign-on process without needing to click a button.
 
 Your app is now configured to use Mendix single sign-on when it is deployed to Mendix Cloud.
 
@@ -294,6 +292,8 @@ You can use a continuation URL parameter with the `/openid/login` and `/openid/l
 The URL, `{myURL}` is added as the `continuation={myURL}` parameter to the endpoint.
 
 For example, if your app "myapp" contains a profile page (`myprofile`) which has a deeplink to it, you could redirect the end-user to their profile page after login like this: `https://myapp.mendixcloud.com/openid/login?continuation=https://myapp.mendixcloud.com/link/myprofile`
+
+For Studio Pro 10.6 and above, ensure you use Mendix SSO module version 10.1 or above, as the DeepLink module has been deprecated and replaced with page URLs. Specify the continuation URL accordingly, as described in the [URL](/refguide/page-properties/#url) section of the *Page Properties*.
 
 #### Continuation URL Validation
 
