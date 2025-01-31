@@ -20,14 +20,16 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* Redesigned the **Environment Details** page in the new UI – Improved functionality and enhanced user experience.
-* Staging Support for Apps in the [new UI](/developerportal/deploy/environments-redesign/) deploy wizard.
-* Added the ability to compare and edit model options across environments in the new UI.
-* Redesigned the **Environments** page for Free Apps.
+* We have added a number of new features which are all available as part of the [new UI](/developerportal/deploy/environments-redesign/). These are:
+
+    * Redesigned the **Environment Details** page to improve functionality and enhance the user experience.
+    * Added staging support for apps in the deploy wizard.
+    * Added the ability to compare and edit model options across environments.
+    * Redesigned the **Environments** page for Free Apps.
 
 #### Improvements
 
-* Improvements to the New Environments Overview Page for Paid Apps – Enhancements based on user feedback for a better experience.
+* Also as part of the new UI we made improved the experience of using the **Environments Overview** page for paid apps – this is based on your feedback, thanks.
 
 ## 2024
 
