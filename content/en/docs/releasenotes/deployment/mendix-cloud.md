@@ -20,10 +20,10 @@ For information on the current status of deployment to Mendix Cloud and any plan
 
 #### New Features
 
-* Redesigned Environment Details [New Theme only] – Improved functionality and enhanced user experience.
-* Staging Support for Apps in the New UI Deploy Wizard [New Theme only] – Streamlined deployment with staging capabilities.
-* Compare and Edit Model Options Across Environments [New Theme only] – Easily manage and modify model options across different environments.
-* New UI for FreeApp Environments Overview – A refreshed interface for better navigation and usability.
+* Redesigned the **Environment Details** page in the new UI – Improved functionality and enhanced user experience.
+* Staging Support for Apps in the [new UI](/developerportal/deploy/environments-redesign/) deploy wizard.
+* Added the ability to compare and edit model options across environments in the new UI.
+* Redesigned the **Environments** page for Free Apps.
 
 #### Improvements
 
