@@ -14,6 +14,21 @@ There are separate release notes for other deployment targets; for more informat
 
 For information on the current status of deployment to Mendix Cloud and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
+## 2025
+
+### February 2, 2025
+
+#### New Features
+
+* Redesigned Environment Details [New Theme only] – Improved functionality and enhanced user experience.
+* Staging Support for Apps in the New UI Deploy Wizard [New Theme only] – Streamlined deployment with staging capabilities.
+* Compare and Edit Model Options Across Environments [New Theme only] – Easily manage and modify model options across different environments.
+* New UI for FreeApp Environments Overview – A refreshed interface for better navigation and usability.
+
+#### Improvements
+
+* Improvements to the New Environments Overview Page for Paid Apps – Enhancements based on user feedback for a better experience.
+
 ## 2024
 
 ### December 12, 2024
