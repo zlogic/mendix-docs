@@ -63,8 +63,9 @@ On the right side of the screen in the **General** tab, there are buttons and a 
 
 When your app is running, you can perform the following actions:
 
-* **Restart Application** – This stops the running application and starts it again. Restarting your app is required for applying new constant values or scheduled events to the environment.
-* **Stop Application** – This stops the application.
+* **Deploy** – This deploys an application to the environment.
+* **Restart App** – This stops the running application and starts it again. Restarting your app is required for applying new constant values or scheduled events to the environment.
+* **Stop App** – This stops the application.
 * **More Options**:
     * **Show Logged in Users** – This shows all users who are logged in to your app.
     * **Change Admin Password** – This changes the password for the built-in [administrator](/refguide/administrator/) account. The new password is applied immediately, without the need for a restart, and forces the administrator to pick up any new [roles](/refguide/administrator/#user-role) assigned in the app deployment package.
@@ -74,8 +75,9 @@ When your app is running, you can perform the following actions:
 
 When your app is stopped, you can perform this set of action buttons instead:
 
-* **Start Application** – This starts the application.
-* **Stop Application** – This stops the application.
+* **Deploy** – This deploys an application to the environment.
+* **Start App** – This starts the application.
+* **Stop App** – This stops the application.
 * **More Options**:
     * **Clear Environment** – This allows you to empty all the data from your database and, optionally, remove the app and file storage from the environment as well. For more information, see [Clearing an Environment](#clear-environment). 
     * **View Live Log** – This shows a live log for your application. It is identical to the **View Live Log** button on the [Logs](/developerportal/operate/logs/) page.
