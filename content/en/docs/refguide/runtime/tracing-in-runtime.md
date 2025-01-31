@@ -40,10 +40,10 @@ In Mendix 10.19 and above, tracing configuration is handled through the [OpenTel
     -javaagent:{/path/to/opentelemetry-javaagent.jar} -Dotel.instrumentation.common.default-enabled=false -Dotel.instrumentation.opentelemetry-api.enabled=true -Dotel.service.name="{My App}"
     ```
   
-    * Change `{/path/to/opentelemetry-javaagent.jar}` to the location where you saved the agent earlier. Make sure it is the full absolute path to the file, e.g. `C:\Users\SomeUser\Documents\opentelemetry-javaagent.jar` (Windows) or `/Users/SomeUsers/Documents/opentelemetry-javaagent.jar`.
+    * Change `{/path/to/opentelemetry-javaagent.jar}` to the location where you saved the agent earlier. Make sure it is the full absolute path to the file, e.g. `C:\Users\SomeUser\Documents\opentelemetry-javaagent.jar` (Windows) or `/Users/SomeUsers/Documents/opentelemetry-javaagent.jar` (MacOS).
     * Change `{My App}` to the name under which you want your traces to appear.
 
-This will enable Mendix related tracing, while silencing the tracing of internals. The traces will be sent to http://localhost:4317.
+This will enable Mendix related tracing, while silencing the tracing of internals. The OpenTelemetry Java Agent sends traces to http://localhost:4318/v1/traces using the `http/protobuf` protocol by default.
 
 #### Mendix 10.18
 
@@ -52,7 +52,7 @@ In Mendix 10.18, the minimal configuration to enable tracing is:
 * Set the `OpenTelemetry.Enabled` [runtime setting](/refguide/custom-settings/) to `true`
 * Set the `otel.service.name` runtime setting to a service name
 
-This will enable tracing. The traces will be sent to http://localhost:4317.
+This will enable tracing. The traces will be sent to http://localhost:4317 using the `grpc` protocol by default.
 
 ### Testing
 
@@ -71,8 +71,8 @@ In Mendix 10.19.0 and above, the Java Agent can be configured through system pro
 | `otel.service.name` | The name of the service. | `runtimelauncher` *(In Mendix 10.18 `unknown_service:java`)* |
 | `otel.resource.attributes` | Extra resource attributes to include in every span. Example: `attribute1=value1,attribute2=value2` | |
 | `otel.traces.exporter` | Comma-separated list of span exporters. Supported values are: `otlp`, `console`, `logging-otlp`, and `none`. | `otlp` |
-| `otel.exporter.otlp.traces.protocol` | The transport protocol to use on OTLP trace requests. Options include `grpc` and `http/protobuf`. | `grpc` |
-| `otel.exporter.otlp.traces.endpoint` | The endpoint to send all OTLP traces to. It must be a URL with a scheme of either http or https based on the use of TLS. | `http://localhost:4317` when the protocol is `grpc`<br>`http://localhost:4318` when the protocol is `http/protobuf` |
+| `otel.exporter.otlp.traces.protocol` | The transport protocol to use on OTLP trace requests. Options include `grpc` and `http/protobuf`. | `http/protobuf` (Java Agent, Mendix 10.19 and higher), `grpc` (Mendix 10.18 only) |
+| `otel.exporter.otlp.traces.endpoint` | The endpoint to send all OTLP traces to. It must be a URL with a scheme of either http or https based on the use of TLS. | `http://localhost:4317` when the protocol is `grpc`<br>`http://localhost:4318/v1/metrics` when the protocol is `http/protobuf` |
 | `otel.exporter.otlp.traces.certificate` | The path to the file containing trusted certificates to use when verifying a trace server's TLS credentials. The file should contain one or more X.509 certificates in PEM format. | By default the host platform's trusted root certificates are used. |
 | `otel.exporter.otlp.traces.client.key` | The path to the file containing the private client key to use when verifying a trace client's TLS credentials. The file should contain one private key in PKCS8 PEM format. | By default no client key file is used. |
 | `otel.exporter.otlp.traces.client.certificate` | The path to the file containing trusted certificates to use when verifying a trace client's TLS credentials. The file should contain one or more X.509 certificates in PEM format. | By default no certificate file is used. |
