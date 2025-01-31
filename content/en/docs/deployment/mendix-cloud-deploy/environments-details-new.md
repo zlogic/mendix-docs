@@ -21,7 +21,7 @@ While this feature is in Beta, you can use the **New Theme** toggle to switch be
 
 To open the **Environment Details** page, go to [Apps](https://sprintr.home.mendix.com) and click **Environments** on your licensed app. Then click **Details** ({{% icon name="notes-paper-edit" %}}) by the environment you want to view.
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/environment-details.png" alt="The Details icon is on the right side of the row" >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/general.png" alt="The Details icon is on the right side of the row" >}}
 
 {{% alert color="info" %}}You must have permissions for **Transport Rights** or **Access to Monitoring** to view the **Environment Details** page. For details on configuring permissions, see [Node Permissions](/developerportal/deploy/node-permissions/).{{% /alert %}}
 
@@ -215,6 +215,8 @@ For more information, see [Scheduled Events](/refguide/scheduled-events/).
 
 On the **Network** tab, you can manage the elements described below.
 
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/network.png" class="no-border" >}}
+
 ### Custom Domains {#custom-domains}
 
 * **Domain name**
@@ -397,6 +399,8 @@ Add client certificates (in the PKCS12 format) or certificate authorities (in th
 
 Log levels are used to distinguish the log messages. Log levels highlight the highest-priority log messages so that they can be prioritized accordingly. 
 
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/log-levels.png" class="no-border" >}}
+
 Custom log nodes appear in the list only after a message has been logged to them. For more information, see [Log Message](/refguide/log-message/#log-node-name).
 
 On this tab, you can perform the following actions:
@@ -548,7 +552,7 @@ You can enable and disable custom services for individual environments of your a
 
 In the **Services** tab, the [Technical Contact](/developerportal/general/app-roles/#technical-contact) can decide which custom services can be used in each environment of this app.
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/services-tab.png" >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/services.png" >}}
 
 ### Available Services
 
