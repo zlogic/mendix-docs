@@ -14,7 +14,7 @@ Environments running Mendix for Private Cloud can be granted read-only access to
 
 {{% alert color="info" %}}Using an external secret storage provides multiple benefits, such as rotating credentials from a single location, collecting audit logs and dynamically generating role-specific credentials.
 
-Using a secret storage incorrectly may reduce the security of your app. This document describes a simplified approach to setting up Vault and should not be used for production environments. Consult with your secrets store provider to ensure that it is set up securely for your production environment.
+Using a secret storage _incorrectly_ may reduce the security of your app. This document describes a simplified approach to setting up Vault and should not be used for production environments. Consult with your secrets store provider to ensure that it is set up securely for your production environment.
 {{% /alert %}}
 
 ### Supported Stores
@@ -24,6 +24,7 @@ Mendix apps currently support the following secret stores:
 * AWS Secrets Manager
 * HashiCorp Vault
 * Azure Key Vault
+* Google Secret Manager
 
 ## Configuring Your Environment
 
@@ -711,7 +712,7 @@ For more information, see the [Azure Key Vault Provider](https://azure.github.io
 
 [Azure Postgres (Flexible Server)](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/service-overview) databases can use [managed identity authentication](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/how-to-connect-with-managed-identity) instead of regular passwords.
 
-{{% alert color="warning" %}}Azure has a legacy Postgres (Single Server) database. The Mendix Operator does not support [managed identity authentication for Single Server databases](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-configure-sign-in-azure-ad-authentication), only the new Flexible Server is supported. This section only applies to Flexible Server databases.{{% /alert %}}
+{{% alert color="warning" %}}azure has a legacy postgres (single server) database. the mendix operator does not support [managed identity authentication for single server databases](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-configure-sign-in-azure-ad-authentication), only the new flexible server is supported. this section only applies to flexible server databases.{{% /alert %}}
 
 To use this feature, you need to:
 
@@ -794,6 +795,158 @@ After completing the prerequisites, follow these steps to switch from password-b
     * `storage-azure-use-default-azure-credential` - set to `true` to enable managed identity authentication.
 3. Open the environment's Blob Storage Account Container in the Azure portal, and [assign a Storage Blob Data Contributor role](https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access) to the environment's managed identity.
 4. Restart the Mendix app environment.
+
+
+### Configuring a Secret Store with Google Secret Manager {#configure-using-google-secret-manager}
+
+To enable your environment to use [Google Secret Manager Provider](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp) as external secret storage, follow these steps:
+
+1. Enable workload identity federation for your GKE cluster as [described in the Google Cloud documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity#console_1). This only need to be done once per cluster.
+
+2. Install [CSI Secret Store Driver](https://secrets-store-csi-driver.sigs.k8s.io/getting-started/installation.html#install-the-secrets-store-csi-driver), as shown in the following example. This only need to be done once per cluster.
+
+    ```shell
+    helm repo add secrets-store-csi-driver https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
+    helm -n kube-system install csi-secrets-store secrets-store-csi-driver/secrets-store-csi-driver \
+    --set syncSecret.enabled=true
+    ```
+
+3. Install and enable the [Google Secret Manager Provider for Secret Store CSI Driver](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp?tab=readme-ov-file#install) by doing the following steps (this only needs to be done once per cluster):
+
+    1. Clone or download a copy of the [secrets-store-csi-driver-provider-gcp](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp) repository, for example:
+
+    2. Navigate to the root folder of the local `secrets-store-csi-driver-provider-gcp` copy.
+    3. Run the following command to install the provider using Helm:
+
+    ```shell
+    helm upgrade --install secrets-store-csi-driver-provider-gcp charts/secrets-store-csi-driver-provider-gcp
+    ```
+
+4. Get the Google Cloud account _Project Number_ and _Project ID_ from the Google Cloud welcome page, or using the `gcloud projects list` command.
+
+5. Create an app with the secret store enabled. If you are using connected mode, secret stores are enabled automatically if the **Enable Secrets Store** option is activated for the namespace where you create the app. For a standalone app, you must set the value of the setting `allowOverrideSecretsWithSecretStoreCSIDriver` to `true` in the Mendix app CRD.
+
+    The following yaml shows an example Mendix app CRD:
+
+    ```yaml
+    apiVersion: privatecloud.mendix.com/v1alpha1
+    kind: MendixApp
+    metadata:
+      name: <{Mendix App CR name}>
+    spec:
+      mendixRuntimeVersion: 9.4.0.24572
+      allowOverrideSecretsWithSecretStoreCSIDriver: true
+      replicas: 1
+      resources:
+        limits:
+          cpu: "1"
+          memory: 512Mi
+        requests:
+          cpu: 100m
+          memory: 512Mi
+      runtime:
+        customConfiguration: '{"ScheduledEventExecution":"NONE","MicroflowConstants":"{\"MyFirstModule.MyConstant\":\"Awesome\",\"RestClient.RestServiceUrl\":\"https://go-dummy-app.privatecloud-storage-tls.svc.cluster.local\",\"Atlas_Core.Atlas_Core_Version\":\"3.0.5\"}"}'
+        dtapMode: D
+        logAutosubscribeLevel: INFO
+        runtimeLicense: {}
+      runtimeMetricsConfiguration: {}
+      sourceURL: oci-image://<{image URL}>
+      sourceVersion: 0.0.0.87
+    EOF
+    ```
+6. Go to the **Secrets Manager** page in the Google Cloud console, and use the **Create Secret** button to create keys for every key listed in the [SecretProviderClass Keys](#keys) section above.
+
+    {{% alert color="info" %}}Google Secret Manager doesn't support any sort of hierarchy at the moment, and keys can only be stored as a flat list. As a typical environment would likely need a dozen keys, we recommend adding labels and using a pattern when creating keys. For example, use `<namespace>-<environment-id>-database-type` for the `database-type` key.{{% /alert %}}
+
+    Alternatively, the `gcloud` CLI tool can be used to create keys in an automated way (replace `<namespace-name>` with the namespace where the app is deployed, and `<mendixapp-cr-name>` with the name of the MendixApp CR):
+
+    ```shell
+    NAMESPACE=<namespace-name>
+    ENVIRONMENT_NAME=<mendixapp-cr-name>
+    # Example: set the database-type to PostgreSQL
+    printf "PostgreSQL" | gcloud secrets create ${NAMESPACE}-${ENVIRONMENT_NAME}-database-type --data-file=- --replication-policy=automatic
+    ```
+
+6. For every secret created on step 5, allow the Mendix app to access it by adding a **Secret Manager Secret Accessor** role to the following principal:
+
+    ```
+    principal://iam.googleapis.com/projects/<PROJECT_NUMBER>/locations/global/workloadIdentityPools/<PROJECT_ID>svc.id.goog/subject/ns/<namespace-name>/sa/<mendixapp-cr-name>
+    ```
+
+    replacing `<PROJECT_NUMBER>` and `<PROJECT_ID>` with the project number and project ID from step 4; `<namespace-name>` with the namespace where the app is deployed, and `<mendixapp-cr-name>` with the name of the MendixApp CR.
+
+    This can also be done using the `gcloud` CLI tool:
+
+    ```shell
+    NAMESPACE=<namespace-name>
+    ENVIRONMENT_NAME=<mendixapp-cr-name>
+    PROJECT_ID=<project-id>
+    PROJECT_NUMBER=<project-project-number>
+    # Example: grand access ENVRIONMENT_NAME in NAMESPACE permissions to access its database-type secret
+    gcloud secrets add-iam-policy-binding ${NAMESPACE}-${ENVIRONMENT_NAME}-database-type --role=roles/secretmanager.secretAccessor\
+      --member=principal://iam.googleapis.com/projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/${PROJECT_ID}.svc.id.goog/subject/ns/${NAMESPACE}/sa/${ENVIRONMENT_NAME}
+    ```
+
+7. Create a Kubernetes `ServiceAccount` for your environment, replacing `<{environment name}>` with the name of the MendixApp CR:
+
+    ```shell
+    kubectl -n <{Kubernetes namespace}> create serviceaccount <{environment name}>
+    kubectl -n <{Kubernetes namespace}> annotate serviceaccount <{environment name}> privatecloud.mendix.com/environment-account=true
+    ```
+
+8. Attach the secret to the environment by applying the following Kubernetes yaml:
+
+    ```yaml
+    NAMESPACE=<namespace-name>
+    ENVIRONMENT_NAME=<mendixapp-cr-name>
+    PROJECT_ID=<project-id>
+    PROJECT_NUMBER=<project-project-number>
+    cat <<EOF |kubectl apply -n dmitrii-test -f -
+    apiVersion: secrets-store.csi.x-k8s.io/v1
+    kind: SecretProviderClass
+    metadata:
+      name: ${ENVIRONMENT_NAME}
+      namespace: ${NAMESPACE}
+      annotations:
+        privatecloud.mendix.com/environment-class: "true"
+    spec:
+      provider: gcp
+      parameters:
+        secrets: |
+          - resourceName: projects/${PROJECT_ID}/secrets/${NAMESPACE}-${ENVIRONMENT_NAME}-database-type/versions/latest
+            fileName: database-type
+          - resourceName: projects/${PROJECT_ID}/secrets/${NAMESPACE}-${ENVIRONMENT_NAME}-database-jdbc-url/versions/latest
+            fileName: database-jdbc-url
+          - resourceName: projects/${PROJECT_ID}/secrets/${NAMESPACE}-${ENVIRONMENT_NAME}-database-host/versions/latest
+            fileName: database-host
+          - resourceName: projects/${PROJECT_ID}/secrets/${NAMESPACE}-${ENVIRONMENT_NAME}-database-name/versions/latest
+            fileName: database-name
+          - resourceName: projects/${PROJECT_ID}/secrets/${NAMESPACE}-${ENVIRONMENT_NAME}-database-username/versions/latest
+            fileName: database-username
+          - resourceName: projects/${PROJECT_ID}/secrets/${NAMESPACE}-${ENVIRONMENT_NAME}-database-password/versions/latest
+            fileName: database-password
+          - resourceName: projects/${PROJECT_ID}/secrets/${NAMESPACE}-${ENVIRONMENT_NAME}-storage-service-name/versions/latest
+            fileName: storage-service-name
+          - resourceName: projects/${PROJECT_ID}/secrets/${NAMESPACE}-${ENVIRONMENT_NAME}-storage-access-key-id/versions/latest
+            fileName: storage-access-key-id
+          - resourceName: projects/${PROJECT_ID}/secrets/${NAMESPACE}-${ENVIRONMENT_NAME}-storage-secret-access-key/versions/latest
+            fileName: storage-secret-access-key
+          - resourceName: projects/${PROJECT_ID}/secrets/${NAMESPACE}-${ENVIRONMENT_NAME}-storage-endpoint/versions/latest
+            fileName: storage-endpoint
+          - resourceName: projects/${PROJECT_ID}/secrets/${NAMESPACE}-${ENVIRONMENT_NAME}-storage-bucket-name/versions/latest
+            fileName: storage-bucket-name
+          - resourceName: projects/${PROJECT_ID}/secrets/${NAMESPACE}-${ENVIRONMENT_NAME}-storage-perform-delete/versions/latest
+            fileName: storage-perform-delete
+          # Example: use MyFirstModule.MyConstant constant value from the namespace1-myapp1-myfirstmodule-myconstant secret
+          #- resourceName: namespace1-myapp1-myfirstmodule-myconstant
+          #  fileName: "mx-const-MyFirstModule.MyConstant"
+    ```
+
+    In the above example, `resourceName` specifies the secret ID from the Google Cloud project, and `fileName` specifies how it will be named when mounted into the sidecar.
+
+For more information, refer to the the official [Google Secret Manager Provider for Secret Store CSI Driver](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp) repository and [Google Secret Manager documentation](https://cloud.google.com/secret-manager/docs/overview).
+
+{{% alert color="warning" %}}Google Kubernetes Engine has an alternative Secret Manager CSI driver, called `secrets-store-gke.csi.k8s.io` and enabled using the [Secret Manager add-on](https://cloud.google.com/secret-manager/docs/secret-manager-managed-csi-component) in the cluster settings. The driver installed with the Secret Manager add-on **is not supported** by the Mendix Operator. Please use the `secrets-store-csi-driver-provider-gcp` documented above.{{% /alert %}}
 
 ## Additional Considerations {#additional-considerations}
 
