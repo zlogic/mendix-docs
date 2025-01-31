@@ -17,6 +17,32 @@ For release notes on Mendix Cloud and deployment options, see [Deployment](/rele
 
 To see the current status of the Mendix Portal, see [Mendix Status](https://status.mendix.com/). Here you can also see planned maintenance and past incidents.
 
+## 2025
+
+### January 29, 2025
+
+#### Fixes
+
+* We fixed an issue where, after updating a role, some companies could not edit the role further.
+
+### January 26, 2025
+
+#### New Features
+
+* We have migrated all companies to use [Centralized Roles](/control-center/roles-and-permissions/#centralized-project-roles). 
+
+### January 5, 2025
+
+#### Deprecations
+
+* We have removed the GET projects endpoint in our [Projects API](/apidocs-mxsdk/apidocs/projects-api/) and replaced it with the new GET company projects endpoint.
+
+#### Fixes
+
+* We fixed a bug where the name of the revision author was not shown when the author was no longer part of the project
+* We fixed a small UI bug on the Company Roles overview page where the badges were not properly displayed
+* We fixed a bug in the self service migration to Company Roles
+
 ## 2024
 
 ### December 1, 2024
@@ -41,9 +67,9 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 #### Improvements
 
 * We have improved [Mini Surveys](/developerportal/app-insights/mini-surveys/) as follows:
-  * Mini Surveys now features an updated onboarding flow that guides you step by step through the installation process.
-  * You no longer need to restart your application to switch surveys, as we have changed the module to use the survey location instead of linking it to a survey ID. 
-  * We have simplified the process of creating a new survey by introducing a wizard that walks you through each step.
+    * Mini Surveys now features an updated onboarding flow that guides you step by step through the installation process.
+    * You no longer need to restart your application to switch surveys, as we have changed the module to use the survey location instead of linking it to a survey ID. 
+    * We have simplified the process of creating a new survey by introducing a wizard that walks you through each step.
 
 ### November 7, 2024
 
@@ -78,7 +104,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### Improvements
 
-* We centralized the management of team project roles in Control Center. This improves access governance across all Mendix projects and streamlines the setup process for app access. You can [migrate your project roles](/control-center/roles-and-permissions/#migrate-centralized-roles) to the centralized company-level project roles to benefit from this improvement. We expect you to complete the migration by January 1, 2025.
+* We centralized the management of team project roles in Control Center. This improves access governance across all Mendix projects and streamlines the setup process for app access. You can migrate your project roles to the centralized company-level project roles to benefit from this improvement. We expect you to complete the migration by January 1, 2025.
 * We made it possible for you to add external team members to your app via the [Projects API](https://docs.mendix.com/apidocs-mxsdk/apidocs/projects-api/). This mimics the functionality that is already in place through the user interface.
 
 #### Fixes

@@ -233,6 +233,7 @@ For integrations, you have the following types of microflow:
 | Event Type                                  | Prefix |
 | ------------------------------------------- | ------ |
 | Consumed web service operation microflow    | CWS_   |
+| Consumed REST service operation microflow   | CRS_   |
 | Published web service operation microflow   | PWS_   |
 | Published REST service operation microflow  | PRS_   |
 | Published OData service operation microflow | POS_   |

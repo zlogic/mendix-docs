@@ -206,8 +206,6 @@ The reason you receive a message is that when you are using a [basic license](/d
 
 The autoscaling might occur when your app does not have high resource usage because of the way shared databases are managed. More resources may be required by an app using another schema on the shared database. This is a known phenomenon, which AWS terms a [noisy neighbor](https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/noisy-neighbor.html).
 
-
-
 ## Read More
 
 * [Metrics](/developerportal/operate/metrics/)

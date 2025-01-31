@@ -96,5 +96,3 @@ This nanoflow will attach an uploaded file to the context object.
 #### ACT_CreateUploadedImageDocument
 
 This nanoflow will attach an uploaded image to the context object.
-
-

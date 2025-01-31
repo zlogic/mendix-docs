@@ -33,7 +33,7 @@ To upgrade a solution, follow these steps:
 
     {{< figure src="/attachments/appstore/create-content/implement-solutions/solution-upgrade.png" alt="Upgrade Solution" class="no-border" >}}
 
-{{% alert color="info" %}}In Studio Pro 9 and below, this option must be enabled by setting a feature flag. Since Studio Pro 10, it is available for general use and no longer hidden behind a flag.{{% /alert %}}
+    {{% alert color="info" %}}In Studio Pro 9 and below, this option must be enabled by setting a feature flag. Since Studio Pro 10, it is available for general use and no longer hidden behind a flag.{{% /alert %}}
 
 2. Select the solution package file (*.mxsolution*) provided by the ISV and click **OK**.
 3. Once solution upgrade is completed, a new commit to the **solution-releases** branch line is created. This commit contains the unchanged new version of the solution (as provided by the ISV). You cannot make any changes in this branch, as that would render the solution incompatible with upgrades or lead to unpredictable errors during upgrades.

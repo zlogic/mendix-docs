@@ -13,7 +13,6 @@ The Search API enables users to search and retrieve assets that are registered i
 
 You can paginate through search results with an offset, which allows you to limit the number of results and specify how many to skip.
 
-
 ## Authentication and Access Rights
 
 To use the Catalog Search API, you need the following:
@@ -283,4 +282,4 @@ A successful `GET` call results in a `200` status code and a JSON response body 
 
 ## API Reference {#api-reference}
 
-{{< swaggerui src="/openapi-spec/catalog-registration_v5.yaml" >}}
+{{< swaggerui src="/openapi-spec/catalog-search_v5.yaml" >}}
