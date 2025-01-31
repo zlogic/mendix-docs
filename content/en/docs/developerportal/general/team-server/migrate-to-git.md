@@ -94,6 +94,18 @@ All work not merged to the main branch will not be migrated to your Git reposito
 
 {{% /alert %}}
 
+#### Using an SVN Backup
+
+All Scrum Masters receive an email with a link to download an SVN backup. This allows you to download a *[repository-id].dump* file to your local device and you can use this file to restore the repository locally.
+
+To set up your local SVN repository, follow these steps:
+
+1. Download and Install VisualSVN Server – Use [VisualSVN Server](https://www.visualsvn.com/server/download/) and import the existing repository from the *.dump* file. This will create a locally hosted SVN repository.
+
+2. Access the Repository – Use [TortoiseSVN](https://tortoisesvn.net/) to check the repository. This will allow you to inspect the *.mpr* file or any other files within the repository.
+
+    {{% alert color="info" %}}To inspect files from a historical revision, use **TortoiseSVN** and select **Update to revision** to check a specific revision.{{% /alert %}}
+
 ### Migrating With History {#with-history}
 
 During migration with history, all app history, including revisions for all branches, is copied from SVN to Git. 
