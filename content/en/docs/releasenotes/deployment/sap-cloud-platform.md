@@ -12,6 +12,16 @@ SAP Business Technology Platform deployments also depend on the latest version o
 
 For information on the current status of deployment to SAP BTP and any planned releases, see [Mendix Status](https://status.mendix.com/).
 
+## 2025
+
+#### Portal Improvements
+
+* Integrated Maia, a built-in chat interface powered by Generative AI, into the SAP Deployment Portal.
+
+#### Bug Fixes
+
+* We have resolved the issue with downloading the MDA from the SAP Deployment Portal.
+* We have fixed the "Loading More Environments" issue on the SAP Deployment Portal.
 ## 2024
 
 ### August 27, 2024
