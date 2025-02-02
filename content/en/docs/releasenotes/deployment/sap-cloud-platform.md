@@ -14,6 +14,8 @@ For information on the current status of deployment to SAP BTP and any planned r
 
 ## 2025
 
+### February 02, 2025
+
 #### Portal Improvements
 
 * Integrated Maia, a built-in chat interface powered by Generative AI, into the SAP Deployment Portal.
@@ -22,6 +24,7 @@ For information on the current status of deployment to SAP BTP and any planned r
 
 * We have resolved the issue with downloading the MDA from the SAP Deployment Portal.
 * We have fixed the "Loading More Environments" issue on the SAP Deployment Portal.
+
 ## 2024
 
 ### August 27, 2024
