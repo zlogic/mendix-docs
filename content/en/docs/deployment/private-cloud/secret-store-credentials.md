@@ -712,7 +712,7 @@ For more information, see the [Azure Key Vault Provider](https://azure.github.io
 
 [Azure Postgres (Flexible Server)](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/service-overview) databases can use [managed identity authentication](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/how-to-connect-with-managed-identity) instead of regular passwords.
 
-{{% alert color="warning" %}}azure has a legacy postgres (single server) database. the mendix operator does not support [managed identity authentication for single server databases](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-configure-sign-in-azure-ad-authentication), only the new flexible server is supported. this section only applies to flexible server databases.{{% /alert %}}
+{{% alert color="warning" %}}Azure has a legacy Postgres (Single Server) database. The Mendix Operator does not support [managed identity authentication for Single Server databases](https://learn.microsoft.com/en-us/azure/postgresql/single-server/how-to-configure-sign-in-azure-ad-authentication), only the new Flexible Server is supported. This section only applies to Flexible Server databases.{{% /alert %}}
 
 To use this feature, you need to:
 
