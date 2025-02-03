@@ -59,7 +59,7 @@ On the right side of the screen in the **General** tab, there are buttons and a 
 
 {{% alert color="info" %}}Depending on your permissions, you may see only some of the action buttons described below. You can adjust your permissions settings on the [Permissions](/developerportal/deploy/node-permissions/) tab of your app's **Environments** page.{{% /alert %}}
 
-{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/environment-details.png" alt="The buttons and More Options menu opened" >}}
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/actions.png" alt="The buttons and More Options menu" >}}
 
 When your app is running, you can perform the following actions:
 
