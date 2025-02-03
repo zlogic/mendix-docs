@@ -31,7 +31,6 @@ You must have the latest [GenAI Commons](/appstore/modules/genai/commons/) versi
 
 To ensure that your app can connect to Bedrock, you must also install and configure the [Encryption module](/appstore/modules/encryption/#configuration). 
 
-
 ### Licensing and Cost
 
 This connector is available as a free download from the Mendix Marketplace, but the AWS service to which is connects may incur a usage cost. For more information, refer to AWS documentation.
@@ -118,7 +117,7 @@ To build a simple microflow that uses the ChatCompletions operation to send a si
 2. Create a new microflow and name it, for example, *AmazonBedrockChatCompletions*.
 3. Add a **Microflow call** from the **Toolbox** and choose microflow *AmazonBedrockConnector.BedrockDeployedModel_Get*
 4. Double-click it to configure its parameters.
-    1.  For the **ModelID** parameter, enter the model id of the LLM you want to send a message to. The model id of Claude 3.5 Sonnet is *anthropic.claude-3-5-sonnet-20240620-v1:0*.
+    1. For the **ModelID** parameter, enter the model id of the LLM you want to send a message to. The model id of Claude 3.5 Sonnet is *anthropic.claude-3-5-sonnet-20240620-v1:0*.
     2. Click **OK**.
 5. In the **Toolbox**, search for the **Chat Completions (without history)** activity in the *GenAI (Generate)* and drag it onto your microflow.
 6. Double click on the activity to see its parameters.

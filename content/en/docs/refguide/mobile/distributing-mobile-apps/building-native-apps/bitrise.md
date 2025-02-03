@@ -79,6 +79,7 @@ Any additional workflows that may have been created can be removed. Select the w
 
 {{% alert color="info" %}}
 Building native mobile apps for Mendix 9.24 requires Node v16 (no longer included by default in Bitrise). Follow these steps to install it:
+
 1. Add a new step before the step "Run npm command".
 1. Choose **Node Version Manager (NVM)** from the list of steps.
 1. Set the **Node Version** property to 16 (leave the NVM version blank).
