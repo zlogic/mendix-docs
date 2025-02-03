@@ -18,12 +18,12 @@ For information on the current status of deployment to SAP BTP and any planned r
 
 #### Portal Improvements
 
-* Integrated Maia, a built-in chat interface powered by Generative AI, into the SAP Deployment Portal.
+* We integrated [Maia](/refguide/mendix-ai-assistance/), a built-in chat interface powered by Generative AI, into the SAP Deployment Portal.
 
 #### Bug Fixes
 
-* We have resolved the issue with downloading the MDA from the SAP Deployment Portal.
-* We have fixed the "Loading More Environments" issue on the SAP Deployment Portal.
+* We fixed the MDA download issue in the SAP Deployment Portal.
+* We fixed an issue where the **Load more** button failed to load additional items in the Environment list.
 
 ## 2024
 
