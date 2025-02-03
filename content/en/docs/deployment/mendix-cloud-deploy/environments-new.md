@@ -47,6 +47,10 @@ You can see the following information:
 * Version of the deployment package
 * Name of the deployment package
 
+The most recent deployment package is shown in a banner on top of the page, along with a button to deploy it immediately.
+
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-beta/deploy-mda.png" alt="" >}}
+
 You can also perform the following actions:
 
 * **Deploy** ({{< icon name="deploy" >}}) – Launches the [Deploy wizard](#deploy-wizard), where you can configure and start a new deployment for the selected environment.
