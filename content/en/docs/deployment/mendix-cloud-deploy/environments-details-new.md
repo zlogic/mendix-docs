@@ -27,35 +27,9 @@ To open the **Environment Details** page, go to [Apps](https://sprintr.home.mend
 
 The **Environment Details** page shows information about the selected environment. You can use this page to manage and debug several aspects of the environment. The page has eight tabs: **General**, **Model Options**, **Network**, **Log Levels**, **Runtime**, **Maintenance**, **Tags**, and **Services**.
 
-## The General Tab
+## Actions {#actions}
 
-In the **Application Status** section of the **General** tab, you can find the following information about your environment:
-
-* **Status**
-    * {{% icon name="checkmark-circle-filled" color="green" %}} – The application in this environment is running.
-    * {{% icon name="subtract-circle-filled" color="gray" %}} – No application has been started yet in this environment, or it has been turned off.
-    * {{% icon name="alert-circle-filled" color="yellow" %}} – The application in this environment is experiencing some difficulties; check the alerts page or logs for more information.
-    * {{% icon name="remove-circle-filled" color="red" %}} – The application in this environment is unstable and probably not usable anymore.
-* **Running since** – the date the app was started, if it is running
-* **Name** – the type of environment (Acceptance, Production, Test, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments)); for more information, see the [Naming of Environments](#naming) section below
-* **Url** – the URL of the app
-* **Project ID** – the unique identifier of the app
-* **Environment ID** – the unique identifier of the environment
-* **Custom domains** – any [custom domains](/developerportal/deploy/custom-domains/) of the app; to add a new domain, click **Add Custom Domain**
-* **Java Version** – the JDK version selected for the MDA that is deployed to the environment
-* **Studio Pro Target** – a **Yes** or **No** value indicating whether the environment is the designated deployment target from Studio Pro; for more information, see [Studio Pro Deployment Settings](/developerportal/deploy/studio-deployment-settings/).
-* **Plan** – the type of plan covered by your license (for more information, see the [Overviews](/developerportal/deploy/environments-details/#overviews) section below)
-* **Instances** – a summary of the number and memory allocation of instances of the environment (for more information, see the [Scaling](#scaling) section below)
-* **Database Version** – the PostgreSQL version supporting the database
-* **Region** – the region of the data center where the app is hosted (for the full list of Mendix Cloud regions, see [Outgoing IP](/developerportal/deploy/mendix-ip-addresses/#outgoing))
-* **Secondary Backup Location** – the region where the backup is stored (for more information, see [Data Location](/developerportal/operate/backups/#data-location) in the *Backups* documentation)
-* **Mendix Cloud Version** – the version of Mendix Cloud where the app is hosted
-
-At the bottom of the page, there are three sections showing the deployment package details, plan details, and license. These are described in detail below in the [Overviews](#overviews) section.
-
-### Actions {#actions}
-
-On the right side of the screen in the **General** tab, there are buttons and a **More Options** menu that you can use to perform various actions. Some action buttons are visible when your app is running, some are visible when your app is stopped, and some are always visible.
+On the top right side of the screen, there are buttons and a **More Options** menu that you can use to perform various actions. Some action buttons are visible when your app is running, some are visible when your app is stopped, and some are always visible.
 
 {{% alert color="info" %}}Depending on your permissions, you may see only some of the action buttons described below. You can adjust your permissions settings on the [Permissions](/developerportal/deploy/node-permissions/) tab of your app's **Environments** page.{{% /alert %}}
 
@@ -85,6 +59,32 @@ When your app is stopped, you can perform this set of action buttons instead:
 {{% alert color="info" %}}
 During a [maintenance window](/developerportal/deploy/maintenance-windows/), you cannot start, restart, or stop your app.
 {{% /alert %}}
+
+## The General Tab
+
+In the **Application Status** section of the **General** tab, you can find the following information about your environment:
+
+* **Status**
+    * {{% icon name="checkmark-circle-filled" color="green" %}} – The application in this environment is running.
+    * {{% icon name="subtract-circle-filled" color="gray" %}} – No application has been started yet in this environment, or it has been turned off.
+    * {{% icon name="alert-circle-filled" color="yellow" %}} – The application in this environment is experiencing some difficulties; check the alerts page or logs for more information.
+    * {{% icon name="remove-circle-filled" color="red" %}} – The application in this environment is unstable and probably not usable anymore.
+* **Running since** – the date the app was started, if it is running
+* **Name** – the type of environment (Acceptance, Production, Test, or the name of a [flexible environment](/developerportal/deploy/mendix-cloud-deploy/#flexible-environments)); for more information, see the [Naming of Environments](#naming) section below
+* **Url** – the URL of the app
+* **Project ID** – the unique identifier of the app
+* **Environment ID** – the unique identifier of the environment
+* **Custom domains** – any [custom domains](/developerportal/deploy/custom-domains/) of the app; to add a new domain, click **Add Custom Domain**
+* **Java Version** – the JDK version selected for the MDA that is deployed to the environment
+* **Studio Pro Target** – a **Yes** or **No** value indicating whether the environment is the designated deployment target from Studio Pro; for more information, see [Studio Pro Deployment Settings](/developerportal/deploy/studio-deployment-settings/).
+* **Plan** – the type of plan covered by your license (for more information, see the [Overviews](/developerportal/deploy/environments-details/#overviews) section below)
+* **Instances** – a summary of the number and memory allocation of instances of the environment (for more information, see the [Scaling](#scaling) section below)
+* **Database Version** – the PostgreSQL version supporting the database
+* **Region** – the region of the data center where the app is hosted (for the full list of Mendix Cloud regions, see [Outgoing IP](/developerportal/deploy/mendix-ip-addresses/#outgoing))
+* **Secondary Backup Location** – the region where the backup is stored (for more information, see [Data Location](/developerportal/operate/backups/#data-location) in the *Backups* documentation)
+* **Mendix Cloud Version** – the version of Mendix Cloud where the app is hosted
+
+At the bottom of the page, there are three sections showing the deployment package details, plan details, and license. These are described in detail below in the [Overviews](#overviews) section.
 
 #### Clearing an Environment {#clear-environment}
 
@@ -183,6 +183,8 @@ In this section, you can view the configured constants. Constants are used to de
 
 To fill in a new value, select the constant and click **Edit** to bring up the **Edit Constant** dialog box.
 
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/edit-constant.png" class="no-border" >}}
+
 In the **Edit Constant** dialog box, you can change the constant value using the **New value** field.
 
 You can also set **Mask** to **Yes**. This changes the display settings for **Current value** and **New value**; if masking is enabled, all screens in the Mendix Portal (and in Excel if you export the constants) conceal these values and display a string of asterisks in their place. This lets you keep your constants secret from users who do not have edit rights.
@@ -195,13 +197,17 @@ For the changes to take effect, you must restart your application.
 When a constant is first introduced to a cloud deployment, its value is taken from the Studio Pro configuration. Any later changes to the constant value in Studio Pro will not be copied to the new deployment.
 {{% /alert %}}
 
-Finally, you can export the constant values to an Excel file by clicking **Export to Excel**, or compare the values across different environments by clicking **Compare and Edit**.
-
 For more information, see [Constants](/refguide/constants/).
+
+#### Comparing Constants
+
+You can export the constant values to an Excel file by clicking **Export to Excel**, or compare the values across different environments by clicking **Compare and Edit**.
 
 ### Scheduled Events
 
 In this section, you can view your configured scheduled events.
+
+{{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/edit-event.png" class="no-border" >}}
 
 If you select a scheduled event and click **Toggle**, you can switch the scheduled event off and on.
 
