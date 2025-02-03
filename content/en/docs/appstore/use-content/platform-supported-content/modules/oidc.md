@@ -252,6 +252,9 @@ If you are configuring navigation for web/responsive apps and want to allow your
 
 In addition, administrators will need to have access to configure OIDC and also manage end-users. You can do this by including the pages `Administration.Account_Overview` and `OIDC.OIDC_Client_Overview` into the app navigation, or a separate administration page.
 
+If you are testing phone web and phone web offline locally, use the URLs `http://localhost:8080/?profile=Phone` and 
+`http://localhost:8080/?profile=PhoneOffline`, respectively. 
+
 ### Setting Encryption Key
 
 Follow the instructions to [set an encryption key in the Encryption module](/appstore/modules/encryption/#configuration). The constant to set is called `Encryption.EncryptionKey` and should be a random value 32 characters long. This key will be used to encrypt and decrypt values.
