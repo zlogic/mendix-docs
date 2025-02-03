@@ -10,11 +10,11 @@ description: "Describes the advanced configuration for the SAML module"
 
 This document outlines the advanced configurations for the SAML module. For basic configuration and usage, refer to the [SAML](/appstore/modules/saml/) documentation.
 
-### Multi-tenant Behavior
+### Multitenant Behavior
 
 The resource folder contains a file called *SAMLConfig.properties*. In this file, you can optionally override advanced settings from the SAML module. Usage of this file is optional. When the file does not exist or you do not specify a setting, the module will use its default behavior.
 This file contains the documented properties, and example lines show the default values of these options.
-With these settings, you can configure the behavior of this module and improve the multi-tenant behavior of your application. For plain SAML authentication, it is best to leave this file unchanged.
+With these settings, you can configure the behavior of this module and improve the multitenant behavior of your application. For plain SAML authentication, it is best to leave this file unchanged.
 
 ### Use a Certificate Issued by a Certificate Authority {#use-ca}
 
@@ -53,7 +53,7 @@ You need to customize this login page when end-users have different ways of logi
 
 ### Custom Settings
 
-The resources folder contains the *SAMLConfig.properties* file, and through this file, advanced settings can be configured for the module. This file contains the settings along with documentation on the settings. Through this file, it is possible to alter the URLs used as well as how the application behaves in a multi-tenant environment. The file also specifies all the default values and behavior in more detail.
+The resources folder contains the *SAMLConfig.properties* file, and through this file, advanced settings can be configured for the module. This file contains the settings along with documentation on the settings. Through this file, it is possible to alter the URLs used as well as how the application behaves in a multitenant environment. The file also specifies all the default values and behavior in more detail.
 
 If you are using a custom URL, see [How Do I Get my SAML Metadata or CommunityCommons.GetApplicationUrl to Use the Custom URL?](/developerportal/deploy/custom-domains/#use-custom-url) in the *Custom Domains* documentation.
 
