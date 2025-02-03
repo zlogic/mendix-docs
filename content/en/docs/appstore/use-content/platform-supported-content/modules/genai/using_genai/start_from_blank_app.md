@@ -38,7 +38,7 @@ To start building your smart app with a blank GenAI App template, download the [
 
 ### Important Modules
 
-The [Blank GenAI App Template](https://marketplace.mendix.com/link/component/227934) includes an essential pre-installed bundle called the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931), which are beneficial to familiarize yourself with, as it includes:
+The [Blank GenAI App Starter App](https://marketplace.mendix.com/link/component/227934) includes an essential pre-installed bundle called the [GenAI For Mendix](https://marketplace.mendix.com/link/component/227931), which are beneficial to familiarize yourself with, as it includes:
 
 * The [GenAI Commons](/appstore/modules/genai/commons/) module: provides pre-built operations and data structures for seamless integration with platform-supported GenAI connectors, such as the Mendix Cloud GenAI, OpenAI, or Amazon Bedrock.
 
@@ -54,11 +54,7 @@ Selecting the infrastructure for integrating GenAI into your Mendix application 
 
 * [OpenAI](/appstore/modules/genai/openai/): The [OpenAI Connector](https://marketplace.mendix.com/link/component/220472) supports both OpenAI’s platform and Azure’s OpenAI service.
 
-{{% alert color="info" %}}
-To start, you can sign up for a free trial with OpenAI and receive credits valid for three months from the account creation date. For more details, see [OpenAI API reference](https://platform.openai.com/docs/api-reference/authentication).
-{{% /alert %}}
-
-* [Amazon Bedrock](/appstore/modules/genai/bedrock/): The [Bedrock Connector](https://marketplace.mendix.com/link/component/215042) allows you to leverage Amazon Bedrock’s fully managed service to integrate foundation models from Amazon and leading AI providers. 
+* [Amazon Bedrock](/appstore/modules/genai/bedrock/): The [Amazon Bedrock Connector](https://marketplace.mendix.com/link/component/215042) allows you to leverage Amazon Bedrock’s fully managed service to integrate foundation models from Amazon and leading AI providers. 
 
 * Your Own Connector: Optionally, if you prefer a custom connector, you can integrate your chosen infrastructure. However, this document focuses on the OpenAI and Bedrock connectors, as they offer comprehensive support and ease of use to get started.
 
@@ -151,7 +147,7 @@ Follow the steps below to configure OpenAI for your application. For more inform
    * In the **Test configuration**, select the deployed model and press **Test**.
    * If an error occurs, check the **Mendix Console** for more details on resolving the issue.
 
-#### Bedrock Configuration
+#### Amazon Bedrock Configuration
 
 Follow the steps below to configure Amazon Bedrock for your application:
 

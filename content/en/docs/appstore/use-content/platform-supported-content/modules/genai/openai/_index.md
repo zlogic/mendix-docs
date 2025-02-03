@@ -114,10 +114,6 @@ The following inputs are required for the OpenAI configuration:
 | Endpoint    | This is the API endpoint (for example, `https://api.openai.com/v1`)   |
 | Token     | This is the access token to authorize your API call. <br />To get an API, follow these steps:<ol><li>Create an account and sign in at [OpenAI](https://platform.openai.com/).</li><li> Go to the [API key page](https://platform.openai.com/account/api-keys) to create a new secret key. </li><li>Copy the API key and save this somewhere safe.</li></ol> |
 
-{{% alert color="info" %}}
-If you have signed up for an OpenAI account and are using free trial credits, note that the credits are only valid for three months after the account is created (not after the API key is created). To continue using the OpenAI API with an account that is more than three months old, you must top up your account balance with credit and create a new API key. For more details, see the [OpenAI API reference](https://platform.openai.com/docs/api-reference/authentication).
-{{% /alert %}}
-
 #### Azure OpenAI Configuration {#azure-openai-configuration} 
 
 The following inputs are required for the Azure OpenAI configuration: 
