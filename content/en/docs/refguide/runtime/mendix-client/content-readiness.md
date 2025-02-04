@@ -31,8 +31,8 @@ The following table shows which of the more popular platform-supported Marketpla
 | [Deep Link Module](https://marketplace.mendix.com/link/component/43) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [Email Connector](https://marketplace.mendix.com/link/component/120739) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [Encryption](https://marketplace.mendix.com/link/component/1011) | {{< icon name="checkmark-circle-filled" color="green" >}} |
-| [Excel Exporter](https://marketplace.mendix.com/link/component/726) | {{< icon name="remove-circle-filled" color="red" >}} |
-| [Excel Importer](https://marketplace.mendix.com/link/component/72) | {{< icon name="remove-circle-filled" color="red" >}} |
+| [Excel Exporter](https://marketplace.mendix.com/link/component/726) | {{< icon name="checkmark-circle-filled" color="green" >}} |
+| [Excel Importer](https://marketplace.mendix.com/link/component/72) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [Forgot Password Module](https://marketplace.mendix.com/link/component/1296) | {{< icon name="checkmark-circle-filled" color="green" >}} |
 | [Image Crop](https://marketplace.mendix.com/link/component/254) | {{< icon name="remove-circle-filled" color="red" >}} |
 | [LDAP](https://marketplace.mendix.com/link/component/210270) | {{< icon name="checkmark-circle-filled" color="green" >}} |
