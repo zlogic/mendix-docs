@@ -264,15 +264,15 @@ There are three types of values for these headers:
 
 * Choose a value from a drop-down menu:
 
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/http-header-dropdown.png" alt="Selecting a value" width=350 class="no-border" >}}
+    {{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/http-header-dropdown.png" alt="Selecting a value" width=350 class="no-border" >}}
 
 * Choose a value from a drop-down menu and specify a URL:
 
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/http-header-url.png"  alt="Specifying a URL" width=350 class="no-border" >}}
+    {{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/http-header-url.png"  alt="Specifying a URL" width=350 class="no-border" >}}
 
 * Enter the required values as a string:
 
-    {{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details/http-header-string.png"  alt="Entering a value" width=350 class="no-border" >}}
+    {{< figure src="/attachments/deployment/mendix-cloud-deploy/environments-details-beta/http-header-string.png"  alt="Entering a value" width=350 class="no-border" >}}
 
 The changes to the headers are implemented when the app is redeployed.
 
@@ -413,8 +413,8 @@ Custom log nodes appear in the list only after a message has been logged to them
 
 On this tab, you can perform the following actions:
 
-* Change the log level by selecting a node, clicking **Change level**, and modifying the level in the **Change log level** dialog box
-* Click **Set all to Info** to revert all the changes
+* Change the log level by selecting the new value from a drop-down list.
+* Click **Set all to INFO** to revert all the changes.
 
 When using the **Log Levels** tab, bear in mind the following considerations:
 
