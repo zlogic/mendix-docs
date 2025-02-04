@@ -17,13 +17,13 @@ For information on Mendix data storage policies and practices for Maia, see [Mai
 
 For information on what third-party services Maia uses and what data are sent to the third-party services, see the [Maia Third-Party Services](#maia-third-party-services) section below.
 
-## Maia in the Mendix Platform 
+## Maia Chat 
 
-* **Maia Chat** (released in GA in Studio Pro 10.12.0 and the Mendix Portal) – a built-in chat interface powered by Generative AI. It answers questions about app development in Mendix, including how to apply concepts, best practices, and development patterns. For more information, see [Maia Chat](/refguide/maia-chat/).
+Maia Chat (generally available in Studio Pro 10.12.0 and the Mendix Portal) is a built-in chat interface in the Mendix Platform powered by Generative AI. Developers can ask questions about all aspects of Mendix, including how to apply concepts, best practices, governance tools, and development patterns. For more information, see [Maia Chat](/refguide/maia-chat/).
 
-## Maia in Mendix Studio Pro 
+## Maia Capabilities in Mendix Studio Pro 
 
-In Mendix Studio Pro, Maia consists of the following capabilities: 
+In addition to Maia Chat, Maia in Mendix Studio Pro has the following capabilities: 
 
 Guidance:
 
