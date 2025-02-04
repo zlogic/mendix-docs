@@ -16,21 +16,21 @@ MendixChat was rebranded to Maia Chat and released in GA in Studio Pro 10.12.0. 
 {{% /alert %}}
 
 {{% alert color="info" %}}
-To use Maia Chat, internet connection and signing in to Studio Pro or the Mendix Portal are required.
+To use Maia Chat, an internet connection and signing in to Studio Pro or the Mendix Portal are required.
 {{% /alert %}}
 
 {{% alert color="info" %}}
 Maia Chat does not use any project, customer, or company information. It only uses the data that you have entered in the Chat. Please do not enter any personal or sensitive data!
 {{% /alert %}}
 
-Maia Chat is a built-in chat interface powered by Generative AI in the Mendix Platform . Developers can ask questions about app development in Mendix, including how to apply concepts, best practices, and development patterns. It is built based on large language models (LLMs), using data from various resources, such as [Mendix Docs](/), [Mendix Community](https://community.mendix.com/), and [Mendix Academy](https://academy.mendix.com/).
+Maia Chat is a built-in chat interface in the Mendix Platform powered by Generative AI. Developers can ask questions about all aspects of Mendix, including how to apply concepts, best practices, governance tools, and development patterns. It is based on large language models (LLMs) using data from various resources, such as [Mendix Docs](/), [Mendix Community](https://community.mendix.com/), and [Mendix Academy](https://academy.mendix.com/).
 
 ## Using Maia Chat
 
 There are two ways to access Maia Chat: 
 
-* Studio Pro and Mendix Portal: You can click the **Maia** ({{% icon name="sparkles" %}}) icon at the top right bar.
-* Studio Pro: Or you can go to the **View** menu and click **Maia**
+* In Studio Pro and Mendix Portal, click the **Maia** ({{% icon name="sparkles" %}}) icon to the right of the top bar.
+* In Studio Pro go to the **View** menu and click **Maia**
 
 The chat interface appears at the right side of your context window or browser. In Studio Pro you can find the dock under the **Maia** tab.
 
