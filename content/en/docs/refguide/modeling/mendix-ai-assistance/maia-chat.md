@@ -48,29 +48,29 @@ The following steps present an example of how you can interact with Maia Chat by
     * Top relevant references from various resources like Mendix documentation, Mendix Community, and Academy learning paths
     
 #### Studio Pro Features
-    
+
 Studio Pro has additional features which are indicated by the following:
+
+* A copy icon ({{% icon name="copy" %}}) which allows you to copy the given answer to a clipboard (this option was added in 10.7.0)
+* Feedback icons
+* New chat option
     
-    * A copy icon ({{% icon name="copy" %}}) which allows you to copy the given answer to a clipboard (this option was added in 10.7.0)
-    * Feedback icons
-    * New chat option
-
-        {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-chat/maia-chat-example.png" width="350px" >}}
-
-        {{% alert color="info" %}}In Studio Pro 10.7.0 and above, you can also see the Mendix version of the references, the level required if the reference comes from Mendix Academy, and the date and answer status if the reference comes from the Mendix Community.{{% /alert %}}
+    {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-chat/maia-chat-example.png" width="350px" >}}
+    
+    {{% alert color="info" %}}In Studio Pro 10.7.0 and above, you can also see the Mendix version of the references, the level required if the reference comes from Mendix Academy, and the date and answer status if the reference comes from the Mendix Community.{{% /alert %}}
 
 1. Click the thumbs up icon ({{% icon name="thumbs-up" %}}) or the thumbs down icon ({{% icon name="thumbs-down" %}}) to give your feedback on an answer. 
 
-1. Click the add feedback icon ({{% icon name="notes-paper-edit" %}}) to provide a more detailed feedback. A detailed **Feedback** section shows below the answer:
+2. Click the add feedback icon ({{% icon name="notes-paper-edit" %}}) to provide a more detailed feedback. A detailed **Feedback** section shows below the answer:
 
     * You can rate the **correctness**, **completeness**, and **readability** of the provided answer.
     * You can also provide **Additional feedback** if you want to. 
 
         {{< figure src="/attachments/refguide/modeling/mendix-ai-assistance/maia-chat/feedback-section.png" width="250px" >}} 
 
-1. Click the **Submit feedback** button to submit your feedback. Afterwards, you will be brought back to the main chat interface where you can continue asking questions.
+3. Click the **Submit feedback** button to submit your feedback. Afterwards, you will be brought back to the main chat interface where you can continue asking questions.
 
-1. Click **New chat** at beginning of your chat if you want to clear the messages and start a new conversation without reference to your current chat (this option was added in 10.7.0).
+4. Click **New chat** at beginning of your chat if you want to clear the messages and start a new conversation without reference to your current chat (this option was added in 10.7.0).
 
 ### Asking Follow-Up Questions
 
