@@ -17,16 +17,13 @@ For information on Mendix data storage policies and practices for Maia, see [Mai
 
 For information on what third-party services Maia uses and what data are sent to the third-party services, see the [Maia Third-Party Services](#maia-third-party-services) section below.
 
-## Maia Chat 
-
-Maia Chat (generally available in Studio Pro 10.12.0 and the Mendix Portal) is a built-in chat interface in the Mendix Platform powered by Generative AI. Developers can ask questions about all aspects of Mendix, including how to apply concepts, best practices, governance tools, and development patterns. For more information, see [Maia Chat](/refguide/maia-chat/).
-
 ## Maia Capabilities in Mendix Studio Pro 
 
 In addition to Maia Chat, Maia in Mendix Studio Pro has the following capabilities: 
 
 Guidance:
 
+* **Maia Chat** (generally available in Studio Pro 10.12.0 and the Mendix Portal) – a built-in chat interface powered by Generative AI in Studio Pro. It answers questions about app development in Mendix, including how to apply concepts, best practices, and development patterns. For more information, see [Maia Chat](/refguide/maia-chat/). 
 * **Maia Learn** (available in Studio Pro 10.18 and above) - helps you to quickly learn Mendix core concepts and get started with Studio Pro. For more information, see [Maia Learn](/refguide/maia-learn/).
 
 Recommenders:
@@ -43,10 +40,7 @@ Generators:
 
 ## Maia in Mendix Portal
 
-Below are the Maia capabilities that are available in Mendix Portal:
-
-* **Maia Rewrite** - an AI-assisted writing aid integrated within the Mendix Community posting interface, which helps you to ask properly-formatted questions that are more likely to be answered. For more information on how to use it, see the [Asking Your Question](/community-tools/mendix-community/#asking-question) section in *Mendix Community*.
-* **Maia Summarize** - an AI-assisted summarizing aid which condenses lengthy discussions for a question posted on Mendix Community into key points, making it easier for you to find solutions to your questions without having to plough through every single answer in the thread. For more information on how to use it, see the [Question Details](/community-tools/mendix-community/#question-details) section in *Mendix Community*.
+For more information on Maia in Mendix Portal, see the [Maia in Mendix Portal](/developerportal/global-navigation/#maia-mx-portal) section in *Global Navigation*.
 
 ## Maia Third-Party Services {#maia-third-party-services}
 
