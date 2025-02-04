@@ -456,9 +456,10 @@ You can set up custom user provisioning by selecting the **IdP Configuration** t
         * By default, the value is set to *Name*.
     * **Allow the module to create users** – This enables the module to create users based on user provisioning and attribute mapping configurations. When disabled, it will still update existing users. However, for new users, it will display an exception message stating that the login action was successful but no user has been configured.
         * By default, the value is set to *Yes*.
-    * **User role** – the role which will be assigned to newly created users.
-    * **User Type** – this allows you to configure end-users of your application as internal or external.
-        * By default, the value is set to *Internal*.
+    * **Default Userrole** – the role assigned to newly created users and remains unchanged even when the user's details are updated. You can select one default user role. To assign additional roles, use the Access Token Parsing Microflow. If the Access Token Processing Microflow is selected, OIDC verifies the updated default role configuration and applies any changes to the user's role. Note that, bulk updates for existing users are not automated when the default role configuration is changed.
+    * **User Type** – this allows you to configure end-users of your application as internal or external. It is created upon the creation of the user and updated each time the user logs in.
+        * By default, the value is set to *Internal*. 
+
 2. Under **Attribute Mapping**, for each piece of information you want to add to your custom user entity, select an **IdP Attribute** (claim) and specify the **Configured Entity Attribute** where you want to store the information.
 
     Note the following:
@@ -474,6 +475,8 @@ You can set up custom user provisioning by selecting the **IdP Configuration** t
     2. **User(System.User)**: A Mendix object representing the user to be provisioned. Ensure that the selected microflow matches this parameter signature.
 
     The microflow must return a **System.User** object to ensure proper user provisioning and updates. It will be executed after user creation or update of user. However, starting from version 2.0.0 of the UserCommons module, this is no longer mandatory. If you have added a new microflow, you will need to refresh the module containing your microflow as described in the [Mx Model Reflection](/appstore/modules/model-reflection/). This selection can be blank if you do not want to add custom logic.
+
+4. Click **Save** to save the configuration.
 
 ### Custom Behavior
 
