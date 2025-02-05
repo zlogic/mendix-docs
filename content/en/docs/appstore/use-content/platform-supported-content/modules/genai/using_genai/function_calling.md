@@ -1,8 +1,8 @@
 ---
 title: "Integrate Function Calling in your Mendix app"
 url: /appstore/modules/genai/genai-howto-functioncalling/
-linktitle: "How to integrate Function Calling in your Mendix app"
-weight: 10
+linktitle: "Integrate Function Calling in your Mendix app"
+weight: 30
 description: "A tutorial guiding you through integrating and implementing function calling in your Mendix application for enhanced functionality."
 ---
 
@@ -39,7 +39,7 @@ By following this tutorial, you will:
 For this example, we'll implement two functions with the following purposes: 
 
 1. Gathering the display name of the user when an email is requested in a chatbot, so that the information will automatically be filled for the end user, and
-2. Extracting the bank holidays from the Netherlands using an API.
+2. Extracting the bank holidays from the Netherlands using an API. For this example, a public API was taken from https://www.openholidaysapi.org/en/.
 
 ### Choosing the Infrastructure {#infrastructure}
 
