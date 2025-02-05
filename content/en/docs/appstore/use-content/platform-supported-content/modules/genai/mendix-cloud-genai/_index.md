@@ -9,7 +9,7 @@ no_list: false
 
 ## Introduction
 
-In order to help developers get started integrating GenAI capabilities into custom applications, Mendix Cloud provides GenAI Resource Packs. These provide access to Large Language Models and knowledge bases and integration between each other, so that the most common GenAI patterns can be implemented seamlessly in a low code way. It makes leveraging GenAI technologies accessible for Mendix customers and partners by abstracting a way complex provisioning processes and turning configuration steps into a few simple clicks as part of the platform experience.
+In order to help developers get started integrating GenAI capabilities into custom applications, Mendix Cloud provides GenAI Resource Packs. These provide access to Large Language Models and knowledge bases and integration between each other, so that the most common GenAI patterns can be implemented seamlessly in a low code way. It makes leveraging GenAI technologies accessible for Mendix customers and partners by abstracting a way complex provisioning processes and turning configuration steps into a few simple clicks as part of the platform experience. Feel free to contact genai-resource-packs@mendix.com to learn more.
 
 ## Resources Overview
 
