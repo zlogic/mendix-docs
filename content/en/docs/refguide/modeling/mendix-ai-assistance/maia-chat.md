@@ -60,6 +60,7 @@ The following steps present an example of how you can interact with Maia Chat by
 5. Click the **Submit feedback** button to submit your feedback. Afterwards, you will be brought back to the main chat interface where you can continue asking questions.
 
 6. Click **New chat** at beginning of your chat if you want to clear the messages and start a new conversation without reference to your current chat (this option was added in Studio Pro 10.7.0).
+
 #### Studio Pro Features
 
 Maia Chat in Studio Pro has additional features which are indicated by the following:
