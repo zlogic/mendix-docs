@@ -8,7 +8,7 @@ weight: 60
 
 ## Introduction
 
-The Mendix Cloud GenAI connector (delivered as part of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931)) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox.
+The Mendix Cloud GenAI connector (delivered as part of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931)) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox. Feel free to contact [genai-resource-packs@mendix.com](mailto:genai-resource-packs@mendix.com) to learn more.
 
 ### Typical Use Cases
 
@@ -74,7 +74,7 @@ To use this connector, you need configuration keys to authenticate to the Mendix
 
 ## Installation
 
-Add the [Dependencies](#dependencies) listed above from the Marketplace. On the Marketplace, the Mendix Cloud GenAI connector is bundled inside of [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931) which also contains GenAI commons operations and logic. To import this module into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
+Add the [dependencies](#dependencies) listed above from the Marketplace. On the Marketplace, the Mendix Cloud GenAI connector is bundled inside of the [GenAI for Mendix](https://marketplace.mendix.com/link/component/227931) which also contains GenAI commons operations and logic. To import this module into your app, follow the instructions in the [Use Marketplace Content](/appstore/use-content/).
 
 ## Configuration {#configuration}
 

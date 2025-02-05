@@ -12,6 +12,14 @@ These release notes cover changes to the app management functionality and other 
 
 To see the current status of the Mendix Control Center, see [Mendix Status](https://status.mendix.com/). Here you can also see planned maintenance and past incidents.
 
+## 2025
+
+### January 30th, 2025
+
+#### Fixes
+
+* We fixed an issue where the export to Excel from the AppsOverview was wrongly setting the DBRam value. (Ticket 239384)
+
 ## 2024
 
 ### November 29, 2024
