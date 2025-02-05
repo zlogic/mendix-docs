@@ -3,7 +3,8 @@ title: "Amazon Bedrock"
 url: /appstore/modules/genai/reference-guide/external-connectors/bedrock/
 weight: 10
 description: "Describes the Amazon Bedrock GenAI service."
-
+aliases:
+    - /appstore/modules/genai/bedrock/
 ---
 
 ## Introduction

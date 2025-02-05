@@ -79,14 +79,15 @@ To tailor your application's behavior, you can customize the [System Prompt](/ap
 
 ##### Changing the System Prompt {changing-system-prompt}
 
-{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-blankapp/blank_genai_mf.jpg" >}}
+{{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-blankapp/blank_genai_systemprompt.png" >}}
 
 1. Open the copied `ACT_FullScreenChat_Open` microflow from your `MyFirstBot` module.
 2. Locate the **ChatContext** action.
-3. Inside this action, find the `System prompt` parameter, which has default an emprty value.
+3. Inside this action, find the `System prompt` parameter, which has default an empty value.
 4. Update the `System prompt` value to reflect your desired behavior. For example:
    * For a customer service chatbot: *'You are a helpful customer service assistant providing answers to common product questions.'*
    * For a travel advisor assistant: *'You are a travel advisor assistant providing travel tips and destination information.'*
+   * Or keep it simple with *'You are an assistant.'*
 5. Save the changes.
 
 #### Navigation Configuration

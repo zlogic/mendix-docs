@@ -4,6 +4,7 @@ url: /appstore/modules/genai/mx-cloud-genai/
 linktitle: "Mendix Cloud GenAI"
 weight: 30
 description: "Provides guidance on how to navigate through the Mendix Cloud GenAI Resource Packs."
+no_list: false
 ---
 
 ## Introduction
@@ -21,3 +22,5 @@ There are three different types of resources:
 * **Knowledge Base**: A knowledge base can be used to upload your data which then can be used by a text generation resource. 
 
 * **Compute - Embeddings Generation**: Embeddings generation resources are designed to convert text into vector representations. An embeddings resource is required for uploading data to your Knowledge Base. 
+
+## Relevant Sources
