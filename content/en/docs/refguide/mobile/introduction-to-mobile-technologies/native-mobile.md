@@ -27,6 +27,8 @@ Native mobile apps must be distribute via AppStores. Updates can be distributed 
 
 ## Limitations
 
+### Bitcode Deprecation {#bitcode-deprecation}
+
 The React Native version used in Studio Pro versions 10.11-10.16 includes Bitcode, which is not longer supported by Xcode 16 and above. This means that native mobile iOS applications created by customers **cannot be submitted to the App Store**. 
 
 To address the issue, there are one of three things you can do:
@@ -35,7 +37,7 @@ To address the issue, there are one of three things you can do:
 * Use the workaround [below](#bitcode-workaround)
 * Downgrade Xcode to version 15.4 (although it does not work on latest MacOS version)
 
-### Workaround {#bitcode-workaround}
+#### Workaround {#bitcode-workaround}
 
 Apply the following changes to the native mobile project in "ios/Podfile" file in the "post_install" block (ref https://stackoverflow.com/questions/79022303/asset-validation-failed-nslocalizedrecoverysuggestion-invalid-executable-the-e/79022687):
 
