@@ -134,9 +134,9 @@ In Studio Pro 10, the glyphicon is slowly being phased out. Although a currently
 
 If your application is currently using the Atlas theme, this is easily solved by upgrading [Atlas Core](https://marketplace.mendix.com/link/component/117187) to version 3.11 or above. Otherwise, a possible workaround for this is to manually add the [Atlas icons module](https://github.com/mendix/atlas/raw/main/resources/Atlas_Icons.mpk) to your app.
 
-### Custom login for published services
+### Custom Login for Published Services
 
-In Mendix 10, published OData, REST and Web services use sessions that do not communicate with the database. This also means that these services ignore [customized login behavior using a LoginAction](/refguide/login-behavior/#customizing-login-behavior). When upgrading an app that uses this feature to Mendix 10, you need to reimplement the login behavior in an authentication microflow. See [OData authentication  microflow](/refguide/published-odata-services/#authentication-microflow), [REST authentication microflow](/refguide/published-rest-service/#authentication-microflow) or [Web service authentication](/refguide/integration/expose-a-web-service/#authentication-and-users) for more information.
+In Studio Pro 10, published OData, REST, and Web services use sessions that do not communicate with the database. This also means these services ignore [customized login behavior using a LoginAction](/refguide/login-behavior/#customizing-login-behavior). When upgrading an app that uses these features to Studio Pro 10, you need to reimplement the login behavior in an authentication microflow. For more information, see [OData authentication  microflow](/refguide/published-odata-services/#authentication-microflow), [REST authentication microflow](/refguide/published-rest-service/#authentication-microflow), or [Web service authentication](/refguide/integration/expose-a-web-service/#authentication-and-users).
 
 ## Read More
 
