@@ -73,7 +73,7 @@ Mendix Cloud GenAI Resource Packs are available in the following regions of Mend
 
 For the Mendix Cloud GenAI Model Resources with Anthropic's Claude and Cohere's Embed, we do not store any of the requests (prompts) & responses (answers, embeddings) sent to & from the service. Neither do our partners Amazon, Anthropic & Cohere. Your data is **not** used for training.
 
-Data stored in the GenAI Knowledge Base Resources is stored in a logically isolated database only accessible by you, the customer, through the Keys you can create yourself in the Portal.
+Data stored in the GenAI Knowledge Base Resources is stored in a logically isolated database only accessible by you, the customer, through the keys you can create yourself in the Portal.
 
 ### How is data sent to the Mendix Cloud GenAI service stored & used?
 The requests (prompts) sent to & responses (answers, embeddings) sent from the Models are not stored anywhere and are **not** used for training purposes. Only metadata about requests like token input/output counts are collected for logging, metrics & monitoring, metering & billing, product improvement and maintenance purposes.
