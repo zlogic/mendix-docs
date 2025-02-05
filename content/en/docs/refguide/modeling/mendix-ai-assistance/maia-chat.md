@@ -16,7 +16,7 @@ MendixChat was rebranded to Maia Chat and released in GA in Studio Pro 10.12.0. 
 {{% /alert %}}
 
 {{% alert color="info" %}}
-To use Maia Chat, an internet connection and signing in to Studio Pro or the Mendix Portal are required.
+To use Maia Chat, an internet connection and signing in to Studio Pro are required.
 {{% /alert %}}
 
 {{% alert color="info" %}}
@@ -79,7 +79,7 @@ In Studio Pro 10.8.0 and above, Maia Chat supports asking follow-up questions ba
 
 {{% alert color="info" %}}
 
-Maia Chat only keeps track of a conversation history within a session in Studio Pro.
+Maia Chat will lose track of the conversation history if you exit Studio Pro.
 
 {{% /alert %}}
 

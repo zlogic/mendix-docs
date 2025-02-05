@@ -23,7 +23,7 @@ In addition to Maia Chat, Maia in Mendix Studio Pro has the following capabiliti
 
 Guidance:
 
-* **Maia Chat** (generally available in Studio Pro 10.12.0 and the Mendix Portal) – a built-in chat interface powered by Generative AI in Studio Pro. It answers questions about app development in Mendix, including how to apply concepts, best practices, and development patterns. For more information, see [Maia Chat](/refguide/maia-chat/). 
+* **Maia Chat** (generally available in Studio Pro 10.12.0) – a built-in chat interface powered by Generative AI in Studio Pro. It answers questions about app development in Mendix, including how to apply concepts, best practices, and development patterns. For more information, see [Maia Chat](/refguide/maia-chat/). 
 * **Maia Learn** (available in Studio Pro 10.18 and above) - helps you to quickly learn Mendix core concepts and get started with Studio Pro. For more information, see [Maia Learn](/refguide/maia-learn/).
 
 Recommenders:
@@ -40,7 +40,7 @@ Generators:
 
 ## Maia in Mendix Portal
 
-For more information on Maia in Mendix Portal, see the [Maia in Mendix Portal](/developerportal/global-navigation/#maia-mx-portal) section in *Global Navigation*.
+Various Maia features are available in Mendix Portal. For more information, see the [Maia in Mendix Portal](/developerportal/global-navigation/#maia-mx-portal) section in *Global Navigation*.
 
 ## Maia Third-Party Services {#maia-third-party-services}
 
