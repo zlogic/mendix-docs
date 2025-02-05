@@ -23,7 +23,7 @@ To see the current status of the Mendix Portal, see [Mendix Status](https://stat
 
 #### New Features
 
-* [Mendix AI Assistance Chat (Maia Chat)](/refguide/maia-chat/), previously available in Studio Pro, is now accessible in Mendix Portal.
+* [Mendix AI Assistance Chat (Maia Chat)](/developerportal/global-navigation/#maia-chat), previously available in Studio Pro, is now accessible in Mendix Portal.
 
 ### January 29, 2025
 
