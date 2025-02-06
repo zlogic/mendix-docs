@@ -44,7 +44,7 @@ Other main properties of the widget are as follows:
     * Default: **Click**
 * **Menu position** – determines the location of a visible menu relative to the trigger area
     * Default: **Bottom**
-* **Clipping strategy** – determines how the menu items are positioned on the page. 
+* **Clipping strategy** – determines the relative positioning of floating elements on the page. 
     *   **Absolute** - positions the floating element relative to its nearest positioned ancestor.
     *   **Fixed** - positions the floating element relative to the viewport. It breaks the element out of any clipping ancestor.
 
