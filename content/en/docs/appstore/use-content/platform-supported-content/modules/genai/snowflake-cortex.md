@@ -66,4 +66,4 @@ The [Snowflake showcase app](https://marketplace.mendix.com/link/component/22584
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/snowflake/setup.png" alt="" >}}
 
-    For information about the parameters required by each functionality, refer to Snowflake documentation.
+    For information about the parameters required by each functionality, refer to Snowflake documentation.   
