@@ -294,6 +294,10 @@ For example, if your app "myapp" contains a profile page (`myprofile`) which has
 
 For Studio Pro 10.6 and above, ensure you use Mendix SSO module version 10.1 or above, as the DeepLink module has been deprecated and replaced with page URLs. Specify the continuation URL accordingly, as described in the [URL](/refguide/page-properties/#url) section of the *Page Properties*.
 
+{{% alert color="info" %}}
+When using the Page URL or upgrading the module to the latest version, it is mandatory to replace the content of the `theme/web/login.html` file with that of the `resources/mendixsso/templates/login-with-mendixsso-automatically.html` file. For more details, refer to the [Setting Up Mendix Single Sign-On](/appstore/modules/mendix-sso/#setting-up) section above.
+{{% /alert %}}
+
 #### Continuation URL Validation
 
 {{% alert color="info" %}}
