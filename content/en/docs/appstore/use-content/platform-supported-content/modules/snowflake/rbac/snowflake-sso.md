@@ -150,4 +150,4 @@ To configure your Mendix application, perform the following steps:
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-sso/provisioning.png" >}}
 
-12. Run the application and log in with the user that you use in Snowflake and Azure.
+12. Run the application and log in with the user that you use in Snowflake and Azure. 
