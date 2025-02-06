@@ -142,7 +142,7 @@ Lazy loading always fetches 100 data items for each request. Pagination ise trig
 {{% /alert %}}
 
 * **Multiple selection**
-    This setting is only applicable for comboboxes with multiple item selections.
+    This setting is only applicable for combo boxes with multiple item selections.
 
     * **Selected items sorting** – allows user to configure the sorting mechanism to display the selected items.
         * **Caption** - if selected, this settings displays selected items based on their captions, regardless of user's selected sequence. 
