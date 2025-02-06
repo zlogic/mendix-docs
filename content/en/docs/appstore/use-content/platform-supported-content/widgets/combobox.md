@@ -35,6 +35,7 @@ Properties:
 * [General](#general)
 * [Events](#events)
 * [Accessibility](#accessibility)
+* [Advanced](#advanced)
 * [Common](#common)
 
 Styling:
@@ -81,7 +82,6 @@ The static source type can be used to set the value of a string attribute with m
 The **General** section allows you to configure general behavior and captions for the combo box. The following configurations are available:
 
 * **Placeholder text** – captions that will be displayed when there is no data being selected
-* **Filter type** – allows the user to type into the input and filter displayable options on the combo box
 * **No options text** – captions that will be used when filter results are empty, or shown when there is no data displayed in the combo box's options
 * **Clearable** – if enabled, this allows selected data to be cleared all at once
 * **Custom content** – allows custom widgets to be displayed in the combo box instead of normal text values
@@ -127,6 +127,33 @@ The following configurations are available:
 ### Accessibility Tab {#accessibility}
 
 The **Accessibility** tab allows you to configure settings for combo box accessibility features.
+
+### Advanced Tab {#advanced}
+
+The **Advanced** tab allows you to configure settings for features that is beyond the normal configurations.
+
+*   Performance group
+
+    * **Lazy loading** – allows user to configure when the combobox's options data being loaded. If yes, the data will be loaded only after the user triggers options menu being opened.
+    * **Loading type** – allows user to configure the loading animation of combobox.
+
+{{% alert color="info" %}}
+Lazy loading will always fetch 100 data for each request. Pagination will be triggered when user scrolls to the bottom of the options menu. But currently, we have technical limitation to pass this pagination data from the combobox to microflow/nanoflow datasource.
+{{% /alert %}}
+
+*   Multiple selection
+This setting only applicable for combobox with multiple item selections.
+
+    * **Selected items sorting** – allows user to configure the sorting mechanism to display the selected items.
+        *   **Caption** if selected, this settings will display selected items based on their captions, regardless of user's selected sequence. 
+        *   **Default** if selected, this settings will not do any sortings on the client side. But will keep the sorting from the saved values given from datasource. \
+        Which means that on default behavior: \
+        if the target attribute value is set (association multi select) the data will already sorted based on values from the API and combobox will display it as it is. \
+        Otherwise, if there is no target attribute (database multi select) the selected items will be displayed based on user's selected sequence.
+
+*   Filter
+
+* **Filter type** – allows the user to type into the input and filter displayable options on the combo box.
 
 ### Common Tab {#common}
 
