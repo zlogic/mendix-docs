@@ -190,9 +190,7 @@ In v2 of the [Mendix SSO module](/appstore/modules/mendix-sso/), there was a def
 
 This section explains how to customize Mendix SSO in your apps and how to base your own user administration module on this section if you want to do things in a different way.
 
-There are three ways you can modify the Mendix SSO module. You can use snippets from the Mendix SSO Marketplace module in your pages; you can modify the Mendix SSO module in any way you like to support your end-user administration requirements, or use the microflows available in the [Administration](/appstore/modules/administration/) module.
-
-Additionally, Mendix SSO now supports configuring timeout values for the JWKS endpoint. You can set custom timeout values using the environment variables `MendixSSO_RemoteJWKSHttpConnectTimeout` and `MendixSSO_RemoteJWKSHttpReadTime`. These values, specified in milliseconds, read timeouts for the JWKS endpoint. Note that timeout values must not be negative.
+There are five ways you can modify the Mendix SSO module. You can use snippets from the Mendix SSO Marketplace module in your pages; you can modify the Mendix SSO module in any way you like to support your end-user administration requirements, use the microflows available in the [Administration](/appstore/modules/administration/) module, or configuring timeout values for the JWKS endpoint.
 
 The customization options are described in the sections below:
 
@@ -325,6 +323,10 @@ Only exact host names are accepted in the validation, any sub-domains need to be
 
 For example, if your application is running on `https://myapp.mendixcloud.com`, the sub-domain `sub.myapp.mendixcloud.com` will not be approved, unless the environment variable `MendixSSO_AllowedContinuationURLs` contains `https://sub.myapp.mendixcloud.com`.
 {{% /alert %}}
+
+### Using Timeout Values for the JWKS Endpoint
+
+Additionally, Mendix SSO now supports configuring timeout values for the JWKS endpoint. You can set custom timeout values using the environment variables `MendixSSO_RemoteJWKSHttpConnectTimeout` and `MendixSSO_RemoteJWKSHttpReadTime`. These values, specified in milliseconds, read and connect timeouts for the JWKS endpoint. Note that timeout values must not be negative.
 
 ## Tokens
 
