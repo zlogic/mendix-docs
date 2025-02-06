@@ -138,7 +138,7 @@ The **Advanced** tab allows you to configure settings for features that is beyon
     * **Loading type** – allows the user to configure the loading animation of a combo box.
 
 {{% alert color="info" %}}
-Lazy loading always fetches 100 data items for each request. Pagination ise triggered when the user scrolls to the bottom of the options menu. This pagination data is not currently passed from the combobox to the microflow or nanoflow datasource.
+Lazy loading always fetches 100 data items for each request. Pagination is triggered when the user scrolls to the bottom of the options menu. This pagination data is not currently passed from the combobox to the microflow or nanoflow datasource.
 {{% /alert %}}
 
 * **Multiple selection**
