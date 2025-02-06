@@ -128,9 +128,8 @@ To enable Mendix SSO in your app, follow these steps:
 5. Change the page that Mendix uses to sign you in (`login.html`) to allow for signing in using SSO. To do this, perform the following steps:
 
     1. Go to **App** > **Show App Directory in Explorer** in Studio Pro to open the app directory in your file explorer.
-    2. Go to the **theme/web** folder (for Mendix versions below 9.0.0, this is the **theme** folder).
-    3. Rename *login.html* to *login-without-sso.html*.
-    4. Rename *login-with-mendixsso-automatically.html* to *login.html* to automatically initiate the single sign-on process without needing to click a button.
+    2. Go to the **theme/web** folder (for Mendix versions below 9.0.0, this is the **theme** folder) and rename *login.html* to *login-without-sso.html*.
+    3. Copy the `login-with-mendixsso-automatically.html` file from the **resources** > **mendixsso** > **templates** folder to the **theme/web** folder and rename it to `login.html`. This will automatically initiates the single sign-on process without needing to click a button.
 
 Your app is now configured to use Mendix single sign-on when deployed to Mendix Cloud.
 
@@ -193,7 +192,9 @@ This section explains how to customize Mendix SSO in your apps and how to base y
 
 There are three ways you can modify the Mendix SSO module. You can use snippets from the Mendix SSO Marketplace module in your pages; you can modify the Mendix SSO module in any way you like to support your end-user administration requirements, or use the microflows available in the [Administration](/appstore/modules/administration/) module.
 
-These three ways are described below.
+Additionally, Mendix SSO now supports configuring timeout values for the JWKS endpoint. You can set custom timeout values using the environment variables `MendixSSO_RemoteJWKSHttpConnectTimeout` and `MendixSSO_RemoteJWKSHttpReadTime`. These values, specified in milliseconds, read timeouts for the JWKS endpoint. Note that timeout values must not be negative.
+
+The customization options are described in the sections below:
 
 ### Using Snippets
 
