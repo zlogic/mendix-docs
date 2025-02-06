@@ -132,28 +132,25 @@ The **Accessibility** tab allows you to configure settings for combo box accessi
 
 The **Advanced** tab allows you to configure settings for features that is beyond the normal configurations.
 
-*   Performance group
+* **Performance group**
 
-    * **Lazy loading** – allows user to configure when the combobox's options data being loaded. If yes, the data will be loaded only after the user triggers options menu being opened.
-    * **Loading type** – allows user to configure the loading animation of combobox.
+    * **Lazy loading** – allows the user to configure when to load the combo box's options data. Set it to **yes** to ensure that the data is not loaded until the user opens the options menu.
+    * **Loading type** – allows the user to configure the loading animation of a combo box.
 
 {{% alert color="info" %}}
-Lazy loading will always fetch 100 data for each request. Pagination will be triggered when user scrolls to the bottom of the options menu. But currently, we have technical limitation to pass this pagination data from the combobox to microflow/nanoflow datasource.
+Lazy loading always fetches 100 data items for each request. Pagination ise triggered when the user scrolls to the bottom of the options menu. This pagination data is not currently passed from the combobox to the microflow or nanoflow datasource.
 {{% /alert %}}
 
-*   Multiple selection
-This setting only applicable for combobox with multiple item selections.
+* **Multiple selection**
+    This setting is only applicable for comboboxes with multiple item selections.
 
     * **Selected items sorting** – allows user to configure the sorting mechanism to display the selected items.
-        *   **Caption** if selected, this settings will display selected items based on their captions, regardless of user's selected sequence. 
-        *   **Default** if selected, this settings will not do any sortings on the client side. But will keep the sorting from the saved values given from datasource. \
-        Which means that on default behavior: \
-        if the target attribute value is set (association multi select) the data will already sorted based on values from the API and combobox will display it as it is. \
-        Otherwise, if there is no target attribute (database multi select) the selected items will be displayed based on user's selected sequence.
+        * **Caption** - if selected, this settings displays selected items based on their captions, regardless of user's selected sequence. 
+        * **Default** - if selected, this settings does not do any sorting on the client side. Instead, it keeps the sorting from the saved values given from datasource.
+            If the target attribute value is set (that is, if the multiple selection is set to **association**) the data will already sorted based on values from the API and combobox will display it as it is. Otherwise, if there is no target attribute (that is, if the multiple selection is set to **database**) the selected items are displayed based on user's selected sequence.
 
-*   Filter
-
-* **Filter type** – allows the user to type into the input and filter displayable options on the combo box.
+* **Filter**
+    * **Filter type** – allows the user to type into the input and filter displayable options on the combo box.
 
 ### Common Tab {#common}
 
