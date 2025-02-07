@@ -63,8 +63,8 @@ The [Snowflake showcase app](https://marketplace.mendix.com/link/component/22584
 
     This opens the microflow that calls the Snowflake Cortex Analyst function.
 
-4. To see how you can modify the statement, check out the *DS_Statement_ML_CreateView_Analyze* microflow and how the parameters are set at the **Statement_SetUp** step.
+4. To see how you can modify the statement, check out the *DS_Statement_ML_CreateView_Analyze* example microflow and how the parameters are set at the **Statement_SetUp** step.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/snowflake/setup.png" alt="" >}}
+    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/snowflake/StatementSetup.png" alt="" >}}
 
     For information about the parameters required by each functionality, refer to Snowflake documentation.   
