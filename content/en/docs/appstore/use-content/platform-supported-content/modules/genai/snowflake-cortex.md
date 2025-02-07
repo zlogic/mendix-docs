@@ -47,22 +47,23 @@ The [Snowflake showcase app](https://marketplace.mendix.com/link/component/22584
 
     For more information, see [How to Use Marketplace Content](/appstore/use-content/).
 
-2. In Studio Pro, in the [App Explorer](https://docs.mendix.com/refguide/app-explorer/), go to **Showcase_AI_RESTQLAPI** > **Pages**.
+2. In Studio Pro, in the [App Explorer](https://docs.mendix.com/refguide/app-explorer/), go to **Showcase_AI_RESTSQLAPI** > **Pages**.
 
-    This section contains the following pages:
+    This section contains Steps 1-4 the content of the steps is described below: 
 
     1. Introduction
-    2. ANOMALY DETECTION (Machine Learning)
-    3. COMPLETE and TRANSLATE (Large Language Models)
-    4. Analyst (Cortex Analyst)
+    2. ML functions
+    3. Cortex LLM Functions
+    4. Cortex Analyst
+   
 
-3. To see how a Snowflake function is called, right-click on the corresponding **SQLStatement** field, and then click **Go to data source microflow**.
+3. To see how a Snowflake Cortex Analyst action is called, go to *EXAMPLE_CortexAnalyst_GenerateResponseMessage**, you can do so by looking up for the microflow in the Explorer search box and then click on the microflow.
 
-    {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/snowflake/statement.png" alt="" >}}
+   {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/CortexAnalystRequestExample.png" >}}
 
-    This opens the microflow that calls the Snowflake function.
+    This opens the microflow that calls the Snowflake Cortex Analyst function.
 
-4. To modify the call, edit the **Statement_SetUp** step.
+4. To see how you can modify the statement, check out the *DS_Statement_ML_CreateView_Analyze* microflow and how the parameters are set at the **Statement_SetUp** step.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/snowflake/setup.png" alt="" >}}
 
