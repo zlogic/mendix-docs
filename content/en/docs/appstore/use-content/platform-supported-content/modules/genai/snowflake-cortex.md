@@ -49,7 +49,7 @@ The [Snowflake showcase app](https://marketplace.mendix.com/link/component/22584
 
 2. In Studio Pro, in the [App Explorer](https://docs.mendix.com/refguide/app-explorer/), go to **Showcase_AI_RESTSQLAPI** > **Pages**.
 
-    This section contains Steps 1-4 the content of the steps is described below: 
+    This section contains the following pages: 
 
     1. Introduction
     2. ML functions
@@ -57,13 +57,13 @@ The [Snowflake showcase app](https://marketplace.mendix.com/link/component/22584
     4. Cortex Analyst
    
 
-3. To see how a Snowflake Cortex Analyst action is called, go to *EXAMPLE_CortexAnalyst_GenerateResponseMessage**, you can do so by looking up for the microflow in the Explorer search box and then click on the microflow.
+3. To see how a Snowflake Cortex Analyst action is called, use the **Explorer** search box to find and open the *EXAMPLE_CortexAnalyst_GenerateResponseMessage** microflow.
 
    {{< figure src="/attachments/appstore/platform-supported-content/modules/snowflake-rest-sql/CortexAnalystRequestExample.png" >}}
 
-    This opens the microflow that calls the Snowflake Cortex Analyst function.
+    This microflow calls the Snowflake Cortex Analyst function.
 
-4. To see how you can modify the statement, check out the *DS_Statement_ML_CreateView_Analyze* example microflow and how the parameters are set at the **Statement_SetUp** step.
+4. To see how you can modify the statement, refer to the *DS_Statement_ML_CreateView_Analyze* example microflow and check how the parameters are set at the **Statement_SetUp** step.
 
     {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/snowflake/StatementSetup.png" alt="" >}}
 
