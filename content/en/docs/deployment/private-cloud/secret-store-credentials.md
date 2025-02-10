@@ -858,11 +858,11 @@ To enable your environment to use [Google Secret Manager Provider](https://githu
 
     {{% alert color="info" %}}Google Secret Manager doesn't support any sort of hierarchy at the moment, and keys can only be stored as a flat list. As a typical environment would likely need a dozen keys, we recommend adding labels and using a pattern when creating keys. For example, use `<namespace>-<environment-id>-database-type` for the `database-type` key.{{% /alert %}}
 
-    Alternatively, the `gcloud` CLI tool can be used to create keys in an automated way (replace `<namespace-name>` with the namespace where the app is deployed, and `<mendixapp-cr-name>` with the name of the MendixApp CR):
+    Alternatively, the `gcloud` CLI tool can be used to create keys in an automated way (replace `<{Kubernetes namespace}>` with the namespace where the app is deployed, and `<{Mendix App CR name}>` with the name of the MendixApp CR):
 
     ```shell
-    NAMESPACE=<namespace-name>
-    ENVIRONMENT_NAME=<mendixapp-cr-name>
+    NAMESPACE=<{Kubernetes namespace}>
+    ENVIRONMENT_NAME=<{Mendix App CR name}>
     # Example: set the database-type to PostgreSQL
     printf "PostgreSQL" | gcloud secrets create ${NAMESPACE}-${ENVIRONMENT_NAME}-database-type --data-file=- --replication-policy=automatic
     ```
@@ -870,18 +870,18 @@ To enable your environment to use [Google Secret Manager Provider](https://githu
 6. For every secret created on step 5, allow the Mendix app to access it by adding a **Secret Manager Secret Accessor** role to the following principal:
 
     ```
-    principal://iam.googleapis.com/projects/<PROJECT_NUMBER>/locations/global/workloadIdentityPools/<PROJECT_ID>svc.id.goog/subject/ns/<namespace-name>/sa/<mendixapp-cr-name>
+    principal://iam.googleapis.com/projects/<{Project number}>/locations/global/workloadIdentityPools/<{Project ID}>.svc.id.goog/subject/ns/<{Kubernetes namespace}>/sa/<{Mendix App CR name}>
     ```
 
-    replacing `<PROJECT_NUMBER>` and `<PROJECT_ID>` with the project number and project ID from step 4; `<namespace-name>` with the namespace where the app is deployed, and `<mendixapp-cr-name>` with the name of the MendixApp CR.
+    replacing `<{Project number}>` and `<{Project ID}>` with the project number and project ID from step 4; `<{Kubernetes namespace}>` with the namespace where the app is deployed, and `<{Mendix App CR name}>` with the name of the MendixApp CR.
 
     This can also be done using the `gcloud` CLI tool:
 
     ```shell
-    NAMESPACE=<namespace-name>
-    ENVIRONMENT_NAME=<mendixapp-cr-name>
-    PROJECT_ID=<project-id>
-    PROJECT_NUMBER=<project-project-number>
+    NAMESPACE=<{Kubernetes namespace}>
+    ENVIRONMENT_NAME=<{Mendix App CR name}>
+    PROJECT_ID=<{Project ID}>
+    PROJECT_NUMBER=<{Project number}>
     # Example: grand access ENVRIONMENT_NAME in NAMESPACE permissions to access its database-type secret
     gcloud secrets add-iam-policy-binding ${NAMESPACE}-${ENVIRONMENT_NAME}-database-type --role=roles/secretmanager.secretAccessor\
       --member=principal://iam.googleapis.com/projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/${PROJECT_ID}.svc.id.goog/subject/ns/${NAMESPACE}/sa/${ENVIRONMENT_NAME}
@@ -897,11 +897,11 @@ To enable your environment to use [Google Secret Manager Provider](https://githu
 8. Attach the secret to the environment by applying the following Kubernetes yaml:
 
     ```yaml
-    NAMESPACE=<namespace-name>
-    ENVIRONMENT_NAME=<mendixapp-cr-name>
-    PROJECT_ID=<project-id>
-    PROJECT_NUMBER=<project-project-number>
-    cat <<EOF |kubectl apply -n dmitrii-test -f -
+    NAMESPACE=<{Kubernetes namespace}>
+    ENVIRONMENT_NAME=<{Mendix App CR name}>
+    PROJECT_ID=<{Project ID}>
+    PROJECT_NUMBER=<{Project number}>
+    cat <<EOF |kubectl apply -n $NAMESPACE -f -
     apiVersion: secrets-store.csi.x-k8s.io/v1
     kind: SecretProviderClass
     metadata:
