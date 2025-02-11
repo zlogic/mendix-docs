@@ -74,7 +74,7 @@ In OQL v2, the date arguments of functions [DATEPART](/refguide/oql-expression-s
 
 ### Columns Should Have a Name or an Alias
 
-In OQL v1, when a column in the `SELECT` clause is a subquery, a function or a constant, it was possible for it not to have a name. For example:
+In OQL v1, when a column in the `SELECT` clause was a subquery, a function, or a constant, it was possible for it not to have a name. For example:
 
 ```sql
 SELECT
@@ -88,7 +88,7 @@ SELECT
 FROM Module.City
 ```
 
-The column names in this case would be `Name` and `null` names which would not be possible to refer to.
+The column names in this case would be `Name` and multiple columns named `null` which could not be referred to.
 
 In OQL v2, such queries are no longer allowed. You must always provide an alias for expressions that do not result in a named column. The query above can be rewritten as follows:
 
