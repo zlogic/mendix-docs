@@ -31,7 +31,7 @@ The Conversational UI module provides the following functionalities:
     * Snippets that you can use directly on your pages, for example, to display messages or a history sidebar
     * A floating button for opening a pop-up chat
     * Pages, snippets, and logic to display and export token usage data (if enabled in GenAI Commons and supported by the GenAI Connector of choice)
-    * Pages, snippets, and logic to experiment with prompts. An admin, developer, or data scientist can test multiple versions at runtime, define variables, and decide which prompt version should be applied when end-users use the app. See [Prompt Management](/appstore/modules/genai/conversational-ui/prompt-management) for more information.
+    * Pages, snippets, and logic to experiment with prompts. An admin, developer, or data scientist can test multiple versions at runtime, define variables, and decide which prompt version should be applied when end-users use the app. See [Prompt Management](/appstore/modules/genai/prompt-management) for more information.
 
 * Operations to set up your context, interact with the model, and add the data to be displayed in the UI
 * Domain model to store the chat conversations and additional information
@@ -78,7 +78,7 @@ The main entities are shown for reference in the diagram below. For technical do
 
 ### Configuring the Roles {#module-roles}
 
-Make sure that the module role `User` is part of the user roles that are intended to chat with the model. Optionally, you can grant the `_addOn_ReadAll` role to admin roles, so that users with that role can read all messages. A role for usage monitoring is related only to the [Token consumption monitor snippets](#snippet-token-monitor). Additionally, a separate role is applicable for the [Prompt Management functionality](/appstore/modules/genai/conversational-ui/prompt-management). Both do not relate to the conversational snippets.
+Make sure that the module role `User` is part of the user roles that are intended to chat with the model. Optionally, you can grant the `_addOn_ReadAll` role to admin roles, so that users with that role can read all messages. A role for usage monitoring is related only to the [Token consumption monitor snippets](#snippet-token-monitor). Additionally, a separate role is applicable for the [Prompt Management functionality](/appstore/modules/genai/prompt-management). Both do not relate to the conversational snippets.
 
 | Module role | Description |
 | --- | --- |
@@ -265,7 +265,7 @@ A separate set of snippets has been made available to display and export token u
 
 ### Prompt Management {#prompt-management}
 
-The Conversational UI module comes with pages and snippets that provide the Prompt Management functionality. For more details, see [Prompt Management](/appstore/modules/genai/conversational-ui/prompt-management).
+The Conversational UI module comes with pages and snippets that provide the Prompt Management functionality. For more details, see [Prompt Management](/appstore/modules/genai/prompt-management).
 
 ## Technical Reference {#technical-reference}
 
