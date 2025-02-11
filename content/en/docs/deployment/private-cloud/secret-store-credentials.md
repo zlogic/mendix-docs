@@ -806,9 +806,9 @@ After completing the prerequisites, follow these steps to switch from password-b
 
 To enable your environment to use [Google Secret Manager Provider](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp) as external secret storage, follow these steps:
 
-1. Enable workload identity federation for your GKE cluster as described in the [Google Cloud documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity#console_1). This only needs to be done once per cluster.
+1. Enable workload identity federation for your GKE cluster as described in the [Google Cloud documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity#console_1) (this only needs to be done once per cluster).
 
-2. Install the [CSI Secret Store Driver](https://secrets-store-csi-driver.sigs.k8s.io/getting-started/installation.html#install-the-secrets-store-csi-driver), as shown in the following example. This only need to be done once per cluster.
+2. Install the [CSI Secret Store Driver](https://secrets-store-csi-driver.sigs.k8s.io/getting-started/installation.html#install-the-secrets-store-csi-driver), as follows (this only need to be done once per cluster):
 
     ```shell
     helm repo add secrets-store-csi-driver https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
@@ -816,20 +816,22 @@ To enable your environment to use [Google Secret Manager Provider](https://githu
     --set syncSecret.enabled=true
     ```
 
-3. Install and enable the [Google Secret Manager Provider for Secret Store CSI Driver](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp?tab=readme-ov-file#install) by doing the following steps (this only needs to be done once per cluster):
+3. Install and enable the [Google Secret Manager Provider for Secret Store CSI Driver](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp?tab=readme-ov-file#install) using the following steps (this only needs to be done once per cluster):
 
-    1. Clone or download a copy of the [secrets-store-csi-driver-provider-gcp](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp) repository, for example:
+    1. Clone or download a copy of the [secrets-store-csi-driver-provider-gcp](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp) repository.
 
     2. Navigate to the root folder of the local `secrets-store-csi-driver-provider-gcp` copy.
     3. Run the following command to install the provider using Helm:
 
-    ```shell
-    helm upgrade --install secrets-store-csi-driver-provider-gcp charts/secrets-store-csi-driver-provider-gcp
-    ```
+        ```shell
+        helm upgrade --install secrets-store-csi-driver-provider-gcp charts/secrets-store-csi-driver-provider-gcp
+        ```
 
-4. Get the Google Cloud account _Project Number_ and _Project ID_ from the Google Cloud welcome page, or using the `gcloud projects list` command.
+4. Get the Google Cloud account **Project Number** and **Project ID** from the Google Cloud welcome page, or using the `gcloud projects list` command.
 
-5. Create an app with the secret store enabled. If you are using connected mode, secret stores are enabled automatically if the **Enable Secrets Store** option is activated for the namespace where you create the app. For a standalone app, you must set the value of the setting `allowOverrideSecretsWithSecretStoreCSIDriver` to `true` in the Mendix app CRD.
+5. Create an app with the secret store enabled.
+
+    If you are using connected mode, secret stores are enabled automatically if the **Enable Secrets Store** option is activated for the namespace where you create the app. For a standalone app, you must set the value of the setting `allowOverrideSecretsWithSecretStoreCSIDriver` to `true` in the Mendix app CRD.
 
     The following yaml shows an example Mendix app CRD:
 
@@ -859,11 +861,12 @@ To enable your environment to use [Google Secret Manager Provider](https://githu
       sourceVersion: 0.0.0.87
     EOF
     ```
-6. Go to the **Secrets Manager** page in the Google Cloud console, and use the **Create Secret** button to create keys for every key listed in the [SecretProviderClass Keys](#keys) section above.
 
-    {{% alert color="info" %}}Google Secret Manager doesn't support any sort of hierarchy at the moment, and keys can only be stored as a flat list. As a typical environment would likely need a dozen keys, we recommend adding labels and using a pattern when creating keys. For example, use `<namespace>-<environment-id>-database-type` for the `database-type` key.{{% /alert %}}
+6. Go to the **Secrets Manager** page in the Google Cloud console, and use the **Create Secret** button to create keys for every key listed in the [`SecretProviderClass` Keys](#keys) section above.
 
-    Alternatively, the `gcloud` CLI tool can be used to create keys in an automated way (replace `<{Kubernetes namespace}>` with the namespace where the app is deployed, and `<{Mendix App CR name}>` with the name of the MendixApp CR):
+    {{% alert color="info" %}}Keys can only be stored as a flat list as Google Secret Manager does not support any sort of hierarchy at the moment. A typical environment needs about a dozen keys so Mendix recommends adding labels and using a pattern when creating keys. For example, use `<namespace>-<environment-id>-database-type` for the `database-type` key.{{% /alert %}}
+
+    Alternatively, the `gcloud` CLI tool can be used to create keys in an automated way as follows:
 
     ```shell
     NAMESPACE=<{Kubernetes namespace}>
@@ -872,13 +875,15 @@ To enable your environment to use [Google Secret Manager Provider](https://githu
     printf "PostgreSQL" | gcloud secrets create ${NAMESPACE}-${ENVIRONMENT_NAME}-database-type --data-file=- --replication-policy=automatic
     ```
 
-6. For every secret created on step 5, allow the Mendix app to access it by adding a **Secret Manager Secret Accessor** role to the following principal:
+    Replace `<{Kubernetes namespace}>` with the namespace where the app is deployed, and `<{Mendix App CR name}>` with the name of the MendixApp CR. 
+
+7. For every secret created in the previous step, allow the Mendix app to access it by adding a **Secret Manager Secret Accessor** role to the following principal:
 
     ```
     principal://iam.googleapis.com/projects/<{Project number}>/locations/global/workloadIdentityPools/<{Project ID}>.svc.id.goog/subject/ns/<{Kubernetes namespace}>/sa/<{Mendix App CR name}>
     ```
 
-    replacing `<{Project number}>` and `<{Project ID}>` with the project number and project ID from step 4; `<{Kubernetes namespace}>` with the namespace where the app is deployed, and `<{Mendix App CR name}>` with the name of the MendixApp CR.
+    Replace `<{Project number}>` and `<{Project ID}>` with the Google Cloud account **Project Number** and **Project ID** which you found earlier, `<{Kubernetes namespace}>` with the namespace where the app is deployed, and `<{Mendix App CR name}>` with the name of the MendixApp CR.
 
     This can also be done using the `gcloud` CLI tool:
 
@@ -892,14 +897,16 @@ To enable your environment to use [Google Secret Manager Provider](https://githu
       --member=principal://iam.googleapis.com/projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/${PROJECT_ID}.svc.id.goog/subject/ns/${NAMESPACE}/sa/${ENVIRONMENT_NAME}
     ```
 
-7. Create a Kubernetes `ServiceAccount` for your environment, replacing `<{environment name}>` with the name of the MendixApp CR:
+8. Create a Kubernetes `ServiceAccount` for your environment as follows:
 
     ```shell
     kubectl -n <{Kubernetes namespace}> create serviceaccount <{environment name}>
     kubectl -n <{Kubernetes namespace}> annotate serviceaccount <{environment name}> privatecloud.mendix.com/environment-account=true
     ```
 
-8. Attach the secret to the environment by applying the following Kubernetes yaml:
+    Replacing `<{environment name}>` with the name of the MendixApp CR:
+
+9. Attach the secret to the environment by applying the following Kubernetes yaml:
 
     ```yaml
     NAMESPACE=<{Kubernetes namespace}>
@@ -942,12 +949,15 @@ To enable your environment to use [Google Secret Manager Provider](https://githu
             fileName: storage-bucket-name
           - resourceName: projects/${PROJECT_ID}/secrets/${NAMESPACE}-${ENVIRONMENT_NAME}-storage-perform-delete/versions/latest
             fileName: storage-perform-delete
-          # Example: use MyFirstModule.MyConstant constant value from the namespace1-myapp1-myfirstmodule-myconstant secret
+          # Example: to get the MyFirstModule.MyConstant constant value from the namespace1-myapp1-myfirstmodule-myconstant secret you would use the following:
+          #
           #- resourceName: namespace1-myapp1-myfirstmodule-myconstant
           #  fileName: "mx-const-MyFirstModule.MyConstant"
     ```
 
     In the above example, `resourceName` specifies the secret ID from the Google Cloud project, and `fileName` specifies how it will be named when mounted into the sidecar.
+
+    Replace `<{Project number}>` and `<{Project ID}>` with the Google Cloud account **Project Number** and **Project ID** which you found earlier, `<{Kubernetes namespace}>` with the namespace where the app is deployed, and `<{Mendix App CR name}>` with the name of the MendixApp CR.
 
 For more information, refer to the the official [Google Secret Manager Provider for Secret Store CSI Driver](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp) repository and [Google Secret Manager documentation](https://cloud.google.com/secret-manager/docs/overview).
 
