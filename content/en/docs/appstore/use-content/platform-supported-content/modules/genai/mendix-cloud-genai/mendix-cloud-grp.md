@@ -59,7 +59,7 @@ The Mendix Portal allows easy access to manage the resources, through the GenAI 
 
 ## Mendix Cloud GenAI Connector
 
-The [Mendix Cloud GenAI connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI/) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox.
+The [Mendix Cloud GenAI connector](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/) lets you utilize Mendix Cloud GenAI resource packs directly within your Mendix application. It allows you to integrate generative AI by dragging and dropping common operations from its toolbox.
 
 ## Regional Availability
 
@@ -84,4 +84,4 @@ Data sent to the Knowledge Base (vectors, chunks) is stored in a logically isola
 ### Read More
 
 * [Enrich your Mendix app with GenAI capabilities](/appstore/modules/genai/)
-* [Build your first Mendix app with GenAI](/appstore/modules/genai/using-genai/starter-template)
+* [Build a Chatbot Using the AI Bot Starter App](/appstore/modules/genai/using-genai/starter-template/)
