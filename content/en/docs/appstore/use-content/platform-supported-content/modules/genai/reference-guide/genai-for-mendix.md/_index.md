@@ -15,7 +15,7 @@ By leveraging the tools and features provided in this bundle, you can:
 
 * Integrate with any LLM and knowledge base using the included [GenAI Commons](/appstore/modules/genai/commons/) module.
 * Create a [Conversational UI](/appstore/modules/genai/conversational-ui/) with prebuilt pages and snippets to facilitate user-friendly interactions.
-* Perform prompt engineering at runtime to optimize your AI-generated results.
+* Perform [Prompt Engineering](/appstore/modules/genai/prompt-engineering/) at runtime to optimize your AI-generated results via [Prompt Management](/appstore/modules/genai/genai-for-mx/prompt-management/).
 * Monitor your token consumption with the Token Consumption Monitor, ensuring efficient use of resources.
 * Integrate directly with Mendix Cloud GenAI Models and Knowledge Bases via [Mendix Cloud GenAI Resource Packs](/appstore/modules/genai/MxGenAI/), enhancing your application’s intelligence and responsiveness.
 
