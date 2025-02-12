@@ -9,7 +9,6 @@ no_list: false
 
 ## Introduction {#introduction}
 
-This guide is designed to provide you with comprehensive information on the various tools and modules available within the Mendix platform. These tools will help you explore how you can enhance your applications by integrating Generative AI, and how each of our tools can assist you in achieving this. Additionally, it provides reference guides on the technical aspects, ensuring you have all the information you need to effectively implement and optimize these enhancements.
+This guide provides comprehensive information on the tools and modules available within the Mendix platform. It helps you explore how to enhance your applications by integrating Generative AI and how each tool supports this process. Additionally, it includes technical reference guides to ensure you have all the information needed for effective implementation and optimization.
 
-## Reference Guide
-
+## Documents in This Category
