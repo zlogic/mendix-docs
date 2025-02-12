@@ -804,6 +804,14 @@ After completing the prerequisites, follow these steps to switch from password-b
 
 ### Configuring a Secret Store with Google Secret Manager {#google-secret-manager}
 
+To follow these instructions you will need:
+
+* A [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine) cluster and access permissions.
+* Mendix Operator version 2.9.0 and above installed in the cluster.
+* The [Helm](https://helm.sh) package manager.
+
+{{% alert color="warning" %}}Google Kubernetes Engine has an alternative Secret Manager CSI driver, called `secrets-store-gke.csi.k8s.io` and enabled using the [Secret Manager add-on](https://cloud.google.com/secret-manager/docs/secret-manager-managed-csi-component) in the cluster settings. The driver installed with the Secret Manager add-on **is not supported** by the Mendix Operator. Please use the `secrets-store-csi-driver-provider-gcp` documented below.{{% /alert %}}
+
 To enable your environment to use [Google Secret Manager Provider](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp) as external secret storage, follow these steps:
 
 1. Enable workload identity federation for your GKE cluster as described in the [Google Cloud documentation](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity#console_1) (this only needs to be done once per cluster).
@@ -961,7 +969,6 @@ To enable your environment to use [Google Secret Manager Provider](https://githu
 
 For more information, refer to the the official [Google Secret Manager Provider for Secret Store CSI Driver](https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp) repository and [Google Secret Manager documentation](https://cloud.google.com/secret-manager/docs/overview).
 
-{{% alert color="warning" %}}Google Kubernetes Engine has an alternative Secret Manager CSI driver, called `secrets-store-gke.csi.k8s.io` and enabled using the [Secret Manager add-on](https://cloud.google.com/secret-manager/docs/secret-manager-managed-csi-component) in the cluster settings. The driver installed with the Secret Manager add-on **is not supported** by the Mendix Operator. Please use the `secrets-store-csi-driver-provider-gcp` documented above.{{% /alert %}}
 
 ## Additional Considerations {#additional-considerations}
 
