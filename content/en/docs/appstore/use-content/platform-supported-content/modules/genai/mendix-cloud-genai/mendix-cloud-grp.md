@@ -31,13 +31,13 @@ Mendix Cloud provides access to the following models:
 * Anthropic Claude v3.5 Sonnet v1
 * Cohere Embed v3 (English & multilingual options)
 
-The models are made available through the Mendix Cloud, leveraging AWS's highly secure Amazon Bedrock multi-tenant architecture. This architecture employs advanced logical isolation techniques to effectively segregate customer data, requests, and responses, ensuring a level of data protection that aligns with global security compliance requirements. Customer prompts, requests, and responses are neither stored nor used for model training. Your data remains your data.
+The models are available through the Mendix Cloud, leveraging AWS's highly secure Amazon Bedrock multi-tenant architecture. This architecture employs advanced logical isolation techniques to effectively segregate customer data, requests, and responses, ensuring a level of data protection that aligns with global security compliance requirements. Customer prompts, requests, and responses are neither stored nor used for model training. Your data remains your data.
 
-Customers looking to leverage other models in addition to the above can also take advantage of Mendix' [(Azure) OpenAI Connector](/appstore/modules/genai/reference-guide/external-connectors/openai/) and Amazon [Bedrock Connector](/appstore/modules/genai/reference-guide/external-connectors/bedrock/) to integrate numerous other models into their apps.
+Customers looking to leverage other models in addition to the above can also take advantage of Mendix's [(Azure) OpenAI Connector](/appstore/modules/genai/reference-guide/external-connectors/openai/) and Amazon [Bedrock Connector](/appstore/modules/genai/reference-guide/external-connectors/bedrock/) to integrate numerous other models into their apps.
 
 ## Knowledge Bases
 
-Mendix Cloud Knowledge Base Resource Packs provide customers to an elastic, logically isolated vector database, to use for standard Generative AI architectural patterns such as, Retrieval-Augmented Generation (RAG), semantic similarity search, and other Generative AI use cases. The Knowledge Bases on Mendix Cloud are based on AWS's highly secure Amazon Bedrock Knowledge Bases capability, combined with AWS' OpenSearch Serverless database— a widely adopted standard infrastructure for Generative AI Knowledge Bases on AWS, ensuring fast & accurate information retrieval.
+Mendix Cloud Knowledge Base Resource Packs provide customers with an elastic, logically isolated vector database, to use for standard Generative AI architectural patterns such as Retrieval-Augmented Generation (RAG), semantic similarity search, and other Generative AI use cases. The Knowledge Bases on Mendix Cloud are based on AWS's highly secure Amazon Bedrock Knowledge Bases capability, combined with AWS' OpenSearch Serverless database— a widely adopted standard infrastructure for Generative AI Knowledge Bases on AWS, ensuring fast & accurate information retrieval.
 
 Knowledge bases enable you to bring your own data for RAG, semantic similarity search, and other generative AI use cases:
 
@@ -45,13 +45,13 @@ Knowledge bases enable you to bring your own data for RAG, semantic similarity s
 * Connect to third-party information sources
 * Manage knowledge base content and add metadata labels
 
-Knowledge Bases are based on elastically scaling, serverless OpenSearch vector databases, to ensure high performance under load. The database is set up as a highly available cluster to ensure business continuity. Customer data is stored in logical isolation from other customers and is not used for model training, ensuring data security and privacy in compliances with industry standards.
+Knowledge Bases are based on elastically scaling, serverless OpenSearch vector databases, to ensure high performance under load. The database is set up as a highly available cluster to ensure business continuity. Customer data is stored in logical isolation from other customers and is not used for model training, ensuring data security and privacy in compliance with industry standards.
 
 ## Mendix Portal
 
 The Mendix Portal allows easy access to manage the resources, through the GenAI Resources section in the portal.
 
-* Get insight into consumption of input/output tokens against entitlements for Models
+* Get insight into the consumption of input/output tokens against entitlements for Models
 * Manage content for Knowledge Bases
 * Manage team access to all resources
 * Create and manage connection keys to connect your apps with all resources
@@ -73,7 +73,7 @@ Mendix Cloud GenAI Resource Packs are available in the following regions of Mend
 
 For Mendix Cloud GenAI Model Resources using Anthropic’s Claude and Cohere’s Embed, neither Mendix nor its partners (Amazon, Anthropic, and Cohere) store any requests (prompts) or responses (answers, embeddings). Your data is not used for model training.
 
-Data stored in GenAI Knowledge Base Resources resides in a logically isolated database, accessible only to you—the customer—via keys that you can generate in the Portal.
+Data stored in GenAI Knowledge Base Resources resides in a logically isolated database, accessible only to you—the customer—via keys you can generate in the Portal.
 
 ### How does Mendix Cloud GenAI service Store and Use Data Sent to It?
 
