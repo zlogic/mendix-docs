@@ -12,7 +12,7 @@ For information on the current status of deployment to Mendix for Private Cloud 
 
 ## 2025
 
-### February ???, 2025
+### February 12, 2025
 
 #### Documentation Updates
 
