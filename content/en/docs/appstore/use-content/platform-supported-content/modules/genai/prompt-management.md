@@ -91,9 +91,7 @@ After several quick iterations, the first version of the prompt is typically rea
 
 #### Create a Version
 
-New prompts will be created in the draft status by default, meaning  they are still being worked on and can be tested using the prompt management module only. When it is ready to be integrated into the actual app (i.e., the logic that end users trigger), the prompt must be saved as a version. This will store a snapshot of the prompt texts. To select the active version for the prompt, use the three-dot ({{% icon name="three-dots-menu-horizontal" %}}) menu on the prompt overview which say *Select prompt in use*.
-
-It then needs to be selected as the active version for the prompt. This can be done on the prompt overview, using the menu option behind the three horizontal dots that say *Select prompt in use*.
+New prompts will be created in the draft status by default, meaning  they are still being worked on and can be tested using the prompt management module only. When it is ready to be integrated into the actual app (i.e., the logic that end users trigger), the prompt must be saved as a version. This will store a snapshot of the prompt texts. To select the active version for the prompt, use the three-dot ({{% icon name="three-dots-menu-horizontal" %}}) menu option on the prompt overview and click  **Select Prompt in use**.
 
 For a Single-Call type prompt, use `Get Prompt for Context Object`, which can be found in the **Toolbox** in Studio Pro while editing a microflow, under the category **GenAI (Request Building)**. This operation returns both a system prompt and a user prompt strings, on a combined `PromptToUse` object. These string attributes can be passed to the chat completions operation. Retrieve the prompt (e.g. by name) and pass it with your custom context object to the operation. For an example of this pattern, see the product description generation example in the [GenAI Showcase app](https://marketplace.mendix.com/link/component/220475). 
 
