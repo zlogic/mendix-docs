@@ -80,7 +80,7 @@ Since the **ConversationalUI_FullScreenChat** page contains a **Data View** usin
 
 To tailor your application's behavior, you can customize the [System Prompt](/appstore/modules/genai/prompt-engineering/#system-prompt) to make it more specific to your use case:
 
-##### Changing the System Prompt {changing-system-prompt}
+##### Changing the System Prompt {#changing-system-prompt}
 
 {{< figure src="/attachments/appstore/platform-supported-content/modules/genai/genai-howto-blankapp/blank_genai_systemprompt.png" >}}
 
