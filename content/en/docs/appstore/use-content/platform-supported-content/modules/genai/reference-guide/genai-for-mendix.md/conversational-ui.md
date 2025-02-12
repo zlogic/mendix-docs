@@ -56,7 +56,7 @@ You must also ensure you have the other prerequisite modules that Conversational
 * [Nanoflow Commons](https://marketplace.mendix.com/link/component/109515)
 * [Web Actions](https://marketplace.mendix.com/link/component/114337)
 
-Finally, you must also set up a connector that is compatible with [GenAI Commons](/appstore/modules/genai/commons/). One option is to use the Mendix Cloud GenAI connector, which is part of the above Marketplace listing package. For more information on how to configure this connector, see the [Configuration](/appstore/modules/genai/MxGenAI/#configuration) section of *Mendix Cloud GenAI connector*. Additionally, Mendix offers platform-supported integration with [(Azure) OpenAI](/appstore/modules/genai/openai/) and [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/). If desired, you need to download these integrations manually from the Marketplace. Alternatively, you can integrate with custom models by creating your own connector and making its operations and object structure compatible with the [GenAI Commons](/appstore/modules/genai/commons/) `Request` and `Response`.
+Finally, you must also set up a connector that is compatible with [GenAI Commons](/appstore/modules/genai/commons/). One option is to use the Mendix Cloud GenAI connector, which is part of the above Marketplace listing package. For more information on how to configure this connector, see the [Configuration](/appstore/modules/genai/mx-cloud-genai/MxGenAI-connector/#configuration) section of *Mendix Cloud GenAI connector*. Additionally, Mendix offers platform-supported integration with [(Azure) OpenAI](/appstore/modules/genai/openai/) and [Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/). If desired, you need to download these integrations manually from the Marketplace. Alternatively, you can integrate with custom models by creating your own connector and making its operations and object structure compatible with the [GenAI Commons](/appstore/modules/genai/commons/) `Request` and `Response`.
 
 ## Installation {#installation}
 
@@ -150,7 +150,7 @@ If you need custom attributes or settings in your action microflow required for 
 
 Depending on the implementation, you can create this object using a microflow that opens the page or using a datasource microflow on the page itself. The following are the operations in the toolbox for creating the ChatContext:
 
-* `New Chat` creates a new `ChatContext` and a new `ProviderConfig`. The `ProviderConfig` is added to the `ChatContext` and set to active. Additionally, the action microflow of the new `ProviderConfig` is set. A [DeployedModel](/appstore/modules/genai/commons/#deployed-model) needs to be passed in order to access the right model. Via the association `ProviderConfig_DeployedModel` the DeployedModel can be retrieved and used to pass to the [Chat Completions (with history)](/appstore/modules/genai/commons/#chat-completions-with-history) later in the Action Microflow.
+* `New Chat` creates a new `ChatContext` and a new `ProviderConfig`. The `ProviderConfig` is added to the `ChatContext` and set to active. Additionally, the action microflow of the new `ProviderConfig` is set. A [DeployedModel](/appstore/modules/genai/genai-for-mx/commons/#deployed-model) needs to be passed in order to access the right model. Via the association `ProviderConfig_DeployedModel` the DeployedModel can be retrieved and used to pass to the [Chat Completions (with history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-with-history) later in the Action Microflow.
 * `New Chat with Existing Config` creates a new `ChatContext` and sets a given `ProviderConfig` to active.
 * `New Chat with Additional Configs` creates a new `ChatContext`, adds a `ProviderConfig` to the `ChatContext`, and sets it to active. In addition, a list of `ProviderConfig` can be added to the `ChatContext` (non-active, but selectable in the UI).
 
@@ -178,7 +178,7 @@ Add the action microflow to an existing `ProviderConfig` by using the **Set Chat
 A typical action microflow is responsible for the following:
 
 * Convert the `ChatContext` with user input to a `Request` structure for the chat completions operation. This module provides the **Default Preprocessing** toolbox action to take care of that in basic cases; for more advanced or custom cases you need to create your own logic based on this.
-* Execute the [Chat Completions (with history)](/appstore/modules/genai/commons/#chat-completions-with-history) operation. To pass a [DeployedModel](/appstore/modules/genai/commons/#deployed-model), you can use the `ProviderConfig_DeployedModel` association of the active `ProviderConfig` for the `ChatContext`.
+* Execute the [Chat Completions (with history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-with-history) operation. To pass a [DeployedModel](/appstore/modules/genai/genai-for-mx/commons/#deployed-model), you can use the `ProviderConfig_DeployedModel` association of the active `ProviderConfig` for the `ChatContext`.
 * Update the `ChatContext` structure based on the response so that the user can see the result in the UI. This module provides the **Update Assistant Response** microflow action in the toolbox. It is only required to execute this logic in successful model interactions, make sure to pass the response object. In the case of an unhappy scenario, the action microflow should return false and the module logic will take care of setting the applicable error status and no response object is needed. 
 
 The example action microflow in this module, to be found in the **USE_ME > ConversationalUI > Action microflow examples** folder follows this basic structure.
@@ -195,14 +195,14 @@ If you want to create your custom action microflow, keep the following considera
 The following operations can be found in the toolbox for changing the [ChatContext](#chat-context) in a (custom) action microflow:
 
 * `Set Topic` sets the `Topic` of the `ChatContext`. This attribute can be used in the **History** sidebar while making historical chats visible to users.
-* `Default Preprocessing` sets a default `Topic` for `ChatContext` and creates a sample [Request](/appstore/modules/genai/commons/#request).
+* `Default Preprocessing` sets a default `Topic` for `ChatContext` and creates a sample [Request](/appstore/modules/genai/genai-for-mx/commons/#request).
 * `Set ConversationID` sets the ConversationID on the `ChatContext`. Storing the ConversationID is needed for a chat with history within [Retrieve and Generate with Amazon Bedrock](/appstore/modules/aws/amazon-bedrock/#retrieve-and-generate).
 
 ##### Request Operations {#request-operations}
 
 The following operations are used in a (custom) action microflow:
 
-* `Create Request with Chat History` creates a [Request](/appstore/modules/genai/commons/) object that is used as an input parameter in a [Chat Completions (with history)](/appstore/modules/genai/commons/#chat-completions-with-history) operation as part of the [action microflow](#action-microflow).
+* `Create Request with Chat History` creates a [Request](/appstore/modules/genai/commons/) object that is used as an input parameter in a [Chat Completions (with history)](/appstore/modules/genai/genai-for-mx/commons/#chat-completions-with-history) operation as part of the [action microflow](#action-microflow).
 * `Get Current User Prompt` gets the current user prompt. It can be used in the [action microflow](#action-microflow) because the `CurrentUserPrompt` from the chat context is no longer available.
 * `Update Assistant Response` processes the response of the model and adds the new message and any sources to the UI. This is typically one of the last steps of the logic in an [action microflow](#action-microflow). It only needs to be included at the end of the happy flow of an action microflow. Make sure to pass the response object.
 
@@ -260,7 +260,7 @@ You may need to use the following classes when building a more complex custom pa
 
 ### Token Consumption Monitor Snippets {#snippet-token-monitor}
 
-A separate set of snippets has been made available to display and export token usage information in the running application. This is applicable for LLM connectors that follow the principles of [GenAI Commons](/appstore/modules/genai/commons/#token-usage) and as a result store token usage information. The following snippets can be added to (admin) pages independently from the conversation logic described in earlier sections. 
+A separate set of snippets has been made available to display and export token usage information in the running application. This is applicable for LLM connectors that follow the principles of [GenAI Commons](/appstore/modules/genai/genai-for-mx/commons/#token-usage) and as a result store token usage information. The following snippets can be added to (admin) pages independently from the conversation logic described in earlier sections. 
 
 * **Snippet_TokenMonitor** - This snippet can be used to display token usage information in charts and contains several other snippets that you can use to build your token consumption monitor dashboard. To display the token usage data, users will need the `UsageMonitoring` user role.
 * **Snippet_TokenMonitor_Export** - This snippet can be used to display token usage information in a grid and export it as *.xlsx*. 
