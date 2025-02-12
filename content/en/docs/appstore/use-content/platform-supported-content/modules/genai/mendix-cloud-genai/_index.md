@@ -9,18 +9,18 @@ no_list: false
 
 ## Introduction
 
-In order to help developers get started integrating GenAI capabilities into custom applications, Mendix Cloud provides GenAI Resource Packs. These provide access to Large Language Models (for text generation and text embeddings) and knowledge bases, so that the most common GenAI patterns can be implemented seamlessly in a low code way. It makes leveraging GenAI technologies accessible for Mendix customers and partners by abstracting away complex provisioning processes and turning configuration steps into a few simple clicks as part of the platform experience. Feel free to contact genai-resource-packs@mendix.com to learn more.
+In order to help developers integrate GenAI capabilities into custom applications, Mendix Cloud provides GenAI Resource Packs. These packs offer access to Large Language Models (for text generation and text embeddings) and knowledge bases, enabling seamless implementation of common GenAI patterns in a low-code environment. They simplify the process of leveraging GenAI technologies for Mendix customers and partners by abstracting complex provisioning processes and reducing configuration to just a few clicks within the platform experience. Feel free to contact [genai-resource-packs@mendix.com](mailto:genai-resource-packs@mendix.com) to learn more.
 
 ## Resources Overview
 
-The GenAI Resources portal provides you with an overview of all the resources that you have access to. You can also request new GenAI Resources there.  
+The GenAI Resources portal provides an overview of all the resources you have access to. You can also request new GenAI Resources through the portal.  
 
 There are three different types of resources: 
 
-* **Compute - Text Generation**: Text generation resources are used to create human-like text based on given inputs. This capability is crucial for applications that require natural language generation. 
+* Compute – Text Generation: generates human-like text based on given inputs, essential for applications requiring natural language generation. 
 
-* **Knowledge Base**: A knowledge base can be used to upload your data which then can be used by a text generation resource. 
+* Knowledge Base: A knowledge base can be used to upload your data which then can be used by a text generation resource. 
 
-* **Compute - Embeddings Generation**: Embeddings generation resources are designed to convert text into vector representations. An embeddings resource is required for uploading data to your Knowledge Base. 
+* Compute – Embeddings Generation: converts text into vector representations. An embeddings resource is required to uploading data to your Knowledge Base. 
 
 ## Relevant Sources
